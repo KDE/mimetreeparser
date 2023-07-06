@@ -20,7 +20,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParser PRIVATE
      enums.h
      htmlutils.h
      mailcrypto.h
-     mailtemplates.h
      messageparser.h
      messagepart.h
      mimetreeparser_debug.h
@@ -35,7 +34,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParser PRIVATE
      cryptohelper.cpp
      htmlutils.cpp
      mailcrypto.cpp
-     mailtemplates.cpp
      messageparser.cpp
      messagepart.cpp
      mimetreeparser_debug.cpp
@@ -93,6 +91,8 @@ install(TARGETS
 ecm_generate_headers(MimeTreeParser_CamelCase_HEADERS
     HEADER_NAMES
         AttachmentModel
+        ObjectTreeParser
+        MessageParser
     REQUIRED_HEADERS MimeTreeParser_HEADERS
     PREFIX MimeTreeParser
 )

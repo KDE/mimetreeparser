@@ -8,11 +8,12 @@
 #include <KMime/Message>
 #include <QAbstractItemModel>
 
+#include "mimetreeparser_export.h"
 #include <memory>
 
 class MessagePartPrivate;
 
-class MessageParser : public QObject
+class MIMETREEPARSER_EXPORT MessageParser : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(KMime::Message::Ptr message READ message WRITE setMessage NOTIFY htmlChanged)
@@ -20,6 +21,12 @@ class MessageParser : public QObject
     Q_PROPERTY(QAbstractItemModel *attachments READ attachments NOTIFY htmlChanged)
     Q_PROPERTY(QString structureAsString READ structureAsString NOTIFY htmlChanged)
     Q_PROPERTY(bool loaded READ loaded NOTIFY htmlChanged)
+
+    Q_PROPERTY(QString subject READ subject NOTIFY htmlChanged)
+    Q_PROPERTY(QString from READ from NOTIFY htmlChanged)
+    Q_PROPERTY(QString sender READ sender NOTIFY htmlChanged)
+    Q_PROPERTY(QString to READ to NOTIFY htmlChanged)
+    Q_PROPERTY(QDateTime date READ date NOTIFY htmlChanged)
 
 public:
     explicit MessageParser(QObject *parent = Q_NULLPTR);
@@ -31,6 +38,12 @@ public:
     QAbstractItemModel *attachments() const;
     QString structureAsString() const;
     bool loaded() const;
+
+    QString subject() const;
+    QString from() const;
+    QString sender() const;
+    QString to() const;
+    QDateTime date() const;
 
 Q_SIGNALS:
     void htmlChanged();

@@ -4,6 +4,7 @@
 #include "messageparser.h"
 
 #include "objecttreeparser.h"
+#include <KLocalizedString>
 #include <QElapsedTimer>
 
 #include "async.h"
@@ -79,4 +80,48 @@ QAbstractItemModel *MessageParser::attachments() const
     }
     const auto model = new AttachmentModel(d->mParser);
     return model;
+}
+
+QString MessageParser::subject() const
+{
+    if (d->mMessage && d->mMessage->subject()) {
+        return d->mMessage->subject()->asUnicodeString();
+    } else {
+        return i18nc("displayed as subject when the subject of a mail is empty", "No Subject");
+    }
+}
+
+QString MessageParser::from() const
+{
+    if (d->mMessage && d->mMessage->from()) {
+        return d->mMessage->from()->asUnicodeString();
+    } else {
+        return QString();
+    }
+}
+
+QString MessageParser::sender() const
+{
+    if (d->mMessage && d->mMessage->sender()) {
+        return d->mMessage->sender()->asUnicodeString();
+    } else {
+        return QString();
+    }
+}
+QString MessageParser::to() const
+{
+    if (d->mMessage && d->mMessage->to()) {
+        return d->mMessage->to()->asUnicodeString();
+    } else {
+        return i18nc("displayed when a mail has unknown sender, receiver or date", "Unknown");
+    }
+}
+
+QDateTime MessageParser::date() const
+{
+    if (d->mMessage && d->mMessage->date()) {
+        return d->mMessage->date()->dateTime();
+    } else {
+        return QDateTime();
+    }
 }
