@@ -11,8 +11,9 @@
 
 void FileOpener::open(const QUrl &url)
 {
+    const auto fileName = url.fileName();
     QMimeDatabase db;
-    QMimeType mime = db.mimeTypeForFile(url.fileName());
+    QMimeType mime = db.mimeTypeForFile(fileName);
 
     qWarning() << mime;
 
@@ -20,8 +21,8 @@ void FileOpener::open(const QUrl &url)
         KMBox::MBox mbox;
         mbox.load(url.toLocalFile());
         const auto entries = mbox.entries();
-        qWarning() << entries.count();
         KMime::Message::Ptr message(mbox.readMessage(entries[0]));
+        qWarning().noquote() << message->encodedContent();
         Q_EMIT messageOpened(message);
         return;
     }
@@ -39,7 +40,41 @@ void FileOpener::open(const QUrl &url)
         qWarning() << "File is empty";
         return;
     }
+
     KMime::Message::Ptr message(new KMime::Message);
-    message->fromUnicodeString(QString::fromUtf8(content));
+
+    if (mime.inherits(QStringLiteral("application/pgp-encrypted")) || fileName.endsWith(QStringLiteral(".asc"))) {
+        auto contentType = message->contentType();
+        contentType->setMimeType("multipart/encrypted");
+        contentType->setBoundary(KMime::multiPartBoundary());
+        contentType->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
+        contentType->setCategory(KMime::Headers::CCcontainer);
+
+        auto cte = message->contentTransferEncoding();
+        cte->setEncoding(KMime::Headers::CE7Bit);
+        cte->setDecoded(true);
+
+        auto pgpEncrypted = new KMime::Content;
+        pgpEncrypted->contentType()->setMimeType("application/pgp-encrypted");
+        auto contentDisposition = new KMime::Headers::ContentDisposition;
+        contentDisposition->setDisposition(KMime::Headers::CDattachment);
+        pgpEncrypted->appendHeader(contentDisposition);
+        pgpEncrypted->setBody("Version: 1");
+        message->addContent(pgpEncrypted);
+
+        auto encryptedContent = new KMime::Content;
+        encryptedContent->contentType()->setMimeType("application/octet-stream");
+        contentDisposition = new KMime::Headers::ContentDisposition;
+        contentDisposition->setDisposition(KMime::Headers::CDinline);
+        contentDisposition->setFilename(QStringLiteral("msg.asc"));
+        encryptedContent->appendHeader(contentDisposition);
+        encryptedContent->setBody(content);
+        message->addContent(encryptedContent);
+
+        message->assemble();
+    } else {
+        message->fromUnicodeString(QString::fromUtf8(content));
+    }
+
     Q_EMIT messageOpened(message);
 }

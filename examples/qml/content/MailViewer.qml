@@ -33,6 +33,7 @@ Kirigami.Page {
         id: mailHeader
 
         padding: root.padding
+        visible: root.from.length > 0 || root.to.length > 0 || root.subject.length > 0 
 
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -66,12 +67,14 @@ Kirigami.Page {
             QQC2.Label {
                 text: i18n('Subject:')
                 font.bold: true
+                visible: root.subject.length > 0
 
                 Layout.rightMargin: Kirigami.Units.largeSpacing
             }
 
             QQC2.Label {
                 text: root.subject
+                visible: text.length > 0
                 elide: Text.ElideRight
 
                 Layout.fillWidth: true
@@ -79,18 +82,21 @@ Kirigami.Page {
 
             QQC2.Label {
                 text: root.dateTime.toLocaleString(Qt.locale(), Locale.ShortFormat)
+                visible: text.length > 0
                 horizontalAlignment: Text.AlignRight
             }
 
             QQC2.Label {
                 text: i18n('From:')
                 font.bold: true
+                visible: root.from.length > 0
 
                 Layout.rightMargin: Kirigami.Units.largeSpacing
             }
 
             QQC2.Label {
                 text: root.from
+                visible: text.length > 0
                 elide: Text.ElideRight
 
                 Layout.fillWidth: true
@@ -117,6 +123,7 @@ Kirigami.Page {
             QQC2.Label {
                 text: i18n('To:')
                 font.bold: true
+                visible: root.to.length > 0
 
                 Layout.rightMargin: Kirigami.Units.largeSpacing
             }
@@ -124,6 +131,7 @@ Kirigami.Page {
             QQC2.Label {
                 text: root.to
                 elide: Text.ElideRight
+                visible: root.to.length > 0
 
                 Layout.fillWidth: true
                 Layout.columnSpan: 2
