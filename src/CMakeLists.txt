@@ -3,6 +3,8 @@
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser5\")
 
+add_subdirectory(plugins)
+
 add_library(KPim${KF_MAJOR_VERSION}MimeTreeParser)
 add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParser ALIAS KPim${KF_MAJOR_VERSION}MimeTreeParser)
 

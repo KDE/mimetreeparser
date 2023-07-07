@@ -865,6 +865,8 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
         return false;
     }
 
+    qWarning() << "decrypt" << text();
+
     return true;
 }
 

@@ -27,6 +27,7 @@ include(GenerateExportHeader)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
 
+include(ECMQmlModule)
 include(ECMSetupVersion)
 include(FeatureSummary)
 include(KDEGitCommitHooks)
@@ -66,6 +67,7 @@ endif()
 
 ########### Find packages ###########
 find_package(Qt${KF_MAJOR_VERSION}Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF${KF_MAJOR_VERSION}I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF${KF_MAJOR_VERSION}Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim${KF_MAJOR_VERSION}Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)

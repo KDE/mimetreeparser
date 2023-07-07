@@ -5,15 +5,5 @@ SPDX-License-Identifier: GPL-2.0-or-later
 -->
     <qresource prefix="/">
         <file>content/main.qml</file>
-        <file>content/Banner.qml</file>
-        <file>content/ErrorPart.qml</file>
-        <file>content/HtmlPart.qml</file>
-        <file>content/ICalPart.qml</file>
-        <file>content/MailPart.qml</file>
-        <file>content/MailPartModel.qml</file>
-        <file>content/MailPartView.qml</file>
-        <file>content/MailViewer.qml</file>
-        <file>content/TextPart.qml</file>
-        <file>content/AttachmentDelegate.qml</file>
     </qresource>
 </RCC>
