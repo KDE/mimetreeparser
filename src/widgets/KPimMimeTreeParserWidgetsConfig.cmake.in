@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
+
+@PACKAGE_INIT@
+include(CMakeFindDependencyMacro)
+
+find_dependency(KF@KF_MAJOR_VERSION@I18n "@KF_MIN_VERSION@")
+find_dependency(KPim@KF_MAJOR_VERSION@Mime "@KPIM_MIME_VERSION@")
+find_dependency(KPim@KF_MAJOR_VERSION@MimeTreeParserCore "@PIM_VERSION@")
+
+include("${CMAKE_CURRENT_LIST_DIR}/KPim@KF_MAJOR_VERSION@MimeTreeParserWidgetsTargets.cmake")
+@PACKAGE_INCLUDE_QCHTARGETS@

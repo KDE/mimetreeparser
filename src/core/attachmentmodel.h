@@ -15,7 +15,7 @@ class ObjectTreeParser;
 }
 class AttachmentModelPrivate;
 
-class AttachmentModel : public QAbstractItemModel
+class AttachmentModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

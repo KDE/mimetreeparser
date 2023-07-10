@@ -10,7 +10,7 @@ target_sources(mimetreeparser_plugin PRIVATE
 
 target_link_libraries(mimetreeparser_plugin PRIVATE
     Qt::Quick
-    KPim${KF_MAJOR_VERSION}::MimeTreeParser
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 
 ecm_target_qml_sources(mimetreeparser_plugin

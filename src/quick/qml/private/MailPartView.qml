@@ -6,7 +6,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as Controls
-import org.kde.mimetreeparser 1.0
+import org.kde.pim.mimetreeparser 1.0
 import org.kde.kitemmodels 1.0 as KItemModels
 
 ListView {
@@ -30,14 +30,6 @@ ListView {
     model: MailPartModel {
         id: visualModel
         model: messageParser.parts
-    }
-
-    Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent
-        visible: root.count === 0
-        text: i18n("No email selected")
-        icon.name: "mail-folder-inbox"
-        helpfulAction: applicationWindow().openFileAction
     }
 
     MessageParser {

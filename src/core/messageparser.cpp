@@ -40,6 +40,8 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     }
     d->mMessage = message;
 
+    qWarning() << "set message c++" << message;
+
     QElapsedTimer time;
     time.start();
     auto parser = std::make_shared<MimeTreeParser::ObjectTreeParser>();
@@ -64,7 +66,7 @@ QString MessageParser::structureAsString() const
     return d->mParser->structureAsString();
 }
 
-QAbstractItemModel *MessageParser::parts() const
+PartModel *MessageParser::parts() const
 {
     if (!d->mParser) {
         return nullptr;
@@ -78,8 +80,7 @@ QAbstractItemModel *MessageParser::attachments() const
     if (!d->mParser) {
         return nullptr;
     }
-    const auto model = new AttachmentModel(d->mParser);
-    return model;
+    return new AttachmentModel(d->mParser);
 }
 
 QString MessageParser::subject() const

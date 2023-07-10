@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 set(PIM_VERSION "5.23.42")
-project(MimeTreeParser VERSION ${PIM_VERSION})
+project(MimeTreeParserNG VERSION ${PIM_VERSION})
 
 # ECM setup
 set(KF_MIN_VERSION "5.105.0")
@@ -50,13 +50,13 @@ endif()
 set(KPIM_MIME_VERSION "5.23.40")
 
 ecm_setup_version(PROJECT
-    VARIABLE_PREFIX MIMETREEPARSER
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserConfigVersion.cmake"
+    VARIABLE_PREFIX MIMETREEPARSERNG
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserNgConfigVersion.cmake"
     SOVERSION 5
 )
 
-configure_file(mimetreeparser-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparser-version.h @ONLY)
+configure_file(mimetreeparserng-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h @ONLY)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -67,16 +67,17 @@ endif()
 
 ########### Find packages ###########
 find_package(Qt${KF_MAJOR_VERSION}Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF${KF_MAJOR_VERSION}I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF${KF_MAJOR_VERSION}Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim${KF_MAJOR_VERSION}Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 find_package(Gpgme REQUIRED)
 
+find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG)
+find_package(Qt${KF_MAJOR_VERSION}Widgets ${QT_MIN_VERSION} CONFIG)
+
 ########### Targets ###########
 
-
-ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.105.0)
+ecm_set_disabled_deprecation_versions(QT 6.4 KF 5.105.0)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
@@ -93,41 +94,14 @@ if (BUILD_TESTING)
     #add_subdirectory(autotests)
 endif ()
 
-########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}MimeTreeParser")
-
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}MimeTreeparser_QCH
-        FILE KPim${KF_MAJOR_VERSION}MimeTreeParserQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserQchTargets.cmake\")")
-endif()
-
-configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KPimMimeTreeParserConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserConfig.cmake"
-  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-)
-
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserConfigVersion.cmake"
-  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-  COMPONENT Devel
-)
-
-install(EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}MimeTreeParserTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
-
-install(FILES
-   ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_version.h
-   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParser COMPONENT Devel
+   ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h
+   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserCore
+   COMPONENT Devel
 )
 ecm_qt_install_logging_categories(
-    EXPORT MIMETREEPARSER
-    FILE mimetreeparser.categories
+    EXPORT MIMETREEPARSER2
+    FILE mimetreeparser2.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 

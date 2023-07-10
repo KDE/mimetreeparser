@@ -4,7 +4,7 @@
 
 #include "messagepart.h"
 #include "cryptohelper.h"
-#include "mimetreeparser_debug.h"
+#include "mimetreeparser_core_debug.h"
 #include "objecttreeparser.h"
 
 #include "utils.h"
@@ -334,7 +334,7 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node)
     , mEncryptionState(KMMsgEncryptionStateUnknown)
 {
     if (!mNode) {
-        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "not a valid node";
         return;
     }
 
@@ -448,7 +448,7 @@ HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node)
     : MessagePart(otp, QString(), node)
 {
     if (!mNode) {
-        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "not a valid node";
         return;
     }
 
@@ -461,7 +461,7 @@ MimeMessagePart::MimeMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     : MessagePart(otp, QString(), node)
 {
     if (!mNode) {
-        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "not a valid node";
         return;
     }
 
@@ -583,7 +583,7 @@ CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, co
     , mProtocol(cryptoProto)
 {
     if (!mNode) {
-        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "not a valid node";
         return;
     }
 }
@@ -654,11 +654,11 @@ static void sigStatusToMetaData(PartMetaData &mMetaData, const Signature &signat
         const auto keys = findKeys({QString::fromUtf8(signature.fingerprint)});
         if (keys.size() > 1) {
             // Should not happen
-            qCDebug(MIMETREEPARSER_LOG) << "Oops: Found more then one Key for Fingerprint: " << signature.fingerprint;
+            qCDebug(MIMETREEPARSER_CORE_LOG) << "Oops: Found more then one Key for Fingerprint: " << signature.fingerprint;
         }
         if (keys.empty()) {
             // Should not happen at this point
-            qCWarning(MIMETREEPARSER_LOG) << "Oops: Found no Key for Fingerprint: " << signature.fingerprint;
+            qCWarning(MIMETREEPARSER_CORE_LOG) << "Oops: Found no Key for Fingerprint: " << signature.fingerprint;
         } else {
             key = keys[0];
         }
@@ -930,7 +930,7 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
     mMetaData.isEncapsulatedRfc822Message = true;
 
     if (!mMessage) {
-        qCWarning(MIMETREEPARSER_LOG) << "Node is of type message/rfc822 but doesn't have a message!";
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "Node is of type message/rfc822 but doesn't have a message!";
         return;
     }
 

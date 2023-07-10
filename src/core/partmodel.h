@@ -8,6 +8,7 @@
 #include <QAbstractItemModel>
 #include <QModelIndex>
 
+#include "mimetreeparser_core_export.h"
 #include <memory>
 
 namespace MimeTreeParser
@@ -16,7 +17,7 @@ class ObjectTreeParser;
 }
 class PartModelPrivate;
 
-class PartModel : public QAbstractItemModel
+class MIMETREEPARSER_CORE_EXPORT PartModel : public QAbstractItemModel
 {
     Q_OBJECT
     Q_PROPERTY(bool showHtml READ showHtml WRITE setShowHtml NOTIFY showHtmlChanged)

@@ -3,7 +3,8 @@
 
 #include "mimetreeparserplugin.h"
 
-#include <MimeTreeParser/MessageParser>
+#include <MimeTreeParserCore/MessageParser>
+#include <MimeTreeParserCore/PartModel>
 #include <QQmlEngine>
 
 void MimeTreeParserPlugin::registerTypes(const char *uri)
@@ -12,6 +13,7 @@ void MimeTreeParserPlugin::registerTypes(const char *uri)
 
     qmlRegisterModule(uri, 1, 0);
     qmlRegisterType<MessageParser>(uri, 1, 0, "MessageParser");
+    qmlRegisterUncreatableType<PartModel>(uri, 1, 0, "PartModel", QStringLiteral("not instanciated"));
 }
 
 void MimeTreeParserPlugin::initializeEngine(QQmlEngine *engine, const char *uri)

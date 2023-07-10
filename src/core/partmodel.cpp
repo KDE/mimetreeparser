@@ -3,8 +3,8 @@
 
 #include "partmodel.h"
 
-#include "objecttreeparser.h"
 #include "htmlutils.h"
+#include "objecttreeparser.h"
 #include <QStringLiteral>
 
 #include <KLocalizedString>

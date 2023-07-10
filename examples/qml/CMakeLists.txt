@@ -18,6 +18,6 @@ target_link_libraries(mimetreeparser-qml PUBLIC
     Qt::Qml
     Qt::Gui
     KF${KF_MAJOR_VERSION}::I18n
-    KPim${KF_MAJOR_VERSION}::MimeTreeParser
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
     KPim${KF_MAJOR_VERSION}::Mbox
 )

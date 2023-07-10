@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2003 Marc Mutz <mutz@kde.org>
 // SPDX-License-Identifier: GPL-2.0-only
 
-#include "mimetreeparser_debug.h"
+#include "mimetreeparser_core_debug.h"
 
 #include "bodypartformatter.h"
 
@@ -87,7 +87,7 @@ public:
     MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
     {
         if (node->decodedContent().trimmed() != "Version: 1") {
-            qCWarning(MIMETREEPARSER_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
+            qCWarning(MIMETREEPARSER_CORE_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
         }
 
         if (!node->parent()) {
@@ -135,9 +135,9 @@ public:
         MessagePart::Ptr mp;
         if (!isSigned) {
             if (isEncrypted) {
-                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
+                qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
             } else {
-                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
+                qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
             }
 
             auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, node->decodedText(), CMS, node));
@@ -150,7 +150,7 @@ public:
             // } else {
             //     _mp->startDecryption();
             //     if (messagePart->isDecryptable) {
-            //         qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
+            //         qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
             //         isEncrypted = true;
             //         part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
             //         signTestNode = nullptr;
@@ -166,9 +166,9 @@ public:
             //         }
 
             //         if (isEncrypted) {
-            //             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  ERROR: COULD NOT DECRYPT enveloped data !";
+            //             qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  ERROR: COULD NOT DECRYPT enveloped data !";
             //         } else {
-            //             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  NO encryption found";
+            //             qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  NO encryption found";
             //         }
             //     }
             // }
@@ -177,9 +177,9 @@ public:
         // We now try signature verification if necessarry.
         if (signTestNode) {
             if (isSigned) {
-                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: opaque signed data";
+                qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime     ==      S/MIME TYPE: opaque signed data";
             } else {
-                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
+                qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
             }
 
             return SignedMessagePart::Ptr(new SignedMessagePart(objectTreeParser, CMS, nullptr, signTestNode));
@@ -250,9 +250,9 @@ public:
     {
         auto protocolContentType = protocolContentType_;
         if (protocolContentType.isEmpty()) {
-            qCWarning(MIMETREEPARSER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
-                                             "using content-type of the signature:"
-                                          << signatureContentType;
+            qCWarning(MIMETREEPARSER_CORE_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
+                                                  "using content-type of the signature:"
+                                               << signatureContentType;
             protocolContentType = signatureContentType;
         }
 
@@ -268,7 +268,7 @@ public:
     MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
     {
         if (node->contents().size() != 2) {
-            qCDebug(MIMETREEPARSER_LOG) << "mulitpart/signed must have exactly two child parts!" << Qt::endl << "processing as multipart/mixed";
+            qCDebug(MIMETREEPARSER_CORE_LOG) << "mulitpart/signed must have exactly two child parts!" << Qt::endl << "processing as multipart/mixed";
             if (!node->contents().isEmpty()) {
                 return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
             } else {
