@@ -13,6 +13,7 @@
 
 class MessagePartPrivate;
 class PartModel;
+class AttachmentModel;
 
 class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
 {
@@ -36,7 +37,7 @@ public:
     KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
     PartModel *parts() const;
-    QAbstractItemModel *attachments() const;
+    AttachmentModel *attachments() const;
     QString structureAsString() const;
     bool loaded() const;
 

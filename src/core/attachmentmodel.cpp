@@ -13,6 +13,7 @@
 #include <QDesktopServices>
 #include <QDir>
 #include <QFile>
+#include <QGuiApplication>
 #include <QIcon>
 #include <QMimeDatabase>
 #include <QStandardPaths>
@@ -47,7 +48,7 @@ public:
 
     AttachmentModel *q;
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
-    QVector<MimeTreeParser::MessagePartPtr> mAttachments;
+    MimeTreeParser::MessagePart::List mAttachments;
 };
 
 AttachmentModelPrivate::AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::ObjectTreeParser> &parser)
@@ -130,6 +131,8 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
             return part->encryptions().size() > 0;
         case IsSignedRole:
             return part->signatures().size() > 0;
+        case AttachmentPartRole:
+            return QVariant::fromValue(part);
         default:
             return {};
         }
@@ -159,64 +162,66 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     }
 }
 
-static QString internalSaveAttachmentToDisk(const QModelIndex &index, const QString &path, bool readonly = false)
+static QString internalSaveAttachmentToDisk(const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly = false)
 {
-    if (index.internalPointer()) {
-        const auto part = static_cast<MimeTreeParser::MessagePart *>(index.internalPointer());
-        Q_ASSERT(part);
-        auto node = part->node();
-        auto data = node->decodedContent();
-        // This is necessary to store messages embedded messages (EncapsulatedRfc822MessagePart)
-        if (data.isEmpty()) {
-            data = node->encodedContent();
-        }
-        if (part->isText()) {
-            // convert CRLF to LF before writing text attachments to disk
-            data = KMime::CRLFtoLF(data);
-        }
-        const auto name = part->filename();
-        QString fname = path + name;
+    Q_ASSERT(part);
+    auto node = part->node();
+    auto data = node->decodedContent();
+    // This is necessary to store messages embedded messages (EncapsulatedRfc822MessagePart)
+    if (data.isEmpty()) {
+        data = node->encodedContent();
+    }
+    if (part->isText()) {
+        // convert CRLF to LF before writing text attachments to disk
+        data = KMime::CRLFtoLF(data);
+    }
+    const auto name = part->filename();
+    QString fname = path + name;
 
-        // Fallback name should we end up with an empty name
-        if (name.isEmpty()) {
-            fname = path + QStringLiteral("unnamed");
-            while (QFileInfo::exists(fname)) {
-                fname = fname + QStringLiteral("_1");
-            }
+    // Fallback name should we end up with an empty name
+    if (name.isEmpty()) {
+        fname = path + QStringLiteral("unnamed");
+        while (QFileInfo::exists(fname)) {
+            fname = fname + QStringLiteral("_1");
         }
+    }
 
-        // A file with that name already exists, we assume it's the right file
-        if (QFileInfo::exists(fname)) {
-            return fname;
-        }
-        QFile f(fname);
-        if (!f.open(QIODevice::ReadWrite)) {
-            qWarning() << "Failed to write attachment to file:" << fname << " Error: " << f.errorString();
-            // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", QObject::tr("Failed to save attachment.")}});
-            return {};
-        }
-        f.write(data);
-        if (readonly) {
-            // make file read-only so that nobody gets the impression that he migh edit attached files
-            f.setPermissions(QFileDevice::ReadUser);
-        }
-        f.close();
-        qInfo() << "Wrote attachment to file: " << fname;
+    // A file with that name already exists, we assume it's the right file
+    if (QFileInfo::exists(fname)) {
         return fname;
     }
-    return {};
+    QFile f(fname);
+    if (!f.open(QIODevice::ReadWrite)) {
+        qWarning() << "Failed to write attachment to file:" << fname << " Error: " << f.errorString();
+        // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", QObject::tr("Failed to save attachment.")}});
+        return {};
+    }
+    f.write(data);
+    if (readonly) {
+        // make file read-only so that nobody gets the impression that he migh edit attached files
+        f.setPermissions(QFileDevice::ReadUser);
+    }
+    f.close();
+    qInfo() << "Wrote attachment to file: " << fname;
+    return fname;
 }
 
-bool AttachmentModel::saveAttachmentToDisk(const QModelIndex &index)
+bool AttachmentModel::saveAttachmentToDisk(const int row)
+{
+    const auto part = d->mAttachments.at(row);
+    return saveAttachmentToDisk(part);
+}
+
+bool AttachmentModel::saveAttachmentToDisk(const MimeTreeParser::MessagePart::Ptr &message)
 {
     QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     if (downloadDir.isEmpty()) {
         downloadDir = QStringLiteral("~");
     }
-    downloadDir += QStringLiteral("/kalendar/");
+    downloadDir += qGuiApp->applicationName();
     QDir{}.mkpath(downloadDir);
 
-    auto path = internalSaveAttachmentToDisk(index, downloadDir);
+    auto path = internalSaveAttachmentToDisk(message, downloadDir);
     if (path.isEmpty()) {
         return false;
     }
@@ -224,11 +229,17 @@ bool AttachmentModel::saveAttachmentToDisk(const QModelIndex &index)
     return true;
 }
 
-bool AttachmentModel::openAttachment(const QModelIndex &index)
+bool AttachmentModel::openAttachment(const int row)
 {
-    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + QStringLiteral("/kalendar/");
+    const auto part = d->mAttachments.at(row);
+    return openAttachment(part);
+}
+
+bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
+{
+    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + qGuiApp->applicationName();
     QDir{}.mkpath(downloadDir);
-    const auto filePath = internalSaveAttachmentToDisk(index, downloadDir, true);
+    const auto filePath = internalSaveAttachmentToDisk(message, downloadDir, true);
     if (!filePath.isEmpty()) {
         if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
             // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", tr("Failed to open attachment.")}});
@@ -240,10 +251,14 @@ bool AttachmentModel::openAttachment(const QModelIndex &index)
     return false;
 }
 
-bool AttachmentModel::importPublicKey(const QModelIndex &index)
+bool AttachmentModel::importPublicKey(const int row)
 {
-    Q_ASSERT(index.internalPointer());
-    const auto part = static_cast<MimeTreeParser::MessagePart *>(index.internalPointer());
+    const auto part = d->mAttachments.at(row);
+    return importPublicKey(part);
+}
+
+bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &part)
+{
     Q_ASSERT(part);
     auto result = Crypto::importKey(Crypto::OpenPGP, part->node()->decodedContent());
 

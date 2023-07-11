@@ -10,6 +10,7 @@
 #include <memory>
 
 /// MessageViewer that displays the given KMime::Message::Ptr
+/// \author Carl Schwan <carl.schwan@gnupg.com>
 class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
 {
 public:

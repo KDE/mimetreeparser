@@ -23,8 +23,6 @@ class QTextCodec;
 namespace MimeTreeParser
 {
 
-typedef QSharedPointer<MessagePart> MessagePartPtr;
-
 /**
     Entry point to parse mime messages.
 
@@ -59,11 +57,11 @@ public:
       the children of that node and it's next sibling. */
     void parseObjectTree(KMime::Content *node);
     void parseObjectTree(const QByteArray &mimeMessage);
-    MessagePartPtr parsedPart() const;
+    MessagePart::Ptr parsedPart() const;
     KMime::Content *find(const std::function<bool(KMime::Content *)> &select);
-    QVector<MessagePartPtr> collectContentParts();
-    QVector<MessagePartPtr> collectContentParts(MessagePart::Ptr start);
-    QVector<MessagePartPtr> collectAttachmentParts();
+    MessagePart::List collectContentParts();
+    MessagePart::List collectContentParts(MessagePart::Ptr start);
+    MessagePart::List collectAttachmentParts();
 
     /** Decrypt parts and verify signatures */
     void decryptAndVerify();
@@ -81,15 +79,15 @@ private:
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
      * top-level content.
      */
-    MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    QVector<MessagePartPtr> processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType);
+    MessagePart::Ptr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
+    MessagePart::List processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType);
 
-    QVector<MessagePartPtr> defaultHandling(KMime::Content *node);
+    MessagePart::List defaultHandling(KMime::Content *node);
 
     const QTextCodec *codecFor(KMime::Content *node) const;
 
     KMime::Content *mTopLevelContent{nullptr};
-    MessagePartPtr mParsedPart;
+    MessagePart::Ptr mParsedPart;
 
     KMime::Message::Ptr mMsg;
 

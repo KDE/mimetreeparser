@@ -174,9 +174,9 @@ public:
     }
 
     PartModel *q;
-    QVector<MimeTreeParser::MessagePartPtr> mParts;
+    MimeTreeParser::MessagePart::List mParts;
     QHash<MimeTreeParser::MessagePart *, QByteArray> mMimeTypeCache;
-    QHash<MimeTreeParser::MessagePart *, QVector<MimeTreeParser::MessagePartPtr>> mEncapsulatedParts;
+    QHash<MimeTreeParser::MessagePart *, MimeTreeParser::MessagePart::List> mEncapsulatedParts;
     QHash<MimeTreeParser::MessagePart *, MimeTreeParser::MessagePart *> mParents;
     QMap<MimeTreeParser::MessagePart *, QVariant> mContents;
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;

@@ -4,6 +4,7 @@
 #pragma once
 
 #include "crypto.h"
+#include "mimetreeparser_core_export.h"
 #include "partmetadata.h"
 
 #include <KMime/Message>
@@ -36,7 +37,7 @@ using Crypto::CryptoProtocol::CMS;
 using Crypto::CryptoProtocol::OpenPGP;
 using Crypto::CryptoProtocol::UnknownProtocol;
 
-class MessagePart : public QObject
+class MIMETREEPARSER_CORE_EXPORT MessagePart : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool attachment READ isAttachment CONSTANT)
@@ -46,7 +47,8 @@ class MessagePart : public QObject
     Q_PROPERTY(QString htmlContent READ htmlContent CONSTANT)
 public:
     enum Disposition { Inline, Attachment, Invalid };
-    typedef QSharedPointer<MessagePart> Ptr;
+    using Ptr = QSharedPointer<MessagePart>;
+    using List = QVector<Ptr>;
     MessagePart(ObjectTreeParser *otp, const QString &text, KMime::Content *node = nullptr);
 
     virtual ~MessagePart();

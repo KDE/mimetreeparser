@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "mimetreeparser_core_export.h"
+#include "objecttreeparser.h"
 #include <QAbstractTableModel>
 #include <QModelIndex>
 
@@ -15,7 +17,7 @@ class ObjectTreeParser;
 }
 class AttachmentModelPrivate;
 
-class AttachmentModel : public QAbstractTableModel
+class MIMETREEPARSER_CORE_EXPORT AttachmentModel : public QAbstractTableModel
 {
     Q_OBJECT
 public:
@@ -30,9 +32,16 @@ public:
         SizeRole,
         IsEncryptedRole,
         IsSignedRole,
+        AttachmentPartRole,
     };
 
-    enum Columns { NameColumn = 0, SizeColumn, IsEncryptedColumn, IsSignedColumn, ColumnCount };
+    enum Columns {
+        NameColumn = 0,
+        SizeColumn,
+        IsEncryptedColumn,
+        IsSignedColumn,
+        ColumnCount,
+    };
 
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
@@ -40,10 +49,13 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    Q_INVOKABLE bool saveAttachmentToDisk(const QModelIndex &parent);
-    Q_INVOKABLE bool openAttachment(const QModelIndex &index);
+    Q_INVOKABLE bool saveAttachmentToDisk(const int row);
+    Q_INVOKABLE bool openAttachment(const int row);
+    Q_INVOKABLE bool importPublicKey(const int row);
 
-    Q_INVOKABLE bool importPublicKey(const QModelIndex &index);
+    bool saveAttachmentToDisk(const MimeTreeParser::MessagePart::Ptr &message);
+    bool openAttachment(const MimeTreeParser::MessagePart::Ptr &message);
+    bool importPublicKey(const MimeTreeParser::MessagePart::Ptr &message);
 
 private:
     std::unique_ptr<AttachmentModelPrivate> d;

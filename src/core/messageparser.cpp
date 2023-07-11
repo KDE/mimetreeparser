@@ -75,7 +75,7 @@ PartModel *MessageParser::parts() const
     return model;
 }
 
-QAbstractItemModel *MessageParser::attachments() const
+AttachmentModel *MessageParser::attachments() const
 {
     if (!d->mParser) {
         return nullptr;

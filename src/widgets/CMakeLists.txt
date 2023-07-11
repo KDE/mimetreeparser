@@ -15,6 +15,8 @@ add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserWidgets
 target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PRIVATE
      messageviewer.h
      messageviewer.cpp
+     attachmentview_p.h
+     attachmentview.cpp
 )
 
 ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
