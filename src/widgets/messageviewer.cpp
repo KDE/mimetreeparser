@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QScrollArea>
 #include <QSplitter>
+#include <QTreeView>
 #include <QVBoxLayout>
 
 class MessageViewer::Private
@@ -18,6 +19,7 @@ public:
     QVector<QWidget *> widgets;
     QScrollArea *scrollArea = nullptr;
     QFormLayout *formLayout = nullptr;
+    QTreeView *attachmentView = nullptr;
 };
 
 MessageViewer::MessageViewer(QWidget *parent)
@@ -38,6 +40,9 @@ MessageViewer::MessageViewer(QWidget *parent)
     addWidget(scrollArea);
 
     d->layout = new QVBoxLayout(scrollArea);
+
+    d->attachmentView = new QTreeView(this);
+    addWidget(d->attachmentView);
 }
 
 MessageViewer::~MessageViewer()
@@ -88,4 +93,6 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
             qWarning() << parts->data(parts->index(i, 0), PartModel::ContentRole) << type;
         }
     }
+
+    d->attachmentView->setModel(d->parser.attachments());
 }

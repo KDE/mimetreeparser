@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("mimetreeparser");
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("View mbox file"));
     parser.addPositionalArgument(QStringLiteral("file"), i18n("mbox file"));

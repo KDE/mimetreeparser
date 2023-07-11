@@ -13,6 +13,7 @@
 #include <QDesktopServices>
 #include <QDir>
 #include <QFile>
+#include <QIcon>
 #include <QMimeDatabase>
 #include <QStandardPaths>
 #include <QUrl>
@@ -57,7 +58,8 @@ AttachmentModelPrivate::AttachmentModelPrivate(AttachmentModel *q_ptr, const std
 }
 
 AttachmentModel::AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser)
-    : d(std::unique_ptr<AttachmentModelPrivate>(new AttachmentModelPrivate(this, parser)))
+    : QAbstractTableModel()
+    , d(std::unique_ptr<AttachmentModelPrivate>(new AttachmentModelPrivate(this, parser)))
 {
 }
 
@@ -77,55 +79,84 @@ QHash<int, QByteArray> AttachmentModel::roleNames() const
     };
 }
 
-QModelIndex AttachmentModel::index(int row, int column, const QModelIndex &) const
+QVariant AttachmentModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (row < 0 || column != 0) {
-        return {};
-    }
-
-    if (row < d->mAttachments.size()) {
-        return createIndex(row, column, d->mAttachments.at(row).data());
+    if (orientation == Qt::Horizontal && role == Qt::DisplayRole) {
+        switch (section) {
+        case NameColumn:
+            return i18n("Name");
+        case SizeColumn:
+            return i18n("Size");
+        case IsEncryptedColumn:
+            return i18n("Encrypted");
+        case IsSignedColumn:
+            return i18n("Signed");
+        }
     }
     return {};
 }
 
 QVariant AttachmentModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
-        switch (role) {
-        case Qt::DisplayRole:
-            return QLatin1String("root");
-        }
+    const auto row = index.row();
+    const auto column = index.column();
+
+    const auto part = d->mAttachments.at(row);
+    Q_ASSERT(part);
+    auto node = part->node();
+    if (!node) {
+        qWarning() << "no content for attachment";
         return {};
     }
+    QMimeDatabase mimeDb;
+    const auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(part->mimeType()));
+    const auto content = node->encodedContent();
 
-    if (index.internalPointer()) {
-        const auto part = static_cast<MimeTreeParser::MessagePart *>(index.internalPointer());
-        Q_ASSERT(part);
-        auto node = part->node();
-        if (!node) {
-            qWarning() << "no content for attachment";
-            return {};
-        }
-        QMimeDatabase mimeDb;
-        const auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(part->mimeType()));
-        const auto content = node->encodedContent();
+    switch (column) {
+    case NameColumn:
         switch (role) {
         case TypeRole:
             return mimetype.name();
+        case Qt::DisplayRole:
         case NameRole:
             return part->filename();
         case IconRole:
             return mimetype.iconName();
+        case Qt::DecorationRole:
+            return QIcon::fromTheme(mimetype.iconName());
         case SizeRole:
             return sizeHuman(content.size());
         case IsEncryptedRole:
             return part->encryptions().size() > 0;
         case IsSignedRole:
             return part->signatures().size() > 0;
+        default:
+            return {};
         }
+    case SizeColumn:
+        switch (role) {
+        case Qt::DisplayRole:
+            return sizeHuman(content.size());
+        default:
+            return {};
+        }
+    case IsEncryptedColumn:
+        switch (role) {
+        case Qt::CheckStateRole:
+            return part->encryptions().size() > 0 ? Qt::Checked : Qt::Unchecked;
+        default:
+            return {};
+        }
+    case IsSignedColumn:
+        switch (role) {
+        case Qt::CheckStateRole:
+            return part->signatures().size() > 0 ? Qt::Checked : Qt::Unchecked;
+        default:
+            return {};
+        }
+    default:
+        return {};
     }
-    return QVariant();
 }
 
 static QString internalSaveAttachmentToDisk(const QModelIndex &index, const QString &path, bool readonly = false)
@@ -233,11 +264,6 @@ bool AttachmentModel::importPublicKey(const QModelIndex &index)
     return success;
 }
 
-QModelIndex AttachmentModel::parent(const QModelIndex &) const
-{
-    return {};
-}
-
 int AttachmentModel::rowCount(const QModelIndex &parent) const
 {
     if (!parent.isValid()) {
@@ -246,7 +272,10 @@ int AttachmentModel::rowCount(const QModelIndex &parent) const
     return 0;
 }
 
-int AttachmentModel::columnCount(const QModelIndex &) const
+int AttachmentModel::columnCount(const QModelIndex &parent) const
 {
-    return 1;
+    if (!parent.isValid()) {
+        return ColumnCount;
+    }
+    return 0;
 }
