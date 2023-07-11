@@ -3,15 +3,18 @@
 
 #pragma once
 
+#include "mimetreeparser_widgets_export.h"
 #include <KMime/Message>
-#include <QScrollArea>
+#include <QSplitter>
+#include <QWidget>
 #include <memory>
 
 /// MessageViewer that displays the given KMime::Message::Ptr
-class MessageViewer : public QScrollArea
+class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
 {
 public:
     explicit MessageViewer(QWidget *parent = nullptr);
+    ~MessageViewer();
 
     KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);

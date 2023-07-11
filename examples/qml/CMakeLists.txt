@@ -10,7 +10,6 @@ add_executable(mimetreeparser-qml
 
 find_package(Qt${KF_MAJOR_VERSION}Qml ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(Qt${KF_MAJOR_VERSION}Widgets ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim${KF_MAJOR_VERSION}Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 target_link_libraries(mimetreeparser-qml PUBLIC
     Qt::Quick

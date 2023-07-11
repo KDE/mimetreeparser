@@ -13,6 +13,7 @@ void MimeTreeParserPlugin::registerTypes(const char *uri)
 
     qmlRegisterModule(uri, 1, 0);
     qmlRegisterType<MessageParser>(uri, 1, 0, "MessageParser");
+    qRegisterMetaType<PartModel::Types>("PartModel::Types");
     qmlRegisterUncreatableType<PartModel>(uri, 1, 0, "PartModel", QStringLiteral("not instanciated"));
 }
 

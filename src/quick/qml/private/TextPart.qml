@@ -13,7 +13,6 @@ Item {
 
     property string content
     property bool embedded: true
-    property string type
     property bool autoLoadImages: false
 
     property string searchString

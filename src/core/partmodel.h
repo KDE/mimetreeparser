@@ -31,6 +31,16 @@ public:
     static std::pair<QString, bool> trim(const QString &text);
 
 public:
+    enum class Types : quint8 {
+        Error,
+        Encapsulated,
+        Ical,
+        Plain,
+        None,
+        Html,
+    };
+    Q_ENUM(Types);
+
     enum Roles {
         TypeRole = Qt::UserRole + 1,
         ContentRole,

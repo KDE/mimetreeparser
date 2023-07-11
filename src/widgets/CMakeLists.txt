@@ -40,6 +40,7 @@ PUBLIC
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 PRIVATE
     KF${KF_MAJOR_VERSION}::Codecs
+    KF${KF_MAJOR_VERSION}::I18n
     Gpgme::Gpgme
 )
 

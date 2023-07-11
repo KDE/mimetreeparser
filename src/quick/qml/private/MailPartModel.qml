@@ -114,26 +114,25 @@ DelegateModel {
                 Layout.fillWidth: true
 
                 Component.onCompleted: {
-                    switch (model.type) {
-                        case "plain":
+                    switch (model.type + 0) {
+                        case PartModel.Plain:
                             partLoader.setSource("TextPart.qml", {
                                 content: model.content,
                                 embedded: model.embedded,
-                                type: model.type
                             })
                             break
-                        case "html":
+                        case PartModel.Html:
                             partLoader.setSource("HtmlPart.qml", {
                                 content: model.content,
                             })
                             break;
-                        case "error":
+                        case PartModel.Error:
                             partLoader.setSource("ErrorPart.qml", {
                                 errorType: model.errorType,
                                 errorString: model.errorString,
                             })
                             break;
-                        case "encapsulated":
+                        case PartModel.Encapsulated:
                             partLoader.setSource("MailPart.qml", {
                                 rootIndex: root.modelIndex(index),
                                 model: root.model,
@@ -141,7 +140,7 @@ DelegateModel {
                                 date: model.date,
                             })
                             break;
-                        case "ical":
+                        case PartModel.Ical:
                             partLoader.setSource("ICalPart.qml", {
                                 content: model.content,
                             })

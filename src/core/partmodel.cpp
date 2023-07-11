@@ -344,14 +344,14 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         }
         case TypeRole: {
             if (messagePart->error()) {
-                return QStringLiteral("error");
+                return QVariant::fromValue(Types::Error);
             }
             if (dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(messagePart)) {
-                return QStringLiteral("encapsulated");
+                return QVariant::fromValue(Types::Encapsulated);
             }
             if (auto alternativePart = dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(messagePart)) {
                 if (alternativePart->availableModes().contains(MimeTreeParser::AlternativeMessagePart::MultipartIcal)) {
-                    return QStringLiteral("ical");
+                    return QVariant::fromValue(Types::Ical);
                 }
             }
             if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
@@ -361,11 +361,11 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                     return {};
                 }
                 if (d->mMimeTypeCache[attachmentPart] == "text/calendar") {
-                    return QStringLiteral("ical");
+                    return QVariant::fromValue(Types::Ical);
                 }
             }
             if (!d->showHtml && d->containsHtmlAndPlain) {
-                return QStringLiteral("plain");
+                return QVariant::fromValue(Types::Plain);
             }
             // For simple html we don't need a browser
             auto complexHtml = [&] {
@@ -396,9 +396,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                 }
             }();
             if (complexHtml) {
-                return QStringLiteral("html");
+                return QVariant::fromValue(Types::Html);
             }
-            return QStringLiteral("plain");
+            return QVariant::fromValue(Types::Plain);
         }
         case IsEmbeddedRole:
             return false;
