@@ -57,6 +57,9 @@ public:
     bool openAttachment(const MimeTreeParser::MessagePart::Ptr &message);
     bool importPublicKey(const MimeTreeParser::MessagePart::Ptr &message);
 
+Q_SIGNALS:
+    void info(const QString &message);
+
 private:
     std::unique_ptr<AttachmentModelPrivate> d;
 };

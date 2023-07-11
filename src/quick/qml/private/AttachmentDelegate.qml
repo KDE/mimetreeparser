@@ -10,10 +10,11 @@ import QtQuick.Controls 2.15 as QQC2
 QQC2.AbstractButton {
     id: root
 
-    property string name
-    property string type
+    required property string name
+    required property string type
     property alias actionIcon: actionButton.icon.name
     property alias actionTooltip: actionButtonTooltip.text
+
     signal execute;
     signal publicKeyImport;
 

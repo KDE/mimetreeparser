@@ -169,19 +169,30 @@ Kirigami.Page {
                 model: mailPartView.attachmentModel
 
                 delegate: AttachmentDelegate {
-                    name: model.name
-                    type: model.type
-                    icon.name: model.iconName
+                    id: attachmentDelegate
+
+                    required property int index
+                    required property string iconName
+
+                    icon.name: iconName
 
                     clip: true
 
                     actionIcon: 'download'
                     actionTooltip: i18n("Save attachment")
-                    onExecute: mailPartView.attachmentModel.saveAttachmentToDisk(mailPartView.attachmentModel.index(index, 0))
-                    onClicked: mailPartView.attachmentModel.openAttachment(mailPartView.attachmentModel.index(index, 0))
-                    onPublicKeyImport: mailPartView.attachmentModel.importPublicKey(mailPartView.attachmentModel.index(index, 0))
+                    onExecute: mailPartView.attachmentModel.saveAttachmentToDisk(index)
+                    onClicked: mailPartView.attachmentModel.openAttachment(index)
+                    onPublicKeyImport: mailPartView.attachmentModel.importPublicKey(index)
                 }
             }
+        }
+    }
+
+    Connections {
+        target: mailPartView.attachmentModel
+
+        function onInfo(message) {
+            applicationWindow().showPassiveNotification(message);
         }
     }
 }

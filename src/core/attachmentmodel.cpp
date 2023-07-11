@@ -162,7 +162,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     }
 }
 
-static QString internalSaveAttachmentToDisk(const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly = false)
+static QString internalSaveAttachmentToDisk(AttachmentModel *model, const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly = false)
 {
     Q_ASSERT(part);
     auto node = part->node();
@@ -193,7 +193,7 @@ static QString internalSaveAttachmentToDisk(const MimeTreeParser::MessagePart::P
     QFile f(fname);
     if (!f.open(QIODevice::ReadWrite)) {
         qWarning() << "Failed to write attachment to file:" << fname << " Error: " << f.errorString();
-        // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", QObject::tr("Failed to save attachment.")}});
+        Q_EMIT model->info(i18n("Failed to save attachment."));
         return {};
     }
     f.write(data);
@@ -218,14 +218,14 @@ bool AttachmentModel::saveAttachmentToDisk(const MimeTreeParser::MessagePart::Pt
     if (downloadDir.isEmpty()) {
         downloadDir = QStringLiteral("~");
     }
-    downloadDir += qGuiApp->applicationName();
+    downloadDir += QLatin1Char('/') + qGuiApp->applicationName();
     QDir{}.mkpath(downloadDir);
 
-    auto path = internalSaveAttachmentToDisk(message, downloadDir);
+    auto path = internalSaveAttachmentToDisk(this, message, downloadDir);
     if (path.isEmpty()) {
         return false;
     }
-    // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", tr("Saved the attachment to disk: %1").arg(path)}});
+    Q_EMIT info(i18n("Saved the attachment to disk: %1", path));
     return true;
 }
 
@@ -237,17 +237,17 @@ bool AttachmentModel::openAttachment(const int row)
 
 bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
 {
-    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + qGuiApp->applicationName();
+    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + QLatin1Char('/') + qGuiApp->applicationName();
     QDir{}.mkpath(downloadDir);
-    const auto filePath = internalSaveAttachmentToDisk(message, downloadDir, true);
+    const auto filePath = internalSaveAttachmentToDisk(this, message, downloadDir, true);
     if (!filePath.isEmpty()) {
         if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
-            // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", tr("Failed to open attachment.")}});
+            Q_EMIT info(i18n("Failed to open attachment."));
             return false;
         }
         return true;
     }
-    // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", tr("Failed to save attachment for opening.")}});
+    Q_EMIT info(i18n("Failed to save attachment for opening."));
     return false;
 }
 
@@ -274,7 +274,7 @@ bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &pa
         }
     }
 
-    // Kube::Fabric::Fabric{}.postMessage("notification", {{"message", message}});
+    Q_EMIT info(message);
 
     return success;
 }
