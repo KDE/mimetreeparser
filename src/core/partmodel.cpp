@@ -141,6 +141,14 @@ public:
             }
             return addCss(mParser->resolveCidLinks(messagePart->htmlContent()));
         }
+
+        if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
+            auto node = attachmentPart->node();
+            if (node && mMimeTypeCache[attachmentPart] == "text/calendar") {
+                return messagePart->text();
+            }
+        }
+
         return preprocessPlaintext(messagePart->text());
     }
 

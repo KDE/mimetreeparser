@@ -492,8 +492,10 @@ QString MimeMessagePart::htmlContent() const
 AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Content *node)
     : MessagePart(otp, QString(), node)
 {
+    qWarning() << "AlternativeMessagePart";
     if (auto dataIcal = findTypeInDirectChildren(mNode, "text/calendar")) {
         mChildParts[MultipartIcal] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, dataIcal, true));
+        return;
     }
 
     if (auto dataText = findTypeInDirectChildren(mNode, "text/plain")) {

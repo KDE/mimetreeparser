@@ -43,6 +43,7 @@ PUBLIC
 PRIVATE
     KF${KF_MAJOR_VERSION}::Codecs
     KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::CalendarCore
     Gpgme::Gpgme
 )
 

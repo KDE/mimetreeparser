@@ -71,12 +71,14 @@ class MultiPartMixedBodyPartFormatter : public MimeTreeParser::Interface::BodyPa
 public:
     MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
     {
-        if (node->contents().isEmpty()) {
+        const auto contents = node->contents();
+        if (contents.isEmpty()) {
             return {};
         }
+
         // we need the intermediate part to preserve the headers (necessary for with protected headers using multipart mixed)
         auto part = MessagePart::Ptr(new MessagePart(objectTreeParser, {}, node));
-        part->appendSubPart(MimeMessagePart::Ptr(new MimeMessagePart(objectTreeParser, node->contents().at(0), false)));
+        part->appendSubPart(MimeMessagePart::Ptr(new MimeMessagePart(objectTreeParser, contents.at(0), false)));
         return part;
     }
 };

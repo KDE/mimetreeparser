@@ -204,7 +204,18 @@ MessagePart::List ObjectTreeParser::collectContentParts(MessagePart::Ptr start)
                 if (enc && enc->error()) {
                     return false;
                 }
-                return true;
+
+                // Don't select text part if it's an alternative to an invitation text
+                const auto &siblingsParts = text->parentPart()->subParts();
+                for (const auto &siblingsPart : siblingsParts) {
+                    if (const auto attachment = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(siblingsPart.data())) {
+                        if (attachment->mimeType() == "text/calendar") {
+                            return false;
+                        }
+                    }
+                }
+
+                return false;
             } else if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
                 return true;
             } else if (dynamic_cast<MimeTreeParser::HtmlMessagePart *>(part.data())) {

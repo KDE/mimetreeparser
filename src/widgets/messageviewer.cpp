@@ -1,6 +1,9 @@
 #include "messageviewer.h"
 #include "../core/objecttreeparser.h"
 #include "attachmentview_p.h"
+#include <KCalendarCore/Event>
+#include <KCalendarCore/ICalFormat>
+#include <KCalendarCore/Incidence>
 #include <KLocalizedString>
 #include <MimeTreeParserCore/AttachmentModel>
 #include <MimeTreeParserCore/MessageParser>
@@ -8,6 +11,7 @@
 #include <QAction>
 #include <QDebug>
 #include <QFormLayout>
+#include <QGroupBox>
 #include <QLabel>
 #include <QMenu>
 #include <QScrollArea>
@@ -128,10 +132,13 @@ MessageViewer::MessageViewer(QWidget *parent)
 
     d->formLayout = new QFormLayout(headersArea);
 
-    auto scrollArea = new QScrollArea(this);
-    addWidget(scrollArea);
+    auto widget = new QWidget(this);
+    d->layout = new QVBoxLayout(widget);
+    d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
 
-    d->layout = new QVBoxLayout(scrollArea);
+    auto scrollArea = new QScrollArea(this);
+    scrollArea->setWidget(widget);
+    addWidget(scrollArea);
 
     d->attachmentView = new AttachmentView(this);
     addWidget(d->attachmentView);
@@ -182,6 +189,32 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
             label->setText(content);
             d->widgets.append(label);
             d->layout->addWidget(label);
+            break;
+        }
+        case PartModel::Types::Ical: {
+            qWarning() << content;
+            KCalendarCore::ICalFormat format;
+            auto incidence = format.fromString(content);
+
+            auto widget = new QGroupBox;
+            widget->setTitle(i18n("Invitation"));
+
+            auto layout = new QFormLayout(widget);
+            layout->addRow(i18n("&Summary:"), new QLabel(incidence->summary()));
+            layout->addRow(i18n("&Organizer:"), new QLabel(incidence->organizer().fullName()));
+            if (incidence->location().length() > 0) {
+                layout->addRow(i18n("&Location:"), new QLabel(incidence->location()));
+            }
+            layout->addRow(i18n("&Start date:"), new QLabel(incidence->dtStart().toLocalTime().toString()));
+            if (const auto event = incidence.dynamicCast<KCalendarCore::Event>()) {
+                layout->addRow(i18n("&End date:"), new QLabel(event->dtEnd().toLocalTime().toString()));
+            }
+            if (incidence->description().length() > 0) {
+                layout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
+            }
+
+            d->widgets.append(widget);
+            d->layout->addWidget(widget);
             break;
         }
 
