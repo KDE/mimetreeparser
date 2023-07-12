@@ -40,8 +40,6 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     }
     d->mMessage = message;
 
-    qWarning() << "set message c++" << message;
-
     QElapsedTimer time;
     time.start();
     auto parser = std::make_shared<MimeTreeParser::ObjectTreeParser>();
