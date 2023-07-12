@@ -136,9 +136,6 @@ MessageViewer::MessageViewer(QWidget *parent)
     d->attachmentView = new AttachmentView(this);
     addWidget(d->attachmentView);
 
-    connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
-        d->selectionChanged();
-    });
     connect(d->attachmentView, &AttachmentView::contextMenuRequested, this, [this] {
         d->selectionChanged();
         d->showContextMenu();
@@ -195,4 +192,8 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     }
 
     d->attachmentView->setModel(d->parser.attachments());
+
+    connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
+        d->selectionChanged();
+    });
 }

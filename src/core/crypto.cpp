@@ -212,7 +212,10 @@ static DecryptionResult::Result toResult(gpgme_error_t err)
         return DecryptionResult::NoSecretKeyError;
     } else if (err == GPG_ERR_CANCELED || err == GPG_ERR_INV_PASSPHRASE) {
         return DecryptionResult::PassphraseError;
+    } else if (err == GPG_ERR_NO_ERROR) {
+        return DecryptionResult::NoSecretKeyError;
     }
+
     qWarning() << "unknown error" << err << gpgme_strerror(err);
     return DecryptionResult::NoSecretKeyError;
 }

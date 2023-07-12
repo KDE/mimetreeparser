@@ -15,14 +15,11 @@ void FileOpener::open(const QUrl &url)
     QMimeDatabase db;
     QMimeType mime = db.mimeTypeForFile(fileName);
 
-    qWarning() << mime;
-
     if (mime.inherits(QStringLiteral("application/mbox"))) {
         KMBox::MBox mbox;
         mbox.load(url.toLocalFile());
         const auto entries = mbox.entries();
         KMime::Message::Ptr message(mbox.readMessage(entries[0]));
-        qWarning().noquote() << message->encodedContent();
         Q_EMIT messageOpened(message);
         return;
     }
