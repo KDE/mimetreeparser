@@ -134,7 +134,6 @@ MessageViewer::MessageViewer(QWidget *parent)
     d->formLayout = new QFormLayout(headersArea);
 
     auto widget = new QWidget(this);
-    widget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
     d->layout = new QVBoxLayout(widget);
     d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
 
@@ -142,6 +141,7 @@ MessageViewer::MessageViewer(QWidget *parent)
     scrollArea->setWidget(widget);
     scrollArea->setWidgetResizable(true);
     addWidget(scrollArea);
+    setStretchFactor(1, 2);
 
     d->attachmentView = new AttachmentView(this);
     addWidget(d->attachmentView);

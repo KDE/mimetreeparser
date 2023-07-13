@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     auto messageViewer = new MessageViewer;
 
     QMainWindow mainWindow;
+    mainWindow.setMinimumSize(800, 600);
     mainWindow.setCentralWidget(messageViewer);
     mainWindow.show();
 
