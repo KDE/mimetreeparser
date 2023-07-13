@@ -65,6 +65,7 @@ public:
     void selectionChanged();
     void showContextMenu();
     void importPublicKey();
+    void recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent);
 };
 
 void MessageViewer::Private::openSelectedAttachments()
@@ -133,11 +134,13 @@ MessageViewer::MessageViewer(QWidget *parent)
     d->formLayout = new QFormLayout(headersArea);
 
     auto widget = new QWidget(this);
+    widget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
     d->layout = new QVBoxLayout(widget);
     d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
 
     auto scrollArea = new QScrollArea(this);
     scrollArea->setWidget(widget);
+    scrollArea->setWidgetResizable(true);
     addWidget(scrollArea);
 
     d->attachmentView = new AttachmentView(this);
@@ -160,6 +163,75 @@ KMime::Message::Ptr MessageViewer::message() const
     return d->parser.message();
 }
 
+void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent)
+{
+    for (int i = 0, count = parts->rowCount(parent); i < count; i++) {
+        const auto type = static_cast<PartModel::Types>(parts->data(parts->index(i, 0, parent), PartModel::TypeRole).toUInt());
+        const auto content = parts->data(parts->index(i, 0, parent), PartModel::ContentRole).toString();
+
+        switch (type) {
+        case PartModel::Types::Plain: {
+            auto label = new QLabel();
+            label->setText(content);
+            widgets.append(label);
+            layout->addWidget(label);
+            break;
+        }
+        case PartModel::Types::Ical: {
+            KCalendarCore::ICalFormat format;
+            auto incidence = format.fromString(content);
+
+            auto widget = new QGroupBox;
+            widget->setTitle(i18n("Invitation"));
+
+            auto incidenceLayout = new QFormLayout(widget);
+            incidenceLayout->addRow(i18n("&Summary:"), new QLabel(incidence->summary()));
+            incidenceLayout->addRow(i18n("&Organizer:"), new QLabel(incidence->organizer().fullName()));
+            if (incidence->location().length() > 0) {
+                incidenceLayout->addRow(i18n("&Location:"), new QLabel(incidence->location()));
+            }
+            incidenceLayout->addRow(i18n("&Start date:"), new QLabel(incidence->dtStart().toLocalTime().toString()));
+            if (const auto event = incidence.dynamicCast<KCalendarCore::Event>()) {
+                incidenceLayout->addRow(i18n("&End date:"), new QLabel(event->dtEnd().toLocalTime().toString()));
+            }
+            if (incidence->description().length() > 0) {
+                incidenceLayout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
+            }
+
+            widgets.append(widget);
+            layout->addWidget(widget);
+            break;
+        }
+        case PartModel::Types::Encapsulated: {
+            auto groupBox = new QGroupBox;
+            groupBox->setSizePolicy(QSizePolicy::MinimumExpanding, q->sizePolicy().verticalPolicy());
+            groupBox->setTitle(i18n("Encapsulated email"));
+
+            auto encapsulatedLayout = new QVBoxLayout(groupBox);
+
+            auto header = new QWidget(groupBox);
+            auto headerLayout = new QFormLayout(header);
+            const auto from = parts->data(parts->index(i, 0, parent), PartModel::SenderRole).toString();
+            const auto date = parts->data(parts->index(i, 0, parent), PartModel::DateRole).toDateTime();
+            headerLayout->addRow(i18n("From:"), new QLabel(from));
+            headerLayout->addRow(i18n("Date:"), new QLabel(date.toLocalTime().toString()));
+
+            encapsulatedLayout->addWidget(header);
+
+            recursiveBuildViewer(parts, encapsulatedLayout, parts->index(i, 0, parent));
+
+            widgets.append(groupBox);
+            layout->addWidget(groupBox);
+            break;
+        }
+
+        case PartModel::Types::Error:
+        default:
+            qWarning() << parts->data(parts->index(i, 0, parent), PartModel::ContentRole) << type;
+        }
+    }
+}
+
 void MessageViewer::setMessage(const KMime::Message::Ptr message)
 {
     d->parser.setMessage(message);
@@ -179,50 +251,8 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     }
     d->widgets.clear();
 
-    for (int i = 0, count = parts->rowCount(); i < count; i++) {
-        const auto type = static_cast<PartModel::Types>(parts->data(parts->index(i, 0), PartModel::TypeRole).toUInt());
-        const auto content = parts->data(parts->index(i, 0), PartModel::ContentRole).toString();
-
-        switch (type) {
-        case PartModel::Types::Plain: {
-            auto label = new QLabel();
-            label->setText(content);
-            d->widgets.append(label);
-            d->layout->addWidget(label);
-            break;
-        }
-        case PartModel::Types::Ical: {
-            qWarning() << content;
-            KCalendarCore::ICalFormat format;
-            auto incidence = format.fromString(content);
-
-            auto widget = new QGroupBox;
-            widget->setTitle(i18n("Invitation"));
-
-            auto layout = new QFormLayout(widget);
-            layout->addRow(i18n("&Summary:"), new QLabel(incidence->summary()));
-            layout->addRow(i18n("&Organizer:"), new QLabel(incidence->organizer().fullName()));
-            if (incidence->location().length() > 0) {
-                layout->addRow(i18n("&Location:"), new QLabel(incidence->location()));
-            }
-            layout->addRow(i18n("&Start date:"), new QLabel(incidence->dtStart().toLocalTime().toString()));
-            if (const auto event = incidence.dynamicCast<KCalendarCore::Event>()) {
-                layout->addRow(i18n("&End date:"), new QLabel(event->dtEnd().toLocalTime().toString()));
-            }
-            if (incidence->description().length() > 0) {
-                layout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
-            }
-
-            d->widgets.append(widget);
-            d->layout->addWidget(widget);
-            break;
-        }
-
-        case PartModel::Types::Error:
-        default:
-            qWarning() << parts->data(parts->index(i, 0), PartModel::ContentRole) << type;
-        }
-    }
+    d->recursiveBuildViewer(parts, d->layout, {});
+    d->layout->addStretch();
 
     d->attachmentView->setModel(d->parser.attachments());
 

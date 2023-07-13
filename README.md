@@ -9,7 +9,13 @@ encrypted part.
 
 Example usage of this library can be found in the examples folder.
 
+QML usage (examples/qml):
+
 ![](screenshots/screenshot.png)
+
+Widgets usage (examples/widgets):
+
+![](screenshots/widgets.png)
 
 ## License
 
