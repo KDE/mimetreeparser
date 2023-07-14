@@ -18,6 +18,8 @@
 #include <QSplitter>
 #include <QVBoxLayout>
 
+using namespace MimeTreeParser::Widgets;
+
 class MessageViewer::Private
 {
 public:

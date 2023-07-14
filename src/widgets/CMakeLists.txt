@@ -133,9 +133,14 @@ install(FILES
     COMPONENT Devel
 )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}MimeTreeParserTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
+install(EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsTargets.cmake
+    NAMESPACE KPim${KF_MAJOR_VERSION}::
+)
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_version.h
-   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets COMPONENT Devel
+   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets
+   COMPONENT Devel
 )

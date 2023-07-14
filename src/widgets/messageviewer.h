@@ -9,6 +9,11 @@
 #include <QWidget>
 #include <memory>
 
+namespace MimeTreeParser
+{
+namespace Widgets
+{
+
 /// MessageViewer that displays the given KMime::Message::Ptr
 /// \author Carl Schwan <carl.schwan@gnupg.com>
 class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
@@ -24,3 +29,6 @@ private:
     class Private;
     std::unique_ptr<Private> d;
 };
+
+} // end namespace Widgets
+} // end namespace MimeTreeParser
