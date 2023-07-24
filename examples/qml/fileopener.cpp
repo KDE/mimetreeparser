@@ -3,7 +3,7 @@
 
 #include "fileopener.h"
 #include <KMbox/MBox>
-#include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParserCore/ObjectTreeParser>
 #include <QDebug>
 #include <QFile>
 #include <QMimeDatabase>
@@ -17,12 +17,14 @@ void FileOpener::open(const QUrl &url)
 
     if (mime.inherits(QStringLiteral("application/mbox"))) {
         KMBox::MBox mbox;
-        mbox.load(url.toLocalFile());
-        const auto entries = mbox.entries();
-        if (!entries.isEmpty()) {
-            KMime::Message::Ptr message(mbox.readMessage(entries[0]));
-            Q_EMIT messageOpened(message);
-            return;
+        const auto ok = mbox.load(url.toLocalFile());
+        if (ok) {
+            const auto entries = mbox.entries();
+            if (!entries.isEmpty()) {
+                KMime::Message::Ptr message(mbox.readMessage(entries[0]));
+                Q_EMIT messageOpened(message);
+                return;
+            }
         }
     }
 

@@ -11,7 +11,7 @@
 #include <QQuickWindow>
 
 #include "fileopener.h"
-#include <MimeTreeParser/MessageParser>
+#include <MimeTreeParserCore/MessageParser>
 
 int main(int argc, char *argv[])
 {
