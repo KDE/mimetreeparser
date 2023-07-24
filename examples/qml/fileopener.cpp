@@ -19,9 +19,11 @@ void FileOpener::open(const QUrl &url)
         KMBox::MBox mbox;
         mbox.load(url.toLocalFile());
         const auto entries = mbox.entries();
-        KMime::Message::Ptr message(mbox.readMessage(entries[0]));
-        Q_EMIT messageOpened(message);
-        return;
+        if (!entries.isEmpty()) {
+            KMime::Message::Ptr message(mbox.readMessage(entries[0]));
+            Q_EMIT messageOpened(message);
+            return;
+        }
     }
 
     QFile file(url.toLocalFile());
@@ -70,7 +72,8 @@ void FileOpener::open(const QUrl &url)
 
         message->assemble();
     } else {
-        message->fromUnicodeString(QString::fromUtf8(content));
+        message->setContent(content);
+        message->parse();
     }
 
     Q_EMIT messageOpened(message);
