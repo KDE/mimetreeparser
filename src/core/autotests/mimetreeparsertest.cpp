@@ -514,6 +514,7 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
         QVERIFY(part);
         QCOMPARE(part->encryptions().size(), 0);
+        qWarning() << part;
         QCOMPARE(part->signatures().size(), 0);
         QVERIFY(part->isHtml());
         QVERIFY(part->availableModes().contains(MimeTreeParser::AlternativeMessagePart::MultipartIcal));
