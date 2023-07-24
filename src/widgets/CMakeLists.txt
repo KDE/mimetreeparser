@@ -33,7 +33,7 @@ endif()
 generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets BASE_NAME mimetreeparser_widgets)
 
 
-target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidget>")
+target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets>")
 target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PUBLIC "$<BUILD_INTERFACE:${Akonadi-Calendar_SOURCE_DIR}/src;${MimeTreeParserWidget_BINARY_DIR}/src>")
 
 target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets

@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     parser.process(app);
     const QStringList args = parser.positionalArguments();
 
-    auto messageViewer = new MessageViewer;
+    auto messageViewer = new MimeTreeParser::Widgets::MessageViewer;
 
     QMainWindow mainWindow;
     mainWindow.setMinimumSize(800, 600);
