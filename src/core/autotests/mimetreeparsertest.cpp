@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Sandro Knauß <knauss@kolabsystems.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include <objecttreeparser.h>
+#include <MimeTreeParserCore/ObjectTreeParser>
 
 #include <QDebug>
 #include <QTest>

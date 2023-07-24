@@ -12,7 +12,8 @@ function(add_mimetreeparser_class_unittest _name _additionalSource)
     add_executable(${_name} ${_name}.cpp setupenv.cpp ${_additionalSource})
     target_link_libraries(${_name} PRIVATE
         Qt::Test
-        kalendar_mail_static
+        mimetreeparserprivate
+        KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
     )
     target_include_directories(${_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
     add_test(NAME ${_name} COMMAND $<TARGET_FILE:${_name}>)
@@ -31,7 +32,8 @@ function(add_mimetreeparser_crypto_unittest _name)
     )
     target_link_libraries(${_name} PRIVATE
         Qt::Test
-        kalendar_mail_static
+        mimetreeparserprivate
+        KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
     )
     add_gpg_crypto_test(${_name} mimetreeparser-${_name})
 endfunction()
@@ -54,12 +56,14 @@ add_executable(mimetreeparsertest mimetreeparsertest.cpp)
 add_gpg_crypto_test(mimetreeparsertest mimetreeparsertest)
 target_link_libraries(mimetreeparsertest PUBLIC
     Qt::Test
-    kalendar_mail_static
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 
 add_executable(gpgerrortest gpgerrortest.cpp)
 target_link_libraries(gpgerrortest PUBLIC
     Qt::Test
-    kalendar_mail_static
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 add_test(NAME gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)

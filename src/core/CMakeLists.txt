@@ -8,53 +8,70 @@ ecm_setup_version(PROJECT
     SOVERSION 5
 )
 
+# private library
+
+add_library(mimetreeparserprivate STATIC)
+set_target_properties(mimetreeparserprivate PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_sources(mimetreeparserprivate PUBLIC
+     messagepart.h
+     messagepart.cpp
+     crypto.h
+     crypto.cpp
+     cryptohelper.h
+     cryptohelper.cpp
+     utils.h
+     utils.cpp
+)
+target_link_libraries(mimetreeparserprivate
+PUBLIC
+    KPim${KF_MAJOR_VERSION}::Mime
+    KF${KF_MAJOR_VERSION}::I18n
+    Qt${KF_MAJOR_VERSION}::Gui
+    KF${KF_MAJOR_VERSION}::Codecs
+    Gpgme::Gpgme
+)
+
+ecm_qt_declare_logging_category(mimetreeparserprivate
+    HEADER mimetreeparser_core_debug.h
+    IDENTIFIER MIMETREEPARSER_CORE_LOG
+    CATEGORY_NAME org.kde.pim.mimetreeparser.core
+    DESCRIPTION "mimetreeparser (pim lib)"
+    EXPORT MIMETREEPARSERNG
+)
+
+# public dynamic library
+
+
 add_library(KPim${KF_MAJOR_VERSION}MimeTreeParserCore)
 add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
     ALIAS KPim${KF_MAJOR_VERSION}MimeTreeParserCore
 )
 
 target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
-     crypto.h
-     crypto.cpp
      errors.h
-  
      async.h
      attachmentmodel.h
      bodypartformatter.h
      bodypartformatterbasefactory.h
      bodypartformatterbasefactory_p.h
-     cryptohelper.h
      enums.h
      htmlutils.h
      mailcrypto.h
      messageparser.h
-     messagepart.h
      mimetreeparser_debug.h
      objecttreeparser.h
      partmetadata.h
      partmodel.h
-     utils.h
      attachmentmodel.cpp
      bodypartformatter.cpp
      bodypartformatter_impl.cpp
      bodypartformatterbasefactory.cpp
-     cryptohelper.cpp
      htmlutils.cpp
      mailcrypto.cpp
      messageparser.cpp
-     messagepart.cpp
      mimetreeparser_debug.cpp
      objecttreeparser.cpp
      partmodel.cpp
-     utils.cpp
-)
-
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
-    HEADER mimetreeparser_core_debug.h
-    IDENTIFIER MIMETREEPARSER_CORE_LOG
-    CATEGORY_NAME org.kde.pim.mimetreeparser.core
-    DESCRIPTION "mimetreeparser (pim lib)"
-    EXPORT MIMETREEPARSERNG
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -74,8 +91,7 @@ PUBLIC
     KF${KF_MAJOR_VERSION}::I18n
     Qt${KF_MAJOR_VERSION}::Gui
 PRIVATE
-    KF${KF_MAJOR_VERSION}::Codecs
-    Gpgme::Gpgme
+    mimetreeparserprivate
 )
 
 set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PROPERTIES
@@ -173,3 +189,6 @@ install(EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserCoreTargets
     NAMESPACE KPim${KF_MAJOR_VERSION}::
 )
 
+if (BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()

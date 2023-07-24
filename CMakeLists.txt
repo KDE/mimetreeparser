@@ -52,7 +52,7 @@ set(KPIM_MIME_VERSION "5.23.40")
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSERNG
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserNgConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreConfigVersion.cmake"
     SOVERSION 5
 )
 
@@ -76,6 +76,10 @@ find_package(Gpgme REQUIRED)
 find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG)
 find_package(Qt${KF_MAJOR_VERSION}Widgets ${QT_MIN_VERSION} CONFIG)
 
+if (BUILD_TESTING)
+    find_package(Qt${KF_MAJOR_VERSION}Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+endif()
+
 ########### Targets ###########
 
 ecm_set_disabled_deprecation_versions(QT 6.4 KF 5.105.0)
@@ -90,10 +94,6 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(examples)
-
-if (BUILD_TESTING)
-    #add_subdirectory(autotests)
-endif ()
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h

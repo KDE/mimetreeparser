@@ -8,6 +8,7 @@
 
 #include "messagepart.h"
 
+#include "mimetreeparser_core_export.h"
 #include <QSharedPointer>
 #include <functional>
 
@@ -29,7 +30,7 @@ namespace MimeTreeParser
     Content returned by the ObjectTreeParser (including messageparts),
     is normalized to not contain any CRLF's but only LF's (just like KMime).
 */
-class ObjectTreeParser
+class MIMETREEPARSER_CORE_EXPORT ObjectTreeParser
 {
     // Disable copy
     ObjectTreeParser(const ObjectTreeParser &other);
