@@ -205,7 +205,7 @@ MessagePart::List ObjectTreeParser::collectContentParts(MessagePart::Ptr start)
                     return false;
                 }
 
-                return false;
+                return true;
             } else if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
                 return true;
             } else if (dynamic_cast<MimeTreeParser::HtmlMessagePart *>(part.data())) {
