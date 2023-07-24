@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
+// SPDX-License-Identifier: LGPL-2.0-or-later
+
 #include "messageviewer.h"
 #include "../core/objecttreeparser.h"
 #include "attachmentview_p.h"

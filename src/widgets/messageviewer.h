@@ -1,4 +1,4 @@
-// SPDX-FileCopyCopyright: 2023 Carl Schwan <carl.schwan@gnupg.com>
+// SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #pragma once
