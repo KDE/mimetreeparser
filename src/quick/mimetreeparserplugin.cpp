@@ -18,8 +18,3 @@ void MimeTreeParserPlugin::registerTypes(const char *uri)
     qmlRegisterUncreatableType<PartModel>(uri, 1, 0, "PartModel", QStringLiteral("not instanciated"));
     qmlRegisterUncreatableType<AttachmentModel>(uri, 1, 0, "AttachmentModel", QStringLiteral("not instanciated"));
 }
-
-void MimeTreeParserPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
-{
-    Q_UNUSED(uri);
-}
