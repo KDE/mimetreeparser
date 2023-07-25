@@ -9,10 +9,10 @@
 #include <QAbstractItemModel>
 
 #include "mimetreeparser_core_export.h"
+#include "partmodel.h"
 #include <memory>
 
 class MessagePartPrivate;
-class PartModel;
 class AttachmentModel;
 
 class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject

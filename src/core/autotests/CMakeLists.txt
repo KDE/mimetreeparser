@@ -13,7 +13,7 @@ function(add_mimetreeparser_class_unittest _name _additionalSource)
     target_link_libraries(${_name} PRIVATE
         Qt::Test
         mimetreeparserprivate
-        KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+        KPim6::MimeTreeParserCore
     )
     target_include_directories(${_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
     add_test(NAME ${_name} COMMAND $<TARGET_FILE:${_name}>)
@@ -21,11 +21,6 @@ endfunction()
 
 function(add_mimetreeparser_crypto_unittest _name)
     add_executable(${_name} ${_name}.cpp setupenv.cpp)
-    if (QT_MAJOR_VERSION STREQUAL "6")
-        target_link_libraries(${_name} PRIVATE QGpgmeQt6 Qt6::Core5Compat)
-    else()
-        target_link_libraries(${_name} PRIVATE Gpgme::Gpgme)
-    endif()
     target_include_directories(${_name} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/..
         ${GPGME_INCLUDE_DIRS}
@@ -33,7 +28,7 @@ function(add_mimetreeparser_crypto_unittest _name)
     target_link_libraries(${_name} PRIVATE
         Qt::Test
         mimetreeparserprivate
-        KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+        KPim6::MimeTreeParserCore
     )
     add_gpg_crypto_test(${_name} mimetreeparser-${_name})
 endfunction()
@@ -57,13 +52,13 @@ add_gpg_crypto_test(mimetreeparsertest mimetreeparsertest)
 target_link_libraries(mimetreeparsertest PUBLIC
     Qt::Test
     mimetreeparserprivate
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim6::MimeTreeParserCore
 )
 
 add_executable(gpgerrortest gpgerrortest.cpp)
 target_link_libraries(gpgerrortest PUBLIC
     Qt::Test
     mimetreeparserprivate
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim6::MimeTreeParserCore
 )
 add_test(NAME gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)

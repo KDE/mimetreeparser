@@ -11,7 +11,6 @@
 
 #include <KLocalizedString>
 #include <KMime/Content>
-
 #include <QTextCodec>
 
 using namespace MimeTreeParser;

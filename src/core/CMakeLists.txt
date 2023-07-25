@@ -4,8 +4,8 @@
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSER_CORE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_core_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreConfigVersion.cmake"
-    SOVERSION 5
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserCoreConfigVersion.cmake"
+    SOVERSION 6
 )
 
 # private library
@@ -24,10 +24,11 @@ target_sources(mimetreeparserprivate PUBLIC
 )
 target_link_libraries(mimetreeparserprivate
 PUBLIC
-    KPim${KF_MAJOR_VERSION}::Mime
-    KF${KF_MAJOR_VERSION}::I18n
-    Qt${KF_MAJOR_VERSION}::Gui
-    KF${KF_MAJOR_VERSION}::Codecs
+    KPim6::Mime
+    KF6::I18n
+    Qt6::Gui
+    KF6::Codecs
+    Qt6::Core5Compat
     Gpgme::Gpgme
 )
 
@@ -42,12 +43,12 @@ ecm_qt_declare_logging_category(mimetreeparserprivate
 # public dynamic library
 
 
-add_library(KPim${KF_MAJOR_VERSION}MimeTreeParserCore)
-add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
-    ALIAS KPim${KF_MAJOR_VERSION}MimeTreeParserCore
+add_library(KPim6MimeTreeParserCore)
+add_library(KPim6::MimeTreeParserCore
+    ALIAS KPim6MimeTreeParserCore
 )
 
-target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
+target_sources(KPim6MimeTreeParserCore PRIVATE
      errors.h
      async.h
      attachmentmodel.h
@@ -73,31 +74,31 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6MimeTreeParserCore PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserCore BASE_NAME mimetreeparser_core)
+generate_export_header(KPim6MimeTreeParserCore BASE_NAME mimetreeparser_core)
 
 
-target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserCore>")
+target_include_directories(KPim6MimeTreeParserCore
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore>")
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
+target_link_libraries(KPim6MimeTreeParserCore
 PUBLIC
-    KPim${KF_MAJOR_VERSION}::Mime
-    KF${KF_MAJOR_VERSION}::I18n
-    Qt${KF_MAJOR_VERSION}::Gui
+    KPim6::Mime
+    KF6::I18n
+    Qt6::Gui
 PRIVATE
     mimetreeparserprivate
 )
 
-set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PROPERTIES
+set_target_properties(KPim6MimeTreeParserCore PROPERTIES
     VERSION ${MIMETREEPARSERNG_VERSION}
     SOVERSION ${MIMETREEPARSERNG_SOVERSION}
     EXPORT_NAME MimeTreeParserCore
 )
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParserCore
-    LIB_NAME KPim${KF_MAJOR_VERSION}MimeTreeParserCore
+    LIB_NAME KPim6MimeTreeParserCore
     DEPS "MimeTreeParserCore" 
     FILENAME_VAR PRI_FILENAME
 )
@@ -105,8 +106,8 @@ ecm_generate_pri_file(BASE_NAME MimeTreeParserCore
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 install(TARGETS
-    KPim${KF_MAJOR_VERSION}MimeTreeParserCore
-    EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim6MimeTreeParserCore
+    EXPORT KPim6MimeTreeParserCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
 ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
@@ -121,21 +122,21 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
 
 install(FILES
     ${MimeTreeParserCore_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserCore/MimeTreeParserCore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore/MimeTreeParserCore
     COMPONENT Devel
 )
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_core_export.h
     ${MimeTreeParserCore_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserCore/mimetreeparsercore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore/mimetreeparsercore
     COMPONENT Devel
 )
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}MimeTreeParserCore_QCH
+        KPim6MimeTreeParserCore_QCH
         NAME MimeTreeParserCore
-        BASE_NAME KPim${KF_MAJOR_VERSION}MimeTreeParserCore
+        BASE_NAME KPim6MimeTreeParserCore
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         # using only public headers, to cover only public API
@@ -154,35 +155,35 @@ if (BUILD_QCH)
 endif()
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCore")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserCore")
 
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}MimeTreeParserCore_QCH
-        FILE KPim${KF_MAJOR_VERSION}MimeTreeParserCoreQchTargets.cmake
+        TARGETS KPim6MimeTreeParserCore_QCH
+        FILE KPim6MimeTreeParserCoreQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MimeTreeParserCoreQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMimeTreeParserCoreConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserCoreConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserCoreConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserCoreConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserCoreTargets
+install(EXPORT KPim6MimeTreeParserCoreTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KPim${KF_MAJOR_VERSION}MimeTreeParserCoreTargets.cmake
-    NAMESPACE KPim${KF_MAJOR_VERSION}::
+    FILE KPim6MimeTreeParserCoreTargets.cmake
+    NAMESPACE KPim6::
 )
 
 if (BUILD_TESTING)

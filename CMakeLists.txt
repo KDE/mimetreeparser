@@ -3,18 +3,18 @@
 
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
-set(PIM_VERSION "5.23.42")
+set(PIM_VERSION "5.240.0")
 project(MimeTreeParserNG VERSION ${PIM_VERSION})
 
 # ECM setup
-set(KF_MIN_VERSION "5.105.0")
+set(KF_MIN_VERSION "5.240.0")
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH}
     ${ECM_MODULE_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules
 )
-set(QT_REQUIRED_VERSION "5.15.2")
+set(QT_REQUIRED_VERSION "4.4.0")
 if (QT_MAJOR_VERSION STREQUAL "6")
     set(QT_REQUIRED_VERSION "6.4.0")
 endif()
@@ -39,21 +39,16 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMAddQch)
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
-
-set(KPIM_MIME_VERSION "5.23.40")
+set(QT_REQUIRED_VERSION "6.4.0")
+set(KF_MIN_VERSION "5.240.0")
+set(KF_MAJOR_VERSION "6")
+set(KPIM_MIME_VERSION "5.240.0")
 
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSERNG
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreConfigVersion.cmake"
-    SOVERSION 5
+    SOVERSION 6
 )
 
 configure_file(mimetreeparserng-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h @ONLY)
@@ -66,15 +61,16 @@ if(BUILD_TESTING)
 endif()
 
 ########### Find packages ###########
-find_package(Qt${KF_MAJOR_VERSION}Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
+find_package(Qt6Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KPim6Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 find_package(Gpgme REQUIRED)
 
-find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG)
-find_package(Qt${KF_MAJOR_VERSION}Widgets ${QT_MIN_VERSION} CONFIG)
+find_package(Qt6Quick ${QT_MIN_VERSION} CONFIG)
+find_package(Qt6Widgets ${QT_MIN_VERSION} CONFIG)
+find_package(Qt6Core5Compat ${QT_MIN_VERSION} CONFIG)
 
 if (BUILD_TESTING)
     find_package(Qt${KF_MAJOR_VERSION}Test ${QT_MIN_VERSION} CONFIG REQUIRED)

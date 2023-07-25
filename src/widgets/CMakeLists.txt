@@ -4,22 +4,22 @@
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSER_WIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsConfigVersion.cmake"
-    SOVERSION 5
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserWidgetsConfigVersion.cmake"
+    SOVERSION 6
 )
 
-add_library(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets)
-add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserWidgets
-    ALIAS KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets)
+add_library(KPim6MimeTreeParserWidgets)
+add_library(KPim6::MimeTreeParserWidgets
+    ALIAS KPim6MimeTreeParserWidgets)
 
-target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PRIVATE
+target_sources(KPim6MimeTreeParserWidgets PRIVATE
      messageviewer.h
      messageviewer.cpp
      attachmentview_p.h
      attachmentview.cpp
 )
 
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
+ecm_qt_declare_logging_category(KPim6MimeTreeParserWidgets
     HEADER mimetreeparser_widgets_debug.h
     IDENTIFIER MIMETREEPARSER_WIDGET_LOG
     CATEGORY_NAME org.kde.pim.mimetreeparser.widgets
@@ -28,33 +28,33 @@ ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6MimeTreeParserWidgets PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets BASE_NAME mimetreeparser_widgets)
+generate_export_header(KPim6MimeTreeParserWidgets BASE_NAME mimetreeparser_widgets)
 
 
-target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets>")
-target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserWidgets_SOURCE_DIR}/src;${MimeTreeParserWidgets_BINARY_DIR}/src>")
+target_include_directories(KPim6MimeTreeParserWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets>")
+target_include_directories(KPim6MimeTreeParserWidgets PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserWidgets_SOURCE_DIR}/src;${MimeTreeParserWidgets_BINARY_DIR}/src>")
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
+target_link_libraries(KPim6MimeTreeParserWidgets
 PUBLIC
-    Qt${KF_MAJOR_VERSION}::Widgets
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    Qt6::Widgets
+    KPim6::MimeTreeParserCore
 PRIVATE
-    KF${KF_MAJOR_VERSION}::Codecs
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::CalendarCore
+    KF6::Codecs
+    KF6::I18n
+    KF6::CalendarCore
     Gpgme::Gpgme
 )
 
-set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PROPERTIES
+set_target_properties(KPim6MimeTreeParserWidgets PROPERTIES
     VERSION ${MIMETREEPARSER_VERSION}
     SOVERSION ${MIMETREEPARSER_SOVERSION}
     EXPORT_NAME MimeTreeParserWidgets
 )
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParserWidgets
-    LIB_NAME KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
+    LIB_NAME KPim6MimeTreeParserWidgets
     DEPS "MimeTreeParserWidgets" 
     FILENAME_VAR PRI_FILENAME
 )
@@ -62,8 +62,8 @@ ecm_generate_pri_file(BASE_NAME MimeTreeParserWidgets
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 install(TARGETS
-    KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
-    EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim6MimeTreeParserWidgets
+    EXPORT KPim6MimeTreeParserWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
 ecm_generate_headers(MimeTreeParserWidgets_CamelCase_HEADERS
@@ -75,21 +75,21 @@ ecm_generate_headers(MimeTreeParserWidgets_CamelCase_HEADERS
 
 install(FILES
     ${MimeTreeParserWidgets_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets/MimeTreeParserWidgets
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets/MimeTreeParserWidgets
     COMPONENT Devel
 )
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_export.h
     ${MimeTreeParserWidgets_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets/mimetreeparserwidgets
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets/mimetreeparserwidgets
     COMPONENT Devel
 )
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets_QCH
+        KPim6MimeTreeParserWidgets_QCH
         NAME MimeTreeParserWidgets
-        BASE_NAME KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
+        BASE_NAME KPim6MimeTreeParserWidgets
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         # using only public headers, to cover only public API
@@ -108,39 +108,39 @@ if (BUILD_QCH)
 endif()
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserWidgets")
 
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets_QCH
-        FILE KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsQchTargets.cmake
+        TARGETS KPim6MimeTreeParserWidgets_QCH
+        FILE KPim6MimeTreeParserWidgetsQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MimeTreeParserQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMimeTreeParserWidgetsConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserWidgetsConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserWidgetsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserWidgetsConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsTargets
+install(EXPORT KPim6MimeTreeParserWidgetsTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KPim${KF_MAJOR_VERSION}MimeTreeParserWidgetsTargets.cmake
-    NAMESPACE KPim${KF_MAJOR_VERSION}::
+    FILE KPim6MimeTreeParserWidgetsTargets.cmake
+    NAMESPACE KPim6::
 )
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_version.h
-   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets
+   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets
    COMPONENT Devel
 )
