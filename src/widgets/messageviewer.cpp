@@ -274,6 +274,7 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     d->layout->addStretch();
 
     d->attachmentView->setModel(d->parser.attachments());
+    d->attachmentView->setVisible(d->parser.attachments()->rowCount() > 0);
 
     connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
         d->selectionChanged();
