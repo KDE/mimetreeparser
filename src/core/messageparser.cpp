@@ -86,17 +86,7 @@ QString MessageParser::subject() const
     if (d->mMessage && d->mMessage->subject() && d->mMessage->subject()->asUnicodeString().length()) {
         return d->mMessage->subject()->asUnicodeString();
     } else {
-        if (d->mMessage) {
-            const auto contents = d->mMessage->contents();
-            for (const auto content : contents) {
-                if (const auto message = dynamic_cast<KMime::Message *>(content)) {
-                    if (message->subject() && message->subject()->asUnicodeString().length()) {
-                        return message->subject()->asUnicodeString();
-                    }
-                }
-            }
-        }
-        return i18nc("displayed as subject when the subject of a mail is empty", "No Subject");
+        return QString();
     }
 }
 
