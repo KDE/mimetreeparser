@@ -5,11 +5,13 @@
 
 #include "htmlutils.h"
 #include "objecttreeparser.h"
-#include <QStringLiteral>
 
 #include <KLocalizedString>
+
 #include <QDebug>
 #include <QRegularExpression>
+#include <QStringLiteral>
+#include <QTextDocument>
 
 // We return a pair containing the trimmed string, as well as a boolean indicating whether the string was trimmed or not
 std::pair<QString, bool> PartModel::trim(const QString &text)
@@ -126,9 +128,9 @@ public:
                 const auto result = PartModel::trim(html);
                 isTrimmed = result.second;
                 Q_EMIT q->trimMailChanged();
-                return HtmlUtils::linkify(result.first);
+                return MimeTreeParser::linkify(result.first);
             }
-            return HtmlUtils::linkify(html);
+            return MimeTreeParser::linkify(html);
         };
 
         if (messagePart->isHtml()) {
