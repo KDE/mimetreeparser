@@ -38,6 +38,10 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     if (message == d->mMessage) {
         return;
     }
+    if (!message) {
+        qWarning() << Q_FUNC_INFO << "Empty message given";
+        return;
+    }
     d->mMessage = message;
 
     QElapsedTimer time;
