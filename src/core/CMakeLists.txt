@@ -77,11 +77,14 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserCore BASE_NAME mimetreeparser_core)
+generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserCore BASE_NAME mimetreeparsercore)
 
 
 target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserCore>")
+
+target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
+    PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserCore_SOURCE_DIR}/src;${MimeTreeParserCore_BINARY_DIR}/src;${MimeTreeParserCore_BINARY_DIR}>")
 
 target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
 PUBLIC
@@ -116,8 +119,12 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         AttachmentModel
         ObjectTreeParser
         MessageParser
+        MessagePart
         PartModel
         MailCrypto
+        Crypto
+        Errors
+        PartMetaData
         MailTemplates
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
