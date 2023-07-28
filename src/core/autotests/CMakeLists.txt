@@ -67,3 +67,11 @@ target_link_libraries(gpgerrortest PUBLIC
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 add_test(NAME gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
+
+add_executable(cryptotest cryptotest.cpp)
+add_gpg_crypto_test(cryptotest cryptotest)
+target_link_libraries(cryptotest
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
