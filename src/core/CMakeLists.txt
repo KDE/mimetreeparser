@@ -21,6 +21,10 @@ target_sources(mimetreeparserprivate PUBLIC
      cryptohelper.cpp
      utils.h
      utils.cpp
+     mailtemplates.h
+     mailtemplates.cpp
+     mailcrypto.h
+     mailcrypto.cpp
 )
 target_link_libraries(mimetreeparserprivate
 PUBLIC
@@ -56,7 +60,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
      bodypartformatterbasefactory_p.h
      enums.h
      htmlutils.h
-     mailcrypto.h
      messageparser.h
      objecttreeparser.h
      partmetadata.h
@@ -66,7 +69,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
      bodypartformatter_impl.cpp
      bodypartformatterbasefactory.cpp
      htmlutils.cpp
-     mailcrypto.cpp
      messageparser.cpp
      objecttreeparser.cpp
      partmodel.cpp
@@ -115,6 +117,8 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         ObjectTreeParser
         MessageParser
         PartModel
+        MailCrypto
+        MailTemplates
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )
