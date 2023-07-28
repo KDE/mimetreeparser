@@ -58,8 +58,7 @@ Kirigami.ScrollablePage {
             }
         }
 
-        GridLayout {
-            width: mailHeader.width - mailHeader.leftPadding - mailHeader.rightPadding
+        contentItem: GridLayout {
             rowSpacing: Kirigami.Units.smallSpacing
             columnSpacing: Kirigami.Units.smallSpacing
 
@@ -142,6 +141,7 @@ Kirigami.ScrollablePage {
 
     MailPartView {
         id: mailPartView
+        padding: root.padding
     }
 
     footer: QQC2.ToolBar {

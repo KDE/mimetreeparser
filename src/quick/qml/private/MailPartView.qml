@@ -20,12 +20,13 @@ ListView {
     readonly property date dateTime: messageParser.date
 
     property alias rootIndex: visualModel.rootIndex
+    property alias padding: visualModel.padding
     property alias searchString: visualModel.searchString
     property alias autoLoadImages: visualModel.autoLoadImages
     property var attachmentModel: messageParser.attachments
 
-    topMargin: Kirigami.Units.smallSpacing
-    bottomMargin: Kirigami.Units.smallSpacing
+    topMargin: padding
+    bottomMargin: padding
 
     spacing: Kirigami.Units.smallSpacing
 
