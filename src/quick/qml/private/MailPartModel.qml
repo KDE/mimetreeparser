@@ -19,7 +19,6 @@ DelegateModel {
         id: partColumn
 
         width: ListView.view.width
-        height: childrenRect.height
 
         function getType(securityLevel) {
             if (securityLevel == "good") {
@@ -112,6 +111,8 @@ DelegateModel {
 
                 Layout.preferredHeight: item ? item.contentHeight : 0
                 Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
 
                 Component.onCompleted: {
                     switch (model.type + 0) {

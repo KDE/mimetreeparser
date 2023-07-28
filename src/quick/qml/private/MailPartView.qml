@@ -24,9 +24,11 @@ ListView {
     property alias autoLoadImages: visualModel.autoLoadImages
     property var attachmentModel: messageParser.attachments
 
-    implicitHeight: root.count === 0 ? Kirigami.Units.gridUnit * 20 : contentHeight
-    interactive: false
+    topMargin: Kirigami.Units.smallSpacing
+    bottomMargin: Kirigami.Units.smallSpacing
+
     spacing: Kirigami.Units.smallSpacing
+
     model: MailPartModel {
         id: visualModel
         model: messageParser.parts

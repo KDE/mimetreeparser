@@ -12,7 +12,7 @@ import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kitemmodels 1.0 as KItemModels
 import './private'
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: root
 
     property alias message: mailPartView.message
@@ -142,7 +142,6 @@ Kirigami.Page {
 
     MailPartView {
         id: mailPartView
-        anchors.fill: parent
     }
 
     footer: QQC2.ToolBar {
