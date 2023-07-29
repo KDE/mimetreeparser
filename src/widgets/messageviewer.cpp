@@ -8,6 +8,7 @@
 #include <KCalendarCore/ICalFormat>
 #include <KCalendarCore/Incidence>
 #include <KLocalizedString>
+#include <KMessageWidget>
 #include <MimeTreeParserCore/AttachmentModel>
 #include <MimeTreeParserCore/MessageParser>
 #include <MimeTreeParserCore/PartModel>
@@ -230,7 +231,14 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
 
-        case PartModel::Types::Error:
+        case PartModel::Types::Error: {
+            const auto errorString = parts->data(parts->index(i, 0, parent), PartModel::ErrorString).toString();
+            auto errorWidget = new KMessageWidget(i18n("Error: %1", errorString));
+            errorWidget->setMessageType(KMessageWidget::MessageType::Error);
+            widgets.append(errorWidget);
+            layout->addWidget(errorWidget);
+            break;
+        }
         default:
             qWarning() << parts->data(parts->index(i, 0, parent), PartModel::ContentRole) << type;
         }
@@ -244,9 +252,15 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     for (int i = d->formLayout->rowCount() - 1; i >= 0; i--) {
         d->formLayout->removeRow(i);
     }
-    d->formLayout->addRow(i18n("&Subject:"), new QLabel(d->parser.subject()));
-    d->formLayout->addRow(i18n("&From:"), new QLabel(d->parser.from()));
-    d->formLayout->addRow(i18n("&To:"), new QLabel(d->parser.to()));
+    if (!d->parser.subject().isEmpty()) {
+        d->formLayout->addRow(i18n("&Subject:"), new QLabel(d->parser.subject()));
+    }
+    if (!d->parser.from().isEmpty()) {
+        d->formLayout->addRow(i18n("&From:"), new QLabel(d->parser.from()));
+    }
+    if (!d->parser.to().isEmpty()) {
+        d->formLayout->addRow(i18n("&To:"), new QLabel(d->parser.to()));
+    }
 
     const auto parts = d->parser.parts();
 
@@ -260,6 +274,7 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     d->layout->addStretch();
 
     d->attachmentView->setModel(d->parser.attachments());
+    d->attachmentView->setVisible(d->parser.attachments()->rowCount() > 0);
 
     connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
         d->selectionChanged();

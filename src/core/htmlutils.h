@@ -3,30 +3,9 @@
 
 #pragma once
 
-#include <QObject>
 #include <QString>
-#include <QTextDocument>
 
-namespace HtmlUtils
+namespace MimeTreeParser
 {
 QString linkify(const QString &in);
-
-class HtmlUtils : public QObject
-{
-    Q_OBJECT
-public:
-    Q_INVOKABLE QString linkify(const QString &s)
-    {
-        return ::HtmlUtils::linkify(s);
-    };
-
-    Q_INVOKABLE QString toHtml(const QString &s)
-    {
-        if (Qt::mightBeRichText(s)) {
-            return s;
-        } else {
-            return ::HtmlUtils::linkify(Qt::convertFromPlainText(s));
-        }
-    }
-};
 }

@@ -6,6 +6,7 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kcalendarcore' : '@latest-kf6'
+    'frameworks/kwidgetsaddons' : '@latest-kf6'
     'pim/kmime' : '@latest-kf6'
     'pim/kmbox' : '@latest-kf6'
 

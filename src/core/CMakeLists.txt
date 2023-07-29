@@ -21,6 +21,10 @@ target_sources(mimetreeparserprivate PUBLIC
      cryptohelper.cpp
      utils.h
      utils.cpp
+     mailtemplates.h
+     mailtemplates.cpp
+     mailcrypto.h
+     mailcrypto.cpp
 )
 target_link_libraries(mimetreeparserprivate
 PUBLIC
@@ -57,7 +61,6 @@ target_sources(KPim6MimeTreeParserCore PRIVATE
      bodypartformatterbasefactory_p.h
      enums.h
      htmlutils.h
-     mailcrypto.h
      messageparser.h
      objecttreeparser.h
      partmetadata.h
@@ -67,7 +70,6 @@ target_sources(KPim6MimeTreeParserCore PRIVATE
      bodypartformatter_impl.cpp
      bodypartformatterbasefactory.cpp
      htmlutils.cpp
-     mailcrypto.cpp
      messageparser.cpp
      objecttreeparser.cpp
      partmodel.cpp
@@ -81,6 +83,9 @@ generate_export_header(KPim6MimeTreeParserCore BASE_NAME mimetreeparser_core)
 
 target_include_directories(KPim6MimeTreeParserCore
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore>")
+
+target_include_directories(KPim6MimeTreeParserCore
+    PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserCore_SOURCE_DIR}/src;${MimeTreeParserCore_BINARY_DIR}/src;${MimeTreeParserCore_BINARY_DIR}>")
 
 target_link_libraries(KPim6MimeTreeParserCore
 PUBLIC
@@ -115,7 +120,13 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         AttachmentModel
         ObjectTreeParser
         MessageParser
+        MessagePart
         PartModel
+        MailCrypto
+        Crypto
+        Errors
+        PartMetaData
+        MailTemplates
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )

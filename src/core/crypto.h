@@ -4,6 +4,7 @@
 #pragma once
 
 #include "errors.h"
+#include "mimetreeparser_core_export.h"
 #include <QByteArray>
 #include <QVariant>
 
@@ -76,28 +77,30 @@ struct ImportResult {
 };
 
 #ifndef _WIN32
-std::vector<Key> findKeys(const QStringList &filter, bool findPrivate = false, bool remote = false);
+MIMETREEPARSER_CORE_EXPORT std::vector<Key> findKeys(const QStringList &filter, bool findPrivate = false, bool remote = false);
 
-Expected<Error, QByteArray> exportPublicKey(const Key &key);
+MIMETREEPARSER_CORE_EXPORT Expected<Error, QByteArray> exportPublicKey(const Key &key);
 
-ImportResult importKey(CryptoProtocol protocol, const QByteArray &certData);
-ImportResult importKey(CryptoProtocol protocol, const Key &key);
+MIMETREEPARSER_CORE_EXPORT ImportResult importKey(CryptoProtocol protocol, const QByteArray &certData);
+MIMETREEPARSER_CORE_EXPORT ImportResult importKey(CryptoProtocol protocol, const Key &key);
 
 /**
  * Sign the given content and returns the signing data and the algorithm used
  * for integrity check in the "pgp-<algorithm>" format.
  */
-Expected<Error, std::pair<QByteArray, QString>> sign(const QByteArray &content, const std::vector<Key> &signingKeys);
-Expected<Error, QByteArray> signAndEncrypt(const QByteArray &content, const std::vector<Key> &encryptionKeys, const std::vector<Key> &signingKeys);
+MIMETREEPARSER_CORE_EXPORT Expected<Error, std::pair<QByteArray, QString>> sign(const QByteArray &content, const std::vector<Key> &signingKeys);
+MIMETREEPARSER_CORE_EXPORT Expected<Error, QByteArray>
+signAndEncrypt(const QByteArray &content, const std::vector<Key> &encryptionKeys, const std::vector<Key> &signingKeys);
 
-std::pair<DecryptionResult, VerificationResult> decryptAndVerify(CryptoProtocol protocol, const QByteArray &ciphertext, QByteArray &outdata);
-DecryptionResult decrypt(CryptoProtocol protocol, const QByteArray &ciphertext, QByteArray &outdata);
-VerificationResult verifyDetachedSignature(CryptoProtocol protocol, const QByteArray &signature, const QByteArray &outdata);
-VerificationResult verifyOpaqueSignature(CryptoProtocol protocol, const QByteArray &signature, QByteArray &outdata);
+MIMETREEPARSER_CORE_EXPORT std::pair<DecryptionResult, VerificationResult>
+decryptAndVerify(CryptoProtocol protocol, const QByteArray &ciphertext, QByteArray &outdata);
+MIMETREEPARSER_CORE_EXPORT DecryptionResult decrypt(CryptoProtocol protocol, const QByteArray &ciphertext, QByteArray &outdata);
+MIMETREEPARSER_CORE_EXPORT VerificationResult verifyDetachedSignature(CryptoProtocol protocol, const QByteArray &signature, const QByteArray &outdata);
+MIMETREEPARSER_CORE_EXPORT VerificationResult verifyOpaqueSignature(CryptoProtocol protocol, const QByteArray &signature, QByteArray &outdata);
 };
 #endif
 
 Q_DECLARE_METATYPE(Crypto::Key);
 
-QDebug operator<<(QDebug d, const Crypto::Key &);
-QDebug operator<<(QDebug d, const Crypto::Error &);
+MIMETREEPARSER_CORE_EXPORT QDebug operator<<(QDebug d, const Crypto::Key &);
+MIMETREEPARSER_CORE_EXPORT QDebug operator<<(QDebug d, const Crypto::Error &);

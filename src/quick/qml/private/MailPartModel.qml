@@ -14,12 +14,12 @@ DelegateModel {
 
     property string searchString: ""
     property bool autoLoadImages: false
+    property int padding: Kirigami.Units.largeSpacing
 
     delegate: RowLayout {
         id: partColumn
 
         width: ListView.view.width
-        height: childrenRect.height
 
         function getType(securityLevel) {
             if (securityLevel == "good") {
@@ -112,6 +112,8 @@ DelegateModel {
 
                 Layout.preferredHeight: item ? item.contentHeight : 0
                 Layout.fillWidth: true
+                Layout.leftMargin: root.padding
+                Layout.rightMargin: root.padding
 
                 Component.onCompleted: {
                     switch (model.type + 0) {

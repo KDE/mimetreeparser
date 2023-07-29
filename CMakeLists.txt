@@ -65,6 +65,7 @@ find_package(Qt6Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6WidgetsAddons ${QT_MIN_VERSION} CONFIG)
 find_package(KPim6Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 find_package(Gpgme REQUIRED)
 

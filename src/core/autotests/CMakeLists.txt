@@ -1,9 +1,12 @@
 # SPDX-FileCopyrightText: 2017 Christian Mollekopf <mollekopf@kolabsys.com>
+# SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-3-Clause
 
 set(AUTOMOC ON)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata" )
+add_definitions(-DMAILTEMPLATE_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../templatetestdata" )
+
 
 include(ECMAddTests)
 include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
@@ -62,3 +65,30 @@ target_link_libraries(gpgerrortest PUBLIC
     KPim6::MimeTreeParserCore
 )
 add_test(NAME gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
+
+## Crypto test
+add_executable(cryptotest cryptotest.cpp)
+add_gpg_crypto_test(cryptotest cryptotest)
+target_link_libraries(cryptotest
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
+
+## MailTemplates test
+add_executable(mailtemplatetest mailtemplatetest.cpp)
+add_gpg_crypto_test(mailtemplatetest mailtemplatetest)
+target_link_libraries(mailtemplatetest
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
+
+## PartModel test
+add_executable(partmodeltest partmodeltest.cpp)
+add_gpg_crypto_test(partmodeltest partmodeltest)
+target_link_libraries(partmodeltest
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
