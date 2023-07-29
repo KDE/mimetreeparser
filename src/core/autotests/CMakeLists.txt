@@ -72,7 +72,7 @@ add_gpg_crypto_test(cryptotest cryptotest)
 target_link_libraries(cryptotest
     Qt::Test
     mimetreeparserprivate
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim6::MimeTreeParserCore
 )
 
 ## MailTemplates test
@@ -81,7 +81,7 @@ add_gpg_crypto_test(mailtemplatetest mailtemplatetest)
 target_link_libraries(mailtemplatetest
     Qt::Test
     mimetreeparserprivate
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim6::MimeTreeParserCore
 )
 
 ## PartModel test
@@ -90,5 +90,5 @@ add_gpg_crypto_test(partmodeltest partmodeltest)
 target_link_libraries(partmodeltest
     Qt::Test
     mimetreeparserprivate
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim6::MimeTreeParserCore
 )

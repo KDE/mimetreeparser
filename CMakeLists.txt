@@ -47,7 +47,7 @@ set(KPIM_MIME_VERSION "5.240.0")
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSERNG
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserCoreConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserCoreConfigVersion.cmake"
     SOVERSION 6
 )
 
@@ -74,7 +74,7 @@ find_package(Qt6Widgets ${QT_MIN_VERSION} CONFIG)
 find_package(Qt6Core5Compat ${QT_MIN_VERSION} CONFIG)
 
 if (BUILD_TESTING)
-    find_package(Qt${KF_MAJOR_VERSION}Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+    find_package(Qt6Test ${QT_MIN_VERSION} CONFIG REQUIRED)
 endif()
 
 ########### Targets ###########
@@ -94,7 +94,7 @@ add_subdirectory(examples)
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h
-   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserCore
+   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore
    COMPONENT Devel
 )
 ecm_qt_install_logging_categories(

@@ -4,11 +4,11 @@
 add_subdirectory(core)
 add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser5\")
 
-if (Qt${KF_MAJOR_VERSION}Quick_FOUND)
+if (Qt6Quick_FOUND)
     add_subdirectory(quick)
 endif()
 
-if (Qt${KF_MAJOR_VERSION}Widgets_FOUND)
+if (Qt6Widgets_FOUND)
     add_subdirectory(widgets)
 endif()
 

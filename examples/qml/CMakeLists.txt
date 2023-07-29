@@ -8,15 +8,15 @@ add_executable(mimetreeparser-qml
     resources.qrc
 )
 
-find_package(Qt${KF_MAJOR_VERSION}Qml ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)
+find_package(Qt6Qml ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(Qt6Quick ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(KPim6Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 target_link_libraries(mimetreeparser-qml PUBLIC
     Qt::Quick
     Qt::Widgets
     Qt::Qml
     Qt::Gui
-    KF${KF_MAJOR_VERSION}::I18n
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
-    KPim${KF_MAJOR_VERSION}::Mbox
+    KF6::I18n
+    KPim6::MimeTreeParserCore
+    KPim6::Mbox
 )

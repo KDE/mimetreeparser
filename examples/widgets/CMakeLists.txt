@@ -7,10 +7,10 @@ add_executable(mimetreeparser-widgets
     ../qml/fileopener.cpp
 )
 
-find_package(KPim${KF_MAJOR_VERSION}Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)
+find_package(KPim6Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 
 target_link_libraries(mimetreeparser-widgets PUBLIC
     Qt::Widgets
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserWidgets
-    KPim${KF_MAJOR_VERSION}::Mbox
+    KPim6::MimeTreeParserWidgets
+    KPim6::Mbox
 )
