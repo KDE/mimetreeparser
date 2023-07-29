@@ -14,10 +14,7 @@ set(CMAKE_MODULE_PATH
     ${ECM_MODULE_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules
 )
-set(QT_REQUIRED_VERSION "4.4.0")
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-endif()
+set(QT_REQUIRED_VERSION "6.4.0")
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -39,7 +36,6 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMAddQch)
 
-set(QT_REQUIRED_VERSION "6.4.0")
 set(KF_MIN_VERSION "5.240.0")
 set(KF_MAJOR_VERSION "6")
 set(KPIM_MIME_VERSION "5.240.0")
