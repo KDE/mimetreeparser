@@ -71,6 +71,7 @@ target_link_libraries(gpgerrortest PUBLIC
 )
 add_test(NAME gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
 
+## Crypto test
 add_executable(cryptotest cryptotest.cpp)
 add_gpg_crypto_test(cryptotest cryptotest)
 target_link_libraries(cryptotest
@@ -79,9 +80,19 @@ target_link_libraries(cryptotest
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 
+## MailTemplates test
 add_executable(mailtemplatetest mailtemplatetest.cpp)
 add_gpg_crypto_test(mailtemplatetest mailtemplatetest)
 target_link_libraries(mailtemplatetest
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
+
+## PartModel test
+add_executable(partmodeltest partmodeltest.cpp)
+add_gpg_crypto_test(partmodeltest partmodeltest)
+target_link_libraries(partmodeltest
     Qt::Test
     mimetreeparserprivate
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
