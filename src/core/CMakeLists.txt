@@ -77,7 +77,7 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserCore BASE_NAME mimetreeparsercore)
+generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserCore BASE_NAME mimetreeparser_core)
 
 
 target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
