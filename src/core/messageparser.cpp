@@ -11,6 +11,29 @@
 #include "attachmentmodel.h"
 #include "partmodel.h"
 
+namespace
+{
+
+template<typename T>
+const T *findHeader(KMime::Content *content)
+{
+    auto header = content->header<T>();
+    if (header || !content->parent()) {
+        return header;
+    }
+    return findHeader<T>(content->parent());
+}
+
+const KMime::Headers::Base *findHeader(KMime::Content *content, const char *headerType)
+{
+    const auto header = content->headerByType(headerType);
+    if (header || !content->parent()) {
+        return header;
+    }
+    return findHeader(content->parent(), headerType);
+}
+}
+
 class MessagePartPrivate
 {
 public:
@@ -87,8 +110,8 @@ AttachmentModel *MessageParser::attachments() const
 
 QString MessageParser::subject() const
 {
-    if (d->mMessage && d->mMessage->subject() && d->mMessage->subject()->asUnicodeString().length()) {
-        return d->mMessage->subject()->asUnicodeString();
+    if (d->mMessage) {
+        return findHeader<KMime::Headers::Subject>(d->mMessage.get())->asUnicodeString();
     } else {
         return QString();
     }
@@ -96,8 +119,8 @@ QString MessageParser::subject() const
 
 QString MessageParser::from() const
 {
-    if (d->mMessage && d->mMessage->from()) {
-        return d->mMessage->from()->asUnicodeString();
+    if (d->mMessage) {
+        return findHeader<KMime::Headers::From>(d->mMessage.get())->displayString();
     } else {
         return QString();
     }
@@ -105,16 +128,16 @@ QString MessageParser::from() const
 
 QString MessageParser::sender() const
 {
-    if (d->mMessage && d->mMessage->sender()) {
-        return d->mMessage->sender()->asUnicodeString();
+    if (d->mMessage) {
+        return findHeader<KMime::Headers::Sender>(d->mMessage.get())->displayString();
     } else {
         return QString();
     }
 }
 QString MessageParser::to() const
 {
-    if (d->mMessage && d->mMessage->to()) {
-        return d->mMessage->to()->asUnicodeString();
+    if (d->mMessage) {
+        return findHeader<KMime::Headers::To>(d->mMessage.get())->displayString();
     } else {
         return i18nc("displayed when a mail has unknown sender, receiver or date", "Unknown");
     }
@@ -122,8 +145,8 @@ QString MessageParser::to() const
 
 QDateTime MessageParser::date() const
 {
-    if (d->mMessage && d->mMessage->date()) {
-        return d->mMessage->date()->dateTime();
+    if (d->mMessage) {
+        return findHeader<KMime::Headers::Date>(d->mMessage.get())->dateTime();
     } else {
         return QDateTime();
     }
