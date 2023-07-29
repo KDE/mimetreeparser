@@ -33,7 +33,7 @@ endif()
 generate_export_header(KPim6MimeTreeParserWidgets BASE_NAME mimetreeparser_widgets)
 
 
-target_include_directories(KPim6MimeTreeParserWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets>")
+target_include_directories(KPim6MimeTreeParserWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets>")
 target_include_directories(KPim6MimeTreeParserWidgets PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserWidgets_SOURCE_DIR}/src;${MimeTreeParserWidgets_BINARY_DIR}/src>")
 
 target_link_libraries(KPim6MimeTreeParserWidgets
