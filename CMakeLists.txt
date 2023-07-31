@@ -94,7 +94,9 @@ if (USE_UNITY_CMAKE_SUPPORT)
 endif()
 
 add_subdirectory(src)
-add_subdirectory(examples)
+if (BUILD_TESTING)
+    add_subdirectory(examples)
+endif()
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h
