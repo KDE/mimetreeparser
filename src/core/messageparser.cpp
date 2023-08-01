@@ -111,7 +111,11 @@ AttachmentModel *MessageParser::attachments() const
 QString MessageParser::subject() const
 {
     if (d->mMessage) {
-        return findHeader<KMime::Headers::Subject>(d->mMessage.get())->asUnicodeString();
+        const auto header = findHeader<KMime::Headers::Subject>(d->mMessage.get());
+        if (!header) {
+            return {};
+        }
+        return header->asUnicodeString();
     } else {
         return QString();
     }
@@ -120,7 +124,11 @@ QString MessageParser::subject() const
 QString MessageParser::from() const
 {
     if (d->mMessage) {
-        return findHeader<KMime::Headers::From>(d->mMessage.get())->displayString();
+        const auto header = findHeader<KMime::Headers::From>(d->mMessage.get());
+        if (!header) {
+            return {};
+        }
+        return header->displayString();
     } else {
         return QString();
     }
@@ -129,7 +137,11 @@ QString MessageParser::from() const
 QString MessageParser::sender() const
 {
     if (d->mMessage) {
-        return findHeader<KMime::Headers::Sender>(d->mMessage.get())->displayString();
+        const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get());
+        if (!header) {
+            return {};
+        }
+        return header->displayString();
     } else {
         return QString();
     }
@@ -137,7 +149,11 @@ QString MessageParser::sender() const
 QString MessageParser::to() const
 {
     if (d->mMessage) {
-        return findHeader<KMime::Headers::To>(d->mMessage.get())->displayString();
+        const auto header = findHeader<KMime::Headers::To>(d->mMessage.get());
+        if (!header) {
+            return {};
+        }
+        return header->displayString();
     } else {
         return i18nc("displayed when a mail has unknown sender, receiver or date", "Unknown");
     }
@@ -146,7 +162,11 @@ QString MessageParser::to() const
 QDateTime MessageParser::date() const
 {
     if (d->mMessage) {
-        return findHeader<KMime::Headers::Date>(d->mMessage.get())->dateTime();
+        const auto header = findHeader<KMime::Headers::Date>(d->mMessage.get());
+        if (!header) {
+            return {};
+        }
+        return header->dateTime();
     } else {
         return QDateTime();
     }
