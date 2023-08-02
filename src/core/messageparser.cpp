@@ -9,7 +9,6 @@
 
 #include "async.h"
 #include "attachmentmodel.h"
-#include "partmodel.h"
 
 namespace
 {

@@ -4,7 +4,6 @@
 
 #include "attachmentmodel.h"
 
-#include "objecttreeparser.h"
 #include <QString>
 
 #include <KLocalizedString>

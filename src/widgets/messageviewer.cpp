@@ -19,7 +19,6 @@
 #include <QLabel>
 #include <QMenu>
 #include <QScrollArea>
-#include <QSplitter>
 #include <QVBoxLayout>
 
 using namespace MimeTreeParser::Widgets;
