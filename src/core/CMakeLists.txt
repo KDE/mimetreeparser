@@ -85,7 +85,7 @@ target_include_directories(KPim6MimeTreeParserCore
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore>")
 
 target_include_directories(KPim6MimeTreeParserCore
-    PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserCore_SOURCE_DIR}/src;${MimeTreeParserCore_BINARY_DIR}/src;${MimeTreeParserCore_BINARY_DIR}>")
+    PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserCore_BINARY_DIR}>")
 
 target_link_libraries(KPim6MimeTreeParserCore
 PUBLIC
