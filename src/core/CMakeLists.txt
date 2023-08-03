@@ -150,7 +150,7 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         # using only public headers, to cover only public API
-        SOURCES ${MimeTreeParser_HEADERS}
+        SOURCES ${MimeTreeParserCore_HEADERS}
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         LINK_QCHS
             Qt${QT_MAJOR_VERSION}Core_QCH
