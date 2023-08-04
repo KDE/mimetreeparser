@@ -83,9 +83,6 @@ generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserCore BASE_NAME mimet
 target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserCore>")
 
-target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
-    PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserCore_SOURCE_DIR}/src;${MimeTreeParserCore_BINARY_DIR}/src;${MimeTreeParserCore_BINARY_DIR}>")
-
 target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
 PUBLIC
     KPim${KF_MAJOR_VERSION}::Mime

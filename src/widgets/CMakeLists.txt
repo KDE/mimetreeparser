@@ -34,7 +34,6 @@ generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets BASE_NAME mi
 
 
 target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets>")
-target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PUBLIC "$<BUILD_INTERFACE:${MimeTreeParserWidgets_SOURCE_DIR}/src;${MimeTreeParserWidgets_BINARY_DIR}/src>")
 
 target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
 PUBLIC
