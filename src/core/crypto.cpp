@@ -6,9 +6,7 @@
 
 #include "crypto.h"
 
-#ifndef _WIN32
 #include <gpgme.h>
-#endif
 
 #include <QDebug>
 #include <QFile>
@@ -30,7 +28,6 @@ QDebug operator<<(QDebug d, const Error &error)
     return d;
 }
 
-#ifndef _WIN32
 namespace Crypto
 {
 struct Data {
@@ -594,5 +591,3 @@ std::vector<Key> Crypto::findKeys(const QStringList &patterns, bool findPrivate,
     }
     return usableKeys;
 }
-
-#endif
