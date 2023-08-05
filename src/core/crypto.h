@@ -76,7 +76,6 @@ struct ImportResult {
     int unchanged;
 };
 
-#ifndef _WIN32
 MIMETREEPARSER_CORE_EXPORT std::vector<Key> findKeys(const QStringList &filter, bool findPrivate = false, bool remote = false);
 
 MIMETREEPARSER_CORE_EXPORT Expected<Error, QByteArray> exportPublicKey(const Key &key);
@@ -98,7 +97,6 @@ MIMETREEPARSER_CORE_EXPORT DecryptionResult decrypt(CryptoProtocol protocol, con
 MIMETREEPARSER_CORE_EXPORT VerificationResult verifyDetachedSignature(CryptoProtocol protocol, const QByteArray &signature, const QByteArray &outdata);
 MIMETREEPARSER_CORE_EXPORT VerificationResult verifyOpaqueSignature(CryptoProtocol protocol, const QByteArray &signature, QByteArray &outdata);
 };
-#endif
 
 Q_DECLARE_METATYPE(Crypto::Key);
 
