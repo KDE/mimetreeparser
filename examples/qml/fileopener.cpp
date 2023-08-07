@@ -80,3 +80,5 @@ void FileOpener::open(const QUrl &url)
 
     Q_EMIT messageOpened(message);
 }
+
+#include "moc_fileopener.cpp"

@@ -170,3 +170,5 @@ QDateTime MessageParser::date() const
         return QDateTime();
     }
 }
+
+#include "moc_messageparser.cpp"

@@ -540,3 +540,5 @@ int PartModel::columnCount(const QModelIndex &) const
 {
     return 1;
 }
+
+#include "moc_partmodel.cpp"

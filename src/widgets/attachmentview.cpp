@@ -20,3 +20,5 @@ void AttachmentView::contextMenuEvent(QContextMenuEvent *event)
     Q_UNUSED(event);
     Q_EMIT contextMenuRequested();
 }
+
+#include "moc_attachmentview_p.cpp"
