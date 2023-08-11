@@ -69,9 +69,6 @@ public:
     // DEPRECATED calls decryptAndVerify
     void decryptParts();
 
-    /** Import any certificates found in the message */
-    void importCertificates();
-
     /** Embedd content referenced by cid by inlining */
     QString resolveCidLinks(const QString &html);
 

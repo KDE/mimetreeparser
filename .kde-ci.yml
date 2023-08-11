@@ -9,6 +9,7 @@ Dependencies:
     'frameworks/kwidgetsaddons' : '@latest'
     'pim/kmime' : '@same'
     'pim/kmbox' : '@same'
+    'pim/libkleo' : '@same'
 
 Options:
   require-passing-tests-on: ['Linux']

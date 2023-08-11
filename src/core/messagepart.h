@@ -3,18 +3,27 @@
 
 #pragma once
 
-#include "crypto.h"
 #include "mimetreeparser_core_export.h"
 #include "partmetadata.h"
 
+#include <gpgme++/decryptionresult.h>
+#include <gpgme++/importresult.h>
+#include <gpgme++/verificationresult.h>
+
 #include <KMime/Message>
 
+#include <QMap>
 #include <QSharedPointer>
 #include <QString>
 
 namespace KMime
 {
 class Content;
+}
+
+namespace QGpgME
+{
+class Protocol;
 }
 
 namespace MimeTreeParser
@@ -31,11 +40,6 @@ class MultiPartAlternativeBodyPartFormatter;
 
 class SignedMessagePart;
 class EncryptedMessagePart;
-
-using Crypto::CryptoProtocol;
-using Crypto::CryptoProtocol::CMS;
-using Crypto::CryptoProtocol::OpenPGP;
-using Crypto::CryptoProtocol::UnknownProtocol;
 
 class MIMETREEPARSER_CORE_EXPORT MessagePart : public QObject
 {
@@ -235,14 +239,14 @@ class CertMessagePart : public MessagePart
     Q_OBJECT
 public:
     typedef QSharedPointer<CertMessagePart> Ptr;
-    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const CryptoProtocol cryptoProto);
+    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, QGpgME::Protocol *cryptoProto);
     virtual ~CertMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
-    void import();
 
 private:
-    const CryptoProtocol mProtocol;
+    const QGpgME::Protocol *mCryptoProto;
+    GpgME::ImportResult mInportResult;
 };
 
 class EncapsulatedRfc822MessagePart : public MessagePart
@@ -264,12 +268,15 @@ private:
 class EncryptedMessagePart : public MessagePart
 {
     Q_OBJECT
-    Q_PROPERTY(bool isEncrypted READ isEncrypted CONSTANT)
+    Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
+    Q_PROPERTY(bool isEncrypted READ isEncrypted)
+    Q_PROPERTY(bool isNoSecKey READ isNoSecKey)
+    Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
     typedef QSharedPointer<EncryptedMessagePart> Ptr;
     EncryptedMessagePart(ObjectTreeParser *otp,
                          const QString &text,
-                         const CryptoProtocol protocol,
+                         const QGpgME::Protocol *protocol,
                          KMime::Content *node,
                          KMime::Content *encryptedNode = nullptr,
                          bool parseAfterDecryption = true);
@@ -278,26 +285,36 @@ public:
 
     QString text() const Q_DECL_OVERRIDE;
 
-    void setIsEncrypted(bool encrypted);
-    bool isEncrypted() const;
+    void setDecryptMessage(bool decrypt);
+    Q_REQUIRED_RESULT bool decryptMessage() const;
 
-    bool isDecryptable() const;
+    void setIsEncrypted(bool encrypted);
+    Q_REQUIRED_RESULT bool isEncrypted() const;
+
+    Q_REQUIRED_RESULT bool isDecryptable() const;
+
+    Q_REQUIRED_RESULT bool isNoSecKey() const;
+    Q_REQUIRED_RESULT bool passphraseError() const;
 
     void startDecryption(KMime::Content *data);
     void startDecryption();
 
     QByteArray mDecryptedData;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    QString plaintextContent() const override;
+    QString htmlContent() const override;
 
 private:
     bool decrypt(KMime::Content &data);
     bool mParseAfterDecryption{true};
 
 protected:
-    const CryptoProtocol mProtocol;
+    bool mPassphraseError;
+    bool mNoSecKey;
+    bool mDecryptMessage;
+    const QGpgME::Protocol *mCryptoProto;
     QByteArray mVerifiedText;
+    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
     KMime::Content *mEncryptedNode;
 };
 
@@ -307,7 +324,11 @@ class SignedMessagePart : public MessagePart
     Q_PROPERTY(bool isSigned READ isSigned CONSTANT)
 public:
     typedef QSharedPointer<SignedMessagePart> Ptr;
-    SignedMessagePart(ObjectTreeParser *otp, const CryptoProtocol protocol, KMime::Content *node, KMime::Content *signedData, bool parseAfterDecryption = true);
+    SignedMessagePart(ObjectTreeParser *otp,
+                      const QGpgME::Protocol *protocol,
+                      KMime::Content *node,
+                      KMime::Content *signedData,
+                      bool parseAfterDecryption = true);
 
     virtual ~SignedMessagePart();
 
@@ -320,12 +341,14 @@ public:
     QString htmlContent() const Q_DECL_OVERRIDE;
 
 private:
-    void setVerificationResult(const Crypto::VerificationResult &result, const QByteArray &signedData);
+    void sigStatusToMetaData();
+    void setVerificationResult(const GpgME::VerificationResult &result, const QByteArray &signedData);
     bool mParseAfterDecryption{true};
 
 protected:
-    CryptoProtocol mProtocol;
+    const QGpgME::Protocol *mCryptoProto;
     KMime::Content *mSignedData;
+    std::vector<GpgME::Signature> mSignatures;
 
     friend EncryptedMessagePart;
 };

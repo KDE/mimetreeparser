@@ -282,21 +282,6 @@ void ObjectTreeParser::decryptAndVerify()
         });
 }
 
-void ObjectTreeParser::importCertificates()
-{
-    MessagePart::List contentParts = ::collect(
-        mParsedPart,
-        [](const MessagePart::Ptr &) {
-            return true;
-        },
-        [](const MessagePart::Ptr &part) {
-            if (const auto cert = dynamic_cast<MimeTreeParser::CertMessagePart *>(part.data())) {
-                cert->import();
-            }
-            return false;
-        });
-}
-
 QString ObjectTreeParser::resolveCidLinks(const QString &html)
 {
     auto text = html;

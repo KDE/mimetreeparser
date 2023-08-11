@@ -313,16 +313,16 @@ SignatureInfo *signatureInfo(MimeTreeParser::MessagePart *messagePart)
     }
     for (const auto &signaturePart : signatures) {
         signatureInfo->keyId = signaturePart->partMetaData()->keyId;
-        signatureInfo->keyMissing = signaturePart->partMetaData()->keyMissing;
-        signatureInfo->keyExpired = signaturePart->partMetaData()->keyExpired;
-        signatureInfo->keyRevoked = signaturePart->partMetaData()->keyRevoked;
-        signatureInfo->sigExpired = signaturePart->partMetaData()->sigExpired;
-        signatureInfo->crlMissing = signaturePart->partMetaData()->crlMissing;
-        signatureInfo->crlTooOld = signaturePart->partMetaData()->crlTooOld;
+        signatureInfo->keyMissing = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyMissing;
+        signatureInfo->keyExpired = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyExpired;
+        signatureInfo->keyRevoked = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyRevoked;
+        signatureInfo->sigExpired = signaturePart->partMetaData()->sigSummary & GpgME::Signature::SigExpired;
+        signatureInfo->crlMissing = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlMissing;
+        signatureInfo->crlTooOld = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlTooOld;
         signatureInfo->signer = signaturePart->partMetaData()->signer;
         signatureInfo->signerMailAddresses = signaturePart->partMetaData()->signerMailAddresses;
         signatureInfo->signatureIsGood = signaturePart->partMetaData()->isGoodSignature;
-        signatureInfo->keyIsTrusted = signaturePart->partMetaData()->keyIsTrusted;
+        signatureInfo->keyIsTrusted = signaturePart->partMetaData()->isTrusted();
     }
     return signatureInfo;
 }

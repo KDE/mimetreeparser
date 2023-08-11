@@ -117,7 +117,7 @@ private Q_SLOTS:
         QCOMPARE(part->signatures().size(), 0);
         QVERIFY(part->text().isEmpty());
         auto enc = part->encryptions()[0];
-        QCOMPARE(enc->error(), MimeTreeParser::MessagePart::NoKeyError);
+        QVERIFY(enc->isNoSecKey());
         // QCOMPARE((int) enc->recipients().size(), 2);
     }
 
