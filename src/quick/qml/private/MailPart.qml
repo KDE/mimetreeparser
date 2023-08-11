@@ -30,7 +30,7 @@ Item {
         width: Kirigami.Units.smallSpacing
     }
 
-    Text {
+    QQC2.Label {
         id: sender
         anchors {
             top: parent.top
@@ -39,7 +39,7 @@ Item {
             right: parent.right
         }
 
-        text: i18n("sent by %1 on %2", root.sender, Qt.formatDateTime(root.date, "dd MMM yyyy hh:mm"))
+        text: i18ndc("mimetreeparser", "@info", "sent by %1 on %2", root.sender, Qt.formatDateTime(root.date, "dd MMM yyyy hh:mm"))
         color: "grey"
         clip: true
     }

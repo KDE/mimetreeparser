@@ -85,13 +85,13 @@ QVariant AttachmentModel::headerData(int section, Qt::Orientation orientation, i
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole) {
         switch (section) {
         case NameColumn:
-            return i18n("Name");
+            return i18ndc("mimetreeparser", "@title:column", "Name");
         case SizeColumn:
-            return i18n("Size");
+            return i18ndc("mimetreeparser", "@title:column", "Size");
         case IsEncryptedColumn:
-            return i18n("Encrypted");
+            return i18ndc("mimetreeparser", "@title:column", "Encrypted");
         case IsSignedColumn:
-            return i18n("Signed");
+            return i18ndc("mimetreeparser", "@title:column", "Signed");
         }
     }
     return {};
@@ -193,7 +193,7 @@ static QString internalSaveAttachmentToDisk(AttachmentModel *model, const MimeTr
     QFile f(fname);
     if (!f.open(QIODevice::ReadWrite)) {
         qWarning() << "Failed to write attachment to file:" << fname << " Error: " << f.errorString();
-        Q_EMIT model->info(i18n("Failed to save attachment."));
+        Q_EMIT model->info(i18ndc("mimetreeparser", "@info", "Failed to save attachment."));
         return {};
     }
     f.write(data);
@@ -225,7 +225,7 @@ bool AttachmentModel::saveAttachmentToDisk(const MimeTreeParser::MessagePart::Pt
     if (path.isEmpty()) {
         return false;
     }
-    Q_EMIT info(i18n("Saved the attachment to disk: %1", path));
+    Q_EMIT info(i18ndc("mimetreeparser", "@info", "Saved the attachment to disk: %1", path));
     return true;
 }
 
@@ -242,12 +242,12 @@ bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &mes
     const auto filePath = internalSaveAttachmentToDisk(this, message, downloadDir, true);
     if (!filePath.isEmpty()) {
         if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
-            Q_EMIT info(i18n("Failed to open attachment."));
+            Q_EMIT info(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
             return false;
         }
         return true;
     }
-    Q_EMIT info(i18n("Failed to save attachment for opening."));
+    Q_EMIT info(i18ndc("mimetreeparser", "@info", "Failed to save attachment for opening."));
     return false;
 }
 
@@ -265,12 +265,13 @@ bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &pa
     bool success = true;
     QString message;
     if (result.considered == 0) {
-        message = i18n("No keys were found in this attachment");
+        message = i18ndc("mimetreeparser", "@info", "No keys were found in this attachment");
         success = false;
     } else {
-        message = i18np("one key imported", "%1 keys imported", result.imported);
+        message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.imported);
         if (result.unchanged != 0) {
-            message += QStringLiteral("\n") + i18np("one key was already imported", "%1 keys were already imported", result.unchanged);
+            message +=
+                QStringLiteral("\n") + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.unchanged);
         }
     }
 

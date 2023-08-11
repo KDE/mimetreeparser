@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
 
     padding: Kirigami.Units.largeSpacing * 2
 
-    title: i18n("Message viewer")
+    title: i18ndc("mimetreeparser", "@title:window", "Message viewer")
 
     header: QQC2.ToolBar {
         id: mailHeader
@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
             columns: 3
 
             QQC2.Label {
-                text: i18n('Subject:')
+                text: i18ndc("mimetreeparser", "@label", "Subject:")
                 font.bold: true
                 visible: root.subject.length > 0
 
@@ -87,7 +87,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
-                text: i18n('From:')
+                text: i18ndc("mimetreeparser", "@label", "From:")
                 font.bold: true
                 visible: root.from.length > 0
 
@@ -104,7 +104,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
-                text: i18n('Sender:')
+                text: i18ndc("mimetreeparser", "@label", "Sender:")
                 font.bold: true
                 visible: root.sender.length > 0 && root.sender !== root.from
 
@@ -121,7 +121,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
-                text: i18n('To:')
+                text: i18ndc("mimetreeparser", "@label", "To:")
                 font.bold: true
                 visible: root.to.length > 0
 
@@ -178,7 +178,7 @@ Kirigami.ScrollablePage {
                     clip: true
 
                     actionIcon: 'download'
-                    actionTooltip: i18n("Save attachment")
+                    actionTooltip: i18ndc("mimetreeparser", "@action:button", "Save attachment")
                     onExecute: mailPartView.attachmentModel.saveAttachmentToDisk(index)
                     onClicked: mailPartView.attachmentModel.openAttachment(index)
                     onPublicKeyImport: mailPartView.attachmentModel.importPublicKey(index)

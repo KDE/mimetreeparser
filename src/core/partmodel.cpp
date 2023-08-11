@@ -480,9 +480,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         case ErrorString: {
             switch (messagePart->error()) {
             case MimeTreeParser::MessagePart::NoKeyError:
-                return i18n("No key available.");
+                return i18ndc("mimetreeparser", "@info:status", "No key available.");
             case MimeTreeParser::MessagePart::PassphraseError:
-                return i18n("Wrong passphrase.");
+                return i18ndc("mimetreeparser", "@info:status", "Wrong passphrase.");
             case MimeTreeParser::MessagePart::UnknownError:
                 break;
             default:

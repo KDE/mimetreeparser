@@ -13,7 +13,7 @@ QQC2.AbstractButton {
     required property string name
     required property string type
     property alias actionIcon: actionButton.icon.name
-    property alias actionTooltip: actionButtonTooltip.text
+    property alias actionTooltip: actionButton.text
 
     signal execute;
     signal publicKeyImport;
@@ -53,17 +53,22 @@ QQC2.AbstractButton {
         QQC2.ToolButton {
             visible: root.type === "application/pgp-keys"
             icon.name: 'gpg'
+            text: i18ndc("mimetreeparser", "@action:button", "Import key")
+            display: QQC2.ToolButton.IconOnly
             onClicked: root.publicKeyImport()
-            QQC2.ToolTip {
-                text: i18n("Import key")
-            }
+
+            QQC2.ToolTip.text: text
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            QQC2.ToolTip.visible: hovered
         }
         QQC2.ToolButton {
             id: actionButton
+
             onClicked: root.execute()
-            QQC2.ToolTip {
-                id: actionButtonTooltip
-            }
+
+            QQC2.ToolTip.text: text
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            QQC2.ToolTip.visible: hovered
         }
     }
 }
