@@ -23,6 +23,14 @@ Kirigami.ScrollablePage {
     readonly property string to: mailPartView.to
     readonly property date dateTime: mailPartView.dateTime
 
+    /**
+     * This property holds the url to a custom ical part QML component.
+     *
+     * This allow apps to overwrite it and provide special handling for email
+     * invitation.
+     */
+    property url icalCustomComponent
+
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
 
@@ -34,7 +42,7 @@ Kirigami.ScrollablePage {
         id: mailHeader
 
         padding: root.padding
-        visible: root.from.length > 0 || root.to.length > 0 || root.subject.length > 0 
+        visible: root.from.length > 0 || root.to.length > 0 || root.subject.length > 0
 
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -142,6 +150,7 @@ Kirigami.ScrollablePage {
     MailPartView {
         id: mailPartView
         padding: root.padding
+        icalCustomComponent: root.icalCustomComponent
     }
 
     footer: QQC2.ToolBar {

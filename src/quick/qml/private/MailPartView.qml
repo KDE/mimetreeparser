@@ -25,6 +25,8 @@ ListView {
     property alias autoLoadImages: visualModel.autoLoadImages
     property var attachmentModel: messageParser.attachments
 
+    property url icalCustomComponent
+
     topMargin: padding
     bottomMargin: padding
 
@@ -33,6 +35,7 @@ ListView {
     model: MailPartModel {
         id: visualModel
         model: messageParser.parts
+        icalCustomComponent: root.icalCustomComponent
     }
 
     MessageParser {

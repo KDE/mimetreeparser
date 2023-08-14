@@ -15,6 +15,7 @@ DelegateModel {
     property string searchString: ""
     property bool autoLoadImages: false
     property int padding: Kirigami.Units.largeSpacing
+    property url icalCustomComponent
 
     delegate: RowLayout {
         id: partColumn
@@ -143,7 +144,7 @@ DelegateModel {
                             })
                             break;
                         case PartModel.Ical:
-                            partLoader.setSource("ICalPart.qml", {
+                            partLoader.setSource(root.icalCustomComponent ? root.icalCustomComponent : "ICalPart.qml", {
                                 content: model.content,
                             })
                             break;
