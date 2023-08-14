@@ -75,6 +75,8 @@ public:
     /** Embedd content referenced by cid by inlining */
     QString resolveCidLinks(const QString &html);
 
+    KMime::Message::Ptr message() const;
+
 private:
     /**
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the

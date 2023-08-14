@@ -75,7 +75,34 @@ find_package(KPim${KF_MAJOR_VERSION}Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 find_package(Gpgme REQUIRED)
 
 find_package(Qt${KF_MAJOR_VERSION}Quick ${QT_MIN_VERSION} CONFIG)
+set_package_properties(Qt${KF_MAJOR_VERSION}Quick PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Provides qml plugin to view email"
+)
+
 find_package(Qt${KF_MAJOR_VERSION}Widgets ${QT_MIN_VERSION} CONFIG)
+set_package_properties(Qt${KF_MAJOR_VERSION}Widgets PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Provides widgets to view email"
+)
+
+find_package(KPim${KF_MAJOR_VERSION}Itinerary CONFIG)
+set_package_properties(KPim${KF_MAJOR_VERSION}Itinerary PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Extract ticket and reservation from your emails"
+)
+
+find_package(KPim${KF_MAJOR_VERSION}PkPass CONFIG)
+set_package_properties(KPim${KF_MAJOR_VERSION}PkPass PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Extract ticket and reservation from your emails"
+)
+
+find_package(KF${KF_MAJOR_VERSION}Prison ${QT_MIN_VERSION} CONFIG)
+set_package_properties(KF${KF_MAJOR_VERSION}Prison PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Extract ticket and reservation from your emails"
+)
 
 if (BUILD_TESTING)
     find_package(Qt${KF_MAJOR_VERSION}Test ${QT_MIN_VERSION} CONFIG REQUIRED)

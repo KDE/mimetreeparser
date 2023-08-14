@@ -8,12 +8,21 @@
 #include <KMime/Message>
 #include <QAbstractItemModel>
 
+#include "itinerary/itinerarymemento.h"
 #include "mimetreeparser_core_export.h"
 #include <memory>
 
 class MessagePartPrivate;
 class PartModel;
 class AttachmentModel;
+
+namespace MimeTreeParser
+{
+namespace Itinerary
+{
+class ItineraryMemento;
+}
+}
 
 class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
 {
@@ -46,6 +55,7 @@ public:
     QString sender() const;
     QString to() const;
     QDateTime date() const;
+    MimeTreeParser::Itinerary::ItineraryMemento *itineraryMemento();
 
 Q_SIGNALS:
     void htmlChanged();

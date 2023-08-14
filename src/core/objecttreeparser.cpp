@@ -147,6 +147,11 @@ QString ObjectTreeParser::structureAsString() const
     return string;
 }
 
+KMime::Message::Ptr ObjectTreeParser::message() const
+{
+    return mMsg;
+}
+
 void ObjectTreeParser::print()
 {
     qInfo().noquote() << structureAsString();

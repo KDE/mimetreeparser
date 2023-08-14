@@ -5,11 +5,13 @@
 
 #include "objecttreeparser.h"
 #include <KLocalizedString>
+#include <QDebug>
 #include <QElapsedTimer>
 
-#include "async.h"
 #include "attachmentmodel.h"
 #include "partmodel.h"
+
+#include "itinerary/itineraryprocessor.h"
 
 namespace
 {
@@ -74,6 +76,7 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     qDebug() << "Message parsing took: " << time.elapsed();
     parser->decryptParts();
     qDebug() << "Message parsing and decryption/verification: " << time.elapsed();
+
     d->mParser = parser;
     Q_EMIT htmlChanged();
 }
@@ -81,6 +84,16 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
 bool MessageParser::loaded() const
 {
     return bool{d->mParser};
+}
+
+MimeTreeParser::Itinerary::ItineraryMemento *MessageParser::itineraryMemento()
+{
+    if (!d->mMessage) {
+        return nullptr;
+    }
+
+    MimeTreeParser::Itinerary::ItineraryProcessor processor;
+    return processor.process(d->mParser);
 }
 
 QString MessageParser::structureAsString() const

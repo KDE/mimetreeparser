@@ -26,13 +26,23 @@ target_sources(mimetreeparserprivate PUBLIC
      mailtemplates.cpp
      mailcrypto.h
      mailcrypto.cpp
+
+     # itinerary
+     itinerary/itineraryprocessor.cpp
+     itinerary/itineraryprocessor.h
+     itinerary/itinerarymemento.cpp
+     itinerary/itinerarymemento.h
 )
 target_link_libraries(mimetreeparserprivate
 PUBLIC
     KPim${KF_MAJOR_VERSION}::Mime
+    KPim${KF_MAJOR_VERSION}::Itinerary
+    KPim${KF_MAJOR_VERSION}::PkPass
+    KF${KF_MAJOR_VERSION}::Prison
     KF${KF_MAJOR_VERSION}::I18n
     Qt${KF_MAJOR_VERSION}::Gui
     KF${KF_MAJOR_VERSION}::Codecs
+    KF${KF_MAJOR_VERSION}::CalendarCore
     Gpgme::Gpgme
 )
 
@@ -89,6 +99,7 @@ PUBLIC
     KPim${KF_MAJOR_VERSION}::Mime
     KF${KF_MAJOR_VERSION}::I18n
     Qt${KF_MAJOR_VERSION}::Gui
+    KF${KF_MAJOR_VERSION}::CalendarCore
 PRIVATE
     mimetreeparserprivate
 )
