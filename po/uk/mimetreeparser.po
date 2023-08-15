@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2023-08-12 08:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -138,37 +138,37 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Неправильний пароль."
 
-#: quick/qml/MailViewer.qml:31
+#: quick/qml/MailViewer.qml:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Перегляд повідомлень"
 
-#: quick/qml/MailViewer.qml:68
+#: quick/qml/MailViewer.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Тема:"
 
-#: quick/qml/MailViewer.qml:90
+#: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Від:"
 
-#: quick/qml/MailViewer.qml:107
+#: quick/qml/MailViewer.qml:115
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Відправник:"
 
-#: quick/qml/MailViewer.qml:124
+#: quick/qml/MailViewer.qml:132
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Кому:"
 
-#: quick/qml/MailViewer.qml:181
+#: quick/qml/MailViewer.qml:190
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -202,55 +202,55 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "надіслано %1, %2"
 
-#: quick/qml/private/MailPartModel.qml:53
+#: quick/qml/private/MailPartModel.qml:54
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "Це повідомлення підписано за допомогою ключа %1."
 
-#: quick/qml/private/MailPartModel.qml:54
+#: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
 msgstr "Подробиці щодо ключа недоступні."
 
-#: quick/qml/private/MailPartModel.qml:56
+#: quick/qml/private/MailPartModel.qml:57
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
 msgstr "Це повідомлення підписано за допомогою ключа %1 %2."
 
-#: quick/qml/private/MailPartModel.qml:58
+#: quick/qml/private/MailPartModel.qml:59
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
 msgstr "Ключ відкликано."
 
-#: quick/qml/private/MailPartModel.qml:61
+#: quick/qml/private/MailPartModel.qml:62
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
 msgstr "Строк дії ключа вичерпано."
 
-#: quick/qml/private/MailPartModel.qml:64
+#: quick/qml/private/MailPartModel.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
 msgstr "Ви довіряєте цьому ключу."
 
-#: quick/qml/private/MailPartModel.qml:67
+#: quick/qml/private/MailPartModel.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "Підпис є некоректним."
 
-#: quick/qml/private/MailPartModel.qml:96
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr ""
 "Це повідомлення зашифровано, але у нас немає ключа для його розшифровування."
 
-#: quick/qml/private/MailPartModel.qml:96
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted to the key: %1"
 msgstr "Це повідомлення зашифровано таким ключем: %1"

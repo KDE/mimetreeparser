@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2023-08-12 07:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -133,37 +133,37 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Felaktig lösenordsfras."
 
-#: quick/qml/MailViewer.qml:31
+#: quick/qml/MailViewer.qml:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Brevvisning"
 
-#: quick/qml/MailViewer.qml:68
+#: quick/qml/MailViewer.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Rubrik:"
 
-#: quick/qml/MailViewer.qml:90
+#: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Från:"
 
-#: quick/qml/MailViewer.qml:107
+#: quick/qml/MailViewer.qml:115
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Avsändare:"
 
-#: quick/qml/MailViewer.qml:124
+#: quick/qml/MailViewer.qml:132
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Till:"
 
-#: quick/qml/MailViewer.qml:181
+#: quick/qml/MailViewer.qml:190
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -197,54 +197,54 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "skickat av %1 %2"
 
-#: quick/qml/private/MailPartModel.qml:53
+#: quick/qml/private/MailPartModel.qml:54
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "Brevet har signerats med användning av nyckel %1."
 
-#: quick/qml/private/MailPartModel.qml:54
+#: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
 msgstr "Nyckelinformationen är inte tillgänglig."
 
-#: quick/qml/private/MailPartModel.qml:56
+#: quick/qml/private/MailPartModel.qml:57
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
 msgstr "Brevet har signerats med användning av nyckel %1 av %2."
 
-#: quick/qml/private/MailPartModel.qml:58
+#: quick/qml/private/MailPartModel.qml:59
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
 msgstr "Nyckeln har återkallats."
 
-#: quick/qml/private/MailPartModel.qml:61
+#: quick/qml/private/MailPartModel.qml:62
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
 msgstr "Nyckeln har gått ut."
 
-#: quick/qml/private/MailPartModel.qml:64
+#: quick/qml/private/MailPartModel.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
 msgstr "Du litar på den här nyckeln."
 
-#: quick/qml/private/MailPartModel.qml:67
+#: quick/qml/private/MailPartModel.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "Signaturen är ogiltig."
 
-#: quick/qml/private/MailPartModel.qml:96
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr "Brevet är krypterat men vi har inte nyckeln för det."
 
-#: quick/qml/private/MailPartModel.qml:96
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted to the key: %1"
 msgstr "Brevet är krypterat med nyckeln: %1"
