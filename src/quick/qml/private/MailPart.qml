@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick 2.7
-import QtQuick.Controls 2.15 as QQC2
 
 import org.kde.pim.mimetreeparser 1.0
 import org.kde.kirigami 2.19 as Kirigami

@@ -9,7 +9,6 @@ import QtGraphicalEffects 1.15
 
 import org.kde.pim.mimetreeparser 1.0
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kitemmodels 1.0 as KItemModels
 import './private'
 
 Kirigami.ScrollablePage {

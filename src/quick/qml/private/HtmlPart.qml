@@ -8,7 +8,6 @@ import QtWebEngine 1.4
 import QtQuick.Window 2.0
 
 import org.kde.pim.mimetreeparser 1.0
-import org.kde.kirigami 2.19 as Kirigami
 
 Item {
     id: root
