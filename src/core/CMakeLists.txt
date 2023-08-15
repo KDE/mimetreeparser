@@ -12,6 +12,7 @@ ecm_setup_version(PROJECT
 
 add_library(mimetreeparserprivate STATIC)
 set_target_properties(mimetreeparserprivate PROPERTIES POSITION_INDEPENDENT_CODE ON)
+add_definitions(-DTRANSLATION_DOMAIN=\"mimetreeparser\")
 target_sources(mimetreeparserprivate PUBLIC
      messagepart.h
      messagepart.cpp

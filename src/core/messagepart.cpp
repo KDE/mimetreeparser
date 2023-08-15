@@ -614,7 +614,7 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp,
 {
     mMetaData.isSigned = true;
     mMetaData.isGoodSignature = false;
-    mMetaData.status = i18n("Wrong Crypto Plug-In.");
+    mMetaData.status = i18ndc("mimetreeparser", "@info:status", "Wrong Crypto Plug-In.");
 }
 
 SignedMessagePart::~SignedMessagePart()
@@ -705,7 +705,7 @@ void SignedMessagePart::startVerification()
     }
 
     mMetaData.isSigned = false;
-    mMetaData.status = i18n("Wrong Crypto Plug-In.");
+    mMetaData.status = i18ndc("mimetreeparser", "@info:status", "Wrong Crypto Plug-In.");
     mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
 
@@ -779,7 +779,7 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
     mMetaData.isGoodSignature = false;
     mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
-    mMetaData.status = i18n("Wrong Crypto Plug-In.");
+    mMetaData.status = i18ndc("mimetreeparser", "@info:status", "Wrong Crypto Plug-In.");
 }
 
 void EncryptedMessagePart::setIsEncrypted(bool encrypted)
@@ -853,12 +853,12 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
         if (decryptResult.result == Crypto::DecryptionResult::NoSecretKeyError) {
             mError = NoKeyError;
-            mMetaData.errorText = i18n("Could not decrypt the data: no key found for recipients.");
+            mMetaData.errorText = i18ndc("mimetreeparser", "@info", "Could not decrypt the data: no key found for recipients.");
         } else if (decryptResult.result == Crypto::DecryptionResult::PassphraseError) {
             mError = PassphraseError;
         } else {
             mError = UnknownError;
-            mMetaData.errorText = i18n("Could not decrypt the data.");
+            mMetaData.errorText = i18ndc("mimetreeparser", "@info", "Could not decrypt the data.");
         }
         setText(QString::fromUtf8(mDecryptedData.constData()));
         return false;

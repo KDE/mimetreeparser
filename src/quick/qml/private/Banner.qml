@@ -185,7 +185,7 @@ T.ToolBar {
             id: closeButton
 
             visible: root.showCloseButton
-            text: i18nc("@action:button", "Close")
+            text: i18ndc("mimetreeparser", "@action:button", "Close")
 
             icon.name: "dialog-close"
             display: QQC2.ToolButton.IconOnly

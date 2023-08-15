@@ -25,6 +25,6 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.maximumWidth: parent.width
         visible: true
-        text: i18n("This mail contains an invitation")
+        text: i18nd("mimetreeparser", "This mail contains an invitation")
     }
 }

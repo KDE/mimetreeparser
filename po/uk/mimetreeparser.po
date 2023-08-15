@@ -1,0 +1,343 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the mimetreeparser package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: mimetreeparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
+"PO-Revision-Date: 2023-08-12 08:58+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#: core/attachmentmodel.cpp:88
+#, kde-format
+msgctxt "@title:column"
+msgid "Name"
+msgstr "Назва"
+
+#: core/attachmentmodel.cpp:90
+#, kde-format
+msgctxt "@title:column"
+msgid "Size"
+msgstr "Розмір"
+
+#: core/attachmentmodel.cpp:92
+#, kde-format
+msgctxt "@title:column"
+msgid "Encrypted"
+msgstr "Зашифровано"
+
+#: core/attachmentmodel.cpp:94
+#, kde-format
+msgctxt "@title:column"
+msgid "Signed"
+msgstr "Підписано"
+
+#: core/attachmentmodel.cpp:196
+#, kde-format
+msgctxt "@info"
+msgid "Failed to save attachment."
+msgstr "Не вдалося зберегти долучення."
+
+#: core/attachmentmodel.cpp:228
+#, kde-format
+msgctxt "@info"
+msgid "Saved the attachment to disk: %1"
+msgstr "Збереження долучення на диску: %1"
+
+#: core/attachmentmodel.cpp:245
+#, kde-format
+msgctxt "@info"
+msgid "Failed to open attachment."
+msgstr "Не вдалося відкрити долучення."
+
+#: core/attachmentmodel.cpp:250
+#, kde-format
+msgctxt "@info"
+msgid "Failed to save attachment for opening."
+msgstr "Не вдалося зберегти долучення для відкриття."
+
+#: core/attachmentmodel.cpp:268
+#, kde-format
+msgctxt "@info"
+msgid "No keys were found in this attachment"
+msgstr "У цьому долученні не було знайдено ключів"
+
+#: core/attachmentmodel.cpp:271
+#, kde-format
+msgctxt "@info"
+msgid "one key imported"
+msgid_plural "%1 keys imported"
+msgstr[0] "імпортовано %1 ключ"
+msgstr[1] "імпортовано %1 ключі"
+msgstr[2] "імпортовано %1 ключів"
+msgstr[3] "імпортовано %1 ключ"
+
+#: core/attachmentmodel.cpp:274
+#, kde-format
+msgctxt "@info"
+msgid "one key was already imported"
+msgid_plural "%1 keys were already imported"
+msgstr[0] "%1 ключ вже імпортовано"
+msgstr[1] "%1 ключі вже імпортовано"
+msgstr[2] "%1 ключів вже імпортовано"
+msgstr[3] "%1 ключ вже імпортовано"
+
+#: core/mailtemplates.cpp:103
+#, kde-format
+msgid "fwd"
+msgstr "fwd"
+
+#: core/mailtemplates.cpp:132
+#, kde-format
+msgid "re"
+msgstr "re"
+
+#: core/messageparser.cpp:158
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: core/messagepart.cpp:618 core/messagepart.cpp:709 core/messagepart.cpp:783
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong Crypto Plug-In."
+msgstr "Неправильний додаток шифрування."
+
+#: core/messagepart.cpp:857
+#, kde-format
+msgctxt "@info"
+msgid "Could not decrypt the data: no key found for recipients."
+msgstr "Не вдалося розшифрувати дані. Не знайдено ключа для отримувачів."
+
+#: core/messagepart.cpp:862
+#, kde-format
+msgctxt "@info"
+msgid "Could not decrypt the data."
+msgstr "Не вдалося розшифрувати дані."
+
+#: core/partmodel.cpp:483
+#, kde-format
+msgctxt "@info:status"
+msgid "No key available."
+msgstr "Немає доступних ключів."
+
+#: core/partmodel.cpp:485
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr "Неправильний пароль."
+
+#: quick/qml/MailViewer.qml:39
+#, kde-format
+msgctxt "@title:window"
+msgid "Message viewer"
+msgstr "Перегляд повідомлень"
+
+#: quick/qml/MailViewer.qml:76
+#, kde-format
+msgctxt "@label"
+msgid "Subject:"
+msgstr "Тема:"
+
+#: quick/qml/MailViewer.qml:98
+#, kde-format
+msgctxt "@label"
+msgid "From:"
+msgstr "Від:"
+
+#: quick/qml/MailViewer.qml:115
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr "Відправник:"
+
+#: quick/qml/MailViewer.qml:132
+#, kde-format
+msgctxt "@label"
+msgid "To:"
+msgstr "Кому:"
+
+#: quick/qml/MailViewer.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "Save attachment"
+msgstr "Зберегти долучення"
+
+#: quick/qml/private/AttachmentDelegate.qml:56
+#, kde-format
+msgctxt "@action:button"
+msgid "Import key"
+msgstr "Імпортувати ключ"
+
+#: quick/qml/private/Banner.qml:188
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Закрити"
+
+#: quick/qml/private/ErrorPart.qml:27
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "Сталася помилка: %1"
+
+#: quick/qml/private/ICalPart.qml:28
+#, kde-format
+msgid "This mail contains an invitation"
+msgstr "У цьому повідомленні міститься запрошення"
+
+#: quick/qml/private/MailPart.qml:42
+#, kde-format
+msgctxt "@info"
+msgid "sent by %1 on %2"
+msgstr "надіслано %1, %2"
+
+#: quick/qml/private/MailPartModel.qml:54
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed using the key %1."
+msgstr "Це повідомлення підписано за допомогою ключа %1."
+
+#: quick/qml/private/MailPartModel.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "The key details are not available."
+msgstr "Подробиці щодо ключа недоступні."
+
+#: quick/qml/private/MailPartModel.qml:57
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed using the key %1 by %2."
+msgstr "Це повідомлення підписано за допомогою ключа %1 %2."
+
+#: quick/qml/private/MailPartModel.qml:59
+#, kde-format
+msgctxt "@label"
+msgid "The key was revoked."
+msgstr "Ключ відкликано."
+
+#: quick/qml/private/MailPartModel.qml:62
+#, kde-format
+msgctxt "@label"
+msgid "The key has expired."
+msgstr "Строк дії ключа вичерпано."
+
+#: quick/qml/private/MailPartModel.qml:65
+#, kde-format
+msgctxt "@label"
+msgid "You are trusting this key."
+msgstr "Ви довіряєте цьому ключу."
+
+#: quick/qml/private/MailPartModel.qml:68
+#, kde-format
+msgctxt "@label"
+msgid "The signature is invalid."
+msgstr "Підпис є некоректним."
+
+#: quick/qml/private/MailPartModel.qml:97
+#, kde-format
+msgid "This message is encrypted but we don't have the key for it."
+msgstr ""
+"Це повідомлення зашифровано, але у нас немає ключа для його розшифровування."
+
+#: quick/qml/private/MailPartModel.qml:97
+#, kde-format
+msgid "This message is encrypted to the key: %1"
+msgstr "Це повідомлення зашифровано таким ключем: %1"
+
+#: widgets/messageviewer.cpp:54
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "&Зберегти долучення як…"
+
+#: widgets/messageviewer.cpp:59
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Відкрити"
+
+#: widgets/messageviewer.cpp:64
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import public key"
+msgstr "Імпортувати відкритий ключ"
+
+#: widgets/messageviewer.cpp:192
+#, kde-format
+msgid "Invitation"
+msgstr "Запрошення"
+
+#: widgets/messageviewer.cpp:195
+#, kde-format
+msgid "&Summary:"
+msgstr "&Резюме:"
+
+#: widgets/messageviewer.cpp:196
+#, kde-format
+msgid "&Organizer:"
+msgstr "&Організатор:"
+
+#: widgets/messageviewer.cpp:198
+#, kde-format
+msgid "&Location:"
+msgstr "&Розташування:"
+
+#: widgets/messageviewer.cpp:200
+#, kde-format
+msgid "&Start date:"
+msgstr "Дата &початку:"
+
+#: widgets/messageviewer.cpp:202
+#, kde-format
+msgid "&End date:"
+msgstr "Дата за&кінчення:"
+
+#: widgets/messageviewer.cpp:205
+#, kde-format
+msgid "&Details:"
+msgstr "&Подробиці:"
+
+#: widgets/messageviewer.cpp:215
+#, kde-format
+msgid "Encapsulated email"
+msgstr "Вбудовано повідомлення"
+
+#: widgets/messageviewer.cpp:223
+#, kde-format
+msgid "From:"
+msgstr "Від:"
+
+#: widgets/messageviewer.cpp:224
+#, kde-format
+msgid "Date:"
+msgstr "Дата:"
+
+#: widgets/messageviewer.cpp:237
+#, kde-format
+msgid "Error: %1"
+msgstr "Помилка: %1"
+
+#: widgets/messageviewer.cpp:257
+#, kde-format
+msgid "&Subject:"
+msgstr "&Тема:"
+
+#: widgets/messageviewer.cpp:260
+#, kde-format
+msgid "&From:"
+msgstr "&Від:"
+
+#: widgets/messageviewer.cpp:263
+#, kde-format
+msgid "&To:"
+msgstr "&Кому:"

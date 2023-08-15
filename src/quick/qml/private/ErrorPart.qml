@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick 2.4
+import QtQuick.Controls 2.15 as QQC2
 
 Item {
     id: root
@@ -22,8 +23,8 @@ Item {
         }
         width: parent.width
         spacing: 5
-        Text {
-            text: i18n("An error occurred: %1", errorString)
+        QQC2.Label {
+            text: i18nd("mimetreeparser", "An error occurred: %1", errorString)
         }
     }
 }

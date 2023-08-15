@@ -15,6 +15,7 @@ DelegateModel {
     property string searchString: ""
     property bool autoLoadImages: false
     property int padding: Kirigami.Units.largeSpacing
+    property url icalCustomComponent
 
     delegate: RowLayout {
         id: partColumn
@@ -50,21 +51,21 @@ DelegateModel {
         function getDetails(signatureDetails) {
             let details = "";
             if (signatureDetails.keyMissing) {
-                details += i18n("This message has been signed using the key %1.", signatureDetails.keyId) + "\n";
-                details += i18n("The key details are not available.")
+                details += i18ndc("mimetreeparser", "@label", "This message has been signed using the key %1.", signatureDetails.keyId) + "\n";
+                details += i18ndc("mimetreeparser", "@label", "The key details are not available.")
             } else {
-                details += i18n("This message has been signed using the key %1 by %2.", signatureDetails.keyId, signatureDetails.signer) + "\n";
+                details += i18ndc("mimetreeparser", "@label", "This message has been signed using the key %1 by %2.", signatureDetails.keyId, signatureDetails.signer) + "\n";
                 if (signatureDetails.keyRevoked) {
-                    details += "\n" + i18n("The key was revoked.")
+                    details += "\n" + i18ndc("mimetreeparser", "@label", "The key was revoked.")
                 }
                 if (signatureDetails.keyExpired) {
-                    details += "\n" + i18n("The key has expired.")
+                    details += "\n" + i18ndc("mimetreeparser", "@label", "The key has expired.")
                 }
                 if (signatureDetails.keyIsTrusted) {
-                    details += "\n" + i18n("You are trusting this key.")
+                    details += "\n" + i18ndc("mimetreeparser", "@label", "You are trusting this key.")
                 }
                 if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired && !signatureDetails.keyIsTrusted) {
-                    details += "\n" + i18n("The signature is invalid.")
+                    details += "\n" + i18ndc("mimetreeparser", "@label", "The signature is invalid.")
                 }
             }
             return details
@@ -143,7 +144,7 @@ DelegateModel {
                             })
                             break;
                         case PartModel.Ical:
-                            partLoader.setSource("ICalPart.qml", {
+                            partLoader.setSource(root.icalCustomComponent ? root.icalCustomComponent : "ICalPart.qml", {
                                 content: model.content,
                             })
                             break;
