@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:46+0000\n"
+"POT-Creation-Date: 2023-08-16 00:47+0000\n"
 "PO-Revision-Date: 2023-08-12 11:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -137,37 +137,37 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Frase de pas incorrecta."
 
-#: quick/qml/MailViewer.qml:39
+#: quick/qml/MailViewer.qml:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Visor de missatges"
 
-#: quick/qml/MailViewer.qml:76
+#: quick/qml/MailViewer.qml:75
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml:97
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "De:"
 
-#: quick/qml/MailViewer.qml:115
+#: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Remitent:"
 
-#: quick/qml/MailViewer.qml:132
+#: quick/qml/MailViewer.qml:131
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "A:"
 
-#: quick/qml/MailViewer.qml:190
+#: quick/qml/MailViewer.qml:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -190,12 +190,12 @@ msgstr "Tanca"
 msgid "An error occurred: %1"
 msgstr "S'ha produït un error: %1"
 
-#: quick/qml/private/ICalPart.qml:28
+#: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Este correu conté una invitació"
 
-#: quick/qml/private/MailPart.qml:42
+#: quick/qml/private/MailPart.qml:41
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
