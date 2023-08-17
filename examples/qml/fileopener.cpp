@@ -74,8 +74,48 @@ void FileOpener::open(const QUrl &url)
 
         message->assemble();
     } else {
-        message->setContent(content);
-        message->parse();
+        int startOfMessage = 0;
+        if (content.startsWith("From ")) {
+            startOfMessage = content.indexOf('\n');
+            if (startOfMessage == -1) {
+                return;
+            }
+            startOfMessage += 1; // the message starts after the '\n'
+        }
+        QVector<KMime::Message::Ptr> listMessages;
+
+        // check for multiple messages in the file
+        int endOfMessage = content.indexOf("\nFrom ", startOfMessage);
+        while (endOfMessage != -1) {
+            auto msg = new KMime::Message;
+            msg->setContent(KMime::CRLFtoLF(content.mid(startOfMessage, endOfMessage - startOfMessage)));
+            msg->parse();
+            if (!msg->hasContent()) {
+                delete msg;
+                msg = nullptr;
+                return;
+            }
+            KMime::Message::Ptr mMsg(msg);
+            listMessages << mMsg;
+            startOfMessage = endOfMessage + 1;
+            endOfMessage = content.indexOf("\nFrom ", startOfMessage);
+        }
+        if (endOfMessage == -1) {
+            endOfMessage = content.length();
+            auto msg = new KMime::Message;
+            msg->setContent(KMime::CRLFtoLF(content.mid(startOfMessage, endOfMessage - startOfMessage)));
+            msg->parse();
+            if (!msg->hasContent()) {
+                delete msg;
+                msg = nullptr;
+                return;
+            }
+            KMime::Message::Ptr mMsg(msg);
+            listMessages << mMsg;
+        }
+        if (listMessages.count() > 0) {
+            message = listMessages[0];
+        }
     }
 
     Q_EMIT messageOpened(message);
