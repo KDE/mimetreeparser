@@ -59,6 +59,14 @@ public:
         DateRole
     };
 
+    enum SecurityLevel {
+        Unknow,
+        Good,
+        NotSoGood,
+        Bad,
+    };
+    Q_ENUM(SecurityLevel);
+
     QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
     QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;

@@ -430,30 +430,30 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                 auto sigInfo = std::unique_ptr<SignatureInfo>{signatureInfo(messagePart)};
                 if (!sigInfo->signatureIsGood) {
                     if (sigInfo->keyMissing || sigInfo->keyExpired) {
-                        return QStringLiteral("notsogood");
+                        return SecurityLevel::NotSoGood;
                     }
-                    return QStringLiteral("bad");
+                    return SecurityLevel::Bad;
                 }
             }
             // All good
-            if (messageIsSigned || messageIsEncrypted) {
-                return QStringLiteral("good");
+            if ((messageIsSigned || messageIsEncrypted) && !messagePart->error()) {
+                return SecurityLevel::Good;
             }
             // No info
-            return QStringLiteral("unknown");
+            return SecurityLevel::Unknow;
         }
         case EncryptionSecurityLevelRole: {
             auto encryption = messagePart->encryptionState();
             bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
             if (messagePart->error()) {
-                return QStringLiteral("bad");
+                return SecurityLevel::Bad;
             }
             // All good
             if (messageIsEncrypted) {
-                return QStringLiteral("good");
+                return SecurityLevel::Good;
             }
             // No info
-            return QStringLiteral("unknown");
+            return SecurityLevel::Unknow;
         }
         case SignatureSecurityLevelRole: {
             auto signature = messagePart->signatureState();
@@ -462,14 +462,14 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                 auto sigInfo = std::unique_ptr<SignatureInfo>{signatureInfo(messagePart)};
                 if (!sigInfo->signatureIsGood) {
                     if (sigInfo->keyMissing || sigInfo->keyExpired) {
-                        return QStringLiteral("notsogood");
+                        return SecurityLevel::NotSoGood;
                     }
-                    return QStringLiteral("bad");
+                    return SecurityLevel::Bad;
                 }
-                return QStringLiteral("good");
+                return SecurityLevel::Good;
             }
             // No info
-            return QStringLiteral("unknown");
+            return SecurityLevel::Unknow;
         }
         case SignatureDetails:
             return QVariant::fromValue(signatureInfo(messagePart));
