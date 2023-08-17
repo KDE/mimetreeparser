@@ -91,7 +91,7 @@ private:
     std::unique_ptr<PartModelPrivate> d;
 };
 
-class SignatureInfo : public QObject
+class MIMETREEPARSER_CORE_EXPORT SignatureInfo : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QByteArray keyId MEMBER keyId CONSTANT)
