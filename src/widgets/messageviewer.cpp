@@ -4,6 +4,7 @@
 #include "messageviewer.h"
 #include "../core/objecttreeparser.h"
 #include "attachmentview_p.h"
+#include "messagecontainerwidget_p.h"
 #include <KCalendarCore/Event>
 #include <KCalendarCore/ICalFormat>
 #include <KCalendarCore/Incidence>
@@ -185,12 +186,24 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         const auto type = static_cast<PartModel::Types>(parts->data(parts->index(i, 0, parent), PartModel::TypeRole).toUInt());
         const auto content = parts->data(parts->index(i, 0, parent), PartModel::ContentRole).toString();
 
+        const auto signatureInfo = parts->data(parts->index(i, 0, parent), PartModel::SignatureDetails).value<SignatureInfo *>();
+        const auto isSigned = parts->data(parts->index(i, 0, parent), PartModel::IsSignedRole).toBool();
+        const auto signatureSecurityLevel =
+            static_cast<PartModel::SecurityLevel>(parts->data(parts->index(i, 0, parent), PartModel::SignatureSecurityLevelRole).toInt());
+
+        const auto encryptionInfo = parts->data(parts->index(i, 0, parent), PartModel::EncryptionDetails).value<SignatureInfo *>();
+        const auto isEncrypted = parts->data(parts->index(i, 0, parent), PartModel::IsEncryptedRole).toBool();
+        const auto encryptionSecurityLevel =
+            static_cast<PartModel::SecurityLevel>(parts->data(parts->index(i, 0, parent), PartModel::EncryptionSecurityLevelRole).toInt());
+
         switch (type) {
         case PartModel::Types::Plain: {
-            auto label = new QLabel();
-            label->setText(content);
-            widgets.append(label);
-            layout->addWidget(label);
+            auto container = new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel);
+            auto label = new QLabel(content);
+            label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+            container->layout()->addWidget(label);
+            widgets.append(container);
+            layout->addWidget(container);
             break;
         }
         case PartModel::Types::Ical: {
