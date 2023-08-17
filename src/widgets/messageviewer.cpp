@@ -144,11 +144,20 @@ MessageViewer::MessageViewer(QWidget *parent)
     d->layout = new QVBoxLayout(widget);
     d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
 
+    auto separator = new QFrame(this);
+    separator->setLineWidth(1);
+    separator->setFixedHeight(1);
+    separator->setMidLineWidth(1);
+    separator->setFrameShape(QFrame::HLine);
+    addWidget(separator);
+
     auto scrollArea = new QScrollArea(this);
     scrollArea->setWidget(widget);
     scrollArea->setWidgetResizable(true);
+    scrollArea->setFrameStyle(QFrame::NoFrame);
+    scrollArea->setBackgroundRole(QPalette::Base);
     addWidget(scrollArea);
-    setStretchFactor(1, 2);
+    setStretchFactor(2, 2);
 
     d->attachmentView = new AttachmentView(this);
     addWidget(d->attachmentView);
