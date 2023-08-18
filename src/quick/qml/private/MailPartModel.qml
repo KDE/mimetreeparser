@@ -20,7 +20,8 @@ DelegateModel {
     delegate: RowLayout {
         id: partColumn
 
-        width: ListView.view.width
+        width: ListView.view.width - Kirigami.Units.largeSpacing
+        x: Kirigami.Units.smallSpacing
 
         function getType(securityLevel) {
             if (securityLevel === PartModel.Good) {
@@ -94,7 +95,7 @@ DelegateModel {
                 iconName: "mail-encrypted"
                 type: getType(model.encryptionSecurityLevel)
                 visible: model.encrypted
-                text: model.encryptionDetails.keyId ? i18n("This message is encrypted but we don't have the key for it.") : i18n("This message is encrypted to the key: %1", model.encryptionDetails.keyId);
+                text: !model.encryptionDetails.keyId ? i18n("This message is encrypted but we don't have the key for it.") : i18n("This message is encrypted to the key: %1", model.encryptionDetails.keyId);
 
                 Layout.fillWidth: true
             }

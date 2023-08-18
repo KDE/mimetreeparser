@@ -33,7 +33,7 @@ Kirigami.ScrollablePage {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
 
-    padding: Kirigami.Units.largeSpacing * 2
+    padding: Kirigami.Units.largeSpacing
 
     title: i18ndc("mimetreeparser", "@title:window", "Message viewer")
 
@@ -73,7 +73,6 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 text: i18ndc("mimetreeparser", "@label", "Subject:")
-                font.bold: true
                 visible: root.subject.length > 0
 
                 Layout.rightMargin: Kirigami.Units.largeSpacing
@@ -95,7 +94,6 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 text: i18ndc("mimetreeparser", "@label", "From:")
-                font.bold: true
                 visible: root.from.length > 0
 
                 Layout.rightMargin: Kirigami.Units.largeSpacing
@@ -112,7 +110,6 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 text: i18ndc("mimetreeparser", "@label", "Sender:")
-                font.bold: true
                 visible: root.sender.length > 0 && root.sender !== root.from
 
                 Layout.rightMargin: Kirigami.Units.largeSpacing
@@ -129,7 +126,6 @@ Kirigami.ScrollablePage {
 
             QQC2.Label {
                 text: i18ndc("mimetreeparser", "@label", "To:")
-                font.bold: true
                 visible: root.to.length > 0
 
                 Layout.rightMargin: Kirigami.Units.largeSpacing
