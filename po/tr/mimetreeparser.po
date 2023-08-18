@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:47+0000\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
 "PO-Revision-Date: 2023-08-12 12:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,61 +17,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.11.70\n"
 
-#: core/attachmentmodel.cpp:88
+#: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Ad"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Boyut"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Şifrelenmiş"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "İmzalanmış"
 
-#: core/attachmentmodel.cpp:196
+#: core/attachmentmodel.cpp:198
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Ek kaydedilemedi."
 
-#: core/attachmentmodel.cpp:228
+#: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Ek diske kaydedildi: %1"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Ek açılamadı."
 
-#: core/attachmentmodel.cpp:250
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Ek, açmak üzere kaydedilemedi."
 
-#: core/attachmentmodel.cpp:268
+#: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Bu ekte hiçbir anahtar bulunamadı."
 
-#: core/attachmentmodel.cpp:271
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -79,7 +79,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "1 anahtar içe aktarıldı"
 msgstr[1] "%1 anahtar içe aktarıldı"
 
-#: core/attachmentmodel.cpp:274
+#: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -103,23 +103,33 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/messagepart.cpp:618 core/messagepart.cpp:709 core/messagepart.cpp:783
+#: core/messagepart.cpp:625 core/messagepart.cpp:655 core/messagepart.cpp:830
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Yanlış kripto eklentisi."
 
-#: core/messagepart.cpp:857
+#: core/messagepart.cpp:976
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Verinin şifresi çözülemedi: Alıcılar için hiçbir anahtar bulunamadı."
+msgid "No appropriate crypto plug-in was found."
+msgstr ""
 
-#: core/messagepart.cpp:862
+#: core/messagepart.cpp:978
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: core/messagepart.cpp:980
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Verinin şifresi çözülemedi."
+
+#: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
+#, kde-format
+msgid "Error: %1"
+msgstr "Hata: %1"
 
 #: core/partmodel.cpp:483
 #, kde-format
@@ -316,11 +326,6 @@ msgstr "Kimden:"
 msgid "Date:"
 msgstr "Tarih:"
 
-#: widgets/messageviewer.cpp:237
-#, kde-format
-msgid "Error: %1"
-msgstr "Hata: %1"
-
 #: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "&Subject:"
@@ -335,3 +340,8 @@ msgstr "&Kimden:"
 #, kde-format
 msgid "&To:"
 msgstr "Kim&e:"
+
+#~ msgctxt "@info"
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Verinin şifresi çözülemedi: Alıcılar için hiçbir anahtar bulunamadı."

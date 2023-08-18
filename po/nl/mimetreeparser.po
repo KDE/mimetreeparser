@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:47+0000\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
 "PO-Revision-Date: 2023-08-12 09:45+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,61 +17,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: core/attachmentmodel.cpp:88
+#: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Naam"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Grootte"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Versleuteld"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Gesigneerd"
 
-#: core/attachmentmodel.cpp:196
+#: core/attachmentmodel.cpp:198
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Bijlage opslaan is mislukt."
 
-#: core/attachmentmodel.cpp:228
+#: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "De bijlage is op schijf opgeslagen: %1"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Bijlage openen is mislukt."
 
-#: core/attachmentmodel.cpp:250
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Bijlage openen voor opslaan is mislukt."
 
-#: core/attachmentmodel.cpp:268
+#: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Er zijn geen sleutels in deze bijlage gevonden"
 
-#: core/attachmentmodel.cpp:271
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -80,7 +80,7 @@ msgstr[0] "één sleutel geïmporteerd"
 msgstr[1] ""
 "<para><emphasis strong='true'>%1 sleutels geïmporteerd:</emphasis></para>"
 
-#: core/attachmentmodel.cpp:274
+#: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -104,24 +104,33 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/messagepart.cpp:618 core/messagepart.cpp:709 core/messagepart.cpp:783
+#: core/messagepart.cpp:625 core/messagepart.cpp:655 core/messagepart.cpp:830
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Onjuiste crypto-plug-in."
 
-#: core/messagepart.cpp:857
+#: core/messagepart.cpp:976
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data: no key found for recipients."
+msgid "No appropriate crypto plug-in was found."
 msgstr ""
-"Kon de gegevens niet ontcijferen: geen sleutel gevonden voor ontvangers."
 
-#: core/messagepart.cpp:862
+#: core/messagepart.cpp:978
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: core/messagepart.cpp:980
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kon de gegevens niet ontcijferen."
+
+#: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
+#, kde-format
+msgid "Error: %1"
+msgstr "Fout: %1"
 
 #: core/partmodel.cpp:483
 #, kde-format
@@ -318,11 +327,6 @@ msgstr "Van:"
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:237
-#, kde-format
-msgid "Error: %1"
-msgstr "Fout: %1"
-
 #: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "&Subject:"
@@ -337,3 +341,8 @@ msgstr "&Van:"
 #, kde-format
 msgid "&To:"
 msgstr "&Aan:"
+
+#~ msgctxt "@info"
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Kon de gegevens niet ontcijferen: geen sleutel gevonden voor ontvangers."

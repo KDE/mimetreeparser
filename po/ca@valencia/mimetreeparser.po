@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:47+0000\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
 "PO-Revision-Date: 2023-08-12 11:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,61 +19,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:88
+#: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nom"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Mida"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Encriptat"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signat"
 
-#: core/attachmentmodel.cpp:196
+#: core/attachmentmodel.cpp:198
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "No s'ha pogut guardar l'adjunt."
 
-#: core/attachmentmodel.cpp:228
+#: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "S'ha guardat l'adjunt al disc: %1"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "No s'ha pogut obrir l'adjunt."
 
-#: core/attachmentmodel.cpp:250
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "No s'ha pogut guardar l'adjunt per a obrir-lo."
 
-#: core/attachmentmodel.cpp:268
+#: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "No s'ha trobat cap clau en este adjunt"
 
-#: core/attachmentmodel.cpp:271
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -81,7 +81,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "s'ha importat una clau"
 msgstr[1] "s'han importat %1 claus"
 
-#: core/attachmentmodel.cpp:274
+#: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -105,25 +105,33 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: core/messagepart.cpp:618 core/messagepart.cpp:709 core/messagepart.cpp:783
+#: core/messagepart.cpp:625 core/messagepart.cpp:655 core/messagepart.cpp:830
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Connector criptogràfic erroni."
 
-#: core/messagepart.cpp:857
+#: core/messagepart.cpp:976
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data: no key found for recipients."
+msgid "No appropriate crypto plug-in was found."
 msgstr ""
-"No s'han pogut desencriptar les dades: no s'ha trobat la clau dels "
-"destinataris."
 
-#: core/messagepart.cpp:862
+#: core/messagepart.cpp:978
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: core/messagepart.cpp:980
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "No s'han pogut desencriptar les dades."
+
+#: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
+#, kde-format
+msgid "Error: %1"
+msgstr "S'ha produït un error: %1"
 
 #: core/partmodel.cpp:483
 #, kde-format
@@ -320,11 +328,6 @@ msgstr "De:"
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:237
-#, kde-format
-msgid "Error: %1"
-msgstr "S'ha produït un error: %1"
-
 #: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "&Subject:"
@@ -339,3 +342,9 @@ msgstr "&De:"
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
+
+#~ msgctxt "@info"
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "No s'han pogut desencriptar les dades: no s'ha trobat la clau dels "
+#~ "destinataris."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:47+0000\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
 "PO-Revision-Date: 2023-08-12 07:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,61 +17,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
 
-#: core/attachmentmodel.cpp:88
+#: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Namn"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Storlek"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Krypterad"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signerad"
 
-#: core/attachmentmodel.cpp:196
+#: core/attachmentmodel.cpp:198
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Misslyckades spara bilaga."
 
-#: core/attachmentmodel.cpp:228
+#: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Sparade bilaga på disk: %1"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Misslyckades öppna bilaga."
 
-#: core/attachmentmodel.cpp:250
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Misslyckades spara bilaga för att öppna den."
 
-#: core/attachmentmodel.cpp:268
+#: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Inga nycklar hittades i den här bilagan"
 
-#: core/attachmentmodel.cpp:271
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -79,7 +79,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "en nyckel importerad"
 msgstr[1] "%1 nycklar importerade"
 
-#: core/attachmentmodel.cpp:274
+#: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -103,23 +103,33 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: core/messagepart.cpp:618 core/messagepart.cpp:709 core/messagepart.cpp:783
+#: core/messagepart.cpp:625 core/messagepart.cpp:655 core/messagepart.cpp:830
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Felaktigt kryptoinsticksprogram."
 
-#: core/messagepart.cpp:857
+#: core/messagepart.cpp:976
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Kunde inte dekryptera data. Ingen nyckel hittades för mottagarna."
+msgid "No appropriate crypto plug-in was found."
+msgstr ""
 
-#: core/messagepart.cpp:862
+#: core/messagepart.cpp:978
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: core/messagepart.cpp:980
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Could not decrypt the data."
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kunde inte dekryptera data."
+
+#: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
+#, kde-format
+msgid "Error: %1"
+msgstr "Fel: %1"
 
 #: core/partmodel.cpp:483
 #, kde-format
@@ -316,11 +326,6 @@ msgstr "Från:"
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:237
-#, kde-format
-msgid "Error: %1"
-msgstr "Fel: %1"
-
 #: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "&Subject:"
@@ -335,3 +340,7 @@ msgstr "&Från:"
 #, kde-format
 msgid "&To:"
 msgstr "&Till:"
+
+#~ msgctxt "@info"
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr "Kunde inte dekryptera data. Ingen nyckel hittades för mottagarna."
