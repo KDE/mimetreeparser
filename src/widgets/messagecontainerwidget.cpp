@@ -6,7 +6,9 @@
 
 #include <KLocalizedString>
 #include <KMessageWidget>
+#include <Libkleo/Compliance>
 
+#include <QAction>
 #include <QIcon>
 #include <QPaintEvent>
 #include <QPainter>
@@ -50,16 +52,23 @@ QString getDetails(SignatureInfo *signatureDetails)
 {
     QString details;
     if (signatureDetails->keyMissing) {
-        details += i18ndc("mimetreeparser", "@label", "This message has been signed using the key %1.", QString::fromUtf8(signatureDetails->keyId))
-            + QLatin1Char('\n');
+        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails->isCompliant) {
+            details += i18ndc("mimetreeparser",
+                              "@label",
+                              "This message has been signed VS-NfD compliant using the key %1.",
+                              QString::fromUtf8(signatureDetails->keyId))
+                + QLatin1Char('\n');
+        } else {
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed using the key %1.", QString::fromUtf8(signatureDetails->keyId))
+                + QLatin1Char('\n');
+        }
         details += i18ndc("mimetreeparser", "@label", "The key details are not available.");
     } else {
-        details += i18ndc("mimetreeparser",
-                          "@label",
-                          "This message has been signed using the key %1 by %2.",
-                          QString::fromUtf8(signatureDetails->keyId),
-                          signatureDetails->signer)
-            + QLatin1Char('\n');
+        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails->isCompliant) {
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signatureDetails->signer);
+        } else {
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signatureDetails->signer);
+        }
         if (signatureDetails->keyRevoked) {
             details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The key was revoked.");
         }
@@ -91,8 +100,10 @@ MessageWidgetContainer::MessageWidgetContainer(bool isSigned,
     , m_signatureSecurityLevel(signatureSecurityLevel)
     , m_isEncrypted(isEncrypted)
     , m_encryptionInfo(encryptionInfo)
-    , m_encryptionSecurityLevel(signatureSecurityLevel)
+    , m_encryptionSecurityLevel(encryptionSecurityLevel)
 {
+    m_signatureInfo->setParent(this);
+    m_encryptionInfo->setParent(this);
     createLayout();
 }
 
@@ -140,10 +151,20 @@ void MessageWidgetContainer::createLayout()
         encryptionMessage->setCloseButtonVisible(false);
         encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
         encryptionMessage->setWordWrap(true);
+
         if (m_encryptionInfo->keyId.isEmpty()) {
-            encryptionMessage->setText(i18n("This message is encrypted but we don't have the key for it."));
+            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo->isCompliant) {
+                encryptionMessage->setText(
+                    i18n("This message is VS-NfD compliant encrypted but we don't have the key for it.", QString::fromUtf8(m_encryptionInfo->keyId)));
+            } else {
+                encryptionMessage->setText(i18n("This message is encrypted but we don't have the key for it."));
+            }
         } else {
-            encryptionMessage->setText(i18n("This message is encrypted to the key: %1", QString::fromUtf8(m_encryptionInfo->keyId)));
+            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo->isCompliant) {
+                encryptionMessage->setText(i18n("This message is VS-NfD compliant encrypted."));
+            } else {
+                encryptionMessage->setText(i18n("This message is encrypted."));
+            }
         }
         vLayout->addWidget(encryptionMessage);
     }

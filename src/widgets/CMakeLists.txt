@@ -41,6 +41,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets
 PUBLIC
     Qt${KF_MAJOR_VERSION}::Widgets
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim${KF_MAJOR_VERSION}::Libkleo
 PRIVATE
     KF${KF_MAJOR_VERSION}::Codecs
     KF${KF_MAJOR_VERSION}::I18n

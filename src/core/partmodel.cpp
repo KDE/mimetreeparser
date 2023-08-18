@@ -320,6 +320,7 @@ SignatureInfo *signatureInfo(MimeTreeParser::MessagePart *messagePart)
         signatureInfo->crlMissing = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlMissing;
         signatureInfo->crlTooOld = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlTooOld;
         signatureInfo->signer = signaturePart->partMetaData()->signer;
+        signatureInfo->isCompliant = signaturePart->partMetaData()->isCompliant;
         signatureInfo->signerMailAddresses = signaturePart->partMetaData()->signerMailAddresses;
         signatureInfo->signatureIsGood = signaturePart->partMetaData()->isGoodSignature;
         signatureInfo->keyIsTrusted = signaturePart->partMetaData()->isTrusted();

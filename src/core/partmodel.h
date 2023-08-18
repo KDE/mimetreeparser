@@ -106,6 +106,7 @@ class MIMETREEPARSER_CORE_EXPORT SignatureInfo : public QObject
     Q_PROPERTY(QStringList signerMailAddresses MEMBER signerMailAddresses CONSTANT)
     Q_PROPERTY(bool signatureIsGood MEMBER signatureIsGood CONSTANT)
     Q_PROPERTY(bool keyIsTrusted MEMBER keyIsTrusted CONSTANT)
+    Q_PROPERTY(bool isCompliant MEMBER isCompliant CONSTANT)
 
 public:
     bool keyRevoked = false;
@@ -114,6 +115,7 @@ public:
     bool keyMissing = false;
     bool crlMissing = false;
     bool crlTooOld = false;
+    bool isCompliant = false;
     QByteArray keyId;
 
     QString signer;
