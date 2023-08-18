@@ -207,10 +207,12 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Ical: {
+            auto container = new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel);
+
             KCalendarCore::ICalFormat format;
             auto incidence = format.fromString(content);
 
-            auto widget = new QGroupBox;
+            auto widget = new QGroupBox(container);
             widget->setTitle(i18n("Invitation"));
 
             auto incidenceLayout = new QFormLayout(widget);
@@ -227,12 +229,16 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                 incidenceLayout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
             }
 
-            widgets.append(widget);
-            layout->addWidget(widget);
+            container->layout()->addWidget(widget);
+
+            widgets.append(container);
+            layout->addWidget(container);
             break;
         }
         case PartModel::Types::Encapsulated: {
-            auto groupBox = new QGroupBox;
+            auto container = new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel);
+
+            auto groupBox = new QGroupBox(container);
             groupBox->setSizePolicy(QSizePolicy::MinimumExpanding, q->sizePolicy().verticalPolicy());
             groupBox->setTitle(i18n("Encapsulated email"));
 
@@ -249,8 +255,12 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             recursiveBuildViewer(parts, encapsulatedLayout, parts->index(i, 0, parent));
 
-            widgets.append(groupBox);
-            layout->addWidget(groupBox);
+            qWarning() << "recursiveBuildViewer" << parts->rowCount(parts->index(i, 0, parent));
+
+            container->layout()->addWidget(groupBox);
+
+            widgets.append(container);
+            layout->addWidget(container);
             break;
         }
 
