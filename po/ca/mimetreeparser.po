@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-18 00:46+0000\n"
-"PO-Revision-Date: 2023-08-12 11:00+0200\n"
+"PO-Revision-Date: 2023-08-18 11:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: core/attachmentmodel.cpp:90
 #, kde-format
@@ -114,19 +114,17 @@ msgstr "Connector criptogràfic erroni."
 #: core/messagepart.cpp:976
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr ""
+msgstr "No s'ha trobat cap connector criptogràfic apropiat."
 
 #: core/messagepart.cpp:978
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr ""
+msgstr "El connector criptogràfic «%1» no pot desencriptar missatges."
 
 #: core/messagepart.cpp:980
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Could not decrypt the data."
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "No s'han pogut desencriptar les dades."
+msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 
 #: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
 #, kde-format
@@ -342,9 +340,3 @@ msgstr "&De:"
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr ""
-#~ "No s'han pogut desencriptar les dades: no s'ha trobat la clau dels "
-#~ "destinataris."

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-18 00:46+0000\n"
-"PO-Revision-Date: 2023-08-12 09:45+0200\n"
+"PO-Revision-Date: 2023-08-18 09:14+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -113,19 +113,17 @@ msgstr "Onjuiste crypto-plug-in."
 #: core/messagepart.cpp:976
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr ""
+msgstr "Geen geschikte Crypto-plug-in gevonden."
 
 #: core/messagepart.cpp:978
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr ""
+msgstr "Crypto-plug-in \"%1\" kan geen berichten ontcijferen."
 
 #: core/messagepart.cpp:980
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Could not decrypt the data."
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "Kon de gegevens niet ontcijferen."
+msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
 
 #: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
 #, kde-format
