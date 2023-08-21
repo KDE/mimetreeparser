@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-18 00:46+0000\n"
-"PO-Revision-Date: 2023-08-14 17:48+0200\n"
+"PO-Revision-Date: 2023-08-20 15:55+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -47,57 +47,57 @@ msgstr "Firmado"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr ""
+msgstr "No se ha podido guardar el adjunto."
 
 #: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
-msgstr ""
+msgstr "Adjunto guardado en disco: %1"
 
 #: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "No se ha podido abrir el adjunto."
 
 #: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
-msgstr ""
+msgstr "No se ha podido guardar el adjunto para su apertura."
 
 #: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
-msgstr ""
+msgstr "No se ha encontrado ninguna clave en este adjunto"
 
 #: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 clave importada"
+msgstr[1] "%1 claves importadas"
 
 #: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 clave ya estaba importada"
+msgstr[1] "%1 claves ya estaban importadas"
 
 #: core/mailtemplates.cpp:103
 #, kde-format
 msgid "fwd"
-msgstr ""
+msgstr "fwd"
 
 #: core/mailtemplates.cpp:132
 #, kde-format
 msgid "re"
-msgstr ""
+msgstr "re"
 
 #: core/messageparser.cpp:158
 #, kde-format
@@ -109,22 +109,22 @@ msgstr "Desconocido"
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr ""
+msgstr "Complemento criptográfico erróneo."
 
 #: core/messagepart.cpp:976
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr ""
+msgstr "No se ha encontrado ningún complemento criptográfico adecuado."
 
 #: core/messagepart.cpp:978
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr ""
+msgstr "El complemento criptográfico «%1» no puede descifrar mensajes."
 
 #: core/messagepart.cpp:980
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr ""
+msgstr "El complemento criptográfico «%1» no ha podido descifrar los datos."
 
 #: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
 #, kde-format
@@ -135,13 +135,13 @@ msgstr "Error: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
-msgstr ""
+msgstr "No hay ninguna clave disponible."
 
 #: core/partmodel.cpp:485
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr ""
+msgstr "Contraseña larga errónea."
 
 #: quick/qml/MailViewer.qml:38
 #, kde-format
@@ -241,7 +241,7 @@ msgstr "La clave ha expirado."
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
-msgstr ""
+msgstr "Esta clave es de su confianza."
 
 #: quick/qml/private/MailPartModel.qml:68
 #, kde-format
@@ -252,12 +252,12 @@ msgstr "La firma no es válida."
 #: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr ""
+msgstr "Este mensaje está cifrado, pero no disponemos de la clave para él."
 
 #: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr ""
+msgstr "Este mensaje está cifrado para la clave: %1"
 
 #: widgets/messageviewer.cpp:54
 #, kde-format
