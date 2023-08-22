@@ -10,16 +10,18 @@
 class SignatureInfo;
 class QPaintEvent;
 class QResizeEvent;
+class UrlHandler;
 
 class MessageWidgetContainer : public QFrame
 {
 public:
     explicit MessageWidgetContainer(bool isSigned,
-                                    SignatureInfo *signatureInfo,
+                                    const SignatureInfo &signatureInfo,
                                     PartModel::SecurityLevel signatureSecurityLevel,
                                     bool isEncrypted,
-                                    SignatureInfo *encryptionInfo,
+                                    const SignatureInfo &encryptionInfo,
                                     PartModel::SecurityLevel encryptionSecurityLevel,
+                                    UrlHandler *urlHandler,
                                     QWidget *parent = nullptr);
     ~MessageWidgetContainer();
 
@@ -31,10 +33,12 @@ private:
     void createLayout();
 
     bool m_isSigned;
-    SignatureInfo *m_signatureInfo;
+    SignatureInfo const m_signatureInfo;
     PartModel::SecurityLevel m_signatureSecurityLevel;
 
     bool m_isEncrypted;
-    SignatureInfo *m_encryptionInfo;
+    SignatureInfo const m_encryptionInfo;
     PartModel::SecurityLevel m_encryptionSecurityLevel;
+
+    UrlHandler *const m_urlHandler;
 };

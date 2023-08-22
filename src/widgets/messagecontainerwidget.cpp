@@ -3,13 +3,15 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "messagecontainerwidget_p.h"
+#include "urlhandler_p.h"
 
 #include <KLocalizedString>
 #include <KMessageWidget>
 #include <Libkleo/Compliance>
+#include <QGpgME/Protocol>
 
-#include <QAction>
-#include <QIcon>
+#include <QDebug>
+#include <QLabel>
 #include <QPaintEvent>
 #include <QPainter>
 #include <QResizeEvent>
@@ -48,37 +50,48 @@ KMessageWidget::MessageType getType(PartModel::SecurityLevel securityLevel)
     return KMessageWidget::MessageType::Information;
 }
 
-QString getDetails(SignatureInfo *signatureDetails)
+QString getDetails(const SignatureInfo &signatureDetails)
 {
+    QString href;
+    if (signatureDetails.cryptoProto) {
+        href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
+                   .arg(signatureDetails.cryptoProto->displayName(), signatureDetails.cryptoProto->name(), QString::fromLatin1(signatureDetails.keyId));
+    }
+
     QString details;
-    if (signatureDetails->keyMissing) {
-        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails->isCompliant) {
+    if (signatureDetails.keyMissing) {
+        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
             details += i18ndc("mimetreeparser",
                               "@label",
-                              "This message has been signed VS-NfD compliant using the key %1.",
-                              QString::fromUtf8(signatureDetails->keyId))
+                              "This message has been signed VS-NfD compliant using the key <a href=\"%1\">%2</a>.",
+                              href,
+                              QString::fromUtf8(signatureDetails.keyId))
                 + QLatin1Char('\n');
         } else {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed using the key %1.", QString::fromUtf8(signatureDetails->keyId))
+            details += i18ndc("mimetreeparser",
+                              "@label",
+                              "This message has been signed using the key <a href=\"%1\">%2</a>.",
+                              href,
+                              QString::fromUtf8(signatureDetails.keyId))
                 + QLatin1Char('\n');
         }
         details += i18ndc("mimetreeparser", "@label", "The key details are not available.");
     } else {
-        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails->isCompliant) {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signatureDetails->signer);
+        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signatureDetails.signer.toHtmlEscaped());
         } else {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signatureDetails->signer);
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signatureDetails.signer.toHtmlEscaped());
         }
-        if (signatureDetails->keyRevoked) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The key was revoked.");
+        if (signatureDetails.keyRevoked) {
+            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The <a href=\"%1\">key</a> was revoked.", href);
         }
-        if (signatureDetails->keyExpired) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The key has expired.");
+        if (signatureDetails.keyExpired) {
+            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The <a href=\"%1\">key</a> was expired.", href);
         }
-        if (signatureDetails->keyIsTrusted) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "You are trusting this key.");
+        if (signatureDetails.keyIsTrusted) {
+            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "You are trusting this <a href=\"%1\">key</a>.", href);
         }
-        if (!signatureDetails->signatureIsGood && !signatureDetails->keyRevoked && !signatureDetails->keyExpired && !signatureDetails->keyIsTrusted) {
+        if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired && !signatureDetails.keyIsTrusted) {
             details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The signature is invalid.");
         }
     }
@@ -88,11 +101,12 @@ QString getDetails(SignatureInfo *signatureDetails)
 }
 
 MessageWidgetContainer::MessageWidgetContainer(bool isSigned,
-                                               SignatureInfo *signatureInfo,
+                                               const SignatureInfo &signatureInfo,
                                                PartModel::SecurityLevel signatureSecurityLevel,
                                                bool isEncrypted,
-                                               SignatureInfo *encryptionInfo,
+                                               const SignatureInfo &encryptionInfo,
                                                PartModel::SecurityLevel encryptionSecurityLevel,
+                                               UrlHandler *urlHandler,
                                                QWidget *parent)
     : QFrame(parent)
     , m_isSigned(isSigned)
@@ -101,9 +115,8 @@ MessageWidgetContainer::MessageWidgetContainer(bool isSigned,
     , m_isEncrypted(isEncrypted)
     , m_encryptionInfo(encryptionInfo)
     , m_encryptionSecurityLevel(encryptionSecurityLevel)
+    , m_urlHandler(urlHandler)
 {
-    m_signatureInfo->setParent(this);
-    m_encryptionInfo->setParent(this);
     createLayout();
 }
 
@@ -150,22 +163,59 @@ void MessageWidgetContainer::createLayout()
         encryptionMessage->setMessageType(getType(m_encryptionSecurityLevel));
         encryptionMessage->setCloseButtonVisible(false);
         encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
-        encryptionMessage->setWordWrap(true);
 
-        if (m_encryptionInfo->keyId.isEmpty()) {
-            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo->isCompliant) {
-                encryptionMessage->setText(
-                    i18n("This message is VS-NfD compliant encrypted but we don't have the key for it.", QString::fromUtf8(m_encryptionInfo->keyId)));
+        QString text;
+        if (m_encryptionInfo.keyId.isEmpty()) {
+            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
+                text = i18n("This message is VS-NfD compliant encrypted but we don't have the key for it.", QString::fromUtf8(m_encryptionInfo.keyId));
             } else {
-                encryptionMessage->setText(i18n("This message is encrypted but we don't have the key for it."));
+                text = i18n("This message is encrypted but we don't have the key for it.");
             }
         } else {
-            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo->isCompliant) {
-                encryptionMessage->setText(i18n("This message is VS-NfD compliant encrypted."));
+            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
+                text = i18n("This message is VS-NfD compliant encrypted.");
             } else {
-                encryptionMessage->setText(i18n("This message is encrypted."));
+                text = i18n("This message is encrypted.");
             }
         }
+
+        encryptionMessage->setText(text + QLatin1Char(' ') + QStringLiteral("<a href=\"messageviewer:showDetails\">Details</a>"));
+
+        connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
+            QUrl url(link);
+            if (url.path() == QStringLiteral("showDetails")) {
+                QString newText = text + QStringLiteral(" ") + i18n("The message is encrypted for the following keys:") + QStringLiteral("<ul>");
+
+                for (const auto &recipient : m_encryptionInfo.decryptRecipients) {
+                    if (recipient.second.keyID()) {
+                        const auto href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
+                                              .arg(m_encryptionInfo.cryptoProto->displayName(),
+                                                   m_encryptionInfo.cryptoProto->name(),
+                                                   QString::fromLatin1(recipient.second.keyID()));
+
+                        newText += QStringLiteral("<li><a href=\"%1\">0x%2</a></li>").arg(href, QString::fromLatin1(recipient.second.keyID()));
+                    } else {
+                        const auto href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
+                                              .arg(m_encryptionInfo.cryptoProto->displayName(),
+                                                   m_encryptionInfo.cryptoProto->name(),
+                                                   QString::fromLatin1(recipient.first.keyID()));
+
+                        newText +=
+                            QStringLiteral("<li><a href=\"%1\">0x%2</a> (%3)</li>").arg(href, QString::fromLatin1(recipient.first.keyID()), i18n("Unknow key"));
+                    }
+                }
+
+                newText += QStringLiteral("</ul>");
+
+                encryptionMessage->setText(newText);
+                return;
+            }
+
+            if (url.path() == QStringLiteral("showCertificate")) {
+                m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
+            }
+        });
+
         vLayout->addWidget(encryptionMessage);
     }
 
@@ -174,8 +224,12 @@ void MessageWidgetContainer::createLayout()
         signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
         signatureMessage->setCloseButtonVisible(false);
         signatureMessage->setText(getDetails(m_signatureInfo));
+        connect(signatureMessage, &KMessageWidget::linkActivated, this, [this](const QString &link) {
+            m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
+        });
         signatureMessage->setMessageType(getType(m_signatureSecurityLevel));
         signatureMessage->setWordWrap(true);
+
         vLayout->addWidget(signatureMessage);
     }
 }

@@ -304,6 +304,10 @@ public:
     QString plaintextContent() const override;
     QString htmlContent() const override;
 
+    const QGpgME::Protocol *cryptoProto() const;
+
+    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> decryptRecipients() const;
+
 private:
     bool decrypt(KMime::Content &data);
     bool mParseAfterDecryption{true};
@@ -339,6 +343,8 @@ public:
 
     QString plaintextContent() const Q_DECL_OVERRIDE;
     QString htmlContent() const Q_DECL_OVERRIDE;
+
+    const QGpgME::Protocol *cryptoProto() const;
 
 private:
     void sigStatusToMetaData();

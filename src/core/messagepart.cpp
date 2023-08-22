@@ -645,6 +645,11 @@ static QString prettifyDN(const char *uid)
     return QString::fromUtf8(uid);
 }
 
+const QGpgME::Protocol *SignedMessagePart::cryptoProto() const
+{
+    return mCryptoProto;
+}
+
 void SignedMessagePart::startVerification()
 {
     if (!mSignedData) {
@@ -840,6 +845,11 @@ bool EncryptedMessagePart::isEncrypted() const
     return mMetaData.isEncrypted;
 }
 
+const QGpgME::Protocol *EncryptedMessagePart::cryptoProto() const
+{
+    return mCryptoProto;
+}
+
 void EncryptedMessagePart::setDecryptMessage(bool decrypt)
 {
     mDecryptMessage = decrypt;
@@ -1003,6 +1013,11 @@ void EncryptedMessagePart::startDecryption()
     } else {
         startDecryption(mNode);
     }
+}
+
+std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> EncryptedMessagePart::decryptRecipients() const
+{
+    return mDecryptRecipients;
 }
 
 QString EncryptedMessagePart::plaintextContent() const

@@ -7,9 +7,16 @@
 
 #include <QAbstractItemModel>
 #include <QModelIndex>
+#include <gpgme++/decryptionresult.h>
+#include <gpgme++/key.h>
 
 #include "mimetreeparser_core_export.h"
 #include <memory>
+
+namespace QGpgME
+{
+class Protocol;
+}
 
 namespace MimeTreeParser
 {
@@ -91,9 +98,9 @@ private:
     std::unique_ptr<PartModelPrivate> d;
 };
 
-class MIMETREEPARSER_CORE_EXPORT SignatureInfo : public QObject
+class MIMETREEPARSER_CORE_EXPORT SignatureInfo
 {
-    Q_OBJECT
+    Q_GADGET
     Q_PROPERTY(QByteArray keyId MEMBER keyId CONSTANT)
     Q_PROPERTY(bool keyMissing MEMBER keyMissing CONSTANT)
     Q_PROPERTY(bool keyRevoked MEMBER keyRevoked CONSTANT)
@@ -117,6 +124,8 @@ public:
     bool crlTooOld = false;
     bool isCompliant = false;
     QByteArray keyId;
+    const QGpgME::Protocol *cryptoProto = nullptr;
+    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> decryptRecipients;
 
     QString signer;
     QStringList signerMailAddresses;

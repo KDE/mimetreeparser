@@ -5,6 +5,7 @@
 #include "../core/objecttreeparser.h"
 #include "attachmentview_p.h"
 #include "messagecontainerwidget_p.h"
+#include "urlhandler_p.h"
 #include <KCalendarCore/Event>
 #include <KCalendarCore/ICalFormat>
 #include <KCalendarCore/Incidence>
@@ -45,6 +46,7 @@ public:
     QFormLayout *formLayout = nullptr;
     AttachmentView *attachmentView = nullptr;
     MimeTreeParser::MessagePart::List selectedParts;
+    UrlHandler *urlHandler = nullptr;
 
     QAction *saveAttachmentAction = nullptr;
     QAction *openAttachmentAction = nullptr;
@@ -139,6 +141,8 @@ MessageViewer::MessageViewer(QWidget *parent)
     headersArea->setSizePolicy(sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
     addWidget(headersArea);
 
+    d->urlHandler = new UrlHandler(this);
+
     d->formLayout = new QFormLayout(headersArea);
 
     auto widget = new QWidget(this);
@@ -186,19 +190,20 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         const auto type = static_cast<PartModel::Types>(parts->data(parts->index(i, 0, parent), PartModel::TypeRole).toUInt());
         const auto content = parts->data(parts->index(i, 0, parent), PartModel::ContentRole).toString();
 
-        const auto signatureInfo = parts->data(parts->index(i, 0, parent), PartModel::SignatureDetails).value<SignatureInfo *>();
+        const auto signatureInfo = parts->data(parts->index(i, 0, parent), PartModel::SignatureDetails).value<SignatureInfo>();
         const auto isSigned = parts->data(parts->index(i, 0, parent), PartModel::IsSignedRole).toBool();
         const auto signatureSecurityLevel =
             static_cast<PartModel::SecurityLevel>(parts->data(parts->index(i, 0, parent), PartModel::SignatureSecurityLevelRole).toInt());
 
-        const auto encryptionInfo = parts->data(parts->index(i, 0, parent), PartModel::EncryptionDetails).value<SignatureInfo *>();
+        const auto encryptionInfo = parts->data(parts->index(i, 0, parent), PartModel::EncryptionDetails).value<SignatureInfo>();
         const auto isEncrypted = parts->data(parts->index(i, 0, parent), PartModel::IsEncryptedRole).toBool();
         const auto encryptionSecurityLevel =
             static_cast<PartModel::SecurityLevel>(parts->data(parts->index(i, 0, parent), PartModel::EncryptionSecurityLevelRole).toInt());
 
         switch (type) {
         case PartModel::Types::Plain: {
-            auto container = new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel);
+            auto container =
+                new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel, urlHandler);
             auto label = new QLabel(content);
             label->setTextInteractionFlags(Qt::TextSelectableByMouse);
             container->layout()->addWidget(label);
@@ -207,7 +212,8 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Ical: {
-            auto container = new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel);
+            auto container =
+                new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel, urlHandler);
 
             KCalendarCore::ICalFormat format;
             auto incidence = format.fromString(content);
@@ -236,7 +242,8 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Encapsulated: {
-            auto container = new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel);
+            auto container =
+                new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel, urlHandler);
 
             auto groupBox = new QGroupBox(container);
             groupBox->setSizePolicy(QSizePolicy::MinimumExpanding, q->sizePolicy().verticalPolicy());

@@ -19,6 +19,8 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PRIVATE
      attachmentview.cpp
      messagecontainerwidget_p.h
      messagecontainerwidget.cpp
+     urlhandler_p.h
+     urlhandler.cpp
 )
 
 ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets

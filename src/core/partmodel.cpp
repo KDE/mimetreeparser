@@ -291,39 +291,42 @@ QModelIndex PartModel::index(int row, int column, const QModelIndex &parent) con
     return QModelIndex();
 }
 
-SignatureInfo *encryptionInfo(MimeTreeParser::MessagePart *messagePart)
+SignatureInfo encryptionInfo(MimeTreeParser::MessagePart *messagePart)
 {
-    auto signatureInfo = new SignatureInfo;
+    SignatureInfo signatureInfo;
     const auto encryptions = messagePart->encryptions();
     if (encryptions.size() > 1) {
         qWarning() << "Can't deal with more than one encryption";
     }
     for (const auto &encryptionPart : encryptions) {
-        signatureInfo->keyId = encryptionPart->partMetaData()->keyId;
+        signatureInfo.keyId = encryptionPart->partMetaData()->keyId;
+        signatureInfo.cryptoProto = encryptionPart->cryptoProto();
+        signatureInfo.decryptRecipients = encryptionPart->decryptRecipients();
     }
     return signatureInfo;
 };
 
-SignatureInfo *signatureInfo(MimeTreeParser::MessagePart *messagePart)
+SignatureInfo signatureInfo(MimeTreeParser::MessagePart *messagePart)
 {
-    auto signatureInfo = new SignatureInfo;
+    SignatureInfo signatureInfo;
     const auto signatures = messagePart->signatures();
     if (signatures.size() > 1) {
         qWarning() << "Can't deal with more than one signature";
     }
     for (const auto &signaturePart : signatures) {
-        signatureInfo->keyId = signaturePart->partMetaData()->keyId;
-        signatureInfo->keyMissing = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyMissing;
-        signatureInfo->keyExpired = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyExpired;
-        signatureInfo->keyRevoked = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyRevoked;
-        signatureInfo->sigExpired = signaturePart->partMetaData()->sigSummary & GpgME::Signature::SigExpired;
-        signatureInfo->crlMissing = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlMissing;
-        signatureInfo->crlTooOld = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlTooOld;
-        signatureInfo->signer = signaturePart->partMetaData()->signer;
-        signatureInfo->isCompliant = signaturePart->partMetaData()->isCompliant;
-        signatureInfo->signerMailAddresses = signaturePart->partMetaData()->signerMailAddresses;
-        signatureInfo->signatureIsGood = signaturePart->partMetaData()->isGoodSignature;
-        signatureInfo->keyIsTrusted = signaturePart->partMetaData()->isTrusted();
+        signatureInfo.keyId = signaturePart->partMetaData()->keyId;
+        signatureInfo.cryptoProto = signaturePart->cryptoProto();
+        signatureInfo.keyMissing = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyMissing;
+        signatureInfo.keyExpired = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyExpired;
+        signatureInfo.keyRevoked = signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyRevoked;
+        signatureInfo.sigExpired = signaturePart->partMetaData()->sigSummary & GpgME::Signature::SigExpired;
+        signatureInfo.crlMissing = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlMissing;
+        signatureInfo.crlTooOld = signaturePart->partMetaData()->sigSummary & GpgME::Signature::CrlTooOld;
+        signatureInfo.signer = signaturePart->partMetaData()->signer;
+        signatureInfo.isCompliant = signaturePart->partMetaData()->isCompliant;
+        signatureInfo.signerMailAddresses = signaturePart->partMetaData()->signerMailAddresses;
+        signatureInfo.signatureIsGood = signaturePart->partMetaData()->isGoodSignature;
+        signatureInfo.keyIsTrusted = signaturePart->partMetaData()->isTrusted();
     }
     return signatureInfo;
 }
@@ -428,9 +431,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
 
             if (messageIsSigned) {
-                auto sigInfo = std::unique_ptr<SignatureInfo>{signatureInfo(messagePart)};
-                if (!sigInfo->signatureIsGood) {
-                    if (sigInfo->keyMissing || sigInfo->keyExpired) {
+                const auto sigInfo = signatureInfo(messagePart);
+                if (!sigInfo.signatureIsGood) {
+                    if (sigInfo.keyMissing || sigInfo.keyExpired) {
                         return SecurityLevel::NotSoGood;
                     }
                     return SecurityLevel::Bad;
@@ -460,9 +463,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             auto signature = messagePart->signatureState();
             bool messageIsSigned = signature == MimeTreeParser::KMMsgPartiallySigned || signature == MimeTreeParser::KMMsgFullySigned;
             if (messageIsSigned) {
-                auto sigInfo = std::unique_ptr<SignatureInfo>{signatureInfo(messagePart)};
-                if (!sigInfo->signatureIsGood) {
-                    if (sigInfo->keyMissing || sigInfo->keyExpired) {
+                const auto sigInfo = signatureInfo(messagePart);
+                if (!sigInfo.signatureIsGood) {
+                    if (sigInfo.keyMissing || sigInfo.keyExpired) {
                         return SecurityLevel::NotSoGood;
                     }
                     return SecurityLevel::Bad;
