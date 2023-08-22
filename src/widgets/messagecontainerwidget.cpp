@@ -125,8 +125,12 @@ MessageWidgetContainer::~MessageWidgetContainer() = default;
 void MessageWidgetContainer::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
-    QPainter painter(this);
 
+    if (!m_isSigned && !m_isEncrypted) {
+        return;
+    }
+
+    QPainter painter(this);
     if (layoutDirection() == Qt::RightToLeft) {
         auto r = rect();
         r.setX(width() - borderWidth);
@@ -163,10 +167,12 @@ void MessageWidgetContainer::createLayout()
     auto vLayout = new QVBoxLayout(this);
 
     setLayout(vLayout);
-    if (layoutDirection() == Qt::RightToLeft) {
-        layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
-    } else {
-        layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
+    if (m_isSigned || m_isEncrypted) {
+        if (layoutDirection() == Qt::RightToLeft) {
+            layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
+        } else {
+            layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
+        }
     }
 
     if (m_isEncrypted) {
