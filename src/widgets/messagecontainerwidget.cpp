@@ -88,11 +88,24 @@ QString getDetails(const SignatureInfo &signatureDetails)
         if (signatureDetails.keyExpired) {
             details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The <a href=\"%1\">key</a> was expired.", href);
         }
-        if (signatureDetails.keyIsTrusted) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "You are trusting this <a href=\"%1\">key</a>.", href);
+
+        if (signatureDetails.keyTrust == GpgME::Signature::Unknown) {
+            details +=
+                QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown.", href);
+        } else if (signatureDetails.keyTrust == GpgME::Signature::Marginal) {
+            details +=
+                QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted.", href);
+        } else if (signatureDetails.keyTrust == GpgME::Signature::Full) {
+            details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is valid and the <a href=\"%1\">key</a> is fully trusted.", href);
+        } else if (signatureDetails.keyTrust == GpgME::Signature::Ultimate) {
+            details +=
+                QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted.", href);
+        } else {
+            details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is valid, but the <a href=\"%1\">key</a> is untrusted.", href);
         }
-        if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired && !signatureDetails.keyIsTrusted) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The signature is invalid.");
+        if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired
+            && signatureDetails.keyTrust != GpgME::Signature::Unknown) {
+            details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is invalid.");
         }
     }
     return details;

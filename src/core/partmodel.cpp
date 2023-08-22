@@ -326,7 +326,7 @@ SignatureInfo signatureInfo(MimeTreeParser::MessagePart *messagePart)
         signatureInfo.isCompliant = signaturePart->partMetaData()->isCompliant;
         signatureInfo.signerMailAddresses = signaturePart->partMetaData()->signerMailAddresses;
         signatureInfo.signatureIsGood = signaturePart->partMetaData()->isGoodSignature;
-        signatureInfo.keyIsTrusted = signaturePart->partMetaData()->isTrusted();
+        signatureInfo.keyTrust = signaturePart->partMetaData()->keyTrust;
     }
     return signatureInfo;
 }
