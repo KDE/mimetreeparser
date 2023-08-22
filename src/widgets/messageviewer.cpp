@@ -262,8 +262,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             recursiveBuildViewer(parts, encapsulatedLayout, parts->index(i, 0, parent));
 
-            qWarning() << "recursiveBuildViewer" << parts->rowCount(parts->index(i, 0, parent));
-
             container->layout()->addWidget(groupBox);
 
             widgets.append(container);
