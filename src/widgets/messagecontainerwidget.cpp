@@ -128,7 +128,14 @@ void MessageWidgetContainer::paintEvent(QPaintEvent *event)
     QPainter painter(this);
 
     if (layoutDirection() == Qt::RightToLeft) {
-        // todo
+        auto r = rect();
+        r.setX(width() - borderWidth);
+        r.setWidth(borderWidth);
+        const QColor color = getColor(PartModel::SecurityLevel::Good);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setBrush(QColor(color));
+        painter.setPen(QPen(Qt::NoPen));
+        painter.drawRect(r);
     } else {
         auto r = rect();
         r.setWidth(borderWidth);
@@ -156,7 +163,11 @@ void MessageWidgetContainer::createLayout()
     auto vLayout = new QVBoxLayout(this);
 
     setLayout(vLayout);
-    layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
+    if (layoutDirection() == Qt::RightToLeft) {
+        layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
+    } else {
+        layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
+    }
 
     if (m_isEncrypted) {
         auto encryptionMessage = new KMessageWidget(this);
