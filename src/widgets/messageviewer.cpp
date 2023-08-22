@@ -200,10 +200,23 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         const auto encryptionSecurityLevel =
             static_cast<PartModel::SecurityLevel>(parts->data(parts->index(i, 0, parent), PartModel::EncryptionSecurityLevelRole).toInt());
 
+        const auto displayEncryptionInfo =
+            i == 0 || parts->data(parts->index(i - 1, 0, parent), PartModel::EncryptionDetails).value<SignatureInfo>().keyId != encryptionInfo.keyId;
+
+        const auto displaySignatureInfo =
+            i == 0 || parts->data(parts->index(i - 1, 0, parent), PartModel::SignatureDetails).value<SignatureInfo>().keyId != signatureInfo.keyId;
+
         switch (type) {
         case PartModel::Types::Plain: {
-            auto container =
-                new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel, urlHandler);
+            auto container = new MessageWidgetContainer(isSigned,
+                                                        signatureInfo,
+                                                        signatureSecurityLevel,
+                                                        displaySignatureInfo,
+                                                        isEncrypted,
+                                                        encryptionInfo,
+                                                        encryptionSecurityLevel,
+                                                        displayEncryptionInfo,
+                                                        urlHandler);
             auto label = new QLabel(content);
             label->setTextInteractionFlags(Qt::TextSelectableByMouse);
             container->layout()->addWidget(label);
@@ -212,8 +225,15 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Ical: {
-            auto container =
-                new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel, urlHandler);
+            auto container = new MessageWidgetContainer(isSigned,
+                                                        signatureInfo,
+                                                        signatureSecurityLevel,
+                                                        displaySignatureInfo,
+                                                        isEncrypted,
+                                                        encryptionInfo,
+                                                        encryptionSecurityLevel,
+                                                        displayEncryptionInfo,
+                                                        urlHandler);
 
             KCalendarCore::ICalFormat format;
             auto incidence = format.fromString(content);
@@ -242,8 +262,15 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Encapsulated: {
-            auto container =
-                new MessageWidgetContainer(isSigned, signatureInfo, signatureSecurityLevel, isEncrypted, encryptionInfo, encryptionSecurityLevel, urlHandler);
+            auto container = new MessageWidgetContainer(isSigned,
+                                                        signatureInfo,
+                                                        signatureSecurityLevel,
+                                                        displaySignatureInfo,
+                                                        isEncrypted,
+                                                        encryptionInfo,
+                                                        encryptionSecurityLevel,
+                                                        displayEncryptionInfo,
+                                                        urlHandler);
 
             auto groupBox = new QGroupBox(container);
             groupBox->setSizePolicy(QSizePolicy::MinimumExpanding, q->sizePolicy().verticalPolicy());

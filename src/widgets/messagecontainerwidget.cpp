@@ -116,18 +116,22 @@ QString getDetails(const SignatureInfo &signatureDetails)
 MessageWidgetContainer::MessageWidgetContainer(bool isSigned,
                                                const SignatureInfo &signatureInfo,
                                                PartModel::SecurityLevel signatureSecurityLevel,
+                                               bool displaySignatureInfo,
                                                bool isEncrypted,
                                                const SignatureInfo &encryptionInfo,
                                                PartModel::SecurityLevel encryptionSecurityLevel,
+                                               bool displayEncryptionInfo,
                                                UrlHandler *urlHandler,
                                                QWidget *parent)
     : QFrame(parent)
     , m_isSigned(isSigned)
     , m_signatureInfo(signatureInfo)
     , m_signatureSecurityLevel(signatureSecurityLevel)
+    , m_displaySignatureInfo(displaySignatureInfo)
     , m_isEncrypted(isEncrypted)
     , m_encryptionInfo(encryptionInfo)
     , m_encryptionSecurityLevel(encryptionSecurityLevel)
+    , m_displayEncryptionInfo(displayEncryptionInfo)
     , m_urlHandler(urlHandler)
 {
     createLayout();
@@ -179,7 +183,6 @@ void MessageWidgetContainer::createLayout()
 
     auto vLayout = new QVBoxLayout(this);
 
-    setLayout(vLayout);
     if (m_isSigned || m_isEncrypted) {
         if (layoutDirection() == Qt::RightToLeft) {
             layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
@@ -188,7 +191,7 @@ void MessageWidgetContainer::createLayout()
         }
     }
 
-    if (m_isEncrypted) {
+    if (m_isEncrypted && m_displayEncryptionInfo) {
         auto encryptionMessage = new KMessageWidget(this);
         encryptionMessage->setMessageType(getType(m_encryptionSecurityLevel));
         encryptionMessage->setCloseButtonVisible(false);
@@ -249,7 +252,7 @@ void MessageWidgetContainer::createLayout()
         vLayout->addWidget(encryptionMessage);
     }
 
-    if (m_isSigned) {
+    if (m_isSigned && m_displaySignatureInfo) {
         auto signatureMessage = new KMessageWidget(this);
         signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
         signatureMessage->setCloseButtonVisible(false);
