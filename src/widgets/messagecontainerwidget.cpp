@@ -234,7 +234,7 @@ void MessageWidgetContainer::createLayout()
                                                    QString::fromLatin1(recipient.first.keyID()));
 
                         newText +=
-                            QStringLiteral("<li><a href=\"%1\">0x%2</a> (%3)</li>").arg(href, QString::fromLatin1(recipient.first.keyID()), i18n("Unknow key"));
+                            QStringLiteral("<li><a href=\"%1\">0x%2</a> (%3)</li>").arg(href, QString::fromLatin1(recipient.first.keyID()), i18n("Unknown key"));
                     }
                 }
 
