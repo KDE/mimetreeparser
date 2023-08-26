@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2023-08-18 09:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -108,39 +108,39 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Невідомо"
 
-#: core/messagepart.cpp:625 core/messagepart.cpp:655 core/messagepart.cpp:830
+#: core/messagepart.cpp:625 core/messagepart.cpp:660 core/messagepart.cpp:835
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Неправильний додаток шифрування."
 
-#: core/messagepart.cpp:976
+#: core/messagepart.cpp:986
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Не знайдено відповідного додатка шифрування."
 
-#: core/messagepart.cpp:978
+#: core/messagepart.cpp:988
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Додатку шифрування «%1» не вдалося розшифрувати повідомлення."
 
-#: core/messagepart.cpp:980
+#: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Додатку шифрування «%1» не вдалося розшифрувати дані."
 
-#: core/messagepart.cpp:981 widgets/messageviewer.cpp:237
+#: core/messagepart.cpp:991 widgets/messageviewer.cpp:295
 #, kde-format
 msgid "Error: %1"
 msgstr "Помилка: %1"
 
-#: core/partmodel.cpp:483
+#: core/partmodel.cpp:487
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Немає доступних ключів."
 
-#: core/partmodel.cpp:485
+#: core/partmodel.cpp:489
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -158,25 +158,25 @@ msgctxt "@label"
 msgid "Subject:"
 msgstr "Тема:"
 
-#: quick/qml/MailViewer.qml:97
+#: quick/qml/MailViewer.qml:96
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Від:"
 
-#: quick/qml/MailViewer.qml:114
+#: quick/qml/MailViewer.qml:112
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Відправник:"
 
-#: quick/qml/MailViewer.qml:131
+#: quick/qml/MailViewer.qml:128
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Кому:"
 
-#: quick/qml/MailViewer.qml:189
+#: quick/qml/MailViewer.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -210,140 +210,268 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "надіслано %1, %2"
 
-#: quick/qml/private/MailPartModel.qml:54
+#: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "Це повідомлення підписано за допомогою ключа %1."
 
-#: quick/qml/private/MailPartModel.qml:55
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:78
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
 msgstr "Подробиці щодо ключа недоступні."
 
-#: quick/qml/private/MailPartModel.qml:57
+#: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
 msgstr "Це повідомлення підписано за допомогою ключа %1 %2."
 
-#: quick/qml/private/MailPartModel.qml:59
+#: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
 msgstr "Ключ відкликано."
 
-#: quick/qml/private/MailPartModel.qml:62
+#: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
 msgstr "Строк дії ключа вичерпано."
 
-#: quick/qml/private/MailPartModel.qml:65
+#: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
 msgstr "Ви довіряєте цьому ключу."
 
-#: quick/qml/private/MailPartModel.qml:68
+#: quick/qml/private/MailPartModel.qml:69
+#: widgets/messagecontainerwidget.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "Підпис є некоректним."
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml:98
+#: widgets/messagecontainerwidget.cpp:205
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr ""
 "Це повідомлення зашифровано, але у нас немає ключа для його розшифровування."
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
 msgstr "Це повідомлення зашифровано таким ключем: %1"
 
-#: widgets/messageviewer.cpp:54
+#: widgets/messagecontainerwidget.cpp:66
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
+msgctxt "@label"
+msgid ""
+"This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
+"%2</a>."
+msgstr "Це повідомлення підписано за допомогою ключа %1."
+
+#: widgets/messagecontainerwidget.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
+msgctxt "@label"
+msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+msgstr "Це повідомлення підписано за допомогою ключа %1."
+
+#: widgets/messagecontainerwidget.cpp:81
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
+msgctxt "@label"
+msgid "This message has been signed VS-NfD compliant by %1."
+msgstr "Це повідомлення підписано за допомогою ключа %1."
+
+#: widgets/messagecontainerwidget.cpp:83
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
+msgctxt "@label"
+msgid "This message has been signed by %1."
+msgstr "Це повідомлення підписано за допомогою ключа %1."
+
+#: widgets/messagecontainerwidget.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The key was revoked."
+msgctxt "@label"
+msgid "The <a href=\"%1\">key</a> was revoked."
+msgstr "Ключ відкликано."
+
+#: widgets/messagecontainerwidget.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The key has expired."
+msgctxt "@label"
+msgid "The <a href=\"%1\">key</a> was expired."
+msgstr "Строк дії ключа вичерпано."
+
+#: widgets/messagecontainerwidget.cpp:94
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:97
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:99
+#, kde-format
+msgctxt "@label"
+msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:102
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:104
+#, kde-format
+msgctxt "@label"
+msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:203
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but we don't have the key for it."
+msgid ""
+"This message is VS-NfD compliant encrypted but we don't have the key for it."
+msgstr ""
+"Це повідомлення зашифровано, але у нас немає ключа для його розшифровування."
+
+#: widgets/messagecontainerwidget.cpp:209
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the key: %1"
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Це повідомлення зашифровано таким ключем: %1"
+
+#: widgets/messagecontainerwidget.cpp:211
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the key: %1"
+msgid "This message is encrypted."
+msgstr "Це повідомлення зашифровано таким ключем: %1"
+
+#: widgets/messagecontainerwidget.cpp:220
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the key: %1"
+msgid "The message is encrypted for the following keys:"
+msgstr "Це повідомлення зашифровано таким ключем: %1"
+
+#: widgets/messagecontainerwidget.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "displayed when a mail has unknown sender, receiver or date"
+#| msgid "Unknown"
+msgid "Unknow key"
+msgstr "Невідомо"
+
+#: widgets/messageviewer.cpp:57
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Зберегти долучення як…"
 
-#: widgets/messageviewer.cpp:59
+#: widgets/messageviewer.cpp:62
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Відкрити"
 
-#: widgets/messageviewer.cpp:64
+#: widgets/messageviewer.cpp:67
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Імпортувати відкритий ключ"
 
-#: widgets/messageviewer.cpp:192
+#: widgets/messageviewer.cpp:236
 #, kde-format
 msgid "Invitation"
 msgstr "Запрошення"
 
-#: widgets/messageviewer.cpp:195
+#: widgets/messageviewer.cpp:239
 #, kde-format
 msgid "&Summary:"
 msgstr "&Резюме:"
 
-#: widgets/messageviewer.cpp:196
+#: widgets/messageviewer.cpp:240
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Організатор:"
 
-#: widgets/messageviewer.cpp:198
+#: widgets/messageviewer.cpp:242
 #, kde-format
 msgid "&Location:"
 msgstr "&Розташування:"
 
-#: widgets/messageviewer.cpp:200
+#: widgets/messageviewer.cpp:244
 #, kde-format
 msgid "&Start date:"
 msgstr "Дата &початку:"
 
-#: widgets/messageviewer.cpp:202
+#: widgets/messageviewer.cpp:246
 #, kde-format
 msgid "&End date:"
 msgstr "Дата за&кінчення:"
 
-#: widgets/messageviewer.cpp:205
+#: widgets/messageviewer.cpp:249
 #, kde-format
 msgid "&Details:"
 msgstr "&Подробиці:"
 
-#: widgets/messageviewer.cpp:215
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Вбудовано повідомлення"
 
-#: widgets/messageviewer.cpp:223
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "From:"
 msgstr "Від:"
 
-#: widgets/messageviewer.cpp:224
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "Date:"
 msgstr "Дата:"
 
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:315
 #, kde-format
 msgid "&Subject:"
 msgstr "&Тема:"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "&From:"
 msgstr "&Від:"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "&To:"
 msgstr "&Кому:"
+
+#: widgets/urlhandler.cpp:37
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+
+#: widgets/urlhandler.cpp:39
+#, kde-format
+msgid "KMail Error"
+msgstr ""
 
 #~ msgctxt "@info"
 #~ msgid "Could not decrypt the data: no key found for recipients."
