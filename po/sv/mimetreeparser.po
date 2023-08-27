@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:47+0000\n"
-"PO-Revision-Date: 2023-08-18 07:07+0200\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"PO-Revision-Date: 2023-08-26 07:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -260,54 +260,44 @@ msgid "This message is encrypted to the key: %1"
 msgstr "Brevet är krypterat med nyckeln: %1"
 
 #: widgets/messagecontainerwidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
 "%2</a>."
-msgstr "Brevet har signerats med användning av nyckel %1."
+msgstr ""
+"Brevet har signerats VS-NfD kompatibelt med användning av nyckel <a href="
+"\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr "Brevet har signerats med användning av nyckel %1."
+msgstr "Brevet har signerats med användning av nyckel <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "Brevet har signerats med användning av nyckel %1."
+msgstr "Brevet har signerats VS-NfD kompatibelt av %1."
 
 #: widgets/messagecontainerwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr "Brevet har signerats med användning av nyckel %1."
+msgstr "Brevet har signerats av %1."
 
 #: widgets/messagecontainerwidget.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr "Nyckeln har återkallats."
+msgstr "<a href=\"%1\">Nyckeln</a> har återkallats."
 
 #: widgets/messagecontainerwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
-msgstr "Nyckeln har gått ut."
+msgstr "<a href=\"%1\">Nyckeln</a> har gått ut."
 
 #: widgets/messagecontainerwidget.cpp:94
 #, kde-format
@@ -315,6 +305,7 @@ msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
 msgstr ""
+"Signaturen är giltig, men <a href=\"%1\">nyckelns</a> giltighet är okänd."
 
 #: widgets/messagecontainerwidget.cpp:97
 #, kde-format
@@ -322,12 +313,13 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
 msgstr ""
+"Signaturen är giltig och <a href=\"%1\">nyckeln</a> är möjligen pålitlig."
 
 #: widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
-msgstr ""
+msgstr "Signaturen är giltig och <a href=\"%1\">nyckeln</a> är pålitlig."
 
 #: widgets/messagecontainerwidget.cpp:102
 #, kde-format
@@ -335,44 +327,41 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
 msgstr ""
+"Signaturen är giltig och <a href=\"%1\">nyckeln</a> är fullständigt pålitlig."
 
 #: widgets/messagecontainerwidget.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
-msgstr ""
+msgstr "Signaturen är giltig, men <a href=\"%1\">nyckeln</a> är opålitlig."
 
 #: widgets/messagecontainerwidget.cpp:203
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
-msgstr "Brevet är krypterat men vi har inte nyckeln för det."
+msgstr ""
+"Brevet är krypterat VS-NfD kompatibelt men vi har inte nyckeln för det."
 
 #: widgets/messagecontainerwidget.cpp:209
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr "Brevet är krypterat med nyckeln: %1"
+msgstr "Brevet är krypterat VS-NfD kompatibelt."
 
 #: widgets/messagecontainerwidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted."
-msgstr "Brevet är krypterat med nyckeln: %1"
+msgstr "Brevet är krypterat."
 
 #: widgets/messagecontainerwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr "Brevet är krypterat med nyckeln: %1"
+msgstr "Brevet är krypterat för följande nycklar:"
 
 #: widgets/messagecontainerwidget.cpp:237
 #, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
-msgid "Unknow key"
-msgstr "Okänd"
+#| msgid "Unknow key"
+msgid "Unknown key"
+msgstr "Okänd nyckel"
 
 #: widgets/messageviewer.cpp:57
 #, kde-format
@@ -459,12 +448,12 @@ msgstr "&Till:"
 #: widgets/urlhandler.cpp:37
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
+msgstr "Kunde inte starta certifikathanteraren. Kontrollera installationen."
 
 #: widgets/urlhandler.cpp:39
 #, kde-format
 msgid "KMail Error"
-msgstr ""
+msgstr "Kmail-fel"
 
 #~ msgctxt "@info"
 #~ msgid "Could not decrypt the data: no key found for recipients."

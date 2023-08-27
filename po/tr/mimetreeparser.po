@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:47+0000\n"
-"PO-Revision-Date: 2023-08-18 09:38+0300\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"PO-Revision-Date: 2023-08-26 11:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -209,7 +209,7 @@ msgstr "%1 tarafından %2 tarihinde gönderildi"
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
-msgstr "Bu ileti, %1 anahtarı kullanılarak imzalandı."
+msgstr "Bu ileti, %1 anahtarı kullanılarak imzalanmış."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:78
 #, kde-format
@@ -221,7 +221,7 @@ msgstr "Anahtar ayrıntıları kullanılabilir değil."
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
-msgstr "Bu ileti, %2 tarafından %1 anahtarı kullanılarak imzalandı."
+msgstr "Bu ileti, %2 tarafından %1 anahtarı kullanılarak imzalanmış."
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
@@ -252,7 +252,7 @@ msgstr "İmza geçersiz."
 #: widgets/messagecontainerwidget.cpp:205
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr "İleti şifrelenmiş; ancak şifresini çözmek için anahtarımız yok."
+msgstr "İleti şifrelenmiş; ancak bunun anahtarı bizde yok."
 
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
@@ -260,54 +260,44 @@ msgid "This message is encrypted to the key: %1"
 msgstr "Bu ileti, şu anahtarla şifrelenmiş: %1"
 
 #: widgets/messagecontainerwidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
 "%2</a>."
-msgstr "Bu ileti, %1 anahtarı kullanılarak imzalandı."
+msgstr ""
+"Bu ileti, <a href=\"%1\">%2</a> anahtarı kullanılarak VS-NfD uyumlu olarak "
+"imzalandı."
 
 #: widgets/messagecontainerwidget.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr "Bu ileti, %1 anahtarı kullanılarak imzalandı."
+msgstr "Bu ileti, <a href=\"%1\">%2</a> anahtarı kullanılarak imzalandı."
 
 #: widgets/messagecontainerwidget.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "Bu ileti, %1 anahtarı kullanılarak imzalandı."
+msgstr "Bu ileti, %1 tarafından VS-NfD uyumlu olarak imzalandı."
 
 #: widgets/messagecontainerwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr "Bu ileti, %1 anahtarı kullanılarak imzalandı."
+msgstr "Bu ileti, %1 tarafından imzalandı."
 
 #: widgets/messagecontainerwidget.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr "Anahtar yürürlükten kaldırılmış."
+msgstr "<a href=\"%1\">Anahtar</a> yürürlükten kaldırılmış."
 
 #: widgets/messagecontainerwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
-msgstr "Anahtarın süresi geçmiş."
+msgstr "<a href=\"%1\">Anahtarın</a> süresi geçmiş."
 
 #: widgets/messagecontainerwidget.cpp:94
 #, kde-format
@@ -315,6 +305,7 @@ msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
 msgstr ""
+"İmza geçerli; ancak <a href=\"%1\">anahtarın</a> geçerliliği bilinmiyor."
 
 #: widgets/messagecontainerwidget.cpp:97
 #, kde-format
@@ -322,57 +313,53 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
 msgstr ""
+"İmza geçerli ve <a href=\"%1\">anahtara</a> marjinal olarak güveniliyor."
 
 #: widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
-msgstr ""
+msgstr "İmza geçerli ve <a href=\"%1\">anahtara</a> tümüyle güveniliyor."
 
 #: widgets/messagecontainerwidget.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
-msgstr ""
+msgstr "İmza geçerli ve <a href=\"%1\">anahtara</a> sonuç olarak güveniliyor."
 
 #: widgets/messagecontainerwidget.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
-msgstr ""
+msgstr "İmza geçerli; ancak <a href=\"%1\">anahtara</a> güvenilmiyor."
 
 #: widgets/messagecontainerwidget.cpp:203
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
-msgstr "İleti şifrelenmiş; ancak şifresini çözmek için anahtarımız yok."
+msgstr "Bu ileti, VS-NfD uyumlu şifrelenmiş; ancak bunun anahtarı bizde yok."
 
 #: widgets/messagecontainerwidget.cpp:209
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr "Bu ileti, şu anahtarla şifrelenmiş: %1"
+msgstr "Bu ileti, VS-NfD uyumlu şifrelenmiş."
 
 #: widgets/messagecontainerwidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted."
-msgstr "Bu ileti, şu anahtarla şifrelenmiş: %1"
+msgstr "Bu ileti şifrelenmiş."
 
 #: widgets/messagecontainerwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr "Bu ileti, şu anahtarla şifrelenmiş: %1"
+msgstr "Bu ileti, şu anahtarlar için şifrelenmiş:"
 
 #: widgets/messagecontainerwidget.cpp:237
 #, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
-msgid "Unknow key"
-msgstr "Bilinmeyen"
+#| msgid "Unknow key"
+msgid "Unknown key"
+msgstr "Bilinmeyen anahtar"
 
 #: widgets/messageviewer.cpp:57
 #, kde-format
@@ -459,12 +446,12 @@ msgstr "Kim&e:"
 #: widgets/urlhandler.cpp:37
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
+msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin."
 
 #: widgets/urlhandler.cpp:39
 #, kde-format
 msgid "KMail Error"
-msgstr ""
+msgstr "K Posta Hatası"
 
 #~ msgctxt "@info"
 #~ msgid "Could not decrypt the data: no key found for recipients."

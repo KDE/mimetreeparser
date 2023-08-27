@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:47+0000\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
 "PO-Revision-Date: 2023-08-13 16:14+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -375,7 +375,7 @@ msgstr "Diese Nachricht ist mit folgendem Schlüssel verschlüsselt: %1"
 #, fuzzy, kde-format
 #| msgctxt "displayed when a mail has unknown sender, receiver or date"
 #| msgid "Unknown"
-msgid "Unknow key"
+msgid "Unknown key"
 msgstr "Unbekannt"
 
 #: widgets/messageviewer.cpp:57
