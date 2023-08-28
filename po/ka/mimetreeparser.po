@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-08-19 05:16+0200\n"
+"PO-Revision-Date: 2023-08-27 11:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -261,54 +261,44 @@ msgid "This message is encrypted to the key: %1"
 msgstr "შეტყობინება დაშიფრულია ამ გასაღებამდე: %1"
 
 #: widgets/messagecontainerwidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
 "%2</a>."
-msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1."
+msgstr ""
+"გასაღების ხელმოწერა თავსებადია VS-NfD-სთან. გამოყენებულია გასაღები<a href="
+"\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1."
+msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1."
+msgstr "ამ შეტყობინების ხელმოწერა თავსებადია VS-NfD-სთან. ავტორია %1."
 
 #: widgets/messagecontainerwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1."
+msgstr "შეტყობინება ხელმოწერილია %1-ის მიერ."
 
 #: widgets/messagecontainerwidget.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr "გასაღები გაუქმებულია."
+msgstr "<a href=\"%1\">გასაღები</a> გაუქმებულია."
 
 #: widgets/messagecontainerwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
-msgstr "გასაღების ვადაგასულია."
+msgstr "<a href=\"%1\">გასაღები</a>ს ვადა ამოიწურა."
 
 #: widgets/messagecontainerwidget.cpp:94
 #, kde-format
@@ -316,64 +306,62 @@ msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
 msgstr ""
+"ხელმოწერა სწორია, მაგრამ <a href=\"%1\">გასაღების</a> გადამოწმება "
+"შეუძლებელია."
 
 #: widgets/messagecontainerwidget.cpp:97
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
-msgstr ""
+msgstr "ხელმოწერია სწორია და <a href=\"%1\">გასაღები</a> ოდნავ საეჭვოა."
 
 #: widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
-msgstr ""
+msgstr "ხელმოწერია სწორია და <a href=\"%1\">გასაღები</a> სრულად სანდოა."
 
 #: widgets/messagecontainerwidget.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
-msgstr ""
+msgstr "ხელმოწერა სწორია და <a href=\"%1\">გასაღები</a> უპირობოდ სანდოა."
 
 #: widgets/messagecontainerwidget.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
-msgstr ""
+msgstr "ხელმოწერია სწორია, მაგრამ <a href=\"%1\">გასაღები</a> სანდო არაა."
 
 #: widgets/messagecontainerwidget.cpp:203
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
-msgstr "შეტყობინება დაშიფრულია, მაგრამ მისი გასაღები არ გვაქვს."
+msgstr ""
+"შეტყობინება დაშიფრულია VS-NfD-სთან თავსებადად, მაგრამ მისი გასაღები არ "
+"გვაქვს."
 
 #: widgets/messagecontainerwidget.cpp:209
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr "შეტყობინება დაშიფრულია ამ გასაღებამდე: %1"
+msgstr "ეს შეტყობინება დაშიფრულია VS-NfD-სთან თავსებადი შიფრით."
 
 #: widgets/messagecontainerwidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted."
-msgstr "შეტყობინება დაშიფრულია ამ გასაღებამდე: %1"
+msgstr "ეს შეტყობინება დაშიფრულია."
 
 #: widgets/messagecontainerwidget.cpp:220
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr "შეტყობინება დაშიფრულია ამ გასაღებამდე: %1"
+msgstr "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
 
 #: widgets/messagecontainerwidget.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown key"
-msgstr "უცნობი"
+msgstr "უცნობი გასაღები"
 
 #: widgets/messageviewer.cpp:57
 #, kde-format
@@ -460,12 +448,12 @@ msgstr "&ვის:"
 #: widgets/urlhandler.cpp:37
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
+msgstr "სერტიფიკატების მმართველის გაშვების შეცდომა. გადაამოწმეთ ფაილები."
 
 #: widgets/urlhandler.cpp:39
 #, kde-format
 msgid "KMail Error"
-msgstr ""
+msgstr "KMail-ის შეცდომა"
 
 #~ msgctxt "@info"
 #~ msgid "Could not decrypt the data: no key found for recipients."

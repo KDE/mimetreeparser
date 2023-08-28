@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-08-26 11:43+0200\n"
+"PO-Revision-Date: 2023-08-27 11:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -365,8 +365,7 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Este missatge està encriptat amb les claus següents:"
 
 #: widgets/messagecontainerwidget.cpp:237
-#, fuzzy, kde-format
-#| msgid "Unknow key"
+#, kde-format
 msgid "Unknown key"
 msgstr "Clau desconeguda"
 

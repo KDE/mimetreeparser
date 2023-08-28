@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-08-26 07:42+0200\n"
+"PO-Revision-Date: 2023-08-27 07:18+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -358,8 +358,7 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Brevet är krypterat för följande nycklar:"
 
 #: widgets/messagecontainerwidget.cpp:237
-#, fuzzy, kde-format
-#| msgid "Unknow key"
+#, kde-format
 msgid "Unknown key"
 msgstr "Okänd nyckel"
 

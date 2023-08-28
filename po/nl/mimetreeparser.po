@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-08-26 10:10+0200\n"
+"PO-Revision-Date: 2023-08-27 18:13+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -367,8 +367,7 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Het bericht is versleuteld voor de volgende sleutels:"
 
 #: widgets/messagecontainerwidget.cpp:237
-#, fuzzy, kde-format
-#| msgid "Unknow key"
+#, kde-format
 msgid "Unknown key"
 msgstr "Onbekende sleutel"
 
