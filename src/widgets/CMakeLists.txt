@@ -48,7 +48,7 @@ PRIVATE
     KF6::I18n
     KF6::CalendarCore
     KF6::WidgetsAddons
-    KF6::Libkleo
+    KPim6::Libkleo
     Gpgme::Gpgme
 )
 
