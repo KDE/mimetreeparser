@@ -4,10 +4,15 @@
 
 #include "attachmentmodel.h"
 
-#include <QString>
+#include "job/qgpgmejobexecutor.h"
+#include "objecttreeparser.h"
+
+#include <QGpgME/ImportJob>
+#include <QGpgME/Protocol>
 
 #include <KLocalizedString>
 #include <KMime/Content>
+
 #include <QDebug>
 #include <QDesktopServices>
 #include <QDir>
@@ -17,8 +22,6 @@
 #include <QMimeDatabase>
 #include <QStandardPaths>
 #include <QUrl>
-
-#include <QStringLiteral>
 
 QString sizeHuman(float size)
 {
@@ -259,18 +262,21 @@ bool AttachmentModel::importPublicKey(const int row)
 bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &part)
 {
     Q_ASSERT(part);
-    auto result = Crypto::importKey(Crypto::OpenPGP, part->node()->decodedContent());
+    const QByteArray certData = part->node()->decodedContent();
+    QGpgME::ImportJob *import = QGpgME::openpgp()->importJob();
+    MimeTreeParser::QGpgMEJobExecutor executor;
+    auto result = executor.exec(import, certData);
 
     bool success = true;
     QString message;
-    if (result.considered == 0) {
+    if (result.numConsidered() == 0) {
         message = i18ndc("mimetreeparser", "@info", "No keys were found in this attachment");
         success = false;
     } else {
-        message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.imported);
-        if (result.unchanged != 0) {
-            message +=
-                QStringLiteral("\n") + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.unchanged);
+        message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
+        if (result.numUnchanged() != 0) {
+            message += QStringLiteral("\n")
+                + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.numUnchanged());
         }
     }
 

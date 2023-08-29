@@ -6,6 +6,8 @@
 
 #include <QDateTime>
 #include <QStringList>
+#include <gpgme++/context.h>
+#include <gpgme++/verificationresult.h>
 
 namespace MimeTreeParser
 {
@@ -13,27 +15,47 @@ namespace MimeTreeParser
 class PartMetaData
 {
 public:
-    bool keyMissing = false;
-    bool keyExpired = false;
-    bool keyRevoked = false;
-    bool sigExpired = false;
-    bool crlMissing = false;
-    bool crlTooOld = false;
+    PartMetaData()
+        : isSigned(false)
+        , isGoodSignature(false)
+        , isEncrypted(false)
+        , isDecryptable(false)
+        , inProgress(false)
+        , technicalProblem(false)
+        , isEncapsulatedRfc822Message(false)
+        , isCompliant(false)
+        , keyRevoked(false)
+    {
+    }
+
+    GpgME::Signature::Summary sigSummary = GpgME::Signature::None;
+    QString signClass;
     QString signer;
     QStringList signerMailAddresses;
     QByteArray keyId;
-    bool keyIsTrusted = false;
+    GpgME::Signature::Validity keyTrust = GpgME::Signature::Validity::Unknown;
     QString status; // to be used for unknown plug-ins
+    int status_code = 0; // = GPGME_SIG_STAT_NONE; to be used for i18n of OpenPGP and S/MIME CryptPlugs
     QString errorText;
     QDateTime creationTime;
     QString decryptionError;
     QString auditLog;
-    bool isSigned = false;
-    bool isGoodSignature = false;
-    bool isEncrypted = false;
-    bool isDecryptable = false;
-    bool technicalProblem = false;
-    bool isEncapsulatedRfc822Message = false;
+    QString compliance; // textual representation of compliance status; empty if compliance isn't enforced
+    GpgME::Error auditLogError;
+    bool isSigned : 1;
+    bool isGoodSignature : 1;
+    bool isEncrypted : 1;
+    bool isDecryptable : 1;
+    bool inProgress : 1;
+    bool technicalProblem : 1;
+    bool isEncapsulatedRfc822Message : 1;
+    bool isCompliant : 1; // corresponds to the isDeVS flag of signature or decryption result
+    bool keyRevoked : 1;
+
+    inline bool isTrusted()
+    {
+        return keyTrust == GpgME::Signature::Full || keyTrust == GpgME::Signature::Ultimate;
+    }
 };
 
 }

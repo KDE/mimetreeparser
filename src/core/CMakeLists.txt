@@ -16,16 +16,12 @@ add_definitions(-DTRANSLATION_DOMAIN=\"mimetreeparser\")
 target_sources(mimetreeparserprivate PUBLIC
      messagepart.h
      messagepart.cpp
-     crypto.h
-     crypto.cpp
      cryptohelper.h
      cryptohelper.cpp
      utils.h
      utils.cpp
-     mailtemplates.h
-     mailtemplates.cpp
-     mailcrypto.h
-     mailcrypto.cpp
+     job/qgpgmejobexecutor.h
+     job/qgpgmejobexecutor.cpp
 )
 target_link_libraries(mimetreeparserprivate
 PUBLIC
@@ -35,6 +31,7 @@ PUBLIC
     KF6::Codecs
     Qt6::Core5Compat
     Gpgme::Gpgme
+    KPim${KF_MAJOR_VERSION}::Libkleo
 )
 
 ecm_qt_declare_logging_category(mimetreeparserprivate
@@ -120,11 +117,8 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         MessageParser
         MessagePart
         PartModel
-        MailCrypto
-        Crypto
         Errors
         PartMetaData
-        MailTemplates
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:46+0000\n"
-"PO-Revision-Date: 2023-08-12 12:08+0300\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"PO-Revision-Date: 2023-08-27 21:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,61 +17,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.11.70\n"
 
-#: core/attachmentmodel.cpp:88
+#: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Ad"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Boyut"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Şifrelenmiş"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "İmzalanmış"
 
-#: core/attachmentmodel.cpp:196
+#: core/attachmentmodel.cpp:198
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Ek kaydedilemedi."
 
-#: core/attachmentmodel.cpp:228
+#: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Ek diske kaydedildi: %1"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Ek açılamadı."
 
-#: core/attachmentmodel.cpp:250
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Ek, açmak üzere kaydedilemedi."
 
-#: core/attachmentmodel.cpp:268
+#: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Bu ekte hiçbir anahtar bulunamadı."
 
-#: core/attachmentmodel.cpp:271
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -79,7 +79,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "1 anahtar içe aktarıldı"
 msgstr[1] "%1 anahtar içe aktarıldı"
 
-#: core/attachmentmodel.cpp:274
+#: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -103,67 +103,75 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/messagepart.cpp:618 core/messagepart.cpp:709 core/messagepart.cpp:783
+#: core/messagepart.cpp:625 core/messagepart.cpp:660 core/messagepart.cpp:835
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Yanlış kripto eklentisi."
 
-#: core/messagepart.cpp:857
+#: core/messagepart.cpp:986
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Verinin şifresi çözülemedi: Alıcılar için hiçbir anahtar bulunamadı."
+msgid "No appropriate crypto plug-in was found."
+msgstr "Uygun kripto eklentisi bulunamadı."
 
-#: core/messagepart.cpp:862
+#: core/messagepart.cpp:988
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data."
-msgstr "Verinin şifresi çözülemedi."
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Kripto eklentisi \"%1\", iletilerin şifresini çözemez."
 
-#: core/partmodel.cpp:483
+#: core/messagepart.cpp:990
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Kripto eklentisi \"%1\", verinin şifresini çözemedi."
+
+#: core/messagepart.cpp:991 widgets/messageviewer.cpp:295
+#, kde-format
+msgid "Error: %1"
+msgstr "Hata: %1"
+
+#: core/partmodel.cpp:487
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Kullanılabilir anahtar yok."
 
-#: core/partmodel.cpp:485
+#: core/partmodel.cpp:489
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Yanlış anahtar parolası."
 
-#: quick/qml/MailViewer.qml:39
+#: quick/qml/MailViewer.qml:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "İleti Görüntüleyicisi"
 
-#: quick/qml/MailViewer.qml:76
+#: quick/qml/MailViewer.qml:75
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Konu:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml:96
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Kimden:"
 
-#: quick/qml/MailViewer.qml:115
+#: quick/qml/MailViewer.qml:112
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Gönderen:"
 
-#: quick/qml/MailViewer.qml:132
+#: quick/qml/MailViewer.qml:128
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Kime:"
 
-#: quick/qml/MailViewer.qml:190
+#: quick/qml/MailViewer.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -186,152 +194,265 @@ msgstr "Kapat"
 msgid "An error occurred: %1"
 msgstr "Bir hata oluştu: %1"
 
-#: quick/qml/private/ICalPart.qml:28
+#: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Bu ileti, bir davet içeriyor"
 
-#: quick/qml/private/MailPart.qml:42
+#: quick/qml/private/MailPart.qml:41
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 tarafından %2 tarihinde gönderildi"
 
-#: quick/qml/private/MailPartModel.qml:54
+#: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
-msgstr "Bu ileti, %1 anahtarı kullanılarak imzalandı."
+msgstr "Bu ileti, %1 anahtarı kullanılarak imzalanmış."
 
-#: quick/qml/private/MailPartModel.qml:55
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:78
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
 msgstr "Anahtar ayrıntıları kullanılabilir değil."
 
-#: quick/qml/private/MailPartModel.qml:57
+#: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
-msgstr "Bu ileti, %2 tarafından %1 anahtarı kullanılarak imzalandı."
+msgstr "Bu ileti, %2 tarafından %1 anahtarı kullanılarak imzalanmış."
 
-#: quick/qml/private/MailPartModel.qml:59
+#: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
 msgstr "Anahtar yürürlükten kaldırılmış."
 
-#: quick/qml/private/MailPartModel.qml:62
+#: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
 msgstr "Anahtarın süresi geçmiş."
 
-#: quick/qml/private/MailPartModel.qml:65
+#: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
 msgstr "Bu anahtara güveniyorsunuz."
 
-#: quick/qml/private/MailPartModel.qml:68
+#: quick/qml/private/MailPartModel.qml:69
+#: widgets/messagecontainerwidget.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "İmza geçersiz."
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml:98
+#: widgets/messagecontainerwidget.cpp:205
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr "İleti şifrelenmiş; ancak şifresini çözmek için anahtarımız yok."
+msgstr "İleti şifrelenmiş; ancak bunun anahtarı bizde yok."
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
 msgstr "Bu ileti, şu anahtarla şifrelenmiş: %1"
 
-#: widgets/messageviewer.cpp:54
+#: widgets/messagecontainerwidget.cpp:66
+#, kde-format
+msgctxt "@label"
+msgid ""
+"This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
+"%2</a>."
+msgstr ""
+"Bu ileti, <a href=\"%1\">%2</a> anahtarı kullanılarak VS-NfD uyumlu olarak "
+"imzalandı."
+
+#: widgets/messagecontainerwidget.cpp:73
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+msgstr "Bu ileti, <a href=\"%1\">%2</a> anahtarı kullanılarak imzalandı."
+
+#: widgets/messagecontainerwidget.cpp:81
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed VS-NfD compliant by %1."
+msgstr "Bu ileti, %1 tarafından VS-NfD uyumlu olarak imzalandı."
+
+#: widgets/messagecontainerwidget.cpp:83
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed by %1."
+msgstr "Bu ileti, %1 tarafından imzalandı."
+
+#: widgets/messagecontainerwidget.cpp:86
+#, kde-format
+msgctxt "@label"
+msgid "The <a href=\"%1\">key</a> was revoked."
+msgstr "<a href=\"%1\">Anahtar</a> yürürlükten kaldırılmış."
+
+#: widgets/messagecontainerwidget.cpp:89
+#, kde-format
+msgctxt "@label"
+msgid "The <a href=\"%1\">key</a> was expired."
+msgstr "<a href=\"%1\">Anahtarın</a> süresi geçmiş."
+
+#: widgets/messagecontainerwidget.cpp:94
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
+msgstr ""
+"İmza geçerli; ancak <a href=\"%1\">anahtarın</a> geçerliliği bilinmiyor."
+
+#: widgets/messagecontainerwidget.cpp:97
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
+msgstr ""
+"İmza geçerli ve <a href=\"%1\">anahtara</a> marjinal olarak güveniliyor."
+
+#: widgets/messagecontainerwidget.cpp:99
+#, kde-format
+msgctxt "@label"
+msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+msgstr "İmza geçerli ve <a href=\"%1\">anahtara</a> tümüyle güveniliyor."
+
+#: widgets/messagecontainerwidget.cpp:102
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
+msgstr "İmza geçerli ve <a href=\"%1\">anahtara</a> sonuç olarak güveniliyor."
+
+#: widgets/messagecontainerwidget.cpp:104
+#, kde-format
+msgctxt "@label"
+msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+msgstr "İmza geçerli; ancak <a href=\"%1\">anahtara</a> güvenilmiyor."
+
+#: widgets/messagecontainerwidget.cpp:203
+#, kde-format
+msgid ""
+"This message is VS-NfD compliant encrypted but we don't have the key for it."
+msgstr "Bu ileti, VS-NfD uyumlu şifrelenmiş; ancak bunun anahtarı bizde yok."
+
+#: widgets/messagecontainerwidget.cpp:209
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Bu ileti, VS-NfD uyumlu şifrelenmiş."
+
+#: widgets/messagecontainerwidget.cpp:211
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Bu ileti şifrelenmiş."
+
+#: widgets/messagecontainerwidget.cpp:220
+#, kde-format
+msgid "The message is encrypted for the following keys:"
+msgstr "Bu ileti, şu anahtarlar için şifrelenmiş:"
+
+#: widgets/messagecontainerwidget.cpp:237
+#, kde-format
+msgid "Unknown key"
+msgstr "Bilinmeyen anahtar"
+
+#: widgets/messageviewer.cpp:57
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Eki Farklı &Kaydet..."
 
-#: widgets/messageviewer.cpp:59
+#: widgets/messageviewer.cpp:62
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Aç"
 
-#: widgets/messageviewer.cpp:64
+#: widgets/messageviewer.cpp:67
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Genel Anahtar İçe Aktar"
 
-#: widgets/messageviewer.cpp:192
+#: widgets/messageviewer.cpp:236
 #, kde-format
 msgid "Invitation"
 msgstr "Davet"
 
-#: widgets/messageviewer.cpp:195
+#: widgets/messageviewer.cpp:239
 #, kde-format
 msgid "&Summary:"
 msgstr "&Özet:"
 
-#: widgets/messageviewer.cpp:196
+#: widgets/messageviewer.cpp:240
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizatör:"
 
-#: widgets/messageviewer.cpp:198
+#: widgets/messageviewer.cpp:242
 #, kde-format
 msgid "&Location:"
 msgstr "&Konum:"
 
-#: widgets/messageviewer.cpp:200
+#: widgets/messageviewer.cpp:244
 #, kde-format
 msgid "&Start date:"
 msgstr "&Başlangıç tarihi:"
 
-#: widgets/messageviewer.cpp:202
+#: widgets/messageviewer.cpp:246
 #, kde-format
 msgid "&End date:"
 msgstr "B&itiş tarihi:"
 
-#: widgets/messageviewer.cpp:205
+#: widgets/messageviewer.cpp:249
 #, kde-format
 msgid "&Details:"
 msgstr "&Ayrıntılar:"
 
-#: widgets/messageviewer.cpp:215
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsüllenmiş E-posta"
 
-#: widgets/messageviewer.cpp:223
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "From:"
 msgstr "Kimden:"
 
-#: widgets/messageviewer.cpp:224
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "Date:"
 msgstr "Tarih:"
 
-#: widgets/messageviewer.cpp:237
-#, kde-format
-msgid "Error: %1"
-msgstr "Hata: %1"
-
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:315
 #, kde-format
 msgid "&Subject:"
 msgstr "K&onu:"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "&From:"
 msgstr "&Kimden:"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "&To:"
 msgstr "Kim&e:"
+
+#: widgets/urlhandler.cpp:37
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin."
+
+#: widgets/urlhandler.cpp:39
+#, kde-format
+msgid "KMail Error"
+msgstr "K Posta Hatası"
+
+#~ msgctxt "@info"
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Verinin şifresi çözülemedi: Alıcılar için hiçbir anahtar bulunamadı."

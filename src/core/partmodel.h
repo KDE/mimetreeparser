@@ -7,9 +7,16 @@
 
 #include <QAbstractItemModel>
 #include <QModelIndex>
+#include <gpgme++/decryptionresult.h>
+#include <gpgme++/key.h>
 
 #include "mimetreeparser_core_export.h"
 #include <memory>
+
+namespace QGpgME
+{
+class Protocol;
+}
 
 namespace MimeTreeParser
 {
@@ -59,6 +66,14 @@ public:
         DateRole
     };
 
+    enum SecurityLevel {
+        Unknow,
+        Good,
+        NotSoGood,
+        Bad,
+    };
+    Q_ENUM(SecurityLevel);
+
     QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
     QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
@@ -83,9 +98,9 @@ private:
     std::unique_ptr<PartModelPrivate> d;
 };
 
-class SignatureInfo : public QObject
+class MIMETREEPARSER_CORE_EXPORT SignatureInfo
 {
-    Q_OBJECT
+    Q_GADGET
     Q_PROPERTY(QByteArray keyId MEMBER keyId CONSTANT)
     Q_PROPERTY(bool keyMissing MEMBER keyMissing CONSTANT)
     Q_PROPERTY(bool keyRevoked MEMBER keyRevoked CONSTANT)
@@ -97,7 +112,8 @@ class SignatureInfo : public QObject
     Q_PROPERTY(QString signer MEMBER signer CONSTANT)
     Q_PROPERTY(QStringList signerMailAddresses MEMBER signerMailAddresses CONSTANT)
     Q_PROPERTY(bool signatureIsGood MEMBER signatureIsGood CONSTANT)
-    Q_PROPERTY(bool keyIsTrusted MEMBER keyIsTrusted CONSTANT)
+    Q_PROPERTY(bool isCompliant MEMBER isCompliant CONSTANT)
+    Q_PROPERTY(GpgME::Signature::Validity keyTrust MEMBER keyTrust CONSTANT)
 
 public:
     bool keyRevoked = false;
@@ -106,10 +122,13 @@ public:
     bool keyMissing = false;
     bool crlMissing = false;
     bool crlTooOld = false;
+    bool isCompliant = false;
+    GpgME::Signature::Validity keyTrust;
     QByteArray keyId;
+    const QGpgME::Protocol *cryptoProto = nullptr;
+    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> decryptRecipients;
 
     QString signer;
     QStringList signerMailAddresses;
     bool signatureIsGood = false;
-    bool keyIsTrusted = false;
 };

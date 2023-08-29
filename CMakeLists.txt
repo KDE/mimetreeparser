@@ -39,6 +39,8 @@ include(ECMAddQch)
 set(KF_MIN_VERSION "5.240.0")
 set(KF_MAJOR_VERSION "6")
 set(KPIM_MIME_VERSION "5.240.0")
+set(KPIM_MIME_VERSION "5.240.40")
+set(KPIM_LIBKLEO_VERSION "5.240.40")
 
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSERNG
@@ -63,6 +65,7 @@ find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6WidgetsAddons ${QT_MIN_VERSION} CONFIG)
 find_package(KPim6Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
+find_package(KPim6Libkleo ${KPIM_LIBKLEO_VERSION} CONFIG REQUIRED)
 find_package(Gpgme REQUIRED)
 
 find_package(Qt6Quick ${QT_MIN_VERSION} CONFIG)

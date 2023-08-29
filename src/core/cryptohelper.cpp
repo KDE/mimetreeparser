@@ -9,7 +9,9 @@ using namespace MimeTreeParser;
 PGPBlockType Block::determineType() const
 {
     const QByteArray data = text();
-    if (data.startsWith("-----BEGIN PGP SIGNED")) {
+    if (data.startsWith("-----BEGIN PGP PUBLIC KEY BLOCK-----")) {
+        return NoPgpBlock;
+    } else if (data.startsWith("-----BEGIN PGP SIGNED")) {
         return ClearsignedBlock;
     } else if (data.startsWith("-----BEGIN PGP SIGNATURE")) {
         return SignatureBlock;
@@ -32,15 +34,18 @@ PGPBlockType Block::determineType() const
     }
 }
 
-QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
+QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
 {
     PGPBlockType pgpBlock = NoPgpBlock;
-    QList<Block> blocks;
+    QVector<Block> blocks;
     int start = -1; // start of the current PGP block
     int lastEnd = -1; // end of the last PGP block
     const int length = msg.length();
 
     if (msg.isEmpty()) {
+        return blocks;
+    }
+    if (msg.startsWith("-----BEGIN PGP PUBLIC KEY BLOCK-----")) {
         return blocks;
     }
 
@@ -55,7 +60,8 @@ QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
     }
 
     while (start != -1) {
-        int nextEnd, nextStart;
+        int nextEnd;
+        int nextStart;
 
         // is the PGP block a clearsigned block?
         if (!strncmp(msg.constData() + start + 15, "SIGNED", 6)) {
@@ -113,6 +119,8 @@ QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
 
     return blocks;
 }
+
+Block::Block() = default;
 
 Block::Block(const QByteArray &m)
     : msg(m)

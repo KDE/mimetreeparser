@@ -13,6 +13,7 @@
 #include "utils.h"
 
 #include <KMime/Content>
+#include <QGpgME/Protocol>
 
 using namespace MimeTreeParser;
 using namespace MimeTreeParser::Interface;
@@ -102,7 +103,7 @@ public:
             return MessagePart::Ptr(); // new MimeMessagePart(objectTreeParser, node));
         }
 
-        EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), OpenPGP, node, data));
+        EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
         mp->setIsEncrypted(true);
         return mp;
     }
@@ -120,7 +121,7 @@ public:
         const QString smimeType = node->contentType()->parameter(QStringLiteral("smime-type")).toLower();
 
         if (smimeType == QLatin1String("certs-only")) {
-            return CertMessagePart::Ptr(new CertMessagePart(objectTreeParser, node, CMS));
+            return CertMessagePart::Ptr(new CertMessagePart(objectTreeParser, node, QGpgME::smime()));
         }
 
         bool isSigned = (smimeType == QLatin1String("signed-data"));
@@ -142,7 +143,7 @@ public:
                 qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
             }
 
-            auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, node->decodedText(), CMS, node));
+            auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, node->decodedText(), QGpgME::smime(), node));
             mp = _mp;
             _mp->setIsEncrypted(true);
             // PartMetaData *messagePart(_mp->partMetaData());
@@ -184,7 +185,7 @@ public:
                 qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
             }
 
-            return SignedMessagePart::Ptr(new SignedMessagePart(objectTreeParser, CMS, nullptr, signTestNode));
+            return SignedMessagePart::Ptr(new SignedMessagePart(objectTreeParser, QGpgME::smime(), nullptr, signTestNode));
         }
         return mp;
     }
@@ -217,18 +218,18 @@ public:
             return MessagePart::Ptr();
         }
 
-        CryptoProtocol useThisCryptProto = UnknownProtocol;
+        const QGpgME::Protocol *protocol = nullptr;
 
         /*
         ATTENTION: This code is to be replaced by the new 'auto-detect' feature. --------------------------------------
         */
         KMime::Content *data = findTypeInDirectChildren(node, "application/octet-stream");
         if (data) {
-            useThisCryptProto = OpenPGP;
+            protocol = QGpgME::openpgp();
         } else {
             data = findTypeInDirectChildren(node, "application/pkcs7-mime");
             if (data) {
-                useThisCryptProto = CMS;
+                protocol = QGpgME::smime();
             }
         }
         /*
@@ -239,7 +240,7 @@ public:
             return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
         }
 
-        EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), useThisCryptProto, node, data));
+        EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), protocol, node, data));
         mp->setIsEncrypted(true);
         return mp;
     }
@@ -248,7 +249,7 @@ public:
 class MultiPartSignedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    static CryptoProtocol detectProtocol(const QString &protocolContentType_, const QString &signatureContentType)
+    static const QGpgME::Protocol *detectProtocol(const QString &protocolContentType_, const QString &signatureContentType)
     {
         auto protocolContentType = protocolContentType_;
         if (protocolContentType.isEmpty()) {
@@ -258,11 +259,11 @@ public:
             protocolContentType = signatureContentType;
         }
 
-        CryptoProtocol protocol = UnknownProtocol;
+        const QGpgME::Protocol *protocol = nullptr;
         if (protocolContentType == QLatin1String("application/pkcs7-signature") || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
-            protocol = CMS;
+            protocol = QGpgME::smime();
         } else if (protocolContentType == QLatin1String("application/pgp-signature") || protocolContentType == QLatin1String("application/x-pgp-signature")) {
-            protocol = OpenPGP;
+            protocol = QGpgME::openpgp();
         }
         return protocol;
     }
@@ -286,7 +287,7 @@ public:
         auto protocol =
             detectProtocol(node->contentType()->parameter(QStringLiteral("protocol")).toLower(), QLatin1String(signature->contentType()->mimeType().toLower()));
 
-        if (protocol == UnknownProtocol) {
+        if (!protocol) {
             return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, signedData));
         }
 

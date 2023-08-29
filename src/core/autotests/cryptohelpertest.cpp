@@ -1,4 +1,4 @@
-// Copyright 2015 Sandro Knauß <knauss@kolabsys.com>
+// SPDX-FileCopyrightText: 2015 Sandro Knauß <knauss@kolabsys.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 #include "cryptohelpertest.h"
@@ -17,7 +17,7 @@ void CryptoHelperTest::testPMFDEmpty()
 void CryptoHelperTest::testPMFDWithNoPGPBlock()
 {
     const QByteArray text = "testblabla";
-    const QList<Block> blocks = prepareMessageForDecryption(text);
+    const QVector<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 1);
     QCOMPARE(blocks[0].text(), text);
     QCOMPARE(blocks[0].type(), NoPgpBlock);
@@ -49,12 +49,12 @@ void CryptoHelperTest::testPGPBlockType()
             name = QStringLiteral("PRIVATE KEY BLOCK");
             break;
         }
-        QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1String("\n") + blockText;
-        QList<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
+        QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText;
+        QVector<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 1);
         QCOMPARE(blocks[0].type(), UnknownBlock);
 
-        text += QLatin1String("\n-----END PGP ") + name + QLatin1String("\n");
+        text += QLatin1String("\n-----END PGP ") + name + QLatin1Char('\n');
         blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 2);
         QCOMPARE(blocks[1].text(), text.toLatin1());
@@ -87,7 +87,7 @@ void CryptoHelperTest::testDeterminePGPBlockType()
             name = QStringLiteral("PRIVATE KEY BLOCK");
             break;
         }
-        const QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1String("\n") + blockText + QLatin1String("\n");
+        const QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText + QLatin1Char('\n');
         const Block block = Block(text.toLatin1());
         QCOMPARE(block.text(), text.toLatin1());
         QCOMPARE(block.type(), static_cast<PGPBlockType>(i));
@@ -97,7 +97,7 @@ void CryptoHelperTest::testDeterminePGPBlockType()
 void CryptoHelperTest::testEmbededPGPBlock()
 {
     const QByteArray text = QByteArray("before\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\nafter");
-    const QList<Block> blocks = prepareMessageForDecryption(text);
+    const QVector<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 3);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
     QCOMPARE(blocks[1].text(), QByteArray("-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n"));
@@ -108,7 +108,7 @@ void CryptoHelperTest::testClearSignedMessage()
 {
     const QByteArray text = QByteArray(
         "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\nafter");
-    const QList<Block> blocks = prepareMessageForDecryption(text);
+    const QVector<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 3);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
     QCOMPARE(blocks[1].text(),
@@ -121,7 +121,7 @@ void CryptoHelperTest::testMultipleBlockMessage()
     const QByteArray text = QByteArray(
         "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP "
         "SIGNATURE-----\nafter\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n");
-    const QList<Block> blocks = prepareMessageForDecryption(text);
+    const QVector<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 4);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
     QCOMPARE(blocks[1].text(),

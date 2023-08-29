@@ -5,11 +5,10 @@
 #pragma once
 
 #include <QByteArray>
-#include <QList>
+#include <QVector>
 
 namespace MimeTreeParser
 {
-
 enum PGPBlockType {
     UnknownBlock = -1, // BEGIN PGP ???
     NoPgpBlock = 0,
@@ -18,29 +17,29 @@ enum PGPBlockType {
     SignatureBlock = 3, // BEGIN PGP SIGNATURE
     ClearsignedBlock = 4, // BEGIN PGP SIGNED MESSAGE
     PublicKeyBlock = 5, // BEGIN PGP PUBLIC KEY BLOCK
-    PrivateKeyBlock = 6 // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
+    PrivateKeyBlock = 6, // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
 };
 
 class Block
 {
 public:
-    explicit Block(const QByteArray &m);
+    Block();
+    Block(const QByteArray &m);
 
     Block(const QByteArray &m, PGPBlockType t);
 
-    QByteArray text() const;
-    PGPBlockType type() const;
-    PGPBlockType determineType() const;
+    Q_REQUIRED_RESULT QByteArray text() const;
+    Q_REQUIRED_RESULT PGPBlockType type() const;
+    Q_REQUIRED_RESULT PGPBlockType determineType() const;
 
     QByteArray msg;
-    PGPBlockType mType;
+    PGPBlockType mType = UnknownBlock;
 };
 
 /** Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
-QList<Block> prepareMessageForDecryption(const QByteArray &msg);
-
+Q_REQUIRED_RESULT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
 } // namespace MimeTreeParser
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);

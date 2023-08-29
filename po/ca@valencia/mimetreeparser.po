@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:46+0000\n"
-"PO-Revision-Date: 2023-08-12 11:00+0200\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"PO-Revision-Date: 2023-08-27 11:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,63 +17,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
-#: core/attachmentmodel.cpp:88
+#: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nom"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Mida"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Encriptat"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signat"
 
-#: core/attachmentmodel.cpp:196
+#: core/attachmentmodel.cpp:198
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "No s'ha pogut guardar l'adjunt."
 
-#: core/attachmentmodel.cpp:228
+#: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "S'ha guardat l'adjunt al disc: %1"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "No s'ha pogut obrir l'adjunt."
 
-#: core/attachmentmodel.cpp:250
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "No s'ha pogut guardar l'adjunt per a obrir-lo."
 
-#: core/attachmentmodel.cpp:268
+#: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "No s'ha trobat cap clau en este adjunt"
 
-#: core/attachmentmodel.cpp:271
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -81,7 +81,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "s'ha importat una clau"
 msgstr[1] "s'han importat %1 claus"
 
-#: core/attachmentmodel.cpp:274
+#: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -105,69 +105,75 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: core/messagepart.cpp:618 core/messagepart.cpp:709 core/messagepart.cpp:783
+#: core/messagepart.cpp:625 core/messagepart.cpp:660 core/messagepart.cpp:835
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Connector criptogràfic erroni."
 
-#: core/messagepart.cpp:857
+#: core/messagepart.cpp:986
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr ""
-"No s'han pogut desencriptar les dades: no s'ha trobat la clau dels "
-"destinataris."
+msgid "No appropriate crypto plug-in was found."
+msgstr "No s'ha trobat cap connector criptogràfic apropiat."
 
-#: core/messagepart.cpp:862
+#: core/messagepart.cpp:988
 #, kde-format
-msgctxt "@info"
-msgid "Could not decrypt the data."
-msgstr "No s'han pogut desencriptar les dades."
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "El connector criptogràfic «%1» no pot desencriptar missatges."
 
-#: core/partmodel.cpp:483
+#: core/messagepart.cpp:990
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
+
+#: core/messagepart.cpp:991 widgets/messageviewer.cpp:295
+#, kde-format
+msgid "Error: %1"
+msgstr "S'ha produït un error: %1"
+
+#: core/partmodel.cpp:487
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "No hi ha cap clau disponible."
 
-#: core/partmodel.cpp:485
+#: core/partmodel.cpp:489
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Frase de pas incorrecta."
 
-#: quick/qml/MailViewer.qml:39
+#: quick/qml/MailViewer.qml:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Visor de missatges"
 
-#: quick/qml/MailViewer.qml:76
+#: quick/qml/MailViewer.qml:75
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml:96
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "De:"
 
-#: quick/qml/MailViewer.qml:115
+#: quick/qml/MailViewer.qml:112
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Remitent:"
 
-#: quick/qml/MailViewer.qml:132
+#: quick/qml/MailViewer.qml:128
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "A:"
 
-#: quick/qml/MailViewer.qml:190
+#: quick/qml/MailViewer.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -190,152 +196,268 @@ msgstr "Tanca"
 msgid "An error occurred: %1"
 msgstr "S'ha produït un error: %1"
 
-#: quick/qml/private/ICalPart.qml:28
+#: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Este correu conté una invitació"
 
-#: quick/qml/private/MailPart.qml:42
+#: quick/qml/private/MailPart.qml:41
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "enviat per %1 a %2"
 
-#: quick/qml/private/MailPartModel.qml:54
+#: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "Este missatge s'ha signat emprant la clau %1."
 
-#: quick/qml/private/MailPartModel.qml:55
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:78
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
 msgstr "Els detalls de la clau no estan disponibles."
 
-#: quick/qml/private/MailPartModel.qml:57
+#: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
 msgstr "Este missatge s'ha signat emprant la clau %1 de %2."
 
-#: quick/qml/private/MailPartModel.qml:59
+#: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
 msgstr "S'ha revocat la clau."
 
-#: quick/qml/private/MailPartModel.qml:62
+#: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
 msgstr "La clau ha caducat."
 
-#: quick/qml/private/MailPartModel.qml:65
+#: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
 msgstr "Esteu confiant en esta clau."
 
-#: quick/qml/private/MailPartModel.qml:68
+#: quick/qml/private/MailPartModel.qml:69
+#: widgets/messagecontainerwidget.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "La signatura no és vàlida."
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml:98
+#: widgets/messagecontainerwidget.cpp:205
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr "Este missatge està encriptat, però no es disposa de la seua clau."
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
 msgstr "Este missatge està encriptat amb la clau: %1"
 
-#: widgets/messageviewer.cpp:54
+#: widgets/messagecontainerwidget.cpp:66
+#, kde-format
+msgctxt "@label"
+msgid ""
+"This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
+"%2</a>."
+msgstr ""
+"Este missatge s'ha signat conforme amb VS-NfD utilitzant la clau <a href="
+"\"%1\">%2</a>."
+
+#: widgets/messagecontainerwidget.cpp:73
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+msgstr "Este missatge s'ha signat emprant la clau <a href=\"%1\">%2</a>."
+
+#: widgets/messagecontainerwidget.cpp:81
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed VS-NfD compliant by %1."
+msgstr "Este missatge s'ha signat conforme amb VS-NfD per %1."
+
+#: widgets/messagecontainerwidget.cpp:83
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed by %1."
+msgstr "Este missatge s'ha signat per %1."
+
+#: widgets/messagecontainerwidget.cpp:86
+#, kde-format
+msgctxt "@label"
+msgid "The <a href=\"%1\">key</a> was revoked."
+msgstr "S'ha revocat la <a href=\"%1\">clau</a>."
+
+#: widgets/messagecontainerwidget.cpp:89
+#, kde-format
+msgctxt "@label"
+msgid "The <a href=\"%1\">key</a> was expired."
+msgstr "La <a href=\"%1\">clau</a> ha caducat."
+
+#: widgets/messagecontainerwidget.cpp:94
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
+msgstr ""
+"La signatura és vàlida, però no es coneix la validesa de la <a href="
+"\"%1\">clau</a>."
+
+#: widgets/messagecontainerwidget.cpp:97
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
+msgstr ""
+"La signatura és vàlida, però la <a href=\"%1\">clau</a> és de confiança "
+"parcial."
+
+#: widgets/messagecontainerwidget.cpp:99
+#, kde-format
+msgctxt "@label"
+msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+msgstr ""
+"La signatura és vàlida i la <a href=\"%1\">clau</a> és de plena confiança."
+
+#: widgets/messagecontainerwidget.cpp:102
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
+msgstr ""
+"La signatura és vàlida i la <a href=\"%1\">clau</a> és de confiança absoluta."
+
+#: widgets/messagecontainerwidget.cpp:104
+#, kde-format
+msgctxt "@label"
+msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+msgstr ""
+"La signatura és vàlida, però la <a href=\"%1\">clau</a> no és de confiança."
+
+#: widgets/messagecontainerwidget.cpp:203
+#, kde-format
+msgid ""
+"This message is VS-NfD compliant encrypted but we don't have the key for it."
+msgstr ""
+"Este missatge està encriptat conforme amb VS-NfD, però no es disposa de la "
+"seua clau."
+
+#: widgets/messagecontainerwidget.cpp:209
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Este missatge està encriptat conforme amb VS-NfD."
+
+#: widgets/messagecontainerwidget.cpp:211
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Este missatge està encriptat."
+
+#: widgets/messagecontainerwidget.cpp:220
+#, kde-format
+msgid "The message is encrypted for the following keys:"
+msgstr "Este missatge està encriptat amb les claus següents:"
+
+#: widgets/messagecontainerwidget.cpp:237
+#, kde-format
+msgid "Unknown key"
+msgstr "Clau desconeguda"
+
+#: widgets/messageviewer.cpp:57
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Guar&da l'adjunt com a..."
 
-#: widgets/messageviewer.cpp:59
+#: widgets/messageviewer.cpp:62
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Obri"
 
-#: widgets/messageviewer.cpp:64
+#: widgets/messageviewer.cpp:67
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Importa la clau pública"
 
-#: widgets/messageviewer.cpp:192
+#: widgets/messageviewer.cpp:236
 #, kde-format
 msgid "Invitation"
 msgstr "Invitació"
 
-#: widgets/messageviewer.cpp:195
+#: widgets/messageviewer.cpp:239
 #, kde-format
 msgid "&Summary:"
 msgstr "&Resum:"
 
-#: widgets/messageviewer.cpp:196
+#: widgets/messageviewer.cpp:240
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organitzador:"
 
-#: widgets/messageviewer.cpp:198
+#: widgets/messageviewer.cpp:242
 #, kde-format
 msgid "&Location:"
 msgstr "&Emplaçament:"
 
-#: widgets/messageviewer.cpp:200
+#: widgets/messageviewer.cpp:244
 #, kde-format
 msgid "&Start date:"
 msgstr "Data d'&inici:"
 
-#: widgets/messageviewer.cpp:202
+#: widgets/messageviewer.cpp:246
 #, kde-format
 msgid "&End date:"
 msgstr "Data &final:"
 
-#: widgets/messageviewer.cpp:205
+#: widgets/messageviewer.cpp:249
 #, kde-format
 msgid "&Details:"
 msgstr "&Detalls:"
 
-#: widgets/messageviewer.cpp:215
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Correu electrònic encapsulat"
 
-#: widgets/messageviewer.cpp:223
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:224
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:237
-#, kde-format
-msgid "Error: %1"
-msgstr "S'ha produït un error: %1"
-
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:315
 #, kde-format
 msgid "&Subject:"
 msgstr "A&ssumpte:"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
+
+#: widgets/urlhandler.cpp:37
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"No s'ha pogut iniciar el gestor de certificats. Comproveu esta instal·lació."
+
+#: widgets/urlhandler.cpp:39
+#, kde-format
+msgid "KMail Error"
+msgstr "S'ha produït un error a KMail"

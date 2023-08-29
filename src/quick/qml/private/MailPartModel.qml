@@ -20,29 +20,30 @@ DelegateModel {
     delegate: RowLayout {
         id: partColumn
 
-        width: ListView.view.width
+        width: ListView.view.width - Kirigami.Units.largeSpacing
+        x: Kirigami.Units.smallSpacing
 
         function getType(securityLevel) {
-            if (securityLevel == "good") {
+            if (securityLevel === PartModel.Good) {
                 return Kirigami.MessageType.Positive
             }
-            if (securityLevel == "bad") {
+            if (securityLevel === PartModel.Bad) {
                 return Kirigami.MessageType.Error
             }
-            if (securityLevel == "notsogood") {
+            if (securityLevel === PartModel.NotSoGood) {
                 return Kirigami.MessageType.Warning
             }
             return Kirigami.MessageType.Information
         }
 
         function getColor(securityLevel) {
-            if (securityLevel == "good") {
+            if (securityLevel === PartModel.Good) {
                 return Kirigami.Theme.positiveTextColor
             }
-            if (securityLevel == "bad") {
+            if (securityLevel === PartModel.Bad) {
                 return Kirigami.Theme.negativeTextColor
             }
-            if (securityLevel == "notsogood") {
+            if (securityLevel === PartModel.NotSoGood) {
                 return Kirigami.Theme.neutralTextColor
             }
             return "transparent"
@@ -94,7 +95,7 @@ DelegateModel {
                 iconName: "mail-encrypted"
                 type: getType(model.encryptionSecurityLevel)
                 visible: model.encrypted
-                text: model.encryptionDetails.keyId.length === 0 ? i18n("This message is encrypted but we don't have the key for it.") : i18n("This message is encrypted to the key: %1", model.encryptionDetails.keyId);
+                text: !model.encryptionDetails.keyId ? i18n("This message is encrypted but we don't have the key for it.") : i18n("This message is encrypted to the key: %1", model.encryptionDetails.keyId);
 
                 Layout.fillWidth: true
             }

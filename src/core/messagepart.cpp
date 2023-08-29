@@ -7,14 +7,27 @@
 #include "mimetreeparser_core_debug.h"
 #include "objecttreeparser.h"
 
+#include "job/qgpgmejobexecutor.h"
 #include "utils.h"
 
 #include <KLocalizedString>
 #include <KMime/Content>
+#include <Libkleo/Compliance>
+#include <Libkleo/KeyCache>
+
+#include <QGpgME/DN>
+#include <QGpgME/DecryptVerifyJob>
+#include <QGpgME/Protocol>
+#include <QGpgME/VerifyDetachedJob>
+#include <QGpgME/VerifyOpaqueJob>
+
+#include <gpgme++/key.h>
+#include <gpgme++/keylistresult.h>
+#include <gpgme.h>
+
 #include <QTextCodec>
 
 using namespace MimeTreeParser;
-using namespace Crypto;
 
 //------MessagePart-----------------------
 MessagePart::MessagePart(ObjectTreeParser *otp, const QString &text, KMime::Content *node)
@@ -348,7 +361,7 @@ void TextMessagePart::parseContent()
     // We also get blocks for unencrypted messages
     if (!blocks.isEmpty()) {
         const auto aCodec = mOtp->codecFor(mNode);
-        const auto cryptProto = OpenPGP;
+        const auto cryptProto = QGpgME::openpgp();
 
         /* The (overall) signature/encrypted status is broken
          * if one unencrypted part is at the beginning or in the middle
@@ -577,9 +590,9 @@ QString AlternativeMessagePart::icalContent() const
 
 //-----CertMessageBlock----------------------
 
-CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, const CryptoProtocol cryptoProto)
+CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, QGpgME::Protocol *cryptoProto)
     : MessagePart(otp, QString(), node)
-    , mProtocol(cryptoProto)
+    , mCryptoProto(cryptoProto)
 {
     if (!mNode) {
         qCWarning(MIMETREEPARSER_CORE_LOG) << "not a valid node";
@@ -591,11 +604,6 @@ CertMessagePart::~CertMessagePart()
 {
 }
 
-void CertMessagePart::import()
-{
-    importKey(mProtocol, mNode->decodedContent());
-}
-
 QString CertMessagePart::text() const
 {
     return QString();
@@ -603,13 +611,13 @@ QString CertMessagePart::text() const
 
 //-----SignedMessageBlock---------------------
 SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp,
-                                     const CryptoProtocol cryptoProto,
+                                     const QGpgME::Protocol *cryptoProto,
                                      KMime::Content *node,
                                      KMime::Content *signedData,
                                      bool parseAfterDecryption)
     : MessagePart(otp, {}, node)
     , mParseAfterDecryption(parseAfterDecryption)
-    , mProtocol(cryptoProto)
+    , mCryptoProto(cryptoProto)
     , mSignedData(signedData)
 {
     mMetaData.isSigned = true;
@@ -637,65 +645,9 @@ static QString prettifyDN(const char *uid)
     return QString::fromUtf8(uid);
 }
 
-static void sigStatusToMetaData(PartMetaData &mMetaData, const Signature &signature)
+const QGpgME::Protocol *SignedMessagePart::cryptoProto() const
 {
-    mMetaData.isGoodSignature = !signature.status;
-    if (!mMetaData.isGoodSignature) {
-        qWarning() << "The signature is bad." << signature.status;
-    }
-    // save extended signature status flags
-    mMetaData.keyMissing = signature.result == Crypto::Signature::KeyNotFound;
-    mMetaData.keyExpired = signature.result == Crypto::Signature::Expired;
-
-    Key key;
-    if (mMetaData.isGoodSignature) {
-        // Search for the key by its fingerprint so that we can check for trust etc.
-        const auto keys = findKeys({QString::fromUtf8(signature.fingerprint)});
-        if (keys.size() > 1) {
-            // Should not happen
-            qCDebug(MIMETREEPARSER_CORE_LOG) << "Oops: Found more then one Key for Fingerprint: " << signature.fingerprint;
-        }
-        if (keys.empty()) {
-            // Should not happen at this point
-            qCWarning(MIMETREEPARSER_CORE_LOG) << "Oops: Found no Key for Fingerprint: " << signature.fingerprint;
-        } else {
-            key = keys[0];
-        }
-    }
-
-    mMetaData.keyId = key.keyId;
-    if (mMetaData.keyId.isEmpty()) {
-        mMetaData.keyId = signature.fingerprint;
-    }
-    mMetaData.keyIsTrusted = signature.isTrusted;
-    if (!key.userIds.empty()) {
-        mMetaData.signer = prettifyDN(key.userIds[0].id.data());
-    }
-    for (const auto &userId : key.userIds) {
-        QString email = QString::fromUtf8(userId.email);
-        // Work around cryptplug bug where email addresses are specified as angle-addr ( <person@example.org> ),
-        // not addr-spec ( person@example.org ):
-        if (email.startsWith(QLatin1Char('<')) && email.endsWith(QLatin1Char('>'))) {
-            email = email.mid(1, email.length() - 2);
-        }
-        if (!email.isEmpty()) {
-            mMetaData.signerMailAddresses.append(email);
-        }
-    }
-
-    mMetaData.creationTime = signature.creationTime;
-    if (mMetaData.signer.isEmpty()) {
-        if (!key.userIds.empty()) {
-            mMetaData.signer = prettifyDN(key.userIds[0].name.data());
-        }
-        if (!mMetaData.signerMailAddresses.empty()) {
-            if (mMetaData.signer.isEmpty()) {
-                mMetaData.signer = mMetaData.signerMailAddresses.front();
-            } else {
-                mMetaData.signer += QLatin1String(" <") + mMetaData.signerMailAddresses.front() + QLatin1Char('>');
-            }
-        }
-    }
+    return mCryptoProto;
 }
 
 void SignedMessagePart::startVerification()
@@ -718,11 +670,13 @@ void SignedMessagePart::startVerification()
         // This is necessary in case the original data contained CRLF's. Otherwise the signature will not match the data (since KMIME normalizes to LF)
         const QByteArray signedData = KMime::LFtoCRLF(mSignedData->encodedContent());
 
-        setVerificationResult(Crypto::verifyDetachedSignature(mProtocol, signature, signedData), signedData);
+        const auto job = mCryptoProto->verifyDetachedJob();
+        setVerificationResult(job->exec(signature, signedData), signedData);
         setText(codec->toUnicode(KMime::CRLFtoLF(signedData)));
     } else {
         QByteArray outdata;
-        setVerificationResult(Crypto::verifyOpaqueSignature(mProtocol, mSignedData->decodedContent(), outdata), outdata);
+        const auto job = mCryptoProto->verifyOpaqueJob();
+        setVerificationResult(job->exec(mSignedData->decodedContent(), outdata), outdata);
         setText(codec->toUnicode(KMime::CRLFtoLF(outdata)));
     }
 
@@ -731,14 +685,110 @@ void SignedMessagePart::startVerification()
     }
 }
 
-void SignedMessagePart::setVerificationResult(const VerificationResult &result, const QByteArray &signedData)
+static int signatureToStatus(const GpgME::Signature &sig)
 {
-    const auto signatures = result.signatures;
+    switch (sig.status().code()) {
+    case GPG_ERR_NO_ERROR:
+        return GPGME_SIG_STAT_GOOD;
+    case GPG_ERR_BAD_SIGNATURE:
+        return GPGME_SIG_STAT_BAD;
+    case GPG_ERR_NO_PUBKEY:
+        return GPGME_SIG_STAT_NOKEY;
+    case GPG_ERR_NO_DATA:
+        return GPGME_SIG_STAT_NOSIG;
+    case GPG_ERR_SIG_EXPIRED:
+        return GPGME_SIG_STAT_GOOD_EXP;
+    case GPG_ERR_KEY_EXPIRED:
+        return GPGME_SIG_STAT_GOOD_EXPKEY;
+    default:
+        return GPGME_SIG_STAT_ERROR;
+    }
+}
+
+void SignedMessagePart::sigStatusToMetaData()
+{
+    GpgME::Key key;
+    if (partMetaData()->isSigned) {
+        GpgME::Signature signature = mSignatures.front();
+        mMetaData.status_code = signatureToStatus(signature);
+        mMetaData.isGoodSignature = partMetaData()->status_code == GPGME_SIG_STAT_GOOD;
+        // save extended signature status flags
+        mMetaData.sigSummary = signature.summary();
+
+        if (partMetaData()->isGoodSignature && !key.keyID()) {
+            // Search for the key by its fingerprint so that we can check for
+            // trust etc.
+            key = Kleo::KeyCache::instance()->findByFingerprint(signature.fingerprint());
+            if (key.isNull() && signature.fingerprint()) {
+                // try to find a subkey that was used for signing;
+                // assumes that the key ID is the last 16 characters of the fingerprint
+                const auto fpr = std::string_view{signature.fingerprint()};
+                const auto keyID = std::string{fpr, fpr.size() - 16, 16};
+                const auto subkeys = Kleo::KeyCache::instance()->findSubkeysByKeyID({keyID});
+                if (subkeys.size() > 0) {
+                    key = subkeys[0].parent();
+                }
+            }
+            if (key.isNull()) {
+                qCDebug(MIMETREEPARSER_CORE_LOG) << "Found no key or subkey for fingerprint" << signature.fingerprint();
+            }
+        }
+
+        if (key.keyID()) {
+            partMetaData()->keyId = key.keyID();
+        }
+        if (partMetaData()->keyId.isEmpty()) {
+            partMetaData()->keyId = signature.fingerprint();
+        }
+        partMetaData()->keyTrust = signature.validity();
+        if (key.numUserIDs() > 0 && key.userID(0).id()) {
+            partMetaData()->signer = prettifyDN(key.userID(0).id());
+        }
+        for (const auto &uid : key.userIDs()) {
+            // The following if /should/ always result in TRUE but we
+            // won't trust implicitly the plugin that gave us these data.
+            if (uid.email()) {
+                QString email = QString::fromUtf8(uid.email());
+                if (!email.isEmpty()) {
+                    partMetaData()->signerMailAddresses.append(email);
+                }
+            }
+        }
+
+        if (signature.creationTime()) {
+            partMetaData()->creationTime.setSecsSinceEpoch(signature.creationTime());
+        } else {
+            partMetaData()->creationTime = QDateTime();
+        }
+        if (partMetaData()->signer.isEmpty()) {
+            if (key.numUserIDs() > 0 && key.userID(0).name()) {
+                partMetaData()->signer = prettifyDN(key.userID(0).name());
+            }
+            if (!partMetaData()->signerMailAddresses.empty()) {
+                if (partMetaData()->signer.isEmpty()) {
+                    partMetaData()->signer = partMetaData()->signerMailAddresses.front();
+                } else {
+                    partMetaData()->signer += QLatin1String(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
+                }
+            }
+        }
+        if (Kleo::DeVSCompliance::isCompliant()) {
+            partMetaData()->isCompliant = signature.isDeVs();
+            partMetaData()->compliance = Kleo::DeVSCompliance::name(signature.isDeVs());
+        } else {
+            partMetaData()->isCompliant = true;
+        }
+    }
+}
+
+void SignedMessagePart::setVerificationResult(const GpgME::VerificationResult &result, const QByteArray &signedData)
+{
+    mSignatures = result.signatures();
     // FIXME
     // mMetaData.auditLogError = result.error;
-    if (!signatures.empty()) {
-        mMetaData.isSigned = true;
-        sigStatusToMetaData(mMetaData, signatures.front());
+    mMetaData.isSigned = !mSignatures.empty();
+    if (mMetaData.isSigned) {
+        sigStatusToMetaData();
         if (!signedData.isEmpty() && mParseAfterDecryption) {
             parseInternal(signedData);
         }
@@ -766,13 +816,16 @@ QString SignedMessagePart::htmlContent() const
 //-----CryptMessageBlock---------------------
 EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
                                            const QString &text,
-                                           const CryptoProtocol cryptoProto,
+                                           const QGpgME::Protocol *cryptoProto,
                                            KMime::Content *node,
                                            KMime::Content *encryptedNode,
                                            bool parseAfterDecryption)
     : MessagePart(otp, text, node)
     , mParseAfterDecryption(parseAfterDecryption)
-    , mProtocol(cryptoProto)
+    , mPassphraseError(false)
+    , mNoSecKey(false)
+    , mDecryptMessage(false)
+    , mCryptoProto(cryptoProto)
     , mEncryptedNode(encryptedNode)
 {
     mMetaData.isSigned = false;
@@ -792,9 +845,34 @@ bool EncryptedMessagePart::isEncrypted() const
     return mMetaData.isEncrypted;
 }
 
+const QGpgME::Protocol *EncryptedMessagePart::cryptoProto() const
+{
+    return mCryptoProto;
+}
+
+void EncryptedMessagePart::setDecryptMessage(bool decrypt)
+{
+    mDecryptMessage = decrypt;
+}
+
+bool EncryptedMessagePart::decryptMessage() const
+{
+    return mDecryptMessage;
+}
+
 bool EncryptedMessagePart::isDecryptable() const
 {
     return mMetaData.isDecryptable;
+}
+
+bool EncryptedMessagePart::isNoSecKey() const
+{
+    return mNoSecKey;
+}
+
+bool EncryptedMessagePart::passphraseError() const
+{
+    return mPassphraseError;
 }
 
 bool EncryptedMessagePart::decrypt(KMime::Content &data)
@@ -807,64 +885,113 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
     const QByteArray ciphertext = data.decodedContent();
     QByteArray plainText;
-    DecryptionResult decryptResult;
-    VerificationResult verifyResult;
-    std::tie(decryptResult, verifyResult) = Crypto::decryptAndVerify(mProtocol, ciphertext, plainText);
-    mMetaData.isSigned = verifyResult.signatures.size() > 0;
+    auto job = mCryptoProto->decryptVerifyJob();
+    const std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> p = job->exec(ciphertext, plainText);
+    auto decryptResult = p.first;
+    auto verifyResult = p.second;
+    mMetaData.isSigned = verifyResult.signatures().size() > 0;
 
     // Normalize CRLF's
     plainText = KMime::CRLFtoLF(plainText);
     const auto codec = mOtp->codecFor(&data);
     const auto decoded = codec->toUnicode(plainText);
 
-    if (verifyResult.signatures.size() > 0) {
+    partMetaData()->isSigned = verifyResult.signatures().size() > 0;
+
+    if (partMetaData()->isSigned) {
         // We simply attach a signed message part to indicate that this content is also signed
         // We're forwarding mNode to not loose the encoding information
-        auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, mProtocol, mNode, nullptr));
+        auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, mCryptoProto, mNode, nullptr));
         subPart->setText(decoded);
         subPart->setVerificationResult(verifyResult, plainText);
         appendSubPart(subPart);
     }
 
-    if (decryptResult.error && mMetaData.isSigned) {
-        // Only a signed part
-        mMetaData.isEncrypted = false;
-        mDecryptedData = plainText;
-        return true;
-    }
+    mDecryptRecipients.clear();
+    bool cannotDecrypt = false;
+    bool bDecryptionOk = !decryptResult.error();
 
-    if (mMetaData.isEncrypted) {
-        mMetaData.keyId = [&] {
-            for (const auto &recipient : std::as_const(decryptResult.recipients)) {
-                if (recipient.secretKeyAvailable) {
-                    return recipient.keyId;
-                }
-            }
-            return QByteArray{};
-        }();
-    }
-
-    if (!decryptResult.error) {
-        mDecryptedData = plainText;
-        setText(decoded);
-    } else {
-        mMetaData.isEncrypted = decryptResult.result != Crypto::DecryptionResult::NotEncrypted;
-        qWarning() << "Failed to decrypt : " << decryptResult.error;
-
-        if (decryptResult.result == Crypto::DecryptionResult::NoSecretKeyError) {
-            mError = NoKeyError;
-            mMetaData.errorText = i18ndc("mimetreeparser", "@info", "Could not decrypt the data: no key found for recipients.");
-        } else if (decryptResult.result == Crypto::DecryptionResult::PassphraseError) {
-            mError = PassphraseError;
-        } else {
-            mError = UnknownError;
-            mMetaData.errorText = i18ndc("mimetreeparser", "@info", "Could not decrypt the data.");
+    for (const auto &recipient : decryptResult.recipients()) {
+        if (!recipient.status()) {
+            bDecryptionOk = true;
         }
-        setText(QString::fromUtf8(mDecryptedData.constData()));
-        return false;
+        GpgME::Key key;
+        key = Kleo::KeyCache::instance()->findByKeyIDOrFingerprint(recipient.keyID());
+        if (key.isNull()) {
+            auto ret = Kleo::KeyCache::instance()->findSubkeysByKeyID({recipient.keyID()});
+            if (ret.size() == 1) {
+                key = ret.front().parent();
+            }
+            if (key.isNull()) {
+                qCDebug(MIMETREEPARSER_CORE_LOG) << "Found no Key for KeyID " << recipient.keyID();
+            }
+        }
+        mDecryptRecipients.emplace_back(recipient, key);
     }
 
-    return true;
+    if (!bDecryptionOk && partMetaData()->isSigned) {
+        // Only a signed part
+        partMetaData()->isEncrypted = false;
+        bDecryptionOk = true;
+        mDecryptedData = plainText;
+    } else {
+        mPassphraseError = decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
+        mMetaData.isEncrypted = bDecryptionOk || decryptResult.error().code() != GPG_ERR_NO_DATA;
+
+        if (decryptResult.error().isCanceled()) {
+            setDecryptMessage(false);
+        }
+
+        partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
+        if (Kleo::DeVSCompliance::isCompliant()) {
+            partMetaData()->isCompliant = decryptResult.isDeVs();
+            partMetaData()->compliance = Kleo::DeVSCompliance::name(decryptResult.isDeVs());
+        } else {
+            partMetaData()->isCompliant = true;
+        }
+        if (partMetaData()->isEncrypted && decryptResult.numRecipients() > 0) {
+            partMetaData()->keyId = decryptResult.recipient(0).keyID();
+        }
+
+        if (bDecryptionOk) {
+            mDecryptedData = plainText;
+        } else {
+            mNoSecKey = true;
+            const auto decryRecipients = decryptResult.recipients();
+            for (const GpgME::DecryptionResult::Recipient &recipient : decryRecipients) {
+                mNoSecKey &= (recipient.status().code() == GPG_ERR_NO_SECKEY);
+            }
+            if (!mPassphraseError && !mNoSecKey) { // GpgME do not detect passphrase error correctly
+                mPassphraseError = true;
+            }
+        }
+    }
+
+    if (!bDecryptionOk) {
+        QString cryptPlugLibName;
+        mError = UnknownError;
+        if (mCryptoProto) {
+            cryptPlugLibName = mCryptoProto->name();
+        }
+
+        if (mNoSecKey) {
+            mError = NoKeyError;
+        }
+
+        if (mPassphraseError) {
+            mError = PassphraseError;
+        }
+
+        if (!mCryptoProto) {
+            partMetaData()->errorText = i18n("No appropriate crypto plug-in was found.");
+        } else if (cannotDecrypt) {
+            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.", cryptPlugLibName);
+        } else if (!passphraseError()) {
+            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1String("<br />")
+                + i18n("Error: %1", partMetaData()->errorText);
+        }
+    }
+    return bDecryptionOk;
 }
 
 void EncryptedMessagePart::startDecryption(KMime::Content *data)
@@ -874,6 +1001,8 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
 
     if (mParseAfterDecryption && !mMetaData.isSigned) {
         parseInternal(mDecryptedData);
+    } else {
+        setText(QString::fromUtf8(mDecryptedData.constData()));
     }
 }
 
@@ -884,6 +1013,11 @@ void EncryptedMessagePart::startDecryption()
     } else {
         startDecryption(mNode);
     }
+}
+
+std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> EncryptedMessagePart::decryptRecipients() const
+{
+    return mDecryptRecipients;
 }
 
 QString EncryptedMessagePart::plaintextContent() const
@@ -910,12 +1044,10 @@ QString EncryptedMessagePart::text() const
         auto _mp = (subParts()[0]).dynamicCast<SignedMessagePart>();
         if (_mp) {
             return _mp->text();
-        } else {
-            return MessagePart::text();
         }
-    } else {
-        return MessagePart::text();
     }
+
+    return MessagePart::text();
 }
 
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)

@@ -1,315 +1,320 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2023.
 #
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-08-27 06:45+0200\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
-"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
-"Language: sl\n"
+"PO-Revision-Date: 2023-08-18 17:47+0200\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "Ime"
+msgstr "Nome"
 
 #: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
-msgstr "Velikost"
+msgstr "Dimensione"
 
 #: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr "Šifrirano"
+msgstr "Cifrato"
 
 #: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
-msgstr "Podpisano"
+msgstr "Firmato"
 
 #: core/attachmentmodel.cpp:198
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr "Shranjevanje priloge ni uspelo."
+msgstr "Salvataggio dell'allegato non riuscito."
 
 #: core/attachmentmodel.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
-msgstr "Priponka shranjena na disk: %1"
+msgstr "Allegato salvato su disco:%1"
 
 #: core/attachmentmodel.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr "Priponke ni bilo mogoče odpreti."
+msgstr "Apertura dell'allegato non riuscita."
 
 #: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
-msgstr "Priponke ni bilo mogoče shraniti za odpiranje."
+msgstr "Salvataggio dell'allegato per l'apertura non riuscito"
 
 #: core/attachmentmodel.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
-msgstr "V tej prilogi ni bilo najdenih nobenih ključev"
+msgstr "Non è stata trovata alcuna chiave in questo allegato"
 
 #: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
-msgstr[0] "%1 ključ uvožen"
-msgstr[1] "%1 ključa uvožena"
-msgstr[2] "%1 ključi uvoženi"
-msgstr[3] "%1 ključev uvoženo"
+msgstr[0] "una chiave importata"
+msgstr[1] "%1 chiavi importate"
 
 #: core/attachmentmodel.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
-msgstr[0] "%1 ključ je že uvožen"
-msgstr[1] "%1 ključa sta že uvožena"
-msgstr[2] "%1 ključi so že uvoženi"
-msgstr[3] "%1 ključev je že uvoženih"
+msgstr[0] "una chiave è già stata importata"
+msgstr[1] "%1 chiavi sono già state importate"
 
 #: core/mailtemplates.cpp:103
 #, kde-format
 msgid "fwd"
-msgstr "naprej"
+msgstr "fwd"
 
 #: core/mailtemplates.cpp:132
 #, kde-format
 msgid "re"
-msgstr "odg"
+msgstr "re"
 
 #: core/messageparser.cpp:158
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
-msgstr "Neznano"
+msgstr "Sconosciuto"
 
 #: core/messagepart.cpp:625 core/messagepart.cpp:660 core/messagepart.cpp:835
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr "Napačen kripto vtičnik."
+msgstr "Estensione di cifratura errata."
 
 #: core/messagepart.cpp:986
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr "Ni najdenega ustreznega kripto-vtičnika."
+msgstr "Non è stata trovata nessuna estensione crittografica valida."
 
 #: core/messagepart.cpp:988
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "Kripto-vtičnik \"%1\" ne more dešifrirati sporočil."
+msgstr "L'estensione crittografica «%1» non può decifrare i messaggi."
 
 #: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "Kripto-vtičnik \"%1\" ni mogel dešifrirati podatkov."
+msgstr "L'estensione crittografica «%1» non può decifrare i dati."
 
 #: core/messagepart.cpp:991 widgets/messageviewer.cpp:295
 #, kde-format
 msgid "Error: %1"
-msgstr "Napaka: %1"
+msgstr "Errore: %1"
 
 #: core/partmodel.cpp:487
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
-msgstr "Ključ ni na voljo."
+msgstr "Nessuna chiave disponibile."
 
 #: core/partmodel.cpp:489
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr "Napačno geslo."
+msgstr "Frase segreta errata."
 
 #: quick/qml/MailViewer.qml:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
-msgstr "Pregledovalnik sporočil"
+msgstr "Visualizzatore del messaggio"
 
 #: quick/qml/MailViewer.qml:75
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
-msgstr "Zadeva:"
+msgstr "Oggetto:"
 
 #: quick/qml/MailViewer.qml:96
 #, kde-format
 msgctxt "@label"
 msgid "From:"
-msgstr "Od:"
+msgstr "Da:"
 
 #: quick/qml/MailViewer.qml:112
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr "Pošiljatelj:"
+msgstr "Mittente:"
 
 #: quick/qml/MailViewer.qml:128
 #, kde-format
 msgctxt "@label"
 msgid "To:"
-msgstr "Za:"
+msgstr "A:"
 
 #: quick/qml/MailViewer.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
-msgstr "Shrani prilogo"
+msgstr "Salva allegato"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import key"
-msgstr "Uvozi ključ"
+msgstr "Importa chiave"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr "Zapri"
+msgstr "Chiudi"
 
 #: quick/qml/private/ErrorPart.qml:27
 #, kde-format
 msgid "An error occurred: %1"
-msgstr "Prišlo je do napake: %1"
+msgstr "Si è verificato un errore: %1"
 
 #: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr "Ta pošta vsebuje povabilo"
+msgstr "Questo messaggio contiene un invito"
 
 #: quick/qml/private/MailPart.qml:41
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
-msgstr "poslal %1 dne %2"
+msgstr "inviato da %1 il %2"
 
 #: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
-msgstr "To sporočilo je bilo podpisano s ključem %1."
+msgstr "Questo messaggio è stato firmato utilizzando la chiave %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:78
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
-msgstr "Podrobnosti ključa niso na voljo."
+msgstr "I dettagli della chiave non sono disponibili."
 
 #: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
-msgstr "To sporočilo je s ključem %1 podpisal %2."
+msgstr "Questo messaggio è stato firmato utilizzando la chiave %1 di %2."
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
-msgstr "Ključ je bil preklican."
+msgstr "La chiave è stata revocata."
 
 #: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
-msgstr "Ključ je potekel."
+msgstr "La chiave è scaduta."
 
 #: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
-msgstr "Temu ključu zaupate."
+msgstr "Ti fidi di questa chiave."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
-msgstr "Podpis je neveljaven."
+msgstr "La firma non è valida."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:205
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr "To sporočilo je šifrirano, vendar nimamo ključa zanj."
+msgstr "Questo messaggio è cifrato, ma non abbiamo la chiave relativa."
 
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr "To sporočilo je šifrirano na ključ: %1"
+msgstr "Questo messaggio è cifrato con la chiave: %1"
 
 #: widgets/messagecontainerwidget.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
 "%2</a>."
-msgstr ""
-"To sporočilo je bilo podpisano ustrezno z VS-NfD s ključem <a href=\"%1\">"
-"%2</a>."
+msgstr "Questo messaggio è stato firmato utilizzando la chiave %1."
 
 #: widgets/messagecontainerwidget.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr "To sporočilo je bilo podpisano s ključem <a href=\"%1\">%2</a>."
+msgstr "Questo messaggio è stato firmato utilizzando la chiave %1."
 
 #: widgets/messagecontainerwidget.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "To sporočilo je bilo podpisano ustrezno z VS-NfD z %1."
+msgstr "Questo messaggio è stato firmato utilizzando la chiave %1."
 
 #: widgets/messagecontainerwidget.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the key %1."
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr "To sporočilo je bilo podpisano s %1."
+msgstr "Questo messaggio è stato firmato utilizzando la chiave %1."
 
 #: widgets/messagecontainerwidget.cpp:86
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The key was revoked."
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr "<a href=\"%1\">Ključ</a> je bil preklican."
+msgstr "La chiave è stata revocata."
 
 #: widgets/messagecontainerwidget.cpp:89
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The key has expired."
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
-msgstr "<a href=\"%1\">Ključ</a> je potekel."
+msgstr "La chiave è scaduta."
 
 #: widgets/messagecontainerwidget.cpp:94
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
-msgstr "Podpis je veljaven, a veljavnost <a href=\"%1\">ključa</a> ni znana."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:97
 #, kde-format
@@ -317,14 +322,12 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
 msgstr ""
-"Podpis je veljaven in <a href=\"%1\">ključ</a> je le malo zaupanja vreden."
 
 #: widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
 msgstr ""
-"Podpis je veljaven in <a href=\"%1\">ključ</a> je polno zaupanja vreden."
 
 #: widgets/messagecontainerwidget.cpp:102
 #, kde-format
@@ -332,135 +335,133 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
 msgstr ""
-"Podpis je veljaven in <a href=\"%1\">ključ</a> je končno vreden zaupanja."
 
 #: widgets/messagecontainerwidget.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
-msgstr "Podpis je veljaven, a <a href=\"%1\">ključ</a> ni vreden zaupanja."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:203
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but we don't have the key for it."
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
-msgstr ""
-"To sporočilo je šifrirano v skladu z VS-NfD, vendar nimamo ključa zanj."
+msgstr "Questo messaggio è cifrato, ma non abbiamo la chiave relativa."
 
 #: widgets/messagecontainerwidget.cpp:209
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the key: %1"
 msgid "This message is VS-NfD compliant encrypted."
-msgstr "To sporočilo je šifrirano v skladu z VS-NfD."
+msgstr "Questo messaggio è cifrato con la chiave: %1"
 
 #: widgets/messagecontainerwidget.cpp:211
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the key: %1"
 msgid "This message is encrypted."
-msgstr "To sporočilo je šifrirano."
+msgstr "Questo messaggio è cifrato con la chiave: %1"
 
 #: widgets/messagecontainerwidget.cpp:220
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the key: %1"
 msgid "The message is encrypted for the following keys:"
-msgstr "Sporočilo je šifrirano z naslednjimi ključi:"
+msgstr "Questo messaggio è cifrato con la chiave: %1"
 
 #: widgets/messagecontainerwidget.cpp:237
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "displayed when a mail has unknown sender, receiver or date"
+#| msgid "Unknown"
 msgid "Unknown key"
-msgstr "Neznan ključ"
+msgstr "Sconosciuto"
 
 #: widgets/messageviewer.cpp:57
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "&Shrani priloge kot..."
+msgstr "&Salva allegato come..."
 
 #: widgets/messageviewer.cpp:62
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr "Odpri"
+msgstr "Apri"
 
 #: widgets/messageviewer.cpp:67
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr "Uvozi javni ključ"
+msgstr "Importa chiave pubblica"
 
 #: widgets/messageviewer.cpp:236
 #, kde-format
 msgid "Invitation"
-msgstr "Povabilo"
+msgstr "Invito"
 
 #: widgets/messageviewer.cpp:239
 #, kde-format
 msgid "&Summary:"
-msgstr "Povzetek:"
+msgstr "&Riepilogo:"
 
 #: widgets/messageviewer.cpp:240
 #, kde-format
 msgid "&Organizer:"
-msgstr "&Organizator:"
+msgstr "&Organizzatore:"
 
 #: widgets/messageviewer.cpp:242
 #, kde-format
 msgid "&Location:"
-msgstr "&Lokacija:"
+msgstr "&Posizione:"
 
 #: widgets/messageviewer.cpp:244
 #, kde-format
 msgid "&Start date:"
-msgstr "Datum začetka:"
+msgstr "Data di &inizio:"
 
 #: widgets/messageviewer.cpp:246
 #, kde-format
 msgid "&End date:"
-msgstr "Datum konca:"
+msgstr "Data di &fine:"
 
 #: widgets/messageviewer.cpp:249
 #, kde-format
 msgid "&Details:"
-msgstr "Po&drobnosti:"
+msgstr "&Dettagli:"
 
 #: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "Encapsulated email"
-msgstr "Enkapsulirano e-poštno sporočilo"
+msgstr "Messaggio incapsulato"
 
 #: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "From:"
-msgstr "Od:"
+msgstr "Da:"
 
 #: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "Date:"
-msgstr "Datum:"
+msgstr "Data:"
 
 #: widgets/messageviewer.cpp:315
 #, kde-format
 msgid "&Subject:"
-msgstr "Predmet:"
+msgstr "&Oggetto:"
 
 #: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "&From:"
-msgstr "Od:"
+msgstr "&Da:"
 
 #: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "&To:"
-msgstr "Za:"
+msgstr "&A:"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
-"Ni bilo mogoče zagnati upravljalnika potrdil. Preverite vašo namestitev."
 
 #: widgets/urlhandler.cpp:39
 #, kde-format
 msgid "KMail Error"
-msgstr "Napaka KMaila"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr ""
-#~ "Podatkov ni bilo mogoče dešifrirati: ključ za prejemnike ni bil najden."
+msgstr ""

@@ -17,6 +17,10 @@ target_sources(KPim6MimeTreeParserWidgets PRIVATE
      messageviewer.cpp
      attachmentview_p.h
      attachmentview.cpp
+     messagecontainerwidget_p.h
+     messagecontainerwidget.cpp
+     urlhandler_p.h
+     urlhandler.cpp
 )
 
 ecm_qt_declare_logging_category(KPim6MimeTreeParserWidgets
@@ -44,6 +48,7 @@ PRIVATE
     KF6::I18n
     KF6::CalendarCore
     KF6::WidgetsAddons
+    KF6::Libkleo
     Gpgme::Gpgme
 )
 
