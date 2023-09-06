@@ -157,6 +157,7 @@ MessageViewer::MessageViewer(QWidget *parent)
     setStretchFactor(1, 2);
 
     d->attachmentView = new AttachmentView(this);
+    d->attachmentView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     addWidget(d->attachmentView);
 
     connect(d->attachmentView, &AttachmentView::contextMenuRequested, this, [this] {
@@ -164,7 +165,7 @@ MessageViewer::MessageViewer(QWidget *parent)
         d->showContextMenu();
     });
 
-    setMinimumSize(400, 400);
+    setMinimumSize(600, 600);
 }
 
 MessageViewer::~MessageViewer()
