@@ -41,7 +41,6 @@ public:
     QVBoxLayout *layout = nullptr;
     KMime::Message::Ptr message;
     MessageParser parser;
-    QVector<QWidget *> widgets;
     QScrollArea *scrollArea = nullptr;
     QFormLayout *formLayout = nullptr;
     AttachmentView *attachmentView = nullptr;
@@ -170,8 +169,11 @@ MessageViewer::MessageViewer(QWidget *parent)
 
 MessageViewer::~MessageViewer()
 {
-    qDeleteAll(d->widgets);
-    d->widgets.clear();
+    QLayoutItem *child;
+    while ((child = d->layout->takeAt(0)) != nullptr) {
+        delete child->widget();
+        delete child;
+    }
 }
 
 KMime::Message::Ptr MessageViewer::message() const
@@ -215,7 +217,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             auto label = new QLabel(content);
             label->setTextInteractionFlags(Qt::TextSelectableByMouse);
             container->layout()->addWidget(label);
-            widgets.append(container);
             layout->addWidget(container);
             break;
         }
@@ -252,7 +253,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             container->layout()->addWidget(widget);
 
-            widgets.append(container);
             layout->addWidget(container);
             break;
         }
@@ -286,7 +286,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             container->layout()->addWidget(groupBox);
 
-            widgets.append(container);
             layout->addWidget(container);
             break;
         }
@@ -295,7 +294,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             const auto errorString = parts->data(parts->index(i, 0, parent), PartModel::ErrorString).toString();
             auto errorWidget = new KMessageWidget(i18n("Error: %1", errorString));
             errorWidget->setMessageType(KMessageWidget::MessageType::Error);
-            widgets.append(errorWidget);
             layout->addWidget(errorWidget);
             break;
         }
@@ -307,6 +305,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
 void MessageViewer::setMessage(const KMime::Message::Ptr message)
 {
+    setUpdatesEnabled(false);
     d->parser.setMessage(message);
 
     for (int i = d->formLayout->rowCount() - 1; i >= 0; i--) {
@@ -324,11 +323,11 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
 
     const auto parts = d->parser.parts();
 
-    for (auto widget : std::as_const(d->widgets)) {
-        d->layout->removeWidget(widget);
-        delete widget;
+    QLayoutItem *child;
+    while ((child = d->layout->takeAt(0)) != nullptr) {
+        delete child->widget();
+        delete child;
     }
-    d->widgets.clear();
 
     d->recursiveBuildViewer(parts, d->layout, {});
     d->layout->addStretch();
@@ -339,4 +338,6 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
         d->selectionChanged();
     });
+
+    setUpdatesEnabled(true);
 }
