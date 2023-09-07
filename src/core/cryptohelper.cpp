@@ -160,29 +160,8 @@ namespace
 
 bool isInlinePGP(const KMime::Content *part)
 {
-    // Find if the message body starts with --BEGIN PGP MESSAGE-- - we can't just
-    // use contains(), because that would also qualify messages that mention the
-    // string, but are not actually encrypted
-    const auto body = part->body();
-    for (auto c = body.cbegin(), end = body.cend(); c != end; ++c) {
-        if (!c) { // huh?
-            return false; // empty body -> not encrypted
-        }
-        // Is it a white space? Let's check next one
-        if (isspace(*c)) {
-            continue;
-        }
-
-        // First non-white space character in the body - if it's BEGIN PGP MESSAGE
-        // then the message is encrypted, otherwise it's not.
-        if (strncmp(c, "-----BEGIN PGP MESSAGE-----", sizeof("-----BEGIN PGP MESSAGE-----") - 1) == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    return false;
+    Block block(part->body().trimmed());
+    return block.type() == PgpMessageBlock;
 }
 
 bool isPGP(const KMime::Content *part, bool allowOctetStream = false)
