@@ -34,7 +34,7 @@ void BodyPartFormatterBaseFactoryPrivate::insert(const char *type, const char *s
         return;
     }
 
-    TypeRegistry::iterator type_it = all->find(type);
+    auto type_it = all->find(type);
     if (type_it == all->end()) {
         type_it = all->insert(std::make_pair(type, SubtypeRegistry())).first;
         assert(type_it != all->end());
@@ -71,7 +71,7 @@ const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const char 
         return emptyRegistry;
     }
 
-    TypeRegistry::const_iterator type_it = d->all->find(type);
+    auto type_it = d->all->find(type);
     if (type_it == d->all->end()) {
         type_it = d->all->find("*");
     }

@@ -382,7 +382,7 @@ void TextMessagePart::parseContent()
                 fullySignedOrEncryptedTmp = false;
                 appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(KMime::CRLFtoLF(block.text())))));
             } else if (block.type() == PgpMessageBlock) {
-                KMime::Content *content = new KMime::Content;
+                auto content = new KMime::Content;
                 content->setBody(block.text());
                 content->parse();
                 content->contentType()->setCharset(charset());
@@ -391,7 +391,7 @@ void TextMessagePart::parseContent()
                 mp->setIsEncrypted(true);
                 appendSubPart(mp);
             } else if (block.type() == ClearsignedBlock) {
-                KMime::Content *content = new KMime::Content;
+                auto content = new KMime::Content;
                 content->setBody(block.text());
                 content->parse();
                 content->contentType()->setCharset(charset());
