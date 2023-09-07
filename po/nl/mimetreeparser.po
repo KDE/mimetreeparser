@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"POT-Creation-Date: 2023-09-07 00:46+0000\n"
 "PO-Revision-Date: 2023-08-27 18:13+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -371,69 +371,69 @@ msgstr "Het bericht is versleuteld voor de volgende sleutels:"
 msgid "Unknown key"
 msgstr "Onbekende sleutel"
 
-#: widgets/messageviewer.cpp:57
+#: widgets/messageviewer.cpp:56
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Bijlage &opslaan als..."
 
-#: widgets/messageviewer.cpp:62
+#: widgets/messageviewer.cpp:61
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Openen"
 
-#: widgets/messageviewer.cpp:67
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Publieke sleutel importeren"
 
-#: widgets/messageviewer.cpp:236
+#: widgets/messageviewer.cpp:238
 #, kde-format
 msgid "Invitation"
 msgstr "Uitnodiging"
 
-#: widgets/messageviewer.cpp:239
+#: widgets/messageviewer.cpp:241
 #, kde-format
 msgid "&Summary:"
 msgstr "&Samenvatting:"
 
-#: widgets/messageviewer.cpp:240
+#: widgets/messageviewer.cpp:242
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organisator:"
 
-#: widgets/messageviewer.cpp:242
+#: widgets/messageviewer.cpp:244
 #, kde-format
 msgid "&Location:"
 msgstr "&Locatie:"
 
-#: widgets/messageviewer.cpp:244
+#: widgets/messageviewer.cpp:246
 #, kde-format
 msgid "&Start date:"
 msgstr "&Begindatum:"
 
-#: widgets/messageviewer.cpp:246
+#: widgets/messageviewer.cpp:248
 #, kde-format
 msgid "&End date:"
 msgstr "&Einddatum:"
 
-#: widgets/messageviewer.cpp:249
+#: widgets/messageviewer.cpp:251
 #, kde-format
 msgid "&Details:"
 msgstr "&Details:"
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Ingebed e-mailbericht"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "From:"
 msgstr "Van:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
