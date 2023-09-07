@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"POT-Creation-Date: 2023-09-07 00:46+0000\n"
 "PO-Revision-Date: 2023-08-26 08:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -367,69 +367,69 @@ msgstr "Повідомлення зашифровано для таких клю
 msgid "Unknown key"
 msgstr "Невідомий ключ"
 
-#: widgets/messageviewer.cpp:57
+#: widgets/messageviewer.cpp:56
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Зберегти долучення як…"
 
-#: widgets/messageviewer.cpp:62
+#: widgets/messageviewer.cpp:61
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Відкрити"
 
-#: widgets/messageviewer.cpp:67
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Імпортувати відкритий ключ"
 
-#: widgets/messageviewer.cpp:236
+#: widgets/messageviewer.cpp:238
 #, kde-format
 msgid "Invitation"
 msgstr "Запрошення"
 
-#: widgets/messageviewer.cpp:239
+#: widgets/messageviewer.cpp:241
 #, kde-format
 msgid "&Summary:"
 msgstr "&Резюме:"
 
-#: widgets/messageviewer.cpp:240
+#: widgets/messageviewer.cpp:242
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Організатор:"
 
-#: widgets/messageviewer.cpp:242
+#: widgets/messageviewer.cpp:244
 #, kde-format
 msgid "&Location:"
 msgstr "&Розташування:"
 
-#: widgets/messageviewer.cpp:244
+#: widgets/messageviewer.cpp:246
 #, kde-format
 msgid "&Start date:"
 msgstr "Дата &початку:"
 
-#: widgets/messageviewer.cpp:246
+#: widgets/messageviewer.cpp:248
 #, kde-format
 msgid "&End date:"
 msgstr "Дата за&кінчення:"
 
-#: widgets/messageviewer.cpp:249
+#: widgets/messageviewer.cpp:251
 #, kde-format
 msgid "&Details:"
 msgstr "&Подробиці:"
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Вбудовано повідомлення"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "From:"
 msgstr "Від:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "Date:"
 msgstr "Дата:"
