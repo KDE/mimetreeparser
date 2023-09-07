@@ -13,12 +13,14 @@ add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserWidgets
     ALIAS KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets)
 
 target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PRIVATE
-     messageviewer.h
-     messageviewer.cpp
      attachmentview_p.h
      attachmentview.cpp
      messagecontainerwidget_p.h
      messagecontainerwidget.cpp
+     messageviewer.h
+     messageviewer.cpp
+     messageviewerdialog.h
+     messageviewerdialog.cpp
      urlhandler_p.h
      urlhandler.cpp
 )
@@ -44,6 +46,7 @@ PUBLIC
     Qt${KF_MAJOR_VERSION}::Widgets
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 PRIVATE
+    Qt${KF_MAJOR_VERSION}::PrintSupport
     KF${KF_MAJOR_VERSION}::Codecs
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::CalendarCore
@@ -74,6 +77,7 @@ install(TARGETS
 ecm_generate_headers(MimeTreeParserWidgets_CamelCase_HEADERS
     HEADER_NAMES
         MessageViewer
+        MessageViewerDialog
     REQUIRED_HEADERS MimeTreeParserWidgets_HEADERS
     PREFIX MimeTreeParserWidgets
 )

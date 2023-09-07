@@ -69,6 +69,7 @@ endif()
 
 ########### Find packages ###########
 find_package(Qt${KF_MAJOR_VERSION}Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(Qt${KF_MAJOR_VERSION}PrintSupport ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF${KF_MAJOR_VERSION}I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF${KF_MAJOR_VERSION}Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF${KF_MAJOR_VERSION}CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)

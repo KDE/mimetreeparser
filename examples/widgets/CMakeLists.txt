@@ -3,8 +3,6 @@
 
 add_executable(mimetreeparser-widgets
     main.cpp
-    ../qml/fileopener.h
-    ../qml/fileopener.cpp
 )
 
 find_package(KPim${KF_MAJOR_VERSION}Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)

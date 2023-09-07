@@ -4,10 +4,15 @@
 #pragma once
 
 #include "mimetreeparser_widgets_export.h"
+
 #include <KMime/Message>
+
 #include <QSplitter>
 #include <QWidget>
+
 #include <memory>
+
+class QPainter;
 
 namespace MimeTreeParser
 {
@@ -24,6 +29,8 @@ public:
 
     KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
+
+    void print(QPainter *painter, int width);
 
 private:
     class Private;
