@@ -1,9 +1,13 @@
-// SPDX-FileCopyrightText: 2015 Sandro Knauß <knauss@kolabsys.com>
 // SPDX-FileCopyrightText: 2001,2002 the KPGP authors
+// SPDX-FileCopyrightText: 2015 Sandro Knauß <knauss@kolabsys.com>
+// SPDX-FileCopyrightText: 2017 Daniel Vrátil <dvratil@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
 
+#include "mimetreeparser_core_export.h"
+
+#include <KMime/Message>
 #include <QByteArray>
 #include <QVector>
 
@@ -40,6 +44,12 @@ public:
     Non-OpenPGP blocks.
 */
 Q_REQUIRED_RESULT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
+
+namespace CryptoUtils
+{
+Q_REQUIRED_RESULT MIMETREEPARSER_CORE_EXPORT KMime::Message::Ptr decryptMessage(const KMime::Message::Ptr &decrypt, bool &wasEncrypted);
+}
+
 } // namespace MimeTreeParser
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);

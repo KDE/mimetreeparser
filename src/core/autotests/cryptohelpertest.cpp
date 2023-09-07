@@ -9,6 +9,14 @@
 
 using namespace MimeTreeParser;
 
+QByteArray readMailFromFile(const QString &mailFile)
+{
+    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    file.open(QIODevice::ReadOnly);
+    Q_ASSERT(file.isOpen());
+    return file.readAll();
+}
+
 void CryptoHelperTest::testPMFDEmpty()
 {
     QCOMPARE(prepareMessageForDecryption("").count(), 0);
@@ -128,6 +136,23 @@ void CryptoHelperTest::testMultipleBlockMessage()
              QByteArray("-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\n"));
     QCOMPARE(blocks[2].text(), QByteArray("after\n"));
     QCOMPARE(blocks[3].text(), QByteArray("-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n"));
+}
+
+void CryptoHelperTest::testDecryptMessage()
+{
+    auto message = KMime::Message::Ptr(new KMime::Message);
+    message->setContent(readMailFromFile(QLatin1String("openpgp-encrypted+signed.mbox")));
+    message->parse();
+
+    bool wasEncrypted = false;
+    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted);
+    QVERIFY(wasEncrypted);
+    QVERIFY(decryptedMessage);
+    QCOMPARE(decryptedMessage->decodedContent(), QByteArray("encrypted message text"));
+    QCOMPARE(decryptedMessage->encodedContent(),
+             QByteArray("From test@kolab.org Wed, 08 Sep 2010 17: 02:52 +0200\nFrom: OpenPGP Test <test@kolab.org>\nTo: test@kolab.org\nSubject: OpenPGP "
+                        "encrypted\nDate: Wed, 08 Sep 2010 17:02:52 +0200\nUser-Agent: KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; "
+                        ")\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7Bit\nContent-Type: text/plain; charset=\"us-ascii\"\n\nencrypted message text"));
 }
 
 QTEST_APPLESS_MAIN(CryptoHelperTest)

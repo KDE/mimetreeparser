@@ -43,7 +43,6 @@ endfunction()
 
 add_subdirectory(gnupg_home)
 add_mimetreeparser_crypto_unittest(attachmenttest)
-add_mimetreeparser_class_unittest(cryptohelpertest "../cryptohelper.cpp")
 
 add_definitions( -DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata" )
 include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
@@ -54,6 +53,14 @@ include_directories(
 include_directories(${GPGME_INCLUDE_DIRS})
 
 include(ECMAddTests)
+
+add_executable(cryptohelpertest cryptohelpertest.cpp)
+add_gpg_crypto_test(cryptohelpertest cryptohelpertest)
+target_link_libraries(cryptohelpertest PUBLIC
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
 
 add_executable(mimetreeparsertest mimetreeparsertest.cpp)
 add_gpg_crypto_test(mimetreeparsertest mimetreeparsertest)

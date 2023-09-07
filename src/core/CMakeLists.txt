@@ -118,6 +118,7 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         PartModel
         Errors
         PartMetaData
+        CryptoHelper
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )
