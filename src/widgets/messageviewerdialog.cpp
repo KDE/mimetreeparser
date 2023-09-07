@@ -4,15 +4,18 @@
 
 #include "messageviewerdialog.h"
 
+#include "cryptoutils.h"
 #include "messageviewer.h"
 #include "mimetreeparser_widgets_debug.h"
 
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <KMessageWidget>
 #include <KMime/Message>
 
 #include <QDialogButtonBox>
 #include <QFile>
+#include <QFileDialog>
 #include <QMenuBar>
 #include <QMimeDatabase>
 #include <QMimeType>
@@ -21,6 +24,8 @@
 #include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QPushButton>
+#include <QSaveFile>
+#include <QStandardPaths>
 #include <QStyle>
 #include <QToolBar>
 #include <QVBoxLayout>
@@ -148,6 +153,8 @@ public:
     QMenuBar *createMenuBar(QWidget *parent);
 
 private:
+    void save(QWidget *parent);
+    void saveDecrypted(QWidget *parent);
     void print(QWidget *parent);
     void printPreview(QWidget *parent);
     void printInternal(QPrinter *printer);
@@ -171,8 +178,18 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
 
     // File menu
     const auto fileMenu = menuBar->addMenu(i18nc("@action:inmenu", "&File"));
+
     const auto saveAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), i18nc("@action:inmenu", "&Save"));
+    QObject::connect(saveAction, &QAction::triggered, parent, [parent, this] {
+        save(parent);
+    });
     fileMenu->addAction(saveAction);
+
+    const auto saveDecryptedAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), i18nc("@action:inmenu", "Save Decrypted"));
+    QObject::connect(saveDecryptedAction, &QAction::triggered, parent, [parent, this] {
+        saveDecrypted(parent);
+    });
+    fileMenu->addAction(saveDecryptedAction);
 
     const auto printPreviewAction = new QAction(QIcon::fromTheme(QStringLiteral("document-print-preview")), i18nc("@action:inmenu", "Print Preview"));
     QObject::connect(printPreviewAction, &QAction::triggered, parent, [parent, this] {
@@ -197,6 +214,45 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
     navigationMenu->addAction(nextAction);
 
     return menuBar;
+}
+
+void MessageViewerDialog::Private::save(QWidget *parent)
+{
+    const QString fileName = QFileDialog::getSaveFileName(parent,
+                                                          i18nc("@title:window", "Save File"),
+                                                          QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+                                                          i18nc("File dialog accepted files", "Email files (*.mbox)"));
+
+    QSaveFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly)) {
+        KMessageBox::error(parent, i18n("File %1 could not be created.", fileName), i18n("Error saving message"));
+        return;
+    }
+    file.write(messages[currentIndex]->encodedContent());
+    file.commit();
+}
+
+void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
+{
+    const QString fileName = QFileDialog::getSaveFileName(parent,
+                                                          i18nc("@title:window", "Save Decrypted File"),
+                                                          QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+                                                          i18nc("File dialog accepted files", "Email files (*.mbox)"));
+
+    QSaveFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly)) {
+        KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", fileName), i18n("Error saving message"));
+        return;
+    }
+    auto message = messages[currentIndex];
+    bool wasEncrypted = false;
+    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted);
+    if (!wasEncrypted) {
+        decryptedMessage = message;
+    }
+    file.write(decryptedMessage->encodedContent());
+
+    file.commit();
 }
 
 void MessageViewerDialog::Private::print(QWidget *parent)

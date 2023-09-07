@@ -15,6 +15,8 @@ add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserWidgets
 target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PRIVATE
      attachmentview_p.h
      attachmentview.cpp
+     cryptoutils.h
+     cryptoutils.cpp
      messagecontainerwidget_p.h
      messagecontainerwidget.cpp
      messageviewer.h
