@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
+# SPDX-FileCopyrightText: 2023 g10 Code GmbH
+# SPDX-FileContributor: Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
 ecm_setup_version(PROJECT
@@ -153,3 +154,5 @@ install(FILES
    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParserWidgets
    COMPONENT Devel
 )
+
+add_subdirectory(autotests)

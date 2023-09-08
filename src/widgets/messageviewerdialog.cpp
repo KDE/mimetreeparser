@@ -253,3 +253,8 @@ MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *paren
 }
 
 MessageViewerDialog::~MessageViewerDialog() = default;
+
+QVector<KMime::Message::Ptr> MessageViewerDialog::messages() const
+{
+    return d->messages;
+}

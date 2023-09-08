@@ -1,4 +1,5 @@
-// SPDX-FileCopyrigthText: 2023 Carl Schwan <carl@carlschwan.eu>
+// SPDX-FileCopyrightText: 2023 g10 Code GmbH
+// SPDX-FileContributor: Carl Schwan <carl.schwan@gnupg.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "fileopener.h"

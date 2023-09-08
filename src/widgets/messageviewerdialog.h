@@ -6,6 +6,7 @@
 
 #include "mimetreeparser_widgets_export.h"
 
+#include <KMime/Message>
 #include <QDialog>
 
 #include <memory>
@@ -26,6 +27,8 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerDialog : public QDialog
 public:
     MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
     ~MessageViewerDialog() override;
+
+    QVector<KMime::Message::Ptr> messages() const;
 
 private:
     class Private;
