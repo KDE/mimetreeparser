@@ -158,12 +158,6 @@ PGPBlockType Block::type() const
 namespace
 {
 
-bool isInlinePGP(const KMime::Content *part)
-{
-    Block block(part->body().trimmed());
-    return block.type() == PgpMessageBlock;
-}
-
 bool isPGP(const KMime::Content *part, bool allowOctetStream = false)
 {
     const auto ct = static_cast<KMime::Headers::ContentType *>(part->headerByType("Content-Type"));
@@ -235,7 +229,6 @@ KMime::Message::Ptr assembleMessage(const KMime::Message::Ptr &orig, const KMime
 KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, bool &wasEncrypted)
 {
     GpgME::Protocol protoName = GpgME::UnknownProtocol;
-    bool inlinePGP = false;
     bool multipart = false;
     if (msg->contentType(false) && msg->contentType(false)->isMimeType("multipart/encrypted")) {
         multipart = true;
@@ -254,9 +247,45 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
             protoName = GpgME::OpenPGP;
         } else if (isSMIME(msg.data())) {
             protoName = GpgME::CMS;
-        } else if (isInlinePGP(msg.data())) {
-            protoName = GpgME::OpenPGP;
-            inlinePGP = true;
+        } else {
+            const auto blocks = prepareMessageForDecryption(msg->body());
+            QByteArray content;
+            for (const auto &block : blocks) {
+                if (block.type() == PgpMessageBlock) {
+                    const auto proto = QGpgME::openpgp();
+                    wasEncrypted = true;
+                    QByteArray outData;
+                    auto inData = block.text();
+                    auto decrypt = proto->decryptJob();
+                    auto ctx = QGpgME::Job::context(decrypt);
+                    ctx->setDecryptionFlags(GpgME::Context::DecryptUnwrap);
+                    auto result = decrypt->exec(inData, outData);
+                    if (result.error()) {
+                        // unknown key, invalid algo, or general error
+                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << result.error().asString();
+                        return {};
+                    }
+
+                    inData = outData;
+                    auto verify = proto->verifyOpaqueJob(true);
+                    auto resultVerify = verify->exec(inData, outData);
+                    if (resultVerify.error()) {
+                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to verify:" << resultVerify.error().asString();
+                        return {};
+                    }
+
+                    content += KMime::CRLFtoLF(outData);
+                } else if (block.type() == NoPgpBlock) {
+                    content += block.text();
+                }
+            }
+
+            KMime::Content decCt;
+            decCt.setBody(content);
+            decCt.parse();
+            decCt.assemble();
+
+            return assembleMessage(msg, &decCt);
         }
     }
 
@@ -272,10 +301,6 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
     QByteArray outData;
     auto inData = multipart ? msg->encodedContent() : msg->decodedContent(); // decodedContent in fact returns decoded body
     auto decrypt = proto->decryptJob();
-    if (inlinePGP) {
-        auto ctx = QGpgME::Job::context(decrypt);
-        ctx->setDecryptionFlags(GpgME::Context::DecryptUnwrap);
-    }
     auto result = decrypt->exec(inData, outData);
     if (result.error()) {
         // unknown key, invalid algo, or general error
@@ -283,22 +308,8 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
         return {};
     }
 
-    if (inlinePGP) {
-        inData = outData;
-        auto verify = proto->verifyOpaqueJob(true);
-        auto result = verify->exec(inData, outData);
-        if (result.error()) {
-            qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to verify:" << result.error().asString();
-            return {};
-        }
-    }
-
     KMime::Content decCt;
-    if (inlinePGP) {
-        decCt.setBody(KMime::CRLFtoLF(outData));
-    } else {
-        decCt.setContent(KMime::CRLFtoLF(outData));
-    }
+    decCt.setContent(KMime::CRLFtoLF(outData));
     decCt.parse();
     decCt.assemble();
 

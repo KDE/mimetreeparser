@@ -20,5 +20,6 @@ private Q_SLOTS:
     void testClearSignedMessage();
     void testMultipleBlockMessage();
     void testDecryptMessage();
+    void testDecryptInlineMessage();
 };
 }
