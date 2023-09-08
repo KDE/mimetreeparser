@@ -176,7 +176,6 @@ void MessageViewerDialog::Private::printInternal(QPrinter *printer)
     painter.begin(printer);
     const auto pageLayout = printer->pageLayout();
     const auto pageRect = pageLayout.paintRectPixels(printer->resolution());
-    const auto paperRect = pageLayout.fullRectPixels(printer->resolution());
     const double xscale = pageRect.width() / double(messageViewer->width());
     const double yscale = pageRect.height() / double(messageViewer->height());
     const double scale = qMin(qMin(xscale, yscale), 1.);
@@ -223,7 +222,7 @@ MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *paren
 #endif
 
         toolBar->addAction(d->previousAction);
-        connect(d->previousAction, &QAction::triggered, this, [this](int index) {
+        connect(d->previousAction, &QAction::triggered, this, [this] {
             d->setCurrentIndex(d->currentIndex - 1);
         });
 
@@ -232,7 +231,7 @@ MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *paren
         toolBar->addWidget(spacer);
 
         toolBar->addAction(d->nextAction);
-        connect(d->nextAction, &QAction::triggered, this, [this](int index) {
+        connect(d->nextAction, &QAction::triggered, this, [this] {
             d->setCurrentIndex(d->currentIndex + 1);
         });
         d->nextAction->setEnabled(true);
