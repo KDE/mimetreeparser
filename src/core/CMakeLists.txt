@@ -57,6 +57,7 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
      bodypartformatterbasefactory.h
      bodypartformatterbasefactory_p.h
      enums.h
+     fileopener.h
      htmlutils.h
      messageparser.h
      objecttreeparser.h
@@ -66,6 +67,7 @@ target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
      bodypartformatter.cpp
      bodypartformatter_impl.cpp
      bodypartformatterbasefactory.cpp
+     fileopener.cpp
      htmlutils.cpp
      messageparser.cpp
      objecttreeparser.cpp
@@ -112,13 +114,14 @@ install(TARGETS
 ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
     HEADER_NAMES
         AttachmentModel
-        ObjectTreeParser
+        CryptoHelper
+        Errors
+        FileOpener
         MessageParser
         MessagePart
+        ObjectTreeParser
         PartModel
-        Errors
         PartMetaData
-        CryptoHelper
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )

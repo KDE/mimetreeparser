@@ -3,8 +3,8 @@
 
 add_executable(mimetreeparser-qml
     main.cpp
-    fileopener.h
-    fileopener.cpp
+    messagehandler.cpp
+    messagehandler.h
     resources.qrc
 )
 

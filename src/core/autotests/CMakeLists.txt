@@ -78,6 +78,14 @@ target_link_libraries(gpgerrortest PUBLIC
 )
 add_test(NAME gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
 
+add_executable(fileopenertest fileopenertest.cpp)
+target_link_libraries(fileopenertest PUBLIC
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
+add_test(NAME fileopenertest COMMAND $<TARGET_FILE:fileopenertest>)
+
 ## PartModel test
 add_executable(partmodeltest partmodeltest.cpp)
 add_gpg_crypto_test(partmodeltest partmodeltest)
