@@ -27,7 +27,7 @@ function(add_mimetreeparser_crypto_unittest _name)
     if (QT_MAJOR_VERSION STREQUAL "6")
         target_link_libraries(${_name} PRIVATE QGpgmeQt6 Qt6::Core5Compat)
     else()
-        target_link_libraries(${_name} PRIVATE Gpgme::Gpgme)
+        target_link_libraries(${_name} PRIVATE Gpgmepp)
     endif()
     target_include_directories(${_name} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/..

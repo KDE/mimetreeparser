@@ -29,7 +29,7 @@ PUBLIC
     KF${KF_MAJOR_VERSION}::I18n
     Qt${KF_MAJOR_VERSION}::Gui
     KF${KF_MAJOR_VERSION}::Codecs
-    Gpgme::Gpgme
+    Gpgmepp
     KPim${KF_MAJOR_VERSION}::Libkleo
 )
 

@@ -49,7 +49,7 @@ PRIVATE
     KF${KF_MAJOR_VERSION}::CalendarCore
     KF${KF_MAJOR_VERSION}::WidgetsAddons
     KPim${KF_MAJOR_VERSION}::Libkleo
-    Gpgme::Gpgme
+    Gpgmepp
 )
 
 set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets PROPERTIES
