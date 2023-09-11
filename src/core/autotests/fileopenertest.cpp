@@ -4,7 +4,7 @@
 
 #include <MimeTreeParserCore/FileOpener>
 
-#include <QDebug>
+#include <QTemporaryFile>
 #include <QTest>
 
 using namespace MimeTreeParser::Core;
@@ -51,6 +51,23 @@ private Q_SLOTS:
         QCOMPARE(message->contentType()->mimeType(), "application/pkcs7-mime");
         QCOMPARE(message->contentType()->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
         QCOMPARE(message->contentDisposition()->filename(), QStringLiteral("smime.p7m"));
+    }
+
+    void openInexistingFileTest()
+    {
+        const auto messages = FileOpener::openFile(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("not-here.p7m"));
+        QCOMPARE(messages.count(), 0);
+    }
+
+    void openEmptyFile()
+    {
+        QTemporaryFile file;
+        if (file.open()) {
+            const auto messages = FileOpener::openFile(file.fileName());
+            QCOMPARE(messages.count(), 0);
+        } else {
+            QVERIFY(false);
+        }
     }
 };
 
