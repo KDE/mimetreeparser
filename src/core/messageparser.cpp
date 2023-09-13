@@ -63,7 +63,7 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
         return;
     }
     if (!message) {
-        qWarning() << Q_FUNC_INFO << "Empty message given";
+        qCWarning(MIMETREEPARSER_CORE_LOG) << Q_FUNC_INFO << "Empty message given";
         return;
     }
     d->mMessage = message;
