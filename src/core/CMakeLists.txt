@@ -20,8 +20,6 @@ target_sources(mimetreeparserprivate PUBLIC
      cryptohelper.cpp
      utils.h
      utils.cpp
-     job/qgpgmejobexecutor.h
-     job/qgpgmejobexecutor.cpp
 )
 target_link_libraries(mimetreeparserprivate
 PUBLIC

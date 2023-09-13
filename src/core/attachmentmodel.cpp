@@ -4,7 +4,6 @@
 
 #include "attachmentmodel.h"
 
-#include "job/qgpgmejobexecutor.h"
 #include "objecttreeparser.h"
 
 #include <QGpgME/ImportJob>
@@ -263,26 +262,25 @@ bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &pa
 {
     Q_ASSERT(part);
     const QByteArray certData = part->node()->decodedContent();
-    QGpgME::ImportJob *import = QGpgME::openpgp()->importJob();
-    MimeTreeParser::QGpgMEJobExecutor executor;
-    auto result = executor.exec(import, certData);
+    QGpgME::ImportJob *importJob = QGpgME::openpgp()->importJob();
 
-    bool success = true;
-    QString message;
-    if (result.numConsidered() == 0) {
-        message = i18ndc("mimetreeparser", "@info", "No keys were found in this attachment");
-        success = false;
-    } else {
-        message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
-        if (result.numUnchanged() != 0) {
-            message += QStringLiteral("\n")
-                + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.numUnchanged());
+    connect(importJob, &QGpgME::AbstractImportJob::result, this, [this](const GpgME::ImportResult &result) {
+        QString message;
+        if (result.numConsidered() == 0) {
+            message = i18ndc("mimetreeparser", "@info", "No keys were found in this attachment");
+        } else {
+            message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
+            if (result.numUnchanged() != 0) {
+                message += QStringLiteral("\n")
+                    + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.numUnchanged());
+            }
         }
-    }
 
-    Q_EMIT info(message);
-
-    return success;
+        Q_EMIT info(message);
+    });
+    GpgME::Error err = importJob->start(certData);
+    return !err;
+    ;
 }
 
 int AttachmentModel::rowCount(const QModelIndex &parent) const
