@@ -3,13 +3,14 @@
 
 #include "messageparser.h"
 
-#include "objecttreeparser.h"
-#include <KLocalizedString>
-#include <QElapsedTimer>
-
-#include "async.h"
 #include "attachmentmodel.h"
+#include "mimetreeparser_core_debug.h"
+#include "objecttreeparser.h"
 #include "partmodel.h"
+
+#include <KLocalizedString>
+
+#include <QElapsedTimer>
 
 namespace
 {
@@ -71,9 +72,9 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     time.start();
     auto parser = std::make_shared<MimeTreeParser::ObjectTreeParser>();
     parser->parseObjectTree(message.data());
-    qDebug() << "Message parsing took: " << time.elapsed();
+    qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing took: " << time.elapsed();
     parser->decryptParts();
-    qDebug() << "Message parsing and decryption/verification: " << time.elapsed();
+    qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing and decryption/verification: " << time.elapsed();
     d->mParser = parser;
     Q_EMIT htmlChanged();
 }

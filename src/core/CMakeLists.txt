@@ -51,7 +51,6 @@ add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 
 target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
      errors.h
-     async.h
      attachmentmodel.h
      bodypartformatter.h
      bodypartformatterbasefactory.h
