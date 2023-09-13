@@ -30,8 +30,8 @@ PUBLIC
     Qt6::Gui
     KF6::Codecs
     Qt6::Core5Compat
-    Gpgme::Gpgme
-    KPim${KF_MAJOR_VERSION}::Libkleo
+    Gpgmepp
+    KPim6::Libkleo
 )
 
 ecm_qt_declare_logging_category(mimetreeparserprivate

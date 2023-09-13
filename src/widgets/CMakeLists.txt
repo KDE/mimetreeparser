@@ -49,7 +49,7 @@ PRIVATE
     KF6::CalendarCore
     KF6::WidgetsAddons
     KPim6::Libkleo
-    Gpgme::Gpgme
+    Gpgmepp
 )
 
 set_target_properties(KPim6MimeTreeParserWidgets PROPERTIES
