@@ -83,6 +83,7 @@ target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
 target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
 PUBLIC
     KPim${KF_MAJOR_VERSION}::Mime
+    KPim${KF_MAJOR_VERSION}::Mbox
     KF${KF_MAJOR_VERSION}::I18n
     Qt${KF_MAJOR_VERSION}::Gui
 PRIVATE
