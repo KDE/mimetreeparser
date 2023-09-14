@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
+# SPDX-FileCopyrightText: 2023 g10 Code GmbH
+# SPDX-FileContributor: Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
 ecm_setup_version(PROJECT
@@ -13,12 +14,14 @@ add_library(KPim6::MimeTreeParserWidgets
     ALIAS KPim6MimeTreeParserWidgets)
 
 target_sources(KPim6MimeTreeParserWidgets PRIVATE
-     messageviewer.h
-     messageviewer.cpp
      attachmentview_p.h
      attachmentview.cpp
      messagecontainerwidget_p.h
      messagecontainerwidget.cpp
+     messageviewer.h
+     messageviewer.cpp
+     messageviewerdialog.h
+     messageviewerdialog.cpp
      urlhandler_p.h
      urlhandler.cpp
 )
@@ -44,6 +47,7 @@ PUBLIC
     Qt6::Widgets
     KPim6::MimeTreeParserCore
 PRIVATE
+    Qt6::PrintSupport
     KF6::Codecs
     KF6::I18n
     KF6::CalendarCore
@@ -74,6 +78,7 @@ install(TARGETS
 ecm_generate_headers(MimeTreeParserWidgets_CamelCase_HEADERS
     HEADER_NAMES
         MessageViewer
+        MessageViewerDialog
     REQUIRED_HEADERS MimeTreeParserWidgets_HEADERS
     PREFIX MimeTreeParserWidgets
 )
@@ -149,3 +154,5 @@ install(FILES
    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets
    COMPONENT Devel
 )
+
+add_subdirectory(autotests)

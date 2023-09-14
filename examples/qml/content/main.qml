@@ -19,12 +19,12 @@ Kirigami.ApplicationWindow {
     FileDialog {
         id: fileDialog
         title: i18n("Choose file")
-        onAccepted: fileOpener.open(fileUrl)
+        onAccepted: messageHandler.open(fileUrl)
     }
 
-    FileOpener {
-        id: fileOpener
-        objectName: "FileOpener"
+    MessageHandler {
+        id: messageHandler
+        objectName: "MessageHandler"
         onMessageOpened: pageStack.currentItem.message = message
     }
 

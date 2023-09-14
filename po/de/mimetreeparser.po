@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-07 00:46+0000\n"
+"POT-Creation-Date: 2023-09-14 00:46+0000\n"
 "PO-Revision-Date: 2023-08-13 16:14+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -19,61 +19,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.11.70\n"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:89
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Name"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:91
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Größe"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:93
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Verschlüsselt"
 
-#: core/attachmentmodel.cpp:96
+#: core/attachmentmodel.cpp:95
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signiert"
 
-#: core/attachmentmodel.cpp:198
+#: core/attachmentmodel.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Der Anhang kann nicht gespeichert werden."
 
-#: core/attachmentmodel.cpp:230
+#: core/attachmentmodel.cpp:229
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Anhang auf Datenträger gespeichert: %1"
 
-#: core/attachmentmodel.cpp:247
+#: core/attachmentmodel.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Der Anhang kann nicht geöffnet werden."
 
-#: core/attachmentmodel.cpp:252
+#: core/attachmentmodel.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Der Anhang kann nicht zum Öffnen gespeichert werden."
 
-#: core/attachmentmodel.cpp:273
+#: core/attachmentmodel.cpp:270
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "In diesem Anhang wurden keine Schlüssel gefunden"
 
-#: core/attachmentmodel.cpp:276
+#: core/attachmentmodel.cpp:272
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -81,7 +81,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "Ein Schlüssel importiert"
 msgstr[1] "%1 Schlüssel importiert"
 
-#: core/attachmentmodel.cpp:279
+#: core/attachmentmodel.cpp:275
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -89,46 +89,36 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "Ein Schlüssel war bereits importiert"
 msgstr[1] "%1 Schlüssel waren bereits importiert"
 
-#: core/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fwd"
-
-#: core/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: core/messageparser.cpp:158
+#: core/messageparser.cpp:159
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: core/messagepart.cpp:625 core/messagepart.cpp:660 core/messagepart.cpp:835
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Falsches Kryptografie-Modul."
 
-#: core/messagepart.cpp:986
+#: core/messagepart.cpp:985
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr ""
 
-#: core/messagepart.cpp:988
+#: core/messagepart.cpp:987
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 
-#: core/messagepart.cpp:990
+#: core/messagepart.cpp:989
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Could not decrypt the data."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Die Daten können nicht entschlüsselt werden."
 
-#: core/messagepart.cpp:991 widgets/messageviewer.cpp:295
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:295
 #, kde-format
 msgid "Error: %1"
 msgstr "Fehler: %1"
@@ -460,6 +450,103 @@ msgstr "&Von:"
 msgid "&To:"
 msgstr "&An:"
 
+#: widgets/messageviewerdialog.cpp:72
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:74
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:80
+#, fuzzy, kde-format
+#| msgctxt "@title:column"
+#| msgid "Encrypted"
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr "Verschlüsselt"
+
+#: widgets/messageviewerdialog.cpp:86
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:92
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:99
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "Einladung"
+
+#: widgets/messageviewerdialog.cpp:100
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:104
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:114
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.mbox)"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:120
+#, kde-format
+msgid "File %1 could not be created."
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
+#, kde-format
+msgid "Error saving message"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:130
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:136
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:208
+#, kde-format
+msgctxt "@info"
+msgid "Unable to read file"
+msgstr ""
+
 #: widgets/urlhandler.cpp:37
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
@@ -469,6 +556,12 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr ""
+
+#~ msgid "fwd"
+#~ msgstr "fwd"
+
+#~ msgid "re"
+#~ msgstr "re"
 
 #~ msgctxt "@info"
 #~ msgid "Could not decrypt the data: no key found for recipients."

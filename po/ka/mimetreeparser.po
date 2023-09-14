@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-07 00:46+0000\n"
+"POT-Creation-Date: 2023-09-14 00:46+0000\n"
 "PO-Revision-Date: 2023-08-27 11:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,61 +18,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:89
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "სახელი"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:91
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "ზომა"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:93
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "დაშიფრული"
 
-#: core/attachmentmodel.cpp:96
+#: core/attachmentmodel.cpp:95
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "ხელმოწერილი"
 
-#: core/attachmentmodel.cpp:198
+#: core/attachmentmodel.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა."
 
-#: core/attachmentmodel.cpp:230
+#: core/attachmentmodel.cpp:229
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "მიმაგრებული ფაილი შენახულია დისკზე: %1"
 
-#: core/attachmentmodel.cpp:247
+#: core/attachmentmodel.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "მიმაგრებული ფაილის გახსნა შეუძლებელია."
 
-#: core/attachmentmodel.cpp:252
+#: core/attachmentmodel.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "მიმაგრებული ფაილის გასახსნელად შენახვის შეცდომა."
 
-#: core/attachmentmodel.cpp:273
+#: core/attachmentmodel.cpp:270
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "ამ მიმაგრებულ ფაილში გასაღებები ვერ ვიპოვე"
 
-#: core/attachmentmodel.cpp:276
+#: core/attachmentmodel.cpp:272
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -80,7 +80,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "შემოტანილია 1 გასაღები"
 msgstr[1] "შემოტანილია %1 გასაღები"
 
-#: core/attachmentmodel.cpp:279
+#: core/attachmentmodel.cpp:275
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -88,44 +88,34 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "1 გასაღები უკვე შემოტანილია"
 msgstr[1] "%1 გასაღები უკვე შემოტანილია"
 
-#: core/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "გადგზ"
-
-#: core/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "პას"
-
-#: core/messageparser.cpp:158
+#: core/messageparser.cpp:159
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "უცნობი"
 
-#: core/messagepart.cpp:625 core/messagepart.cpp:660 core/messagepart.cpp:835
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "კრიპტოს არასწორი დამატება."
 
-#: core/messagepart.cpp:986
+#: core/messagepart.cpp:985
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "კრიპტოს შესაბამისი დამატება ვერ ვიპოვე."
 
-#: core/messagepart.cpp:988
+#: core/messagepart.cpp:987
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "კრიპტოს დამატებას \"%1\" შეტყობინებების გაშიფვრა არ შეუძლია."
 
-#: core/messagepart.cpp:990
+#: core/messagepart.cpp:989
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "კრიპტოს დამატებას \"%1\" მონაცემების გაშიფვრა არ შეუძლია."
 
-#: core/messagepart.cpp:991 widgets/messageviewer.cpp:295
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:295
 #, kde-format
 msgid "Error: %1"
 msgstr "შეცდომა: %1"
@@ -445,6 +435,103 @@ msgstr "&ვისგან:"
 msgid "&To:"
 msgstr "&ვის:"
 
+#: widgets/messageviewerdialog.cpp:72
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:74
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:80
+#, fuzzy, kde-format
+#| msgctxt "@title:column"
+#| msgid "Encrypted"
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr "დაშიფრული"
+
+#: widgets/messageviewerdialog.cpp:86
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:92
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:99
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "მოწვევა"
+
+#: widgets/messageviewerdialog.cpp:100
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:104
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:114
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.mbox)"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:120
+#, kde-format
+msgid "File %1 could not be created."
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
+#, kde-format
+msgid "Error saving message"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:130
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:136
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:208
+#, kde-format
+msgctxt "@info"
+msgid "Unable to read file"
+msgstr ""
+
 #: widgets/urlhandler.cpp:37
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
@@ -454,6 +541,12 @@ msgstr "სერტიფიკატების მმართველი�
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-ის შეცდომა"
+
+#~ msgid "fwd"
+#~ msgstr "გადგზ"
+
+#~ msgid "re"
+#~ msgstr "პას"
 
 #~ msgctxt "@info"
 #~ msgid "Could not decrypt the data: no key found for recipients."

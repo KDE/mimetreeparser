@@ -61,6 +61,7 @@ endif()
 
 ########### Find packages ###########
 find_package(Qt6Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(Qt6PrintSupport ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)

@@ -20,8 +20,6 @@ target_sources(mimetreeparserprivate PUBLIC
      cryptohelper.cpp
      utils.h
      utils.cpp
-     job/qgpgmejobexecutor.h
-     job/qgpgmejobexecutor.cpp
 )
 target_link_libraries(mimetreeparserprivate
 PUBLIC
@@ -52,12 +50,12 @@ add_library(KPim6::MimeTreeParserCore
 
 target_sources(KPim6MimeTreeParserCore PRIVATE
      errors.h
-     async.h
      attachmentmodel.h
      bodypartformatter.h
      bodypartformatterbasefactory.h
      bodypartformatterbasefactory_p.h
      enums.h
+     fileopener.h
      htmlutils.h
      messageparser.h
      objecttreeparser.h
@@ -67,6 +65,7 @@ target_sources(KPim6MimeTreeParserCore PRIVATE
      bodypartformatter.cpp
      bodypartformatter_impl.cpp
      bodypartformatterbasefactory.cpp
+     fileopener.cpp
      htmlutils.cpp
      messageparser.cpp
      objecttreeparser.cpp
@@ -113,11 +112,13 @@ install(TARGETS
 ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
     HEADER_NAMES
         AttachmentModel
-        ObjectTreeParser
+        CryptoHelper
+        Errors
+        FileOpener
         MessageParser
         MessagePart
+        ObjectTreeParser
         PartModel
-        Errors
         PartMetaData
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore

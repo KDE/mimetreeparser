@@ -57,6 +57,9 @@ public:
     bool openAttachment(const MimeTreeParser::MessagePart::Ptr &message);
     bool importPublicKey(const MimeTreeParser::MessagePart::Ptr &message);
 
+    QString saveAttachmentToPath(const int row, const QString &path, bool readonly = false);
+    QString saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly = false);
+
 Q_SIGNALS:
     void info(const QString &message);
 

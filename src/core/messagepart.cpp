@@ -7,7 +7,6 @@
 #include "mimetreeparser_core_debug.h"
 #include "objecttreeparser.h"
 
-#include "job/qgpgmejobexecutor.h"
 #include "utils.h"
 
 #include <KLocalizedString>

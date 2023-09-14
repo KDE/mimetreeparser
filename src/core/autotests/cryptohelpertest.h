@@ -19,5 +19,7 @@ private Q_SLOTS:
     void testEmbededPGPBlock();
     void testClearSignedMessage();
     void testMultipleBlockMessage();
+    void testDecryptMessage();
+    void testDecryptInlineMessage();
 };
 }

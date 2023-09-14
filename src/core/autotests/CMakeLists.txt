@@ -19,7 +19,7 @@ function(add_mimetreeparser_class_unittest _name _additionalSource)
         KPim6::MimeTreeParserCore
     )
     target_include_directories(${_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
-    add_test(NAME ${_name} COMMAND $<TARGET_FILE:${_name}>)
+    add_test(NAME core-${_name} COMMAND $<TARGET_FILE:${_name}>)
 endfunction()
 
 function(add_mimetreeparser_crypto_unittest _name)
@@ -34,12 +34,11 @@ function(add_mimetreeparser_crypto_unittest _name)
         mimetreeparserprivate
         KPim6::MimeTreeParserCore
     )
-    add_gpg_crypto_test(${_name} mimetreeparser-${_name})
+    add_gpg_crypto_test(${_name} core-${_name})
 endfunction()
 
 add_subdirectory(gnupg_home)
 add_mimetreeparser_crypto_unittest(attachmenttest)
-add_mimetreeparser_class_unittest(cryptohelpertest "../cryptohelper.cpp")
 
 add_definitions( -DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata" )
 include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
@@ -51,8 +50,16 @@ include_directories(${GPGME_INCLUDE_DIRS})
 
 include(ECMAddTests)
 
+add_executable(cryptohelpertest cryptohelpertest.cpp)
+add_gpg_crypto_test(cryptohelpertest core-cryptohelpertest)
+target_link_libraries(cryptohelpertest PUBLIC
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
+
 add_executable(mimetreeparsertest mimetreeparsertest.cpp)
-add_gpg_crypto_test(mimetreeparsertest mimetreeparsertest)
+add_gpg_crypto_test(mimetreeparsertest core-mimetreeparsertest)
 target_link_libraries(mimetreeparsertest PUBLIC
     Qt::Test
     mimetreeparserprivate
@@ -65,13 +72,26 @@ target_link_libraries(gpgerrortest PUBLIC
     mimetreeparserprivate
     KPim6::MimeTreeParserCore
 )
-add_test(NAME gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
+add_test(NAME core-gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
+
+add_executable(fileopenertest fileopenertest.cpp)
+target_link_libraries(fileopenertest PUBLIC
+    Qt::Test
+    mimetreeparserprivate
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+)
+add_test(NAME core-fileopenertest COMMAND $<TARGET_FILE:fileopenertest>)
 
 ## PartModel test
 add_executable(partmodeltest partmodeltest.cpp)
-add_gpg_crypto_test(partmodeltest partmodeltest)
+add_gpg_crypto_test(partmodeltest core-partmodeltest)
 target_link_libraries(partmodeltest
     Qt::Test
     mimetreeparserprivate
     KPim6::MimeTreeParserCore
+)
+
+ecm_add_test(attachmentmodeltest.cpp
+    LINK_LIBRARIES KPim${KF_MAJOR_VERSION}MimeTreeParserCore Qt::Test
+    NAME_PREFIX "core-"
 )

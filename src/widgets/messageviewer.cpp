@@ -146,11 +146,11 @@ MessageViewer::MessageViewer(QWidget *parent)
     d->layout = new QVBoxLayout(widget);
     d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
 
-    auto scrollArea = new QScrollArea(this);
-    scrollArea->setWidget(widget);
-    scrollArea->setWidgetResizable(true);
-    scrollArea->setBackgroundRole(QPalette::Base);
-    addWidget(scrollArea);
+    d->scrollArea = new QScrollArea(this);
+    d->scrollArea->setWidget(widget);
+    d->scrollArea->setWidgetResizable(true);
+    d->scrollArea->setBackgroundRole(QPalette::Base);
+    addWidget(d->scrollArea);
     setStretchFactor(1, 2);
 
     d->attachmentView = new AttachmentView(this);
@@ -338,4 +338,14 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     });
 
     setUpdatesEnabled(true);
+}
+
+void MessageViewer::print(QPainter *painter, int width)
+{
+    const auto oldSize = size();
+    resize(width - 30, oldSize.height());
+    d->scrollArea->setFrameShape(QFrame::NoFrame);
+    render(painter);
+    d->scrollArea->setFrameShape(QFrame::StyledPanel);
+    resize(oldSize);
 }

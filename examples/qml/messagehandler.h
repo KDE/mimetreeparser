@@ -7,7 +7,7 @@
 #include <QObject>
 #include <QUrl>
 
-class FileOpener : public QObject
+class MessageHandler : public QObject
 {
     Q_OBJECT
 

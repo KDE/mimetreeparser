@@ -1,13 +1,14 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "../qml/fileopener.h"
 #include <KLocalizedString>
 #include <MimeTreeParserWidgets/MessageViewer>
+#include <MimeTreeParserWidgets/MessageViewerDialog>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QMainWindow>
+#include <QUrl>
 
 int main(int argc, char *argv[])
 {
@@ -21,20 +22,8 @@ int main(int argc, char *argv[])
     parser.process(app);
     const QStringList args = parser.positionalArguments();
 
-    auto messageViewer = new MimeTreeParser::Widgets::MessageViewer;
-
-    QMainWindow mainWindow;
-    mainWindow.setMinimumSize(800, 600);
-    mainWindow.setCentralWidget(messageViewer);
-    mainWindow.show();
-
-    FileOpener fileOpener;
-
     const auto file = QUrl::fromUserInput(args.at(args.count() - 1), QDir::currentPath());
-    QObject::connect(&fileOpener, &FileOpener::messageOpened, messageViewer, [messageViewer](KMime::Message::Ptr message) {
-        messageViewer->setMessage(message);
-    });
-    fileOpener.open(file);
+    const auto messageViewer = new MimeTreeParser::Widgets::MessageViewerDialog(file.toLocalFile(), nullptr);
 
-    return app.exec();
+    return messageViewer->exec();
 }

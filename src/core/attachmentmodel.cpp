@@ -4,7 +4,6 @@
 
 #include "attachmentmodel.h"
 
-#include "job/qgpgmejobexecutor.h"
 #include "objecttreeparser.h"
 
 #include <QGpgME/ImportJob>
@@ -164,7 +163,13 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     }
 }
 
-static QString internalSaveAttachmentToDisk(AttachmentModel *model, const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly = false)
+QString AttachmentModel::saveAttachmentToPath(const int row, const QString &path, bool readonly)
+{
+    const auto part = d->mAttachments.at(row);
+    return saveAttachmentToPath(part, path, readonly);
+}
+
+QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly)
 {
     Q_ASSERT(part);
     auto node = part->node();
@@ -195,7 +200,7 @@ static QString internalSaveAttachmentToDisk(AttachmentModel *model, const MimeTr
     QFile f(fname);
     if (!f.open(QIODevice::ReadWrite)) {
         qWarning() << "Failed to write attachment to file:" << fname << " Error: " << f.errorString();
-        Q_EMIT model->info(i18ndc("mimetreeparser", "@info", "Failed to save attachment."));
+        Q_EMIT info(i18ndc("mimetreeparser", "@info", "Failed to save attachment."));
         return {};
     }
     f.write(data);
@@ -223,7 +228,7 @@ bool AttachmentModel::saveAttachmentToDisk(const MimeTreeParser::MessagePart::Pt
     downloadDir += QLatin1Char('/') + qGuiApp->applicationName();
     QDir{}.mkpath(downloadDir);
 
-    auto path = internalSaveAttachmentToDisk(this, message, downloadDir);
+    auto path = saveAttachmentToPath(message, downloadDir);
     if (path.isEmpty()) {
         return false;
     }
@@ -241,7 +246,7 @@ bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &mes
 {
     QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + QLatin1Char('/') + qGuiApp->applicationName();
     QDir{}.mkpath(downloadDir);
-    const auto filePath = internalSaveAttachmentToDisk(this, message, downloadDir, true);
+    const auto filePath = saveAttachmentToPath(message, downloadDir, true);
     if (!filePath.isEmpty()) {
         if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
             Q_EMIT info(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
@@ -263,26 +268,25 @@ bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &pa
 {
     Q_ASSERT(part);
     const QByteArray certData = part->node()->decodedContent();
-    QGpgME::ImportJob *import = QGpgME::openpgp()->importJob();
-    MimeTreeParser::QGpgMEJobExecutor executor;
-    auto result = executor.exec(import, certData);
+    QGpgME::ImportJob *importJob = QGpgME::openpgp()->importJob();
 
-    bool success = true;
-    QString message;
-    if (result.numConsidered() == 0) {
-        message = i18ndc("mimetreeparser", "@info", "No keys were found in this attachment");
-        success = false;
-    } else {
-        message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
-        if (result.numUnchanged() != 0) {
-            message += QStringLiteral("\n")
-                + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.numUnchanged());
+    connect(importJob, &QGpgME::AbstractImportJob::result, this, [this](const GpgME::ImportResult &result) {
+        QString message;
+        if (result.numConsidered() == 0) {
+            message = i18ndc("mimetreeparser", "@info", "No keys were found in this attachment");
+        } else {
+            message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
+            if (result.numUnchanged() != 0) {
+                message += QStringLiteral("\n")
+                    + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.numUnchanged());
+            }
         }
-    }
 
-    Q_EMIT info(message);
-
-    return success;
+        Q_EMIT info(message);
+    });
+    GpgME::Error err = importJob->start(certData);
+    return !err;
+    ;
 }
 
 int AttachmentModel::rowCount(const QModelIndex &parent) const
