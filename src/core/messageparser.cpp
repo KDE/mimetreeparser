@@ -16,15 +16,12 @@ namespace
 {
 
 template<typename T>
-const T *findHeader(KMime::Content *content, KMime::Content *fallbackContent)
+const T *findHeader(KMime::Content *content, KMime::Content *protectedHeaderNode)
 {
-    if (fallbackContent) {
-        const auto contentType = fallbackContent->contentType();
-        if (contentType->hasParameter(QStringLiteral("protected-headers"))) {
-            auto header = fallbackContent->header<T>();
-            if (header) {
-                return header;
-            }
+    if (protectedHeaderNode) {
+        auto header = protectedHeaderNode->header<T>();
+        if (header) {
+            return header;
         }
     }
 
@@ -50,7 +47,7 @@ class MessagePartPrivate
 public:
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     KMime::Message::Ptr mMessage;
-    KMime::Content *node = nullptr;
+    KMime::Content *protectedHeaderNode = nullptr;
 };
 
 MessageParser::MessageParser(QObject *parent)
@@ -89,10 +86,9 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     d->mParser = parser;
     const auto contentParts = parser->collectContentParts();
     for (const auto &part : parser->collectContentParts()) {
-        if (auto subjectHeader = part->node()->header<KMime::Headers::Subject>()) {
-            if (!subjectHeader->asUnicodeString().isEmpty()) {
-                d->node = part->node();
-            }
+        const auto contentType = part->node()->contentType();
+        if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
+            d->protectedHeaderNode = part->node();
         }
     }
 
@@ -132,7 +128,7 @@ AttachmentModel *MessageParser::attachments() const
 QString MessageParser::subject() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Subject>(d->mMessage.get(), d->node);
+        const auto header = findHeader<KMime::Headers::Subject>(d->mMessage.get(), d->protectedHeaderNode);
         if (header) {
             return header->asUnicodeString();
         }
@@ -144,7 +140,7 @@ QString MessageParser::subject() const
 QString MessageParser::from() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::From>(d->mMessage.get(), d->node);
+        const auto header = findHeader<KMime::Headers::From>(d->mMessage.get(), d->protectedHeaderNode);
         if (header) {
             return header->displayString();
         }
@@ -155,7 +151,7 @@ QString MessageParser::from() const
 QString MessageParser::sender() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get(), d->node);
+        const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get(), d->protectedHeaderNode);
         if (header) {
             return header->displayString();
         }
@@ -167,7 +163,7 @@ QString MessageParser::sender() const
 QString MessageParser::to() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::To>(d->mMessage.get(), d->node);
+        const auto header = findHeader<KMime::Headers::To>(d->mMessage.get(), d->protectedHeaderNode);
         if (!header) {
             return {};
         }
@@ -179,7 +175,7 @@ QString MessageParser::to() const
 QString MessageParser::cc() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Cc>(d->mMessage.get(), d->node);
+        const auto header = findHeader<KMime::Headers::Cc>(d->mMessage.get(), d->protectedHeaderNode);
         if (!header) {
             return {};
         }
@@ -191,7 +187,7 @@ QString MessageParser::cc() const
 QString MessageParser::bcc() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Bcc>(d->mMessage.get(), d->node);
+        const auto header = findHeader<KMime::Headers::Bcc>(d->mMessage.get(), d->protectedHeaderNode);
         if (!header) {
             return {};
         }
@@ -203,7 +199,7 @@ QString MessageParser::bcc() const
 QDateTime MessageParser::date() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Date>(d->mMessage.get(), d->node);
+        const auto header = findHeader<KMime::Headers::Date>(d->mMessage.get(), d->protectedHeaderNode);
         if (header) {
             return header->dateTime();
         }
