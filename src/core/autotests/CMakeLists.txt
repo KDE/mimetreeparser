@@ -55,7 +55,7 @@ add_gpg_crypto_test(cryptohelpertest core-cryptohelpertest)
 target_link_libraries(cryptohelpertest PUBLIC
     Qt::Test
     mimetreeparserprivate
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim6::MimeTreeParserCore
 )
 
 add_executable(mimetreeparsertest mimetreeparsertest.cpp)
@@ -78,7 +78,7 @@ add_executable(fileopenertest fileopenertest.cpp)
 target_link_libraries(fileopenertest PUBLIC
     Qt::Test
     mimetreeparserprivate
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim6::MimeTreeParserCore
 )
 add_test(NAME core-fileopenertest COMMAND $<TARGET_FILE:fileopenertest>)
 
@@ -92,6 +92,6 @@ target_link_libraries(partmodeltest
 )
 
 ecm_add_test(attachmentmodeltest.cpp
-    LINK_LIBRARIES KPim${KF_MAJOR_VERSION}MimeTreeParserCore Qt::Test
+    LINK_LIBRARIES KPim6MimeTreeParserCore Qt::Test
     NAME_PREFIX "core-"
 )
