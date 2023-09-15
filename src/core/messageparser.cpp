@@ -16,13 +16,23 @@ namespace
 {
 
 template<typename T>
-const T *findHeader(KMime::Content *content)
+const T *findHeader(KMime::Content *content, KMime::Content *fallbackContent)
 {
+    if (fallbackContent) {
+        const auto contentType = fallbackContent->contentType();
+        if (contentType->hasParameter(QStringLiteral("protected-headers"))) {
+            auto header = fallbackContent->header<T>();
+            if (header) {
+                return header;
+            }
+        }
+    }
+
     auto header = content->header<T>();
     if (header || !content->parent()) {
         return header;
     }
-    return findHeader<T>(content->parent());
+    return findHeader<T>(content->parent(), nullptr);
 }
 
 const KMime::Headers::Base *findHeader(KMime::Content *content, const char *headerType)
@@ -40,6 +50,7 @@ class MessagePartPrivate
 public:
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     KMime::Message::Ptr mMessage;
+    KMime::Content *node = nullptr;
 };
 
 MessageParser::MessageParser(QObject *parent)
@@ -76,6 +87,15 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     parser->decryptParts();
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing and decryption/verification: " << time.elapsed();
     d->mParser = parser;
+    const auto contentParts = parser->collectContentParts();
+    for (const auto &part : parser->collectContentParts()) {
+        if (auto subjectHeader = part->node()->header<KMime::Headers::Subject>()) {
+            if (!subjectHeader->asUnicodeString().isEmpty()) {
+                d->node = part->node();
+            }
+        }
+    }
+
     Q_EMIT htmlChanged();
 }
 
@@ -112,63 +132,56 @@ AttachmentModel *MessageParser::attachments() const
 QString MessageParser::subject() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Subject>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::Subject>(d->mMessage.get(), d->node);
+        if (header) {
+            return header->asUnicodeString();
         }
-        return header->asUnicodeString();
-    } else {
-        return QString();
     }
+
+    return QString();
 }
 
 QString MessageParser::from() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::From>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::From>(d->mMessage.get(), d->node);
+        if (header) {
+            return header->displayString();
         }
-        return header->displayString();
-    } else {
-        return QString();
     }
+    return QString();
 }
 
 QString MessageParser::sender() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get(), d->node);
+        if (header) {
+            return header->displayString();
         }
-        return header->displayString();
-    } else {
-        return QString();
     }
+
+    return QString();
 }
 QString MessageParser::to() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::To>(d->mMessage.get());
+        const auto header = findHeader<KMime::Headers::To>(d->mMessage.get(), d->node);
         if (!header) {
             return {};
         }
         return header->displayString();
-    } else {
-        return i18nc("displayed when a mail has unknown sender, receiver or date", "Unknown");
     }
+    return QString();
 }
 
 QDateTime MessageParser::date() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Date>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::Date>(d->mMessage.get(), d->node);
+        if (header) {
+            return header->dateTime();
         }
-        return header->dateTime();
-    } else {
-        return QDateTime();
     }
+    return QDateTime();
 }
