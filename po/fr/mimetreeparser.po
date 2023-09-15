@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
+"POT-Creation-Date: 2023-09-15 00:47+0000\n"
 "PO-Revision-Date: 2023-09-07 21:56+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -39,37 +39,37 @@ msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signé"
 
-#: core/attachmentmodel.cpp:197
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Impossible d'enregistrer une pièce jointe."
 
-#: core/attachmentmodel.cpp:229
+#: core/attachmentmodel.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "A enregistré la pièce jointe sur disque : %1"
 
-#: core/attachmentmodel.cpp:246
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Impossible d'ouvrir une pièce jointe."
 
-#: core/attachmentmodel.cpp:251
+#: core/attachmentmodel.cpp:257
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Impossible d'enregistrer une pièce jointe pour ouverture."
 
-#: core/attachmentmodel.cpp:270
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Aucune clé n'a été trouvée dans cette pièce jointe."
 
-#: core/attachmentmodel.cpp:272
+#: core/attachmentmodel.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -77,7 +77,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "Une clé a été importée."
 msgstr[1] "%1 clés ont été importées."
 
-#: core/attachmentmodel.cpp:275
+#: core/attachmentmodel.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"

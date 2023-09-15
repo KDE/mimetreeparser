@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the mimetreeparser package.
 #
 # Automatically generated, 2023.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2023.
+# SPDX-FileCopyrightText: 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
-"PO-Revision-Date: 2023-08-27 03:59+0200\n"
+"POT-Creation-Date: 2023-09-15 00:47+0000\n"
+"PO-Revision-Date: 2023-09-14 04:50+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: core/attachmentmodel.cpp:89
 #, kde-format
@@ -43,37 +43,37 @@ msgctxt "@title:column"
 msgid "Signed"
 msgstr "Firmado"
 
-#: core/attachmentmodel.cpp:197
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "No se ha podido guardar el adjunto."
 
-#: core/attachmentmodel.cpp:229
+#: core/attachmentmodel.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Adjunto guardado en disco: %1"
 
-#: core/attachmentmodel.cpp:246
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "No se ha podido abrir el adjunto."
 
-#: core/attachmentmodel.cpp:251
+#: core/attachmentmodel.cpp:257
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "No se ha podido guardar el adjunto para su apertura."
 
-#: core/attachmentmodel.cpp:270
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "No se ha encontrado ninguna clave en este adjunto"
 
-#: core/attachmentmodel.cpp:272
+#: core/attachmentmodel.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -81,7 +81,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "1 clave importada"
 msgstr[1] "%1 claves importadas"
 
-#: core/attachmentmodel.cpp:275
+#: core/attachmentmodel.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -445,98 +445,95 @@ msgstr "&Para:"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&Archivo"
 
 #: widgets/messageviewerdialog.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "&Guardar"
 
 #: widgets/messageviewerdialog.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Encrypted"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr "Cifrado"
+msgstr "Guardar sin cifrar"
 
 #: widgets/messageviewerdialog.cpp:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "Imprimir vista previa"
 
 #: widgets/messageviewerdialog.cpp:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "&Imprimir"
 
 #: widgets/messageviewerdialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "Invitación"
+msgstr "&Navegación"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "Mensaje anterior"
 
 #: widgets/messageviewerdialog.cpp:104
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "Mensaje siguiente"
 
 #: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Guardar archivo"
 
 #: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr ""
+msgstr "Archivos de correo electrónico (*.mbox)"
 
 #: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "No se puede crear el archivo %1."
 
 #: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "Error al guardar mensaje"
 
 #: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Guardar archivo sin cifrar"
 
 #: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "No se ha podido crear el archivo %1."
 
 #: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "Imprimir documento"
 
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "No se ha podido leer el archivo"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format

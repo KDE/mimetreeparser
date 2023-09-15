@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
-"PO-Revision-Date: 2023-09-08 21:35+0100\n"
+"POT-Creation-Date: 2023-09-15 00:47+0000\n"
+"PO-Revision-Date: 2023-09-14 06:33+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -42,37 +42,37 @@ msgctxt "@title:column"
 msgid "Signed"
 msgstr "Subskribita"
 
-#: core/attachmentmodel.cpp:197
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Malsukcesis konservi aldonaĵon."
 
-#: core/attachmentmodel.cpp:229
+#: core/attachmentmodel.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Konservis la aldonaĵon al disko: %1"
 
-#: core/attachmentmodel.cpp:246
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Malsukcesis malfermi aldonaĵon."
 
-#: core/attachmentmodel.cpp:251
+#: core/attachmentmodel.cpp:257
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Malsukcesis konservi aldonaĵon por malfermi."
 
-#: core/attachmentmodel.cpp:270
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Neniuj ŝlosiloj estis trovitaj en ĉi tiu aldonaĵo"
 
-#: core/attachmentmodel.cpp:272
+#: core/attachmentmodel.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -80,7 +80,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "unu ŝlosilo importita"
 msgstr[1] "%1 ŝlosiloj importitaj"
 
-#: core/attachmentmodel.cpp:275
+#: core/attachmentmodel.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -442,98 +442,95 @@ msgstr "&Al:"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&Dosiero"
 
 #: widgets/messageviewerdialog.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "Kon&servi"
 
 #: widgets/messageviewerdialog.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Encrypted"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr "Ĉifrita"
+msgstr "Konservi Malĉifrite"
 
 #: widgets/messageviewerdialog.cpp:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "Presa Antaŭrigardo"
 
 #: widgets/messageviewerdialog.cpp:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "&Presi"
 
 #: widgets/messageviewerdialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "Invito"
+msgstr "&Navigado"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "Antaŭa Mesaĝo"
 
 #: widgets/messageviewerdialog.cpp:104
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "Sekvanta Mesaĝo"
 
 #: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Konservi Dosieron"
 
 #: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr ""
+msgstr "Retpoŝtaj dosieroj (*.mbox)"
 
 #: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Dosiero %1 ne povis esti kreita."
 
 #: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "Eraro konservante mesaĝon"
 
 #: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Konservi Malĉifritan Dosieron"
 
 #: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Dosiero %1 ne povis esti kreita."
 
 #: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "Presi Dokumenton"
 
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "Neebla legi dosieron"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format
@@ -544,9 +541,3 @@ msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
-
-#~ msgid "fwd"
-#~ msgstr "fwd"
-
-#~ msgid "re"
-#~ msgstr "re"

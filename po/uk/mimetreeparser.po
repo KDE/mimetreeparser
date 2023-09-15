@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
-"PO-Revision-Date: 2023-08-26 08:47+0300\n"
+"POT-Creation-Date: 2023-09-15 00:47+0000\n"
+"PO-Revision-Date: 2023-09-14 09:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -42,37 +42,37 @@ msgctxt "@title:column"
 msgid "Signed"
 msgstr "Підписано"
 
-#: core/attachmentmodel.cpp:197
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Не вдалося зберегти долучення."
 
-#: core/attachmentmodel.cpp:229
+#: core/attachmentmodel.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Збереження долучення на диску: %1"
 
-#: core/attachmentmodel.cpp:246
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Не вдалося відкрити долучення."
 
-#: core/attachmentmodel.cpp:251
+#: core/attachmentmodel.cpp:257
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Не вдалося зберегти долучення для відкриття."
 
-#: core/attachmentmodel.cpp:270
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "У цьому долученні не було знайдено ключів"
 
-#: core/attachmentmodel.cpp:272
+#: core/attachmentmodel.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -82,7 +82,7 @@ msgstr[1] "імпортовано %1 ключі"
 msgstr[2] "імпортовано %1 ключів"
 msgstr[3] "імпортовано %1 ключ"
 
-#: core/attachmentmodel.cpp:275
+#: core/attachmentmodel.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -443,98 +443,95 @@ msgstr "&Кому:"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&Файл"
 
 #: widgets/messageviewerdialog.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "&Зберегти"
 
 #: widgets/messageviewerdialog.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Encrypted"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr "Зашифровано"
+msgstr "Зберегти розшифрований файл"
 
 #: widgets/messageviewerdialog.cpp:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "Перегляд друку"
 
 #: widgets/messageviewerdialog.cpp:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "На&друкувати"
 
 #: widgets/messageviewerdialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "Запрошення"
+msgstr "&Навігація"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "Попереднє повідомлення"
 
 #: widgets/messageviewerdialog.cpp:104
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "Наступне повідомлення"
 
 #: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Збереження файла"
 
 #: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr ""
+msgstr "файли пошти (*.mbox)"
 
 #: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Не вдалося створити файл %1."
 
 #: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "Помилка під час спроби збереження повідомлення"
 
 #: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Збереження розшифрованого файла"
 
 #: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Не вдалося створити файл %1."
 
 #: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "Друк документа"
 
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "Не вдалося прочитати дані з файла"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format

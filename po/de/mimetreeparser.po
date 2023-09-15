@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
+"POT-Creation-Date: 2023-09-15 00:47+0000\n"
 "PO-Revision-Date: 2023-08-13 16:14+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -43,37 +43,37 @@ msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signiert"
 
-#: core/attachmentmodel.cpp:197
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Der Anhang kann nicht gespeichert werden."
 
-#: core/attachmentmodel.cpp:229
+#: core/attachmentmodel.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
 msgstr "Anhang auf Datenträger gespeichert: %1"
 
-#: core/attachmentmodel.cpp:246
+#: core/attachmentmodel.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Der Anhang kann nicht geöffnet werden."
 
-#: core/attachmentmodel.cpp:251
+#: core/attachmentmodel.cpp:257
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
 msgstr "Der Anhang kann nicht zum Öffnen gespeichert werden."
 
-#: core/attachmentmodel.cpp:270
+#: core/attachmentmodel.cpp:276
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "In diesem Anhang wurden keine Schlüssel gefunden"
 
-#: core/attachmentmodel.cpp:272
+#: core/attachmentmodel.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -81,7 +81,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "Ein Schlüssel importiert"
 msgstr[1] "%1 Schlüssel importiert"
 
-#: core/attachmentmodel.cpp:275
+#: core/attachmentmodel.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
