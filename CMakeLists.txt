@@ -38,6 +38,7 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMAddQch)
+include(ECMAddTests)
 
 if (QT_MAJOR_VERSION STREQUAL "6")
     set(QT_REQUIRED_VERSION "6.4.0")
