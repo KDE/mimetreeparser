@@ -28,6 +28,8 @@ class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
     Q_PROPERTY(QString from READ from NOTIFY htmlChanged)
     Q_PROPERTY(QString sender READ sender NOTIFY htmlChanged)
     Q_PROPERTY(QString to READ to NOTIFY htmlChanged)
+    Q_PROPERTY(QString cc READ cc NOTIFY htmlChanged)
+    Q_PROPERTY(QString bcc READ bcc NOTIFY htmlChanged)
     Q_PROPERTY(QDateTime date READ date NOTIFY htmlChanged)
 
 public:
@@ -45,6 +47,8 @@ public:
     QString from() const;
     QString sender() const;
     QString to() const;
+    QString cc() const;
+    QString bcc() const;
     QDateTime date() const;
 
 Q_SIGNALS:

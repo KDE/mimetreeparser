@@ -163,10 +163,35 @@ QString MessageParser::sender() const
 
     return QString();
 }
+
 QString MessageParser::to() const
 {
     if (d->mMessage) {
         const auto header = findHeader<KMime::Headers::To>(d->mMessage.get(), d->node);
+        if (!header) {
+            return {};
+        }
+        return header->displayString();
+    }
+    return QString();
+}
+
+QString MessageParser::cc() const
+{
+    if (d->mMessage) {
+        const auto header = findHeader<KMime::Headers::Cc>(d->mMessage.get(), d->node);
+        if (!header) {
+            return {};
+        }
+        return header->displayString();
+    }
+    return QString();
+}
+
+QString MessageParser::bcc() const
+{
+    if (d->mMessage) {
+        const auto header = findHeader<KMime::Headers::Bcc>(d->mMessage.get(), d->node);
         if (!header) {
             return {};
         }

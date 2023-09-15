@@ -20,6 +20,8 @@ Kirigami.ScrollablePage {
     readonly property string from: mailPartView.from
     readonly property string sender: mailPartView.sender
     readonly property string to: mailPartView.to
+    readonly property string cc: mailPartView.cc
+    readonly property string bcc: mailPartView.bcc
     readonly property date dateTime: mailPartView.dateTime
 
     /**
@@ -135,6 +137,38 @@ Kirigami.ScrollablePage {
                 text: root.to
                 elide: Text.ElideRight
                 visible: root.to.length > 0
+
+                Layout.fillWidth: true
+                Layout.columnSpan: 2
+            }
+
+            QQC2.Label {
+                text: i18ndc("mimetreeparser", "@label", "CC:")
+                visible: root.cc.length > 0
+
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+            }
+
+            QQC2.Label {
+                text: root.cc
+                elide: Text.ElideRight
+                visible: root.cc.length > 0
+
+                Layout.fillWidth: true
+                Layout.columnSpan: 2
+            }
+
+            QQC2.Label {
+                text: i18ndc("mimetreeparser", "@label", "BCC:")
+                visible: root.bcc.length > 0
+
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+            }
+
+            QQC2.Label {
+                text: root.bcc
+                elide: Text.ElideRight
+                visible: root.bcc.length > 0
 
                 Layout.fillWidth: true
                 Layout.columnSpan: 2

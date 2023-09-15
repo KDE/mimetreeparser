@@ -317,8 +317,17 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     if (!d->parser.from().isEmpty()) {
         d->formLayout->addRow(i18n("&From:"), new QLabel(d->parser.from()));
     }
+    if (!d->parser.sender().isEmpty() && d->parser.from() != d->parser.sender()) {
+        d->formLayout->addRow(i18n("&Sender:"), new QLabel(d->parser.sender()));
+    }
     if (!d->parser.to().isEmpty()) {
         d->formLayout->addRow(i18n("&To:"), new QLabel(d->parser.to()));
+    }
+    if (!d->parser.cc().isEmpty()) {
+        d->formLayout->addRow(i18n("&CC:"), new QLabel(d->parser.cc()));
+    }
+    if (!d->parser.bcc().isEmpty()) {
+        d->formLayout->addRow(i18n("&BCC:"), new QLabel(d->parser.bcc()));
     }
 
     const auto parts = d->parser.parts();
