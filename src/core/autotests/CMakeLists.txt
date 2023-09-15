@@ -15,7 +15,6 @@ function(add_mimetreeparser_class_unittest _name _additionalSource)
     add_executable(${_name} ${_name}.cpp setupenv.cpp ${_additionalSource})
     target_link_libraries(${_name} PRIVATE
         Qt::Test
-        mimetreeparserprivate
         KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
     )
     target_include_directories(${_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
@@ -35,7 +34,6 @@ function(add_mimetreeparser_crypto_unittest _name)
     )
     target_link_libraries(${_name} PRIVATE
         Qt::Test
-        mimetreeparserprivate
         KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
     )
     add_gpg_crypto_test(${_name} core-${_name})
@@ -58,7 +56,6 @@ add_executable(cryptohelpertest cryptohelpertest.cpp)
 add_gpg_crypto_test(cryptohelpertest core-cryptohelpertest)
 target_link_libraries(cryptohelpertest PUBLIC
     Qt::Test
-    mimetreeparserprivate
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 
@@ -66,14 +63,13 @@ add_executable(mimetreeparsertest mimetreeparsertest.cpp)
 add_gpg_crypto_test(mimetreeparsertest core-mimetreeparsertest)
 target_link_libraries(mimetreeparsertest PUBLIC
     Qt::Test
-    mimetreeparserprivate
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 
 add_executable(gpgerrortest gpgerrortest.cpp)
 target_link_libraries(gpgerrortest PUBLIC
     Qt::Test
-    mimetreeparserprivate
+    Gpgmepp
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 add_test(NAME core-gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
@@ -81,7 +77,6 @@ add_test(NAME core-gpgerrortest COMMAND $<TARGET_FILE:gpgerrortest>)
 add_executable(fileopenertest fileopenertest.cpp)
 target_link_libraries(fileopenertest PUBLIC
     Qt::Test
-    mimetreeparserprivate
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 add_test(NAME core-fileopenertest COMMAND $<TARGET_FILE:fileopenertest>)
@@ -91,7 +86,6 @@ add_executable(partmodeltest partmodeltest.cpp)
 add_gpg_crypto_test(partmodeltest core-partmodeltest)
 target_link_libraries(partmodeltest
     Qt::Test
-    mimetreeparserprivate
     KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 

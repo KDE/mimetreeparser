@@ -24,7 +24,7 @@ enum PGPBlockType {
     PrivateKeyBlock = 6, // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
 };
 
-class Block
+class MIMETREEPARSER_CORE_EXPORT Block
 {
 public:
     Block();
@@ -43,7 +43,7 @@ public:
 /** Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
-Q_REQUIRED_RESULT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
+Q_REQUIRED_RESULT MIMETREEPARSER_CORE_EXPORT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
 
 namespace CryptoUtils
 {

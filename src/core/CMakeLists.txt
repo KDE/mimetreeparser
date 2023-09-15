@@ -8,36 +8,6 @@ ecm_setup_version(PROJECT
     SOVERSION 5
 )
 
-# private library
-
-add_library(mimetreeparserprivate STATIC)
-set_target_properties(mimetreeparserprivate PROPERTIES POSITION_INDEPENDENT_CODE ON)
-add_definitions(-DTRANSLATION_DOMAIN=\"mimetreeparser\")
-target_sources(mimetreeparserprivate PUBLIC
-     messagepart.h
-     messagepart.cpp
-     cryptohelper.h
-     cryptohelper.cpp
-     utils.h
-     utils.cpp
-)
-target_link_libraries(mimetreeparserprivate
-PUBLIC
-    KPim${KF_MAJOR_VERSION}::Mime
-    KF${KF_MAJOR_VERSION}::I18n
-    Qt${KF_MAJOR_VERSION}::Gui
-    KF${KF_MAJOR_VERSION}::Codecs
-    Gpgmepp
-    KPim${KF_MAJOR_VERSION}::Libkleo
-)
-
-ecm_qt_declare_logging_category(mimetreeparserprivate
-    HEADER mimetreeparser_core_debug.h
-    IDENTIFIER MIMETREEPARSER_CORE_LOG
-    CATEGORY_NAME org.kde.pim.mimetreeparser.core
-    DESCRIPTION "mimetreeparser (pim lib)"
-    EXPORT MIMETREEPARSERNG
-)
 
 # public dynamic library
 
@@ -47,28 +17,42 @@ add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
     ALIAS KPim${KF_MAJOR_VERSION}MimeTreeParserCore
 )
 
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MimeTreeParserCore
+    HEADER mimetreeparser_core_debug.h
+    IDENTIFIER MIMETREEPARSER_CORE_LOG
+    CATEGORY_NAME org.kde.pim.mimetreeparser.core
+    DESCRIPTION "mimetreeparser (pim lib)"
+    EXPORT MIMETREEPARSERNG
+)
+
 target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PRIVATE
      errors.h
      attachmentmodel.h
      bodypartformatter.h
      bodypartformatterbasefactory.h
      bodypartformatterbasefactory_p.h
+     cryptohelper.h
      enums.h
      fileopener.h
      htmlutils.h
      messageparser.h
+     messagepart.h
      objecttreeparser.h
      partmetadata.h
      partmodel.h
+     utils.h
      attachmentmodel.cpp
      bodypartformatter.cpp
      bodypartformatter_impl.cpp
      bodypartformatterbasefactory.cpp
+     cryptohelper.cpp
      fileopener.cpp
      htmlutils.cpp
      messageparser.cpp
+     messagepart.cpp
      objecttreeparser.cpp
      partmodel.cpp
+     utils.cpp
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -87,7 +71,9 @@ PUBLIC
     KF${KF_MAJOR_VERSION}::I18n
     Qt${KF_MAJOR_VERSION}::Gui
 PRIVATE
-    mimetreeparserprivate
+    KF${KF_MAJOR_VERSION}::Codecs
+    Gpgmepp
+    KPim${KF_MAJOR_VERSION}::Libkleo
 )
 
 set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParserCore PROPERTIES
