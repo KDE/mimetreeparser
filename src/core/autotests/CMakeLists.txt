@@ -24,7 +24,7 @@ endfunction()
 
 function(add_mimetreeparser_crypto_unittest _name)
     add_executable(${_name} ${_name}.cpp setupenv.cpp)
-    target_link_libraries(${_name} PRIVATE QGpgmeQt6 Qt6::Core5Compat)
+    target_link_libraries(${_name} PRIVATE Gpgmepp Qt6::Core5Compat)
     target_include_directories(${_name} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/..
         ${GPGME_INCLUDE_DIRS}
@@ -92,6 +92,6 @@ target_link_libraries(partmodeltest
 )
 
 ecm_add_test(attachmentmodeltest.cpp
-    LINK_LIBRARIES KPim6MimeTreeParserCore Qt::Test
+    LINK_LIBRARIES KPim6MimeTreeParserCore Qt::Test Gpgmepp
     NAME_PREFIX "core-"
 )
