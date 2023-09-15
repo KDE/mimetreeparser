@@ -48,6 +48,7 @@ public:
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     KMime::Message::Ptr mMessage;
     KMime::Content *protectedHeaderNode = nullptr;
+    std::unique_ptr<KMime::Content> ownedContent;
 };
 
 MessageParser::MessageParser(QObject *parent)
@@ -85,10 +86,23 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing and decryption/verification: " << time.elapsed();
     d->mParser = parser;
     const auto contentParts = parser->collectContentParts();
-    for (const auto &part : parser->collectContentParts()) {
+    for (const auto &part : contentParts) {
         const auto contentType = part->node()->contentType();
         if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
+            const auto contentDisposition = part->node()->contentDisposition();
+
+            // Check for legacy format for protected-headers
+            if (contentDisposition && contentDisposition->disposition() == KMime::Headers::CDinline) {
+                d->ownedContent = std::make_unique<KMime::Content>();
+                // we put the decoded content as encoded content of the new node
+                // as the header are inline in part->node()
+                d->ownedContent->setContent(part->node()->decodedContent());
+                d->ownedContent->parse();
+                d->protectedHeaderNode = d->ownedContent.get();
+                break;
+            }
             d->protectedHeaderNode = part->node();
+            break;
         }
     }
 
