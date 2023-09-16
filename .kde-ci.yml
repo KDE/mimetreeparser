@@ -7,8 +7,8 @@ Dependencies:
     'frameworks/extra-cmake-modules': '@latest'
     'frameworks/kcalendarcore' : '@latest'
     'frameworks/kwidgetsaddons' : '@latest'
-    'pim/kmime' : '@same'
-    'pim/kmbox' : '@same'
+    'pim/kmime' : '@latest'
+    'pim/kmbox' : '@latest'
     'pim/libkleo' : '@same'
 
 Options:
