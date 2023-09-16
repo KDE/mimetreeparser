@@ -436,98 +436,95 @@ msgstr "Kim&e:"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&Dosya"
 
 #: widgets/messageviewerdialog.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "&Kaydet"
 
 #: widgets/messageviewerdialog.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Encrypted"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr "Şifrelenmiş"
+msgstr "Şifresi Çözülmüş Kaydet"
 
 #: widgets/messageviewerdialog.cpp:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "Yazdırma Önizlemesi"
 
 #: widgets/messageviewerdialog.cpp:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "Ya&zdır"
 
 #: widgets/messageviewerdialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "Davet"
+msgstr "&Dolaşım"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "Önceki İleti"
 
 #: widgets/messageviewerdialog.cpp:104
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "Sonraki İleti"
 
 #: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Dosyayı Kaydet"
 
 #: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr ""
+msgstr "E-posta dosyaları (*.mbox)"
 
 #: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "%1 dosyası oluşturulamadı."
 
 #: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "İleti kaydedilirken hata"
 
 #: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Şifresi Çözülmüş Dosya Kaydet"
 
 #: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "%1 dosyası oluşturulamadı."
 
 #: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "Belgeyi Yazdır"
 
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "Dosya okunamıyor"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format
@@ -538,14 +535,3 @@ msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin.
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"
-
-#~ msgid "fwd"
-#~ msgstr "ilt"
-
-#~ msgid "re"
-#~ msgstr "ynt"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr ""
-#~ "Verinin şifresi çözülemedi: Alıcılar için hiçbir anahtar bulunamadı."
