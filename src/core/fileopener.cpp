@@ -5,6 +5,7 @@
 #include "fileopener.h"
 #include "mimetreeparser_core_debug.h"
 
+#include <KMbox/MBox>
 #include <QFile>
 #include <QMimeDatabase>
 #include <QMimeType>
@@ -72,62 +73,21 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     return message;
 }
 
-QVector<KMime::Message::Ptr> openMbox(const QByteArray &content)
+QVector<KMime::Message::Ptr> openMbox(const QString &fileName)
 {
-    int startOfMessage = 0;
-    if (content.startsWith("From ")) {
-        startOfMessage = content.indexOf('\n');
-        if (startOfMessage == -1) {
-            return {};
-        }
-        startOfMessage += 1; // the message starts after the '\n'
+    KMBox::MBox mbox;
+    const bool ok = mbox.load(fileName);
+    if (!ok) {
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "Unable to open" << fileName;
+        return {};
     }
-    QVector<KMime::Message::Ptr> listMessages;
 
-    // check for multiple messages in the file
-    int endOfMessage = content.indexOf("\nFrom ", startOfMessage);
-    while (endOfMessage != -1) {
-        if (content.indexOf("From ", startOfMessage) == startOfMessage) {
-            startOfMessage = content.indexOf('\n', startOfMessage);
-            if (startOfMessage == -1) {
-                break;
-            }
-            startOfMessage += 1;
-        }
-        auto msg = new KMime::Message;
-        msg->setContent(KMime::CRLFtoLF(content.mid(startOfMessage, endOfMessage - startOfMessage)));
-        msg->parse();
-        if (!msg->hasContent()) {
-            delete msg;
-            msg = nullptr;
-            return {};
-        }
-        KMime::Message::Ptr mMsg(msg);
-        listMessages << mMsg;
-        startOfMessage = endOfMessage + 1;
-        endOfMessage = content.indexOf("\nFrom ", startOfMessage);
+    QVector<KMime::Message::Ptr> messages;
+    const auto entries = mbox.entries();
+    for (const auto &entry : entries) {
+        messages << KMime::Message::Ptr(mbox.readMessage(entry));
     }
-    if (endOfMessage == -1) {
-        if (content.indexOf("From ", startOfMessage) == startOfMessage) {
-            startOfMessage = content.indexOf('\n', startOfMessage);
-            if (startOfMessage == -1) {
-                return {};
-            }
-            startOfMessage += 1;
-        }
-        endOfMessage = content.length();
-        auto msg = new KMime::Message;
-        msg->setContent(KMime::CRLFtoLF(content.mid(startOfMessage, endOfMessage - startOfMessage)));
-        msg->parse();
-        if (!msg->hasContent()) {
-            delete msg;
-            msg = nullptr;
-            return {};
-        }
-        KMime::Message::Ptr mMsg(msg);
-        listMessages << mMsg;
-    }
-    return listMessages;
+    return messages;
 }
 }
 
@@ -154,8 +114,18 @@ QVector<KMime::Message::Ptr> FileOpener::openFile(const QString &fileName)
         return {openSmimeEncrypted(content)};
     } else if (mime.inherits(QStringLiteral("application/pgp-encrypted")) || fileName.endsWith(QStringLiteral(".asc"))) {
         return {openPgpEncrypted(content)};
+    } else if (content.startsWith("From ")) {
+        return openMbox(fileName);
     } else {
-        return openMbox(content);
+        auto msg = new KMime::Message;
+        msg->setContent(KMime::CRLFtoLF(content));
+        msg->parse();
+        if (!msg->hasContent()) {
+            delete msg;
+            msg = nullptr;
+            return {};
+        }
+        return {KMime::Message::Ptr(msg)};
     }
 
     return {};

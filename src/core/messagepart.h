@@ -124,7 +124,7 @@ private:
     bool mRoot;
 };
 
-class MimeMessagePart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT MimeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
@@ -141,7 +141,7 @@ private:
     friend class AlternativeMessagePart;
 };
 
-class MessagePartList : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT MessagePartList : public MessagePart
 {
     Q_OBJECT
 public:
@@ -155,7 +155,7 @@ public:
     QString htmlContent() const Q_DECL_OVERRIDE;
 };
 
-class TextMessagePart : public MessagePartList
+class MIMETREEPARSER_CORE_EXPORT TextMessagePart : public MessagePartList
 {
     Q_OBJECT
 public:
@@ -175,7 +175,7 @@ private:
     friend class ObjectTreeParser;
 };
 
-class AttachmentMessagePart : public TextMessagePart
+class MIMETREEPARSER_CORE_EXPORT AttachmentMessagePart : public TextMessagePart
 {
     Q_OBJECT
 public:
@@ -188,7 +188,7 @@ public:
     }
 };
 
-class HtmlMessagePart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT HtmlMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
@@ -201,7 +201,7 @@ public:
     };
 };
 
-class AlternativeMessagePart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT AlternativeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
@@ -234,7 +234,7 @@ private:
     friend class MultiPartAlternativeBodyPartFormatter;
 };
 
-class CertMessagePart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT CertMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
@@ -249,7 +249,7 @@ private:
     GpgME::ImportResult mInportResult;
 };
 
-class EncapsulatedRfc822MessagePart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
 {
     Q_OBJECT
 public:
@@ -265,7 +265,7 @@ private:
     const KMime::Message::Ptr mMessage;
 };
 
-class EncryptedMessagePart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT EncryptedMessagePart : public MessagePart
 {
     Q_OBJECT
     Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
@@ -322,7 +322,7 @@ protected:
     KMime::Content *mEncryptedNode;
 };
 
-class SignedMessagePart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT SignedMessagePart : public MessagePart
 {
     Q_OBJECT
     Q_PROPERTY(bool isSigned READ isSigned CONSTANT)
@@ -359,7 +359,7 @@ protected:
     friend EncryptedMessagePart;
 };
 
-class HeadersPart : public MessagePart
+class MIMETREEPARSER_CORE_EXPORT HeadersPart : public MessagePart
 {
     Q_OBJECT
 public:

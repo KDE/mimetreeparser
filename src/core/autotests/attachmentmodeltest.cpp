@@ -58,18 +58,12 @@ private Q_SLOTS:
 
         auto attachmentModel = messageParser.attachments();
         QTemporaryFile file;
-        if (file.open()) {
-            const auto fileName = attachmentModel->saveAttachmentToPath(0, file.fileName());
-            QCOMPARE(file.readAll(), "");
-            qWarning() << fileName;
-            QFile file2(fileName);
-            if (!file2.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                QVERIFY(false);
-            }
-            QVERIFY(!file2.readAll().isEmpty());
-        } else {
-            QVERIFY(false);
-        }
+        QVERIFY(file.open());
+        const auto fileName = attachmentModel->saveAttachmentToPath(0, file.fileName());
+        QCOMPARE(file.readAll(), "");
+        QFile file2(fileName);
+        QVERIFY(file2.open(QIODevice::ReadOnly | QIODevice::Text));
+        QVERIFY(!file2.readAll().isEmpty());
     }
 };
 

@@ -35,11 +35,12 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMAddQch)
+include(ECMAddTests)
 
 set(KF_MIN_VERSION "5.240.0")
-set(KPIM_MIME_VERSION "5.240.0")
 set(KPIM_MIME_VERSION "5.240.40")
 set(KPIM_LIBKLEO_VERSION "5.240.40")
+set(KPIM_MBOX_VERSION "5.23.40")
 set(GPGME_REQUIRED_VERSION "1.16.0")
 
 ecm_setup_version(PROJECT
@@ -66,6 +67,7 @@ find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6WidgetsAddons ${QT_MIN_VERSION} CONFIG)
 find_package(KPim6Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
+find_package(KPim6Mbox ${KPIM_MBOX_VERSION} CONFIG REQUIRED)
 find_package(KPim6Libkleo ${KPIM_LIBKLEO_VERSION} CONFIG REQUIRED)
 find_package(Gpgmepp ${GPGME_REQUIRED_VERSION} CONFIG REQUIRED)
 

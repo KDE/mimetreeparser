@@ -8,38 +8,6 @@ ecm_setup_version(PROJECT
     SOVERSION 6
 )
 
-# private library
-
-add_library(mimetreeparserprivate STATIC)
-set_target_properties(mimetreeparserprivate PROPERTIES POSITION_INDEPENDENT_CODE ON)
-add_definitions(-DTRANSLATION_DOMAIN=\"mimetreeparser\")
-target_sources(mimetreeparserprivate PUBLIC
-     messagepart.h
-     messagepart.cpp
-     cryptohelper.h
-     cryptohelper.cpp
-     utils.h
-     utils.cpp
-)
-target_link_libraries(mimetreeparserprivate
-PUBLIC
-    KPim6::Mime
-    KF6::I18n
-    Qt6::Gui
-    KF6::Codecs
-    Qt6::Core5Compat
-    Gpgmepp
-    KPim6::Libkleo
-)
-
-ecm_qt_declare_logging_category(mimetreeparserprivate
-    HEADER mimetreeparser_core_debug.h
-    IDENTIFIER MIMETREEPARSER_CORE_LOG
-    CATEGORY_NAME org.kde.pim.mimetreeparser.core
-    DESCRIPTION "mimetreeparser (pim lib)"
-    EXPORT MIMETREEPARSERNG
-)
-
 # public dynamic library
 
 
@@ -48,28 +16,42 @@ add_library(KPim6::MimeTreeParserCore
     ALIAS KPim6MimeTreeParserCore
 )
 
+ecm_qt_declare_logging_category(KPim6MimeTreeParserCore
+    HEADER mimetreeparser_core_debug.h
+    IDENTIFIER MIMETREEPARSER_CORE_LOG
+    CATEGORY_NAME org.kde.pim.mimetreeparser.core
+    DESCRIPTION "mimetreeparser (pim lib)"
+    EXPORT MIMETREEPARSERNG
+)
+
 target_sources(KPim6MimeTreeParserCore PRIVATE
      errors.h
      attachmentmodel.h
      bodypartformatter.h
      bodypartformatterbasefactory.h
      bodypartformatterbasefactory_p.h
+     cryptohelper.h
      enums.h
      fileopener.h
      htmlutils.h
      messageparser.h
+     messagepart.h
      objecttreeparser.h
      partmetadata.h
      partmodel.h
+     utils.h
      attachmentmodel.cpp
      bodypartformatter.cpp
      bodypartformatter_impl.cpp
      bodypartformatterbasefactory.cpp
+     cryptohelper.cpp
      fileopener.cpp
      htmlutils.cpp
      messageparser.cpp
+     messagepart.cpp
      objecttreeparser.cpp
      partmodel.cpp
+     utils.cpp
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -84,10 +66,13 @@ target_include_directories(KPim6MimeTreeParserCore
 target_link_libraries(KPim6MimeTreeParserCore
 PUBLIC
     KPim6::Mime
+    KPim6::Mbox
     KF6::I18n
     Qt6::Gui
 PRIVATE
-    mimetreeparserprivate
+    KF${KF_MAJOR_VERSION}::Codecs
+    Gpgmepp
+    KPim${KF_MAJOR_VERSION}::Libkleo
 )
 
 set_target_properties(KPim6MimeTreeParserCore PROPERTIES

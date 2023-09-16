@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:47+0000\n"
-"PO-Revision-Date: 2023-08-27 11:09+0200\n"
+"PO-Revision-Date: 2023-09-15 05:53+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -439,98 +439,95 @@ msgstr "&ვის:"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&ფაილი"
 
 #: widgets/messageviewerdialog.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "&შენახვა"
 
 #: widgets/messageviewerdialog.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Encrypted"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr "დაშიფრული"
+msgstr "გაშიფრულის შენახვა"
 
 #: widgets/messageviewerdialog.cpp:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "დასაბეჭდის გადახედვა"
 
 #: widgets/messageviewerdialog.cpp:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "&ბეჭდვა"
 
 #: widgets/messageviewerdialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "მოწვევა"
+msgstr "&ნავიგაცია"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "წინა შეტყობინება"
 
 #: widgets/messageviewerdialog.cpp:104
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "შემდეგი შეტყობინება"
 
 #: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "ფაილის შენახვა"
 
 #: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr ""
+msgstr "ელფოსტის ფაილები (*.mbox)"
 
 #: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "%1: ფაილის შექმნის შეცდომა."
 
 #: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "შეტყობინების შენახვის შეცდომა"
 
 #: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "გაშიფრული ფაილის შენახვა"
 
 #: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "%1: ფაილის შექმნის შეცდომა."
 
 #: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "დოკუმენტის დაბეჭდვა"
 
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "ფაილის წაკითხვა შეუძლებელია"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format

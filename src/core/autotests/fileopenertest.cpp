@@ -62,12 +62,9 @@ private Q_SLOTS:
     void openEmptyFile()
     {
         QTemporaryFile file;
-        if (file.open()) {
-            const auto messages = FileOpener::openFile(file.fileName());
-            QCOMPARE(messages.count(), 0);
-        } else {
-            QVERIFY(false);
-        }
+        QVERIFY(file.open());
+        const auto messages = FileOpener::openFile(file.fileName());
+        QCOMPARE(messages.count(), 0);
     }
 };
 
