@@ -69,10 +69,12 @@ PUBLIC
     KPim6::Mbox
     KF6::I18n
     Qt6::Gui
+    Qt6::Core5Compat
 PRIVATE
-    KF${KF_MAJOR_VERSION}::Codecs
+    KF6::Codecs
     Gpgmepp
-    KPim${KF_MAJOR_VERSION}::Libkleo
+    KPim6::Libkleo
+
 )
 
 set_target_properties(KPim6MimeTreeParserCore PROPERTIES

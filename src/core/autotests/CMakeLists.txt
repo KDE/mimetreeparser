@@ -60,6 +60,7 @@ add_gpg_crypto_test(mimetreeparsertest core-mimetreeparsertest)
 target_link_libraries(mimetreeparsertest PUBLIC
     Qt::Test
     KPim6::MimeTreeParserCore
+    Gpgmepp
 )
 
 add_executable(gpgerrortest gpgerrortest.cpp)
@@ -74,6 +75,7 @@ add_executable(fileopenertest fileopenertest.cpp)
 target_link_libraries(fileopenertest PUBLIC
     Qt::Test
     KPim6::MimeTreeParserCore
+    Gpgmepp
 )
 add_test(NAME core-fileopenertest COMMAND $<TARGET_FILE:fileopenertest>)
 
@@ -83,6 +85,7 @@ add_gpg_crypto_test(partmodeltest core-partmodeltest)
 target_link_libraries(partmodeltest
     Qt::Test
     KPim6::MimeTreeParserCore
+    Gpgmepp
 )
 
 ecm_add_test(attachmentmodeltest.cpp
