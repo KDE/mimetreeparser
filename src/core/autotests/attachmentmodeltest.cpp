@@ -6,7 +6,9 @@
 
 #include "attachmentmodel.h"
 #include "messageparser.h"
+
 #include <QAbstractItemModelTester>
+#include <QSignalSpy>
 #include <QTemporaryFile>
 
 KMime::Message::Ptr readMailFromFile(const QString &mailFile)
@@ -26,10 +28,6 @@ class AttachmentModelTest : public QObject
     Q_OBJECT
 
 private Q_SLOTS:
-
-    void initTestCase()
-    {
-    }
 
     void openMailWithOneAttachementTest()
     {
@@ -60,10 +58,53 @@ private Q_SLOTS:
         QTemporaryFile file;
         QVERIFY(file.open());
         const auto fileName = attachmentModel->saveAttachmentToPath(0, file.fileName());
-        QCOMPARE(file.readAll(), "");
         QFile file2(fileName);
         QVERIFY(file2.open(QIODevice::ReadOnly | QIODevice::Text));
         QVERIFY(!file2.readAll().isEmpty());
+    }
+
+    void openTest()
+    {
+        MessageParser messageParser;
+        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
+
+        auto attachmentModel = messageParser.attachments();
+        QSignalSpy spy(attachmentModel, &AttachmentModel::errorOccurred);
+        QVERIFY(spy.isValid());
+
+        attachmentModel->openAttachment(0);
+
+        // Check no error occurred
+        QCOMPARE(spy.count(), 0);
+    }
+
+    void saveReadonlyTest()
+    {
+        MessageParser messageParser;
+        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
+
+        auto attachmentModel = messageParser.attachments();
+        QTemporaryFile file;
+        QVERIFY(file.open());
+        const auto fileName = attachmentModel->saveAttachmentToPath(0, file.fileName(), true);
+        QFile file2(fileName);
+        QVERIFY(file2.open(QIODevice::ReadOnly | QIODevice::Text));
+        QVERIFY(!file2.readAll().isEmpty());
+        QVERIFY(file.permissions() & QFileDevice::ReadUser);
+    }
+
+    void saveInvalidPathTest()
+    {
+        MessageParser messageParser;
+        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
+
+        auto attachmentModel = messageParser.attachments();
+        QSignalSpy spy(attachmentModel, &AttachmentModel::errorOccurred);
+        QVERIFY(spy.isValid());
+
+        const auto fileName = attachmentModel->saveAttachmentToPath(0, QStringLiteral("/does/not/exist"));
+        QList<QVariant> arguments = spy.takeFirst();
+        QVERIFY(arguments.at(0).userType() == QMetaType::QString);
     }
 };
 

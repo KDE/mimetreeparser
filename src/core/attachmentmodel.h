@@ -49,19 +49,18 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    Q_INVOKABLE bool saveAttachmentToDisk(const int row);
     Q_INVOKABLE bool openAttachment(const int row);
     Q_INVOKABLE bool importPublicKey(const int row);
 
-    bool saveAttachmentToDisk(const MimeTreeParser::MessagePart::Ptr &message);
     bool openAttachment(const MimeTreeParser::MessagePart::Ptr &message);
     bool importPublicKey(const MimeTreeParser::MessagePart::Ptr &message);
 
-    QString saveAttachmentToPath(const int row, const QString &path, bool readonly = false);
+    Q_INVOKABLE QString saveAttachmentToPath(const int row, const QString &path, bool readonly = false);
     QString saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly = false);
 
 Q_SIGNALS:
     void info(const QString &message);
+    void errorOccurred(const QString &message);
 
 private:
     std::unique_ptr<AttachmentModelPrivate> d;

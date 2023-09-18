@@ -37,6 +37,7 @@ class MessageViewerDialog::Private
 public:
     int currentIndex = 0;
     QVector<KMime::Message::Ptr> messages;
+    QString fileName;
     MimeTreeParser::Widgets::MessageViewer *messageViewer = nullptr;
     QAction *nextAction = nullptr;
     QAction *previousAction = nullptr;
@@ -110,14 +111,12 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
 
 void MessageViewerDialog::Private::save(QWidget *parent)
 {
-    const QString fileName = QFileDialog::getSaveFileName(parent,
-                                                          i18nc("@title:window", "Save File"),
-                                                          QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
-                                                          i18nc("File dialog accepted files", "Email files (*.mbox)"));
+    const QString location =
+        QFileDialog::getSaveFileName(parent, i18nc("@title:window", "Save File"), fileName, i18nc("File dialog accepted files", "Email files (*.mbox)"));
 
-    QSaveFile file(fileName);
+    QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18n("File %1 could not be created.", fileName), i18n("Error saving message"));
+        KMessageBox::error(parent, i18n("File %1 could not be created.", location), i18n("Error saving message"));
         return;
     }
     file.write(messages[currentIndex]->encodedContent());
@@ -126,14 +125,14 @@ void MessageViewerDialog::Private::save(QWidget *parent)
 
 void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
 {
-    const QString fileName = QFileDialog::getSaveFileName(parent,
+    const QString location = QFileDialog::getSaveFileName(parent,
                                                           i18nc("@title:window", "Save Decrypted File"),
-                                                          QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+                                                          fileName,
                                                           i18nc("File dialog accepted files", "Email files (*.mbox)"));
 
-    QSaveFile file(fileName);
+    QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", fileName), i18n("Error saving message"));
+        KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", location), i18n("Error saving message"));
         return;
     }
     auto message = messages[currentIndex];
@@ -188,6 +187,7 @@ MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *paren
     : QDialog(parent)
     , d(std::make_unique<Private>())
 {
+    d->fileName = fileName;
     const auto mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins({});
 
