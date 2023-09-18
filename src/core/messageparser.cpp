@@ -16,13 +16,20 @@ namespace
 {
 
 template<typename T>
-const T *findHeader(KMime::Content *content)
+const T *findHeader(KMime::Content *content, KMime::Content *protectedHeaderNode)
 {
+    if (protectedHeaderNode) {
+        auto header = protectedHeaderNode->header<T>();
+        if (header) {
+            return header;
+        }
+    }
+
     auto header = content->header<T>();
     if (header || !content->parent()) {
         return header;
     }
-    return findHeader<T>(content->parent());
+    return findHeader<T>(content->parent(), nullptr);
 }
 
 const KMime::Headers::Base *findHeader(KMime::Content *content, const char *headerType)
@@ -40,6 +47,8 @@ class MessagePartPrivate
 public:
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     KMime::Message::Ptr mMessage;
+    KMime::Content *protectedHeaderNode = nullptr;
+    std::unique_ptr<KMime::Content> ownedContent;
 };
 
 MessageParser::MessageParser(QObject *parent)
@@ -76,6 +85,27 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     parser->decryptParts();
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing and decryption/verification: " << time.elapsed();
     d->mParser = parser;
+    const auto contentParts = parser->collectContentParts();
+    for (const auto &part : contentParts) {
+        const auto contentType = part->node()->contentType();
+        if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
+            const auto contentDisposition = part->node()->contentDisposition();
+
+            // Check for legacy format for protected-headers
+            if (contentDisposition && contentDisposition->disposition() == KMime::Headers::CDinline) {
+                d->ownedContent = std::make_unique<KMime::Content>();
+                // we put the decoded content as encoded content of the new node
+                // as the header are inline in part->node()
+                d->ownedContent->setContent(part->node()->decodedContent());
+                d->ownedContent->parse();
+                d->protectedHeaderNode = d->ownedContent.get();
+                break;
+            }
+            d->protectedHeaderNode = part->node();
+            break;
+        }
+    }
+
     Q_EMIT htmlChanged();
 }
 
@@ -112,65 +142,83 @@ AttachmentModel *MessageParser::attachments() const
 QString MessageParser::subject() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Subject>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::Subject>(d->mMessage.get(), d->protectedHeaderNode);
+        if (header) {
+            return header->asUnicodeString();
         }
-        return header->asUnicodeString();
-    } else {
-        return QString();
     }
+
+    return QString();
 }
 
 QString MessageParser::from() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::From>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::From>(d->mMessage.get(), d->protectedHeaderNode);
+        if (header) {
+            return header->displayString();
         }
-        return header->displayString();
-    } else {
-        return QString();
     }
+    return QString();
 }
 
 QString MessageParser::sender() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get(), d->protectedHeaderNode);
+        if (header) {
+            return header->displayString();
         }
-        return header->displayString();
-    } else {
-        return QString();
     }
+
+    return QString();
 }
+
 QString MessageParser::to() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::To>(d->mMessage.get());
+        const auto header = findHeader<KMime::Headers::To>(d->mMessage.get(), d->protectedHeaderNode);
         if (!header) {
             return {};
         }
         return header->displayString();
-    } else {
-        return i18nc("displayed when a mail has unknown sender, receiver or date", "Unknown");
     }
+    return QString();
+}
+
+QString MessageParser::cc() const
+{
+    if (d->mMessage) {
+        const auto header = findHeader<KMime::Headers::Cc>(d->mMessage.get(), d->protectedHeaderNode);
+        if (!header) {
+            return {};
+        }
+        return header->displayString();
+    }
+    return QString();
+}
+
+QString MessageParser::bcc() const
+{
+    if (d->mMessage) {
+        const auto header = findHeader<KMime::Headers::Bcc>(d->mMessage.get(), d->protectedHeaderNode);
+        if (!header) {
+            return {};
+        }
+        return header->displayString();
+    }
+    return QString();
 }
 
 QDateTime MessageParser::date() const
 {
     if (d->mMessage) {
-        const auto header = findHeader<KMime::Headers::Date>(d->mMessage.get());
-        if (!header) {
-            return {};
+        const auto header = findHeader<KMime::Headers::Date>(d->mMessage.get(), d->protectedHeaderNode);
+        if (header) {
+            return header->dateTime();
         }
-        return header->dateTime();
-    } else {
-        return QDateTime();
     }
+    return QDateTime();
 }
 
 #include "moc_messageparser.cpp"

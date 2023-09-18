@@ -168,13 +168,27 @@ public:
         isTrimmed = false;
 
         const auto parts = mParser->collectContentParts();
+        MimeTreeParser::MessagePart::List filteredParts;
+
         for (const auto &part : parts) {
+            const auto contentType = part->node()->contentType();
+            if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
+                const auto contentDisposition = part->node()->contentDisposition();
+                if (contentDisposition && contentDisposition->disposition() == KMime::Headers::CDinline) {
+                    continue;
+                }
+            }
+            filteredParts << part;
+        }
+
+        for (const auto &part : std::as_const(filteredParts)) {
             checkPart(part);
             if (auto encapsulatedPart = part.dynamicCast<MimeTreeParser::EncapsulatedRfc822MessagePart>()) {
                 findEncapsulated(encapsulatedPart);
             }
         }
-        for (const auto &part : parts) {
+
+        for (const auto &part : std::as_const(filteredParts)) {
             if (mMimeTypeCache[part.data()] == "text/calendar") {
                 mParts.prepend(part);
             } else {
