@@ -15,6 +15,8 @@ ListView {
     readonly property string from: messageParser.from
     readonly property string sender: messageParser.sender
     readonly property string to: messageParser.to
+    readonly property string cc: messageParser.cc
+    readonly property string bcc: messageParser.bcc
     readonly property date dateTime: messageParser.date
 
     property alias rootIndex: visualModel.rootIndex
