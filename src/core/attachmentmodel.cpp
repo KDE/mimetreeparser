@@ -20,9 +20,13 @@
 #include <QIcon>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QUrl>
+
+namespace
+{
 
 QString sizeHuman(float size)
 {
@@ -42,6 +46,71 @@ QString sizeHuman(float size)
     } else {
         return QString().setNum(size, 'f', 2) + QStringLiteral(" ") + unit;
     }
+}
+
+// SPDX-SnippetBegin
+// Copyright (C) 2016 The Qt Company Ltd.
+// SPDX-License-Identifier: GPL-3.0-only
+
+#define WINDOWS_DEVICES_PATTERN "(CON|AUX|PRN|NUL|COM[1-9]|LPT[1-9])(\\..*)?"
+
+// Naming a file like a device name will break on Windows, even if it is
+// "com1.txt". Since we are cross-platform, we generally disallow such file
+//  names.
+const QRegularExpression &windowsDeviceNoSubDirPattern()
+{
+    static const QRegularExpression rc(QStringLiteral("^" WINDOWS_DEVICES_PATTERN "$"), QRegularExpression::CaseInsensitiveOption);
+    Q_ASSERT(rc.isValid());
+    return rc;
+}
+
+const QRegularExpression &windowsDeviceSubDirPattern()
+{
+    static const QRegularExpression rc(QStringLiteral("^.*[/\\\\]" WINDOWS_DEVICES_PATTERN "$"), QRegularExpression::CaseInsensitiveOption);
+    Q_ASSERT(rc.isValid());
+    return rc;
+}
+
+/* Validate a file base name, check for forbidden characters/strings. */
+
+#define SLASHES "/\\"
+
+static const char notAllowedCharsSubDir[] = ",^@={}[]~!?:&*\"|#%<>$\"'();`' ";
+static const char notAllowedCharsNoSubDir[] = ",^@={}[]~!?:&*\"|#%<>$\"'();`' " SLASHES;
+
+static const char *notAllowedSubStrings[] = {".."};
+
+bool validateFileName(const QString &name, bool allowDirectories)
+{
+    if (name.isEmpty()) {
+        return false;
+    }
+
+    // Characters
+    const char *notAllowedChars = allowDirectories ? notAllowedCharsSubDir : notAllowedCharsNoSubDir;
+    for (const char *c = notAllowedChars; *c; c++) {
+        if (name.contains(QLatin1Char(*c))) {
+            return false;
+        }
+    }
+
+    // Substrings
+    const int notAllowedSubStringCount = sizeof(notAllowedSubStrings) / sizeof(const char *);
+    for (int s = 0; s < notAllowedSubStringCount; s++) {
+        const QLatin1String notAllowedSubString(notAllowedSubStrings[s]);
+        if (name.contains(notAllowedSubString)) {
+            return false;
+        }
+    }
+
+    // Windows devices
+    bool matchesWinDevice = name.contains(windowsDeviceNoSubDirPattern());
+    if (!matchesWinDevice && allowDirectories) {
+        matchesWinDevice = name.contains(windowsDeviceSubDirPattern());
+    }
+    return !matchesWinDevice;
+}
+// SPDX-SnippetEnd
 }
 
 class AttachmentModelPrivate
@@ -209,23 +278,24 @@ bool AttachmentModel::openAttachment(const int row)
 
 bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
 {
-    QTemporaryFile file;
-
-    const QString fileName = message->filename();
-    if (fileName.isEmpty()) {
+    const QString tempDir = QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName();
+    QString fileName = message->filename();
+    QString errorMessage;
+    if (message->filename().isEmpty() || validateFileName(fileName, false)) {
+        QTemporaryFile file;
         const auto mimetype = d->mimeDb.mimeTypeForName(QString::fromLatin1(message->mimeType()));
-        file.setFileTemplate(QStringLiteral("XXXXXX.") + mimetype.preferredSuffix());
+        file.setFileTemplate(tempDir + QStringLiteral("XXXXXX.") + mimetype.preferredSuffix());
+        file.setAutoRemove(false);
+        if (!file.open()) {
+            Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to create temporary file."));
+            return false;
+        }
+        fileName = file.fileName();
     } else {
-        file.setFileTemplate(fileName);
+        fileName = tempDir + QLatin1Char('/') + message->filename();
     }
 
-    file.setAutoRemove(false);
-    if (!file.open()) {
-        Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to create temporary file."));
-        return false;
-    }
-
-    const auto filePath = saveAttachmentToPath(message, file.fileName(), true);
+    const auto filePath = saveAttachmentToPath(message, fileName, true);
     if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
         Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
         return false;
