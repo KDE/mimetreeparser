@@ -176,7 +176,3 @@ install(EXPORT KPim6MimeTreeParserCoreTargets
     FILE KPim6MimeTreeParserCoreTargets.cmake
     NAMESPACE KPim6::
 )
-
-if (BUILD_TESTING)
-    add_subdirectory(autotests)
-endif()

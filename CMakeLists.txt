@@ -94,6 +94,7 @@ endif()
 add_subdirectory(src)
 if (BUILD_TESTING)
     add_subdirectory(examples)
+    add_subdirectory(autotests)
 endif()
 
 install(FILES

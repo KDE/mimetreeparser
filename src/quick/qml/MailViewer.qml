@@ -6,6 +6,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import Qt5Compat.GraphicalEffects
+import Qt.labs.platform 1.1 as QLP
 
 import org.kde.pim.mimetreeparser 1.0
 import org.kde.kirigami 2.20 as Kirigami
@@ -217,11 +218,32 @@ Kirigami.ScrollablePage {
 
                     actionIcon: 'download'
                     actionTooltip: i18ndc("mimetreeparser", "@action:button", "Save attachment")
-                    onExecute: mailPartView.attachmentModel.saveAttachmentToDisk(index)
                     onClicked: mailPartView.attachmentModel.openAttachment(index)
                     onPublicKeyImport: mailPartView.attachmentModel.importPublicKey(index)
+                    onExecute: {
+                        const dialog = saveFileDialog.createObject(applicationWindow(), {
+                            fileName: name,
+                        });
+                        dialog.onAccepted.connect(() => {
+                            mailPartView.attachmentModel.saveAttachmentToPath(0, dialog.file.toString().slice(7))
+                        });
+                        dialog.open();
+                    }
                 }
             }
+        }
+    }
+
+    Component {
+        id: saveFileDialog
+
+        QLP.FileDialog {
+            required property string fileName
+
+            title: i18ndc("mimetreeparser", "@window:title", "Save Attachment As")
+            currentFile: QLP.StandardPaths.writableLocation(QLP.StandardPaths.DownloadLocation) + '/' + fileName
+            folder: QLP.StandardPaths.writableLocation(QLP.StandardPaths.DownloadLocation)
+            fileMode: QLP.FileDialog.SaveFile
         }
     }
 
@@ -229,6 +251,10 @@ Kirigami.ScrollablePage {
         target: mailPartView.attachmentModel
 
         function onInfo(message) {
+            applicationWindow().showPassiveNotification(message);
+        }
+
+        function onErrorOccurred(message) {
             applicationWindow().showPassiveNotification(message);
         }
     }

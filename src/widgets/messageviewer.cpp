@@ -2,10 +2,12 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "messageviewer.h"
-#include "../core/objecttreeparser.h"
+
 #include "attachmentview_p.h"
 #include "messagecontainerwidget_p.h"
+#include "mimetreeparser_widgets_debug.h"
 #include "urlhandler_p.h"
+
 #include <KCalendarCore/Event>
 #include <KCalendarCore/ICalFormat>
 #include <KCalendarCore/Incidence>
@@ -13,14 +15,17 @@
 #include <KMessageWidget>
 #include <MimeTreeParserCore/AttachmentModel>
 #include <MimeTreeParserCore/MessageParser>
+#include <MimeTreeParserCore/ObjectTreeParser>
 #include <MimeTreeParserCore/PartModel>
+
 #include <QAction>
-#include <QDebug>
+#include <QFileDialog>
 #include <QFormLayout>
 #include <QGroupBox>
 #include <QLabel>
 #include <QMenu>
 #include <QScrollArea>
+#include <QSplitter>
 #include <QVBoxLayout>
 
 using namespace MimeTreeParser::Widgets;
@@ -30,8 +35,12 @@ class MessageViewer::Private
 public:
     Private(MessageViewer *q_ptr)
         : q{q_ptr}
+        , messageWidget(new KMessageWidget(q_ptr))
     {
         createActions();
+
+        messageWidget->setCloseButtonVisible(true);
+        messageWidget->hide();
     }
 
     MessageViewer *q;
@@ -44,6 +53,7 @@ public:
     AttachmentView *attachmentView = nullptr;
     MimeTreeParser::MessagePart::List selectedParts;
     UrlHandler *urlHandler = nullptr;
+    KMessageWidget *const messageWidget = nullptr;
 
     QAction *saveAttachmentAction = nullptr;
     QAction *openAttachmentAction = nullptr;
@@ -86,8 +96,15 @@ void MessageViewer::Private::openSelectedAttachments()
 void MessageViewer::Private::saveSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
+
     for (const auto &part : std::as_const(selectedParts)) {
-        parser.attachments()->saveAttachmentToDisk(part);
+        QString pname = part->filename();
+        if (pname.isEmpty()) {
+            pname = i18nc("Fallback when file has no name", "unnamed");
+        }
+
+        const QString path = QFileDialog::getSaveFileName(q, i18n("Save Attachment As"), pname);
+        parser.attachments()->saveAttachmentToPath(part, path);
     }
 }
 
@@ -134,6 +151,8 @@ MessageViewer::MessageViewer(QWidget *parent)
     setChildrenCollapsible(false);
     setSizes({0});
 
+    addWidget(d->messageWidget);
+
     auto headersArea = new QWidget(this);
     headersArea->setSizePolicy(sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
     addWidget(headersArea);
@@ -145,13 +164,14 @@ MessageViewer::MessageViewer(QWidget *parent)
     auto widget = new QWidget(this);
     d->layout = new QVBoxLayout(widget);
     d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
+    d->layout->setObjectName(QStringLiteral("PartLayout"));
 
     d->scrollArea = new QScrollArea(this);
     d->scrollArea->setWidget(widget);
     d->scrollArea->setWidgetResizable(true);
     d->scrollArea->setBackgroundRole(QPalette::Base);
     addWidget(d->scrollArea);
-    setStretchFactor(1, 2);
+    setStretchFactor(2, 2);
 
     d->attachmentView = new AttachmentView(this);
     d->attachmentView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
@@ -296,7 +316,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         default:
-            qWarning() << parts->data(parts->index(i, 0, parent), PartModel::ContentRole) << type;
+            qCWarning(MIMETREEPARSER_WIDGET_LOG) << parts->data(parts->index(i, 0, parent), PartModel::ContentRole) << type;
         }
     }
 }
@@ -305,6 +325,18 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
 {
     setUpdatesEnabled(false);
     d->parser.setMessage(message);
+
+    connect(d->parser.attachments(), &AttachmentModel::info, this, [this](const QString &message) {
+        d->messageWidget->setMessageType(KMessageWidget::Information);
+        d->messageWidget->setText(message);
+        d->messageWidget->animatedShow();
+    });
+
+    connect(d->parser.attachments(), &AttachmentModel::errorOccurred, this, [this](const QString &message) {
+        d->messageWidget->setMessageType(KMessageWidget::Error);
+        d->messageWidget->setText(message);
+        d->messageWidget->animatedShow();
+    });
 
     for (int i = d->formLayout->rowCount() - 1; i >= 0; i--) {
         d->formLayout->removeRow(i);

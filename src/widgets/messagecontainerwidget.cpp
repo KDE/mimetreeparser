@@ -24,30 +24,24 @@ const int borderWidth = 5;
 
 QColor getColor(PartModel::SecurityLevel securityLevel)
 {
-    if (securityLevel == PartModel::Good) {
-        return QColor(39, 174, 96); // Window: ForegroundPositive
-    }
-    if (securityLevel == PartModel::Bad) {
-        return QColor(218, 68, 83); // Window: ForegroundNegative
-    }
-    if (securityLevel == PartModel::NotSoGood) {
-        return QColor(246, 116, 0); // Window: ForegroundNeutral
-    }
-    return QColor();
+    const static QHash<PartModel::SecurityLevel, QColor> colors{
+        {PartModel::Good, QColor(39, 174, 96)}, // Window: ForegroundPositive
+        {PartModel::Bad, QColor(218, 68, 83)}, // Window: ForegroundNegative
+        {PartModel::NotSoGood, QColor(246, 116, 0)}, // Window: ForegroundNeutral
+    };
+
+    return colors.value(securityLevel, QColor());
 }
 
 KMessageWidget::MessageType getType(PartModel::SecurityLevel securityLevel)
 {
-    if (securityLevel == PartModel::Good) {
-        return KMessageWidget::MessageType::Positive;
-    }
-    if (securityLevel == PartModel::Bad) {
-        return KMessageWidget::MessageType::Error;
-    }
-    if (securityLevel == PartModel::NotSoGood) {
-        return KMessageWidget::MessageType::Warning;
-    }
-    return KMessageWidget::MessageType::Information;
+    const static QHash<PartModel::SecurityLevel, KMessageWidget::MessageType> messageTypes{
+        {PartModel::Good, KMessageWidget::MessageType::Positive},
+        {PartModel::Bad, KMessageWidget::MessageType::Error},
+        {PartModel::NotSoGood, KMessageWidget::MessageType::Warning},
+    };
+
+    return messageTypes.value(securityLevel, KMessageWidget::MessageType::Information);
 }
 
 QString getDetails(const SignatureInfo &signatureDetails)
@@ -193,18 +187,20 @@ void MessageWidgetContainer::createLayout()
 
     if (m_isEncrypted && m_displayEncryptionInfo) {
         auto encryptionMessage = new KMessageWidget(this);
-        encryptionMessage->setMessageType(getType(m_encryptionSecurityLevel));
+        encryptionMessage->setObjectName(QStringLiteral("EncryptionMessage"));
         encryptionMessage->setCloseButtonVisible(false);
         encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
 
         QString text;
         if (m_encryptionInfo.keyId.isEmpty()) {
+            encryptionMessage->setMessageType(KMessageWidget::Error);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted but we don't have the key for it.", QString::fromUtf8(m_encryptionInfo.keyId));
             } else {
                 text = i18n("This message is encrypted but we don't have the key for it.");
             }
         } else {
+            encryptionMessage->setMessageType(KMessageWidget::Positive);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted.");
             } else {
@@ -254,6 +250,7 @@ void MessageWidgetContainer::createLayout()
 
     if (m_isSigned && m_displaySignatureInfo) {
         auto signatureMessage = new KMessageWidget(this);
+        signatureMessage->setObjectName(QStringLiteral("SignatureMessage"));
         signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
         signatureMessage->setCloseButtonVisible(false);
         signatureMessage->setText(getDetails(m_signatureInfo));

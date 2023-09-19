@@ -4,6 +4,7 @@
 
 #include "attachmentmodel.h"
 
+#include "mimetreeparser_core_debug.h"
 #include "objecttreeparser.h"
 
 #include <QGpgME/ImportJob>
@@ -12,7 +13,6 @@
 #include <KLocalizedString>
 #include <KMime/Content>
 
-#include <QDebug>
 #include <QDesktopServices>
 #include <QDir>
 #include <QFile>
@@ -20,6 +20,7 @@
 #include <QIcon>
 #include <QMimeDatabase>
 #include <QStandardPaths>
+#include <QTemporaryFile>
 #include <QUrl>
 
 QString sizeHuman(float size)
@@ -182,25 +183,11 @@ QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart:
         // convert CRLF to LF before writing text attachments to disk
         data = KMime::CRLFtoLF(data);
     }
-    const auto name = part->filename();
-    QString fname = path + name;
 
-    // Fallback name should we end up with an empty name
-    if (name.isEmpty()) {
-        fname = path + QStringLiteral("unnamed");
-        while (QFileInfo::exists(fname)) {
-            fname = fname + QStringLiteral("_1");
-        }
-    }
-
-    // A file with that name already exists, we assume it's the right file
-    if (QFileInfo::exists(fname)) {
-        return fname;
-    }
-    QFile f(fname);
+    QFile f(path);
     if (!f.open(QIODevice::ReadWrite)) {
-        qWarning() << "Failed to write attachment to file:" << fname << " Error: " << f.errorString();
-        Q_EMIT info(i18ndc("mimetreeparser", "@info", "Failed to save attachment."));
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to write attachment to file:" << path << " Error: " << f.errorString();
+        Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to save attachment."));
         return {};
     }
     f.write(data);
@@ -209,31 +196,8 @@ QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart:
         f.setPermissions(QFileDevice::ReadUser);
     }
     f.close();
-    qInfo() << "Wrote attachment to file: " << fname;
-    return fname;
-}
-
-bool AttachmentModel::saveAttachmentToDisk(const int row)
-{
-    const auto part = d->mAttachments.at(row);
-    return saveAttachmentToDisk(part);
-}
-
-bool AttachmentModel::saveAttachmentToDisk(const MimeTreeParser::MessagePart::Ptr &message)
-{
-    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
-    if (downloadDir.isEmpty()) {
-        downloadDir = QStringLiteral("~");
-    }
-    downloadDir += QLatin1Char('/') + qGuiApp->applicationName();
-    QDir{}.mkpath(downloadDir);
-
-    auto path = saveAttachmentToPath(message, downloadDir);
-    if (path.isEmpty()) {
-        return false;
-    }
-    Q_EMIT info(i18ndc("mimetreeparser", "@info", "Saved the attachment to disk: %1", path));
-    return true;
+    qCInfo(MIMETREEPARSER_CORE_LOG) << "Wrote attachment to file: " << path;
+    return path;
 }
 
 bool AttachmentModel::openAttachment(const int row)
@@ -244,17 +208,17 @@ bool AttachmentModel::openAttachment(const int row)
 
 bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
 {
-    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + QLatin1Char('/') + qGuiApp->applicationName();
-    QDir{}.mkpath(downloadDir);
-    const auto filePath = saveAttachmentToPath(message, downloadDir, true);
-    if (!filePath.isEmpty()) {
-        if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
-            Q_EMIT info(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
-            return false;
-        }
-        return true;
+    QTemporaryFile file;
+    if (!file.open()) {
+        Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to create temporary file."));
+        return false;
     }
-    Q_EMIT info(i18ndc("mimetreeparser", "@info", "Failed to save attachment for opening."));
+    const auto filePath = saveAttachmentToPath(message, file.fileName(), true);
+    if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
+        Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
+        return false;
+    }
+    return true;
     return false;
 }
 
@@ -271,22 +235,20 @@ bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &pa
     QGpgME::ImportJob *importJob = QGpgME::openpgp()->importJob();
 
     connect(importJob, &QGpgME::AbstractImportJob::result, this, [this](const GpgME::ImportResult &result) {
-        QString message;
         if (result.numConsidered() == 0) {
-            message = i18ndc("mimetreeparser", "@info", "No keys were found in this attachment");
+            Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "No keys were found in this attachment"));
+            return;
         } else {
-            message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
+            QString message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
             if (result.numUnchanged() != 0) {
                 message += QStringLiteral("\n")
                     + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.numUnchanged());
             }
+            Q_EMIT info(message);
         }
-
-        Q_EMIT info(message);
     });
     GpgME::Error err = importJob->start(certData);
     return !err;
-    ;
 }
 
 int AttachmentModel::rowCount(const QModelIndex &parent) const
