@@ -59,7 +59,7 @@ private Q_SLOTS:
         qGuiApp->setFont(font);
 
         auto partModel = messageParser.parts();
-        auto tester = new QAbstractItemModelTester(partModel);
+        new QAbstractItemModelTester(partModel);
         QCOMPARE(partModel->rowCount(), 1);
         QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::TypeRole).value<PartModel::Types>(), PartModel::Types::Plain);
         QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::IsEmbeddedRole).toBool(), false);
