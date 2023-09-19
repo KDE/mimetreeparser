@@ -19,6 +19,7 @@
 #include <QGuiApplication>
 #include <QIcon>
 #include <QMimeDatabase>
+#include <QMimeType>
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QUrl>
@@ -49,6 +50,7 @@ public:
     AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::ObjectTreeParser> &parser);
 
     AttachmentModel *q;
+    QMimeDatabase mimeDb;
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     MimeTreeParser::MessagePart::List mAttachments;
 };
@@ -111,8 +113,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
         qWarning() << "no content for attachment";
         return {};
     }
-    QMimeDatabase mimeDb;
-    const auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(part->mimeType()));
+    const auto mimetype = d->mimeDb.mimeTypeForName(QString::fromLatin1(part->mimeType()));
     const auto content = node->encodedContent();
 
     switch (column) {
@@ -209,17 +210,27 @@ bool AttachmentModel::openAttachment(const int row)
 bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
 {
     QTemporaryFile file;
+
+    const QString fileName = message->filename();
+    if (fileName.isEmpty()) {
+        const auto mimetype = d->mimeDb.mimeTypeForName(QString::fromLatin1(message->mimeType()));
+        file.setFileTemplate(QStringLiteral("XXXXXX.") + mimetype.preferredSuffix());
+    } else {
+        file.setFileTemplate(fileName);
+    }
+
+    file.setAutoRemove(false);
     if (!file.open()) {
         Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to create temporary file."));
         return false;
     }
+
     const auto filePath = saveAttachmentToPath(message, file.fileName(), true);
     if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
         Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
         return false;
     }
     return true;
-    return false;
 }
 
 bool AttachmentModel::importPublicKey(const int row)
