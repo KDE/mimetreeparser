@@ -193,18 +193,20 @@ void MessageWidgetContainer::createLayout()
 
     if (m_isEncrypted && m_displayEncryptionInfo) {
         auto encryptionMessage = new KMessageWidget(this);
-        encryptionMessage->setMessageType(getType(m_encryptionSecurityLevel));
+        encryptionMessage->setObjectName(QStringLiteral("EncryptionMessage"));
         encryptionMessage->setCloseButtonVisible(false);
         encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
 
         QString text;
         if (m_encryptionInfo.keyId.isEmpty()) {
+            encryptionMessage->setMessageType(KMessageWidget::Error);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted but we don't have the key for it.", QString::fromUtf8(m_encryptionInfo.keyId));
             } else {
                 text = i18n("This message is encrypted but we don't have the key for it.");
             }
         } else {
+            encryptionMessage->setMessageType(KMessageWidget::Positive);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted.");
             } else {
@@ -254,6 +256,7 @@ void MessageWidgetContainer::createLayout()
 
     if (m_isSigned && m_displaySignatureInfo) {
         auto signatureMessage = new KMessageWidget(this);
+        signatureMessage->setObjectName(QStringLiteral("SignatureMessage"));
         signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
         signatureMessage->setCloseButtonVisible(false);
         signatureMessage->setText(getDetails(m_signatureInfo));
