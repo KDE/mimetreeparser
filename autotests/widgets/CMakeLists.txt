@@ -6,7 +6,7 @@ add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata")
 include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
 
 ecm_add_test(messageviewerdialogtest.cpp
-    LINK_LIBRARIES KPim${KF_MAJOR_VERSION}MimeTreeParserWidgets Qt::Test
+    LINK_LIBRARIES KPim6MimeTreeParserWidgets Qt::Test
     NAME_PREFIX "widgets-"
 )
 
@@ -14,6 +14,7 @@ add_executable(messageviewertest messageviewertest.cpp ../setupenv.cpp)
 add_gpg_crypto_test(messageviewertest widgets-messageviewertest)
 target_link_libraries(messageviewertest PUBLIC
     Qt::Test
-    KPim${KF_MAJOR_VERSION}::MimeTreeParserWidgets
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KPim6::MimeTreeParserWidgets
+    KF6::WidgetsAddons
+    Gpgmepp
 )
