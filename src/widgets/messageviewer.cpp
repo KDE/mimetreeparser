@@ -10,7 +10,6 @@
 #include <KCalendarCore/ICalFormat>
 #include <KCalendarCore/Incidence>
 #include <KMessageWidget>
-#define TRANSLATION_DOMAIN "mimetreeparser"
 #include <KLocalizedString>
 #include <MimeTreeParserCore/AttachmentModel>
 #include <MimeTreeParserCore/MessageParser>
