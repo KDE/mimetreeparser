@@ -165,6 +165,7 @@ MessageViewer::MessageViewer(QWidget *parent)
     auto widget = new QWidget(this);
     d->layout = new QVBoxLayout(widget);
     d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
+    d->layout->setObjectName(QStringLiteral("PartLayout"));
 
     d->scrollArea = new QScrollArea(this);
     d->scrollArea->setWidget(widget);

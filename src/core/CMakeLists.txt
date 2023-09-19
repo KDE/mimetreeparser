@@ -175,7 +175,3 @@ install(EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserCoreTargets
     FILE KPim${KF_MAJOR_VERSION}MimeTreeParserCoreTargets.cmake
     NAMESPACE KPim${KF_MAJOR_VERSION}::
 )
-
-if (BUILD_TESTING)
-    add_subdirectory(autotests)
-endif()

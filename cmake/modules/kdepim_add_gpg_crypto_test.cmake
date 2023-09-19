@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-set(GNUPGHOME ${CMAKE_BINARY_DIR}/src/core/autotests/gnupg_home)
+set(GNUPGHOME ${CMAKE_BINARY_DIR}/autotests/gnupg_home)
 add_definitions(-DGNUPGHOME="${GNUPGHOME}")
 
 macro (ADD_GPG_CRYPTO_TEST _target _testname)

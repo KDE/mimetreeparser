@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "mimetreeparser_widgets_export.h"
+
 #include <MimeTreeParserCore/PartModel>
 #include <QFrame>
 
@@ -12,8 +14,11 @@ class QPaintEvent;
 class QResizeEvent;
 class UrlHandler;
 
-class MessageWidgetContainer : public QFrame
+/// \internal
+class MIMETREEPARSER_WIDGETS_EXPORT MessageWidgetContainer : public QFrame
 {
+    Q_OBJECT
+
 public:
     explicit MessageWidgetContainer(bool isSigned,
                                     const SignatureInfo &signatureInfo,
