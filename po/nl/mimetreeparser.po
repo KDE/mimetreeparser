@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-20 00:47+0000\n"
-"PO-Revision-Date: 2023-09-19 10:04+0200\n"
+"PO-Revision-Date: 2023-09-20 10:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -51,7 +51,7 @@ msgstr "Bijlage opslaan is mislukt."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Aanmaken van tijdelijk bestand is mislukt."
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -169,11 +169,10 @@ msgid "Save attachment"
 msgstr "Bijlage opslaan"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "Bijlage &opslaan als..."
+msgstr "Bijlage opslaan als"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -389,13 +388,12 @@ msgstr "Publieke sleutel importeren"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "naamloos"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "Bijlage &opslaan als..."
+msgstr "Bijlage opslaan als"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format

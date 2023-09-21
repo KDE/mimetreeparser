@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-20 00:47+0000\n"
-"PO-Revision-Date: 2023-09-19 09:01+0300\n"
+"PO-Revision-Date: 2023-09-20 08:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -52,7 +52,7 @@ msgstr "Не вдалося зберегти долучення."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Не вдалося створити тимчасовий файл."
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -173,11 +173,10 @@ msgid "Save attachment"
 msgstr "Зберегти долучення"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "&Зберегти долучення як…"
+msgstr "Зберегти долучення як"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -385,13 +384,12 @@ msgstr "Імпортувати відкритий ключ"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "без назви"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "&Зберегти долучення як…"
+msgstr "Зберегти долучення як"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format
