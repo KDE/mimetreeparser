@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-20 00:47+0000\n"
-"PO-Revision-Date: 2023-09-20 00:50+0200\n"
+"PO-Revision-Date: 2023-09-20 22:59+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -53,7 +53,7 @@ msgstr "No se ha podido guardar el adjunto."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Ha fallado la creación del archivo temporal."
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -170,11 +170,10 @@ msgid "Save attachment"
 msgstr "Guardar adjunto"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "&Guardar adjunto como..."
+msgstr "Guardar adjunto como"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -387,13 +386,12 @@ msgstr "Importar clave pública"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "sin nombre"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "&Guardar adjunto como..."
+msgstr "Guardar adjunto como"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format

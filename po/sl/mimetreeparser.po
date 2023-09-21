@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-20 00:47+0000\n"
-"PO-Revision-Date: 2023-09-19 07:08+0200\n"
+"PO-Revision-Date: 2023-09-20 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -52,7 +52,7 @@ msgstr "Shranjevanje priloge ni uspelo."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Ni uspelo ustvariti začasne datoteke."
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -173,11 +173,10 @@ msgid "Save attachment"
 msgstr "Shrani prilogo"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "&Shrani priloge kot..."
+msgstr "Shrani prilogo kot"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -385,13 +384,12 @@ msgstr "Uvozi javni ključ"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "neimenovana"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "&Shrani priloge kot..."
+msgstr "Shrani prilogo kot"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format

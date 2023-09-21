@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-20 00:47+0000\n"
-"PO-Revision-Date: 2023-09-19 13:28+0200\n"
+"PO-Revision-Date: 2023-09-20 10:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -53,7 +53,7 @@ msgstr "No s'ha pogut guardar l'adjunt."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "No s'ha pogut crear el fitxer temporal."
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -170,11 +170,10 @@ msgid "Save attachment"
 msgstr "Guarda l'adjunt"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "Guar&da l'adjunt com a..."
+msgstr "Guarda l'adjunt com a"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -387,13 +386,12 @@ msgstr "Importa la clau pública"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "sense nom"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "Guar&da l'adjunt com a..."
+msgstr "Guarda l'adjunt com a"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format
@@ -579,11 +577,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error a KMail"
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "S'ha guardat l'adjunt al disc: %1"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "No s'ha pogut guardar l'adjunt per a obrir-lo."

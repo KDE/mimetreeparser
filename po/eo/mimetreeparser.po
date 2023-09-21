@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-20 00:47+0000\n"
-"PO-Revision-Date: 2023-09-19 06:40+0100\n"
+"PO-Revision-Date: 2023-09-20 21:12+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -52,7 +52,7 @@ msgstr "Malsukcesis konservi aldonaĵon."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Malsukcesis krei provizoran dosieron"
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -169,11 +169,10 @@ msgid "Save attachment"
 msgstr "Konservi aldonaĵon"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "Kon&servi Aldonaĵon Kiel..."
+msgstr "Konservi Aldonaĵon Kiel"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -384,13 +383,12 @@ msgstr "Importi publikan ŝlosilon"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "sennoma"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "Kon&servi Aldonaĵon Kiel..."
+msgstr "Konservi Aldonaĵon Kiel"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format
@@ -575,11 +573,3 @@ msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Konservis la aldonaĵon al disko: %1"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "Malsukcesis konservi aldonaĵon por malfermi."
