@@ -1,11 +1,10 @@
-#
 # SPDX-FileCopyrightText: 2023 Xavier BESNARD <xavier.besnard@neuf.fr>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 00:47+0000\n"
-"PO-Revision-Date: 2023-09-07 21:56+0200\n"
+"POT-Creation-Date: 2023-09-22 00:45+0000\n"
+"PO-Revision-Date: 2023-09-17 20:51+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: core/attachmentmodel.cpp:89
 #, kde-format
@@ -85,12 +84,6 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "Une clé a déjà été importée."
 msgstr[1] "%1 clés ont déjà été importées."
 
-#: core/messageparser.cpp:159
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Inconnu"
-
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
 msgctxt "@info:status"
@@ -121,49 +114,61 @@ msgstr ""
 msgid "Error: %1"
 msgstr "Erreur : %1"
 
-#: core/partmodel.cpp:487
+#: core/partmodel.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Aucune clé disponible."
 
-#: core/partmodel.cpp:489
+#: core/partmodel.cpp:503
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Phrase de passe erronée."
 
-#: quick/qml/MailViewer.qml:38
+#: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Afficheur de messages"
 
-#: quick/qml/MailViewer.qml:75
+#: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Objet :"
 
-#: quick/qml/MailViewer.qml:96
+#: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "De :"
 
-#: quick/qml/MailViewer.qml:112
+#: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Émetteur : "
 
-#: quick/qml/MailViewer.qml:128
+#: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "À :"
 
-#: quick/qml/MailViewer.qml:185
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -439,106 +444,120 @@ msgid "&From:"
 msgstr "&De :"
 
 #: widgets/messageviewer.cpp:321
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Sender:"
+msgid "&Sender:"
+msgstr "Émetteur : "
+
+#: widgets/messageviewer.cpp:324
 #, kde-format
 msgid "&To:"
 msgstr "&À :"
+
+#: widgets/messageviewer.cpp:327
+#, kde-format
+msgid "&CC:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:330
+#, kde-format
+msgid "&BCC:"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:72
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&Fichier"
 
 #: widgets/messageviewerdialog.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "Enregi&strer"
 
 #: widgets/messageviewerdialog.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Encrypted"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr "Chiffré"
+msgstr "Enregistrer la version déchiffrée"
 
 #: widgets/messageviewerdialog.cpp:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "Aperçu avant impression"
 
 #: widgets/messageviewerdialog.cpp:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "Im&primer"
 
 #: widgets/messageviewerdialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "Invitation"
+msgstr "&Navigation"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "Message précédent"
 
 #: widgets/messageviewerdialog.cpp:104
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "Message suivant"
 
 #: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Enregistrer un fichier"
 
 #: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr ""
+msgstr "Fichiers de courriels (* .Mbox)"
 
 #: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Il a été impossible de créer le fichier %1."
 
 #: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "Erreur lors de l'enregistrement du message"
 
 #: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Enregistrer le fichier déchiffré"
 
 #: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Il a été impossible de créer le fichier %1."
 
 #: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "Imprimer un document"
 
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "Impossible de lire le fichier"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format
@@ -550,7 +569,22 @@ msgstr ""
 #: widgets/urlhandler.cpp:39
 #, kde-format
 msgid "KMail Error"
-msgstr "Erreur de Kmail"
+msgstr "Erreur de KMail"
+
+#, fuzzy
+#~| msgid "&Save Attachment As..."
+#~ msgctxt "@window:title"
+#~ msgid "Save Attachment As"
+#~ msgstr "&Enregistrer une pièce jointe comme..."
+
+#, fuzzy
+#~| msgid "&Save Attachment As..."
+#~ msgid "Save Attachment As"
+#~ msgstr "&Enregistrer une pièce jointe comme..."
+
+#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
+#~ msgid "Unknown"
+#~ msgstr "Inconnu"
 
 #~ msgid "fwd"
 #~ msgstr "trsf"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 00:47+0000\n"
+"POT-Creation-Date: 2023-09-22 00:45+0000\n"
 "PO-Revision-Date: 2023-09-14 20:40+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -87,12 +87,6 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "en nyckel har redan importerats"
 msgstr[1] "%1 nycklar har redan importerats"
 
-#: core/messageparser.cpp:159
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Okänd"
-
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
 msgctxt "@info:status"
@@ -119,49 +113,61 @@ msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
 msgid "Error: %1"
 msgstr "Fel: %1"
 
-#: core/partmodel.cpp:487
+#: core/partmodel.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Ingen nyckel tillgänglig."
 
-#: core/partmodel.cpp:489
+#: core/partmodel.cpp:503
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Felaktig lösenordsfras."
 
-#: quick/qml/MailViewer.qml:38
+#: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Brevvisning"
 
-#: quick/qml/MailViewer.qml:75
+#: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Rubrik:"
 
-#: quick/qml/MailViewer.qml:96
+#: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Från:"
 
-#: quick/qml/MailViewer.qml:112
+#: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Avsändare:"
 
-#: quick/qml/MailViewer.qml:128
+#: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Till:"
 
-#: quick/qml/MailViewer.qml:185
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -430,9 +436,26 @@ msgid "&From:"
 msgstr "&Från:"
 
 #: widgets/messageviewer.cpp:321
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Sender:"
+msgid "&Sender:"
+msgstr "Avsändare:"
+
+#: widgets/messageviewer.cpp:324
 #, kde-format
 msgid "&To:"
 msgstr "&Till:"
+
+#: widgets/messageviewer.cpp:327
+#, kde-format
+msgid "&CC:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:330
+#, kde-format
+msgid "&BCC:"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:72
 #, kde-format
@@ -537,6 +560,21 @@ msgstr "Kunde inte starta certifikathanteraren. Kontrollera installationen."
 #, kde-format
 msgid "KMail Error"
 msgstr "Kmail-fel"
+
+#, fuzzy
+#~| msgid "&Save Attachment As..."
+#~ msgctxt "@window:title"
+#~ msgid "Save Attachment As"
+#~ msgstr "&Spara bilaga som..."
+
+#, fuzzy
+#~| msgid "&Save Attachment As..."
+#~ msgid "Save Attachment As"
+#~ msgstr "&Spara bilaga som..."
+
+#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
+#~ msgid "Unknown"
+#~ msgstr "Okänd"
 
 #~ msgid "fwd"
 #~ msgstr "fwd"

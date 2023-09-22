@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 00:47+0000\n"
-"PO-Revision-Date: 2023-09-14 11:38+0200\n"
+"POT-Creation-Date: 2023-09-22 00:45+0000\n"
+"PO-Revision-Date: 2023-09-20 10:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -89,12 +89,6 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "ja s'havia importat una clau"
 msgstr[1] "ja s'havien importat %1 claus"
 
-#: core/messageparser.cpp:159
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Desconegut"
-
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
 msgctxt "@info:status"
@@ -121,49 +115,61 @@ msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/partmodel.cpp:487
+#: core/partmodel.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "No hi ha cap clau disponible."
 
-#: core/partmodel.cpp:489
+#: core/partmodel.cpp:503
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Frase de pas incorrecta."
 
-#: quick/qml/MailViewer.qml:38
+#: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Visualitzador de missatges"
 
-#: quick/qml/MailViewer.qml:75
+#: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: quick/qml/MailViewer.qml:96
+#: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "De:"
 
-#: quick/qml/MailViewer.qml:112
+#: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Remitent:"
 
-#: quick/qml/MailViewer.qml:128
+#: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "A:"
 
-#: quick/qml/MailViewer.qml:185
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "CC:"
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "BCC:"
+
+#: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -438,8 +444,23 @@ msgstr "&De:"
 
 #: widgets/messageviewer.cpp:321
 #, kde-format
+msgid "&Sender:"
+msgstr "&Remitent:"
+
+#: widgets/messageviewer.cpp:324
+#, kde-format
 msgid "&To:"
 msgstr "&A:"
+
+#: widgets/messageviewer.cpp:327
+#, kde-format
+msgid "&CC:"
+msgstr "&CC:"
+
+#: widgets/messageviewer.cpp:330
+#, kde-format
+msgid "&BCC:"
+msgstr "&BCC:"
 
 #: widgets/messageviewerdialog.cpp:72
 #, kde-format
@@ -546,3 +567,18 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error al KMail"
+
+#~ msgctxt "@info"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Ha fallat en crear el fitxer temporal."
+
+#~ msgctxt "@window:title"
+#~ msgid "Save Attachment As"
+#~ msgstr "Desa l'adjunt com a"
+
+#~ msgctxt "Fallback when file has no name"
+#~ msgid "unnamed"
+#~ msgstr "sense nom"
+
+#~ msgid "Save Attachment As"
+#~ msgstr "Desa l'adjunt com a"

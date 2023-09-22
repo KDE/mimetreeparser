@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 00:47+0000\n"
+"POT-Creation-Date: 2023-09-22 00:45+0000\n"
 "PO-Revision-Date: 2023-08-27 21:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -48,10 +48,11 @@ msgid "Failed to save attachment."
 msgstr "Ek kaydedilemedi."
 
 #: core/attachmentmodel.cpp:235
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
 msgctxt "@info"
 msgid "Saved the attachment to disk: %1"
-msgstr "Ek diske kaydedildi: %1"
+msgstr "Eki Farklı Kaydet"
 
 #: core/attachmentmodel.cpp:252
 #, kde-format
@@ -60,10 +61,12 @@ msgid "Failed to open attachment."
 msgstr "Ek açılamadı."
 
 #: core/attachmentmodel.cpp:257
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save attachment."
 msgctxt "@info"
 msgid "Failed to save attachment for opening."
-msgstr "Ek, açmak üzere kaydedilemedi."
+msgstr "Ek kaydedilemedi."
 
 #: core/attachmentmodel.cpp:276
 #, kde-format
@@ -86,12 +89,6 @@ msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] "1 anahtar halihazırda içe aktarılmıştı"
 msgstr[1] "%1 anahtar halihazırda içe aktarılmıştı"
-
-#: core/messageparser.cpp:159
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Bilinmeyen"
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
@@ -119,49 +116,61 @@ msgstr "Kripto eklentisi \"%1\", verinin şifresini çözemedi."
 msgid "Error: %1"
 msgstr "Hata: %1"
 
-#: core/partmodel.cpp:487
+#: core/partmodel.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Kullanılabilir anahtar yok."
 
-#: core/partmodel.cpp:489
+#: core/partmodel.cpp:503
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Yanlış anahtar parolası."
 
-#: quick/qml/MailViewer.qml:38
+#: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "İleti Görüntüleyicisi"
 
-#: quick/qml/MailViewer.qml:75
+#: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Konu:"
 
-#: quick/qml/MailViewer.qml:96
+#: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Kimden:"
 
-#: quick/qml/MailViewer.qml:112
+#: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Gönderen:"
 
-#: quick/qml/MailViewer.qml:128
+#: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Kime:"
 
-#: quick/qml/MailViewer.qml:185
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "Kopya:"
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "Gizli kopya:"
+
+#: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -429,8 +438,23 @@ msgstr "&Kimden:"
 
 #: widgets/messageviewer.cpp:321
 #, kde-format
+msgid "&Sender:"
+msgstr "&Gönderen:"
+
+#: widgets/messageviewer.cpp:324
+#, kde-format
 msgid "&To:"
 msgstr "Kim&e:"
+
+#: widgets/messageviewer.cpp:327
+#, kde-format
+msgid "&CC:"
+msgstr "&Kopya:"
+
+#: widgets/messageviewer.cpp:330
+#, kde-format
+msgid "&BCC:"
+msgstr "&Gizli kopya:"
 
 #: widgets/messageviewerdialog.cpp:72
 #, kde-format
@@ -535,3 +559,15 @@ msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin.
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"
+
+#~ msgctxt "@info"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Geçici dosya oluşturulamadı."
+
+#~ msgctxt "@window:title"
+#~ msgid "Save Attachment As"
+#~ msgstr "Eki Farklı Kaydet"
+
+#~ msgctxt "Fallback when file has no name"
+#~ msgid "unnamed"
+#~ msgstr "adsız"

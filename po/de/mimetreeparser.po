@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 00:47+0000\n"
+"POT-Creation-Date: 2023-09-22 00:45+0000\n"
 "PO-Revision-Date: 2023-08-13 16:14+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -89,12 +89,6 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "Ein Schlüssel war bereits importiert"
 msgstr[1] "%1 Schlüssel waren bereits importiert"
 
-#: core/messageparser.cpp:159
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Unbekannt"
-
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
 msgctxt "@info:status"
@@ -123,49 +117,61 @@ msgstr "Die Daten können nicht entschlüsselt werden."
 msgid "Error: %1"
 msgstr "Fehler: %1"
 
-#: core/partmodel.cpp:487
+#: core/partmodel.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Kein Schlüssel verfügbar."
 
-#: core/partmodel.cpp:489
+#: core/partmodel.cpp:503
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Falsche Passphrase."
 
-#: quick/qml/MailViewer.qml:38
+#: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Nachrichtenanzeige"
 
-#: quick/qml/MailViewer.qml:75
+#: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Betreff:"
 
-#: quick/qml/MailViewer.qml:96
+#: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Von:"
 
-#: quick/qml/MailViewer.qml:112
+#: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Absender:"
 
-#: quick/qml/MailViewer.qml:128
+#: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "An:"
 
-#: quick/qml/MailViewer.qml:185
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
@@ -446,9 +452,26 @@ msgid "&From:"
 msgstr "&Von:"
 
 #: widgets/messageviewer.cpp:321
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Sender:"
+msgid "&Sender:"
+msgstr "Absender:"
+
+#: widgets/messageviewer.cpp:324
 #, kde-format
 msgid "&To:"
 msgstr "&An:"
+
+#: widgets/messageviewer.cpp:327
+#, kde-format
+msgid "&CC:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:330
+#, kde-format
+msgid "&BCC:"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:72
 #, kde-format
@@ -556,6 +579,21 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr ""
+
+#, fuzzy
+#~| msgid "&Save Attachment As..."
+#~ msgctxt "@window:title"
+#~ msgid "Save Attachment As"
+#~ msgstr "Anhang speichern &unter ..."
+
+#, fuzzy
+#~| msgid "&Save Attachment As..."
+#~ msgid "Save Attachment As"
+#~ msgstr "Anhang speichern &unter ..."
+
+#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
+#~ msgid "Unknown"
+#~ msgstr "Unbekannt"
 
 #~ msgid "fwd"
 #~ msgstr "fwd"
