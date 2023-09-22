@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-20 00:47+0000\n"
+"POT-Creation-Date: 2023-09-22 01:46+0000\n"
 "PO-Revision-Date: 2023-09-20 21:12+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -103,7 +103,7 @@ msgstr "Kripta kromprogramo \"%1\" ne povas deĉifri mesaĝojn."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripta kromprogramo \"%1\" ne povis deĉifri la datumojn."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:314
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Error: %1"
 msgstr "Eraro: %1"
@@ -362,110 +362,110 @@ msgstr "La mesaĝo estas ĉifrita por la sekvaj ŝlosiloj:"
 msgid "Unknown key"
 msgstr "Nekonata ŝlosilo"
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:64
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Kon&servi Aldonaĵon Kiel..."
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:69
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Malfermi"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Importi publikan ŝlosilon"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:103
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "sennoma"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:106
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Konservi Aldonaĵon Kiel"
 
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:256
 #, kde-format
 msgid "Invitation"
 msgstr "Invito"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:259
 #, kde-format
 msgid "&Summary:"
 msgstr "&Resumo:"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizinto:"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Location:"
 msgstr "&Loko:"
 
-#: widgets/messageviewer.cpp:265
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Start date:"
 msgstr "&Komenca dato:"
 
-#: widgets/messageviewer.cpp:267
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&End date:"
 msgstr "&Findato:"
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Details:"
 msgstr "&Detaloj:"
 
-#: widgets/messageviewer.cpp:291
+#: widgets/messageviewer.cpp:290
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Enkapsuligita retpoŝto"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Date:"
 msgstr "Dato:"
 
-#: widgets/messageviewer.cpp:346
+#: widgets/messageviewer.cpp:345
 #, kde-format
 msgid "&Subject:"
 msgstr "&Temo:"
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:348
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:352
+#: widgets/messageviewer.cpp:351
 #, kde-format
 msgid "&Sender:"
 msgstr "Sendanto:"
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&To:"
 msgstr "&Al:"
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
