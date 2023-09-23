@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-22 00:45+0000\n"
+"POT-Creation-Date: 2023-09-23 00:45+0000\n"
 "PO-Revision-Date: 2023-09-20 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,61 +18,55 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: core/attachmentmodel.cpp:89
+#: core/attachmentmodel.cpp:90
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Ime"
 
-#: core/attachmentmodel.cpp:91
+#: core/attachmentmodel.cpp:92
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Velikost"
 
-#: core/attachmentmodel.cpp:93
+#: core/attachmentmodel.cpp:94
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Šifrirano"
 
-#: core/attachmentmodel.cpp:95
+#: core/attachmentmodel.cpp:96
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Podpisano"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Shranjevanje priloge ni uspelo."
 
-#: core/attachmentmodel.cpp:235
+#: core/attachmentmodel.cpp:213
 #, kde-format
 msgctxt "@info"
-msgid "Saved the attachment to disk: %1"
-msgstr "Priponka shranjena na disk: %1"
+msgid "Failed to create temporary file."
+msgstr "Ni uspelo ustvariti začasne datoteke."
 
-#: core/attachmentmodel.cpp:252
+#: core/attachmentmodel.cpp:218
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Priponke ni bilo mogoče odpreti."
 
-#: core/attachmentmodel.cpp:257
-#, kde-format
-msgctxt "@info"
-msgid "Failed to save attachment for opening."
-msgstr "Priponke ni bilo mogoče shraniti za odpiranje."
-
-#: core/attachmentmodel.cpp:276
+#: core/attachmentmodel.cpp:239
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "V tej prilogi ni bilo najdenih nobenih ključev"
 
-#: core/attachmentmodel.cpp:278
+#: core/attachmentmodel.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -82,7 +76,7 @@ msgstr[1] "%1 ključa uvožena"
 msgstr[2] "%1 ključi uvoženi"
 msgstr[3] "%1 ključev uvoženo"
 
-#: core/attachmentmodel.cpp:281
+#: core/attachmentmodel.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -113,7 +107,7 @@ msgstr "Kripto-vtičnik \"%1\" ne more dešifrirati sporočil."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripto-vtičnik \"%1\" ni mogel dešifrirati podatkov."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:295
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:314
 #, kde-format
 msgid "Error: %1"
 msgstr "Napaka: %1"
@@ -130,53 +124,59 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Napačno geslo."
 
-#: quick/qml/MailViewer.qml:40
+#: quick/qml/MailViewer.qml:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Pregledovalnik sporočil"
 
-#: quick/qml/MailViewer.qml:77
+#: quick/qml/MailViewer.qml:78
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Zadeva:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml:99
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Od:"
 
-#: quick/qml/MailViewer.qml:114
+#: quick/qml/MailViewer.qml:115
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Pošiljatelj:"
 
-#: quick/qml/MailViewer.qml:130
+#: quick/qml/MailViewer.qml:131
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Za:"
 
-#: quick/qml/MailViewer.qml:146
+#: quick/qml/MailViewer.qml:147
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
 msgstr "Kp:"
 
-#: quick/qml/MailViewer.qml:162
+#: quick/qml/MailViewer.qml:163
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
 msgstr "Skp:"
 
-#: quick/qml/MailViewer.qml:219
+#: quick/qml/MailViewer.qml:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Shrani prilogo"
+
+#: quick/qml/MailViewer.qml:243
+#, kde-format
+msgctxt "@window:title"
+msgid "Save Attachment As"
+msgstr "Shrani prilogo kot"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -212,7 +212,7 @@ msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "To sporočilo je bilo podpisano s ključem %1."
 
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:78
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
@@ -243,14 +243,14 @@ msgid "You are trusting this key."
 msgstr "Temu ključu zaupate."
 
 #: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:108
+#: widgets/messagecontainerwidget.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "Podpis je neveljaven."
 
 #: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:205
+#: widgets/messagecontainerwidget.cpp:200
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr "To sporočilo je šifrirano, vendar nimamo ključa zanj."
@@ -260,7 +260,7 @@ msgstr "To sporočilo je šifrirano, vendar nimamo ključa zanj."
 msgid "This message is encrypted to the key: %1"
 msgstr "To sporočilo je šifrirano na ključ: %1"
 
-#: widgets/messagecontainerwidget.cpp:66
+#: widgets/messagecontainerwidget.cpp:60
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -270,44 +270,44 @@ msgstr ""
 "To sporočilo je bilo podpisano ustrezno z VS-NfD s ključem <a href=\"%1\">"
 "%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:73
+#: widgets/messagecontainerwidget.cpp:67
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
 msgstr "To sporočilo je bilo podpisano s ključem <a href=\"%1\">%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:81
+#: widgets/messagecontainerwidget.cpp:75
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "To sporočilo je bilo podpisano ustrezno z VS-NfD z %1."
 
-#: widgets/messagecontainerwidget.cpp:83
+#: widgets/messagecontainerwidget.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
 msgstr "To sporočilo je bilo podpisano s %1."
 
-#: widgets/messagecontainerwidget.cpp:86
+#: widgets/messagecontainerwidget.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
 msgstr "<a href=\"%1\">Ključ</a> je bil preklican."
 
-#: widgets/messagecontainerwidget.cpp:89
+#: widgets/messagecontainerwidget.cpp:83
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
 msgstr "<a href=\"%1\">Ključ</a> je potekel."
 
-#: widgets/messagecontainerwidget.cpp:94
+#: widgets/messagecontainerwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
 msgstr "Podpis je veljaven, a veljavnost <a href=\"%1\">ključa</a> ni znana."
 
-#: widgets/messagecontainerwidget.cpp:97
+#: widgets/messagecontainerwidget.cpp:91
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -315,14 +315,14 @@ msgid ""
 msgstr ""
 "Podpis je veljaven in <a href=\"%1\">ključ</a> je le malo zaupanja vreden."
 
-#: widgets/messagecontainerwidget.cpp:99
+#: widgets/messagecontainerwidget.cpp:93
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
 msgstr ""
 "Podpis je veljaven in <a href=\"%1\">ključ</a> je polno zaupanja vreden."
 
-#: widgets/messagecontainerwidget.cpp:102
+#: widgets/messagecontainerwidget.cpp:96
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -330,219 +330,230 @@ msgid ""
 msgstr ""
 "Podpis je veljaven in <a href=\"%1\">ključ</a> je končno vreden zaupanja."
 
-#: widgets/messagecontainerwidget.cpp:104
+#: widgets/messagecontainerwidget.cpp:98
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
 msgstr "Podpis je veljaven, a <a href=\"%1\">ključ</a> ni vreden zaupanja."
 
-#: widgets/messagecontainerwidget.cpp:203
+#: widgets/messagecontainerwidget.cpp:198
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
 msgstr ""
 "To sporočilo je šifrirano v skladu z VS-NfD, vendar nimamo ključa zanj."
 
-#: widgets/messagecontainerwidget.cpp:209
+#: widgets/messagecontainerwidget.cpp:205
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "To sporočilo je šifrirano v skladu z VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:211
+#: widgets/messagecontainerwidget.cpp:207
 #, kde-format
 msgid "This message is encrypted."
 msgstr "To sporočilo je šifrirano."
 
-#: widgets/messagecontainerwidget.cpp:220
+#: widgets/messagecontainerwidget.cpp:216
 #, kde-format
 msgid "The message is encrypted for the following keys:"
 msgstr "Sporočilo je šifrirano z naslednjimi ključi:"
 
-#: widgets/messagecontainerwidget.cpp:237
+#: widgets/messagecontainerwidget.cpp:233
 #, kde-format
 msgid "Unknown key"
 msgstr "Neznan ključ"
 
-#: widgets/messageviewer.cpp:56
+#: widgets/messageviewer.cpp:65
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Shrani priloge kot..."
 
-#: widgets/messageviewer.cpp:61
+#: widgets/messageviewer.cpp:70
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Odpri"
 
-#: widgets/messageviewer.cpp:66
+#: widgets/messageviewer.cpp:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Uvozi javni ključ"
 
-#: widgets/messageviewer.cpp:238
+#: widgets/messageviewer.cpp:104
+#, kde-format
+msgctxt "Fallback when file has no name"
+msgid "unnamed"
+msgstr "neimenovana"
+
+#: widgets/messageviewer.cpp:107
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Shrani prilogo kot"
+
+#: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "Invitation"
 msgstr "Povabilo"
 
-#: widgets/messageviewer.cpp:241
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Summary:"
 msgstr "Povzetek:"
 
-#: widgets/messageviewer.cpp:242
+#: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizator:"
 
-#: widgets/messageviewer.cpp:244
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Location:"
 msgstr "&Lokacija:"
 
-#: widgets/messageviewer.cpp:246
+#: widgets/messageviewer.cpp:265
 #, kde-format
 msgid "&Start date:"
 msgstr "Datum začetka:"
 
-#: widgets/messageviewer.cpp:248
+#: widgets/messageviewer.cpp:267
 #, kde-format
 msgid "&End date:"
 msgstr "Datum konca:"
 
-#: widgets/messageviewer.cpp:251
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Details:"
 msgstr "Po&drobnosti:"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:291
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Enkapsulirano e-poštno sporočilo"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:281
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:315
+#: widgets/messageviewer.cpp:346
 #, kde-format
 msgid "&Subject:"
 msgstr "Predmet:"
 
-#: widgets/messageviewer.cpp:318
+#: widgets/messageviewer.cpp:349
 #, kde-format
 msgid "&From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:352
 #, kde-format
 msgid "&Sender:"
 msgstr "Pošiljatelj:"
 
-#: widgets/messageviewer.cpp:324
+#: widgets/messageviewer.cpp:355
 #, kde-format
 msgid "&To:"
 msgstr "Za:"
 
-#: widgets/messageviewer.cpp:327
+#: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&CC:"
 msgstr "Kp:"
 
-#: widgets/messageviewer.cpp:330
+#: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&BCC:"
 msgstr "Skp:"
 
-#: widgets/messageviewerdialog.cpp:72
+#: widgets/messageviewerdialog.cpp:73
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "Datoteka"
 
-#: widgets/messageviewerdialog.cpp:74
+#: widgets/messageviewerdialog.cpp:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Shrani"
 
-#: widgets/messageviewerdialog.cpp:80
+#: widgets/messageviewerdialog.cpp:81
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Shrani dešifrirano"
 
-#: widgets/messageviewerdialog.cpp:86
+#: widgets/messageviewerdialog.cpp:87
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Natisni predogled"
 
-#: widgets/messageviewerdialog.cpp:92
+#: widgets/messageviewerdialog.cpp:93
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Tiskaj"
 
-#: widgets/messageviewerdialog.cpp:99
+#: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "Navigacija"
 
-#: widgets/messageviewerdialog.cpp:100
+#: widgets/messageviewerdialog.cpp:101
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Prejšnje sporočilo"
 
-#: widgets/messageviewerdialog.cpp:104
+#: widgets/messageviewerdialog.cpp:105
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Naslednje sporočilo"
 
-#: widgets/messageviewerdialog.cpp:114
+#: widgets/messageviewerdialog.cpp:115
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: widgets/messageviewerdialog.cpp:116 widgets/messageviewerdialog.cpp:132
+#: widgets/messageviewerdialog.cpp:115 widgets/messageviewerdialog.cpp:131
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
 msgstr "Poštne datoteke (*.mbox)"
 
-#: widgets/messageviewerdialog.cpp:120
+#: widgets/messageviewerdialog.cpp:119
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Datoteke %1 ni bilo mogoče ustvariti."
 
-#: widgets/messageviewerdialog.cpp:120 widgets/messageviewerdialog.cpp:136
+#: widgets/messageviewerdialog.cpp:119 widgets/messageviewerdialog.cpp:135
 #, kde-format
 msgid "Error saving message"
 msgstr "Napaka pri shranjevanju datoteke"
 
-#: widgets/messageviewerdialog.cpp:130
+#: widgets/messageviewerdialog.cpp:129
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Shrani dešifrirano datoteko"
 
-#: widgets/messageviewerdialog.cpp:136
+#: widgets/messageviewerdialog.cpp:135
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Datoteke %1 ni bilo mogoče ustvariti."
 
-#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:166
+#: widgets/messageviewerdialog.cpp:153 widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
@@ -566,19 +577,12 @@ msgid "KMail Error"
 msgstr "Napaka KMaila"
 
 #~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Ni uspelo ustvariti začasne datoteke."
+#~ msgid "Saved the attachment to disk: %1"
+#~ msgstr "Priponka shranjena na disk: %1"
 
-#~ msgctxt "@window:title"
-#~ msgid "Save Attachment As"
-#~ msgstr "Shrani prilogo kot"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "neimenovana"
-
-#~ msgid "Save Attachment As"
-#~ msgstr "Shrani prilogo kot"
+#~ msgctxt "@info"
+#~ msgid "Failed to save attachment for opening."
+#~ msgstr "Priponke ni bilo mogoče shraniti za odpiranje."
 
 #~ msgctxt "displayed when a mail has unknown sender, receiver or date"
 #~ msgid "Unknown"
