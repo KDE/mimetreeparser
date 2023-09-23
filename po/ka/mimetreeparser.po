@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-22 01:46+0000\n"
+"POT-Creation-Date: 2023-09-23 01:45+0000\n"
 "PO-Revision-Date: 2023-09-21 05:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -103,7 +103,7 @@ msgstr "კრიპტოს დამატებას \"%1\" შეტყო
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "კრიპტოს დამატებას \"%1\" მონაცემების გაშიფვრა არ შეუძლია."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:313
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:314
 #, kde-format
 msgid "Error: %1"
 msgstr "შეცდომა: %1"
@@ -359,110 +359,110 @@ msgstr "შეტყობინება დაშიფრულია შე�
 msgid "Unknown key"
 msgstr "უცნობი გასაღები"
 
-#: widgets/messageviewer.cpp:64
+#: widgets/messageviewer.cpp:65
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "მიმაგრებული ფაილის &შენახვა, როგორც…"
 
-#: widgets/messageviewer.cpp:69
+#: widgets/messageviewer.cpp:70
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "გახსნა"
 
-#: widgets/messageviewer.cpp:74
+#: widgets/messageviewer.cpp:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "საჯარო გასაღების შემოტანა"
 
-#: widgets/messageviewer.cpp:103
+#: widgets/messageviewer.cpp:104
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "უსახელო"
 
-#: widgets/messageviewer.cpp:106
+#: widgets/messageviewer.cpp:107
 #, kde-format
 msgid "Save Attachment As"
 msgstr "მიმაგრებული ფაილის შენახვა, როგორც"
 
-#: widgets/messageviewer.cpp:256
+#: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "Invitation"
 msgstr "მოწვევა"
 
-#: widgets/messageviewer.cpp:259
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Summary:"
 msgstr "&შეჯამება:"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Organizer:"
 msgstr "&ორგანიზატორი:"
 
-#: widgets/messageviewer.cpp:262
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Location:"
 msgstr "&მდებარეობა:"
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:265
 #, kde-format
 msgid "&Start date:"
 msgstr "&დაწყების თარიღი:"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:267
 #, kde-format
 msgid "&End date:"
 msgstr "&დასრულების დრო:"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Details:"
 msgstr "&დეტალები:"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:291
 #, kde-format
 msgid "Encapsulated email"
 msgstr "ჩასმული შეტყობინება"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "From:"
 msgstr "ვისგან:"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "Date:"
 msgstr "თარიღი:"
 
-#: widgets/messageviewer.cpp:345
+#: widgets/messageviewer.cpp:346
 #, kde-format
 msgid "&Subject:"
 msgstr "&სათაური:"
 
-#: widgets/messageviewer.cpp:348
+#: widgets/messageviewer.cpp:349
 #, kde-format
 msgid "&From:"
 msgstr "&ვისგან:"
 
-#: widgets/messageviewer.cpp:351
+#: widgets/messageviewer.cpp:352
 #, kde-format
 msgid "&Sender:"
 msgstr "&გამომგზავნი:"
 
-#: widgets/messageviewer.cpp:354
+#: widgets/messageviewer.cpp:355
 #, kde-format
 msgid "&To:"
 msgstr "&ვის:"
 
-#: widgets/messageviewer.cpp:357
+#: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&CC:"
 msgstr "&ასლი:"
 
-#: widgets/messageviewer.cpp:360
+#: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&BCC:"
 msgstr "&ფარულიასლი:"

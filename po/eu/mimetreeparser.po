@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-22 01:46+0000\n"
+"POT-Creation-Date: 2023-09-23 01:45+0000\n"
 "PO-Revision-Date: 2023-09-21 23:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
 #: core/attachmentmodel.cpp:90
@@ -105,7 +105,7 @@ msgstr "\"%1\" kriptografia-pluginak ezin ditu mezuak deszifratu."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "\"%1\" kriptografia-pluginak ezin du daturik deszifratu."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:313
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:314
 #, kde-format
 msgid "Error: %1"
 msgstr "Errorea: %1"
@@ -364,110 +364,110 @@ msgstr "Mezua ondoko gakoentzako zifratuta dago:"
 msgid "Unknown key"
 msgstr "Gako ezezaguna"
 
-#: widgets/messageviewer.cpp:64
+#: widgets/messageviewer.cpp:65
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Gorde eranskina honela..."
 
-#: widgets/messageviewer.cpp:69
+#: widgets/messageviewer.cpp:70
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Ireki"
 
-#: widgets/messageviewer.cpp:74
+#: widgets/messageviewer.cpp:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Inportatu gako publikoa"
 
-#: widgets/messageviewer.cpp:103
+#: widgets/messageviewer.cpp:104
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "izengabea"
 
-#: widgets/messageviewer.cpp:106
+#: widgets/messageviewer.cpp:107
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Gorde eranskina honela"
 
-#: widgets/messageviewer.cpp:256
+#: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "Invitation"
 msgstr "Gonbidapena"
 
-#: widgets/messageviewer.cpp:259
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Summary:"
 msgstr "&Laburpena:"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Antolatzailea:"
 
-#: widgets/messageviewer.cpp:262
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Location:"
 msgstr "&Kokalekua:"
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:265
 #, kde-format
 msgid "&Start date:"
 msgstr "&Hasiera-data:"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:267
 #, kde-format
 msgid "&End date:"
 msgstr "&Amaiera-data:"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Details:"
 msgstr "&Xehetasunak:"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:291
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsulatutako e-posta"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "From:"
 msgstr "Nork:"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:345
+#: widgets/messageviewer.cpp:346
 #, kde-format
 msgid "&Subject:"
 msgstr "&Gaia:"
 
-#: widgets/messageviewer.cpp:348
+#: widgets/messageviewer.cpp:349
 #, kde-format
 msgid "&From:"
 msgstr "&Nork:"
 
-#: widgets/messageviewer.cpp:351
+#: widgets/messageviewer.cpp:352
 #, kde-format
 msgid "&Sender:"
 msgstr "&Bidaltzailea:"
 
-#: widgets/messageviewer.cpp:354
+#: widgets/messageviewer.cpp:355
 #, kde-format
 msgid "&To:"
 msgstr "Nor&i:"
 
-#: widgets/messageviewer.cpp:357
+#: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:360
+#: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
