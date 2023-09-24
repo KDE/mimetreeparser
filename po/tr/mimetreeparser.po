@@ -51,7 +51,7 @@ msgstr "Ek kaydedilemedi."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Geçici dosya oluşturulamadı."
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -168,11 +168,10 @@ msgid "Save attachment"
 msgstr "Eki Kaydet"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "Eki Farklı &Kaydet..."
+msgstr "Eki Farklı Kaydet"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -378,13 +377,12 @@ msgstr "Genel Anahtar İçe Aktar"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "adsız"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "Eki Farklı &Kaydet..."
+msgstr "Eki Farklı Kaydet"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format
@@ -569,11 +567,3 @@ msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin.
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Ek, diske kaydedildi: %1"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "Açmak üzere ek kaydedilemedi."

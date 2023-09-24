@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 00:45+0000\n"
-"PO-Revision-Date: 2023-09-22 18:57+0200\n"
+"PO-Revision-Date: 2023-09-23 20:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -51,7 +51,7 @@ msgstr "Misslyckades spara bilaga."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Misslyckades skapa tillfällig fil."
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -168,11 +168,10 @@ msgid "Save attachment"
 msgstr "Spara bilaga"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "&Spara bilaga som..."
+msgstr "Spara bilaga som"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -380,13 +379,12 @@ msgstr "Importera öppen nyckel"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "namnlös"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "&Spara bilaga som..."
+msgstr "Spara bilaga som"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format
