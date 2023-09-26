@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-20 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,55 +18,55 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:161
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Ime"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:163
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Velikost"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:165
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Šifrirano"
 
-#: core/attachmentmodel.cpp:96
+#: core/attachmentmodel.cpp:167
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Podpisano"
 
-#: core/attachmentmodel.cpp:190
+#: core/attachmentmodel.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Shranjevanje priloge ni uspelo."
 
-#: core/attachmentmodel.cpp:213
+#: core/attachmentmodel.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
 msgstr "Ni uspelo ustvariti začasne datoteke."
 
-#: core/attachmentmodel.cpp:218
+#: core/attachmentmodel.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Priponke ni bilo mogoče odpreti."
 
-#: core/attachmentmodel.cpp:239
+#: core/attachmentmodel.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "V tej prilogi ni bilo najdenih nobenih ključev"
 
-#: core/attachmentmodel.cpp:242
+#: core/attachmentmodel.cpp:323
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -76,7 +76,7 @@ msgstr[1] "%1 ključa uvožena"
 msgstr[2] "%1 ključi uvoženi"
 msgstr[3] "%1 ključev uvoženo"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
