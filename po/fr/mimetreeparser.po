@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 00:45+0000\n"
-"PO-Revision-Date: 2023-09-17 20:51+0200\n"
+"PO-Revision-Date: 2023-09-26 10:36+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -48,7 +48,7 @@ msgstr "Impossible d'enregistrer une pièce jointe."
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
-msgstr ""
+msgstr "Impossible de créer un fichier temporaire"
 
 #: core/attachmentmodel.cpp:218
 #, kde-format
@@ -154,13 +154,13 @@ msgstr "À :"
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr ""
+msgstr "CC :"
 
 #: quick/qml/MailViewer.qml:163
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
-msgstr ""
+msgstr "BCC :"
 
 #: quick/qml/MailViewer.qml:220
 #, kde-format
@@ -169,11 +169,10 @@ msgid "Save attachment"
 msgstr "Enregistrer une pièce jointe"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "&Enregistrer une pièce jointe comme..."
+msgstr "Enregistrer une pièce jointe comme"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -388,13 +387,12 @@ msgstr "Importer une clé publique"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "non nommé"
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "&Enregistrer une pièce jointe comme..."
+msgstr "Enregistrer une pièce jointe comme"
 
 #: widgets/messageviewer.cpp:257
 #, kde-format
@@ -457,11 +455,9 @@ msgid "&From:"
 msgstr "&De :"
 
 #: widgets/messageviewer.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Sender:"
+#, kde-format
 msgid "&Sender:"
-msgstr "Émetteur : "
+msgstr "É&metteur : "
 
 #: widgets/messageviewer.cpp:355
 #, kde-format
@@ -471,12 +467,12 @@ msgstr "&À :"
 #: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&CC:"
-msgstr ""
+msgstr "&CC :"
 
 #: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&BCC:"
-msgstr ""
+msgstr "&BCC :"
 
 #: widgets/messageviewerdialog.cpp:73
 #, kde-format
