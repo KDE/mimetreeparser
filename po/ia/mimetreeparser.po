@@ -332,7 +332,7 @@ msgstr ""
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
 msgstr ""
-"Le signatura es valide, ma le clave <a href=%1\"></a> non es credibile."
+"Le signatura es valide, ma le clave <a href=\"%1\"></a> non es credibile."
 
 #: widgets/messagecontainerwidget.cpp:198
 #, kde-format
