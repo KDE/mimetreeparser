@@ -19,7 +19,6 @@
 #include <QGuiApplication>
 #include <QIcon>
 #include <QMimeDatabase>
-#include <QMimeType>
 #include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTemporaryFile>

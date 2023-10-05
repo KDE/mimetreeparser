@@ -7,7 +7,6 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
-#include <QMainWindow>
 #include <QUrl>
 
 int main(int argc, char *argv[])

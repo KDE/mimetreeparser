@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <QObject>
-
 #include <QAbstractItemModel>
 #include <QModelIndex>
 #include <gpgme++/decryptionresult.h>

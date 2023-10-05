@@ -10,11 +10,8 @@
 #include <Libkleo/Compliance>
 #include <QGpgME/Protocol>
 
-#include <QDebug>
-#include <QLabel>
 #include <QPaintEvent>
 #include <QPainter>
-#include <QResizeEvent>
 #include <QVBoxLayout>
 
 namespace

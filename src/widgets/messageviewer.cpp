@@ -10,7 +10,6 @@
 
 #include <KCalendarCore/Event>
 #include <KCalendarCore/ICalFormat>
-#include <KCalendarCore/Incidence>
 #include <KLocalizedString>
 #include <KMessageWidget>
 #include <MimeTreeParserCore/AttachmentModel>
