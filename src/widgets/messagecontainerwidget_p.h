@@ -30,7 +30,7 @@ public:
                                     bool displayEncryptionInfo,
                                     UrlHandler *urlHandler,
                                     QWidget *parent = nullptr);
-    ~MessageWidgetContainer();
+    ~MessageWidgetContainer() override;
 
 protected:
     void paintEvent(QPaintEvent *event) override;

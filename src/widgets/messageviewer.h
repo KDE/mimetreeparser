@@ -25,7 +25,7 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
 {
 public:
     explicit MessageViewer(QWidget *parent = nullptr);
-    ~MessageViewer();
+    ~MessageViewer() override;
 
     KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
