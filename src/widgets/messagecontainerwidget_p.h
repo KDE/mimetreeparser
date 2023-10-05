@@ -11,7 +11,6 @@
 
 class SignatureInfo;
 class QPaintEvent;
-class QResizeEvent;
 class UrlHandler;
 
 /// \internal
