@@ -37,7 +37,6 @@ include(ECMDeprecationSettings)
 include(ECMAddQch)
 include(ECMAddTests)
 
-set(KF_MIN_VERSION "5.240.0")
 set(KPIM_MIME_VERSION "5.240.40")
 set(KPIM_LIBKLEO_VERSION "5.240.40")
 set(KPIM_MBOX_VERSION "5.23.40")
