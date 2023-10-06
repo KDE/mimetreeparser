@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 00:45+0000\n"
+"POT-Creation-Date: 2023-10-06 00:43+0000\n"
 "PO-Revision-Date: 2023-09-23 08:39+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -18,55 +18,55 @@ msgstr ""
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: core/attachmentmodel.cpp:90
+#: core/attachmentmodel.cpp:161
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nomo"
 
-#: core/attachmentmodel.cpp:92
+#: core/attachmentmodel.cpp:163
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Grandeco"
 
-#: core/attachmentmodel.cpp:94
+#: core/attachmentmodel.cpp:165
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Ĉifrita"
 
-#: core/attachmentmodel.cpp:96
+#: core/attachmentmodel.cpp:167
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Subskribita"
 
-#: core/attachmentmodel.cpp:190
+#: core/attachmentmodel.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Malsukcesis konservi aldonaĵon."
 
-#: core/attachmentmodel.cpp:213
+#: core/attachmentmodel.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
 msgstr "Malsukcesis krei provizoran dosieron."
 
-#: core/attachmentmodel.cpp:218
+#: core/attachmentmodel.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Malsukcesis malfermi aldonaĵon."
 
-#: core/attachmentmodel.cpp:239
+#: core/attachmentmodel.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Neniuj ŝlosiloj estis trovitaj en ĉi tiu aldonaĵo"
 
-#: core/attachmentmodel.cpp:242
+#: core/attachmentmodel.cpp:323
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -74,7 +74,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "unu ŝlosilo importita"
 msgstr[1] "%1 ŝlosiloj importitaj"
 
-#: core/attachmentmodel.cpp:245
+#: core/attachmentmodel.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
