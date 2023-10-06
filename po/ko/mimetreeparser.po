@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-08-27 01:20+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,62 +17,62 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:161
+#: core/attachmentmodel.cpp:160
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "이름"
 
-#: core/attachmentmodel.cpp:163
+#: core/attachmentmodel.cpp:162
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "크기"
 
-#: core/attachmentmodel.cpp:165
+#: core/attachmentmodel.cpp:164
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "암호화됨"
 
-#: core/attachmentmodel.cpp:167
+#: core/attachmentmodel.cpp:166
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "서명됨"
 
-#: core/attachmentmodel.cpp:260
+#: core/attachmentmodel.cpp:259
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "첨부 파일을 저장할 수 없습니다."
 
-#: core/attachmentmodel.cpp:290
+#: core/attachmentmodel.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
 msgstr ""
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "첨부 파일을 열 수 없습니다."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "이 첨부 파일에서 키를 찾을 수 없음"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
 msgstr[0] "키 %1개를 가져옴"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -100,7 +100,7 @@ msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:314
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Error: %1"
 msgstr "오류: %1"
@@ -206,7 +206,7 @@ msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "이 메시지는 키 %1(으)로 서명되었습니다."
 
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
@@ -236,15 +236,14 @@ msgctxt "@label"
 msgid "You are trusting this key."
 msgstr "이 키를 신뢰하고 있습니다."
 
-#: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:102
+#: quick/qml/private/MailPartModel.qml:69 widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "서명이 잘못되었습니다."
 
 #: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:200
+#: widgets/messagecontainerwidget.cpp:197
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr "메시지가 암호화되어 있지만 키가 없습니다."
@@ -254,7 +253,7 @@ msgstr "메시지가 암호화되어 있지만 키가 없습니다."
 msgid "This message is encrypted to the key: %1"
 msgstr "이 메시지는 다음 키로 암호화되어 있습니다: %1"
 
-#: widgets/messagecontainerwidget.cpp:60
+#: widgets/messagecontainerwidget.cpp:57
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -264,203 +263,203 @@ msgstr ""
 "이 메시지는 VS-NfD를 준수하는 방법으로 키 <a href=\"%1\">%2</a>(으)로 서명되"
 "었습니다."
 
-#: widgets/messagecontainerwidget.cpp:67
+#: widgets/messagecontainerwidget.cpp:64
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
 msgstr "이 메시지는 키 <a href=\"%1\">%2</a>(으)로 서명되었습니다."
 
-#: widgets/messagecontainerwidget.cpp:75
+#: widgets/messagecontainerwidget.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "%1이(가) 이 메시지에 VS-NfD를 준수하는 방법으로 서명했습니다."
 
-#: widgets/messagecontainerwidget.cpp:77
+#: widgets/messagecontainerwidget.cpp:74
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
 msgstr "%1이(가) 메시지에 서명했습니다."
 
-#: widgets/messagecontainerwidget.cpp:80
+#: widgets/messagecontainerwidget.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
 msgstr "<a href=\"%1\">키</a>가 취소되었습니다."
 
-#: widgets/messagecontainerwidget.cpp:83
+#: widgets/messagecontainerwidget.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
 msgstr "<a href=\"%1\">키</a>가 만료되었습니다."
 
-#: widgets/messagecontainerwidget.cpp:88
+#: widgets/messagecontainerwidget.cpp:85
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
 msgstr "서명이 올바르지만 <a href=\"%1\">키</a> 유효성을 알 수 없습니다."
 
-#: widgets/messagecontainerwidget.cpp:91
+#: widgets/messagecontainerwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
 msgstr "서명이 올바르지만 <a href=\"%1\">키</a>를 그럭저럭 신뢰합니다."
 
-#: widgets/messagecontainerwidget.cpp:93
+#: widgets/messagecontainerwidget.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
 msgstr "서명이 올바르고 <a href=\"%1\">키</a>를 웬만큼 신뢰합니다."
 
-#: widgets/messagecontainerwidget.cpp:96
+#: widgets/messagecontainerwidget.cpp:93
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
 msgstr "서명이 올바르고 <a href=\"%1\">키</a>를 완전히 신뢰합니다."
 
-#: widgets/messagecontainerwidget.cpp:98
+#: widgets/messagecontainerwidget.cpp:95
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
 msgstr "서명이 올바르지만 <a href=\"%1\">키</a>를 신뢰할 수 없습니다."
 
-#: widgets/messagecontainerwidget.cpp:198
+#: widgets/messagecontainerwidget.cpp:195
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
 msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 키가 없습니다."
 
-#: widgets/messagecontainerwidget.cpp:205
+#: widgets/messagecontainerwidget.cpp:202
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었습니다."
 
-#: widgets/messagecontainerwidget.cpp:207
+#: widgets/messagecontainerwidget.cpp:204
 #, kde-format
 msgid "This message is encrypted."
 msgstr "이 메시지는 암호화되어 있습니다."
 
-#: widgets/messagecontainerwidget.cpp:216
+#: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "The message is encrypted for the following keys:"
 msgstr "이 메시지는 다음 키로 암호화되어 있습니다:"
 
-#: widgets/messagecontainerwidget.cpp:233
+#: widgets/messagecontainerwidget.cpp:230
 #, fuzzy, kde-format
 #| msgid "Unknow key"
 msgid "Unknown key"
 msgstr "알 수 없는 키"
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:64
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "다른 이름으로 첨부 파일 저장(&S)..."
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:69
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "열기"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "공개 키 가져오기"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:103
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr ""
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:106
 #, fuzzy, kde-format
 #| msgid "&Save Attachment As..."
 msgid "Save Attachment As"
 msgstr "다른 이름으로 첨부 파일 저장(&S)..."
 
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:256
 #, kde-format
 msgid "Invitation"
 msgstr "초대장"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:259
 #, kde-format
 msgid "&Summary:"
 msgstr "개요(&S):"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Organizer:"
 msgstr "주최(&O):"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Location:"
 msgstr "위치(&L):"
 
-#: widgets/messageviewer.cpp:265
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Start date:"
 msgstr "시작 날짜(&S):"
 
-#: widgets/messageviewer.cpp:267
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&End date:"
 msgstr "종료 날짜(&E):"
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Details:"
 msgstr "자세히(&D):"
 
-#: widgets/messageviewer.cpp:291
+#: widgets/messageviewer.cpp:290
 #, kde-format
 msgid "Encapsulated email"
 msgstr "캡슐화된 이메일"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "From:"
 msgstr "보낸 사람:"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Date:"
 msgstr "날짜:"
 
-#: widgets/messageviewer.cpp:346
+#: widgets/messageviewer.cpp:345
 #, kde-format
 msgid "&Subject:"
 msgstr "제목(&S):"
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:348
 #, kde-format
 msgid "&From:"
 msgstr "보낸 사람(&F):"
 
-#: widgets/messageviewer.cpp:352
+#: widgets/messageviewer.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Sender:"
 msgid "&Sender:"
 msgstr "전송한 사람:"
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&To:"
 msgstr "받는 사람(&T):"
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&CC:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&BCC:"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-08-26 18:42+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,55 +17,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:161
+#: core/attachmentmodel.cpp:160
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nimi"
 
-#: core/attachmentmodel.cpp:163
+#: core/attachmentmodel.cpp:162
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Koko"
 
-#: core/attachmentmodel.cpp:165
+#: core/attachmentmodel.cpp:164
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Salattu"
 
-#: core/attachmentmodel.cpp:167
+#: core/attachmentmodel.cpp:166
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Allekirjoitettu"
 
-#: core/attachmentmodel.cpp:260
+#: core/attachmentmodel.cpp:259
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Liitettä ei voitu tallentaa."
 
-#: core/attachmentmodel.cpp:290
+#: core/attachmentmodel.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Failed to create temporary file."
 msgstr ""
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Liitettä ei voitu avata."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Liitteestä ei löytynyt avaimia."
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -73,7 +73,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "tuotiin yksi avain"
 msgstr[1] "tuotiin %1 avainta"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -102,7 +102,7 @@ msgstr "Salausliitännäinen ”%1” ei osaa purkaa viestien salausta."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Salausliitännäinen ”%1” ei voinut purkaa tiedon salausta."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:314
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Error: %1"
 msgstr "Virhe: %1"
@@ -207,7 +207,7 @@ msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "Viesti on allekirjoitettu avaimella %1."
 
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
@@ -237,15 +237,14 @@ msgctxt "@label"
 msgid "You are trusting this key."
 msgstr "Luotat tähän avaimeen."
 
-#: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:102
+#: quick/qml/private/MailPartModel.qml:69 widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "Allekirjoitus on virheellinen."
 
 #: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:200
+#: widgets/messagecontainerwidget.cpp:197
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr "Viesti on salattu, mutta sille ei vielä ole avainta."
@@ -255,7 +254,7 @@ msgstr "Viesti on salattu, mutta sille ei vielä ole avainta."
 msgid "This message is encrypted to the key: %1"
 msgstr "Viesti on salattu avaimella: %1"
 
-#: widgets/messagecontainerwidget.cpp:60
+#: widgets/messagecontainerwidget.cpp:57
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -265,37 +264,37 @@ msgstr ""
 "Viesti on allekirjoitettu VS-NfD-yhteensopivasti avaimella <a href=\"%1\">"
 "%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:67
+#: widgets/messagecontainerwidget.cpp:64
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
 msgstr "Viesti on allekirjoitettu avaimella <a href=\"%1\">%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:75
+#: widgets/messagecontainerwidget.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "Viesti on VS-NfD-yhteensopivasti allekirjoittanut %1."
 
-#: widgets/messagecontainerwidget.cpp:77
+#: widgets/messagecontainerwidget.cpp:74
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
 msgstr "Viestin on allekirjoittanut %1."
 
-#: widgets/messagecontainerwidget.cpp:80
+#: widgets/messagecontainerwidget.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
 msgstr "<a href=\"%1\">Avain</a> on peruttu."
 
-#: widgets/messagecontainerwidget.cpp:83
+#: widgets/messagecontainerwidget.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
 msgstr "<a href=\"%1\">Avain</a> on vanhentunut."
 
-#: widgets/messagecontainerwidget.cpp:88
+#: widgets/messagecontainerwidget.cpp:85
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -304,7 +303,7 @@ msgstr ""
 "Allekirjoitus on kelvollinen, mutta <a href=\"%1\">avaimen</a> luotettavuus "
 "on tuntematon."
 
-#: widgets/messagecontainerwidget.cpp:91
+#: widgets/messagecontainerwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -313,7 +312,7 @@ msgstr ""
 "Allekirjoitus on kelvollinen, ja <a href=\"%1\">avaimen</a> luotettavuus on "
 "ehdollinen."
 
-#: widgets/messagecontainerwidget.cpp:93
+#: widgets/messagecontainerwidget.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
@@ -321,7 +320,7 @@ msgstr ""
 "Allekirjoitus on kelvollinen, ja <a href=\"%1\">avaimen</a> luotettavuus on "
 "täysi."
 
-#: widgets/messagecontainerwidget.cpp:96
+#: widgets/messagecontainerwidget.cpp:93
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -330,7 +329,7 @@ msgstr ""
 "Allekirjoitus on kelvollinen, ja <a href=\"%1\">avaimen</a> luotettavuus on "
 "äärimmäinen."
 
-#: widgets/messagecontainerwidget.cpp:98
+#: widgets/messagecontainerwidget.cpp:95
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
@@ -338,136 +337,136 @@ msgstr ""
 "Allekirjoitus on kelvollinen, mutta <a href=\"%1\">avain</a> ei ole "
 "luotettava."
 
-#: widgets/messagecontainerwidget.cpp:198
+#: widgets/messagecontainerwidget.cpp:195
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
 msgstr "Viesti on VS-NfD-yhteensopivasti salattu, mutta siihen ei ole avainta."
 
-#: widgets/messagecontainerwidget.cpp:205
+#: widgets/messagecontainerwidget.cpp:202
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Viesti on VS-NfD-yhteensopivasti salattu."
 
-#: widgets/messagecontainerwidget.cpp:207
+#: widgets/messagecontainerwidget.cpp:204
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Viesti on salattu."
 
-#: widgets/messagecontainerwidget.cpp:216
+#: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "The message is encrypted for the following keys:"
 msgstr "Viesti on salattu seuraaville avaimille:"
 
-#: widgets/messagecontainerwidget.cpp:233
+#: widgets/messagecontainerwidget.cpp:230
 #, kde-format
 msgid "Unknown key"
 msgstr ""
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:64
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Tallenna &liite nimellä…"
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:69
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Avaa"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Tuo julkinen avain"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:103
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr ""
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:106
 #, kde-format
 msgid "Save Attachment As"
 msgstr ""
 
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:256
 #, kde-format
 msgid "Invitation"
 msgstr "Kutsu"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:259
 #, kde-format
 msgid "&Summary:"
 msgstr "&Yhteenveto:"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Järjestäjä:"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Location:"
 msgstr "&Sijainti:"
 
-#: widgets/messageviewer.cpp:265
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Start date:"
 msgstr "&Aloituspäivä:"
 
-#: widgets/messageviewer.cpp:267
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&End date:"
 msgstr "&Päättymispäivä:"
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Details:"
 msgstr "Tie&dot:"
 
-#: widgets/messageviewer.cpp:291
+#: widgets/messageviewer.cpp:290
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapseloitu viesti"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "From:"
 msgstr "Lähettäjä:"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Date:"
 msgstr "Päiväys:"
 
-#: widgets/messageviewer.cpp:346
+#: widgets/messageviewer.cpp:345
 #, kde-format
 msgid "&Subject:"
 msgstr "Ai&he:"
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:348
 #, kde-format
 msgid "&From:"
 msgstr "&Lähettäjä:"
 
-#: widgets/messageviewer.cpp:352
+#: widgets/messageviewer.cpp:351
 #, kde-format
 msgid "&Sender:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&To:"
 msgstr "&Vastaanottaja:"
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&CC:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&BCC:"
 msgstr ""
