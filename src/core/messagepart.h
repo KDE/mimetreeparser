@@ -286,15 +286,15 @@ public:
     QString text() const Q_DECL_OVERRIDE;
 
     void setDecryptMessage(bool decrypt);
-    Q_REQUIRED_RESULT bool decryptMessage() const;
+    [[nodiscard]] bool decryptMessage() const;
 
     void setIsEncrypted(bool encrypted);
-    Q_REQUIRED_RESULT bool isEncrypted() const;
+    [[nodiscard]] bool isEncrypted() const;
 
-    Q_REQUIRED_RESULT bool isDecryptable() const;
+    [[nodiscard]] bool isDecryptable() const;
 
-    Q_REQUIRED_RESULT bool isNoSecKey() const;
-    Q_REQUIRED_RESULT bool passphraseError() const;
+    [[nodiscard]] bool isNoSecKey() const;
+    [[nodiscard]] bool passphraseError() const;
 
     void startDecryption(KMime::Content *data);
     void startDecryption();

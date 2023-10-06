@@ -32,9 +32,9 @@ public:
 
     Block(const QByteArray &m, PGPBlockType t);
 
-    Q_REQUIRED_RESULT QByteArray text() const;
-    Q_REQUIRED_RESULT PGPBlockType type() const;
-    Q_REQUIRED_RESULT PGPBlockType determineType() const;
+    [[nodiscard]] QByteArray text() const;
+    [[nodiscard]] PGPBlockType type() const;
+    [[nodiscard]] PGPBlockType determineType() const;
 
     QByteArray msg;
     PGPBlockType mType = UnknownBlock;
@@ -43,11 +43,11 @@ public:
 /** Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
-Q_REQUIRED_RESULT MIMETREEPARSER_CORE_EXPORT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
 
 namespace CryptoUtils
 {
-Q_REQUIRED_RESULT MIMETREEPARSER_CORE_EXPORT KMime::Message::Ptr decryptMessage(const KMime::Message::Ptr &decrypt, bool &wasEncrypted);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT KMime::Message::Ptr decryptMessage(const KMime::Message::Ptr &decrypt, bool &wasEncrypted);
 }
 
 } // namespace MimeTreeParser
