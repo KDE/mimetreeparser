@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-06 00:43+0000\n"
-"PO-Revision-Date: 2023-09-16 10:10\n"
+"PO-Revision-Date: 2023-10-10 14:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -166,11 +166,10 @@ msgid "Save attachment"
 msgstr "保存附件"
 
 #: quick/qml/MailViewer.qml:243
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "附件另存为(&S)..."
+msgstr ""
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -375,10 +374,9 @@ msgid "unnamed"
 msgstr ""
 
 #: widgets/messageviewer.cpp:107
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Save Attachment As"
-msgstr "附件另存为(&S)..."
+msgstr ""
 
 #: widgets/messageviewer.cpp:257
 #, kde-format
@@ -441,11 +439,9 @@ msgid "&From:"
 msgstr "发件人(&F)："
 
 #: widgets/messageviewer.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Sender:"
+#, kde-format
 msgid "&Sender:"
-msgstr "发送者："
+msgstr ""
 
 #: widgets/messageviewer.cpp:355
 #, kde-format
@@ -565,15 +561,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr ""
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "已将附件保存到磁盘：%1"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "无法保存以打开附件。"
-
-#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
-#~ msgid "Unknown"
-#~ msgstr "未知"
