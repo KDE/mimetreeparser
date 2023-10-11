@@ -49,7 +49,7 @@ ecm_setup_version(PROJECT
     SOVERSION 6
 )
 
-configure_file(mimetreeparserng-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h @ONLY)
+configure_file(mimetreeparserng-version.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h @ONLY)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
