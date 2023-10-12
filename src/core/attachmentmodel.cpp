@@ -279,7 +279,6 @@ bool AttachmentModel::openAttachment(const int row)
 bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
 {
     QString fileName = message->filename();
-    QString errorMessage;
     QTemporaryDir tempDir(QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName() + QStringLiteral(".XXXXXX"));
     // TODO: We need some cleanup here. Otherwise the files will stay forever on Windows.
     tempDir.setAutoRemove(false);
