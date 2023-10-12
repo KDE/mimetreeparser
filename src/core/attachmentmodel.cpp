@@ -19,9 +19,10 @@
 #include <QGuiApplication>
 #include <QIcon>
 #include <QMimeDatabase>
+#include <QMimeType>
 #include <QRegularExpression>
 #include <QStandardPaths>
-#include <QTemporaryFile>
+#include <QTemporaryDir>
 #include <QUrl>
 
 namespace
@@ -277,25 +278,24 @@ bool AttachmentModel::openAttachment(const int row)
 
 bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
 {
-    const QString tempDir = QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName();
     QString fileName = message->filename();
-    QString errorMessage;
-    if (message->filename().isEmpty() || validateFileName(fileName, false)) {
-        QTemporaryFile file;
+    QTemporaryDir tempDir(QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName() + QStringLiteral(".XXXXXX"));
+    // TODO: We need some cleanup here. Otherwise the files will stay forever on Windows.
+    tempDir.setAutoRemove(false);
+    if (message->filename().isEmpty() || !validateFileName(fileName, false)) {
         const auto mimetype = d->mimeDb.mimeTypeForName(QString::fromLatin1(message->mimeType()));
-        file.setFileTemplate(tempDir + QStringLiteral("XXXXXX.") + mimetype.preferredSuffix());
-        file.setAutoRemove(false);
-        if (!file.open()) {
-            Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to create temporary file."));
-            return false;
-        }
-        fileName = file.fileName();
+        fileName = tempDir.filePath(i18n("attachment") + QLatin1Char('.') + mimetype.preferredSuffix());
     } else {
-        fileName = tempDir + QLatin1Char('/') + message->filename();
+        fileName = tempDir.filePath(message->filename());
     }
 
     const auto filePath = saveAttachmentToPath(message, fileName, true);
-    if (!QDesktopServices::openUrl(QUrl(QStringLiteral("file://") + filePath))) {
+    if (filePath.isEmpty()) {
+        Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to write attachment for opening."));
+        return false;
+    }
+
+    if (!QDesktopServices::openUrl(QUrl::fromLocalFile(filePath))) {
         Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
         return false;
     }
