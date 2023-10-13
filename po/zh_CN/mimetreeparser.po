@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 00:43+0000\n"
+"POT-Creation-Date: 2023-10-13 00:43+0000\n"
 "PO-Revision-Date: 2023-10-10 14:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -47,32 +47,41 @@ msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "无法保存附件。"
 
-#: core/attachmentmodel.cpp:290
-#, kde-format
-msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr ""
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "保存附件"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to open attachment."
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "无法打开附件。"
+
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "无法打开附件。"
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "没有在此附件中找到密钥"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
 msgstr[0] "已导入 %1 个密钥"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"

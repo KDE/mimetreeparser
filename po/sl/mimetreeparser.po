@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 00:43+0000\n"
+"POT-Creation-Date: 2023-10-13 00:43+0000\n"
 "PO-Revision-Date: 2023-09-20 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -48,25 +48,34 @@ msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Shranjevanje priloge ni uspelo."
 
-#: core/attachmentmodel.cpp:290
-#, kde-format
-msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "Ni uspelo ustvariti začasne datoteke."
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "Shrani prilogo"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save attachment for opening."
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "Priponke ni bilo mogoče shraniti za odpiranje."
+
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Priponke ni bilo mogoče odpreti."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "V tej prilogi ni bilo najdenih nobenih ključev"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -76,7 +85,7 @@ msgstr[1] "%1 ključa uvožena"
 msgstr[2] "%1 ključi uvoženi"
 msgstr[3] "%1 ključev uvoženo"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -577,12 +586,12 @@ msgid "KMail Error"
 msgstr "Napaka KMaila"
 
 #~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Priponka shranjena na disk: %1"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Ni uspelo ustvariti začasne datoteke."
 
 #~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "Priponke ni bilo mogoče shraniti za odpiranje."
+#~ msgid "Saved the attachment to disk: %1"
+#~ msgstr "Priponka shranjena na disk: %1"
 
 #~ msgctxt "displayed when a mail has unknown sender, receiver or date"
 #~ msgid "Unknown"

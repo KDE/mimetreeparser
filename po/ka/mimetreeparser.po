@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 00:43+0000\n"
+"POT-Creation-Date: 2023-10-13 00:43+0000\n"
 "PO-Revision-Date: 2023-09-21 05:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -48,25 +48,34 @@ msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა."
 
-#: core/attachmentmodel.cpp:290
-#, kde-format
-msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "დროებითი ფაილის შექმნის შეცდომა."
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "მიმაგრებული ფაილის შენახვა"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save attachment for opening."
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "მიმაგრებული ფაილის გასახსნელად შენახვის შეცდომა."
+
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "მიმაგრებული ფაილის გახსნა შეუძლებელია."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "ამ მიმაგრებულ ფაილში გასაღებები ვერ ვიპოვე"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -74,7 +83,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "შემოტანილია 1 გასაღები"
 msgstr[1] "შემოტანილია %1 გასაღები"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -572,12 +581,12 @@ msgid "KMail Error"
 msgstr "KMail-ის შეცდომა"
 
 #~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "მიმაგრებული ფაილი შენახულია დისკზე: %1"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "დროებითი ფაილის შექმნის შეცდომა."
 
 #~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "მიმაგრებული ფაილის გასახსნელად შენახვის შეცდომა."
+#~ msgid "Saved the attachment to disk: %1"
+#~ msgstr "მიმაგრებული ფაილი შენახულია დისკზე: %1"
 
 #~ msgctxt "displayed when a mail has unknown sender, receiver or date"
 #~ msgid "Unknown"

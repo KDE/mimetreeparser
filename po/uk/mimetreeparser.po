@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 00:43+0000\n"
+"POT-Creation-Date: 2023-10-13 00:43+0000\n"
 "PO-Revision-Date: 2023-09-20 08:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -48,25 +48,34 @@ msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Не вдалося зберегти долучення."
 
-#: core/attachmentmodel.cpp:290
-#, kde-format
-msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "Не вдалося створити тимчасовий файл."
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "Зберегти долучення"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save attachment for opening."
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "Не вдалося зберегти долучення для відкриття."
+
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Не вдалося відкрити долучення."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "У цьому долученні не було знайдено ключів"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -76,7 +85,7 @@ msgstr[1] "імпортовано %1 ключі"
 msgstr[2] "імпортовано %1 ключів"
 msgstr[3] "імпортовано %1 ключ"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -578,12 +587,12 @@ msgid "KMail Error"
 msgstr "Помилка KMail"
 
 #~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Збереження долучення на диску: %1"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Не вдалося створити тимчасовий файл."
 
 #~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "Не вдалося зберегти долучення для відкриття."
+#~ msgid "Saved the attachment to disk: %1"
+#~ msgstr "Збереження долучення на диску: %1"
 
 #~ msgctxt "displayed when a mail has unknown sender, receiver or date"
 #~ msgid "Unknown"

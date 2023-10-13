@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 00:43+0000\n"
+"POT-Creation-Date: 2023-10-13 00:43+0000\n"
 "PO-Revision-Date: 2023-09-20 22:59+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -49,25 +49,34 @@ msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "No se ha podido guardar el adjunto."
 
-#: core/attachmentmodel.cpp:290
-#, kde-format
-msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "Ha fallado la creación del archivo temporal."
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "Guardar adjunto"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save attachment for opening."
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "No se ha podido guardar el adjunto para su apertura."
+
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "No se ha podido abrir el adjunto."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "No se ha encontrado ninguna clave en este adjunto"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -75,7 +84,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "1 clave importada"
 msgstr[1] "%1 claves importadas"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -579,12 +588,12 @@ msgid "KMail Error"
 msgstr "Error de KMail"
 
 #~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Adjunto guardado en disco: %1"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Ha fallado la creación del archivo temporal."
 
 #~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "No se ha podido guardar el adjunto para su apertura."
+#~ msgid "Saved the attachment to disk: %1"
+#~ msgstr "Adjunto guardado en disco: %1"
 
 #~ msgctxt "displayed when a mail has unknown sender, receiver or date"
 #~ msgid "Unknown"

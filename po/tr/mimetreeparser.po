@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 00:43+0000\n"
+"POT-Creation-Date: 2023-10-13 00:43+0000\n"
 "PO-Revision-Date: 2023-08-27 21:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -47,25 +47,34 @@ msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Ek kaydedilemedi."
 
-#: core/attachmentmodel.cpp:290
-#, kde-format
-msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "Geçici dosya oluşturulamadı."
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "Eki Kaydet"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to open attachment."
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "Ek açılamadı."
+
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Ek açılamadı."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Bu ekte hiçbir anahtar bulunamadı."
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -73,7 +82,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "1 anahtar içe aktarıldı"
 msgstr[1] "%1 anahtar içe aktarıldı"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -567,3 +576,7 @@ msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin.
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"
+
+#~ msgctxt "@info"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Geçici dosya oluşturulamadı."

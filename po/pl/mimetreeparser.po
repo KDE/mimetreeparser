@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 00:43+0000\n"
+"POT-Creation-Date: 2023-10-13 00:43+0000\n"
 "PO-Revision-Date: 2023-09-23 07:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -48,25 +48,34 @@ msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Nie udało się zapisać załącznika."
 
-#: core/attachmentmodel.cpp:290
-#, kde-format
-msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "Nie udało się utworzyć pliku tymczasowego."
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "Zapisz załącznik"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to open attachment."
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "Nie udało się otworzyć załącznika."
+
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Nie udało się otworzyć załącznika."
 
-#: core/attachmentmodel.cpp:320
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Nie znaleziono żadnych kluczy w tym załączniku"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -75,7 +84,7 @@ msgstr[0] "zaimportowano jeden klucz"
 msgstr[1] "zaimportowano %1 klucze"
 msgstr[2] "zaimportowano %1 kluczy"
 
-#: core/attachmentmodel.cpp:326
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -577,3 +586,7 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Błąd KMaila"
+
+#~ msgctxt "@info"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Nie udało się utworzyć pliku tymczasowego."
