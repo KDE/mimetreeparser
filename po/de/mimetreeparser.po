@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-13 01:43+0000\n"
 "PO-Revision-Date: 2023-10-05 15:44+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -20,41 +20,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: core/attachmentmodel.cpp:160
+#: core/attachmentmodel.cpp:161
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Name"
 
-#: core/attachmentmodel.cpp:162
+#: core/attachmentmodel.cpp:163
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Größe"
 
-#: core/attachmentmodel.cpp:164
+#: core/attachmentmodel.cpp:165
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Verschlüsselt"
 
-#: core/attachmentmodel.cpp:166
+#: core/attachmentmodel.cpp:167
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signiert"
 
-#: core/attachmentmodel.cpp:259
+#: core/attachmentmodel.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Der Anhang konnte nicht gespeichert werden."
 
-#: core/attachmentmodel.cpp:289
-#, kde-format
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "Anhang speichern"
+
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save attachment for opening."
 msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "Temporäre Datei konnte nicht erstellt werden."
+msgid "Failed to write attachment for opening."
+msgstr "Der Anhang kann nicht zum Öffnen gespeichert werden."
 
 #: core/attachmentmodel.cpp:299
 #, kde-format
@@ -585,12 +594,12 @@ msgid "KMail Error"
 msgstr "KMail Fehler"
 
 #~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Anhang auf Datenträger gespeichert: %1"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Temporäre Datei konnte nicht erstellt werden."
 
 #~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "Der Anhang kann nicht zum Öffnen gespeichert werden."
+#~ msgid "Saved the attachment to disk: %1"
+#~ msgstr "Anhang auf Datenträger gespeichert: %1"
 
 #~ msgctxt "displayed when a mail has unknown sender, receiver or date"
 #~ msgid "Unknown"

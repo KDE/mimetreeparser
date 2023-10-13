@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-13 01:43+0000\n"
 "PO-Revision-Date: 2023-09-26 10:36+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -14,41 +14,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: core/attachmentmodel.cpp:160
+#: core/attachmentmodel.cpp:161
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nom"
 
-#: core/attachmentmodel.cpp:162
+#: core/attachmentmodel.cpp:163
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Taille"
 
-#: core/attachmentmodel.cpp:164
+#: core/attachmentmodel.cpp:165
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Chiffré"
 
-#: core/attachmentmodel.cpp:166
+#: core/attachmentmodel.cpp:167
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signé"
 
-#: core/attachmentmodel.cpp:259
+#: core/attachmentmodel.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Impossible d'enregistrer une pièce jointe."
 
-#: core/attachmentmodel.cpp:289
-#, kde-format
+#: core/attachmentmodel.cpp:287
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save attachment"
+msgid "attachment"
+msgstr "Enregistrer une pièce jointe"
+
+#: core/attachmentmodel.cpp:294
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save attachment for opening."
 msgctxt "@info"
-msgid "Failed to create temporary file."
-msgstr "Impossible de créer un fichier temporaire"
+msgid "Failed to write attachment for opening."
+msgstr "Impossible d'enregistrer une pièce jointe pour ouverture."
 
 #: core/attachmentmodel.cpp:299
 #, kde-format
@@ -580,12 +589,12 @@ msgid "KMail Error"
 msgstr "Erreur de KMail"
 
 #~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "A enregistré la pièce jointe sur disque : %1"
+#~ msgid "Failed to create temporary file."
+#~ msgstr "Impossible de créer un fichier temporaire"
 
 #~ msgctxt "@info"
-#~ msgid "Failed to save attachment for opening."
-#~ msgstr "Impossible d'enregistrer une pièce jointe pour ouverture."
+#~ msgid "Saved the attachment to disk: %1"
+#~ msgstr "A enregistré la pièce jointe sur disque : %1"
 
 #~ msgctxt "displayed when a mail has unknown sender, receiver or date"
 #~ msgid "Unknown"
