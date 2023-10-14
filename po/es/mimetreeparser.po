@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 00:43+0000\n"
-"PO-Revision-Date: 2023-09-20 22:59+0200\n"
+"PO-Revision-Date: 2023-10-13 16:52+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -50,19 +50,15 @@ msgid "Failed to save attachment."
 msgstr "No se ha podido guardar el adjunto."
 
 #: core/attachmentmodel.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Guardar adjunto"
+msgstr "adjunto"
 
 #: core/attachmentmodel.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save attachment for opening."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "No se ha podido guardar el adjunto para su apertura."
+msgstr "No se ha podido escribir el adjunto para abrirlo."
 
 #: core/attachmentmodel.cpp:299
 #, kde-format

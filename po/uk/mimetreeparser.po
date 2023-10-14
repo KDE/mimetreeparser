@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 00:43+0000\n"
-"PO-Revision-Date: 2023-09-20 08:54+0300\n"
+"PO-Revision-Date: 2023-10-13 08:52+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -49,19 +49,15 @@ msgid "Failed to save attachment."
 msgstr "Не вдалося зберегти долучення."
 
 #: core/attachmentmodel.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Зберегти долучення"
+msgstr "долучення"
 
 #: core/attachmentmodel.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save attachment for opening."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "Не вдалося зберегти долучення для відкриття."
+msgstr "Не вдалося записати долучення для відкриття."
 
 #: core/attachmentmodel.cpp:299
 #, kde-format

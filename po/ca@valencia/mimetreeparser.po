@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 00:43+0000\n"
-"PO-Revision-Date: 2023-10-04 12:17+0200\n"
+"PO-Revision-Date: 2023-10-13 16:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: core/attachmentmodel.cpp:161
 #, kde-format
@@ -50,19 +50,15 @@ msgid "Failed to save attachment."
 msgstr "No s'ha pogut guardar l'adjunt."
 
 #: core/attachmentmodel.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Guarda l'adjunt"
+msgstr "adjunt"
 
 #: core/attachmentmodel.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to open attachment."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "No s'ha pogut obrir l'adjunt."
+msgstr "No s'ha pogut escriure l'adjunt per a obrir-lo."
 
 #: core/attachmentmodel.cpp:299
 #, kde-format
@@ -586,7 +582,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error a KMail"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "No s'ha pogut crear el fitxer temporal."
