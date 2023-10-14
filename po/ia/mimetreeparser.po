@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# giovanni <g.sora@tiscali.it>, 2023.
+# SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:43+0000\n"
-"PO-Revision-Date: 2023-09-24 18:27+0200\n"
+"PO-Revision-Date: 2023-10-13 09:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: core/attachmentmodel.cpp:161
 #, kde-format
@@ -45,32 +45,30 @@ msgstr "Signate"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr ""
+msgstr "Falleva a salveguardar attachamento."
 
 #: core/attachmentmodel.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Salveguarda attachamento"
+msgstr "attachamento"
 
 #: core/attachmentmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr ""
+msgstr "Falleva a aperir sttachamento per aperir."
 
 #: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "Falleva a aperir attachamento."
 
 #: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
-msgstr ""
+msgstr "Nulle claves esseva trovate in iste attachamento"
 
 #: core/attachmentmodel.cpp:322
 #, kde-format
@@ -85,8 +83,8 @@ msgstr[1] "%1 claves importate:"
 msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "un clave esseva jam importate"
+msgstr[1] "%1 claves esseva jam importate"
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
@@ -124,7 +122,7 @@ msgstr "Necun clave disponibile"
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr ""
+msgstr "Phrase de contrasigno errate"
 
 #: quick/qml/MailViewer.qml:41
 #, kde-format
@@ -200,7 +198,7 @@ msgstr "Un error occurreva: %1"
 #: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr ""
+msgstr "Iste message de epsta contine un invitation"
 
 #: quick/qml/private/MailPart.qml:41
 #, kde-format
@@ -212,37 +210,37 @@ msgstr "inviate per %1 sur %2"
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
-msgstr ""
+msgstr "Iste message ha essite signate usante le clave  %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
-msgstr ""
+msgstr "Le detalios de clave non es disponibile."
 
 #: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
-msgstr ""
+msgstr "Iste mssage ha essite signate usnte le clave %1 per %2"
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
-msgstr ""
+msgstr "Le clave esseva revocate."
 
 #: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
-msgstr ""
+msgstr "Le clave ha expirate."
 
 #: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
-msgstr ""
+msgstr "Tu es confidente in iste clave"
 
 #: quick/qml/private/MailPartModel.qml:69 widgets/messagecontainerwidget.cpp:99
 #, kde-format
@@ -254,12 +252,12 @@ msgstr "Le signatura es invalide."
 #: widgets/messagecontainerwidget.cpp:197
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr ""
+msgstr "Iste message es cryptate ma on non ha le clave per illo."
 
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr ""
+msgstr "Iste message es cryptate al clave: %1"
 
 #: widgets/messagecontainerwidget.cpp:57
 #, kde-format
@@ -273,7 +271,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr ""
+msgstr "iste message h essite signate usante le clave <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:72
 #, kde-format
@@ -285,19 +283,19 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr ""
+msgstr "Iste message ha essite signate per %1."
 
 #: widgets/messagecontainerwidget.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr ""
+msgstr "Le clave <a href=\"%1\"></a> esseva revocate."
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
-msgstr ""
+msgstr "Le  clave <a href=\"%1\"></a> esseva expirate."
 
 #: widgets/messagecontainerwidget.cpp:85
 #, kde-format
@@ -381,7 +379,7 @@ msgstr "Aperi"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr ""
+msgstr "Importaclave public"
 
 #: widgets/messageviewer.cpp:103
 #, kde-format
@@ -432,7 +430,7 @@ msgstr "&Detalios:"
 #: widgets/messageviewer.cpp:290
 #, kde-format
 msgid "Encapsulated email"
-msgstr ""
+msgstr "Message de eposta includite"
 
 #: widgets/messageviewer.cpp:298
 #, kde-format
@@ -490,7 +488,7 @@ msgstr "&Salveguarda"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr ""
+msgstr "Salveguarda decryptate"
 
 #: widgets/messageviewerdialog.cpp:87
 #, kde-format
@@ -532,7 +530,7 @@ msgstr "Salveguarda file"
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr ""
+msgstr "Files de EPosta (*.mbox)"
 
 #: widgets/messageviewerdialog.cpp:119
 #, kde-format
@@ -548,7 +546,7 @@ msgstr "Error durante que on salveguardava message"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Salveguarda file decryptate"
 
 #: widgets/messageviewerdialog.cpp:135
 #, kde-format
@@ -566,7 +564,7 @@ msgstr "Imprime documento"
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "Incapace a leger file"
 
 #: widgets/urlhandler.cpp:37
 #, kde-format

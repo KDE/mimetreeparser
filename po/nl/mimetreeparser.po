@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:43+0000\n"
-"PO-Revision-Date: 2023-09-20 10:42+0200\n"
+"PO-Revision-Date: 2023-10-13 10:30+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -48,19 +48,15 @@ msgid "Failed to save attachment."
 msgstr "Bijlage opslaan is mislukt."
 
 #: core/attachmentmodel.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Bijlage opslaan"
+msgstr "bijlage"
 
 #: core/attachmentmodel.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save attachment for opening."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "Bijlage openen voor opslaan is mislukt."
+msgstr "Bijlage schrijven voor openen is mislukt."
 
 #: core/attachmentmodel.cpp:299
 #, kde-format
