@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:43+0000\n"
-"PO-Revision-Date: 2023-10-13 09:39+0200\n"
+"PO-Revision-Date: 2023-10-15 17:44+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: core/attachmentmodel.cpp:161
 #, kde-format
@@ -266,18 +266,20 @@ msgid ""
 "This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
 "%2</a>."
 msgstr ""
+"Iste message ha essite signate compatibile con VS-NfD usante le clave <a "
+"href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:64
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr "iste message h essite signate usante le clave <a href=\"%1\">%2</a>."
+msgstr "iste message ha essite signate usante le clave <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr ""
+msgstr "Iste message ha essite signate compatibile con VS-NfD per %1."
 
 #: widgets/messagecontainerwidget.cpp:74
 #, kde-format
@@ -343,11 +345,13 @@ msgstr ""
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
 msgstr ""
+"Iste message es compatibile con VS-NfD cryptate ma on non ha le clave per "
+"illo."
 
 #: widgets/messagecontainerwidget.cpp:202
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr ""
+msgstr "Iste message es compatibile con VS-NfD cryptate."
 
 #: widgets/messagecontainerwidget.cpp:204
 #, kde-format

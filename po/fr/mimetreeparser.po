@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:43+0000\n"
-"PO-Revision-Date: 2023-09-26 10:36+0200\n"
+"PO-Revision-Date: 2023-10-14 17:46+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -45,16 +45,12 @@ msgid "Failed to save attachment."
 msgstr "Impossible d'enregistrer une pièce jointe."
 
 #: core/attachmentmodel.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Enregistrer une pièce jointe"
+msgstr "pièce jointe"
 
 #: core/attachmentmodel.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save attachment for opening."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Impossible d'enregistrer une pièce jointe pour ouverture."
