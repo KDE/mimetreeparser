@@ -36,7 +36,7 @@ class MessageViewerDialog::Private
 {
 public:
     int currentIndex = 0;
-    QVector<KMime::Message::Ptr> messages;
+    QList<KMime::Message::Ptr> messages;
     QString fileName;
     MimeTreeParser::Widgets::MessageViewer *messageViewer = nullptr;
     QAction *nextAction = nullptr;
@@ -253,7 +253,7 @@ MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *paren
 
 MessageViewerDialog::~MessageViewerDialog() = default;
 
-QVector<KMime::Message::Ptr> MessageViewerDialog::messages() const
+QList<KMime::Message::Ptr> MessageViewerDialog::messages() const
 {
     return d->messages;
 }

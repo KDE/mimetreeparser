@@ -73,7 +73,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     return message;
 }
 
-QVector<KMime::Message::Ptr> openMbox(const QString &fileName)
+QList<KMime::Message::Ptr> openMbox(const QString &fileName)
 {
     KMBox::MBox mbox;
     const bool ok = mbox.load(fileName);
@@ -82,7 +82,7 @@ QVector<KMime::Message::Ptr> openMbox(const QString &fileName)
         return {};
     }
 
-    QVector<KMime::Message::Ptr> messages;
+    QList<KMime::Message::Ptr> messages;
     const auto entries = mbox.entries();
     for (const auto &entry : entries) {
         messages << KMime::Message::Ptr(mbox.readMessage(entry));
@@ -91,7 +91,7 @@ QVector<KMime::Message::Ptr> openMbox(const QString &fileName)
 }
 }
 
-QVector<KMime::Message::Ptr> FileOpener::openFile(const QString &fileName)
+QList<KMime::Message::Ptr> FileOpener::openFile(const QString &fileName)
 {
     QMimeDatabase db;
     QMimeType mime = db.mimeTypeForFile(fileName);

@@ -30,9 +30,9 @@ using namespace MimeTreeParser;
  * Filter to avoid evaluating a subtree.
  * Select parts to include it in the result set. Selecting a part in a branch will keep any parent parts from being selected.
  */
-static QVector<MessagePart::Ptr> collect(MessagePart::Ptr start,
-                                         const std::function<bool(const MessagePart::Ptr &)> &evaluateSubtree,
-                                         const std::function<bool(const MessagePart::Ptr &)> &select)
+static QList<MessagePart::Ptr> collect(MessagePart::Ptr start,
+                                       const std::function<bool(const MessagePart::Ptr &)> &evaluateSubtree,
+                                       const std::function<bool(const MessagePart::Ptr &)> &select)
 {
     auto ptr = start.dynamicCast<MessagePart>();
     Q_ASSERT(ptr);
@@ -421,7 +421,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
     return parsedPart;
 }
 
-QVector<MessagePart::Ptr> ObjectTreeParser::defaultHandling(KMime::Content *node)
+QList<MessagePart::Ptr> ObjectTreeParser::defaultHandling(KMime::Content *node)
 {
     if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")
         && (node->contentType()->name().endsWith(QLatin1String("p7m")) || node->contentType()->name().endsWith(QLatin1String("p7s"))

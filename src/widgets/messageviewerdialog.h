@@ -28,7 +28,7 @@ public:
     explicit MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
     ~MessageViewerDialog() override;
 
-    QVector<KMime::Message::Ptr> messages() const;
+    QList<KMime::Message::Ptr> messages() const;
 
 private:
     class Private;

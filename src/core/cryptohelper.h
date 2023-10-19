@@ -9,7 +9,7 @@
 
 #include <KMime/Message>
 #include <QByteArray>
-#include <QVector>
+#include <QList>
 
 namespace MimeTreeParser
 {
@@ -43,7 +43,7 @@ public:
 /** Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
-[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QList<Block> prepareMessageForDecryption(const QByteArray &msg);
 
 namespace CryptoUtils
 {

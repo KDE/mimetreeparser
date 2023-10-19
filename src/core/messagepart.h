@@ -52,7 +52,7 @@ class MIMETREEPARSER_CORE_EXPORT MessagePart : public QObject
 public:
     enum Disposition { Inline, Attachment, Invalid };
     using Ptr = QSharedPointer<MessagePart>;
-    using List = QVector<Ptr>;
+    using List = QList<Ptr>;
     MessagePart(ObjectTreeParser *otp, const QString &text, KMime::Content *node = nullptr);
 
     virtual ~MessagePart();
@@ -86,7 +86,7 @@ public:
     PartMetaData *partMetaData();
 
     void appendSubPart(const MessagePart::Ptr &messagePart);
-    const QVector<MessagePart::Ptr> &subParts() const;
+    const QList<MessagePart::Ptr> &subParts() const;
     bool hasSubParts() const;
 
     KMime::Content *node() const;
@@ -94,8 +94,8 @@ public:
     virtual KMMsgSignatureState signatureState() const;
     virtual KMMsgEncryptionState encryptionState() const;
 
-    QVector<SignedMessagePart *> signatures() const;
-    QVector<EncryptedMessagePart *> encryptions() const;
+    QList<SignedMessagePart *> signatures() const;
+    QList<EncryptedMessagePart *> encryptions() const;
 
     /**
      * Retrieve the header @header in this part or any parent parent.
@@ -116,11 +116,11 @@ protected:
     PartMetaData mMetaData;
     MessagePart *mParentPart;
     KMime::Content *mNode;
-    QVector<KMime::Content *> mNodesToDelete;
+    QList<KMime::Content *> mNodesToDelete;
     Error mError;
 
 private:
-    QVector<MessagePart::Ptr> mBlocks;
+    QList<MessagePart::Ptr> mBlocks;
     bool mRoot;
 };
 
