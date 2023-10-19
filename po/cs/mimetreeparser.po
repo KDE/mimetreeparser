@@ -48,11 +48,9 @@ msgid "Failed to save attachment."
 msgstr ""
 
 #: core/attachmentmodel.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Uložit přílohu"
+msgstr ""
 
 #: core/attachmentmodel.cpp:294
 #, kde-format
@@ -571,7 +569,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Chyba KMailu"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Vytvoření dočasného souboru selhalo."
