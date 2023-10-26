@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 00:43+0000\n"
-"PO-Revision-Date: 2023-10-14 17:46+0200\n"
+"PO-Revision-Date: 2023-10-24 21:23+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -317,15 +317,14 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a>  est moyennement "
-"fiable."
+"La signature est valable et la <a href=\"%1\">clé</a> est moyennement fiable."
 
 #: widgets/messagecontainerwidget.cpp:93
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a>  est totalement fiable."
+"La signature est valable et la <a href=\"%1\">clé</a> est totalement fiable."
 
 #: widgets/messagecontainerwidget.cpp:96
 #, kde-format
@@ -333,7 +332,7 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a>  est en dernière "
+"La signature est valable et la <a href=\"%1\">clé</a> est en dernière "
 "analyse fiable."
 
 #: widgets/messagecontainerwidget.cpp:98
