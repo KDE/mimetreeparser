@@ -1,265 +1,263 @@
-# SPDX-FileCopyrightText: 2023 Xavier BESNARD <xavier.besnard@neuf.fr>
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the mimetreeparser package.
+#
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-13 01:43+0000\n"
-"PO-Revision-Date: 2023-10-24 21:23+0200\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: fr\n"
-"Language: fr\n"
+"PO-Revision-Date: 2023-10-25 10:50+0200\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: \n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: core/attachmentmodel.cpp:161
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 #: core/attachmentmodel.cpp:163
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
-msgstr "Taille"
+msgstr ""
 
 #: core/attachmentmodel.cpp:165
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr "Chiffré"
+msgstr ""
 
 #: core/attachmentmodel.cpp:167
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
-msgstr "Signé"
+msgstr ""
 
 #: core/attachmentmodel.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr "Impossible d'enregistrer une pièce jointe."
+msgstr ""
 
 #: core/attachmentmodel.cpp:287
 #, kde-format
 msgid "attachment"
-msgstr "pièce jointe"
+msgstr ""
 
 #: core/attachmentmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "Impossible d'enregistrer une pièce jointe pour ouverture."
+msgstr ""
 
 #: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr "Impossible d'ouvrir une pièce jointe."
+msgstr ""
 
 #: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
-msgstr "Aucune clé n'a été trouvée dans cette pièce jointe."
+msgstr ""
 
 #: core/attachmentmodel.cpp:322
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
-msgstr[0] "Une clé a été importée."
-msgstr[1] "%1 clés ont été importées."
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/attachmentmodel.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
-msgstr[0] "Une clé a déjà été importée."
-msgstr[1] "%1 clés ont déjà été importées."
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr "Module additionnel de chiffrement incorrect."
+msgstr ""
 
 #: core/messagepart.cpp:985
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr "Aucun module additionnel de chiffrement approprié n'a été trouvé."
+msgstr ""
 
 #: core/messagepart.cpp:987
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
-"Il est impossible au module additionnel de chiffrement « %1 » de déchiffrer "
-"les messages."
 
 #: core/messagepart.cpp:989
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr ""
-"Il est impossible au module additionnel de chiffrement « %1 » de déchiffrer "
-"les données."
 
 #: core/messagepart.cpp:990 widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Error: %1"
-msgstr "Erreur : %1"
+msgstr ""
 
 #: core/partmodel.cpp:501
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
-msgstr "Aucune clé disponible."
+msgstr ""
 
 #: core/partmodel.cpp:503
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr "Phrase de passe erronée."
+msgstr ""
 
 #: quick/qml/MailViewer.qml:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
-msgstr "Afficheur de messages"
+msgstr ""
 
 #: quick/qml/MailViewer.qml:78
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
-msgstr "Objet :"
+msgstr ""
 
 #: quick/qml/MailViewer.qml:99
 #, kde-format
 msgctxt "@label"
 msgid "From:"
-msgstr "De :"
+msgstr ""
 
 #: quick/qml/MailViewer.qml:115
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr "Émetteur : "
+msgstr ""
 
 #: quick/qml/MailViewer.qml:131
 #, kde-format
 msgctxt "@label"
 msgid "To:"
-msgstr "À :"
+msgstr ""
 
 #: quick/qml/MailViewer.qml:147
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "CC :"
+msgstr ""
 
 #: quick/qml/MailViewer.qml:163
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
-msgstr "BCC :"
+msgstr ""
 
 #: quick/qml/MailViewer.qml:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
-msgstr "Enregistrer une pièce jointe"
+msgstr ""
 
 #: quick/qml/MailViewer.qml:243
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "Enregistrer une pièce jointe comme"
+msgstr ""
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import key"
-msgstr "Importer une clé"
+msgstr ""
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr "Fermer"
+msgstr ""
 
 #: quick/qml/private/ErrorPart.qml:27
 #, kde-format
 msgid "An error occurred: %1"
-msgstr "Une erreur s'est produite : %1"
+msgstr ""
 
 #: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr "Ce courriel contient une invitation."
+msgstr ""
 
 #: quick/qml/private/MailPart.qml:41
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
-msgstr "envoyé par %1 vers %2"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
-msgstr "Ce message a été signé en utilisant la clé %1."
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
-msgstr "Les détails sur les clés sont indisponibles."
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
-msgstr "Ce message a été signé en utilisant la clé %1 par %2."
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
-msgstr "La clé a été révoquée."
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
-msgstr "La clé a expiré."
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
-msgstr "Vous faites confiance à cette clé."
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:69 widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
-msgstr "La signature est non valable."
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:197
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr ""
-"Ce message est chiffré mais il n'y a aucune clé pour son déchiffrement."
 
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr "Ce message est chiffré avec la clé : %1"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:57
 #, kde-format
@@ -268,38 +266,36 @@ msgid ""
 "This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
 "%2</a>."
 msgstr ""
-"Ce message a été chiffré selon le mode « VS-NFD » en utilisant la clé <a "
-"href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:64
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr "Ce message a été signé en utilisant la clé <a href=\"%1\">%2</a>."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "Ce message a été chiffré selon le mode « VS-NFD » se conformant à %1."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:74
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr "Ce message a été signé par %1."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr "La <a href=\"%1\">clé</a> a été révoquée."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
-msgstr "La <a href=\"%1\">clé</a> a expiré."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:85
 #, kde-format
@@ -307,8 +303,6 @@ msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
 msgstr ""
-"La signature est valable mais la validité de la <a href=\"%1\">clé</a> est "
-"inconnue."
 
 #: widgets/messagecontainerwidget.cpp:88
 #, kde-format
@@ -316,14 +310,12 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a> est moyennement fiable."
 
 #: widgets/messagecontainerwidget.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a> est totalement fiable."
 
 #: widgets/messagecontainerwidget.cpp:93
 #, kde-format
@@ -331,272 +323,247 @@ msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a> est en dernière "
-"analyse fiable."
 
 #: widgets/messagecontainerwidget.cpp:95
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
 msgstr ""
-"La signature est valable mais la <a href=\"%1\">clé</a> n'est pas fiable."
 
 #: widgets/messagecontainerwidget.cpp:195
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
 msgstr ""
-"Ce message a été chiffré conformément au mode « VS-NFD » mais aucune clé "
-"n'est disponible pour le déchiffrement."
 
 #: widgets/messagecontainerwidget.cpp:202
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr "Ce message est chiffré selon le mode « VS-NFD »."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:204
 #, kde-format
 msgid "This message is encrypted."
-msgstr "Ce message est chiffré."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr "Le message est chiffré avec les clés suivantes :"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:230
 #, kde-format
 msgid "Unknown key"
-msgstr "Clé inconnue"
+msgstr ""
 
 #: widgets/messageviewer.cpp:64
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "&Enregistrer une pièce jointe comme..."
+msgstr ""
 
 #: widgets/messageviewer.cpp:69
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr "Ouvrir"
+msgstr ""
 
 #: widgets/messageviewer.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr "Importer une clé publique"
+msgstr ""
 
 #: widgets/messageviewer.cpp:103
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr "non nommé"
+msgstr ""
 
 #: widgets/messageviewer.cpp:106
 #, kde-format
 msgid "Save Attachment As"
-msgstr "Enregistrer une pièce jointe comme"
+msgstr ""
 
 #: widgets/messageviewer.cpp:256
 #, kde-format
 msgid "Invitation"
-msgstr "Invitation"
+msgstr ""
 
 #: widgets/messageviewer.cpp:259
 #, kde-format
 msgid "&Summary:"
-msgstr "&Résumé :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Organizer:"
-msgstr "&Organisateur :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Location:"
-msgstr "&Emplacement :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Start date:"
-msgstr "&Date de début :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&End date:"
-msgstr "&Date de fin :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Details:"
-msgstr "&Détails :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:290
 #, kde-format
 msgid "Encapsulated email"
-msgstr "Courriel encapsulé"
+msgstr ""
 
 #: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "From:"
-msgstr "De :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Date:"
-msgstr "Date :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:345
 #, kde-format
 msgid "&Subject:"
-msgstr "&Objet :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:348
 #, kde-format
 msgid "&From:"
-msgstr "&De :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:351
 #, kde-format
 msgid "&Sender:"
-msgstr "É&metteur : "
+msgstr ""
 
 #: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&To:"
-msgstr "&À :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&CC:"
-msgstr "&CC :"
+msgstr ""
 
 #: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&BCC:"
-msgstr "&BCC :"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:73
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr "&Fichier"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr "Enregi&strer"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:81
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr "Enregistrer la version déchiffrée"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:87
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr "Aperçu avant impression"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:93
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr "Im&primer"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "&Navigation"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:101
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr "Message précédent"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:105
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr "Message suivant"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:115
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "Enregistrer un fichier"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:115 widgets/messageviewerdialog.cpp:131
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.mbox)"
-msgstr "Fichiers de courriels (* .Mbox)"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:119
 #, kde-format
 msgid "File %1 could not be created."
-msgstr "Il a été impossible de créer le fichier %1."
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:119 widgets/messageviewerdialog.cpp:135
 #, kde-format
 msgid "Error saving message"
-msgstr "Erreur lors de l'enregistrement du message"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:129
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr "Enregistrer le fichier déchiffré"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:135
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr "Il a été impossible de créer le fichier %1."
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:153 widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr "Imprimer un document"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr "Impossible de lire le fichier"
+msgstr ""
 
 #: widgets/urlhandler.cpp:37
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
-"Impossible de démarrer le gestionnaire de certificats. Veuillez vérifier "
-"votre installation."
 
 #: widgets/urlhandler.cpp:39
 #, kde-format
 msgid "KMail Error"
-msgstr "Erreur de KMail"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Impossible de créer un fichier temporaire"
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "A enregistré la pièce jointe sur disque : %1"
-
-#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
-#~ msgid "Unknown"
-#~ msgstr "Inconnu"
-
-#~ msgid "fwd"
-#~ msgstr "trsf"
-
-#~ msgid "re"
-#~ msgstr "re"
+msgstr "Error de KMail"
