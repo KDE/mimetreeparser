@@ -112,7 +112,7 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
 void MessageViewerDialog::Private::save(QWidget *parent)
 {
     const QString location =
-        QFileDialog::getSaveFileName(parent, i18nc("@title:window", "Save File"), fileName, i18nc("File dialog accepted files", "Email files (*.mbox)"));
+        QFileDialog::getSaveFileName(parent, i18nc("@title:window", "Save File"), fileName, i18nc("File dialog accepted files", "Email files (*.eml *.mbox)"));
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
@@ -128,7 +128,7 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
     const QString location = QFileDialog::getSaveFileName(parent,
                                                           i18nc("@title:window", "Save Decrypted File"),
                                                           fileName,
-                                                          i18nc("File dialog accepted files", "Email files (*.mbox)"));
+                                                          i18nc("File dialog accepted files", "Email files (*.eml *.mbox)"));
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
