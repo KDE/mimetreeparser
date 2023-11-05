@@ -235,6 +235,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                                                         urlHandler);
             auto label = new QLabel(content);
             label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+            label->setWordWrap(true);
             container->layout()->addWidget(label);
             layout->addWidget(container);
             break;
