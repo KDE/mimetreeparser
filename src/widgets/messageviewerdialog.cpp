@@ -22,6 +22,7 @@
 #include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QSaveFile>
 #include <QStandardPaths>
 #include <QStyle>
@@ -31,6 +32,33 @@
 #include <memory>
 
 using namespace MimeTreeParser::Widgets;
+
+namespace
+{
+
+/// On windows, force the filename to end with .eml
+/// On Linux, do nothing as this is handled by the file picker
+inline QString changeExtension(const QString &fileName)
+{
+#ifdef Q_OS_WIN
+    auto renamedFileName = fileName;
+    renamedFileName.replace(QRegularExpression(QStringLiteral("(mbox|p7m|asc)$")), QStringLiteral("eml"));
+
+    // In case the file name didn't contain any of the expected extension: mbox, p7m, asc and eml
+    // or doesn't contains an extension at all.
+    if (!renamedFileName.endsWith(QStringLiteral(".eml"))) {
+        renamedFileName += QStringLiteral(".eml");
+    }
+
+    Q_ASSERT(renamedFileName.endsWith(QStringLiteral(".eml")));
+    return renamedFileName;
+#else
+    // Handled automatically by the file picker on linux
+    return fileName;
+#endif
+}
+
+}
 
 class MessageViewerDialog::Private
 {
@@ -111,8 +139,10 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
 
 void MessageViewerDialog::Private::save(QWidget *parent)
 {
-    const QString location =
-        QFileDialog::getSaveFileName(parent, i18nc("@title:window", "Save File"), fileName, i18nc("File dialog accepted files", "Email files (*.eml *.mbox)"));
+    const QString location = QFileDialog::getSaveFileName(parent,
+                                                          i18nc("@title:window", "Save File"),
+                                                          changeExtension(fileName),
+                                                          i18nc("File dialog accepted files", "Email files (*.eml *.mbox)"));
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
@@ -127,7 +157,7 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
 {
     const QString location = QFileDialog::getSaveFileName(parent,
                                                           i18nc("@title:window", "Save Decrypted File"),
-                                                          fileName,
+                                                          changeExtension(fileName),
                                                           i18nc("File dialog accepted files", "Email files (*.eml *.mbox)"));
 
     QSaveFile file(location);
