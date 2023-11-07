@@ -121,8 +121,12 @@ public:
         }
 
         auto preprocessPlaintext = [&](const QString &text) {
+            // Reduce consecutive new lines to never exceed 2
+            auto cleaned = text;
+            cleaned.replace(QRegularExpression(QStringLiteral("[\n\r]{2,}")), QStringLiteral("\n\n"));
+
             // We always do rich text (so we get highlighted links and stuff).
-            const auto html = Qt::convertFromPlainText(text, Qt::WhiteSpaceNormal);
+            const auto html = Qt::convertFromPlainText(cleaned, Qt::WhiteSpaceNormal);
             if (trimMail) {
                 const auto result = PartModel::trim(html);
                 isTrimmed = result.second;
