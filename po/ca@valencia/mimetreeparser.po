@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 01:43+0000\n"
+"POT-Creation-Date: 2023-11-07 02:43+0000\n"
 "PO-Revision-Date: 2023-10-13 17:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -109,18 +109,18 @@ msgstr "El connector criptogràfic «%1» no pot desencriptar missatges."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:313
+#: core/messagepart.cpp:990 widgets/messageviewer.cpp:314
 #, kde-format
 msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
-#: core/partmodel.cpp:501
+#: core/partmodel.cpp:500
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "No hi ha cap clau disponible."
 
-#: core/partmodel.cpp:503
+#: core/partmodel.cpp:502
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -397,82 +397,82 @@ msgstr "sense nom"
 msgid "Save Attachment As"
 msgstr "Guarda l'adjunt com a"
 
-#: widgets/messageviewer.cpp:256
+#: widgets/messageviewer.cpp:257
 #, kde-format
 msgid "Invitation"
 msgstr "Invitació"
 
-#: widgets/messageviewer.cpp:259
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "&Summary:"
 msgstr "&Resum:"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organitzador:"
 
-#: widgets/messageviewer.cpp:262
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Location:"
 msgstr "&Emplaçament:"
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:265
 #, kde-format
 msgid "&Start date:"
 msgstr "Data d'&inici:"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:267
 #, kde-format
 msgid "&End date:"
 msgstr "Data &final:"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Details:"
 msgstr "&Detalls:"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:291
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Correu electrònic encapsulat"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:345
+#: widgets/messageviewer.cpp:346
 #, kde-format
 msgid "&Subject:"
 msgstr "A&ssumpte:"
 
-#: widgets/messageviewer.cpp:348
+#: widgets/messageviewer.cpp:349
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:351
+#: widgets/messageviewer.cpp:352
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remitent:"
 
-#: widgets/messageviewer.cpp:354
+#: widgets/messageviewer.cpp:355
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
 
-#: widgets/messageviewer.cpp:357
+#: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:360
+#: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
@@ -532,9 +532,11 @@ msgid "Save File"
 msgstr "Guarda el fitxer"
 
 #: widgets/messageviewerdialog.cpp:115 widgets/messageviewerdialog.cpp:131
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "File dialog accepted files"
+#| msgid "Email files (*.mbox)"
 msgctxt "File dialog accepted files"
-msgid "Email files (*.mbox)"
+msgid "Email files (*.eml *.mbox)"
 msgstr "Fitxers de correu electrònic (*.mbox)"
 
 #: widgets/messageviewerdialog.cpp:119
