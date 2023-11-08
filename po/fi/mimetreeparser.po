@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:21+0000\n"
+"POT-Creation-Date: 2023-11-08 00:43+0000\n"
 "PO-Revision-Date: 2023-10-12 18:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -116,13 +116,13 @@ msgstr "Salausliitännäinen ”%1” ei voinut purkaa tiedon salausta."
 msgid "Error: %1"
 msgstr "Virhe: %1"
 
-#: core/partmodel.cpp:500
+#: core/partmodel.cpp:504
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Avainta ei ole saatavilla."
 
-#: core/partmodel.cpp:502
+#: core/partmodel.cpp:506
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -481,61 +481,61 @@ msgstr "&Kopio:"
 msgid "&BCC:"
 msgstr "&Piilokopio:"
 
-#: widgets/messageviewerdialog.cpp:73
+#: widgets/messageviewerdialog.cpp:101
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&Tiedosto"
 
-#: widgets/messageviewerdialog.cpp:75
+#: widgets/messageviewerdialog.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Tallenna"
 
-#: widgets/messageviewerdialog.cpp:81
+#: widgets/messageviewerdialog.cpp:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Tallenna purettu"
 
-#: widgets/messageviewerdialog.cpp:87
+#: widgets/messageviewerdialog.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Tulostusesikatselu"
 
-#: widgets/messageviewerdialog.cpp:93
+#: widgets/messageviewerdialog.cpp:121
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "T&ulosta"
 
-#: widgets/messageviewerdialog.cpp:100
+#: widgets/messageviewerdialog.cpp:128
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "Navi&gointi"
 
-#: widgets/messageviewerdialog.cpp:101
+#: widgets/messageviewerdialog.cpp:129
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Edellinen viesti"
 
-#: widgets/messageviewerdialog.cpp:105
+#: widgets/messageviewerdialog.cpp:133
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Seuraava viesti"
 
-#: widgets/messageviewerdialog.cpp:115
+#: widgets/messageviewerdialog.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Tallenna tiedosto"
 
-#: widgets/messageviewerdialog.cpp:115 widgets/messageviewerdialog.cpp:131
+#: widgets/messageviewerdialog.cpp:145 widgets/messageviewerdialog.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "File dialog accepted files"
 #| msgid "Email files (*.mbox)"
@@ -543,35 +543,35 @@ msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
 msgstr "Sähköpostitiedostot (*.mbox)"
 
-#: widgets/messageviewerdialog.cpp:119
+#: widgets/messageviewerdialog.cpp:149
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
-#: widgets/messageviewerdialog.cpp:119 widgets/messageviewerdialog.cpp:135
+#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgid "Error saving message"
 msgstr "Virhe tallennettaessa viestiä"
 
-#: widgets/messageviewerdialog.cpp:129
+#: widgets/messageviewerdialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Tallenna purettu viesti"
 
-#: widgets/messageviewerdialog.cpp:135
+#: widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
-#: widgets/messageviewerdialog.cpp:153 widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerdialog.cpp:183 widgets/messageviewerdialog.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Tulosta tiedosto"
 
-#: widgets/messageviewerdialog.cpp:208
+#: widgets/messageviewerdialog.cpp:238
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"

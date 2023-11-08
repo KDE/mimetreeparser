@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:21+0000\n"
-"PO-Revision-Date: 2023-10-13 10:54+0200\n"
+"POT-Creation-Date: 2023-11-08 00:43+0000\n"
+"PO-Revision-Date: 2023-11-07 10:47+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: core/attachmentmodel.cpp:161
 #, kde-format
@@ -113,13 +113,13 @@ msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
 msgid "Error: %1"
 msgstr "Fout: %1"
 
-#: core/partmodel.cpp:500
+#: core/partmodel.cpp:504
 #, kde-format
 msgctxt "@info:status"
 msgid "No key available."
 msgstr "Geen sleutel beschikbaar."
 
-#: core/partmodel.cpp:502
+#: core/partmodel.cpp:506
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -480,97 +480,95 @@ msgstr "&CC:"
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewerdialog.cpp:73
+#: widgets/messageviewerdialog.cpp:101
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&Bestand"
 
-#: widgets/messageviewerdialog.cpp:75
+#: widgets/messageviewerdialog.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Opslaan"
 
-#: widgets/messageviewerdialog.cpp:81
+#: widgets/messageviewerdialog.cpp:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Versleuteld opslaan"
 
-#: widgets/messageviewerdialog.cpp:87
+#: widgets/messageviewerdialog.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Afdrukvoorbeeld"
 
-#: widgets/messageviewerdialog.cpp:93
+#: widgets/messageviewerdialog.cpp:121
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&Afdrukken"
 
-#: widgets/messageviewerdialog.cpp:100
+#: widgets/messageviewerdialog.cpp:128
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&Navigatie"
 
-#: widgets/messageviewerdialog.cpp:101
+#: widgets/messageviewerdialog.cpp:129
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Vorige bericht"
 
-#: widgets/messageviewerdialog.cpp:105
+#: widgets/messageviewerdialog.cpp:133
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Volgend bericht"
 
-#: widgets/messageviewerdialog.cpp:115
+#: widgets/messageviewerdialog.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Bestand opslaan"
 
-#: widgets/messageviewerdialog.cpp:115 widgets/messageviewerdialog.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.mbox)"
+#: widgets/messageviewerdialog.cpp:145 widgets/messageviewerdialog.cpp:161
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
-msgstr "E-mailbestanden (*mbox)"
+msgstr "E-mailbestanden (*.eml *.mbox)"
 
-#: widgets/messageviewerdialog.cpp:119
+#: widgets/messageviewerdialog.cpp:149
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Bestand %1 kan niet worden aangemaakt."
 
-#: widgets/messageviewerdialog.cpp:119 widgets/messageviewerdialog.cpp:135
+#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgid "Error saving message"
 msgstr "Fout bij opslaan van bericht"
 
-#: widgets/messageviewerdialog.cpp:129
+#: widgets/messageviewerdialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Gedecodeerd bestand opslaan"
 
-#: widgets/messageviewerdialog.cpp:135
+#: widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Bestand %1 kan niet worden aangemaakt."
 
-#: widgets/messageviewerdialog.cpp:153 widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerdialog.cpp:183 widgets/messageviewerdialog.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Document afdrukken"
 
-#: widgets/messageviewerdialog.cpp:208
+#: widgets/messageviewerdialog.cpp:238
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
