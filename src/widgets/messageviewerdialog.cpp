@@ -42,7 +42,7 @@ inline QString changeExtension(const QString &fileName)
 {
 #ifdef Q_OS_WIN
     auto renamedFileName = fileName;
-    renamedFileName.replace(QRegularExpression(QStringLiteral("(mbox|p7m|asc)$")), QStringLiteral("eml"));
+    renamedFileName.replace(QRegularExpression(QStringLiteral("\\.(mbox|p7m|asc)$")), QStringLiteral(".eml"));
 
     // In case the file name didn't contain any of the expected extension: mbox, p7m, asc and eml
     // or doesn't contains an extension at all.
@@ -50,7 +50,6 @@ inline QString changeExtension(const QString &fileName)
         renamedFileName += QStringLiteral(".eml");
     }
 
-    Q_ASSERT(renamedFileName.endsWith(QStringLiteral(".eml")));
     return renamedFileName;
 #else
     // Handled automatically by the file picker on linux
