@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 00:43+0000\n"
+"POT-Creation-Date: 2023-11-09 00:42+0000\n"
 "PO-Revision-Date: 2023-11-07 18:55+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -476,95 +476,95 @@ msgstr "Kp:"
 msgid "&BCC:"
 msgstr "Skp:"
 
-#: widgets/messageviewerdialog.cpp:101
+#: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "Datoteka"
 
-#: widgets/messageviewerdialog.cpp:103
+#: widgets/messageviewerdialog.cpp:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Shrani"
 
-#: widgets/messageviewerdialog.cpp:109
+#: widgets/messageviewerdialog.cpp:108
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Shrani dešifrirano"
 
-#: widgets/messageviewerdialog.cpp:115
+#: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Natisni predogled"
 
-#: widgets/messageviewerdialog.cpp:121
+#: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Tiskaj"
 
-#: widgets/messageviewerdialog.cpp:128
+#: widgets/messageviewerdialog.cpp:127
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "Navigacija"
 
-#: widgets/messageviewerdialog.cpp:129
+#: widgets/messageviewerdialog.cpp:128
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Prejšnje sporočilo"
 
-#: widgets/messageviewerdialog.cpp:133
+#: widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Naslednje sporočilo"
 
-#: widgets/messageviewerdialog.cpp:143
+#: widgets/messageviewerdialog.cpp:142
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: widgets/messageviewerdialog.cpp:145 widgets/messageviewerdialog.cpp:161
+#: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
 msgstr "Poštne datoteke (*.eml *.mbox)"
 
-#: widgets/messageviewerdialog.cpp:149
+#: widgets/messageviewerdialog.cpp:148
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Datoteke %1 ni bilo mogoče ustvariti."
 
-#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgid "Error saving message"
 msgstr "Napaka pri shranjevanju datoteke"
 
-#: widgets/messageviewerdialog.cpp:159
+#: widgets/messageviewerdialog.cpp:158
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Shrani dešifrirano datoteko"
 
-#: widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Datoteke %1 ni bilo mogoče ustvariti."
 
-#: widgets/messageviewerdialog.cpp:183 widgets/messageviewerdialog.cpp:195
+#: widgets/messageviewerdialog.cpp:182 widgets/messageviewerdialog.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Tiskaj dokument"
 
-#: widgets/messageviewerdialog.cpp:238
+#: widgets/messageviewerdialog.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
