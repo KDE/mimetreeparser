@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 08:47+0000\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
 "PO-Revision-Date: 2023-11-07 13:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -477,95 +477,95 @@ msgstr "&CC:"
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewerdialog.cpp:101
+#: widgets/messageviewerdialog.cpp:100
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&Fitxer"
 
-#: widgets/messageviewerdialog.cpp:103
+#: widgets/messageviewerdialog.cpp:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "De&sa"
 
-#: widgets/messageviewerdialog.cpp:109
+#: widgets/messageviewerdialog.cpp:108
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Desa desencriptat"
 
-#: widgets/messageviewerdialog.cpp:115
+#: widgets/messageviewerdialog.cpp:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Vista prèvia d'impressió"
 
-#: widgets/messageviewerdialog.cpp:121
+#: widgets/messageviewerdialog.cpp:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Im&primeix"
 
-#: widgets/messageviewerdialog.cpp:128
+#: widgets/messageviewerdialog.cpp:127
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&Navegació"
 
-#: widgets/messageviewerdialog.cpp:129
+#: widgets/messageviewerdialog.cpp:128
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Missatge anterior"
 
-#: widgets/messageviewerdialog.cpp:133
+#: widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Missatge següent"
 
-#: widgets/messageviewerdialog.cpp:143
+#: widgets/messageviewerdialog.cpp:142
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Desa el fitxer"
 
-#: widgets/messageviewerdialog.cpp:145 widgets/messageviewerdialog.cpp:161
+#: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
 msgstr "Fitxers de correu electrònic (*.eml *.mbox)"
 
-#: widgets/messageviewerdialog.cpp:149
+#: widgets/messageviewerdialog.cpp:148
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
-#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgid "Error saving message"
 msgstr "Error en desar el missatge"
 
-#: widgets/messageviewerdialog.cpp:159
+#: widgets/messageviewerdialog.cpp:158
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Desament de fitxer desencriptat"
 
-#: widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
-#: widgets/messageviewerdialog.cpp:183 widgets/messageviewerdialog.cpp:195
+#: widgets/messageviewerdialog.cpp:182 widgets/messageviewerdialog.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Impressió del document"
 
-#: widgets/messageviewerdialog.cpp:238
+#: widgets/messageviewerdialog.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
