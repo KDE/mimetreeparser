@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 00:42+0000\n"
-"PO-Revision-Date: 2023-10-14 19:54+0200\n"
+"PO-Revision-Date: 2023-11-11 09:33+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -526,12 +526,10 @@ msgid "Save File"
 msgstr "Spara fil"
 
 #: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
-msgstr "E-postfiler (*mbox)"
+msgstr "E-postfiler (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:148
 #, kde-format
