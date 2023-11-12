@@ -37,9 +37,9 @@ include(ECMDeprecationSettings)
 include(ECMAddQch)
 include(ECMAddTests)
 
-set(KPIM_MIME_VERSION "5.240.40")
-set(KPIM_LIBKLEO_VERSION "5.240.40")
-set(KPIM_MBOX_VERSION "5.240.40")
+set(KPIM_MIME_VERSION "5.240.81")
+set(KPIM_LIBKLEO_VERSION "5.240.81")
+set(KPIM_MBOX_VERSION "5.240.81")
 set(GPGME_REQUIRED_VERSION "1.16.0")
 
 ecm_setup_version(PROJECT
