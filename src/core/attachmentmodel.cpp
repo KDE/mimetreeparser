@@ -25,6 +25,13 @@
 #include <QTemporaryDir>
 #include <QUrl>
 
+#ifdef Q_OS_WIN
+#include <cstdio>
+#include <string>
+#include <vector>
+#include <windows.h>
+#endif
+
 namespace
 {
 
@@ -113,6 +120,13 @@ bool validateFileName(const QString &name, bool allowDirectories)
 // SPDX-SnippetEnd
 }
 
+#ifdef Q_OS_WIN
+struct WindowFile {
+    std::wstring fileName;
+    HANDLE handle;
+};
+#endif
+
 class AttachmentModelPrivate
 {
 public:
@@ -122,6 +136,10 @@ public:
     QMimeDatabase mimeDb;
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     MimeTreeParser::MessagePart::List mAttachments;
+
+#ifdef Q_OS_WIN
+    std::vector<WindowFile> mOpenFiles;
+#endif
 };
 
 AttachmentModelPrivate::AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::ObjectTreeParser> &parser)
@@ -139,6 +157,22 @@ AttachmentModel::AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParse
 
 AttachmentModel::~AttachmentModel()
 {
+#ifdef Q_OS_WIN
+    for (const auto &file : d->mOpenFiles) {
+        // First delete file then close handle as if we do it the other way around
+        // we lost ownership of the file and can't delete it anymore if another app
+        // as the file open.
+        auto result = DeleteFileW(file.fileName.c_str());
+        if (!result) {
+            qWarning() << "Unable to delete file" << QString::fromStdWString(file.fileName) << result << GetLastError();
+        }
+
+	result = CloseHandle(file.handle);
+        if (!result) {
+            qWarning() << "Unable to close handle for file" << QString::fromStdWString(file.fileName) << result << GetLastError();
+        }
+    }
+#endif
 }
 
 QHash<int, QByteArray> AttachmentModel::roleNames() const
@@ -234,13 +268,13 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     }
 }
 
-QString AttachmentModel::saveAttachmentToPath(const int row, const QString &path, bool readonly)
+QString AttachmentModel::saveAttachmentToPath(const int row, const QString &path)
 {
     const auto part = d->mAttachments.at(row);
-    return saveAttachmentToPath(part, path, readonly);
+    return saveAttachmentToPath(part, path);
 }
 
-QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path, bool readonly)
+QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path)
 {
     Q_ASSERT(part);
     auto node = part->node();
@@ -261,10 +295,6 @@ QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart:
         return {};
     }
     f.write(data);
-    if (readonly) {
-        // make file read-only so that nobody gets the impression that he migh edit attached files
-        f.setPermissions(QFileDevice::ReadUser);
-    }
     f.close();
     qCInfo(MIMETREEPARSER_CORE_LOG) << "Wrote attachment to file: " << path;
     return path;
@@ -289,16 +319,39 @@ bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &mes
         fileName = tempDir.filePath(message->filename());
     }
 
-    const auto filePath = saveAttachmentToPath(message, fileName, true);
+    const auto filePath = saveAttachmentToPath(message, fileName);
     if (filePath.isEmpty()) {
         Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to write attachment for opening."));
         return false;
     }
 
+#ifdef Q_OS_WIN
+    std::wstring fileNameStr = filePath.toStdWString();
+
+    HANDLE hFile = CreateFileW(fileNameStr.c_str(),
+                               GENERIC_READ,
+                               FILE_SHARE_READ | FILE_SHARE_DELETE, // allow other processes to delete it
+                               NULL,
+                               OPEN_EXISTING,
+                               FILE_ATTRIBUTE_NORMAL,
+                               NULL // no template
+    );
+
+    if (hFile == INVALID_HANDLE_VALUE) {
+        Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
+        QFile file(fileName);
+        file.remove();
+        return false;
+    }
+
+    d->mOpenFiles.push_back({fileNameStr, hFile});
+#endif
+
     if (!QDesktopServices::openUrl(QUrl::fromLocalFile(filePath))) {
         Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to open attachment."));
         return false;
     }
+
     return true;
 }
 

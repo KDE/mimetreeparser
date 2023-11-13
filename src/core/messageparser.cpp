@@ -136,7 +136,9 @@ AttachmentModel *MessageParser::attachments() const
     if (!d->mParser) {
         return nullptr;
     }
-    return new AttachmentModel(d->mParser);
+    auto attachmentModel = new AttachmentModel(d->mParser);
+    attachmentModel->setParent(const_cast<MessageParser *>(this));
+    return attachmentModel;
 }
 
 QString MessageParser::subject() const

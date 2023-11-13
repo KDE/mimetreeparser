@@ -78,21 +78,6 @@ private Q_SLOTS:
         QCOMPARE(spy.count(), 0);
     }
 
-    void saveReadonlyTest()
-    {
-        MessageParser messageParser;
-        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
-
-        auto attachmentModel = messageParser.attachments();
-        QTemporaryFile file;
-        QVERIFY(file.open());
-        const auto fileName = attachmentModel->saveAttachmentToPath(0, file.fileName(), true);
-        QFile file2(fileName);
-        QVERIFY(file2.open(QIODevice::ReadOnly | QIODevice::Text));
-        QVERIFY(!file2.readAll().isEmpty());
-        QVERIFY(file.permissions() & QFileDevice::ReadUser);
-    }
-
     void saveInvalidPathTest()
     {
         MessageParser messageParser;
