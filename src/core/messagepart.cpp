@@ -671,11 +671,13 @@ void SignedMessagePart::startVerification()
 
         const auto job = mCryptoProto->verifyDetachedJob();
         setVerificationResult(job->exec(signature, signedData), signedData);
+        job->deleteLater();
         setText(codec->toUnicode(KMime::CRLFtoLF(signedData)));
     } else {
         QByteArray outdata;
         const auto job = mCryptoProto->verifyOpaqueJob();
         setVerificationResult(job->exec(mSignedData->decodedContent(), outdata), outdata);
+        job->deleteLater();
         setText(codec->toUnicode(KMime::CRLFtoLF(outdata)));
     }
 
@@ -886,6 +888,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
     QByteArray plainText;
     auto job = mCryptoProto->decryptVerifyJob();
     const std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> p = job->exec(ciphertext, plainText);
+    job->deleteLater();
     auto decryptResult = p.first;
     auto verifyResult = p.second;
     mMetaData.isSigned = verifyResult.signatures().size() > 0;
