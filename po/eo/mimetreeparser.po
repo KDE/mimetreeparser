@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 00:42+0000\n"
+"POT-Creation-Date: 2023-11-14 00:43+0000\n"
 "PO-Revision-Date: 2023-11-07 22:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -87,28 +87,28 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "unu ŝlosilo estis jam importita"
 msgstr[1] "%1 ŝlosiloj estis jam importitaj"
 
-#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Malĝusta Kripta Kromaĵo."
 
-#: core/messagepart.cpp:985
+#: core/messagepart.cpp:988
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Neniu taŭga kripta kromprogramo estis trovita."
 
-#: core/messagepart.cpp:987
+#: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Kripta kromprogramo \"%1\" ne povas deĉifri mesaĝojn."
 
-#: core/messagepart.cpp:989
+#: core/messagepart.cpp:992
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripta kromprogramo \"%1\" ne povis deĉifri la datumojn."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Error: %1"
 msgstr "Eraro: %1"

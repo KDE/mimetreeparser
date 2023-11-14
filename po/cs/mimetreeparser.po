@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 00:42+0000\n"
+"POT-Creation-Date: 2023-11-14 00:43+0000\n"
 "PO-Revision-Date: 2023-11-08 14:27+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -86,28 +86,28 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Chybný modul šifrování."
 
-#: core/messagepart.cpp:985
+#: core/messagepart.cpp:988
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nebyl nalezen vhodný zásuvný modul šifrování."
 
-#: core/messagepart.cpp:987
+#: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat zprávy."
 
-#: core/messagepart.cpp:989
+#: core/messagepart.cpp:992
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat data."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"

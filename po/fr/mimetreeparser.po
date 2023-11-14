@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 00:42+0000\n"
+"POT-Creation-Date: 2023-11-14 00:43+0000\n"
 "PO-Revision-Date: 2023-11-08 11:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -83,32 +83,32 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "Une clé a déjà été importée."
 msgstr[1] "%1 clés ont déjà été importées."
 
-#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:834
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Module additionnel de chiffrement incorrect."
 
-#: core/messagepart.cpp:985
+#: core/messagepart.cpp:988
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Aucun module additionnel de chiffrement approprié n'a été trouvé."
 
-#: core/messagepart.cpp:987
+#: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 "Il est impossible au module additionnel de chiffrement « %1 » de déchiffrer "
 "les messages."
 
-#: core/messagepart.cpp:989
+#: core/messagepart.cpp:992
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr ""
 "Il est impossible au module additionnel de chiffrement « %1 » de déchiffrer "
 "les données."
 
-#: core/messagepart.cpp:990 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Error: %1"
 msgstr "Erreur : %1"
