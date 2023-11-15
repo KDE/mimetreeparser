@@ -25,12 +25,15 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
+    MessageViewerDialog(const QList<KMime::Message::Ptr> &messages, QWidget *parent = nullptr);
+    MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
     ~MessageViewerDialog() override;
 
     QList<KMime::Message::Ptr> messages() const;
 
 private:
+    void initGUI();
+
     class Private;
     std::unique_ptr<Private> const d;
 };

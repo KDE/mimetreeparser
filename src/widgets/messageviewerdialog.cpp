@@ -212,11 +212,25 @@ void MessageViewerDialog::Private::printInternal(QPrinter *printer)
     messageViewer->print(&painter, pageRect.width());
 }
 
+MessageViewerDialog::MessageViewerDialog(const QList<KMime::Message::Ptr> &messages, QWidget *parent)
+    : QDialog(parent)
+    , d(std::make_unique<Private>())
+{
+    d->messages += messages;
+    initGUI();
+}
+
 MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *parent)
     : QDialog(parent)
     , d(std::make_unique<Private>())
 {
     d->fileName = fileName;
+    d->messages += MimeTreeParser::Core::FileOpener::openFile(fileName);
+    initGUI();
+}
+
+void MessageViewerDialog::initGUI()
+{
     const auto mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins({});
 
@@ -228,8 +242,6 @@ MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *paren
 
     const auto menuBar = d->createMenuBar(this);
     mainLayout->setMenuBar(menuBar);
-
-    d->messages += MimeTreeParser::Core::FileOpener::openFile(fileName);
 
     if (d->messages.isEmpty()) {
         auto errorMessage = new KMessageWidget(this);
