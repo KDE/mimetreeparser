@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:39+0000\n"
+"POT-Creation-Date: 2023-11-16 01:45+0000\n"
 "PO-Revision-Date: 2023-11-07 13:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -565,7 +565,7 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Impressió del document"
 
-#: widgets/messageviewerdialog.cpp:237
+#: widgets/messageviewerdialog.cpp:249
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
