@@ -260,3 +260,5 @@ void MessageWidgetContainer::createLayout()
         vLayout->addWidget(signatureMessage);
     }
 }
+
+#include "moc_messagecontainerwidget_p.cpp"

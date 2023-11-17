@@ -298,3 +298,5 @@ QList<KMime::Message::Ptr> MessageViewerDialog::messages() const
 {
     return d->messages;
 }
+
+#include "moc_messageviewerdialog.cpp"
