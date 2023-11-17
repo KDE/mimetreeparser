@@ -235,10 +235,6 @@ void MessageViewerDialog::initGUI()
     mainLayout->setContentsMargins({});
 
     const auto layout = new QVBoxLayout;
-    layout->setContentsMargins(style()->pixelMetric(QStyle::PM_LayoutLeftMargin, nullptr, this),
-                               style()->pixelMetric(QStyle::PM_LayoutTopMargin, nullptr, this),
-                               style()->pixelMetric(QStyle::PM_LayoutRightMargin, nullptr, this),
-                               style()->pixelMetric(QStyle::PM_LayoutBottomMargin, nullptr, this));
 
     const auto menuBar = d->createMenuBar(this);
     mainLayout->setMenuBar(menuBar);
@@ -287,6 +283,10 @@ void MessageViewerDialog::initGUI()
     layout->addWidget(d->messageViewer);
 
     auto buttonBox = new QDialogButtonBox(this);
+    buttonBox->setContentsMargins(style()->pixelMetric(QStyle::PM_LayoutLeftMargin, nullptr, this),
+                                  style()->pixelMetric(QStyle::PM_LayoutTopMargin, nullptr, this),
+                                  style()->pixelMetric(QStyle::PM_LayoutRightMargin, nullptr, this),
+                                  style()->pixelMetric(QStyle::PM_LayoutBottomMargin, nullptr, this));
     auto closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     connect(closeButton, &QPushButton::pressed, this, &QDialog::accept);
     layout->addWidget(buttonBox);

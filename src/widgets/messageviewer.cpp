@@ -174,6 +174,7 @@ MessageViewer::MessageViewer(QWidget *parent)
     setStretchFactor(2, 2);
 
     d->attachmentView = new AttachmentView(this);
+    d->attachmentView->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::BottomEdge}));
     d->attachmentView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     addWidget(d->attachmentView);
 
