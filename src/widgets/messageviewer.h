@@ -6,6 +6,7 @@
 #include "mimetreeparser_widgets_export.h"
 
 #include <KMime/Message>
+#include <MimeTreeParserCore/MessageParser>
 
 #include <QSplitter>
 #include <QWidget>
@@ -31,6 +32,13 @@ public:
     void setMessage(const KMime::Message::Ptr message);
 
     void print(QPainter *painter, int width);
+
+    const MessageParser &messageParser() const;
+
+    void showHtml(bool showHtml);
+
+private Q_SLOTS:
+    void refreshView();
 
 private:
     class Private;

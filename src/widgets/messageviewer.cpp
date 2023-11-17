@@ -5,6 +5,7 @@
 
 #include "attachmentview_p.h"
 #include "messagecontainerwidget_p.h"
+#include "messageparser.h"
 #include "mimetreeparser_widgets_debug.h"
 #include "urlhandler_p.h"
 
@@ -223,6 +224,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             i == 0 || parts->data(parts->index(i - 1, 0, parent), PartModel::SignatureDetails).value<SignatureInfo>().keyId != signatureInfo.keyId;
 
         switch (type) {
+        case PartModel::Types::Html:
         case PartModel::Types::Plain: {
             auto container = new MessageWidgetContainer(isSigned,
                                                         signatureInfo,
@@ -325,8 +327,16 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
 void MessageViewer::setMessage(const KMime::Message::Ptr message)
 {
+    if (d->parser.parts()) {
+        disconnect(d->parser.parts(), &PartModel::showHtmlChanged, this, nullptr);
+    }
+
     setUpdatesEnabled(false);
     d->parser.setMessage(message);
+
+    connect(d->parser.parts(), &PartModel::showHtmlChanged, this, [this] {
+        refreshView();
+    });
 
     connect(d->parser.attachments(), &AttachmentModel::info, this, [this](const QString &message) {
         d->messageWidget->setMessageType(KMessageWidget::Information);
@@ -362,16 +372,7 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
         d->formLayout->addRow(i18n("&BCC:"), new QLabel(d->parser.bcc()));
     }
 
-    const auto parts = d->parser.parts();
-
-    QLayoutItem *child;
-    while ((child = d->layout->takeAt(0)) != nullptr) {
-        delete child->widget();
-        delete child;
-    }
-
-    d->recursiveBuildViewer(parts, d->layout, {});
-    d->layout->addStretch();
+    refreshView();
 
     d->attachmentView->setModel(d->parser.attachments());
     d->attachmentView->setVisible(d->parser.attachments()->rowCount() > 0);
@@ -391,4 +392,28 @@ void MessageViewer::print(QPainter *painter, int width)
     render(painter);
     d->scrollArea->setFrameShape(QFrame::StyledPanel);
     resize(oldSize);
+}
+
+void MessageViewer::showHtml(bool showHtml)
+{
+    d->parser.parts()->setShowHtml(showHtml);
+}
+
+const MessageParser &MessageViewer::messageParser() const
+{
+    return d->parser;
+}
+
+void MessageViewer::refreshView()
+{
+    const auto parts = d->parser.parts();
+
+    QLayoutItem *child;
+    while ((child = d->layout->takeAt(0)) != nullptr) {
+        delete child->widget();
+        delete child;
+    }
+
+    d->recursiveBuildViewer(parts, d->layout, {});
+    d->layout->addStretch();
 }

@@ -13,6 +13,7 @@
 #include <KMessageBox>
 #include <KMessageWidget>
 #include <KMime/Message>
+#include <KToggleAction>
 
 #include <QDialogButtonBox>
 #include <QFileDialog>
@@ -30,6 +31,9 @@
 #include <QVBoxLayout>
 
 #include <memory>
+#include <qicon.h>
+#include <qobject.h>
+#include <qstringliteral.h>
 
 using namespace MimeTreeParser::Widgets;
 
@@ -68,6 +72,7 @@ public:
     MimeTreeParser::Widgets::MessageViewer *messageViewer = nullptr;
     QAction *nextAction = nullptr;
     QAction *previousAction = nullptr;
+    KToggleAction *toggleHtml = nullptr;
 
     void setCurrentIndex(int currentIndex);
     QMenuBar *createMenuBar(QWidget *parent);
@@ -124,7 +129,7 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
     fileMenu->addAction(printAction);
 
     // Navigation menu
-    const auto navigationMenu = menuBar->addMenu(i18nc("@action:inmenu", "&Navigation"));
+    const auto navigationMenu = menuBar->addMenu(i18nc("@action:inmenu", "&View"));
     previousAction = new QAction(QIcon::fromTheme(QStringLiteral("go-previous")), i18nc("@action:button Previous email", "Previous Message"), parent);
     previousAction->setEnabled(false);
     navigationMenu->addAction(previousAction);
@@ -132,6 +137,12 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
     nextAction = new QAction(QIcon::fromTheme(QStringLiteral("go-next")), i18nc("@action:button Next email", "Next Message"), parent);
     nextAction->setEnabled(false);
     navigationMenu->addAction(nextAction);
+
+    toggleHtml = new KToggleAction(QIcon::fromTheme(QStringLiteral("fileview-preview")), i18nc("@action:inmenu", "Toggle HTML"), parent);
+    navigationMenu->addAction(toggleHtml);
+    QObject::connect(toggleHtml, &KToggleAction::toggled, parent, [this](bool checked) {
+        messageViewer->showHtml(checked);
+    });
 
     return menuBar;
 }
@@ -280,6 +291,7 @@ void MessageViewerDialog::initGUI()
 
     d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
     d->messageViewer->setMessage(d->messages[0]);
+    d->toggleHtml->setEnabled(d->messageViewer->messageParser().parts()->containsHtml());
     layout->addWidget(d->messageViewer);
 
     auto buttonBox = new QDialogButtonBox(this);

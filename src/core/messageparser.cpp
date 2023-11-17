@@ -49,6 +49,8 @@ public:
     KMime::Message::Ptr mMessage;
     KMime::Content *protectedHeaderNode = nullptr;
     std::unique_ptr<KMime::Content> ownedContent;
+    PartModel *mPartModel = nullptr;
+    AttachmentModel *mAttachmentModel = nullptr;
 };
 
 MessageParser::MessageParser(QObject *parent)
@@ -127,8 +129,10 @@ PartModel *MessageParser::parts() const
     if (!d->mParser) {
         return nullptr;
     }
-    const auto model = new PartModel(d->mParser);
-    return model;
+    if (!d->mPartModel) {
+        d->mPartModel = new PartModel(d->mParser);
+    }
+    return d->mPartModel;
 }
 
 AttachmentModel *MessageParser::attachments() const
@@ -136,7 +140,10 @@ AttachmentModel *MessageParser::attachments() const
     if (!d->mParser) {
         return nullptr;
     }
-    return new AttachmentModel(d->mParser);
+    if (!d->mAttachmentModel) {
+        d->mAttachmentModel = new AttachmentModel(d->mParser);
+    }
+    return d->mAttachmentModel;
 }
 
 QString MessageParser::subject() const
