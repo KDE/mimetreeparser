@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-16 01:45+0000\n"
+"POT-Creation-Date: 2023-11-18 01:36+0000\n"
 "PO-Revision-Date: 2023-11-11 07:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -105,7 +105,7 @@ msgstr "加密算法插件“%1”无法解密任何信件。"
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "加密插件“%1”无法解密数据。"
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:314
+#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Error: %1"
 msgstr "错误：%1"
@@ -382,82 +382,82 @@ msgstr ""
 msgid "Save Attachment As"
 msgstr ""
 
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:258
 #, kde-format
 msgid "Invitation"
 msgstr "邀请"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Summary:"
 msgstr "摘要(&S)："
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Organizer:"
 msgstr "组织者(&O)："
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Location:"
 msgstr "地点(&L)："
 
-#: widgets/messageviewer.cpp:265
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Start date:"
 msgstr "开始日期(&S)："
 
-#: widgets/messageviewer.cpp:267
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&End date:"
 msgstr "结束日期(&E)："
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "&Details:"
 msgstr "详细信息(&D)："
 
-#: widgets/messageviewer.cpp:291
+#: widgets/messageviewer.cpp:292
 #, kde-format
 msgid "Encapsulated email"
 msgstr "封装的信件"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "From:"
 msgstr "发件人："
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "Date:"
 msgstr "日期："
 
-#: widgets/messageviewer.cpp:346
+#: widgets/messageviewer.cpp:347
 #, kde-format
 msgid "&Subject:"
 msgstr "主题(&S)："
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:350
 #, kde-format
 msgid "&From:"
 msgstr "发件人(&F)："
 
-#: widgets/messageviewer.cpp:352
+#: widgets/messageviewer.cpp:353
 #, kde-format
 msgid "&Sender:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:356
 #, kde-format
 msgid "&To:"
 msgstr "收件人(&T)："
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:359
 #, kde-format
 msgid "&CC:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:362
 #, kde-format
 msgid "&BCC:"
 msgstr ""
@@ -550,7 +550,7 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:249
+#: widgets/messageviewerdialog.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-16 01:45+0000\n"
+"POT-Creation-Date: 2023-11-18 01:36+0000\n"
 "PO-Revision-Date: 2023-11-08 14:27+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -107,7 +107,7 @@ msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat zprávy."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat data."
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:314
+#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -384,82 +384,82 @@ msgstr "nepojmenováno"
 msgid "Save Attachment As"
 msgstr "Uložit přílohu jako"
 
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:258
 #, kde-format
 msgid "Invitation"
 msgstr "Pozvánka"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Summary:"
 msgstr "&Shrnutí:"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizátor:"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Location:"
 msgstr "&Umístění:"
 
-#: widgets/messageviewer.cpp:265
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Start date:"
 msgstr "Datum zahá&jení:"
 
-#: widgets/messageviewer.cpp:267
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&End date:"
 msgstr "Datum ukonč&ení:"
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "&Details:"
 msgstr "Po&drobnosti:"
 
-#: widgets/messageviewer.cpp:291
+#: widgets/messageviewer.cpp:292
 #, kde-format
 msgid "Encapsulated email"
 msgstr ""
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:346
+#: widgets/messageviewer.cpp:347
 #, kde-format
 msgid "&Subject:"
 msgstr "Před&mět:"
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:350
 #, kde-format
 msgid "&From:"
 msgstr "&Od:"
 
-#: widgets/messageviewer.cpp:352
+#: widgets/messageviewer.cpp:353
 #, kde-format
 msgid "&Sender:"
 msgstr "Ode&sílatel:"
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:356
 #, kde-format
 msgid "&To:"
 msgstr "&Komu:"
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:359
 #, kde-format
 msgid "&CC:"
 msgstr "Kop&ie: "
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:362
 #, kde-format
 msgid "&BCC:"
 msgstr "Skr&ytá kopie:"
@@ -552,7 +552,7 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Vytisknout dokument"
 
-#: widgets/messageviewerdialog.cpp:249
+#: widgets/messageviewerdialog.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
