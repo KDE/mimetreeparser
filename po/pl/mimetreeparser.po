@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 00:43+0000\n"
+"POT-Creation-Date: 2023-11-18 00:43+0000\n"
 "PO-Revision-Date: 2023-10-14 10:56+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,60 +18,60 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: core/attachmentmodel.cpp:161
+#: core/attachmentmodel.cpp:195
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nazwa"
 
-#: core/attachmentmodel.cpp:163
+#: core/attachmentmodel.cpp:197
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Rozmiar"
 
-#: core/attachmentmodel.cpp:165
+#: core/attachmentmodel.cpp:199
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Zaszyfrowana"
 
-#: core/attachmentmodel.cpp:167
+#: core/attachmentmodel.cpp:201
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Podpisana"
 
-#: core/attachmentmodel.cpp:260
+#: core/attachmentmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Nie udało się zapisać załącznika."
 
-#: core/attachmentmodel.cpp:287
+#: core/attachmentmodel.cpp:317
 #, kde-format
 msgid "attachment"
 msgstr "załącznik"
 
-#: core/attachmentmodel.cpp:294
+#: core/attachmentmodel.cpp:324
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Nie udało się zapisać załącznika do otwarcia."
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:341 core/attachmentmodel.cpp:351
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Nie udało się otworzyć załącznika."
 
-#: core/attachmentmodel.cpp:319
+#: core/attachmentmodel.cpp:372
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Nie znaleziono żadnych kluczy w tym załączniku"
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:375
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -80,7 +80,7 @@ msgstr[0] "zaimportowano jeden klucz"
 msgstr[1] "zaimportowano %1 klucze"
 msgstr[2] "zaimportowano %1 kluczy"
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
