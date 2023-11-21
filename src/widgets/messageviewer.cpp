@@ -312,8 +312,15 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
         case PartModel::Types::Error: {
             const auto errorString = parts->data(parts->index(i, 0, parent), PartModel::ErrorString).toString();
-            auto errorWidget = new KMessageWidget(i18n("Error: %1", errorString));
+            auto errorWidget = new KMessageWidget(errorString);
             errorWidget->setMessageType(KMessageWidget::MessageType::Error);
+            QObject::connect(errorWidget, &KMessageWidget::linkActivated, errorWidget, [this, errorWidget](const QString &link) {
+                QUrl url(link);
+                if (url.path() == QStringLiteral("showCertificate")) {
+                    urlHandler->handleClick(QUrl(link), errorWidget->window()->windowHandle());
+                }
+            });
+            errorWidget->setWordWrap(true);
             layout->addWidget(errorWidget);
             break;
         }
