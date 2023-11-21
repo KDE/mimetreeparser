@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 01:36+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2023-10-08 23:42+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,44 +17,44 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:161
+#: core/attachmentmodel.cpp:195
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "이름"
 
-#: core/attachmentmodel.cpp:163
+#: core/attachmentmodel.cpp:197
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "크기"
 
-#: core/attachmentmodel.cpp:165
+#: core/attachmentmodel.cpp:199
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "암호화됨"
 
-#: core/attachmentmodel.cpp:167
+#: core/attachmentmodel.cpp:201
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "서명됨"
 
-#: core/attachmentmodel.cpp:260
+#: core/attachmentmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "첨부 파일을 저장할 수 없습니다."
 
-#: core/attachmentmodel.cpp:287
+#: core/attachmentmodel.cpp:317
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save attachment"
 msgid "attachment"
 msgstr "첨부 파일 저장"
 
-#: core/attachmentmodel.cpp:294
+#: core/attachmentmodel.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save attachment for opening."
@@ -62,26 +62,26 @@ msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "열 첨부 파일을 저장할 수 없습니다."
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:341 core/attachmentmodel.cpp:351
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "첨부 파일을 열 수 없습니다."
 
-#: core/attachmentmodel.cpp:319
+#: core/attachmentmodel.cpp:372
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "이 첨부 파일에서 키를 찾을 수 없음"
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:375
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
 msgstr[0] "키 %1개를 가져옴"
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"

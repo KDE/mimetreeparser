@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 01:36+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2023-11-07 13:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,60 +19,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:161
+#: core/attachmentmodel.cpp:195
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nom"
 
-#: core/attachmentmodel.cpp:163
+#: core/attachmentmodel.cpp:197
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Mida"
 
-#: core/attachmentmodel.cpp:165
+#: core/attachmentmodel.cpp:199
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Encriptat"
 
-#: core/attachmentmodel.cpp:167
+#: core/attachmentmodel.cpp:201
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signat"
 
-#: core/attachmentmodel.cpp:260
+#: core/attachmentmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Ha fallat en desar l'adjunt."
 
-#: core/attachmentmodel.cpp:287
+#: core/attachmentmodel.cpp:317
 #, kde-format
 msgid "attachment"
 msgstr "adjunt"
 
-#: core/attachmentmodel.cpp:294
+#: core/attachmentmodel.cpp:324
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Ha fallat en escriure l'adjunt per a obrir-lo."
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:341 core/attachmentmodel.cpp:351
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Ha fallat en obrir l'adjunt."
 
-#: core/attachmentmodel.cpp:319
+#: core/attachmentmodel.cpp:372
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "No s'ha trobat cap clau en aquest adjunt"
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:375
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -80,7 +80,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "s'ha importat una clau"
 msgstr[1] "s'han importat %1 claus"
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"

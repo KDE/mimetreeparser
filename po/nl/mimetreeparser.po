@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 01:36+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2023-11-07 09:53+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,60 +17,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.2\n"
 
-#: core/attachmentmodel.cpp:161
+#: core/attachmentmodel.cpp:195
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Naam"
 
-#: core/attachmentmodel.cpp:163
+#: core/attachmentmodel.cpp:197
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Grootte"
 
-#: core/attachmentmodel.cpp:165
+#: core/attachmentmodel.cpp:199
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Versleuteld"
 
-#: core/attachmentmodel.cpp:167
+#: core/attachmentmodel.cpp:201
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Gesigneerd"
 
-#: core/attachmentmodel.cpp:260
+#: core/attachmentmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Bijlage opslaan is mislukt."
 
-#: core/attachmentmodel.cpp:287
+#: core/attachmentmodel.cpp:317
 #, kde-format
 msgid "attachment"
 msgstr "bijlage"
 
-#: core/attachmentmodel.cpp:294
+#: core/attachmentmodel.cpp:324
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Bijlage schrijven voor openen is mislukt."
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:341 core/attachmentmodel.cpp:351
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Bijlage openen is mislukt."
 
-#: core/attachmentmodel.cpp:319
+#: core/attachmentmodel.cpp:372
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Er zijn geen sleutels in deze bijlage gevonden"
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:375
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -79,7 +79,7 @@ msgstr[0] "één sleutel geïmporteerd"
 msgstr[1] ""
 "<para><emphasis strong='true'>%1 sleutels geïmporteerd:</emphasis></para>"
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"

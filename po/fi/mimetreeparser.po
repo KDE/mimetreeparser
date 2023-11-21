@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 01:36+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2023-10-12 18:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,44 +17,44 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:161
+#: core/attachmentmodel.cpp:195
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nimi"
 
-#: core/attachmentmodel.cpp:163
+#: core/attachmentmodel.cpp:197
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Koko"
 
-#: core/attachmentmodel.cpp:165
+#: core/attachmentmodel.cpp:199
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Salattu"
 
-#: core/attachmentmodel.cpp:167
+#: core/attachmentmodel.cpp:201
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Allekirjoitettu"
 
-#: core/attachmentmodel.cpp:260
+#: core/attachmentmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Liitettä ei voitu tallentaa."
 
-#: core/attachmentmodel.cpp:287
+#: core/attachmentmodel.cpp:317
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save attachment"
 msgid "attachment"
 msgstr "Tallenna liite"
 
-#: core/attachmentmodel.cpp:294
+#: core/attachmentmodel.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to open attachment."
@@ -62,19 +62,19 @@ msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Liitettä ei voitu avata."
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:341 core/attachmentmodel.cpp:351
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Liitettä ei voitu avata."
 
-#: core/attachmentmodel.cpp:319
+#: core/attachmentmodel.cpp:372
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "Liitteestä ei löytynyt avaimia."
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:375
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -82,7 +82,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "tuotiin yksi avain"
 msgstr[1] "tuotiin %1 avainta"
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
