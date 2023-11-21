@@ -937,7 +937,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
         bDecryptionOk = true;
         mDecryptedData = plainText;
     } else {
-        mPassphraseError = decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
+        mPassphraseError = decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_BAD_PASSPHRASE;
         mMetaData.isEncrypted = bDecryptionOk || decryptResult.error().code() != GPG_ERR_NO_DATA;
 
         if (decryptResult.error().isCanceled()) {
