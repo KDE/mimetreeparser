@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:43+0000\n"
+"POT-Creation-Date: 2023-11-22 00:43+0000\n"
 "PO-Revision-Date: 2023-11-07 12:29+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -109,18 +109,28 @@ msgstr "El connector criptogràfic «%1» no pot desencriptar missatges."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/partmodel.cpp:504
-#, kde-format
+#: core/partmodel.cpp:509
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No key available."
-msgstr "No hi ha cap clau disponible."
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr "Aquest missatge està encriptat amb les claus següents:"
 
-#: core/partmodel.cpp:506
+#: core/partmodel.cpp:528
+#, fuzzy, kde-format
+#| msgid "Unknown key"
+msgctxt "@info"
+msgid "Unknow Key"
+msgstr "Clau desconeguda"
+
+#: core/partmodel.cpp:539
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -448,32 +458,32 @@ msgstr "De:"
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&Subject:"
 msgstr "A&ssumpte:"
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:353
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remitent:"
 
-#: widgets/messageviewer.cpp:356
+#: widgets/messageviewer.cpp:363
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
 
-#: widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:366
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:362
+#: widgets/messageviewer.cpp:369
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
@@ -583,3 +593,7 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error al KMail"
+
+#~ msgctxt "@info:status"
+#~ msgid "No key available."
+#~ msgstr "No hi ha cap clau disponible."

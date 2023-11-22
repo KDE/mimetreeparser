@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:43+0000\n"
+"POT-Creation-Date: 2023-11-22 00:43+0000\n"
 "PO-Revision-Date: 2023-11-19 03:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -105,18 +105,26 @@ msgstr "加密算法插件“%1”无法解密任何信件。"
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "加密插件“%1”无法解密数据。"
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
 msgstr "错误：%1"
 
-#: core/partmodel.cpp:504
+#: core/partmodel.cpp:509
 #, kde-format
 msgctxt "@info:status"
-msgid "No key available."
-msgstr "没有可用的密钥。"
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr ""
 
-#: core/partmodel.cpp:506
+#: core/partmodel.cpp:528
+#, kde-format
+msgctxt "@info"
+msgid "Unknow Key"
+msgstr ""
+
+#: core/partmodel.cpp:539
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -433,32 +441,32 @@ msgstr "发件人："
 msgid "Date:"
 msgstr "日期："
 
-#: widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&Subject:"
 msgstr "主题(&S)："
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&From:"
 msgstr "发件人(&F)："
 
-#: widgets/messageviewer.cpp:353
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&Sender:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:356
+#: widgets/messageviewer.cpp:363
 #, kde-format
 msgid "&To:"
 msgstr "收件人(&T)："
 
-#: widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:366
 #, kde-format
 msgid "&CC:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:362
+#: widgets/messageviewer.cpp:369
 #, kde-format
 msgid "&BCC:"
 msgstr ""
@@ -566,3 +574,7 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr ""
+
+#~ msgctxt "@info:status"
+#~ msgid "No key available."
+#~ msgstr "没有可用的密钥。"

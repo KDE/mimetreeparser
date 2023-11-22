@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:43+0000\n"
+"POT-Creation-Date: 2023-11-22 00:43+0000\n"
 "PO-Revision-Date: 2023-11-07 22:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -108,18 +108,28 @@ msgstr "Kripta kromprogramo \"%1\" ne povas deĉifri mesaĝojn."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripta kromprogramo \"%1\" ne povis deĉifri la datumojn."
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
 msgstr "Eraro: %1"
 
-#: core/partmodel.cpp:504
-#, kde-format
+#: core/partmodel.cpp:509
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No key available."
-msgstr "Neniu ŝlosilo disponebla."
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr "La mesaĝo estas ĉifrita por la sekvaj ŝlosiloj:"
 
-#: core/partmodel.cpp:506
+#: core/partmodel.cpp:528
+#, fuzzy, kde-format
+#| msgid "Unknown key"
+msgctxt "@info"
+msgid "Unknow Key"
+msgstr "Nekonata ŝlosilo"
+
+#: core/partmodel.cpp:539
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -445,32 +455,32 @@ msgstr "De:"
 msgid "Date:"
 msgstr "Dato:"
 
-#: widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&Subject:"
 msgstr "&Temo:"
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:353
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&Sender:"
 msgstr "Sendanto:"
 
-#: widgets/messageviewer.cpp:356
+#: widgets/messageviewer.cpp:363
 #, kde-format
 msgid "&To:"
 msgstr "&Al:"
 
-#: widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:366
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:362
+#: widgets/messageviewer.cpp:369
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
@@ -578,3 +588,7 @@ msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
+
+#~ msgctxt "@info:status"
+#~ msgid "No key available."
+#~ msgstr "Neniu ŝlosilo disponebla."

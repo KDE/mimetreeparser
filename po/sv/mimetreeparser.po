@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:43+0000\n"
+"POT-Creation-Date: 2023-11-22 00:43+0000\n"
 "PO-Revision-Date: 2023-11-11 09:33+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -107,18 +107,28 @@ msgstr "Kryptoinsticksprogrammet \"%1\" kan inte dekryptera några brev."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
 msgstr "Fel: %1"
 
-#: core/partmodel.cpp:504
-#, kde-format
+#: core/partmodel.cpp:509
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No key available."
-msgstr "Ingen nyckel tillgänglig."
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr "Brevet är krypterat för följande nycklar:"
 
-#: core/partmodel.cpp:506
+#: core/partmodel.cpp:528
+#, fuzzy, kde-format
+#| msgid "Unknown key"
+msgctxt "@info"
+msgid "Unknow Key"
+msgstr "Okänd nyckel"
+
+#: core/partmodel.cpp:539
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -441,32 +451,32 @@ msgstr "Från:"
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&Subject:"
 msgstr "&Rubrik:"
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&From:"
 msgstr "&Från:"
 
-#: widgets/messageviewer.cpp:353
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&Sender:"
 msgstr "Av&sändare:"
 
-#: widgets/messageviewer.cpp:356
+#: widgets/messageviewer.cpp:363
 #, kde-format
 msgid "&To:"
 msgstr "&Till:"
 
-#: widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:366
 #, kde-format
 msgid "&CC:"
 msgstr "&Kopia:"
 
-#: widgets/messageviewer.cpp:362
+#: widgets/messageviewer.cpp:369
 #, kde-format
 msgid "&BCC:"
 msgstr "&Dold kopia:"
@@ -574,6 +584,10 @@ msgstr "Kunde inte starta certifikathanteraren. Kontrollera installationen."
 #, kde-format
 msgid "KMail Error"
 msgstr "Kmail-fel"
+
+#~ msgctxt "@info:status"
+#~ msgid "No key available."
+#~ msgstr "Ingen nyckel tillgänglig."
 
 #~ msgctxt "@info"
 #~ msgid "Failed to create temporary file."

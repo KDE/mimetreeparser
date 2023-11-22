@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:43+0000\n"
+"POT-Creation-Date: 2023-11-22 00:43+0000\n"
 "PO-Revision-Date: 2023-10-08 23:42+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -109,18 +109,28 @@ msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
 msgstr "오류: %1"
 
-#: core/partmodel.cpp:504
-#, kde-format
+#: core/partmodel.cpp:509
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No key available."
-msgstr "키를 사용할 수 없습니다."
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr "이 메시지는 다음 키로 암호화되어 있습니다:"
 
-#: core/partmodel.cpp:506
+#: core/partmodel.cpp:528
+#, fuzzy, kde-format
+#| msgid "Unknown key"
+msgctxt "@info"
+msgid "Unknow Key"
+msgstr "알 수 없는 키"
+
+#: core/partmodel.cpp:539
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -439,32 +449,32 @@ msgstr "보낸 사람:"
 msgid "Date:"
 msgstr "날짜:"
 
-#: widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&Subject:"
 msgstr "제목(&S):"
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&From:"
 msgstr "보낸 사람(&F):"
 
-#: widgets/messageviewer.cpp:353
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&Sender:"
 msgstr "전송한 사람(&S):"
 
-#: widgets/messageviewer.cpp:356
+#: widgets/messageviewer.cpp:363
 #, kde-format
 msgid "&To:"
 msgstr "받는 사람(&T):"
 
-#: widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:366
 #, kde-format
 msgid "&CC:"
 msgstr "참조(&C):"
 
-#: widgets/messageviewer.cpp:362
+#: widgets/messageviewer.cpp:369
 #, kde-format
 msgid "&BCC:"
 msgstr "숨은 참조(&B):"
@@ -574,6 +584,10 @@ msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확�
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 오류"
+
+#~ msgctxt "@info:status"
+#~ msgid "No key available."
+#~ msgstr "키를 사용할 수 없습니다."
 
 #~ msgctxt "@info"
 #~ msgid "Failed to create temporary file."

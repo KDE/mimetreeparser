@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:43+0000\n"
+"POT-Creation-Date: 2023-11-22 00:43+0000\n"
 "PO-Revision-Date: 2023-11-07 10:47+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -108,18 +108,28 @@ msgstr "Crypto-plug-in \"%1\" kan geen berichten ontcijferen."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
 
-#: core/messagepart.cpp:993 widgets/messageviewer.cpp:315
+#: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
 msgstr "Fout: %1"
 
-#: core/partmodel.cpp:504
-#, kde-format
+#: core/partmodel.cpp:509
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No key available."
-msgstr "Geen sleutel beschikbaar."
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr "Het bericht is versleuteld voor de volgende sleutels:"
 
-#: core/partmodel.cpp:506
+#: core/partmodel.cpp:528
+#, fuzzy, kde-format
+#| msgid "Unknown key"
+msgctxt "@info"
+msgid "Unknow Key"
+msgstr "Onbekende sleutel"
+
+#: core/partmodel.cpp:539
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -450,32 +460,32 @@ msgstr "Van:"
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "&Subject:"
 msgstr "&Onderwerp:"
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:357
 #, kde-format
 msgid "&From:"
 msgstr "&Van:"
 
-#: widgets/messageviewer.cpp:353
+#: widgets/messageviewer.cpp:360
 #, kde-format
 msgid "&Sender:"
 msgstr "Af&zender:"
 
-#: widgets/messageviewer.cpp:356
+#: widgets/messageviewer.cpp:363
 #, kde-format
 msgid "&To:"
 msgstr "&Aan:"
 
-#: widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:366
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:362
+#: widgets/messageviewer.cpp:369
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
@@ -584,6 +594,10 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail - foutmelding"
+
+#~ msgctxt "@info:status"
+#~ msgid "No key available."
+#~ msgstr "Geen sleutel beschikbaar."
 
 #~ msgctxt "@info"
 #~ msgid "Failed to create temporary file."
