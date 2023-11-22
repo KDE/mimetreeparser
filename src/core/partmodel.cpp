@@ -525,7 +525,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                                                            encryptedMessagePart->cryptoProto()->name(),
                                                            QString::fromLatin1(recipient.keyID()));
                                 errorMessage += QStringLiteral("<li>%1 (<a href=\"%2\">0x%3</a>)</li>")
-                                                    .arg(i18nc("@info", "Unknow Key"), link, QString::fromLatin1(recipient.keyID()));
+                                                    .arg(i18nc("@info", "Unknown Key"), link, QString::fromLatin1(recipient.keyID()));
                             }
                         }
                         return errorMessage;
