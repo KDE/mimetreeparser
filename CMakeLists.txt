@@ -72,7 +72,6 @@ find_package(Gpgmepp ${GPGME_REQUIRED_VERSION} CONFIG REQUIRED)
 
 find_package(Qt6Quick ${QT_MIN_VERSION} CONFIG)
 find_package(Qt6Widgets ${QT_MIN_VERSION} CONFIG)
-find_package(Qt6Core5Compat ${QT_MIN_VERSION} CONFIG)
 
 if (BUILD_TESTING)
     find_package(Qt6Test ${QT_MIN_VERSION} CONFIG REQUIRED)

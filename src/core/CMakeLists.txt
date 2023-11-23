@@ -69,7 +69,6 @@ PUBLIC
     KPim6::Mbox
     KF6::I18n
     Qt6::Gui
-    Qt6::Core5Compat
 PRIVATE
     KF6::Codecs
     Gpgmepp

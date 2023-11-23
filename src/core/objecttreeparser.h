@@ -19,8 +19,6 @@ namespace KMime
 class Content;
 }
 
-class QTextCodec;
-
 namespace MimeTreeParser
 {
 
@@ -82,7 +80,7 @@ private:
 
     MessagePart::List defaultHandling(KMime::Content *node);
 
-    const QTextCodec *codecFor(KMime::Content *node) const;
+    QByteArray codecNameFor(KMime::Content *node) const;
 
     KMime::Content *mTopLevelContent{nullptr};
     MessagePart::Ptr mParsedPart;

@@ -3,7 +3,7 @@
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
-import QtQuick.Dialogs 1.0
+import QtQuick.Dialogs 6.2
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.pim.mimetreeparser 1.0
 import org.kde.mimetreeparser 1.0

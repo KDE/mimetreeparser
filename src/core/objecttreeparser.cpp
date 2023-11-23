@@ -19,7 +19,7 @@
 #include <QDebug>
 #include <QMimeDatabase>
 #include <QRegularExpression>
-#include <QTextCodec>
+#include <QStringDecoder>
 #include <QTextStream>
 #include <QUrl>
 
@@ -435,39 +435,10 @@ QList<MessagePart::Ptr> ObjectTreeParser::defaultHandling(KMime::Content *node)
     return {AttachmentMessagePart::Ptr(new AttachmentMessagePart(this, node))};
 }
 
-static QTextCodec *getLocalCodec()
+QByteArray ObjectTreeParser::codecNameFor(KMime::Content *node) const
 {
-    auto codec = QTextCodec::codecForLocale();
-
-    // In the case of Japan. Japanese locale name is "eucjp" but
-    // The Japanese mail systems normally used "iso-2022-jp" of locale name.
-    // We want to change locale name from eucjp to iso-2022-jp at KMail only.
-
-    // (Introduction to i18n, 6.6 Limit of Locale technology):
-    // EUC-JP is the de-facto standard for UNIX systems, ISO 2022-JP
-    // is the standard for Internet, and Shift-JIS is the encoding
-    // for Windows and Macintosh.
-    if (codec) {
-        const QByteArray codecNameLower = codec->name().toLower();
-        if (codecNameLower == "eucjp"
-#if defined Q_OS_WIN || defined Q_OS_MACX
-            || codecNameLower == "shift-jis" // OK?
-#endif
-        ) {
-            codec = QTextCodec::codecForName("jis7");
-            // QTextCodec *cdc = QTextCodec::codecForName("jis7");
-            // QTextCodec::setCodecForLocale(cdc);
-            // KLocale::global()->setEncoding(cdc->mibEnum());
-        }
-    }
-    return codec;
-}
-
-const QTextCodec *ObjectTreeParser::codecFor(KMime::Content *node) const
-{
-    static auto localCodec = getLocalCodec();
     if (!node) {
-        return localCodec;
+        return QByteArrayLiteral("UTF-8");
     }
 
     QByteArray charset = node->contentType()->charset().toLower();
@@ -478,11 +449,11 @@ const QTextCodec *ObjectTreeParser::codecFor(KMime::Content *node) const
         charset = "utf-8";
     }
     if (!charset.isEmpty()) {
-        if (auto c = QTextCodec::codecForName(charset)) {
-            return c;
+        if (const QStringDecoder c(charset.constData()); c.isValid()) {
+            return charset;
         }
     }
     // no charset means us-ascii (RFC 2045), so using local encoding should
     // be okay
-    return localCodec;
+    return QByteArrayLiteral("UTF-8");
 }

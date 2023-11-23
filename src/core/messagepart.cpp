@@ -20,11 +20,11 @@
 #include <QGpgME/VerifyDetachedJob>
 #include <QGpgME/VerifyOpaqueJob>
 
+#include <QStringDecoder>
+
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
-
-#include <QTextCodec>
 
 using namespace MimeTreeParser;
 
@@ -359,7 +359,7 @@ void TextMessagePart::parseContent()
     const auto blocks = prepareMessageForDecryption(mNode->decodedContent());
     // We also get blocks for unencrypted messages
     if (!blocks.isEmpty()) {
-        const auto aCodec = mOtp->codecFor(mNode);
+        auto aCodec = QStringDecoder(mOtp->codecNameFor(mNode).constData());
         const auto cryptProto = QGpgME::openpgp();
 
         /* The (overall) signature/encrypted status is broken
@@ -379,7 +379,7 @@ void TextMessagePart::parseContent()
 
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 fullySignedOrEncryptedTmp = false;
-                appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(KMime::CRLFtoLF(block.text())))));
+                appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())))));
             } else if (block.type() == PgpMessageBlock) {
                 auto content = new KMime::Content;
                 content->setBody(block.text());
@@ -406,7 +406,7 @@ void TextMessagePart::parseContent()
             const PartMetaData *messagePart(mp->partMetaData());
 
             if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {
-                mp->setText(aCodec->toUnicode(KMime::CRLFtoLF(block.text())));
+                mp->setText(aCodec.decode(KMime::CRLFtoLF(block.text())));
             }
 
             if (messagePart->isEncrypted) {
@@ -463,7 +463,7 @@ HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node)
         return;
     }
 
-    setText(mOtp->codecFor(mNode)->toUnicode(KMime::CRLFtoLF(mNode->decodedContent())));
+    setText(QStringDecoder(mOtp->codecNameFor(mNode).constData()).decode(KMime::CRLFtoLF(mNode->decodedContent())));
 }
 
 //-----MimeMessageBlock----------------------
@@ -660,7 +660,7 @@ void SignedMessagePart::startVerification()
     mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
 
-    const auto codec = mOtp->codecFor(mSignedData);
+    auto codec = QStringDecoder(mOtp->codecNameFor(mSignedData).constData());
 
     // If we have a mNode, this is a detached signature
     if (mNode) {
@@ -672,13 +672,13 @@ void SignedMessagePart::startVerification()
         const auto job = mCryptoProto->verifyDetachedJob();
         setVerificationResult(job->exec(signature, signedData), signedData);
         job->deleteLater();
-        setText(codec->toUnicode(KMime::CRLFtoLF(signedData)));
+        setText(codec.decode(KMime::CRLFtoLF(signedData)));
     } else {
         QByteArray outdata;
         const auto job = mCryptoProto->verifyOpaqueJob();
         setVerificationResult(job->exec(mSignedData->decodedContent(), outdata), outdata);
         job->deleteLater();
-        setText(codec->toUnicode(KMime::CRLFtoLF(outdata)));
+        setText(codec.decode(KMime::CRLFtoLF(outdata)));
     }
 
     if (!mMetaData.isSigned) {
@@ -895,8 +895,8 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
     // Normalize CRLF's
     plainText = KMime::CRLFtoLF(plainText);
-    const auto codec = mOtp->codecFor(&data);
-    const auto decoded = codec->toUnicode(plainText);
+    auto codec = QStringDecoder(mOtp->codecNameFor(&data).constData());
+    const auto decoded = codec.decode(plainText);
 
     partMetaData()->isSigned = verifyResult.signatures().size() > 0;
 
