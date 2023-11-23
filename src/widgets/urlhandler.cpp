@@ -8,6 +8,8 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
+
+#include <QCoreApplication>
 #include <QProcess>
 #include <QStandardPaths>
 #include <QUrl>
@@ -30,7 +32,14 @@ bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
     }
     QStringList lst;
     lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(window->winId())) << QStringLiteral("--query") << keyId;
+#ifdef Q_OS_WIN
+    QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra.exe"), {QCoreApplication::applicationDirPath()});
+    if (exec.isEmpty()) {
+        exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra.exe"));
+    }
+#else
     const QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra"));
+#endif
     if (exec.isEmpty()) {
         qCWarning(MIMETREEPARSER_WIDGET_LOG) << "Could not find kleopatra executable in PATH";
         KMessageBox::errorWId(window->winId(),
