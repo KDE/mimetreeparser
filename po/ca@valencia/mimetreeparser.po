@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:36+0000\n"
-"PO-Revision-Date: 2023-11-07 13:08+0100\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"PO-Revision-Date: 2023-11-22 11:44+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -115,19 +115,21 @@ msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "Este missatge està encriptat amb les claus següents:"
+msgstr ""
+"No s'ha trobat cap clau secreta per a desencriptar el missatge. El missatge "
+"està encriptat amb les claus següents:"
 
 #: core/partmodel.cpp:528
 #, fuzzy, kde-format
-#| msgid "Unknown key"
+#| msgctxt "@info"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "Clau desconeguda"
 
 #: core/partmodel.cpp:539
@@ -591,7 +593,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error a KMail"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "No hi ha cap clau disponible."

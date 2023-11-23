@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:36+0000\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
 "PO-Revision-Date: 2023-08-13 17:34-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -120,7 +120,7 @@ msgstr ""
 #: core/partmodel.cpp:528
 #, kde-format
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr ""
 
 #: core/partmodel.cpp:539

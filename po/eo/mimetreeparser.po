@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:36+0000\n"
-"PO-Revision-Date: 2023-11-07 06:43+0100\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"PO-Revision-Date: 2023-11-22 06:38+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -114,20 +114,22 @@ msgid "Error: %1"
 msgstr "Eraro: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "La mesaĝo estas ĉifrita por la sekvaj ŝlosiloj:"
+msgstr ""
+"Trovis neniun sekretan ŝlosilon por malĉifri la mesaĝon. La mesaĝo estas "
+"ĉifrita por la sekvaj ŝlosiloj:"
 
 #: core/partmodel.cpp:528
 #, fuzzy, kde-format
-#| msgid "Unknown key"
+#| msgctxt "@info"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
-msgstr "Nekonata ŝlosilo"
+msgid "Unknown Key"
+msgstr "Nekonata Ŝlosilo"
 
 #: core/partmodel.cpp:539
 #, kde-format
@@ -587,7 +589,3 @@ msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Neniu ŝlosilo disponebla."
