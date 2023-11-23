@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:43+0000\n"
-"PO-Revision-Date: 2023-11-07 22:18+0100\n"
+"POT-Creation-Date: 2023-11-23 00:42+0000\n"
+"PO-Revision-Date: 2023-11-22 21:35+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -114,20 +114,20 @@ msgid "Error: %1"
 msgstr "Eraro: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "La mesaĝo estas ĉifrita por la sekvaj ŝlosiloj:"
+msgstr ""
+"Trvis neniun sekretan ŝlosilon por malĉifri la mesaĝon. La mesaĝo estas "
+"ĉifrita por la sekvaj ŝlosiloj:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
-msgstr "Nekonata ŝlosilo"
+msgstr "Nekonata Ŝlosilo"
 
 #: core/partmodel.cpp:539
 #, kde-format
@@ -579,16 +579,12 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Neebla legi dosieron"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Neniu ŝlosilo disponebla."

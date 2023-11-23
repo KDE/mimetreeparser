@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2023.
+# SPDX-FileCopyrightText: 2023 Stefan Asserhäll <stefan.asserhall@bredband.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:43+0000\n"
-"PO-Revision-Date: 2023-11-11 09:33+0100\n"
+"POT-Creation-Date: 2023-11-23 00:42+0000\n"
+"PO-Revision-Date: 2023-11-22 21:13+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: core/attachmentmodel.cpp:195
 #, kde-format
@@ -113,17 +113,17 @@ msgid "Error: %1"
 msgstr "Fel: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "Brevet är krypterat för följande nycklar:"
+msgstr ""
+"Ingen hemlig nyckel hittades för att avkryptera brevet. Brevet är krypterat "
+"för följande nycklar:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "Okänd nyckel"
@@ -575,12 +575,12 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Kan inte läsa filen"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Kunde inte starta certifikathanteraren. Kontrollera installationen."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "Kmail-fel"

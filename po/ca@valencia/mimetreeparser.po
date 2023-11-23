@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:43+0000\n"
-"PO-Revision-Date: 2023-11-07 12:29+0100\n"
+"POT-Creation-Date: 2023-11-23 00:42+0000\n"
+"PO-Revision-Date: 2023-11-22 11:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -115,17 +115,17 @@ msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "Este missatge està encriptat amb les claus següents:"
+msgstr ""
+"No s'ha trobat cap clau secreta per a desencriptar el missatge. El missatge "
+"està encriptat amb les claus següents:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "Clau desconeguda"
@@ -582,17 +582,13 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "No s'ha pogut llegir el fitxer"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "No s'ha pogut iniciar el gestor de certificats. Comproveu esta instal·lació."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error a KMail"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "No hi ha cap clau disponible."

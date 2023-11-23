@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 00:43+0000\n"
-"PO-Revision-Date: 2023-11-07 13:14+0200\n"
+"POT-Creation-Date: 2023-11-23 00:42+0000\n"
+"PO-Revision-Date: 2023-11-22 09:11+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -118,17 +118,17 @@ msgid "Error: %1"
 msgstr "Помилка: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "Повідомлення зашифровано для таких ключів:"
+msgstr ""
+"Не знайдено закритого ключа для розшифровування повідомлення. Повідомлення "
+"зашифровано для таких ключів:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "Невідомий ключ"
@@ -580,14 +580,14 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Не вдалося прочитати дані з файла"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Не вдається запустити програму керування сертифікатами. Будь ласка, "
 "перевірте, чи належним чином встановлено програму."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "Помилка KMail"
