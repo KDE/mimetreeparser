@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"POT-Creation-Date: 2023-11-24 01:35+0000\n"
 "PO-Revision-Date: 2023-11-11 14:06+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -580,14 +580,14 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Nie udało się odczytać pliku"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Nie można otworzyć zarządzania certyfikatami. Proszę sprawdzić swoją "
 "instalację."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "Błąd KMaila"

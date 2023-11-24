@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
-"PO-Revision-Date: 2023-11-22 14:08+0300\n"
+"POT-Creation-Date: 2023-11-24 01:35+0000\n"
+"PO-Revision-Date: 2023-11-23 12:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -124,9 +124,7 @@ msgstr ""
 "anahtarlar için şifrelendi:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknow Key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Bilinmeyen Anahtar"
@@ -576,12 +574,12 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Dosya okunamıyor"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"

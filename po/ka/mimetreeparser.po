@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
-"PO-Revision-Date: 2023-11-22 06:50+0100\n"
+"POT-Creation-Date: 2023-11-24 01:35+0000\n"
+"PO-Revision-Date: 2023-11-23 06:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -124,9 +124,7 @@ msgstr ""
 "შემდეგი გასაღებებისთვის:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknow Key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "უცნობი გასაღები"
@@ -577,12 +575,12 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "ფაილის წაკითხვა შეუძლებელია"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "სერტიფიკატების მმართველის გაშვების შეცდომა. გადაამოწმეთ ფაილები."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-ის შეცდომა"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
-"PO-Revision-Date: 2023-11-23 00:06+0200\n"
+"POT-Creation-Date: 2023-11-24 01:35+0000\n"
+"PO-Revision-Date: 2023-11-23 08:31+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -128,9 +128,7 @@ msgstr ""
 "зашифровано для таких ключів:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknow Key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Невідомий ключ"
@@ -581,14 +579,14 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Не вдалося прочитати дані з файла"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Не вдається запустити програму керування сертифікатами. Будь ласка, "
 "перевірте, чи належним чином встановлено програму."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "Помилка KMail"

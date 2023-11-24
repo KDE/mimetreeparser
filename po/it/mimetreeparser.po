@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
-"PO-Revision-Date: 2023-11-08 09:27+0100\n"
+"POT-Creation-Date: 2023-11-24 01:35+0000\n"
+"PO-Revision-Date: 2023-11-23 14:07+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: core/attachmentmodel.cpp:195
 #, kde-format
@@ -113,17 +113,17 @@ msgid "Error: %1"
 msgstr "Errore: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "Il messaggio è cifrato per le seguenti chiavi:"
+msgstr ""
+"Non è stata trovata alcuna chiave segreta per decifrare il messaggio. Il "
+"messaggio è cifrato per le seguenti chiavi:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Chiave sconosciuta"
@@ -579,14 +579,14 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Impossibile leggere il file"
 
-#: widgets/urlhandler.cpp:37
+#: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Impossibile avviare il gestore dei certificati. Controlla la tua "
 "installazione."
 
-#: widgets/urlhandler.cpp:39
+#: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "Errore di KMail"
