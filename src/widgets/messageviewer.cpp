@@ -147,7 +147,7 @@ MessageViewer::MessageViewer(QWidget *parent)
     : QSplitter(Qt::Vertical, parent)
     , d(std::make_unique<MessageViewer::Private>(this))
 {
-    setObjectName(QStringLiteral("MessageViewerSplitter"));
+    setObjectName(QLatin1StringView("MessageViewerSplitter"));
     setChildrenCollapsible(false);
     setSizes({0});
 
@@ -164,7 +164,7 @@ MessageViewer::MessageViewer(QWidget *parent)
     auto widget = new QWidget(this);
     d->layout = new QVBoxLayout(widget);
     d->layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
-    d->layout->setObjectName(QStringLiteral("PartLayout"));
+    d->layout->setObjectName(QLatin1StringView("PartLayout"));
 
     d->scrollArea = new QScrollArea(this);
     d->scrollArea->setWidget(widget);

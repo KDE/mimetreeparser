@@ -184,7 +184,7 @@ void MessageWidgetContainer::createLayout()
 
     if (m_isEncrypted && m_displayEncryptionInfo) {
         auto encryptionMessage = new KMessageWidget(this);
-        encryptionMessage->setObjectName(QStringLiteral("EncryptionMessage"));
+        encryptionMessage->setObjectName(QLatin1StringView("EncryptionMessage"));
         encryptionMessage->setCloseButtonVisible(false);
         encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
 
@@ -247,7 +247,7 @@ void MessageWidgetContainer::createLayout()
 
     if (m_isSigned && m_displaySignatureInfo) {
         auto signatureMessage = new KMessageWidget(this);
-        signatureMessage->setObjectName(QStringLiteral("SignatureMessage"));
+        signatureMessage->setObjectName(QLatin1StringView("SignatureMessage"));
         signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
         signatureMessage->setCloseButtonVisible(false);
         signatureMessage->setText(getDetails(m_signatureInfo));
