@@ -387,6 +387,12 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
         d->selectionChanged();
     });
 
+    connect(d->attachmentView, &QAbstractItemView::doubleClicked, this, [this](const QModelIndex &) {
+        // Since this is only emitted if a valid index is double clicked we can assume
+        // that the first click of the double click set the selection accordingly.
+        d->openSelectedAttachments();
+    });
+
     setUpdatesEnabled(true);
 }
 
