@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-24 01:35+0000\n"
-"PO-Revision-Date: 2023-11-07 23:00+0100\n"
+"PO-Revision-Date: 2023-11-25 18:40+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: core/attachmentmodel.cpp:195
 #, kde-format
@@ -116,17 +116,17 @@ msgid "Error: %1"
 msgstr "Errorea: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "Mezua ondoko gakoentzako zifratuta dago:"
+msgstr ""
+"Ez da mezua deszifratzeko gako sekreturik aurkitu. Mezua ondoko gakoetarako "
+"zifratuta dago:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Gako ezezaguna"
