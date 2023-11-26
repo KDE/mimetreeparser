@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 00:42+0000\n"
-"PO-Revision-Date: 2023-11-10 05:08+0100\n"
+"POT-Creation-Date: 2023-11-26 00:42+0000\n"
+"PO-Revision-Date: 2023-11-25 06:05+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -18,60 +18,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: core/attachmentmodel.cpp:195
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "სახელი"
 
-#: core/attachmentmodel.cpp:197
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "ზომა"
 
-#: core/attachmentmodel.cpp:199
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "დაშიფრული"
 
-#: core/attachmentmodel.cpp:201
+#: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "ხელმოწერილი"
 
-#: core/attachmentmodel.cpp:294
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა."
 
-#: core/attachmentmodel.cpp:317
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "მიმაგრება"
 
-#: core/attachmentmodel.cpp:324
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "მიმაგრებული ფაილის გასახსნელად ჩაწერა ჩავარდა."
 
-#: core/attachmentmodel.cpp:341 core/attachmentmodel.cpp:351
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "მიმაგრებული ფაილის გახსნა შეუძლებელია."
 
-#: core/attachmentmodel.cpp:372
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "ამ მიმაგრებულ ფაილში გასაღებები ვერ ვიპოვე"
 
-#: core/attachmentmodel.cpp:375
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -79,7 +79,7 @@ msgid_plural "%1 keys imported"
 msgstr[0] "შემოტანილია 1 გასაღები"
 msgstr[1] "შემოტანილია %1 გასაღები"
 
-#: core/attachmentmodel.cpp:378
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
@@ -114,17 +114,17 @@ msgid "Error: %1"
 msgstr "შეცდომა: %1"
 
 #: core/partmodel.cpp:509
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
+msgstr ""
+"შეტყობინების გასაშიფრი საიდუმლო გასაღები ვერ ვიპოვე. ის დაშიფრულია შემდეგი "
+"გასაღებებით:"
 
 #: core/partmodel.cpp:528
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "უცნობი გასაღები"

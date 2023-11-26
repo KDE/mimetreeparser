@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 00:42+0000\n"
+"POT-Creation-Date: 2023-11-26 00:42+0000\n"
 "PO-Revision-Date: 2023-11-22 09:11+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -18,60 +18,60 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: core/attachmentmodel.cpp:195
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Назва"
 
-#: core/attachmentmodel.cpp:197
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Розмір"
 
-#: core/attachmentmodel.cpp:199
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Зашифровано"
 
-#: core/attachmentmodel.cpp:201
+#: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Підписано"
 
-#: core/attachmentmodel.cpp:294
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Не вдалося зберегти долучення."
 
-#: core/attachmentmodel.cpp:317
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "долучення"
 
-#: core/attachmentmodel.cpp:324
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Не вдалося записати долучення для відкриття."
 
-#: core/attachmentmodel.cpp:341 core/attachmentmodel.cpp:351
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Не вдалося відкрити долучення."
 
-#: core/attachmentmodel.cpp:372
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
 msgstr "У цьому долученні не було знайдено ключів"
 
-#: core/attachmentmodel.cpp:375
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
@@ -81,7 +81,7 @@ msgstr[1] "імпортовано %1 ключі"
 msgstr[2] "імпортовано %1 ключів"
 msgstr[3] "імпортовано %1 ключ"
 
-#: core/attachmentmodel.cpp:378
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
