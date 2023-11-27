@@ -313,6 +313,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         case PartModel::Types::Error: {
             const auto errorString = parts->data(parts->index(i, 0, parent), PartModel::ErrorString).toString();
             auto errorWidget = new KMessageWidget(errorString);
+            errorWidget->setCloseButtonVisible(false);
             errorWidget->setMessageType(KMessageWidget::MessageType::Error);
             QObject::connect(errorWidget, &KMessageWidget::linkActivated, errorWidget, [this, errorWidget](const QString &link) {
                 QUrl url(link);
