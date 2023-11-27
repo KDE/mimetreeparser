@@ -38,8 +38,8 @@ private Q_SLOTS:
         encryptionMessage->linkActivated(QStringLiteral("messageviewer:showDetails"));
 
         QCOMPARE(encryptionMessage->text(),
-                 QStringLiteral("This message is encrypted. The message is encrypted for the following keys:<ul><li><a "
-                                "href=\"messageviewer:showCertificate#gpgsm ### SMIME ### 4CC658E3212B49DC\">0x4CC658E3212B49DC</a></li></ul>"));
+                 QStringLiteral("This message is encrypted. The message is encrypted for the following keys:<ul><li>unittest cert - KDAB (<a "
+                                "href=\"messageviewer:showCertificate#gpgsm ### SMIME ### 4CC658E3212B49DC\">0x4CC658E3212B49DC</a>)</li></ul>"));
 
         auto signatureMessage = container->findChild<KMessageWidget *>(QStringLiteral("SignatureMessage"));
         QVERIFY(!signatureMessage);
