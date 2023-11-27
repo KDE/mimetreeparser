@@ -72,10 +72,15 @@ QString getDetails(const SignatureInfo &signatureDetails)
         }
         details += i18ndc("mimetreeparser", "@label", "The key details are not available.");
     } else {
+        QString signerDisplayName = signatureDetails.signer.toHtmlEscaped();
+        if (signatureDetails.cryptoProto == QGpgME::smime()) {
+            Kleo::DN dn(signatureDetails.signer);
+            signerDisplayName = MimeTreeParser::dnToDisplayName(dn).toHtmlEscaped();
+        }
         if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signatureDetails.signer.toHtmlEscaped());
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signerDisplayName);
         } else {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signatureDetails.signer.toHtmlEscaped());
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signerDisplayName);
         }
         if (signatureDetails.keyRevoked) {
             details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The <a href=\"%1\">key</a> was revoked.", href);
