@@ -29,14 +29,15 @@ QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgM
         const auto recipient = recipientIt.first;
         const auto key = recipientIt.second;
         if (key.keyID()) {
-            QString displayName;
+            QString displayName = QString::fromLatin1(key.userID(0).id());
             if (cryptoProto == QGpgME::smime()) {
-                Kleo::DN dn(QString::fromLatin1(key.userID(0).id()));
-                displayName = dnToDisplayName(dn).toHtmlEscaped();
+                Kleo::DN dn(displayName);
+                displayName = dnToDisplayName(dn);
             }
+            displayName = displayName.toHtmlEscaped();
             const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
                                   .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(key.keyID()));
-            text += QStringLiteral("<li>%1 (<a href=\"%2\">Ox%3</a>)</li>").arg(displayName, link, QString::fromLatin1(key.keyID()));
+            text += QStringLiteral("<li>%1 (<a href=\"%2\">0x%3</a>)</li>").arg(displayName, link, QString::fromLatin1(key.keyID()));
         } else {
             const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
                                   .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(recipient.keyID()));
