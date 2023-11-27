@@ -2,6 +2,7 @@
 // SPDX-FileContributor: Carl Schwan <carl.schwan@gnupg.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+#include "../core/utils.h"
 #include "messagecontainerwidget_p.h"
 #include "urlhandler_p.h"
 
@@ -213,28 +214,9 @@ void MessageWidgetContainer::createLayout()
         connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
             QUrl url(link);
             if (url.path() == QStringLiteral("showDetails")) {
-                QString newText = text + QStringLiteral(" ") + i18n("The message is encrypted for the following keys:") + QStringLiteral("<ul>");
+                QString newText = text + QLatin1Char(' ') + i18n("The message is encrypted for the following keys:");
 
-                for (const auto &recipient : m_encryptionInfo.decryptRecipients) {
-                    if (recipient.second.keyID()) {
-                        const auto href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                              .arg(m_encryptionInfo.cryptoProto->displayName(),
-                                                   m_encryptionInfo.cryptoProto->name(),
-                                                   QString::fromLatin1(recipient.second.keyID()));
-
-                        newText += QStringLiteral("<li><a href=\"%1\">0x%2</a></li>").arg(href, QString::fromLatin1(recipient.second.keyID()));
-                    } else {
-                        const auto href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                              .arg(m_encryptionInfo.cryptoProto->displayName(),
-                                                   m_encryptionInfo.cryptoProto->name(),
-                                                   QString::fromLatin1(recipient.first.keyID()));
-
-                        newText +=
-                            QStringLiteral("<li><a href=\"%1\">0x%2</a> (%3)</li>").arg(href, QString::fromLatin1(recipient.first.keyID()), i18n("Unknown key"));
-                    }
-                }
-
-                newText += QStringLiteral("</ul>");
+                newText += MimeTreeParser::decryptRecipientsToHtml(m_encryptionInfo.decryptRecipients, m_encryptionInfo.cryptoProto);
 
                 encryptionMessage->setText(newText);
                 return;

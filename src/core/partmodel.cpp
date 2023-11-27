@@ -5,6 +5,7 @@
 
 #include "htmlutils.h"
 #include "objecttreeparser.h"
+#include "utils.h"
 
 #include <KLocalizedString>
 
@@ -509,28 +510,8 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                     if (encryptedMessagePart->isNoSecKey()) {
                         QString errorMessage = i18ndc("mimetreeparser",
                                                       "@info:status",
-                                                      "No secret key found to decrypt the message. The message is encrypted for the following keys:")
-                            + QStringLiteral("<ul>");
-                        const auto recipients = encryptedMessagePart->decryptRecipients();
-                        for (const auto &recipientIt : recipients) {
-                            auto recipient = recipientIt.first;
-                            auto key = recipientIt.second;
-                            if (key.keyID()) {
-                                const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                                      .arg(encryptedMessagePart->cryptoProto()->displayName(),
-                                                           encryptedMessagePart->cryptoProto()->name(),
-                                                           QString::fromLatin1(key.keyID()));
-                                errorMessage += QStringLiteral("<li>%1 (<a href=\"%2\")Ox%3</a>)</li>")
-                                                    .arg(QString::fromLatin1(key.userID(0).id()), link, QString::fromLatin1(key.keyID()));
-                            } else {
-                                const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                                      .arg(encryptedMessagePart->cryptoProto()->displayName(),
-                                                           encryptedMessagePart->cryptoProto()->name(),
-                                                           QString::fromLatin1(recipient.keyID()));
-                                errorMessage += QStringLiteral("<li>%1 (<a href=\"%2\">0x%3</a>)</li>")
-                                                    .arg(i18nc("@info", "Unknow Key"), link, QString::fromLatin1(recipient.keyID()));
-                            }
-                        }
+                                                      "No secret key found to decrypt the message. The message is encrypted for the following keys:");
+                        errorMessage += MimeTreeParser::decryptRecipientsToHtml(encryptedMessagePart->decryptRecipients(), encryptedMessagePart->cryptoProto());
                         return errorMessage;
                     }
                 }
