@@ -87,6 +87,9 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     d->mParser = parser;
     const auto contentParts = parser->collectContentParts();
     for (const auto &part : contentParts) {
+        if (!part->node()) {
+            continue;
+        }
         const auto contentType = part->node()->contentType();
         if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
             const auto contentDisposition = part->node()->contentDisposition();

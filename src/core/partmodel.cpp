@@ -175,13 +175,16 @@ public:
         MimeTreeParser::MessagePart::List filteredParts;
 
         for (const auto &part : parts) {
-            const auto contentType = part->node()->contentType();
-            if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
-                const auto contentDisposition = part->node()->contentDisposition();
-                if (contentDisposition && contentDisposition->disposition() == KMime::Headers::CDinline) {
-                    continue;
+            if (part->node()) {
+                const auto contentType = part->node()->contentType();
+                if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
+                    const auto contentDisposition = part->node()->contentDisposition();
+                    if (contentDisposition && contentDisposition->disposition() == KMime::Headers::CDinline) {
+                        continue;
+                    }
                 }
             }
+
             filteredParts << part;
         }
 
