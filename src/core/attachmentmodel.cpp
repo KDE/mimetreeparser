@@ -123,6 +123,7 @@ bool validateFileName(const QString &name, bool allowDirectories)
 #ifdef Q_OS_WIN
 struct WindowFile {
     std::wstring fileName;
+    std::wstring dirName;
     HANDLE handle;
 };
 #endif
@@ -159,17 +160,24 @@ AttachmentModel::~AttachmentModel()
 {
 #ifdef Q_OS_WIN
     for (const auto &file : d->mOpenFiles) {
-        // First delete file then close handle as if we do it the other way around
-        // we lost ownership of the file and can't delete it anymore if another app
-        // as the file open.
-        auto result = DeleteFileW(file.fileName.c_str());
-        if (!result) {
-            qWarning() << "Unable to delete file" << QString::fromStdWString(file.fileName) << result << GetLastError();
+        // As owner of the file we need to close our handle first
+        // With FILE_SHARE_DELETE we have ensured that all _other_ processes must
+        // have opened the file with FILE_SHARE_DELETE, too.
+        if (!CloseHandle(file.handle)) {
+            // Always get the last error before calling any Qt functions that may
+            // use Windows system calls.
+            DWORD err = GetLastError();
+            qWarning() << "Unable to close handle for file" << QString::fromStdWString(file.fileName) << err;
         }
 
-        result = CloseHandle(file.handle);
-        if (!result) {
-            qWarning() << "Unable to close handle for file" << QString::fromStdWString(file.fileName) << result << GetLastError();
+        if (!DeleteFileW(file.fileName.c_str())) {
+            DWORD err = GetLastError();
+            qWarning() << "Unable to delete file" << QString::fromStdWString(file.fileName) << err;
+        }
+
+        if (!RemoveDirectoryW(file.dirName.c_str())) {
+            DWORD err = GetLastError();
+            qWarning() << "Unable to delete temporary directory" << QString::fromStdWString(file.dirName) << err;
         }
     }
 #endif
@@ -333,7 +341,9 @@ bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &mes
                                FILE_SHARE_READ | FILE_SHARE_DELETE, // allow other processes to delete it
                                NULL,
                                OPEN_EXISTING,
-                               FILE_ATTRIBUTE_NORMAL,
+                               FILE_ATTRIBUTE_NORMAL, // Using FILE_FLAG_DELETE_ON_CLOSE causes some
+                                                      // applications like windows zip not to open the
+                                                      // file.
                                NULL // no template
     );
 
@@ -344,7 +354,7 @@ bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &mes
         return false;
     }
 
-    d->mOpenFiles.push_back({fileNameStr, hFile});
+    d->mOpenFiles.push_back({fileNameStr, tempDir.path().toStdWString(), hFile});
 #endif
 
     if (!QDesktopServices::openUrl(QUrl::fromLocalFile(filePath))) {

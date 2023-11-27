@@ -313,6 +313,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         case PartModel::Types::Error: {
             const auto errorString = parts->data(parts->index(i, 0, parent), PartModel::ErrorString).toString();
             auto errorWidget = new KMessageWidget(errorString);
+            errorWidget->setCloseButtonVisible(false);
             errorWidget->setMessageType(KMessageWidget::MessageType::Error);
             QObject::connect(errorWidget, &KMessageWidget::linkActivated, errorWidget, [this, errorWidget](const QString &link) {
                 QUrl url(link);
@@ -385,6 +386,12 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
 
     connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
         d->selectionChanged();
+    });
+
+    connect(d->attachmentView, &QAbstractItemView::doubleClicked, this, [this](const QModelIndex &) {
+        // Since this is only emitted if a valid index is double clicked we can assume
+        // that the first click of the double click set the selection accordingly.
+        d->openSelectedAttachments();
     });
 
     setUpdatesEnabled(true);

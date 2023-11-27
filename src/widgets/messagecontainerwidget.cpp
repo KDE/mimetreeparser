@@ -2,6 +2,7 @@
 // SPDX-FileContributor: Carl Schwan <carl.schwan@gnupg.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+#include "../core/utils.h"
 #include "messagecontainerwidget_p.h"
 #include "urlhandler_p.h"
 
@@ -68,10 +69,15 @@ QString getDetails(const SignatureInfo &signatureDetails)
         }
         details += i18ndc("mimetreeparser", "@label", "The key details are not available.");
     } else {
+        QString signerDisplayName = signatureDetails.signer.toHtmlEscaped();
+        if (signatureDetails.cryptoProto == QGpgME::smime()) {
+            Kleo::DN dn(signatureDetails.signer);
+            signerDisplayName = MimeTreeParser::dnToDisplayName(dn).toHtmlEscaped();
+        }
         if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signatureDetails.signer.toHtmlEscaped());
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signerDisplayName);
         } else {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signatureDetails.signer.toHtmlEscaped());
+            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signerDisplayName);
         }
         if (signatureDetails.keyRevoked) {
             details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The <a href=\"%1\">key</a> was revoked.", href);
@@ -210,28 +216,9 @@ void MessageWidgetContainer::createLayout()
         connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
             QUrl url(link);
             if (url.path() == QStringLiteral("showDetails")) {
-                QString newText = text + QStringLiteral(" ") + i18n("The message is encrypted for the following keys:") + QStringLiteral("<ul>");
+                QString newText = text + QLatin1Char(' ') + i18n("The message is encrypted for the following keys:");
 
-                for (const auto &recipient : m_encryptionInfo.decryptRecipients) {
-                    if (recipient.second.keyID()) {
-                        const auto href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                              .arg(m_encryptionInfo.cryptoProto->displayName(),
-                                                   m_encryptionInfo.cryptoProto->name(),
-                                                   QString::fromLatin1(recipient.second.keyID()));
-
-                        newText += QStringLiteral("<li><a href=\"%1\">0x%2</a></li>").arg(href, QString::fromLatin1(recipient.second.keyID()));
-                    } else {
-                        const auto href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                              .arg(m_encryptionInfo.cryptoProto->displayName(),
-                                                   m_encryptionInfo.cryptoProto->name(),
-                                                   QString::fromLatin1(recipient.first.keyID()));
-
-                        newText += QStringLiteral("<li><a href=\"%1\">0x%2</a> (%3)</li>")
-                                       .arg(href, QString::fromLatin1(recipient.first.keyID()), i18n("Unknown key"));
-                    }
-                }
-
-                newText += QStringLiteral("</ul>");
+                newText += MimeTreeParser::decryptRecipientsToHtml(m_encryptionInfo.decryptRecipients, m_encryptionInfo.cryptoProto);
 
                 encryptionMessage->setText(newText);
                 return;
