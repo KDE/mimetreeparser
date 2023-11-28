@@ -8,7 +8,7 @@ import QtQuick.Controls 2.15 as QQC2
 
 Item {
     id: root
-    property variant errorType
+    property var errorType
     property string errorString
     property string searchString
     property bool autoLoadImages: false

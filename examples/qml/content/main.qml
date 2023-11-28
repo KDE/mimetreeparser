@@ -13,19 +13,22 @@ Kirigami.ApplicationWindow {
 
     readonly property Kirigami.Action openFileAction: Kirigami.Action {
         text: i18n("Open File")
+        shortcut: "Ctrl+O"
         onTriggered: fileDialog.open()
     }
 
     FileDialog {
         id: fileDialog
         title: i18n("Choose file")
-        onAccepted: messageHandler.open(fileUrl)
+        onAccepted: messageHandler.open(selectedFile)
     }
 
     MessageHandler {
         id: messageHandler
         objectName: "MessageHandler"
-        onMessageOpened: pageStack.currentItem.message = message
+        onMessageOpened: message => {
+            pageStack.currentItem.message = message
+        }
     }
 
     pageStack.initialPage: MailViewer {
