@@ -29,6 +29,7 @@ Item {
         background: null
         readOnly: true
         textFormat: TextEdit.RichText
+        wrapMode: TextEdit.Wrap
         padding: 0
 
         anchors {
