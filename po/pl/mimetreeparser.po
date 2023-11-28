@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-26 00:42+0000\n"
+"POT-Creation-Date: 2023-11-28 00:41+0000\n"
 "PO-Revision-Date: 2023-10-14 10:56+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -115,27 +115,38 @@ msgstr "Wtyczka szyfrująca \"%1\" nie mogła odszyfrować danych."
 msgid "Error: %1"
 msgstr "Błąd: %1"
 
-#: core/partmodel.cpp:509
+#: core/partmodel.cpp:511
 #, fuzzy, kde-format
 #| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid ""
-"No secret key found to decrypt the message. The message is encrypted for the "
-"following keys:"
+msgid "No secret key found to decrypt the message."
 msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
 
-#: core/partmodel.cpp:528
+#: core/partmodel.cpp:513
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
+msgctxt "@info:status"
+msgid "The message is encrypted for the following keys:"
+msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
+
+#: core/partmodel.cpp:525
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr "Nieprawidłowe hasło."
+
+#: core/utils.cpp:44
 #, fuzzy, kde-format
 #| msgid "Unknown key"
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "Nieznany klucz"
 
-#: core/partmodel.cpp:539
+#: core/utils.cpp:58
 #, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Nieprawidłowe hasło."
+msgctxt "Separator"
+msgid " - "
+msgstr ""
 
 #: quick/qml/MailViewer.qml:41
 #, kde-format
@@ -225,7 +236,7 @@ msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "Ta wiadomość została podpisana przy użyciu klucza %1."
 
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:73
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
@@ -256,14 +267,14 @@ msgid "You are trusting this key."
 msgstr "Ufasz temu kluczowi."
 
 #: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:102
+#: widgets/messagecontainerwidget.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "Podpis jest nieprawidłowy."
 
 #: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:200
+#: widgets/messagecontainerwidget.cpp:206
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr "Ta wiadomość jest zaszyfrowana lecz nie mamy do niej klucza."
@@ -273,7 +284,7 @@ msgstr "Ta wiadomość jest zaszyfrowana lecz nie mamy do niej klucza."
 msgid "This message is encrypted to the key: %1"
 msgstr "Ta wiadomość jest zaszyfrowana kluczem: %1"
 
-#: widgets/messagecontainerwidget.cpp:60
+#: widgets/messagecontainerwidget.cpp:61
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -283,38 +294,38 @@ msgstr ""
 "Ta wiadomość została podpisana zgodnie z VS-NfD przy użyciu klucza <a href="
 "\"%1\">%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:67
+#: widgets/messagecontainerwidget.cpp:68
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
 msgstr ""
 "Ta wiadomość została podpisana przy użyciu klucza <a href=\"%1\">%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:75
+#: widgets/messagecontainerwidget.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "Ta wiadomość została podpisana zgodnie z VS-NfD przez %1."
 
-#: widgets/messagecontainerwidget.cpp:77
+#: widgets/messagecontainerwidget.cpp:83
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
 msgstr "Ta wiadomość została podpisana przez %1."
 
-#: widgets/messagecontainerwidget.cpp:80
+#: widgets/messagecontainerwidget.cpp:86
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
 msgstr "<a href=\"%1\">Klucz</a> został odwołany."
 
-#: widgets/messagecontainerwidget.cpp:83
+#: widgets/messagecontainerwidget.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
 msgstr "<a href=\"%1\">Klucz</a> został wygasł."
 
-#: widgets/messagecontainerwidget.cpp:88
+#: widgets/messagecontainerwidget.cpp:94
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -322,7 +333,7 @@ msgid ""
 msgstr ""
 "Podpis jest poprawny, lecz ważność <a href=\"%1\">klucza</a> jest nieznana."
 
-#: widgets/messagecontainerwidget.cpp:91
+#: widgets/messagecontainerwidget.cpp:97
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -330,14 +341,14 @@ msgid ""
 msgstr ""
 "Podpis jest prawidłowy, a <a href=\"%1\">klucz</a> ma marginalne zaufanie."
 
-#: widgets/messagecontainerwidget.cpp:93
+#: widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
 msgstr ""
 "Podpis jest prawidłowy, a <a href=\"%1\">klucz</a> jest w pełni zaufany."
 
-#: widgets/messagecontainerwidget.cpp:96
+#: widgets/messagecontainerwidget.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -345,13 +356,13 @@ msgid ""
 msgstr ""
 "Podpis jest prawidłowy, a <a href=\"%1\">klucz</a> ma najwyższe zaufanie."
 
-#: widgets/messagecontainerwidget.cpp:98
+#: widgets/messagecontainerwidget.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
 msgstr "Podpis jest prawidłowy, lecz <a href=\"%1\">klucz</a> jest niezaufany."
 
-#: widgets/messagecontainerwidget.cpp:198
+#: widgets/messagecontainerwidget.cpp:204
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
@@ -359,25 +370,20 @@ msgstr ""
 "Ta wiadomość została zaszyfrowana zgodnie z VS-NfD, lecz nie mamy do niej "
 "klucza."
 
-#: widgets/messagecontainerwidget.cpp:205
+#: widgets/messagecontainerwidget.cpp:211
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Ta wiadomość została zaszyfrowana zgodnie z VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:207
+#: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Ta wiadomość jest zaszyfrowana."
 
-#: widgets/messagecontainerwidget.cpp:216
+#: widgets/messagecontainerwidget.cpp:222
 #, kde-format
 msgid "The message is encrypted for the following keys:"
 msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
-
-#: widgets/messagecontainerwidget.cpp:233
-#, kde-format
-msgid "Unknown key"
-msgstr "Nieznany klucz"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -457,32 +463,32 @@ msgstr "Od:"
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:354
+#: widgets/messageviewer.cpp:355
 #, kde-format
 msgid "&Subject:"
 msgstr "&Temat:"
 
-#: widgets/messageviewer.cpp:357
+#: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&From:"
 msgstr "&Od:"
 
-#: widgets/messageviewer.cpp:360
+#: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&Sender:"
 msgstr "&Nadawca:"
 
-#: widgets/messageviewer.cpp:363
+#: widgets/messageviewer.cpp:364
 #, kde-format
 msgid "&To:"
 msgstr "&Do:"
 
-#: widgets/messageviewer.cpp:366
+#: widgets/messageviewer.cpp:367
 #, kde-format
 msgid "&CC:"
 msgstr "&DW:"
 
-#: widgets/messageviewer.cpp:369
+#: widgets/messageviewer.cpp:370
 #, kde-format
 msgid "&BCC:"
 msgstr "&UDW:"
@@ -594,6 +600,9 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Błąd KMaila"
+
+#~ msgid "Unknown key"
+#~ msgstr "Nieznany klucz"
 
 #~ msgctxt "@info:status"
 #~ msgid "No key available."
