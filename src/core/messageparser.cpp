@@ -32,15 +32,6 @@ const T *findHeader(KMime::Content *content, KMime::Content *protectedHeaderNode
     return findHeader<T>(content->parent(), nullptr);
 }
 
-const KMime::Headers::Base *findHeader(KMime::Content *content, const char *headerType)
-{
-    const auto header = content->headerByType(headerType);
-    if (header || !content->parent()) {
-        return header;
-    }
-    return findHeader(content->parent(), headerType);
-}
-
 QString mailboxesToHtml(const KMime::Types::Mailbox::List &mailboxes)
 {
     QStringList html;
