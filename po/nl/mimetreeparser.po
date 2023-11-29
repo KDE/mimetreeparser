@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-28 00:41+0000\n"
-"PO-Revision-Date: 2023-11-22 17:15+0100\n"
+"PO-Revision-Date: 2023-11-28 15:25+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -114,20 +114,13 @@ msgid "Error: %1"
 msgstr "Fout: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid ""
-#| "No secret key found to decrypt the message. The message is encrypted for "
-#| "the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr ""
-"Geen geheime sleutel gevonden om het bericht te ontcijferen. Het bericht is "
-"versleuteld voor de volgende sleutels:"
+msgstr "Geen geheime sleutel gevonden om het bericht te ontcijferen."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
 msgstr "Het bericht is versleuteld voor de volgende sleutels:"
@@ -148,7 +141,7 @@ msgstr "Onbekende sleutel"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:41
 #, kde-format
