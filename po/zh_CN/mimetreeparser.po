@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -132,7 +132,7 @@ msgstr "密码错误。"
 #: core/utils.cpp:44
 #, kde-format
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr ""
 
 #: core/utils.cpp:58

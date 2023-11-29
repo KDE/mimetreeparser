@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
-"PO-Revision-Date: 2023-11-23 12:50+0300\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"PO-Revision-Date: 2023-11-28 20:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -114,20 +114,13 @@ msgid "Error: %1"
 msgstr "Hata: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid ""
-#| "No secret key found to decrypt the message. The message is encrypted for "
-#| "the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr ""
-"İletinin şifresini çözmek için bir gizli anahtar bulunamadı. İleti, şu "
-"anahtarlar için şifrelendi:"
+msgstr "İletinin şifresini çözmek için bir gizli anahtar bulunamadı."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
 msgstr "İleti, şu anahtarlar için şifrelendi:"
@@ -141,16 +134,16 @@ msgstr "Yanlış anahtar parolası."
 #: core/utils.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "Bilinmeyen Anahtar"
 
 #: core/utils.cpp:58
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format

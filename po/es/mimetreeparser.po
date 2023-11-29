@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
-"PO-Revision-Date: 2023-11-23 20:32+0100\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"PO-Revision-Date: 2023-11-28 23:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -115,20 +115,13 @@ msgid "Error: %1"
 msgstr "Error: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid ""
-#| "No secret key found to decrypt the message. The message is encrypted for "
-#| "the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr ""
-"No se ha encontrado ninguna clave secreta para descifrar el mensaje. El "
-"mensaje está cifrado para las siguientes claves:"
+msgstr "No se ha encontrado ninguna clave secreta para descifrar el mensaje."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
 msgstr "El mensaje está cifrado para las siguientes claves:"
@@ -142,16 +135,16 @@ msgstr "Contraseña larga errónea."
 #: core/utils.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "Clave desconocida"
 
 #: core/utils.cpp:58
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format

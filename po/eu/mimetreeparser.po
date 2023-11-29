@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
-"PO-Revision-Date: 2023-11-25 18:40+0100\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"PO-Revision-Date: 2023-11-28 07:19+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -116,23 +116,16 @@ msgid "Error: %1"
 msgstr "Errorea: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid ""
-#| "No secret key found to decrypt the message. The message is encrypted for "
-#| "the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr ""
-"Ez da mezua deszifratzeko gako sekreturik aurkitu. Mezua ondoko gakoetarako "
-"zifratuta dago:"
+msgstr "Ez da aurkitu mezua deszifratzeko gako sekreturik."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
-msgstr "Mezua ondoko gakoentzako zifratuta dago:"
+msgstr "Mezua ondoko gakoetarako zifratuta dago:"
 
 #: core/partmodel.cpp:525
 #, kde-format
@@ -143,16 +136,16 @@ msgstr "Pasaesaldi okerra."
 #: core/utils.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "Gako ezezaguna"
 
 #: core/utils.cpp:58
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format

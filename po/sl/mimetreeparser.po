@@ -1,22 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2023.
+# SPDX-FileCopyrightText: 2023 Matjaž Jeran <matjaz.jeran@amis.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
-"PO-Revision-Date: 2023-11-24 09:16+0100\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"PO-Revision-Date: 2023-11-28 10:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -118,20 +118,13 @@ msgid "Error: %1"
 msgstr "Napaka: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid ""
-#| "No secret key found to decrypt the message. The message is encrypted for "
-#| "the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr ""
-"Ni tajnega ključa za dešifriranje sporočila. Sporočilo je šifrirano z "
-"naslednjimi ključi:"
+msgstr "Ni tajnega ključa za dešifriranje sporočila."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
 msgstr "Sporočilo je šifrirano z naslednjimi ključi:"
@@ -145,16 +138,16 @@ msgstr "Napačno geslo."
 #: core/utils.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "Neznani ključ"
 
 #: core/utils.cpp:58
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -388,7 +381,7 @@ msgstr "To sporočilo je šifrirano."
 #: widgets/messagecontainerwidget.cpp:219
 #, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr "Sporočilo je šifrirano z naslednjimi ključi:"
+msgstr "Sporočilo je šifrirano za naslednje ključe:"
 
 #: widgets/messageviewer.cpp:64
 #, kde-format

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-24 14:05+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
@@ -141,9 +141,9 @@ msgstr "Phrase de passe erronée."
 #: core/utils.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "Clé inconnue"
 
 #: core/utils.cpp:58
