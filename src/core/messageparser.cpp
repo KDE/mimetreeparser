@@ -46,7 +46,7 @@ QString mailboxesToHtml(const KMime::Types::Mailbox::List &mailboxes)
                 html << mailbox.name();
             } else {
                 Q_ASSERT_X(false, __FUNCTION__, "Mailbox does not contains email address nor name");
-                html << i18nc("Displayed when a CC, FROM or TO field in an email is empty", "Unknow");
+                html << i18nc("Displayed when a CC, FROM or TO field in an email is empty", "Unknown");
             }
         }
     }
