@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 00:41+0000\n"
+"POT-Creation-Date: 2023-11-30 00:41+0000\n"
 "PO-Revision-Date: 2023-11-28 20:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -85,6 +85,20 @@ msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] "1 anahtar halihazırda içe aktarılmıştı"
 msgstr[1] "%1 anahtar halihazırda içe aktarılmıştı"
+
+#: core/messageparser.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Unknow Key"
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknow"
+msgstr "Bilinmeyen Anahtar"
+
+#: core/messageparser.cpp:54
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ""
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -374,110 +388,110 @@ msgstr "Bu ileti şifrelenmiş."
 msgid "The message is encrypted for the following keys:"
 msgstr "Bu ileti, şu anahtarlar için şifrelenmiş:"
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Eki Farklı &Kaydet..."
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:71
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Aç"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Genel Anahtar İçe Aktar"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "adsız"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Eki Farklı Kaydet"
 
-#: widgets/messageviewer.cpp:258
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "Invitation"
 msgstr "Davet"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Summary:"
 msgstr "&Özet:"
 
-#: widgets/messageviewer.cpp:262
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizatör:"
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Location:"
 msgstr "&Konum:"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&Start date:"
 msgstr "&Başlangıç tarihi:"
 
-#: widgets/messageviewer.cpp:268
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&End date:"
 msgstr "B&itiş tarihi:"
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "&Details:"
 msgstr "&Ayrıntılar:"
 
-#: widgets/messageviewer.cpp:292
+#: widgets/messageviewer.cpp:294
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsüllenmiş E-posta"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "From:"
 msgstr "Kimden:"
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Date:"
 msgstr "Tarih:"
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:367
 #, kde-format
 msgid "&Subject:"
 msgstr "K&onu:"
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:370
 #, kde-format
 msgid "&From:"
 msgstr "&Kimden:"
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:373
 #, kde-format
 msgid "&Sender:"
 msgstr "&Gönderen:"
 
-#: widgets/messageviewer.cpp:364
+#: widgets/messageviewer.cpp:376
 #, kde-format
 msgid "&To:"
 msgstr "Kim&e:"
 
-#: widgets/messageviewer.cpp:367
+#: widgets/messageviewer.cpp:381
 #, kde-format
 msgid "&CC:"
 msgstr "&Kopya:"
 
-#: widgets/messageviewer.cpp:370
+#: widgets/messageviewer.cpp:384
 #, kde-format
 msgid "&BCC:"
 msgstr "&Gizli kopya:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 00:41+0000\n"
+"POT-Creation-Date: 2023-11-30 00:41+0000\n"
 "PO-Revision-Date: 2023-11-28 10:06+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -90,6 +90,20 @@ msgstr[0] "%1 ključ je že uvožen"
 msgstr[1] "%1 ključa sta že uvožena"
 msgstr[2] "%1 ključi so že uvoženi"
 msgstr[3] "%1 ključev je že uvoženih"
+
+#: core/messageparser.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "displayed when a mail has unknown sender, receiver or date"
+#| msgid "Unknown"
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknow"
+msgstr "Neznano"
+
+#: core/messageparser.cpp:54
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ""
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -381,110 +395,110 @@ msgstr "To sporočilo je šifrirano."
 msgid "The message is encrypted for the following keys:"
 msgstr "Sporočilo je šifrirano za naslednje ključe:"
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Shrani priloge kot..."
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:71
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Odpri"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Uvozi javni ključ"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "neimenovana"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Shrani prilogo kot"
 
-#: widgets/messageviewer.cpp:258
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "Invitation"
 msgstr "Povabilo"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Summary:"
 msgstr "Povzetek:"
 
-#: widgets/messageviewer.cpp:262
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizator:"
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Location:"
 msgstr "&Lokacija:"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&Start date:"
 msgstr "Datum začetka:"
 
-#: widgets/messageviewer.cpp:268
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&End date:"
 msgstr "Datum konca:"
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "&Details:"
 msgstr "Po&drobnosti:"
 
-#: widgets/messageviewer.cpp:292
+#: widgets/messageviewer.cpp:294
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Enkapsulirano e-poštno sporočilo"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:367
 #, kde-format
 msgid "&Subject:"
 msgstr "Predmet:"
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:370
 #, kde-format
 msgid "&From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:373
 #, kde-format
 msgid "&Sender:"
 msgstr "Pošiljatelj:"
 
-#: widgets/messageviewer.cpp:364
+#: widgets/messageviewer.cpp:376
 #, kde-format
 msgid "&To:"
 msgstr "Za:"
 
-#: widgets/messageviewer.cpp:367
+#: widgets/messageviewer.cpp:381
 #, kde-format
 msgid "&CC:"
 msgstr "Kp:"
 
-#: widgets/messageviewer.cpp:370
+#: widgets/messageviewer.cpp:384
 #, kde-format
 msgid "&BCC:"
 msgstr "Skp:"
@@ -608,10 +622,6 @@ msgstr "Napaka KMaila"
 #~ msgctxt "@info"
 #~ msgid "Saved the attachment to disk: %1"
 #~ msgstr "Priponka shranjena na disk: %1"
-
-#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
-#~ msgid "Unknown"
-#~ msgstr "Neznano"
 
 #~ msgid "fwd"
 #~ msgstr "naprej"

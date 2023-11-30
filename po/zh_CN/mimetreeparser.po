@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 00:41+0000\n"
+"POT-Creation-Date: 2023-11-30 00:41+0000\n"
 "PO-Revision-Date: 2023-11-25 02:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -83,6 +83,18 @@ msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] "%1 个密钥已经被导入过了"
+
+#: core/messageparser.cpp:49
+#, kde-format
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknow"
+msgstr ""
+
+#: core/messageparser.cpp:54
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ""
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -369,110 +381,110 @@ msgstr ""
 msgid "The message is encrypted for the following keys:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "附件另存为(&S)..."
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:71
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "打开"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "导入公钥"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr ""
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
 msgstr ""
 
-#: widgets/messageviewer.cpp:258
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "Invitation"
 msgstr "邀请"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Summary:"
 msgstr "摘要(&S)："
 
-#: widgets/messageviewer.cpp:262
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Organizer:"
 msgstr "组织者(&O)："
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Location:"
 msgstr "地点(&L)："
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&Start date:"
 msgstr "开始日期(&S)："
 
-#: widgets/messageviewer.cpp:268
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&End date:"
 msgstr "结束日期(&E)："
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "&Details:"
 msgstr "详细信息(&D)："
 
-#: widgets/messageviewer.cpp:292
+#: widgets/messageviewer.cpp:294
 #, kde-format
 msgid "Encapsulated email"
 msgstr "封装的信件"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "From:"
 msgstr "发件人："
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Date:"
 msgstr "日期："
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:367
 #, kde-format
 msgid "&Subject:"
 msgstr "主题(&S)："
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:370
 #, kde-format
 msgid "&From:"
 msgstr "发件人(&F)："
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:373
 #, kde-format
 msgid "&Sender:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:364
+#: widgets/messageviewer.cpp:376
 #, kde-format
 msgid "&To:"
 msgstr "收件人(&T)："
 
-#: widgets/messageviewer.cpp:367
+#: widgets/messageviewer.cpp:381
 #, kde-format
 msgid "&CC:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:370
+#: widgets/messageviewer.cpp:384
 #, kde-format
 msgid "&BCC:"
 msgstr ""

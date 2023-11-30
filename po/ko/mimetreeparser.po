@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 00:41+0000\n"
+"POT-Creation-Date: 2023-11-30 00:41+0000\n"
 "PO-Revision-Date: 2023-10-08 23:42+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -87,6 +87,20 @@ msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] "키 %1개는 이미 가져옴"
+
+#: core/messageparser.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "displayed when a mail has unknown sender, receiver or date"
+#| msgid "Unknown"
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknow"
+msgstr "알 수 없음"
+
+#: core/messageparser.cpp:54
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ""
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -377,110 +391,110 @@ msgstr "이 메시지는 암호화되어 있습니다."
 msgid "The message is encrypted for the following keys:"
 msgstr "이 메시지는 다음 키로 암호화되어 있습니다:"
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "다른 이름으로 첨부 파일 저장(&S)..."
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:71
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "열기"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "공개 키 가져오기"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "이름 없음"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
 msgstr "다른 이름으로 첨부 파일 저장"
 
-#: widgets/messageviewer.cpp:258
+#: widgets/messageviewer.cpp:260
 #, kde-format
 msgid "Invitation"
 msgstr "초대장"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:263
 #, kde-format
 msgid "&Summary:"
 msgstr "개요(&S):"
 
-#: widgets/messageviewer.cpp:262
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Organizer:"
 msgstr "주최(&O):"
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Location:"
 msgstr "위치(&L):"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&Start date:"
 msgstr "시작 날짜(&S):"
 
-#: widgets/messageviewer.cpp:268
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&End date:"
 msgstr "종료 날짜(&E):"
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "&Details:"
 msgstr "자세히(&D):"
 
-#: widgets/messageviewer.cpp:292
+#: widgets/messageviewer.cpp:294
 #, kde-format
 msgid "Encapsulated email"
 msgstr "캡슐화된 이메일"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "From:"
 msgstr "보낸 사람:"
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Date:"
 msgstr "날짜:"
 
-#: widgets/messageviewer.cpp:355
+#: widgets/messageviewer.cpp:367
 #, kde-format
 msgid "&Subject:"
 msgstr "제목(&S):"
 
-#: widgets/messageviewer.cpp:358
+#: widgets/messageviewer.cpp:370
 #, kde-format
 msgid "&From:"
 msgstr "보낸 사람(&F):"
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:373
 #, kde-format
 msgid "&Sender:"
 msgstr "전송한 사람(&S):"
 
-#: widgets/messageviewer.cpp:364
+#: widgets/messageviewer.cpp:376
 #, kde-format
 msgid "&To:"
 msgstr "받는 사람(&T):"
 
-#: widgets/messageviewer.cpp:367
+#: widgets/messageviewer.cpp:381
 #, kde-format
 msgid "&CC:"
 msgstr "참조(&C):"
 
-#: widgets/messageviewer.cpp:370
+#: widgets/messageviewer.cpp:384
 #, kde-format
 msgid "&BCC:"
 msgstr "숨은 참조(&B):"
@@ -605,10 +619,6 @@ msgstr "KMail 오류"
 #~ msgctxt "@info"
 #~ msgid "Saved the attachment to disk: %1"
 #~ msgstr "첨부 파일을 디스크에 저장함: %1"
-
-#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
-#~ msgid "Unknown"
-#~ msgstr "알 수 없음"
 
 #~ msgid "fwd"
 #~ msgstr "fwd"
