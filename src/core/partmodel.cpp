@@ -508,9 +508,21 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             case MimeTreeParser::MessagePart::NoKeyError: {
                 if (auto encryptedMessagePart = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(messagePart)) {
                     if (encryptedMessagePart->isNoSecKey()) {
-                        QString errorMessage = i18ndc("mimetreeparser", "@info:status", "No secret key found to decrypt the message.");
+                        QString errorMessage;
+                        if (encryptedMessagePart->cryptoProto() == QGpgME::smime()) {
+                            errorMessage +=
+                                i18ndc("mimetreeparser", "@info:status", "This message cannot be decrypted with any S/MIME certificate in your keyring.");
+                        } else {
+                            errorMessage +=
+                                i18ndc("mimetreeparser", "@info:status", "This message cannot be decrypted with any OpenPGP certificate in your keyring.");
+                        }
                         if (!encryptedMessagePart->decryptRecipients().empty()) {
-                            errorMessage += QLatin1Char(' ') + i18ndc("mimetreeparser", "@info:status", "The message is encrypted for the following keys:");
+                            errorMessage += QLatin1Char(' ')
+                                + i18ndcp("mimetreeparser",
+                                          "@info:status",
+                                          "The message is encrypted for the following certificate:",
+                                          "The message is encrypted for the following certificates:",
+                                          encryptedMessagePart->decryptRecipients().size());
                             errorMessage +=
                                 MimeTreeParser::decryptRecipientsToHtml(encryptedMessagePart->decryptRecipients(), encryptedMessagePart->cryptoProto());
                         }
