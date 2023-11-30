@@ -37,10 +37,9 @@ QString mailboxesToHtml(const KMime::Types::Mailbox::List &mailboxes)
     QStringList html;
     for (const auto &mailbox : mailboxes) {
         if (mailbox.hasName() && mailbox.hasAddress()) {
-            html << QStringLiteral("%1 &lt;<a href=\"mailto:%2\">%2</a>&gt;")
-                        .arg(mailbox.name().toHtmlEscaped(), QString::fromUtf8(mailbox.address()).toHtmlEscaped());
+            html << QStringLiteral("%1 <%2>").arg(mailbox.name().toHtmlEscaped(), QString::fromUtf8(mailbox.address()).toHtmlEscaped());
         } else if (mailbox.hasAddress()) {
-            html << QStringLiteral("<a href=\"mailto:%2\">%2</a>").arg(QString::fromUtf8(mailbox.address()));
+            html << QString::fromUtf8(mailbox.address());
         } else {
             if (mailbox.hasName()) {
                 html << mailbox.name();

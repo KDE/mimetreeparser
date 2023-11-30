@@ -278,6 +278,9 @@ MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *paren
     auto closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     connect(closeButton, &QPushButton::pressed, this, &QDialog::accept);
     layout->addWidget(buttonBox);
+
+    setMinimumSize(300, 300);
+    resize(600, 600);
 }
 
 MessageViewerDialog::~MessageViewerDialog() = default;

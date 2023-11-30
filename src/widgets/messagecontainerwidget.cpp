@@ -9,9 +9,9 @@
 #include <KLocalizedString>
 #include <KMessageWidget>
 #include <Libkleo/Compliance>
+#include <Libkleo/Formatting>
 #include <QGpgME/Protocol>
 
-#include <QDebug>
 #include <QLabel>
 #include <QPaintEvent>
 #include <QPainter>
@@ -60,14 +60,14 @@ QString getDetails(const SignatureInfo &signatureDetails)
                               "@label",
                               "This message has been signed VS-NfD compliant using the key <a href=\"%1\">%2</a>.",
                               href,
-                              QString::fromUtf8(signatureDetails.keyId))
+                              Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
                 + QLatin1Char('\n');
         } else {
             details += i18ndc("mimetreeparser",
                               "@label",
                               "This message has been signed using the key <a href=\"%1\">%2</a>.",
                               href,
-                              QString::fromUtf8(signatureDetails.keyId))
+                              Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
                 + QLatin1Char('\n');
         }
         details += i18ndc("mimetreeparser", "@label", "The key details are not available.");
