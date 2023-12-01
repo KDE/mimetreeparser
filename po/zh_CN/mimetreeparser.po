@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-30 00:41+0000\n"
+"POT-Creation-Date: 2023-12-01 00:42+0000\n"
 "PO-Revision-Date: 2023-11-25 02:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -84,13 +84,13 @@ msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] "%1 个密钥已经被导入过了"
 
-#: core/messageparser.cpp:49
+#: core/messageparser.cpp:48
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-msgid "Unknow"
+msgid "Unknown"
 msgstr ""
 
-#: core/messageparser.cpp:54
+#: core/messageparser.cpp:53
 #, kde-format
 msgctxt "list separator"
 msgid ", "
@@ -141,13 +141,13 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "密码错误。"
 
-#: core/utils.cpp:44
+#: core/utils.cpp:46
 #, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr ""
 
-#: core/utils.cpp:58
+#: core/utils.cpp:60
 #, kde-format
 msgctxt "Separator"
 msgid " - "
@@ -366,128 +366,134 @@ msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
 msgstr ""
 
-#: widgets/messagecontainerwidget.cpp:211
+#: widgets/messagecontainerwidget.cpp:212
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr ""
 
-#: widgets/messagecontainerwidget.cpp:213
+#: widgets/messagecontainerwidget.cpp:214
 #, kde-format
 msgid "This message is encrypted."
 msgstr ""
 
-#: widgets/messagecontainerwidget.cpp:222
+#: widgets/messagecontainerwidget.cpp:223
 #, kde-format
 msgid "The message is encrypted for the following keys:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:66
+#: widgets/messageviewer.cpp:67
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "附件另存为(&S)..."
 
-#: widgets/messageviewer.cpp:71
+#: widgets/messageviewer.cpp:72
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "打开"
 
-#: widgets/messageviewer.cpp:76
+#: widgets/messageviewer.cpp:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "导入公钥"
 
-#: widgets/messageviewer.cpp:105
+#: widgets/messageviewer.cpp:106
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr ""
 
-#: widgets/messageviewer.cpp:108
+#: widgets/messageviewer.cpp:109
 #, kde-format
 msgid "Save Attachment As"
 msgstr ""
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:265
 #, kde-format
 msgid "Invitation"
 msgstr "邀请"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&Summary:"
 msgstr "摘要(&S)："
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Organizer:"
 msgstr "组织者(&O)："
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "&Location:"
 msgstr "地点(&L)："
 
-#: widgets/messageviewer.cpp:268
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "&Start date:"
 msgstr "开始日期(&S)："
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&End date:"
 msgstr "结束日期(&E)："
 
-#: widgets/messageviewer.cpp:273
+#: widgets/messageviewer.cpp:278
 #, kde-format
 msgid "&Details:"
 msgstr "详细信息(&D)："
 
-#: widgets/messageviewer.cpp:294
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Encapsulated email"
 msgstr "封装的信件"
 
-#: widgets/messageviewer.cpp:302
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "From:"
 msgstr "发件人："
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "Date:"
 msgstr "日期："
 
-#: widgets/messageviewer.cpp:367
+#: widgets/messageviewer.cpp:385
 #, kde-format
 msgid "&Subject:"
 msgstr "主题(&S)："
 
-#: widgets/messageviewer.cpp:370
+#: widgets/messageviewer.cpp:388
 #, kde-format
 msgid "&From:"
 msgstr "发件人(&F)："
 
-#: widgets/messageviewer.cpp:373
+#: widgets/messageviewer.cpp:391
 #, kde-format
 msgid "&Sender:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:376
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&To:"
 msgstr "收件人(&T)："
 
-#: widgets/messageviewer.cpp:381
+#: widgets/messageviewer.cpp:397
 #, kde-format
 msgid "&CC:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:384
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&BCC:"
 msgstr ""
+
+#: widgets/messageviewer.cpp:403
+#, fuzzy, kde-format
+#| msgid "Date:"
+msgid "&Date:"
+msgstr "日期："
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
