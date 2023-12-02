@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
-"PO-Revision-Date: 2023-11-30 10:59+0200\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
+"PO-Revision-Date: 2023-12-01 08:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -92,9 +92,7 @@ msgstr[2] "%1 ключів вже імпортовано"
 msgstr[3] "%1 ключ вже імпортовано"
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknow"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Невідома"
@@ -131,19 +129,34 @@ msgstr "Додатку шифрування «%1» не вдалося розш�
 msgid "Error: %1"
 msgstr "Помилка: %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
 #, kde-format
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
-msgstr "Не знайдено закритого ключа для розшифровування повідомлення."
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
 
-#: core/partmodel.cpp:513
+#: core/partmodel.cpp:517
 #, kde-format
 msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Повідомлення зашифровано для таких ключів:"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
 
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:523
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "The message is encrypted for the following keys:"
+msgctxt "@info:status"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Повідомлення зашифровано для таких ключів:"
+msgstr[1] "Повідомлення зашифровано для таких ключів:"
+msgstr[2] "Повідомлення зашифровано для таких ключів:"
+msgstr[3] "Повідомлення зашифровано для таких ключів:"
+
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -504,10 +517,9 @@ msgid "&BCC:"
 msgstr "&Пр. копія:"
 
 #: widgets/messageviewer.cpp:403
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Дата:"
+msgstr "&Дата:"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
@@ -614,6 +626,10 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Помилка KMail"
+
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr "Не знайдено закритого ключа для розшифровування повідомлення."
 
 #~ msgid "Unknown key"
 #~ msgstr "Невідомий ключ"

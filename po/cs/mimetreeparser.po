@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
 "PO-Revision-Date: 2023-11-08 14:27+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -125,21 +125,32 @@ msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat data."
 msgid "Error: %1"
 msgstr "Chyba: %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
+
+#: core/partmodel.cpp:517
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
+
+#: core/partmodel.cpp:523
 #, fuzzy, kde-format
 #| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
-msgstr "Zpráva je šifrována pro následující klíče:"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Zpráva je šifrována pro následující klíče:"
+msgstr[1] "Zpráva je šifrována pro následující klíče:"
+msgstr[2] "Zpráva je šifrována pro následující klíče:"
 
-#: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
-msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Zpráva je šifrována pro následující klíče:"
-
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -604,6 +615,12 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Chyba KMailu"
+
+#, fuzzy
+#~| msgid "The message is encrypted for the following keys:"
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr "Zpráva je šifrována pro následující klíče:"
 
 #~ msgid "Unknown key"
 #~ msgstr "Neznámý klíč"

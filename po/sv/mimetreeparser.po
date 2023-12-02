@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
 "PO-Revision-Date: 2023-11-22 21:13+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -126,26 +126,31 @@ msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
 msgid "Error: %1"
 msgstr "Fel: %1"
 
-#: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid ""
-#| "No secret key found to decrypt the message. The message is encrypted for "
-#| "the following keys:"
+#: core/partmodel.cpp:514
+#, kde-format
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
-"Ingen hemlig nyckel hittades för att avkryptera brevet. Brevet är krypterat "
-"för följande nycklar:"
 
-#: core/partmodel.cpp:513
+#: core/partmodel.cpp:517
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
+
+#: core/partmodel.cpp:523
 #, fuzzy, kde-format
 #| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Brevet är krypterat för följande nycklar:"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Brevet är krypterat för följande nycklar:"
+msgstr[1] "Brevet är krypterat för följande nycklar:"
 
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -614,6 +619,17 @@ msgstr "Kunde inte starta certifikathanteraren. Kontrollera installationen."
 #, kde-format
 msgid "KMail Error"
 msgstr "Kmail-fel"
+
+#, fuzzy
+#~| msgctxt "@info:status"
+#~| msgid ""
+#~| "No secret key found to decrypt the message. The message is encrypted for "
+#~| "the following keys:"
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr ""
+#~ "Ingen hemlig nyckel hittades för att avkryptera brevet. Brevet är "
+#~ "krypterat för följande nycklar:"
 
 #~ msgid "Unknown key"
 #~ msgstr "Okänd nyckel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
 "PO-Revision-Date: 2023-10-12 18:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -129,21 +129,31 @@ msgstr "Salausliitännäinen ”%1” ei voinut purkaa tiedon salausta."
 msgid "Error: %1"
 msgstr "Virhe: %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
+
+#: core/partmodel.cpp:517
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
+
+#: core/partmodel.cpp:523
 #, fuzzy, kde-format
 #| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
-msgstr "Viesti on salattu seuraaville avaimille:"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Viesti on salattu seuraaville avaimille:"
+msgstr[1] "Viesti on salattu seuraaville avaimille:"
 
-#: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
-msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Viesti on salattu seuraaville avaimille:"
-
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -621,6 +631,12 @@ msgstr "Varmennehallintaa ei voitu käynnistää. Tarkista asennus."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-virhe"
+
+#, fuzzy
+#~| msgid "The message is encrypted for the following keys:"
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr "Viesti on salattu seuraaville avaimille:"
 
 #~ msgid "Unknown key"
 #~ msgstr "Tuntematon avain"

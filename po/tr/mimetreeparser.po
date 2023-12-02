@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
-"PO-Revision-Date: 2023-11-30 17:13+0300\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
+"PO-Revision-Date: 2023-12-01 14:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -87,9 +87,7 @@ msgstr[0] "1 anahtar halihazırda içe aktarılmıştı"
 msgstr[1] "%1 anahtar halihazırda içe aktarılmıştı"
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknow"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -126,19 +124,32 @@ msgstr "Kripto eklentisi \"%1\", verinin şifresini çözemedi."
 msgid "Error: %1"
 msgstr "Hata: %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
 #, kde-format
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
-msgstr "İletinin şifresini çözmek için gizli anahtar bulunamadı."
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
 
-#: core/partmodel.cpp:513
+#: core/partmodel.cpp:517
 #, kde-format
 msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Bu ileti, şu anahtarlar için şifrelenmiş:"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
 
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:523
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "The message is encrypted for the following keys:"
+msgctxt "@info:status"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Bu ileti, şu anahtarlar için şifrelenmiş:"
+msgstr[1] "Bu ileti, şu anahtarlar için şifrelenmiş:"
+
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -497,10 +508,9 @@ msgid "&BCC:"
 msgstr "&Gizli kopya:"
 
 #: widgets/messageviewer.cpp:403
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Tarih:"
+msgstr "&Tarih:"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
@@ -605,6 +615,10 @@ msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin.
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"
+
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr "İletinin şifresini çözmek için gizli anahtar bulunamadı."
 
 #~ msgid "Unknown key"
 #~ msgstr "Bilinmeyen anahtar"

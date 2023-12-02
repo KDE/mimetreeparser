@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
 "PO-Revision-Date: 2023-11-29 09:09+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
@@ -127,20 +127,32 @@ msgstr ""
 msgid "Error: %1"
 msgstr "Erreur : %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
 #, kde-format
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
-"Il a été impossible de trouver une clé secrète pour déchiffrer le message."
 
-#: core/partmodel.cpp:513
+#: core/partmodel.cpp:517
 #, kde-format
 msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Le message est chiffré avec les clés suivantes :"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
 
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:523
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "The message is encrypted for the following keys:"
+msgctxt "@info:status"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Le message est chiffré avec les clés suivantes :"
+msgstr[1] "Le message est chiffré avec les clés suivantes :"
+
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -617,6 +629,11 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Erreur de KMail"
+
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr ""
+#~ "Il a été impossible de trouver une clé secrète pour déchiffrer le message."
 
 #~ msgid "Unknown key"
 #~ msgstr "Clé inconnue"

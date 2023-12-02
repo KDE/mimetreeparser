@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
-"PO-Revision-Date: 2023-11-28 13:07+0100\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
+"PO-Revision-Date: 2023-12-01 19:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -89,18 +89,16 @@ msgstr[0] "ja s'havia importat una clau"
 msgstr[1] "ja s'havien importat %1 claus"
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknow Key"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr "Clau desconeguda"
+msgstr "Desconegut"
 
 #: core/messageparser.cpp:53
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -128,19 +126,32 @@ msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
 #, kde-format
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
-msgstr "No s'ha trobat cap clau secreta per a desencriptar el missatge."
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
 
-#: core/partmodel.cpp:513
+#: core/partmodel.cpp:517
 #, kde-format
 msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "El missatge està encriptat per a les claus següents:"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
 
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:523
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "The message is encrypted for the following keys:"
+msgctxt "@info:status"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "El missatge està encriptat per a les claus següents:"
+msgstr[1] "El missatge està encriptat per a les claus següents:"
+
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -506,10 +517,9 @@ msgid "&BCC:"
 msgstr "&BCC:"
 
 #: widgets/messageviewer.cpp:403
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Data:"
+msgstr "&Data:"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
@@ -615,3 +625,7 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error a KMail"
+
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr "No s'ha trobat cap clau secreta per a desencriptar el missatge."

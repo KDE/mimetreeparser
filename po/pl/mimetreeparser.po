@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:42+0000\n"
+"POT-Creation-Date: 2023-12-02 00:42+0000\n"
 "PO-Revision-Date: 2023-10-14 10:56+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -128,21 +128,32 @@ msgstr "Wtyczka szyfrująca \"%1\" nie mogła odszyfrować danych."
 msgid "Error: %1"
 msgstr "Błąd: %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
+
+#: core/partmodel.cpp:517
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
+
+#: core/partmodel.cpp:523
 #, fuzzy, kde-format
 #| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
-msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Wiadomość jest zaszyfrowana dla następujących kluczy:"
+msgstr[1] "Wiadomość jest zaszyfrowana dla następujących kluczy:"
+msgstr[2] "Wiadomość jest zaszyfrowana dla następujących kluczy:"
 
-#: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
-msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
-
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -619,6 +630,12 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Błąd KMaila"
+
+#, fuzzy
+#~| msgid "The message is encrypted for the following keys:"
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
 
 #~ msgid "Unknown key"
 #~ msgstr "Nieznany klucz"
