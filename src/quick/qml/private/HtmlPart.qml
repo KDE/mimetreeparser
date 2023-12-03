@@ -56,7 +56,7 @@ Item {
                     }
                 }
                 onLinkHovered: hoveredUrl => {
-                    console.debug("Link hovered ", hoveredUrl)
+                    console.debug("Link hovered ", hoveredUrl.url)
                 }
                 onNavigationRequested: request => {
                     console.debug("Nav request ", request.navigationType, request.url)
