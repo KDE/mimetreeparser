@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-12-01 19:37+0100\n"
+"PO-Revision-Date: 2023-12-02 12:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -132,6 +132,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Aquest missatge no es pot desencriptar amb cap certificat S/MIME del vostre "
+"anell de claus."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -140,16 +142,16 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Aquest missatge no es pot desencriptar amb cap certificat OpenPGP del vostre "
+"anell de claus."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "El missatge està encriptat per a les claus següents:"
-msgstr[1] "El missatge està encriptat per a les claus següents:"
+msgstr[0] "El missatge està encriptat per al certificat següent:"
+msgstr[1] "El missatge està encriptat per als certificats següents:"
 
 #: core/partmodel.cpp:537
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-12-01 14:08+0300\n"
+"PO-Revision-Date: 2023-12-02 14:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -33,7 +33,7 @@ msgstr "Boyut"
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr "Şifrelenmiş"
+msgstr "Şifreli"
 
 #: core/attachmentmodel.cpp:209
 #, kde-format
@@ -130,6 +130,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Bu iletinin şifresi, anahtar zincirinizdeki herhangi bir S/MIME "
+"sertifikasıyla çözülemiyor."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -138,16 +140,16 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Bu iletinin şifresi, anahtar zincirinizdeki herhangi bir OpenPGP "
+"sertifikasıyla çözülemiyor."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Bu ileti, şu anahtarlar için şifrelenmiş:"
-msgstr[1] "Bu ileti, şu anahtarlar için şifrelenmiş:"
+msgstr[0] "Bu ileti, şu sertifika için şifrelenmiş:"
+msgstr[1] "Bu ileti, şu sertifikalar için şifrelenmiş:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -301,7 +303,7 @@ msgstr "İleti şifrelenmiş; ancak bunun anahtarı bizde yok."
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr "Bu ileti, şu anahtarla şifrelenmiş: %1"
+msgstr "Bu ileti, şu anahtara şifrelenmiş: %1"
 
 #: widgets/messagecontainerwidget.cpp:61
 #, kde-format
@@ -397,7 +399,7 @@ msgstr "Bu ileti şifrelenmiş."
 #: widgets/messagecontainerwidget.cpp:223
 #, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr "Bu ileti, şu anahtarlar için şifrelenmiş:"
+msgstr "Bu ileti, şu anahtarlara şifrelenmiş:"
 
 #: widgets/messageviewer.cpp:67
 #, kde-format

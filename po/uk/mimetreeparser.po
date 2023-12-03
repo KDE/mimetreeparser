@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-12-01 08:47+0200\n"
+"PO-Revision-Date: 2023-12-02 09:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -135,6 +135,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Це повідомлення не можна розшифрувати з використанням будь-якого з "
+"сертифікатів S/MIME у вашому сховищі ключів."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -143,18 +145,18 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Це повідомлення не можна розшифрувати з використанням будь-якого з "
+"сертифікатів OpenPGP у вашому сховищі ключів."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Повідомлення зашифровано для таких ключів:"
-msgstr[1] "Повідомлення зашифровано для таких ключів:"
-msgstr[2] "Повідомлення зашифровано для таких ключів:"
-msgstr[3] "Повідомлення зашифровано для таких ключів:"
+msgstr[0] "Повідомлення зашифровано для таких сертифікатів:"
+msgstr[1] "Повідомлення зашифровано для таких сертифікатів:"
+msgstr[2] "Повідомлення зашифровано для таких сертифікатів:"
+msgstr[3] "Повідомлення зашифровано для такого сертифіката:"
 
 #: core/partmodel.cpp:537
 #, kde-format

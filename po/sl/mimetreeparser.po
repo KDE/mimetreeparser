@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-12-01 21:45+0100\n"
+"PO-Revision-Date: 2023-12-02 08:46+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -135,6 +135,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Tega sporočila ni mogoče dešifrirati z nobenim potrdilom S/MIME v vašem "
+"obesku ključev."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -143,18 +145,18 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Tega sporočila ni mogoče dešifrirati z nobenim potrdilom OpenPGP v vašem "
+"obesku ključev."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Sporočilo je šifrirano za naslednje ključe:"
-msgstr[1] "Sporočilo je šifrirano za naslednje ključe:"
-msgstr[2] "Sporočilo je šifrirano za naslednje ključe:"
-msgstr[3] "Sporočilo je šifrirano za naslednje ključe:"
+msgstr[0] "Sporočilo je šifrirano za naslednje potrdilo :"
+msgstr[1] "Sporočilo je šifrirano za naslednji potrdili:"
+msgstr[2] "Sporočilo je šifrirano za naslednja potrdila:"
+msgstr[3] "Sporočilo je šifrirano za naslednja potrdila:"
 
 #: core/partmodel.cpp:537
 #, kde-format
