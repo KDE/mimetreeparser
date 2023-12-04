@@ -56,7 +56,9 @@ Item {
                     }
                 }
                 onLinkHovered: hoveredUrl => {
-                    console.debug("Link hovered ", hoveredUrl.url)
+                    // Qt 6.6.1 needs to toString otherwise we get a compile error
+                    // https://bugreports.qt.io/browse/QTBUG-119165
+                    console.debug("Link hovered ", hoveredUrl.toString())
                 }
                 onNavigationRequested: request => {
                     console.debug("Nav request ", request.navigationType, request.url)
