@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-12-01 09:50+0100\n"
+"PO-Revision-Date: 2023-12-02 11:36+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -84,9 +84,7 @@ msgstr[0] "Une clé a déjà été importée."
 msgstr[1] "%1 clés ont déjà été importées."
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Inconnu"
@@ -519,10 +517,9 @@ msgid "&BCC:"
 msgstr "&BCC :"
 
 #: widgets/messageviewer.cpp:403
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Date :"
+msgstr "&Date :"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
