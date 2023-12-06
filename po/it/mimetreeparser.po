@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-11-23 14:07+0100\n"
+"PO-Revision-Date: 2023-12-03 12:00+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -87,9 +87,7 @@ msgstr[0] "una chiave è già stata importata"
 msgstr[1] "%1 chiavi sono già state importate"
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Sconosciuto"
@@ -98,7 +96,7 @@ msgstr "Sconosciuto"
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -132,6 +130,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Questo messaggio non può essere decifrato con alcun certificato S/MIME nel "
+"tuo portachiavi."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -140,15 +140,16 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Questo messaggio non può essere decifrato con nessun certificato OpenPGP nel "
+"tuo portachiavi."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Il messaggio è cifrato per le seguenti chiavi:"
-msgstr[1] "Il messaggio è cifrato per le seguenti chiavi:"
+msgstr[0] "Il messaggio è cifrato per il seguente certificato:"
+msgstr[1] "Il messaggio è cifrato per i seguenti certificati:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -166,7 +167,7 @@ msgstr "Chiave sconosciuta"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:41
 #, kde-format
@@ -516,10 +517,9 @@ msgid "&BCC:"
 msgstr "&CCN:"
 
 #: widgets/messageviewer.cpp:403
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Data:"
+msgstr "&Data:"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
