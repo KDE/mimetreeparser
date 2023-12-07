@@ -82,7 +82,7 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
     auto parser = std::make_shared<MimeTreeParser::ObjectTreeParser>();
     parser->parseObjectTree(message.data());
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing took: " << time.elapsed();
-    parser->decryptParts();
+    parser->decryptAndVerify();
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing and decryption/verification: " << time.elapsed();
     d->mParser = parser;
     const auto contentParts = parser->collectContentParts();

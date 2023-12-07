@@ -43,7 +43,7 @@ private Q_SLOTS:
         MimeTreeParser::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile(QStringLiteral("openpgp-inline-charset-encrypted.mbox")));
         otp.print();
-        otp.decryptParts();
+        otp.decryptAndVerify();
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
@@ -76,7 +76,7 @@ private Q_SLOTS:
         MimeTreeParser::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile(mailFileName));
         otp.print();
-        otp.decryptParts();
+        otp.decryptAndVerify();
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
@@ -106,7 +106,7 @@ private Q_SLOTS:
         MimeTreeParser::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile(mailFileName));
         otp.print();
-        otp.decryptParts();
+        otp.decryptAndVerify();
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);

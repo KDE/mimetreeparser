@@ -47,7 +47,7 @@ void AttachmentTest::testEncryptedAttachment()
     QFETCH(QString, mbox);
     ObjectTreeParser otp;
     otp.parseObjectTree(readMailFromFile(mbox));
-    otp.decryptParts();
+    otp.decryptAndVerify();
     otp.print();
 
     auto attachmentParts = otp.collectAttachmentParts();

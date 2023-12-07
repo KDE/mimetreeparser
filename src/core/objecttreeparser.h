@@ -40,17 +40,23 @@ public:
     QString structureAsString() const;
     void print();
 
-    /**
-     * The text of the message, ie. what would appear in the
-     * composer's text editor if this was edited or replied to.
-     * This is usually the content of the first text/plain MIME part.
-     */
+    /// The text of the message, ie. what would appear in the
+    /// composer's text editor if this was edited or replied to.
+    /// This is usually the content of the first text/plain MIME part.
     QString plainTextContent();
 
-    /**
-     * Similar to plainTextContent(), but returns the HTML source of the first text/html MIME part.
-     */
+    /// Similar to plainTextContent(), but returns the HTML source of
+    /// the first text/html MIME part.
     QString htmlContent();
+
+    /// Returns whether the parsed message contains encrypted parts.
+    bool hasEncryptedParts() const;
+
+    /// Returns whether the parsed message contains signed parts.
+    ///
+    /// \warning This doesn't check whether signed parts exists inside
+    /// encrypted parts that have not been decrypted yet.
+    bool hasSignedParts() const;
 
     /** Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
@@ -64,8 +70,6 @@ public:
 
     /** Decrypt parts and verify signatures */
     void decryptAndVerify();
-    // DEPRECATED calls decryptAndVerify
-    void decryptParts();
 
     /** Embedd content referenced by cid by inlining */
     QString resolveCidLinks(const QString &html);

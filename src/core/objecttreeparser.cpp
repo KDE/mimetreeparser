@@ -109,6 +109,44 @@ QString ObjectTreeParser::htmlContent()
     return content;
 }
 
+bool ObjectTreeParser::hasEncryptedParts() const
+{
+    bool result = false;
+
+    ::collect(
+        mParsedPart,
+        [](const MessagePart::Ptr &) {
+            return true;
+        },
+        [&result](const MessagePart::Ptr &part) {
+            if (const auto enc = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(part.data())) {
+                result = true;
+            }
+            return false;
+        });
+
+    return result;
+}
+
+bool ObjectTreeParser::hasSignedParts() const
+{
+    bool result = false;
+
+    ::collect(
+        mParsedPart,
+        [](const MessagePart::Ptr &) {
+            return true;
+        },
+        [&result](const MessagePart::Ptr &part) {
+            if (const auto enc = dynamic_cast<MimeTreeParser::SignedMessagePart *>(part.data())) {
+                result = true;
+            }
+            return false;
+        });
+
+    return result;
+}
+
 static void print(QTextStream &stream, KMime::Content *node, const QString prefix = {})
 {
     QByteArray mediaType("text");
@@ -243,11 +281,6 @@ MessagePart::List ObjectTreeParser::collectAttachmentParts()
             return part->isAttachment();
         });
     return contentParts;
-}
-
-void ObjectTreeParser::decryptParts()
-{
-    decryptAndVerify();
 }
 
 /*
