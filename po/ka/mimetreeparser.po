@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-12-01 07:12+0100\n"
+"PO-Revision-Date: 2023-12-06 06:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -131,6 +131,7 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"ამ შეტყობინებას თქვენს ბრელოკში არსებული S/MIME სერტიფიკატებით ვერ გაშიფრავთ."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -139,16 +140,16 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"ამ შეტყობინებას თქვენს ბრელოკში არსებული OpenPGP სერტიფიკატებით ვერ "
+"გაშიფრავთ."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
-msgstr[1] "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
+msgstr[0] "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატისთვის:"
+msgstr[1] "შეტყობინება დაშიფრულია შემდეგი სერტფიკატებისთვის:"
 
 #: core/partmodel.cpp:537
 #, kde-format
