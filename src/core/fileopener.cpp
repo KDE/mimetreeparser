@@ -57,7 +57,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     contentDisposition->setDisposition(KMime::Headers::CDattachment);
     pgpEncrypted->appendHeader(contentDisposition);
     pgpEncrypted->setBody("Version: 1");
-    message->addContent(pgpEncrypted);
+    message->appendContent(pgpEncrypted);
 
     auto encryptedContent = new KMime::Content;
     encryptedContent->contentType()->setMimeType("application/octet-stream");
@@ -66,7 +66,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     contentDisposition->setFilename(QStringLiteral("msg.asc"));
     encryptedContent->appendHeader(contentDisposition);
     encryptedContent->setBody(content);
-    message->addContent(encryptedContent);
+    message->appendContent(encryptedContent);
 
     message->assemble();
 
