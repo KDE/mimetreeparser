@@ -1,56 +1,54 @@
+# translation of mimetreeparser.po to Slovak
+# SPDX-FileCopyrightText: 2023 Roman Paholík <wizzardsk@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:38+0000\n"
-"PO-Revision-Date: 2023-12-09 09:25\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-12-09 09:03+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/mimetreeparser/mimetreeparser.pot\n"
-"X-Crowdin-File-ID: 45595\n"
+"X-Generator: Lokalize 23.08.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
-msgstr "大小"
+msgstr "Veľkosť"
 
 #: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr "已加密"
+msgstr "Šifrovaný"
 
 #: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
-msgstr "已签名"
+msgstr "Podpísané"
 
 #: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr "无法保存附件。"
+msgstr ""
 
 #: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
-msgstr ""
+msgstr "príloha"
 
 #: core/attachmentmodel.cpp:332
 #, kde-format
@@ -62,53 +60,57 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr "无法打开附件。"
+msgstr ""
 
 #: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
-msgstr "没有在此附件中找到密钥"
+msgstr "V tejto prílohe neboli nájdené žiadne kľúče"
 
 #: core/attachmentmodel.cpp:385
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
-msgstr[0] "已导入 %1 个密钥"
+msgstr[0] "jeden kľúč importovaný"
+msgstr[1] "%1 kľúčov importovaných"
+msgstr[2] "%1 kľúčov importovaných"
 
 #: core/attachmentmodel.cpp:388
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
-msgstr[0] "%1 个密钥已经被导入过了"
+msgstr[0] "jeden kľúč už bol importovaný"
+msgstr[1] "%1 kľúčov už bolo importovaných"
+msgstr[2] "%1 kľúčov už bolo importovaných"
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr "错误的加密插件。"
+msgstr "Chybný šifrovací modul."
 
 #: core/messagepart.cpp:988
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr "没有找到合适的加密算法插件。"
+msgstr "Nenájdený vhodný šifrovací modul."
 
 #: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "加密算法插件“%1”无法解密任何信件。"
+msgstr "Šifrovací modul \"%1\" nemôže dešifrovať správy."
 
 #: core/messagepart.cpp:992
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "加密插件“%1”无法解密数据。"
+msgstr "Šifrovací modul %1 nemohol odšifrovať údaje."
 
 #: core/messagepart.cpp:993
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: %1"
-msgstr "错误：%1"
+msgstr "Chyba: %1"
 
 #: core/partmodel.cpp:511
 #, kde-format
@@ -120,161 +122,161 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
-msgstr ""
+msgstr "Správa je šifrovaná pre nasledujúce kľúče:"
 
 #: core/partmodel.cpp:525
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr "密码错误。"
+msgstr "Nesprávne heslo."
 
 #: core/utils.cpp:44
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr ""
+msgstr "neznámy kľúč"
 
 #: core/utils.cpp:58
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
-msgstr "消息查看器"
+msgstr "Prehliadač správ"
 
 #: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
-msgstr "主题："
+msgstr "Predmet:"
 
 #: quick/qml/MailViewer.qml:98
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label"
 msgid "From:"
-msgstr "发件人："
+msgstr "Od:"
 
 #: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr "发送者："
+msgstr "Odosielateľ:"
 
 #: quick/qml/MailViewer.qml:130
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label"
 msgid "To:"
-msgstr "收件人："
+msgstr "Pre"
 
 #: quick/qml/MailViewer.qml:146
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr ""
+msgstr "Kópia:"
 
 #: quick/qml/MailViewer.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
-msgstr ""
+msgstr "Skrytá kópia:"
 
 #: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
-msgstr "保存附件"
+msgstr "Uložiť prílohu"
 
 #: quick/qml/MailViewer.qml:242
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr ""
+msgstr "Uložiť prílohu ako"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import key"
-msgstr "导入密钥"
+msgstr "Importovať kľúč"
 
 #: quick/qml/private/Banner.qml:188
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr "关闭"
+msgstr "Zavrieť"
 
 #: quick/qml/private/ErrorPart.qml:27
 #, kde-format
 msgid "An error occurred: %1"
-msgstr "发生错误：%1"
+msgstr "Vyskytla sa chyba: %1"
 
 #: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr "此邮件包含一个邀请"
+msgstr "Tento e-mail obsahuje pozvánku"
 
 #: quick/qml/private/MailPart.qml:41
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
-msgstr "由 %1 发送于 %2"
+msgstr "odoslané %1 na %2"
 
 #: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
-msgstr "此消息已使用密钥 %1 签名。"
+msgstr "Táto správa bola podpísaná pomocou kľúča %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:70
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
-msgstr "无法获取密钥详情。"
+msgstr "Podrobnosti o kľúči nie sú k dispozícii."
 
 #: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
-msgstr "此消息已由 %2 使用密钥 %1 签名。"
+msgstr "Táto správa bola podpísaná pomocou kľúča %1 od %2."
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
-msgstr "此密钥已被吊销。"
+msgstr "Platnosť kľúča bola zrušená."
 
 #: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
-msgstr "此密钥已过期。"
+msgstr "Platnosť kľúča vypršala."
 
 #: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
-msgstr "您信任此密钥。"
+msgstr "Tomuto kľúču dôverujete."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:105
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
-msgstr "此签名无效。"
+msgstr "Podpis nie je platný."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:203
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr "此消息已加密，但我们没有它的密钥。"
+msgstr "Táto správa je zašifrovaná, ale nemáme k nej kľúč."
 
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr "此消息已使用密钥 %1 加密"
+msgstr "Táto správa je zašifrovaná kľúčom: %1"
 
 #: widgets/messagecontainerwidget.cpp:58
 #, kde-format
@@ -288,7 +290,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr ""
+msgstr "Táto správa bola podpísaná pomocou kľúča <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:78
 #, kde-format
@@ -306,7 +308,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr ""
+msgstr "Platnosť <a href=\"%1\">kľúča</a> bola zrušená."
 
 #: widgets/messagecontainerwidget.cpp:86
 #, kde-format
@@ -320,32 +322,34 @@ msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
 msgstr ""
+"Podpis je platný, ale bezpečnosť <a href=\"%1\">kľúča</a> nie je známa."
 
 #: widgets/messagecontainerwidget.cpp:94
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
-msgstr ""
+msgstr "Podpis je platný a <a href=\"%1\">kľúč</a> je čiastočne bezpečný."
 
 #: widgets/messagecontainerwidget.cpp:96
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
-msgstr ""
+msgstr "Podpis je platný a <a href=\"%1\">kľúč</a> je plne bezpečný."
 
 #: widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
-msgstr ""
+msgstr "Podpis je platný a <a href=\"%1\">kľúč</a> je nekonečne bezpečný."
 
 #: widgets/messagecontainerwidget.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
 msgstr ""
+"Podpis je platný, ale <a href=\"%1\">kľúč</a> nie je považovaný za bezpečný."
 
 #: widgets/messagecontainerwidget.cpp:201
 #, kde-format
@@ -361,132 +365,132 @@ msgstr ""
 #: widgets/messagecontainerwidget.cpp:210
 #, kde-format
 msgid "This message is encrypted."
-msgstr ""
+msgstr "Táto správa je šifrovaná."
 
 #: widgets/messagecontainerwidget.cpp:219
 #, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr ""
+msgstr "Správa je šifrovaná pre nasledujúce kľúče:"
 
 #: widgets/messageviewer.cpp:64
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "附件另存为(&S)..."
+msgstr "&Uložiť prílohu ako..."
 
 #: widgets/messageviewer.cpp:69
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr "打开"
+msgstr "Otvoriť"
 
 #: widgets/messageviewer.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr "导入公钥"
+msgstr ""
 
 #: widgets/messageviewer.cpp:103
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "bez mena"
 
 #: widgets/messageviewer.cpp:106
 #, kde-format
 msgid "Save Attachment As"
-msgstr ""
+msgstr "Uložiť prílohu ako"
 
 #: widgets/messageviewer.cpp:258
 #, kde-format
 msgid "Invitation"
-msgstr "邀请"
+msgstr "Pozvánka"
 
 #: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Summary:"
-msgstr "摘要(&S)："
+msgstr "Súhrn:"
 
 #: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Organizer:"
-msgstr "组织者(&O)："
+msgstr "Organizátor:"
 
 #: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Location:"
-msgstr "地点(&L)："
+msgstr "U&miestnenie:"
 
 #: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Start date:"
-msgstr "开始日期(&S)："
+msgstr "Dátum z&ačiatku:"
 
 #: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&End date:"
-msgstr "结束日期(&E)："
+msgstr "Dátum &konca:"
 
 #: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "&Details:"
-msgstr "详细信息(&D)："
+msgstr "Podrobnosti:"
 
 #: widgets/messageviewer.cpp:292
 #, kde-format
 msgid "Encapsulated email"
-msgstr "封装的信件"
+msgstr ""
 
 #: widgets/messageviewer.cpp:300
-#, kde-format
+#, fuzzy, kde-format
 msgid "From:"
-msgstr "发件人："
+msgstr "Od:"
 
 #: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "Date:"
-msgstr "日期："
+msgstr "Dátum:"
 
 #: widgets/messageviewer.cpp:355
 #, kde-format
 msgid "&Subject:"
-msgstr "主题(&S)："
+msgstr "Predmet:"
 
 #: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&From:"
-msgstr "发件人(&F)："
+msgstr "&Odosielateľ:"
 
 #: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&Sender:"
-msgstr ""
+msgstr "Odosielateľ:"
 
 #: widgets/messageviewer.cpp:364
-#, kde-format
+#, fuzzy, kde-format
 msgid "&To:"
-msgstr "收件人(&T)："
+msgstr "Pre"
 
 #: widgets/messageviewer.cpp:367
 #, kde-format
 msgid "&CC:"
-msgstr ""
+msgstr "Kópia:"
 
 #: widgets/messageviewer.cpp:370
 #, kde-format
 msgid "&BCC:"
-msgstr ""
+msgstr "Skrytá kópia:"
 
 #: widgets/messageviewerdialog.cpp:100
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&Súbor"
 
 #: widgets/messageviewerdialog.cpp:102
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "&Uložiť"
 
 #: widgets/messageviewerdialog.cpp:108
 #, kde-format
@@ -498,37 +502,37 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "Náhľad tlače"
 
 #: widgets/messageviewerdialog.cpp:120
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "&Tlačiť"
 
 #: widgets/messageviewerdialog.cpp:127
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr ""
+msgstr "&Ovládanie"
 
 #: widgets/messageviewerdialog.cpp:128
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "Predchádzajúca správa"
 
 #: widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "Nasledujúca správa"
 
 #: widgets/messageviewerdialog.cpp:142
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Uložiť súbor"
 
 #: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
 #, kde-format
@@ -539,12 +543,12 @@ msgstr ""
 #: widgets/messageviewerdialog.cpp:148
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Súbor %1 nie je možné vytvoriť."
 
 #: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "Chyba pri ukladaní správy"
 
 #: widgets/messageviewerdialog.cpp:158
 #, kde-format
@@ -556,13 +560,13 @@ msgstr ""
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Súbor %1 nie je možné vytvoriť."
 
 #: widgets/messageviewerdialog.cpp:182 widgets/messageviewerdialog.cpp:194
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "Tlačiť dokument"
 
 #: widgets/messageviewerdialog.cpp:245
 #, kde-format
@@ -573,9 +577,9 @@ msgstr ""
 #: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
+msgstr "Nemôžem spustiť manažéra certifikátov. Prosím overte si inštaláciu."
 
 #: widgets/urlhandler.cpp:48
-#, kde-format
+#, fuzzy, kde-format
 msgid "KMail Error"
-msgstr ""
+msgstr "Chybová správa KMail"
