@@ -87,17 +87,16 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr "Neznámý klíč"
+msgstr ""
 
 #: core/messageparser.cpp:53
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -141,14 +140,13 @@ msgid ""
 msgstr ""
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Zpráva je šifrována pro následující klíče:"
-msgstr[1] "Zpráva je šifrována pro následující klíče:"
-msgstr[2] "Zpráva je šifrována pro následující klíče:"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -157,11 +155,10 @@ msgid "Wrong passphrase."
 msgstr "Špatné heslo."
 
 #: core/utils.cpp:46
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
-msgstr "Neznámý klíč"
+msgstr ""
 
 #: core/utils.cpp:60
 #, kde-format
@@ -506,10 +503,9 @@ msgid "&BCC:"
 msgstr "Skr&ytá kopie:"
 
 #: widgets/messageviewer.cpp:403
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Datum:"
+msgstr "&Datum:"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
@@ -615,12 +611,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Chyba KMailu"
-
-#, fuzzy
-#~| msgid "The message is encrypted for the following keys:"
-#~ msgctxt "@info:status"
-#~ msgid "No secret key found to decrypt the message."
-#~ msgstr "Zpráva je šifrována pro následující klíče:"
-
-#~ msgid "Unknown key"
-#~ msgstr "Neznámý klíč"
