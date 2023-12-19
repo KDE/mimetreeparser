@@ -14,7 +14,7 @@ set(CMAKE_MODULE_PATH
     ${ECM_MODULE_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules
 )
-set(QT_REQUIRED_VERSION "6.5.0")
+set(QT_REQUIRED_VERSION "6.6.0")
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
