@@ -68,6 +68,7 @@ public:
     MimeTreeParser::Widgets::MessageViewer *messageViewer = nullptr;
     QAction *nextAction = nullptr;
     QAction *previousAction = nullptr;
+    QToolBar *toolBar = nullptr;
 
     void setCurrentIndex(int currentIndex);
     QMenuBar *createMenuBar(QWidget *parent);
@@ -233,6 +234,7 @@ void MessageViewerDialog::initGUI()
 {
     const auto mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
 
     const auto layout = new QVBoxLayout;
 
@@ -248,32 +250,36 @@ void MessageViewerDialog::initGUI()
     }
 
     const bool multipleMessages = d->messages.length() > 1;
+    d->toolBar = new QToolBar(this);
+
     if (multipleMessages) {
-        const auto toolBar = new QToolBar(this);
 #ifdef Q_OS_UNIX
-        toolBar->setToolButtonStyle(Qt::ToolButtonFollowStyle);
+        d->toolBar->setToolButtonStyle(Qt::ToolButtonFollowStyle);
 #else
         // on other platforms the default is IconOnly which is bad for
         // accessibility and can't be changed by the user.
         toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 #endif
 
-        toolBar->addAction(d->previousAction);
+        d->toolBar->addAction(d->previousAction);
         connect(d->previousAction, &QAction::triggered, this, [this] {
             d->setCurrentIndex(d->currentIndex - 1);
         });
 
         const auto spacer = new QWidget(this);
         spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        toolBar->addWidget(spacer);
+        d->toolBar->addWidget(spacer);
 
-        toolBar->addAction(d->nextAction);
+        d->toolBar->addAction(d->nextAction);
         connect(d->nextAction, &QAction::triggered, this, [this] {
             d->setCurrentIndex(d->currentIndex + 1);
         });
         d->nextAction->setEnabled(true);
 
-        mainLayout->addWidget(toolBar);
+        mainLayout->addWidget(d->toolBar);
+    } else {
+        mainLayout->addWidget(d->toolBar);
+        d->toolBar->hide();
     }
 
     mainLayout->addLayout(layout);
@@ -293,6 +299,11 @@ void MessageViewerDialog::initGUI()
 }
 
 MessageViewerDialog::~MessageViewerDialog() = default;
+
+QToolBar *MessageViewerDialog::toolBar() const
+{
+    return d->toolBar;
+}
 
 QList<KMime::Message::Ptr> MessageViewerDialog::messages() const
 {

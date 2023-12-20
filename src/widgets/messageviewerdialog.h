@@ -11,6 +11,8 @@
 
 #include <memory>
 
+class QToolBar;
+
 namespace MimeTreeParser
 {
 namespace Widgets
@@ -28,6 +30,8 @@ public:
     MessageViewerDialog(const QList<KMime::Message::Ptr> &messages, QWidget *parent = nullptr);
     MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
     ~MessageViewerDialog() override;
+
+    QToolBar *toolBar() const;
 
     QList<KMime::Message::Ptr> messages() const;
 
