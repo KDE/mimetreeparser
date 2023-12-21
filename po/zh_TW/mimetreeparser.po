@@ -1,282 +1,280 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-21 02:00+0000\n"
-"PO-Revision-Date: 2023-11-07 21:27+0100\n"
-"Last-Translator: Enol P. <enolp@softastur.org>\n"
-"Language-Team: \n"
-"Language: ast\n"
+"PO-Revision-Date: 2023-12-20 17:14+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr ""
+msgstr "已加密"
 
 #: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
-msgstr ""
+msgstr "已簽署"
 
 #: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr ""
+msgstr "儲存附件時失敗。"
 
 #: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
-msgstr ""
+msgstr "附件"
 
 #: core/attachmentmodel.cpp:332
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr ""
+msgstr "無法為寫入開啟附件。"
 
 #: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "開啟附件失敗。"
 
 #: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No keys were found in this attachment"
-msgstr ""
+msgstr "附件中未找到金鑰。"
 
 #: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "已匯入 %1 個金鑰"
 
 #: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 個金鑰原本就已經匯入"
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr ""
+msgstr "錯誤的加密外掛程式。"
 
 #: core/messagepart.cpp:988
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr ""
+msgstr "沒有找到合適的加密外掛程式。"
 
 #: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr ""
+msgstr "加密外掛程式 \"%1\" 無法解密信件。"
 
 #: core/messagepart.cpp:992
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr ""
+msgstr "加密外掛程式 \"%1\" 無法解密資料。"
 
 #: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "錯誤：%1"
 
 #: core/partmodel.cpp:511
 #, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr ""
+msgstr "沒有找到解密信件用的私鑰。"
 
 #: core/partmodel.cpp:513
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
-msgstr ""
+msgstr "這個信件為以下金鑰加密："
 
 #: core/partmodel.cpp:525
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr ""
+msgstr "錯誤密碼。"
 
 #: core/utils.cpp:44
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr ""
+msgstr "未知的金鑰"
 
 #: core/utils.cpp:58
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
-msgstr ""
+msgstr "信件檢視器"
 
 #: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
-msgstr ""
+msgstr "主旨："
 
 #: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
-msgstr ""
+msgstr "從："
 
 #: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr ""
+msgstr "寄件者："
 
 #: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
-msgstr ""
+msgstr "收件者："
 
 #: quick/qml/MailViewer.qml:146
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr ""
+msgstr "副本："
 
 #: quick/qml/MailViewer.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
-msgstr ""
+msgstr "密件副本："
 
 #: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
-msgstr ""
+msgstr "儲存附件"
 
 #: quick/qml/MailViewer.qml:242
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr ""
+msgstr "另存附件"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import key"
-msgstr ""
+msgstr "匯入金鑰"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #: quick/qml/private/ErrorPart.qml:27
 #, kde-format
 msgid "An error occurred: %1"
-msgstr ""
+msgstr "發生錯誤：%1"
 
 #: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr ""
+msgstr "這個郵件包含邀請"
 
 #: quick/qml/private/MailPart.qml:41
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
-msgstr ""
+msgstr "由 %1 於 %2 傳送"
 
 #: quick/qml/private/MailPartModel.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1."
-msgstr ""
+msgstr "這個信件已使用金鑰 %1 簽署。"
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:70
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
-msgstr ""
+msgstr "金鑰詳細資料不可用。"
 
 #: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key %1 by %2."
-msgstr ""
+msgstr "這個信件已由 %2 使用金鑰 %1 簽署。"
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The key was revoked."
-msgstr ""
+msgstr "此金鑰已撤銷。"
 
 #: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The key has expired."
-msgstr ""
+msgstr "此金鑰已過期。"
 
 #: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this key."
-msgstr ""
+msgstr "您正信任此金鑰。"
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:105
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
-msgstr ""
+msgstr "簽章無效。"
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:203
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr ""
+msgstr "這個信件已加密，但我們沒有它的金鑰。"
 
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr ""
+msgstr "這個信件已加密給金鑰：%1"
 
 #: widgets/messagecontainerwidget.cpp:58
 #, kde-format
@@ -290,7 +288,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
-msgstr ""
+msgstr "這個信件已使用金鑰 <a href=\"%1\">%2</a> 簽署。"
 
 #: widgets/messagecontainerwidget.cpp:78
 #, kde-format
@@ -302,52 +300,52 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr ""
+msgstr "這個信件已由 %1 簽署。"
 
 #: widgets/messagecontainerwidget.cpp:83
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
-msgstr ""
+msgstr "此<a href=\"%1\">金鑰</a>已撤銷。"
 
 #: widgets/messagecontainerwidget.cpp:86
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
-msgstr ""
+msgstr "此<a href=\"%1\">金鑰</a>已過期。"
 
 #: widgets/messagecontainerwidget.cpp:91
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">key</a>'s validity is unknown."
-msgstr ""
+msgstr "此簽章是有效的，但是無法辨識<a href=\"%1\">鍵值</a>是否有效。"
 
 #: widgets/messagecontainerwidget.cpp:94
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is marginally trusted."
-msgstr ""
+msgstr "此簽章是有效的，而且<a href=\"%1\">鍵值</a>有最低的可信度。"
 
 #: widgets/messagecontainerwidget.cpp:96
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
-msgstr ""
+msgstr "此簽章是有效的，而且<a href=\"%1\">鍵值</a>完全可信。"
 
 #: widgets/messagecontainerwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">key</a> is ultimately trusted."
-msgstr ""
+msgstr "此簽章是有效的，而且<a href=\"%1\">鍵值</a>絕對可信。"
 
 #: widgets/messagecontainerwidget.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
-msgstr ""
+msgstr "此簽章是有效的，不過<a href=\"%1\">鍵值</a>不可信。"
 
 #: widgets/messagecontainerwidget.cpp:201
 #, kde-format
@@ -363,221 +361,221 @@ msgstr ""
 #: widgets/messagecontainerwidget.cpp:210
 #, kde-format
 msgid "This message is encrypted."
-msgstr ""
+msgstr "此信件已加密。"
 
 #: widgets/messagecontainerwidget.cpp:219
 #, kde-format
 msgid "The message is encrypted for the following keys:"
-msgstr ""
+msgstr "這個信件為以下金鑰加密："
 
 #: widgets/messageviewer.cpp:64
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr ""
+msgstr "另存附件(&S)..."
 
 #: widgets/messageviewer.cpp:69
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr ""
+msgstr "開啟"
 
 #: widgets/messageviewer.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr ""
+msgstr "匯入公鑰"
 
 #: widgets/messageviewer.cpp:103
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "未命名"
 
 #: widgets/messageviewer.cpp:106
 #, kde-format
 msgid "Save Attachment As"
-msgstr ""
+msgstr "另存附件"
 
 #: widgets/messageviewer.cpp:258
 #, kde-format
 msgid "Invitation"
-msgstr ""
+msgstr "邀請"
 
 #: widgets/messageviewer.cpp:261
 #, kde-format
 msgid "&Summary:"
-msgstr ""
+msgstr "摘要(&S)："
 
 #: widgets/messageviewer.cpp:262
 #, kde-format
 msgid "&Organizer:"
-msgstr ""
+msgstr "發起人(&O)："
 
 #: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "&Location:"
-msgstr ""
+msgstr "位置(&L)："
 
 #: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "&Start date:"
-msgstr ""
+msgstr "開始日期(&S)："
 
 #: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&End date:"
-msgstr ""
+msgstr "結束日期(&E)："
 
 #: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "&Details:"
-msgstr ""
+msgstr "詳細資料(&D)："
 
 #: widgets/messageviewer.cpp:292
 #, kde-format
 msgid "Encapsulated email"
-msgstr ""
+msgstr "封裝郵件"
 
 #: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "從："
 
 #: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "Date:"
-msgstr ""
+msgstr "日期："
 
 #: widgets/messageviewer.cpp:355
 #, kde-format
 msgid "&Subject:"
-msgstr ""
+msgstr "主旨(&S)："
 
 #: widgets/messageviewer.cpp:358
 #, kde-format
 msgid "&From:"
-msgstr ""
+msgstr "從(&F)："
 
 #: widgets/messageviewer.cpp:361
 #, kde-format
 msgid "&Sender:"
-msgstr ""
+msgstr "寄件者(&S)："
 
 #: widgets/messageviewer.cpp:364
 #, kde-format
 msgid "&To:"
-msgstr ""
+msgstr "收件者(&T)："
 
 #: widgets/messageviewer.cpp:367
 #, kde-format
 msgid "&CC:"
-msgstr ""
+msgstr "副本(&C)："
 
 #: widgets/messageviewer.cpp:370
 #, kde-format
 msgid "&BCC:"
-msgstr ""
+msgstr "密件副本(&B)："
 
 #: widgets/messageviewerdialog.cpp:101
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "檔案(&F)"
 
 #: widgets/messageviewerdialog.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "儲存(&S)"
 
 #: widgets/messageviewerdialog.cpp:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr ""
+msgstr "儲存已解密的"
 
 #: widgets/messageviewerdialog.cpp:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "預覽列印"
 
 #: widgets/messageviewerdialog.cpp:121
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "列印(&P)"
 
 #: widgets/messageviewerdialog.cpp:128
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr ""
+msgstr "導覽(&N)"
 
 #: widgets/messageviewerdialog.cpp:129
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "上一封信件"
 
 #: widgets/messageviewerdialog.cpp:133
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "下一封信件"
 
 #: widgets/messageviewerdialog.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "儲存檔案"
 
 #: widgets/messageviewerdialog.cpp:145 widgets/messageviewerdialog.cpp:161
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
-msgstr ""
+msgstr "電子郵件檔 (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:149
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "檔案 %1 無法被建立。"
 
 #: widgets/messageviewerdialog.cpp:149 widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "儲存信件時發生錯誤"
 
 #: widgets/messageviewerdialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "儲存已解密的檔案"
 
 #: widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "檔案 %1 無法被建立。"
 
 #: widgets/messageviewerdialog.cpp:183 widgets/messageviewerdialog.cpp:195
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "列印文件"
 
 #: widgets/messageviewerdialog.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "無法讀取檔案"
 
 #: widgets/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
+msgstr "無法啟動憑證管理員。請檢查您的安裝。"
 
 #: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
-msgstr "Error de KMail"
+msgstr "KMail 錯誤"
