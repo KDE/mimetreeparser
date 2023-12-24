@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-21 02:00+0000\n"
-"PO-Revision-Date: 2023-11-11 14:06+0100\n"
+"PO-Revision-Date: 2023-12-23 11:47+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -116,15 +116,13 @@ msgid "Error: %1"
 msgstr "Błąd: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
+msgstr "Nie znaleziono klucza poufnego do odszyfrowania wiadomości."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
 msgstr "Wiadomość jest zaszyfrowana dla następujących kluczy:"
@@ -136,8 +134,7 @@ msgid "Wrong passphrase."
 msgstr "Nieprawidłowe hasło."
 
 #: core/utils.cpp:44
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Nieznany klucz"
@@ -146,7 +143,7 @@ msgstr "Nieznany klucz"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
