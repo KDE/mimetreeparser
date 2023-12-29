@@ -6,7 +6,6 @@
 #include "utils.h"
 
 #include <KLocalizedString>
-#include <libkleo/dn.h>
 
 using namespace MimeTreeParser;
 

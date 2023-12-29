@@ -12,7 +12,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KMessageWidget>
-#include <KMime/Message>
 
 #include <QDialogButtonBox>
 #include <QFileDialog>
@@ -28,8 +27,6 @@
 #include <QStyle>
 #include <QToolBar>
 #include <QVBoxLayout>
-
-#include <memory>
 
 using namespace MimeTreeParser::Widgets;
 

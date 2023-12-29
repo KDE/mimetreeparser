@@ -6,7 +6,6 @@
 #include "attachmentmodel.h"
 #include "mimetreeparser_core_debug.h"
 #include "objecttreeparser.h"
-#include "partmodel.h"
 
 #include <KLocalizedString>
 
