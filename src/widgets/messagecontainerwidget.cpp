@@ -9,8 +9,10 @@
 #include <KLocalizedString>
 #include <KMessageWidget>
 #include <Libkleo/Compliance>
+#include <Libkleo/Formatting>
 #include <QGpgME/Protocol>
 
+#include <QLabel>
 #include <QPaintEvent>
 #include <QPainter>
 #include <QVBoxLayout>
@@ -57,14 +59,14 @@ QString getDetails(const SignatureInfo &signatureDetails)
                               "@label",
                               "This message has been signed VS-NfD compliant using the key <a href=\"%1\">%2</a>.",
                               href,
-                              QString::fromUtf8(signatureDetails.keyId))
+                              Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
                 + QLatin1Char('\n');
         } else {
             details += i18ndc("mimetreeparser",
                               "@label",
                               "This message has been signed using the key <a href=\"%1\">%2</a>.",
                               href,
-                              QString::fromUtf8(signatureDetails.keyId))
+                              Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
                 + QLatin1Char('\n');
         }
         details += i18ndc("mimetreeparser", "@label", "The key details are not available.");
@@ -192,10 +194,10 @@ void MessageWidgetContainer::createLayout()
         auto encryptionMessage = new KMessageWidget(this);
         encryptionMessage->setObjectName(QLatin1StringView("EncryptionMessage"));
         encryptionMessage->setCloseButtonVisible(false);
-        encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
 
         QString text;
         if (m_encryptionInfo.keyId.isEmpty()) {
+            encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-error")));
             encryptionMessage->setMessageType(KMessageWidget::Error);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted but we don't have the key for it.", QString::fromUtf8(m_encryptionInfo.keyId));
@@ -203,6 +205,7 @@ void MessageWidgetContainer::createLayout()
                 text = i18n("This message is encrypted but we don't have the key for it.");
             }
         } else {
+            encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
             encryptionMessage->setMessageType(KMessageWidget::Positive);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted.");
@@ -234,14 +237,26 @@ void MessageWidgetContainer::createLayout()
 
     if (m_isSigned && m_displaySignatureInfo) {
         auto signatureMessage = new KMessageWidget(this);
-        signatureMessage->setObjectName(QLatin1StringView("SignatureMessage"));
-        signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
+        signatureMessage->setObjectName(QStringLiteral("SignatureMessage"));
         signatureMessage->setCloseButtonVisible(false);
         signatureMessage->setText(getDetails(m_signatureInfo));
         connect(signatureMessage, &KMessageWidget::linkActivated, this, [this](const QString &link) {
             m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
         });
         signatureMessage->setMessageType(getType(m_signatureSecurityLevel));
+        switch (m_signatureSecurityLevel) {
+        case PartModel::Good:
+            signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
+            break;
+        case PartModel::Bad:
+            signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-error")));
+            break;
+        case PartModel::NotSoGood:
+            signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-warning")));
+            break;
+        default:
+            break;
+        }
         signatureMessage->setWordWrap(true);
 
         vLayout->addWidget(signatureMessage);

@@ -31,13 +31,25 @@ const T *findHeader(KMime::Content *content, KMime::Content *protectedHeaderNode
     return findHeader<T>(content->parent(), nullptr);
 }
 
-const KMime::Headers::Base *findHeader(KMime::Content *content, const char *headerType)
+QString mailboxesToHtml(const KMime::Types::Mailbox::List &mailboxes)
 {
-    const auto header = content->headerByType(headerType);
-    if (header || !content->parent()) {
-        return header;
+    QStringList html;
+    for (const auto &mailbox : mailboxes) {
+        if (mailbox.hasName() && mailbox.hasAddress()) {
+            html << QStringLiteral("%1 <%2>").arg(mailbox.name().toHtmlEscaped(), QString::fromUtf8(mailbox.address()).toHtmlEscaped());
+        } else if (mailbox.hasAddress()) {
+            html << QString::fromUtf8(mailbox.address());
+        } else {
+            if (mailbox.hasName()) {
+                html << mailbox.name();
+            } else {
+                Q_ASSERT_X(false, __FUNCTION__, "Mailbox does not contains email address nor name");
+                html << i18nc("Displayed when a CC, FROM or TO field in an email is empty", "Unknown");
+            }
+        }
     }
-    return findHeader(content->parent(), headerType);
+
+    return html.join(i18nc("list separator", ", "));
 }
 }
 
@@ -159,9 +171,10 @@ QString MessageParser::from() const
 {
     if (d->mMessage) {
         const auto header = findHeader<KMime::Headers::From>(d->mMessage.get(), d->protectedHeaderNode);
-        if (header) {
-            return header->displayString();
+        if (!header) {
+            return {};
         }
+        return mailboxesToHtml(header->mailboxes());
     }
     return QString();
 }
@@ -170,9 +183,10 @@ QString MessageParser::sender() const
 {
     if (d->mMessage) {
         const auto header = findHeader<KMime::Headers::Sender>(d->mMessage.get(), d->protectedHeaderNode);
-        if (header) {
-            return header->displayString();
+        if (!header) {
+            return {};
         }
+        return mailboxesToHtml(header->mailboxes());
     }
 
     return QString();
@@ -185,7 +199,7 @@ QString MessageParser::to() const
         if (!header) {
             return {};
         }
-        return header->displayString();
+        return mailboxesToHtml(header->mailboxes());
     }
     return QString();
 }
@@ -197,7 +211,7 @@ QString MessageParser::cc() const
         if (!header) {
             return {};
         }
-        return header->displayString();
+        return mailboxesToHtml(header->mailboxes());
     }
     return QString();
 }
@@ -209,7 +223,7 @@ QString MessageParser::bcc() const
         if (!header) {
             return {};
         }
-        return header->displayString();
+        return mailboxesToHtml(header->mailboxes());
     }
     return QString();
 }

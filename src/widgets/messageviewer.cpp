@@ -18,6 +18,7 @@
 #include <MimeTreeParserCore/PartModel>
 
 #include <QAction>
+#include <QDesktopServices>
 #include <QFileDialog>
 #include <QFormLayout>
 #include <QGroupBox>
@@ -26,6 +27,7 @@
 #include <QScrollArea>
 #include <QStandardPaths>
 #include <QVBoxLayout>
+#include <qnamespace.h>
 
 using namespace MimeTreeParser::Widgets;
 
@@ -152,9 +154,14 @@ MessageViewer::MessageViewer(QWidget *parent)
 
     addWidget(d->messageWidget);
 
-    auto headersArea = new QWidget(this);
-    headersArea->setSizePolicy(sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
-    addWidget(headersArea);
+    auto mainWidget = new QWidget(this);
+    auto mainLayout = new QVBoxLayout(mainWidget);
+    mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
+
+    auto headersArea = new QWidget(mainWidget);
+    headersArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
+    mainLayout->addWidget(headersArea);
 
     d->urlHandler = new UrlHandler(this);
 
@@ -169,8 +176,9 @@ MessageViewer::MessageViewer(QWidget *parent)
     d->scrollArea->setWidget(widget);
     d->scrollArea->setWidgetResizable(true);
     d->scrollArea->setBackgroundRole(QPalette::Base);
-    addWidget(d->scrollArea);
-    setStretchFactor(2, 2);
+    mainLayout->addWidget(d->scrollArea);
+    mainLayout->setStretchFactor(d->scrollArea, 2);
+    setStretchFactor(1, 2);
 
     d->attachmentView = new AttachmentView(this);
     d->attachmentView->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::BottomEdge}));
@@ -181,8 +189,6 @@ MessageViewer::MessageViewer(QWidget *parent)
         d->selectionChanged();
         d->showContextMenu();
     });
-
-    setMinimumSize(600, 600);
 }
 
 MessageViewer::~MessageViewer()
@@ -233,7 +239,8 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                                                         displayEncryptionInfo,
                                                         urlHandler);
             auto label = new QLabel(content);
-            label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+            label->setTextInteractionFlags(Qt::TextBrowserInteraction);
+            label->setOpenExternalLinks(true);
             label->setWordWrap(true);
             container->layout()->addWidget(label);
             layout->addWidget(container);
@@ -330,6 +337,27 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
     }
 }
 
+class HeaderLabel : public QLabel
+{
+public:
+    HeaderLabel(const QString &content)
+        : QLabel(content)
+    {
+        setWordWrap(true);
+        setTextFormat(Qt::PlainText);
+        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
+    }
+
+    void resizeEvent(QResizeEvent *event) override
+    {
+        int height = heightForWidth(width());
+        setMaximumHeight(height);
+        setMinimumHeight(height);
+
+        QLabel::resizeEvent(event);
+    }
+};
+
 void MessageViewer::setMessage(const KMime::Message::Ptr message)
 {
     setUpdatesEnabled(false);
@@ -351,22 +379,27 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
         d->formLayout->removeRow(i);
     }
     if (!d->parser.subject().isEmpty()) {
-        d->formLayout->addRow(i18n("&Subject:"), new QLabel(d->parser.subject()));
+        const auto label = new QLabel(d->parser.subject());
+        label->setTextFormat(Qt::PlainText);
+        d->formLayout->addRow(i18n("&Subject:"), label);
     }
     if (!d->parser.from().isEmpty()) {
-        d->formLayout->addRow(i18n("&From:"), new QLabel(d->parser.from()));
+        d->formLayout->addRow(i18n("&From:"), new HeaderLabel(d->parser.from()));
     }
     if (!d->parser.sender().isEmpty() && d->parser.from() != d->parser.sender()) {
-        d->formLayout->addRow(i18n("&Sender:"), new QLabel(d->parser.sender()));
+        d->formLayout->addRow(i18n("&Sender:"), new HeaderLabel(d->parser.sender()));
     }
     if (!d->parser.to().isEmpty()) {
-        d->formLayout->addRow(i18n("&To:"), new QLabel(d->parser.to()));
+        d->formLayout->addRow(i18n("&To:"), new HeaderLabel(d->parser.to()));
     }
     if (!d->parser.cc().isEmpty()) {
-        d->formLayout->addRow(i18n("&CC:"), new QLabel(d->parser.cc()));
+        d->formLayout->addRow(i18n("&CC:"), new HeaderLabel(d->parser.cc()));
     }
     if (!d->parser.bcc().isEmpty()) {
-        d->formLayout->addRow(i18n("&BCC:"), new QLabel(d->parser.bcc()));
+        d->formLayout->addRow(i18n("&BCC:"), new HeaderLabel(d->parser.bcc()));
+    }
+    if (!d->parser.date().isNull()) {
+        d->formLayout->addRow(i18n("&Date:"), new HeaderLabel(QLocale::system().toString(d->parser.date().toLocalTime())));
     }
 
     const auto parts = d->parser.parts();
