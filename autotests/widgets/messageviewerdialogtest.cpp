@@ -31,9 +31,12 @@ private Q_SLOTS:
         MessageViewerDialog dialog(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("plaintext.mbox"));
         QCOMPARE(dialog.messages().count(), 1);
 
-        QCOMPARE(dialog.layout()->count(), 1); // no toolbar here
-        QVERIFY(dialog.layout()->itemAt(0)->layout());
-        QCOMPARE(dialog.layout()->itemAt(0)->layout()->count(), 2);
+        QCOMPARE(dialog.layout()->count(), 2);
+
+        QVERIFY(!dialog.layout()->itemAt(0)->widget()->isVisible());
+
+        QVERIFY(dialog.layout()->itemAt(1)->layout());
+        QCOMPARE(dialog.layout()->itemAt(1)->layout()->count(), 2);
     }
 };
 
