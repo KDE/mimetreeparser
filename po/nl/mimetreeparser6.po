@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:38+0000\n"
+"POT-Creation-Date: 2024-01-13 00:39+0000\n"
 "PO-Revision-Date: 2023-11-29 17:40+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -87,6 +87,20 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "er is al één sleutel geïmporteerd"
 msgstr[1] "er zijn al %1 sleutels geïmporteerd"
 
+#: core/messageparser.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "displayed when a mail has unknown sender, receiver or date"
+#| msgid "Unknown"
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: core/messageparser.cpp:52
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ""
+
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
 msgctxt "@info:status"
@@ -113,31 +127,46 @@ msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
 msgid "Error: %1"
 msgstr "Fout: %1"
 
-#: core/partmodel.cpp:511
+#: core/partmodel.cpp:514
 #, kde-format
 msgctxt "@info:status"
-msgid "No secret key found to decrypt the message."
-msgstr "Geen geheime sleutel gevonden om het bericht te ontcijferen."
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
 
-#: core/partmodel.cpp:513
+#: core/partmodel.cpp:517
 #, kde-format
 msgctxt "@info:status"
-msgid "The message is encrypted for the following keys:"
-msgstr "Het bericht is versleuteld voor de volgende sleutels:"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
 
-#: core/partmodel.cpp:525
+#: core/partmodel.cpp:523
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "The message is encrypted for the following keys:"
+msgctxt "@info:status"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "Het bericht is versleuteld voor de volgende sleutels:"
+msgstr[1] "Het bericht is versleuteld voor de volgende sleutels:"
+
+#: core/partmodel.cpp:537
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Verkeerde wachtwoordzin."
 
-#: core/utils.cpp:43
-#, kde-format
+#: core/utils.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Unknown Key"
 msgctxt "@info"
-msgid "Unknown Key"
+msgid "Unknow Key"
 msgstr "Onbekende sleutel"
 
-#: core/utils.cpp:57
+#: core/utils.cpp:60
 #, kde-format
 msgctxt "Separator"
 msgid " - "
@@ -231,7 +260,7 @@ msgctxt "@label"
 msgid "This message has been signed using the key %1."
 msgstr "Dit bericht was ondertekend met de sleutel %1."
 
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:70
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "The key details are not available."
@@ -262,14 +291,14 @@ msgid "You are trusting this key."
 msgstr "Deze sleutel wordt door u vertrouwd."
 
 #: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:105
+#: widgets/messagecontainerwidget.cpp:107
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
 msgstr "De ondertekening is ongeldig."
 
 #: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:203
+#: widgets/messagecontainerwidget.cpp:205
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
 msgstr "Dit bericht is versleuteld maar we hebben de sleutel ervoor niet."
@@ -279,7 +308,7 @@ msgstr "Dit bericht is versleuteld maar we hebben de sleutel ervoor niet."
 msgid "This message is encrypted to the key: %1"
 msgstr "Dit bericht is versleuteld met de sleutel: %1"
 
-#: widgets/messagecontainerwidget.cpp:58
+#: widgets/messagecontainerwidget.cpp:60
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -289,37 +318,37 @@ msgstr ""
 "Dit bericht was ondertekend overeenkomstig VS-NfD met de sleutel <a href="
 "\"%1\">%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:65
+#: widgets/messagecontainerwidget.cpp:67
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
 msgstr "Dit bericht was ondertekend met de sleutel <a href=\"%1\">%2</a>."
 
-#: widgets/messagecontainerwidget.cpp:78
+#: widgets/messagecontainerwidget.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "Dit bericht was ondertekend overeenkomstig VS-NfD door %1."
 
-#: widgets/messagecontainerwidget.cpp:80
+#: widgets/messagecontainerwidget.cpp:82
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
 msgstr "Dit bericht was ondertekend door %1."
 
-#: widgets/messagecontainerwidget.cpp:83
+#: widgets/messagecontainerwidget.cpp:85
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was revoked."
 msgstr "De <a href=\"%1\">sleutel</a> is ingetrokken."
 
-#: widgets/messagecontainerwidget.cpp:86
+#: widgets/messagecontainerwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">key</a> was expired."
 msgstr "De <a href=\"%1\">sleutel</a> is verlopen."
 
-#: widgets/messagecontainerwidget.cpp:91
+#: widgets/messagecontainerwidget.cpp:93
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -328,7 +357,7 @@ msgstr ""
 "De ondertekening is geldig, maar de geldigheid van de <a href="
 "\"%1\">sleutel</a> is onbekend."
 
-#: widgets/messagecontainerwidget.cpp:94
+#: widgets/messagecontainerwidget.cpp:96
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -337,7 +366,7 @@ msgstr ""
 "De ondertekening is geldig en de <a href=\"%1\">sleutel</a> is gedeeltelijk "
 "betrouwbaar."
 
-#: widgets/messagecontainerwidget.cpp:96
+#: widgets/messagecontainerwidget.cpp:98
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
@@ -345,7 +374,7 @@ msgstr ""
 "De ondertekening is geldig en de <a href=\"%1\">sleutel</a> is volledig "
 "betrouwbaar."
 
-#: widgets/messagecontainerwidget.cpp:99
+#: widgets/messagecontainerwidget.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -354,7 +383,7 @@ msgstr ""
 "De ondertekening is geldig en de <a href=\"%1\">sleutel</a> is uiterst "
 "betrouwbaar."
 
-#: widgets/messagecontainerwidget.cpp:101
+#: widgets/messagecontainerwidget.cpp:103
 #, kde-format
 msgctxt "@label"
 msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
@@ -362,7 +391,7 @@ msgstr ""
 "De ondertekening is geldig, maar de <a href=\"%1\">sleutel</a> is "
 "onbetrouwbaar."
 
-#: widgets/messagecontainerwidget.cpp:201
+#: widgets/messagecontainerwidget.cpp:203
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
@@ -370,128 +399,134 @@ msgstr ""
 "Dit bericht is overeenkomstig VS-NfD versleuteld maar we hebben de sleutel "
 "ervoor niet."
 
-#: widgets/messagecontainerwidget.cpp:208
+#: widgets/messagecontainerwidget.cpp:211
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Dit bericht is overeenkomstig VS-NfD versleuteld."
 
-#: widgets/messagecontainerwidget.cpp:210
+#: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Dit bericht is versleuteld."
 
-#: widgets/messagecontainerwidget.cpp:219
+#: widgets/messagecontainerwidget.cpp:222
 #, kde-format
 msgid "The message is encrypted for the following keys:"
 msgstr "Het bericht is versleuteld voor de volgende sleutels:"
 
-#: widgets/messageviewer.cpp:63
+#: widgets/messageviewer.cpp:65
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Bijlage &opslaan als..."
 
-#: widgets/messageviewer.cpp:68
+#: widgets/messageviewer.cpp:70
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Openen"
 
-#: widgets/messageviewer.cpp:73
+#: widgets/messageviewer.cpp:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Publieke sleutel importeren"
 
-#: widgets/messageviewer.cpp:102
+#: widgets/messageviewer.cpp:104
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "naamloos"
 
-#: widgets/messageviewer.cpp:105
+#: widgets/messageviewer.cpp:107
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Bijlage opslaan als"
 
-#: widgets/messageviewer.cpp:257
+#: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "Invitation"
 msgstr "Uitnodiging"
 
-#: widgets/messageviewer.cpp:260
+#: widgets/messageviewer.cpp:267
 #, kde-format
 msgid "&Summary:"
 msgstr "&Samenvatting:"
 
-#: widgets/messageviewer.cpp:261
+#: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organisator:"
 
-#: widgets/messageviewer.cpp:263
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Location:"
 msgstr "&Locatie:"
 
-#: widgets/messageviewer.cpp:265
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "&Start date:"
 msgstr "&Begindatum:"
 
-#: widgets/messageviewer.cpp:267
+#: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&End date:"
 msgstr "&Einddatum:"
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Details:"
 msgstr "&Details:"
 
-#: widgets/messageviewer.cpp:291
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Ingebed e-mailbericht"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:306
 #, kde-format
 msgid "From:"
 msgstr "Van:"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:354
+#: widgets/messageviewer.cpp:384
 #, kde-format
 msgid "&Subject:"
 msgstr "&Onderwerp:"
 
-#: widgets/messageviewer.cpp:357
+#: widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&From:"
 msgstr "&Van:"
 
-#: widgets/messageviewer.cpp:360
+#: widgets/messageviewer.cpp:390
 #, kde-format
 msgid "&Sender:"
 msgstr "Af&zender:"
 
-#: widgets/messageviewer.cpp:363
+#: widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&To:"
 msgstr "&Aan:"
 
-#: widgets/messageviewer.cpp:366
+#: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:369
+#: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
+
+#: widgets/messageviewer.cpp:402
+#, fuzzy, kde-format
+#| msgid "Date:"
+msgid "&Date:"
+msgstr "Datum:"
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format
@@ -598,6 +633,10 @@ msgstr ""
 msgid "KMail Error"
 msgstr "KMail - foutmelding"
 
+#~ msgctxt "@info:status"
+#~ msgid "No secret key found to decrypt the message."
+#~ msgstr "Geen geheime sleutel gevonden om het bericht te ontcijferen."
+
 #~ msgid "Unknown key"
 #~ msgstr "Onbekende sleutel"
 
@@ -612,10 +651,6 @@ msgstr "KMail - foutmelding"
 #~ msgctxt "@info"
 #~ msgid "Saved the attachment to disk: %1"
 #~ msgstr "De bijlage is op schijf opgeslagen: %1"
-
-#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
-#~ msgid "Unknown"
-#~ msgstr "Onbekend"
 
 #~ msgid "fwd"
 #~ msgstr "fwd"
