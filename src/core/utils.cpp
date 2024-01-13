@@ -43,7 +43,7 @@ QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgM
             const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
                                   .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(recipient.keyID()));
             text +=
-                QStringLiteral("<li>%1 (<a href=\"%2\">%3</a>)</li>").arg(i18nc("@info", "Unknow Key"), link, Kleo::Formatting::prettyID(recipient.keyID()));
+                QStringLiteral("<li>%1 (<a href=\"%2\">%3</a>)</li>").arg(i18nc("@info", "Unknown Key"), link, Kleo::Formatting::prettyID(recipient.keyID()));
         }
     }
     text += QStringLiteral("</ul>");
