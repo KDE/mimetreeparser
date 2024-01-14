@@ -7,7 +7,7 @@ set(PIM_VERSION "6.0.40")
 project(MimeTreeParserNG VERSION ${PIM_VERSION})
 
 # ECM setup
-set(KF_MIN_VERSION "5.246.0")
+set(KF_MIN_VERSION "5.248.0")
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH}
@@ -80,7 +80,7 @@ endif()
 ########### Targets ###########
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 6.6.0 KF 5.246.0)
+ecm_set_disabled_deprecation_versions(QT 6.6.0 KF 5.248.0)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
