@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:39+0000\n"
-"PO-Revision-Date: 2023-11-29 05:38+0100\n"
+"POT-Creation-Date: 2024-01-14 00:38+0000\n"
+"PO-Revision-Date: 2024-01-13 05:04+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -88,9 +88,7 @@ msgstr[0] "1 გასაღები უკვე შემოტანილ�
 msgstr[1] "%1 გასაღები უკვე შემოტანილია"
 
 #: core/messageparser.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "უცნობი"
@@ -99,7 +97,7 @@ msgstr "უცნობი"
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -133,6 +131,7 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"ამ შეტყობინებას თქვენს ბრელოკში არსებული S/MIME სერტიფიკატებით ვერ გაშიფრავთ."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -141,16 +140,16 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"ამ შეტყობინებას თქვენს ბრელოკში არსებული OpenPGP სერტიფიკატებით ვერ "
+"გაშიფრავთ."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
-msgstr[1] "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
+msgstr[0] "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატისთვის:"
+msgstr[1] "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატებისთვის:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -161,9 +160,9 @@ msgstr "არასწორი საიდუმლო ფრაზა."
 #: core/utils.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "უცნობი გასაღები"
 
 #: core/utils.cpp:60
@@ -515,10 +514,9 @@ msgid "&BCC:"
 msgstr "&ფარულიასლი:"
 
 #: widgets/messageviewer.cpp:402
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "თარიღი:"
+msgstr "თ&არიღი:"
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format

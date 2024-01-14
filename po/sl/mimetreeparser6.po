@@ -6,17 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:39+0000\n"
-"PO-Revision-Date: 2023-11-29 22:39+0100\n"
+"POT-Creation-Date: 2024-01-14 00:38+0000\n"
+"PO-Revision-Date: 2024-01-13 07:27+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -92,18 +92,16 @@ msgstr[2] "%1 ključi so že uvoženi"
 msgstr[3] "%1 ključev je že uvoženih"
 
 #: core/messageparser.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr "Neznano"
+msgstr "Neznan"
 
 #: core/messageparser.cpp:52
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -137,6 +135,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Tega sporočila ni mogoče dešifrirati z nobenim potrdilom S/MIME v vašem "
+"obesku ključev."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -145,18 +145,18 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Tega sporočila ni mogoče dešifrirati z nobenim potrdilom OpenPGP v vašem "
+"obesku ključev."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Sporočilo je šifrirano z naslednjimi ključi:"
-msgstr[1] "Sporočilo je šifrirano z naslednjimi ključi:"
-msgstr[2] "Sporočilo je šifrirano z naslednjimi ključi:"
-msgstr[3] "Sporočilo je šifrirano z naslednjimi ključi:"
+msgstr[0] "Sporočilo je šifrirano za naslednji ključ:"
+msgstr[1] "Sporočilo je šifrirano za naslednja ključa:"
+msgstr[2] "Sporočilo je šifrirano za naslednje ključe:"
+msgstr[3] "Sporočilo je šifrirano za naslednje ključe:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -167,10 +167,10 @@ msgstr "Napačno geslo."
 #: core/utils.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
-msgstr "Neznan ključ"
+msgid "Unknown Key"
+msgstr "Neznani ključ"
 
 #: core/utils.cpp:60
 #, kde-format
@@ -521,10 +521,9 @@ msgid "&BCC:"
 msgstr "Skp:"
 
 #: widgets/messageviewer.cpp:402
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Datum:"
+msgstr "&Datum:"
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format

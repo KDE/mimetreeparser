@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:39+0000\n"
-"PO-Revision-Date: 2024-01-06 03:32\n"
+"POT-Creation-Date: 2024-01-14 00:38+0000\n"
+"PO-Revision-Date: 2024-01-13 05:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -154,7 +154,7 @@ msgstr "密码错误。"
 #: core/utils.cpp:46
 #, kde-format
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr ""
 
 #: core/utils.cpp:60

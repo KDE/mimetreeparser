@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:39+0000\n"
-"PO-Revision-Date: 2023-11-29 09:54+0200\n"
+"POT-Creation-Date: 2024-01-14 00:38+0000\n"
+"PO-Revision-Date: 2024-01-13 09:44+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -92,9 +92,7 @@ msgstr[2] "%1 ключів вже імпортовано"
 msgstr[3] "%1 ключ вже імпортовано"
 
 #: core/messageparser.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Невідомо"
@@ -103,7 +101,7 @@ msgstr "Невідомо"
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -137,6 +135,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Це повідомлення не можна розшифрувати з використанням будь-якого з "
+"сертифікатів S/MIME у вашому сховищі ключів."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -145,18 +145,18 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Це повідомлення не можна розшифрувати з використанням будь-якого з "
+"сертифікатів OpenPGP у вашому сховищі ключів."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Повідомлення зашифровано для таких ключів:"
-msgstr[1] "Повідомлення зашифровано для таких ключів:"
-msgstr[2] "Повідомлення зашифровано для таких ключів:"
-msgstr[3] "Повідомлення зашифровано для таких ключів:"
+msgstr[0] "Повідомлення зашифровано для таких сертифікатів:"
+msgstr[1] "Повідомлення зашифровано для таких сертифікатів:"
+msgstr[2] "Повідомлення зашифровано для таких сертифікатів:"
+msgstr[3] "Повідомлення зашифровано для такого сертифіката:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -167,9 +167,9 @@ msgstr "Неправильний пароль."
 #: core/utils.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "@info"
-#| msgid "Unknown Key"
+#| msgid "Unknow Key"
 msgctxt "@info"
-msgid "Unknow Key"
+msgid "Unknown Key"
 msgstr "Невідомий ключ"
 
 #: core/utils.cpp:60
@@ -521,10 +521,9 @@ msgid "&BCC:"
 msgstr "&Пр. копія:"
 
 #: widgets/messageviewer.cpp:402
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Дата:"
+msgstr "&Дата:"
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format
