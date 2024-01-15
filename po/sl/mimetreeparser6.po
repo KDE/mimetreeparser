@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:38+0000\n"
-"PO-Revision-Date: 2024-01-13 07:27+0100\n"
+"PO-Revision-Date: 2024-01-14 10:02+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -165,12 +165,10 @@ msgid "Wrong passphrase."
 msgstr "Napačno geslo."
 
 #: core/utils.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknow Key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr "Neznani ključ"
+msgstr "Neznan ključ"
 
 #: core/utils.cpp:60
 #, kde-format

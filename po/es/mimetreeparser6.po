@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the mimetreeparser package.
 #
 # Automatically generated, 2023.
-# SPDX-FileCopyrightText: 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:38+0000\n"
-"PO-Revision-Date: 2023-11-30 01:12+0100\n"
+"PO-Revision-Date: 2024-01-13 17:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -89,18 +89,16 @@ msgstr[0] "1 clave ya estaba importada"
 msgstr[1] "%1 claves ya estaban importadas"
 
 #: core/messageparser.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr "Desconocido"
+msgstr "Desconocida"
 
 #: core/messageparser.cpp:52
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -134,6 +132,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Este mensaje no se puede descifrar con ningún certificado S/MIME de su "
+"anillo de claves."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -142,16 +142,16 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Este mensaje no se puede descifrar con ningún certificado OpenPGP de su "
+"anillo de claves."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "El mensaje está cifrado para las siguientes claves:"
-msgstr[1] "El mensaje está cifrado para las siguientes claves:"
+msgstr[0] "El mensaje está cifrado para el siguiente certificado:"
+msgstr[1] "El mensaje está cifrado para los siguientes certificados:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -160,9 +160,7 @@ msgid "Wrong passphrase."
 msgstr "Contraseña larga errónea."
 
 #: core/utils.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknown Key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Clave desconocida"
@@ -521,10 +519,9 @@ msgid "&BCC:"
 msgstr "Cc&o:"
 
 #: widgets/messageviewer.cpp:402
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Fecha:"
+msgstr "&Fecha:"
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format
