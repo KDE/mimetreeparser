@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:38+0000\n"
-"PO-Revision-Date: 2024-01-13 05:59\n"
+"PO-Revision-Date: 2024-01-21 14:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -138,12 +138,11 @@ msgid ""
 msgstr ""
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "此消息已使用密钥 %1 加密"
+msgstr[0] ""
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -500,10 +499,9 @@ msgid "&BCC:"
 msgstr ""
 
 #: widgets/messageviewer.cpp:402
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "日期："
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format
