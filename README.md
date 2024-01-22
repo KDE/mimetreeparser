@@ -21,4 +21,4 @@ Widgets usage (examples/widgets):
 
 ## License
 
-This project is licensed under the GNU General License (GPL-2.0-only AND GPL-2.0-or-later). New file are expected to be licensed under the GPL-2.0-or-later
+This project is licensed under the GNU General License (GPL-2.0-only AND GPL-2.0-or-later). New files are expected to be licensed under the GPL-2.0-or-later.
