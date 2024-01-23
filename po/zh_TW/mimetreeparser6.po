@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:38+0000\n"
-"PO-Revision-Date: 2023-12-20 17:14+0900\n"
+"PO-Revision-Date: 2024-01-22 17:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -53,10 +53,10 @@ msgid "attachment"
 msgstr "附件"
 
 #: core/attachmentmodel.cpp:331
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "無法為寫入開啟附件。"
+msgstr "無法開啟附件以供寫入。"
 
 #: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
 #, kde-format
@@ -85,12 +85,10 @@ msgid_plural "%1 keys were already imported"
 msgstr[0] "%1 個金鑰原本就已經匯入"
 
 #: core/messageparser.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknown Key"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr "未知的金鑰"
+msgstr "未知"
 
 #: core/messageparser.cpp:52
 #, kde-format
@@ -140,13 +138,11 @@ msgid ""
 msgstr ""
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "這個信件為以下金鑰加密："
+msgstr[0] "這個信件為以下憑證加密："
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -155,9 +151,7 @@ msgid "Wrong passphrase."
 msgstr "錯誤密碼。"
 
 #: core/utils.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknown Key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "未知的金鑰"
@@ -505,10 +499,9 @@ msgid "&BCC:"
 msgstr "密件副本(&B)："
 
 #: widgets/messageviewer.cpp:402
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "日期："
+msgstr "日期(&D)："
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format

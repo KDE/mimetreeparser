@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:38+0000\n"
-"PO-Revision-Date: 2023-11-29 09:09+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
+"PO-Revision-Date: 2023-12-03 17:34+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -84,9 +84,7 @@ msgstr[0] "Une clé a déjà été importée."
 msgstr[1] "%1 clés ont déjà été importées."
 
 #: core/messageparser.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "displayed when a mail has unknown sender, receiver or date"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Inconnu"
@@ -95,7 +93,7 @@ msgstr "Inconnu"
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -133,6 +131,8 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Il est impossible de déchiffrer ce message avec un certificat « S / MIME » "
+"de votre trousseau de clés."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -141,16 +141,16 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Il est impossible de déchiffrer ce message avec un quelconque certificat "
+"« OpenPGP » de votre trousseau de clés."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Le message est chiffré avec les clés suivantes :"
-msgstr[1] "Le message est chiffré avec les clés suivantes :"
+msgstr[0] "Le message est chiffré avec le certificat suivant :"
+msgstr[1] "Le message est chiffré avec les certificats suivants :"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -159,9 +159,7 @@ msgid "Wrong passphrase."
 msgstr "Phrase de passe erronée."
 
 #: core/utils.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Unknown Key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Clé inconnue"
@@ -521,10 +519,9 @@ msgid "&BCC:"
 msgstr "&BCC :"
 
 #: widgets/messageviewer.cpp:402
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Date :"
+msgstr "&Date :"
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-format
