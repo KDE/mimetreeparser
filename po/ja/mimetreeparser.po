@@ -73,7 +73,6 @@ msgctxt "@info"
 msgid "one key imported"
 msgid_plural "%1 keys imported"
 msgstr[0] ""
-msgstr[1] ""
 
 #: core/attachmentmodel.cpp:388
 #, kde-format
@@ -81,7 +80,6 @@ msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] ""
-msgstr[1] ""
 
 #: core/messageparser.cpp:48
 #, kde-format
