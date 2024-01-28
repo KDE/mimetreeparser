@@ -45,7 +45,6 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     contentType->setMimeType("multipart/encrypted");
     contentType->setBoundary(KMime::multiPartBoundary());
     contentType->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
-    contentType->setCategory(KMime::Headers::CCcontainer);
 
     auto cte = message->contentTransferEncoding();
     cte->setEncoding(KMime::Headers::CE7Bit);
