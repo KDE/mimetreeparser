@@ -13,7 +13,7 @@
 
 KMime::Message::Ptr readMailFromFile(const QString &mailFile)
 {
-    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     auto mailData = KMime::CRLFtoLF(file.readAll());
@@ -32,7 +32,7 @@ private Q_SLOTS:
     void openMailWithOneAttachementTest()
     {
         MessageParser messageParser;
-        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
+        messageParser.setMessage(readMailFromFile(QLatin1StringView("attachment.mbox")));
 
         auto attachmentModel = messageParser.attachments();
         new QAbstractItemModelTester(attachmentModel);
@@ -52,7 +52,7 @@ private Q_SLOTS:
     void saveTest()
     {
         MessageParser messageParser;
-        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
+        messageParser.setMessage(readMailFromFile(QLatin1StringView("attachment.mbox")));
 
         auto attachmentModel = messageParser.attachments();
         QTemporaryFile file;
@@ -66,7 +66,7 @@ private Q_SLOTS:
     void openTest()
     {
         MessageParser messageParser;
-        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
+        messageParser.setMessage(readMailFromFile(QLatin1StringView("attachment.mbox")));
 
         auto attachmentModel = messageParser.attachments();
         QSignalSpy spy(attachmentModel, &AttachmentModel::errorOccurred);
@@ -81,7 +81,7 @@ private Q_SLOTS:
     void saveInvalidPathTest()
     {
         MessageParser messageParser;
-        messageParser.setMessage(readMailFromFile(QLatin1String("attachment.mbox")));
+        messageParser.setMessage(readMailFromFile(QLatin1StringView("attachment.mbox")));
 
         auto attachmentModel = messageParser.attachments();
         QSignalSpy spy(attachmentModel, &AttachmentModel::errorOccurred);

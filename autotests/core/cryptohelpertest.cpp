@@ -11,7 +11,7 @@ using namespace MimeTreeParser;
 
 QByteArray readMailFromFile(const QString &mailFile)
 {
-    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     return file.readAll();
@@ -57,12 +57,12 @@ void CryptoHelperTest::testPGPBlockType()
             name = QStringLiteral("PRIVATE KEY BLOCK");
             break;
         }
-        QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText;
+        QString text = QLatin1StringView("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText;
         QList<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 1);
         QCOMPARE(blocks[0].type(), UnknownBlock);
 
-        text += QLatin1String("\n-----END PGP ") + name + QLatin1Char('\n');
+        text += QLatin1StringView("\n-----END PGP ") + name + QLatin1Char('\n');
         blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 2);
         QCOMPARE(blocks[1].text(), text.toLatin1());
@@ -95,7 +95,7 @@ void CryptoHelperTest::testDeterminePGPBlockType()
             name = QStringLiteral("PRIVATE KEY BLOCK");
             break;
         }
-        const QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText + QLatin1Char('\n');
+        const QString text = QLatin1StringView("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText + QLatin1Char('\n');
         const Block block = Block(text.toLatin1());
         QCOMPARE(block.text(), text.toLatin1());
         QCOMPARE(block.type(), static_cast<PGPBlockType>(i));
@@ -141,7 +141,7 @@ void CryptoHelperTest::testMultipleBlockMessage()
 void CryptoHelperTest::testDecryptMessage()
 {
     auto message = KMime::Message::Ptr(new KMime::Message);
-    message->setContent(readMailFromFile(QLatin1String("openpgp-encrypted+signed.mbox")));
+    message->setContent(readMailFromFile(QLatin1StringView("openpgp-encrypted+signed.mbox")));
     message->parse();
 
     bool wasEncrypted = false;
@@ -158,7 +158,7 @@ void CryptoHelperTest::testDecryptMessage()
 void CryptoHelperTest::testDecryptInlineMessage()
 {
     auto message = KMime::Message::Ptr(new KMime::Message);
-    message->setContent(readMailFromFile(QLatin1String("openpgp-inline-encrypted+nonenc.mbox")));
+    message->setContent(readMailFromFile(QLatin1StringView("openpgp-inline-encrypted+nonenc.mbox")));
     message->parse();
 
     qWarning() << message->decodedContent();

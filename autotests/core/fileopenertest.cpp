@@ -16,19 +16,19 @@ class FileOpenerTest : public QObject
 private Q_SLOTS:
     void openSingleMboxTest()
     {
-        const auto messages = FileOpener::openFile(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("smime-opaque-enc+sign.mbox"));
+        const auto messages = FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("smime-opaque-enc+sign.mbox"));
         QCOMPARE(messages.count(), 1);
     }
 
     void openSingleCombinedTest()
     {
-        const auto messages = FileOpener::openFile(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("combined.mbox"));
+        const auto messages = FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("combined.mbox"));
         QCOMPARE(messages.count(), 3);
     }
 
     void openAscTest()
     {
-        const auto messages = FileOpener::openFile(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("msg.asc"));
+        const auto messages = FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("msg.asc"));
         QCOMPARE(messages.count(), 1);
         auto message = messages[0];
 
@@ -44,7 +44,7 @@ private Q_SLOTS:
 
     void openSmimeTest()
     {
-        const auto messages = FileOpener::openFile(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("smime.p7m"));
+        const auto messages = FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("smime.p7m"));
         QCOMPARE(messages.count(), 1);
         auto message = messages[0];
 
@@ -55,7 +55,7 @@ private Q_SLOTS:
 
     void openInexistingFileTest()
     {
-        const auto messages = FileOpener::openFile(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("not-here.p7m"));
+        const auto messages = FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("not-here.p7m"));
         QCOMPARE(messages.count(), 0);
     }
 

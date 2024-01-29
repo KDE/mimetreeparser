@@ -61,11 +61,11 @@ bool UrlHandler::foundSMIMEData(const QString &aUrl, QString &displayName, QStri
     int i1 = aUrl.indexOf(showCertMan);
     if (-1 < i1) {
         i1 += showCertMan.length();
-        int i2 = aUrl.indexOf(QLatin1String(" ### "), i1);
+        int i2 = aUrl.indexOf(QLatin1StringView(" ### "), i1);
         if (i1 < i2) {
             displayName = aUrl.mid(i1, i2 - i1);
             i1 = i2 + 5;
-            i2 = aUrl.indexOf(QLatin1String(" ### "), i1);
+            i2 = aUrl.indexOf(QLatin1StringView(" ### "), i1);
             if (i1 < i2) {
                 libName = aUrl.mid(i1, i2 - i1);
                 i2 += 5;

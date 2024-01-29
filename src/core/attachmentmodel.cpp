@@ -103,7 +103,7 @@ bool validateFileName(const QString &name, bool allowDirectories)
     // Substrings
     const int notAllowedSubStringCount = sizeof(notAllowedSubStrings) / sizeof(const char *);
     for (int s = 0; s < notAllowedSubStringCount; s++) {
-        const QLatin1String notAllowedSubString(notAllowedSubStrings[s]);
+        const QLatin1StringView notAllowedSubString(notAllowedSubStrings[s]);
         if (name.contains(notAllowedSubString)) {
             return false;
         }

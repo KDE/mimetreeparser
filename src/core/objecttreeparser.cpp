@@ -158,7 +158,7 @@ static void print(QTextStream &stream, KMime::Content *node, const QString prefi
     stream << prefix << "! " << mediaType << subType << " isAttachment: " << KMime::isAttachment(node) << "\n";
     const auto contents = node->contents();
     for (const auto nodeContent : contents) {
-        print(stream, nodeContent, prefix + QLatin1String(" "));
+        print(stream, nodeContent, prefix + QLatin1StringView(" "));
     }
 }
 
@@ -318,7 +318,7 @@ void ObjectTreeParser::decryptAndVerify()
 QString ObjectTreeParser::resolveCidLinks(const QString &html)
 {
     auto text = html;
-    static const auto regex = QRegularExpression(QLatin1String("(src)\\s*=\\s*(\"|')(cid:[^\"']+)\\2"));
+    static const auto regex = QRegularExpression(QLatin1StringView("(src)\\s*=\\s*(\"|')(cid:[^\"']+)\\2"));
     auto it = regex.globalMatch(text);
     while (it.hasNext()) {
         const auto match = it.next();
@@ -338,7 +338,7 @@ QString ObjectTreeParser::resolveCidLinks(const QString &html)
             }
             QMimeDatabase mimeDb;
             const auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(contentType->mimeType())).name();
-            if (mimetype.startsWith(QLatin1String("image/"))) {
+            if (mimetype.startsWith(QLatin1StringView("image/"))) {
                 // We reencode to base64 below.
                 const auto data = mailMime->decodedContent();
                 if (data.isEmpty()) {
@@ -457,8 +457,8 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
 QList<MessagePart::Ptr> ObjectTreeParser::defaultHandling(KMime::Content *node)
 {
     if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")
-        && (node->contentType()->name().endsWith(QLatin1String("p7m")) || node->contentType()->name().endsWith(QLatin1String("p7s"))
-            || node->contentType()->name().endsWith(QLatin1String("p7c")))) {
+        && (node->contentType()->name().endsWith(QLatin1StringView("p7m")) || node->contentType()->name().endsWith(QLatin1String("p7s"))
+            || node->contentType()->name().endsWith(QLatin1StringView("p7c")))) {
         auto list = processType(node, "application", "pkcs7-mime");
         if (!list.isEmpty()) {
             return list;

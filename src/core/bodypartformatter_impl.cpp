@@ -120,12 +120,12 @@ public:
 
         const QString smimeType = node->contentType()->parameter(QStringLiteral("smime-type")).toLower();
 
-        if (smimeType == QLatin1String("certs-only")) {
+        if (smimeType == QLatin1StringView("certs-only")) {
             return CertMessagePart::Ptr(new CertMessagePart(objectTreeParser, node, QGpgME::smime()));
         }
 
-        bool isSigned = (smimeType == QLatin1String("signed-data"));
-        bool isEncrypted = (smimeType == QLatin1String("enveloped-data"));
+        bool isSigned = (smimeType == QLatin1StringView("signed-data"));
+        bool isEncrypted = (smimeType == QLatin1StringView("enveloped-data"));
 
         // Analyze "signTestNode" node to find/verify a signature.
         // If zero part.objectTreeParser verification was successfully done after
@@ -260,9 +260,10 @@ public:
         }
 
         const QGpgME::Protocol *protocol = nullptr;
-        if (protocolContentType == QLatin1String("application/pkcs7-signature") || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
+        if (protocolContentType == QLatin1StringView("application/pkcs7-signature") || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
             protocol = QGpgME::smime();
-        } else if (protocolContentType == QLatin1String("application/pgp-signature") || protocolContentType == QLatin1String("application/x-pgp-signature")) {
+        } else if (protocolContentType == QLatin1StringView("application/pgp-signature")
+                   || protocolContentType == QLatin1String("application/x-pgp-signature")) {
             protocol = QGpgME::openpgp();
         }
         return protocol;
@@ -284,8 +285,8 @@ public:
         Q_ASSERT(signedData);
         Q_ASSERT(signature);
 
-        auto protocol =
-            detectProtocol(node->contentType()->parameter(QStringLiteral("protocol")).toLower(), QLatin1String(signature->contentType()->mimeType().toLower()));
+        auto protocol = detectProtocol(node->contentType()->parameter(QStringLiteral("protocol")).toLower(),
+                                       QLatin1StringView(signature->contentType()->mimeType().toLower()));
 
         if (!protocol) {
             return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, signedData));

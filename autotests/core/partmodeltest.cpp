@@ -12,7 +12,7 @@
 
 KMime::Message::Ptr readMailFromFile(const QString &mailFile)
 {
-    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     auto mailData = KMime::CRLFtoLF(file.readAll());
@@ -34,15 +34,15 @@ private Q_SLOTS:
 
     void testTrim()
     {
-        auto result = PartModel::trim(QLatin1String("<p>This is some funky test.</p>\n<p>-- <br>\nChristian Mollekopf<br>\nSenior Software"));
+        auto result = PartModel::trim(QLatin1StringView("<p>This is some funky test.</p>\n<p>-- <br>\nChristian Mollekopf<br>\nSenior Software"));
         QCOMPARE(result.second, true);
-        QCOMPARE(result.first, QLatin1String("<p>This is some funky test.</p>\n"));
+        QCOMPARE(result.first, QLatin1StringView("<p>This is some funky test.</p>\n"));
     }
 
     void testTrimFromPlain()
     {
         // Qt::convertFromPlainText inserts non-breaking spaces
-        auto result = PartModel::trim(Qt::convertFromPlainText(QLatin1String("This is some funky text.\n\n-- \nChristian Mollekopf\nSenior Software")));
+        auto result = PartModel::trim(Qt::convertFromPlainText(QLatin1StringView("This is some funky text.\n\n-- \nChristian Mollekopf\nSenior Software")));
         QCOMPARE(result.second, true);
         //\u00A0 is a on-breaking space
         const auto expected = QStringLiteral("<p>This is some funky text.</p>\n").replace(QLatin1Char(' '), QChar(0x00a0));
@@ -52,7 +52,7 @@ private Q_SLOTS:
     void testModel()
     {
         MessageParser messageParser;
-        messageParser.setMessage(readMailFromFile(QLatin1String("html.mbox")));
+        messageParser.setMessage(readMailFromFile(QLatin1StringView("html.mbox")));
 
         QFont font{};
         font.setFamily(QStringLiteral("Noto Sans"));

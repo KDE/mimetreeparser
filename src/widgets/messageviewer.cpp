@@ -121,7 +121,7 @@ void MessageViewer::Private::showContextMenu()
     QMenu menu;
     if (numberOfParts == 1) {
         const QString mimetype = QString::fromLatin1(selectedParts.first()->mimeType());
-        if (mimetype == QLatin1String("application/pgp-keys")) {
+        if (mimetype == QLatin1StringView("application/pgp-keys")) {
             menu.addAction(importPublicKeyAction);
         }
     }

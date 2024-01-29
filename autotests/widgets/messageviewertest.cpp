@@ -19,7 +19,7 @@ private Q_SLOTS:
 
     void messageViewerSMimeEncrypted()
     {
-        auto messages = MimeTreeParser::Core::FileOpener::openFile(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("smime-encrypted.mbox"));
+        auto messages = MimeTreeParser::Core::FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("smime-encrypted.mbox"));
         QCOMPARE(messages.count(), 1);
         MessageViewer viewer;
         viewer.setMessage(messages[0]);

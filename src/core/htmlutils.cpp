@@ -21,17 +21,17 @@ static QString resolveEntities(const QString &in)
             QString type = in.mid(i, (n - i));
             i = n; // should be n+1, but we'll let the loop increment do it
 
-            if (type == QLatin1String("amp")) {
+            if (type == QLatin1StringView("amp")) {
                 out += QLatin1Char('&');
-            } else if (type == QLatin1String("lt"))
+            } else if (type == QLatin1StringView("lt"))
                 out += QLatin1Char('<');
-            else if (type == QLatin1String("gt"))
+            else if (type == QLatin1StringView("gt"))
                 out += QLatin1Char('>');
-            else if (type == QLatin1String("quot"))
+            else if (type == QLatin1StringView("quot"))
                 out += QLatin1Char('\"');
-            else if (type == QLatin1String("apos"))
+            else if (type == QLatin1StringView("apos"))
                 out += QLatin1Char('\'');
-            else if (type == QLatin1String("nbsp"))
+            else if (type == QLatin1StringView("nbsp"))
                 out += QChar(0xa0);
         } else {
             out += in[i];
