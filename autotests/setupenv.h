@@ -5,8 +5,8 @@
 #ifndef MESSAGECORE_TESTS_UTIL_H
 #define MESSAGECORE_TESTS_UTIL_H
 
-#include <bodypartformatter.h>
-#include <bodypartformatterbasefactory.h>
+#include "bodypartformatter.h"
+#include "bodypartformatterbasefactory.h"
 
 namespace MimeTreeParser
 {
