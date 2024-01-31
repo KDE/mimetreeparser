@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2023-10-12 18:32+0300\n"
+"PO-Revision-Date: 2023-12-11 18:17+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -48,19 +48,15 @@ msgid "Failed to save attachment."
 msgstr "Liitettä ei voitu tallentaa."
 
 #: core/attachmentmodel.cpp:325
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Tallenna liite"
+msgstr "liite"
 
 #: core/attachmentmodel.cpp:332
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to open attachment."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "Liitettä ei voitu avata."
+msgstr "Liitettä ei voitu kirjoittaa avattavaksi."
 
 #: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
@@ -91,17 +87,16 @@ msgstr[0] "yksi avain oli jo tuotu"
 msgstr[1] "%1 avainta oli jo tuotu"
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr "Tuntematon avain"
+msgstr "Tuntematon"
 
 #: core/messageparser.cpp:53
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -135,6 +130,7 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
 msgstr ""
+"Viestin salausta ei voi purkaa avainrenkaasi millään S/MIME-varmenteella."
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -143,14 +139,14 @@ msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
 msgstr ""
+"Viestin salausta ei voi purkaa avainrenkaasi millään OpenPGP-varmenteella."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Viesti on salattu seuraaville avaimille:"
+msgstr[0] "Viesti on salattu seuraavalle avaimelle:"
 msgstr[1] "Viesti on salattu seuraaville avaimille:"
 
 #: core/partmodel.cpp:537
@@ -160,8 +156,7 @@ msgid "Wrong passphrase."
 msgstr "Väärä salasana."
 
 #: core/utils.cpp:46
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "Tuntematon avain"
@@ -170,7 +165,7 @@ msgstr "Tuntematon avain"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " – "
 
 #: quick/qml/MailViewer.qml:41
 #, kde-format
@@ -521,10 +516,9 @@ msgid "&BCC:"
 msgstr "&Piilokopio:"
 
 #: widgets/messageviewer.cpp:403
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
-msgstr "Päiväys:"
+msgstr "&Päiväys:"
 
 #: widgets/messageviewerdialog.cpp:100
 #, kde-format
@@ -581,12 +575,10 @@ msgid "Save File"
 msgstr "Tallenna tiedosto"
 
 #: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
-msgstr "Sähköpostitiedostot (*.mbox)"
+msgstr "Sähköpostitiedostot (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:148
 #, kde-format
