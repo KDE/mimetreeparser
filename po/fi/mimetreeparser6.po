@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:38+0000\n"
-"PO-Revision-Date: 2023-10-12 18:32+0300\n"
+"PO-Revision-Date: 2023-12-11 18:17+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -48,19 +48,15 @@ msgid "Failed to save attachment."
 msgstr "Liitettä ei voitu tallentaa."
 
 #: core/attachmentmodel.cpp:324
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save attachment"
+#, kde-format
 msgid "attachment"
-msgstr "Tallenna liite"
+msgstr "liite"
 
 #: core/attachmentmodel.cpp:331
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to open attachment."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "Liitettä ei voitu avata."
+msgstr "Liitettä ei voitu kirjoittaa avattavaksi."
 
 #: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
 #, kde-format
@@ -117,15 +113,13 @@ msgid "Error: %1"
 msgstr "Virhe: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr "Viesti on salattu seuraaville avaimille:"
+msgstr "Salaista avainta viestin purkamiseksi ei löytynyt."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
 msgstr "Viesti on salattu seuraaville avaimille:"
@@ -137,8 +131,7 @@ msgid "Wrong passphrase."
 msgstr "Väärä salasana."
 
 #: core/utils.cpp:43
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Tuntematon avain"
@@ -147,7 +140,7 @@ msgstr "Tuntematon avain"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " – "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -552,12 +545,10 @@ msgid "Save File"
 msgstr "Tallenna tiedosto"
 
 #: widgets/messageviewerdialog.cpp:142 widgets/messageviewerdialog.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
-msgstr "Sähköpostitiedostot (*.mbox)"
+msgstr "Sähköpostitiedostot (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:146
 #, kde-format
