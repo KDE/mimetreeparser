@@ -457,7 +457,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
 QList<MessagePart::Ptr> ObjectTreeParser::defaultHandling(KMime::Content *node)
 {
     if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")
-        && (node->contentType()->name().endsWith(QLatin1StringView("p7m")) || node->contentType()->name().endsWith(QLatin1String("p7s"))
+        && (node->contentType()->name().endsWith(QLatin1StringView("p7m")) || node->contentType()->name().endsWith(QLatin1StringView("p7s"))
             || node->contentType()->name().endsWith(QLatin1StringView("p7c")))) {
         auto list = processType(node, "application", "pkcs7-mime");
         if (!list.isEmpty()) {

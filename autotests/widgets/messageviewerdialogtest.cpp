@@ -15,7 +15,7 @@ class MessageViewerDialogTest : public QObject
 private Q_SLOTS:
     void messageViewerDialogCreationMultipleTest()
     {
-        MessageViewerDialog dialog(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("combined.mbox"));
+        MessageViewerDialog dialog(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1StringView("combined.mbox"));
         QCOMPARE(dialog.messages().count(), 3);
 
         QCOMPARE(dialog.layout()->count(), 2);
@@ -28,7 +28,7 @@ private Q_SLOTS:
 
     void messageViewerDialogCreationTest()
     {
-        MessageViewerDialog dialog(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1String("plaintext.mbox"));
+        MessageViewerDialog dialog(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + QLatin1StringView("plaintext.mbox"));
         QCOMPARE(dialog.messages().count(), 1);
 
         QCOMPARE(dialog.layout()->count(), 2);
