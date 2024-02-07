@@ -378,13 +378,17 @@ bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &pa
 
     connect(importJob, &QGpgME::AbstractImportJob::result, this, [this](const GpgME::ImportResult &result) {
         if (result.numConsidered() == 0) {
-            Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "No keys were found in this attachment"));
+            Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "No certificates were found in this attachment"));
             return;
         } else {
-            QString message = i18ndcp("mimetreeparser", "@info", "one key imported", "%1 keys imported", result.numImported());
+            QString message = i18ndcp("mimetreeparser", "@info", "one certificate imported", "%1 certificates imported", result.numImported());
             if (result.numUnchanged() != 0) {
                 message += QStringLiteral("\n")
-                    + i18ndcp("mimetreeparser", "@info", "one key was already imported", "%1 keys were already imported", result.numUnchanged());
+                    + i18ndcp("mimetreeparser",
+                              "@info",
+                              "one certificate was already imported",
+                              "%1 certificates were already imported",
+                              result.numUnchanged());
             }
             Q_EMIT info(message);
         }

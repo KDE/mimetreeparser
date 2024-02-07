@@ -53,7 +53,7 @@ QQC2.AbstractButton {
         QQC2.ToolButton {
             visible: root.type === "application/pgp-keys"
             icon.name: 'gpg'
-            text: i18ndc("mimetreeparser", "@action:button", "Import key")
+            text: i18ndc("mimetreeparser", "@action:button", "Import certificate")
             display: QQC2.ToolButton.IconOnly
             onClicked: root.publicKeyImport()
 

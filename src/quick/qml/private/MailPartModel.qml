@@ -52,18 +52,18 @@ DelegateModel {
         function getDetails(signatureDetails) {
             let details = "";
             if (signatureDetails.keyMissing) {
-                details += i18ndc("mimetreeparser", "@label", "This message has been signed using the key %1.", signatureDetails.keyId) + "\n";
-                details += i18ndc("mimetreeparser", "@label", "The key details are not available.")
+                details += i18ndc("mimetreeparser", "@label", "This message has been signed using the certificate %1.", signatureDetails.keyId) + "\n";
+                details += i18ndc("mimetreeparser", "@label", "The certificate details are not available.")
             } else {
-                details += i18ndc("mimetreeparser", "@label", "This message has been signed using the key %1 by %2.", signatureDetails.keyId, signatureDetails.signer) + "\n";
+                details += i18ndc("mimetreeparser", "@label", "This message has been signed using the certificate %1 by %2.", signatureDetails.keyId, signatureDetails.signer) + "\n";
                 if (signatureDetails.keyRevoked) {
-                    details += "\n" + i18ndc("mimetreeparser", "@label", "The key was revoked.")
+                    details += "\n" + i18ndc("mimetreeparser", "@label", "The certificate was revoked.")
                 }
                 if (signatureDetails.keyExpired) {
-                    details += "\n" + i18ndc("mimetreeparser", "@label", "The key has expired.")
+                    details += "\n" + i18ndc("mimetreeparser", "@label", "The certificate has expired.")
                 }
                 if (signatureDetails.keyIsTrusted) {
-                    details += "\n" + i18ndc("mimetreeparser", "@label", "You are trusting this key.")
+                    details += "\n" + i18ndc("mimetreeparser", "@label", "You are trusting this certificate.")
                 }
                 if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired && !signatureDetails.keyIsTrusted) {
                     details += "\n" + i18ndc("mimetreeparser", "@label", "The signature is invalid.")
@@ -95,7 +95,7 @@ DelegateModel {
                 iconName: "mail-encrypted"
                 type: getType(model.encryptionSecurityLevel)
                 visible: model.encrypted
-                text: !model.encryptionDetails.keyId ? i18n("This message is encrypted but we don't have the key for it.") : i18n("This message is encrypted to the key: %1", model.encryptionDetails.keyId);
+                text: !model.encryptionDetails.keyId ? i18n("This message is encrypted but we don't have the certificate for it.") : i18n("This message is encrypted to the certificate: %1", model.encryptionDetails.keyId);
 
                 Layout.fillWidth: true
             }
