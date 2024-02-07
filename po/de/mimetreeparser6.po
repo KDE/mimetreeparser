@@ -2,7 +2,7 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 # Frederik Schwarzer <schwarzer@kde.org>, 2023.
-# Eva Bolten <eva.bolten@gnupg.com>, 2023.
+# Eva Bolten <eva.bolten@gnupg.com>, 2023, 2024.
 #
 # Automatically generated, 2023.
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:38+0000\n"
-"PO-Revision-Date: 2023-11-16 12:05+0100\n"
+"PO-Revision-Date: 2024-02-02 13:54+0100\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -116,18 +116,17 @@ msgid "Error: %1"
 msgstr "Fehler: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr "Diese Nachricht ist für die folgendem Schlüssel verschlüsselt:"
+msgstr ""
+"Es wurde kein geheimer Schlüssel zur Entschlüsselung der Nachricht gefunden."
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
-msgstr "Diese Nachricht ist für die folgendem Schlüssel verschlüsselt:"
+msgstr "Diese Nachricht ist für die folgenden Schlüssel verschlüsselt:"
 
 #: core/partmodel.cpp:525
 #, kde-format
@@ -136,8 +135,7 @@ msgid "Wrong passphrase."
 msgstr ":q Falsches Passwort."
 
 #: core/utils.cpp:43
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Unbekannter Schlüssel"
@@ -146,7 +144,7 @@ msgstr "Unbekannter Schlüssel"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
