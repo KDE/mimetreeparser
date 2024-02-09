@@ -113,18 +113,16 @@ msgid "Error: %1"
 msgstr "Chyba: %1"
 
 #: core/partmodel.cpp:511
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "No secret key found to decrypt the message."
-msgstr "Zpráva je šifrována pro následující klíče:"
+msgstr ""
 
 #: core/partmodel.cpp:513
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following keys:"
-msgstr "Zpráva je šifrována pro následující klíče:"
+msgstr ""
 
 #: core/partmodel.cpp:525
 #, kde-format
@@ -133,11 +131,10 @@ msgid "Wrong passphrase."
 msgstr "Špatné heslo."
 
 #: core/utils.cpp:43
-#, fuzzy, kde-format
-#| msgid "Unknown key"
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr "Neznámý klíč"
+msgstr ""
 
 #: core/utils.cpp:57
 #, kde-format
@@ -585,6 +582,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Chyba KMailu"
-
-#~ msgid "Unknown key"
-#~ msgstr "Neznámý klíč"
