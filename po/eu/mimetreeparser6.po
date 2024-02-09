@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-08 00:39+0000\n"
-"PO-Revision-Date: 2024-01-14 18:12+0100\n"
+"PO-Revision-Date: 2024-02-08 22:32+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -68,34 +68,26 @@ msgid "Failed to open attachment."
 msgstr "Eranskina irekitzea huts egin du."
 
 #: core/attachmentmodel.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "No keys were found in this attachment"
+#, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr "Eranskin honetan ez da gakorik aurkitu"
+msgstr "Eranskin honetan ez da ziurtagiririk aurkitu"
 
 #: core/attachmentmodel.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key imported"
-#| msgid_plural "%1 keys imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] "gako bat inportatu da"
-msgstr[1] "%1 gako inportatu dira"
+msgstr[0] "ziurtagiri bat inportatu da"
+msgstr[1] "%1 ziurtagiri inportatu dira"
 
 #: core/attachmentmodel.cpp:389
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key was already imported"
-#| msgid_plural "%1 keys were already imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "gako bat dagoeneko inportatuta zegoen"
-msgstr[1] "%1 gako dagoeneko inportatuta zeuden"
+msgstr[0] "ziurtagiri bat jada inportatuta zegoen"
+msgstr[1] "%1 ziurtagiri jada inportatuta zeuden"
 
 #: core/messageparser.cpp:47
 #, kde-format
@@ -234,7 +226,7 @@ msgstr "Gorde eranskina honela"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "Inportatu ziurtagiria"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
@@ -259,49 +251,37 @@ msgid "sent by %1 on %2"
 msgstr "%1(e)k %2(e)an bidalia"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1."
-msgstr "Mezua hau %1 gakoa erabiliz sinatu da."
+msgstr "Mezua hau %1 ziurtagiria erabiliz sinatu da."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key details are not available."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate details are not available."
-msgstr "Gakoaren xehetasuna ez daude erabilgarri."
+msgstr "Ziurtagiriaren xehetasuna ez daude erabilgarri."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1 by %2."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1 by %2."
-msgstr "Mezua hau %2(e)k sinatu du %1 gakoa erabiliz."
+msgstr "Mezua hau %2(e)k sinatu du %1 ziurtagiria erabiliz."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate was revoked."
-msgstr "Gakoa indargabetuta dago."
+msgstr "Ziurtagiria indargabetuta dago."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate has expired."
-msgstr "Gakoa iraungita dago."
+msgstr "Ziurtagiria iraungita dago."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "You are trusting this key."
+#, kde-format
 msgctxt "@label"
 msgid "You are trusting this certificate."
 msgstr "Gako honetan konfiantza duzu."
@@ -315,23 +295,17 @@ msgstr "Sinadura baliogabea da."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid "This message is encrypted but we don't have the certificate for it."
-msgstr "Mezu hau zifratuta dago baina ez dugu dagokion gakoa."
+msgstr "Mezu hau zifratuta dago baina ez dugu dagokion ziurtagiria."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted to the certificate: %1"
-msgstr "Mezu hau ondoko gakorako zifratuta dago: %1"
+msgstr "Mezu hau ondoko ziurtagirirako zifratuta dago: %1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed VS-NfD compliant using the key <a href="
-#| "\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
@@ -341,13 +315,11 @@ msgstr ""
 "\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "Mezua hau <a href=\"%1\">%2</a> gakoa erabiliz sinatu da."
+msgstr "Mezua hau <a href=\"%1\">%2</a> ziurtagiria erabiliz sinatu da."
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
@@ -362,93 +334,73 @@ msgid "This message has been signed by %1."
 msgstr "Mezua hau %1(e)k sinatu du ."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr "<a href=\"%1\">Gakoa</a> indargabetu egin zen."
+msgstr "<a href=\"%1\">Ziurtagiria</a> indargabetu egin zen."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was expired."
-msgstr "<a href=\"%1\">Gakoa</a> iraungi egin zen."
+msgstr "<a href=\"%1\">Ziurtagiria</a> iraungita dago."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">key</a>'s validity is "
-#| "unknown."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
 msgstr ""
-"Sinadura baliozkoa da, baina <a href=\"%1\">gakoaren</a> baliozkotasuna "
-"ezezaguna da."
+"Sinadura baliozkoa da, baina <a href=\"%1\">ziurtagiria</a>ren "
+"baliozkotasuna ezezaguna da."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is marginally "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
 msgstr ""
-"Sinadura baliozkoa da eta <a href=\"%1\">gakoak</a> bazterreko konfiantza du."
+"Sinadura baliozkoa da eta <a href=\"%1\">ziurtagiria</a>k bazterreko "
+"konfiantza du."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr ""
-"Sinadura baliozkoa da eta <a href=\"%1\">gakoak</a> konfiantza osoa du."
+"Sinadura baliozkoa da eta <a href=\"%1\">ziurtagiri</a>k konfiantza osoa du."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is ultimately "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
 msgstr ""
-"Sinadura baliozkoa da, eta <a href=\"%1\">gakoak</a> erabateko konfiantza du."
+"Sinadura baliozkoa da, eta <a href=\"%1\">ziurtagiri</a>k erabateko "
+"konfiantza du."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
 msgstr ""
-"Sinadura baliozkoa da, baina <a href=\"%1\">gakoak</a> ez du konfiantzarik."
+"Sinadura baliozkoa da, baina <a href=\"%1\">ziurtagiria</a>k ez du "
+"konfiantzarik."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the key for "
-#| "it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the certificate "
 "for it."
 msgstr ""
-"Mezu hau «VS-NfD»rekiko manakor zifratuta dago baina ez dugu dagokion gakoa."
+"Mezu hau «VS-NfD»rekiko manakor zifratuta dago baina ez dugu dagokion "
+"ziurtagiria."
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
@@ -461,10 +413,7 @@ msgid "This message is encrypted."
 msgstr "Mezu hau zifratuta dago."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following certificate:"
-#| msgid_plural "The message is encrypted for the following certificates:"
+#, kde-format
 msgid "The message is encrypted for the following certificates:"
 msgstr "Mezua ondoko ziurtagirirako zifratuta dago:"
 
@@ -644,7 +593,7 @@ msgstr "E-posta fitxategiak (*.eml *.mbox)"
 #: widgets/messageviewerdialog.cpp:146
 #, kde-format
 msgid "File %1 could not be created."
-msgstr "%1 fitxategi ezin izan du sortu."
+msgstr "Ezin izan du %1 fitxategi sortu."
 
 #: widgets/messageviewerdialog.cpp:146 widgets/messageviewerdialog.cpp:162
 #, kde-format
@@ -661,7 +610,7 @@ msgstr "Gorde deszifratutako fitxategia"
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr "%1 fitxategi ezin izan du sortu."
+msgstr "Ezin izan da %1 fitxategi sortu."
 
 #: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:192
 #, kde-format
@@ -685,7 +634,7 @@ msgstr ""
 #: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
-msgstr "KMail Error"
+msgstr "KMail errorea"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"
