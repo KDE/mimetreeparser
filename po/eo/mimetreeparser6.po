@@ -66,34 +66,26 @@ msgid "Failed to open attachment."
 msgstr "Malsukcesis malfermi aldonaĵon."
 
 #: core/attachmentmodel.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "No keys were found in this attachment"
+#, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr "Neniuj ŝlosiloj estis trovitaj en ĉi tiu aldonaĵo"
+msgstr "Neniuj atestiloj estis trovitaj en ĉi tiu aldonaĵo"
 
 #: core/attachmentmodel.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key imported"
-#| msgid_plural "%1 keys imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] "unu ŝlosilo importita"
-msgstr[1] "%1 ŝlosiloj importitaj"
+msgstr[0] "unu atestilo importita"
+msgstr[1] "%1 atestiloj importitaj"
 
 #: core/attachmentmodel.cpp:389
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key was already imported"
-#| msgid_plural "%1 keys were already imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "unu ŝlosilo estis jam importita"
-msgstr[1] "%1 ŝlosiloj estis jam importitaj"
+msgstr[0] "unu atestilo estis jam importita"
+msgstr[1] "%1 atestiloj estis jam importitaj"
 
 #: core/messageparser.cpp:47
 #, kde-format
@@ -236,7 +228,7 @@ msgstr "Konservi Aldonaĵon Kiel"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "Importi atestilon"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
@@ -261,52 +253,40 @@ msgid "sent by %1 on %2"
 msgstr "sendita de %1 sur %2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1."
-msgstr "Ĉi tiu mesaĝo estis subskribita per la ŝlosilo %1."
+msgstr "Ĉi tiu mesaĝo estis subskribita per la atestilo %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key details are not available."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate details are not available."
-msgstr "La ŝlosilaj detaloj ne estas disponeblaj."
+msgstr "La atestilaj detaloj ne estas disponeblaj."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1 by %2."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1 by %2."
-msgstr "Ĉi tiu mesaĝo estis subskribita per la ŝlosilo %1 de %2."
+msgstr "Ĉi tiu mesaĝo estis subskribita per la atestilo %1 de %2."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate was revoked."
-msgstr "La ŝlosilo estis revokita."
+msgstr "La atestilo estis revokita."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate has expired."
-msgstr "La ŝlosilo eksvalidiĝis."
+msgstr "La atestilo eksvalidiĝis."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "You are trusting this key."
+#, kde-format
 msgctxt "@label"
 msgid "You are trusting this certificate."
-msgstr "Vi fidas ĉi tiun ŝlosilon."
+msgstr "Vi fidas ĉi tiun atestilon."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
@@ -317,39 +297,31 @@ msgstr "La subskribo estas nevalida."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid "This message is encrypted but we don't have the certificate for it."
-msgstr "Ĉi tiu mesaĝo estas ĉifrita sed ni ne havas la ŝlosilon por ĝi."
+msgstr "Ĉi tiu mesaĝo estas ĉifrita sed ni ne havas la atestilon por ĝi."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted to the certificate: %1"
-msgstr "Ĉi tiu mesaĝo estas ĉifrita al la ŝlosilo: %1"
+msgstr "Ĉi tiu mesaĝo estas ĉifrita al la atestilo: %1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed VS-NfD compliant using the key <a href="
-#| "\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
 msgstr ""
-"Ĉi tiu mesaĝo estis subskribita konforma al VS-NfD uzante la ŝlosilon <a "
+"Ĉi tiu mesaĝo estis subskribita konforma al VS-NfD uzante la atestilon <a "
 "href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "Ĉi tiu mesaĝo estis subskribita per la ŝlosilo <a href=\"%1\">%2</a>."
+msgstr "Ĉi tiu mesaĝo estis subskribita per la atestilo <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
@@ -364,93 +336,71 @@ msgid "This message has been signed by %1."
 msgstr "Ĉi tiu mesaĝo estis subskribita de %1."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr "La <a href=\"%1\">ŝlosilo</a> estis revokita."
+msgstr "La <a href=\"%1\">atestilo</a> estis revokita."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was expired."
-msgstr "La <a href=\"%1\">ŝlosilo</a> eksvalidiĝis."
+msgstr "La <a href=\"%1\">atestilo</a> eksvalidiĝis."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">key</a>'s validity is "
-#| "unknown."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
 msgstr ""
-"La subskribo validas, sed la valideco de la <a href=\"%1\">ŝlosilo</a> estas "
-"nekonata."
+"La subskribo validas, sed la valideco de la <a href=\"%1\">atestilo</a> "
+"estas nekonata."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is marginally "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
 msgstr ""
-"La subskribo validas kaj la <a href=\"%1\">ŝlosilo</a> estas marĝene fidinda."
+"La subskribo validas kaj la <a href=\"%1\">atestilo</a> estas marĝene "
+"fidinda."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr ""
-"La subskribo validas kaj la <a href=\"%1\">ŝlosilo</a> estas plene fidinda."
+"La subskribo validas kaj la <a href=\"%1\">atestilo</a> estas plene fidinda."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is ultimately "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
 msgstr ""
-"La subskribo validas kaj la <a href=\"%1\">ŝlosilo</a> estas finfine fidinda."
+"La subskribo validas kaj la <a href=\"%1\">atestilo</a> estas finfine "
+"fidinda."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
 msgstr ""
-"La subskribo validas, sed la <a href=\"%1\">ŝlosilo</a> estas nefidinda."
+"La subskribo validas, sed la <a href=\"%1\">atestilo</a> estas nefidinda."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the key for "
-#| "it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the certificate "
 "for it."
 msgstr ""
-"Ĉi tiu mesaĝo estas ĉifrita kun VS-NfD, sed ni ne havas la ŝlosilon por ĝi."
+"Ĉi tiu mesaĝo estas ĉifrita kun VS-NfD, sed ni ne havas la atestilon por ĝi."
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
@@ -463,12 +413,9 @@ msgid "This message is encrypted."
 msgstr "Ĉi tiu mesaĝo estas ĉifrita."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following certificate:"
-#| msgid_plural "The message is encrypted for the following certificates:"
+#, kde-format
 msgid "The message is encrypted for the following certificates:"
-msgstr "La mesaĝo estas ĉifrita por la sekva ŝlosilo:"
+msgstr "La mesaĝo estas ĉifrita por la sekvantaj atestiloj:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -686,10 +633,3 @@ msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Importi ŝlosilon"
-
-#~ msgid "The message is encrypted for the following keys:"
-#~ msgstr "La mesaĝo estas ĉifrita por la sekvaj ŝlosiloj:"
