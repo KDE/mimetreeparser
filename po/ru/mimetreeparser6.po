@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-08 00:39+0000\n"
-"PO-Revision-Date: 2024-02-09 23:12+0300\n"
+"PO-Revision-Date: 2024-02-10 14:18+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -34,13 +34,13 @@ msgstr "Размер"
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr ""
+msgstr "Зашифровано"
 
 #: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
-msgstr ""
+msgstr "Подписано"
 
 #: core/attachmentmodel.cpp:301
 #, kde-format
@@ -57,13 +57,13 @@ msgstr "вложение"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr ""
+msgstr "Не удалось сохранить вложение для открытия."
 
 #: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "Не удалось открыть вложение."
 
 #: core/attachmentmodel.cpp:381
 #, kde-format
@@ -112,22 +112,22 @@ msgstr "Неверный модуль шифрования."
 #: core/messagepart.cpp:988
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr ""
+msgstr "Не найдено соответствующего модуля шифрования."
 
 #: core/messagepart.cpp:990
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr ""
+msgstr "Модуль шифрования «%1» не может расшифровать письма."
 
 #: core/messagepart.cpp:992
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr ""
+msgstr "Модуль шифрования %1 не может расшифровать эти данные."
 
 #: core/messagepart.cpp:993
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Ошибка: %1"
 
 #: core/partmodel.cpp:514
 #, kde-format
@@ -158,19 +158,19 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr ""
+msgstr "Неверный пароль."
 
 #: core/utils.cpp:46
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr ""
+msgstr "Неизвестный ключ"
 
 #: core/utils.cpp:60
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " — "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -295,7 +295,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
-msgstr ""
+msgstr "Недействительная подпись."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
@@ -333,7 +333,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed by %1."
-msgstr ""
+msgstr "Это сообщение подписано %1."
 
 #: widgets/messagecontainerwidget.cpp:85
 #, kde-format
@@ -396,12 +396,12 @@ msgstr ""
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr ""
+msgstr "Это письмо зашифровано с использованием стандарта VS-NfD."
 
 #: widgets/messagecontainerwidget.cpp:215
 #, kde-format
 msgid "This message is encrypted."
-msgstr ""
+msgstr "Это письмо зашифровано."
 
 #: widgets/messagecontainerwidget.cpp:224
 #, kde-format
@@ -429,92 +429,92 @@ msgstr "Импортировать открытый ключ"
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "без_имени"
 
 #: widgets/messageviewer.cpp:107
 #, kde-format
 msgid "Save Attachment As"
-msgstr ""
+msgstr "Сохранить вложение как"
 
 #: widgets/messageviewer.cpp:264
 #, kde-format
 msgid "Invitation"
-msgstr ""
+msgstr "Приглашение"
 
 #: widgets/messageviewer.cpp:267
 #, kde-format
 msgid "&Summary:"
-msgstr ""
+msgstr "&Краткое описание:"
 
 #: widgets/messageviewer.cpp:268
 #, kde-format
 msgid "&Organizer:"
-msgstr ""
+msgstr "&Организатор:"
 
 #: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Location:"
-msgstr ""
+msgstr "&Местоположение:"
 
 #: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "&Start date:"
-msgstr ""
+msgstr "&Дата начала:"
 
 #: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&End date:"
-msgstr ""
+msgstr "Дата о&кончания:"
 
 #: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Details:"
-msgstr ""
+msgstr "&Сведения:"
 
 #: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "Encapsulated email"
-msgstr ""
+msgstr "Инкапсулированное письмо"
 
 #: widgets/messageviewer.cpp:306
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "От:"
 
 #: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "Date:"
-msgstr ""
+msgstr "Дата:"
 
 #: widgets/messageviewer.cpp:384
 #, kde-format
 msgid "&Subject:"
-msgstr ""
+msgstr "&Тема:"
 
 #: widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&From:"
-msgstr ""
+msgstr "&От:"
 
 #: widgets/messageviewer.cpp:390
 #, kde-format
 msgid "&Sender:"
-msgstr ""
+msgstr "&Отправитель:"
 
 #: widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&To:"
-msgstr ""
+msgstr "&Кому:"
 
 #: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&CC:"
-msgstr ""
+msgstr "&Копия:"
 
 #: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&BCC:"
-msgstr ""
+msgstr "&Скрытая копия:"
 
 #: widgets/messageviewer.cpp:402
 #, kde-format
@@ -537,7 +537,7 @@ msgstr "&Сохранить"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr ""
+msgstr "Сохранить расшифрованный файл"
 
 #: widgets/messageviewerdialog.cpp:112
 #, kde-format
@@ -579,29 +579,29 @@ msgstr "Сохранение файла"
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
-msgstr ""
+msgstr "Электронные письма (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:146
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Не удалось создать файл «%1»."
 
 #: widgets/messageviewerdialog.cpp:146 widgets/messageviewerdialog.cpp:162
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "Ошибка при сохранении письма"
 
 #: widgets/messageviewerdialog.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Сохранение расшифрованного файла"
 
 #: widgets/messageviewerdialog.cpp:162
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "Не удалось создать файл «%1»."
 
 #: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:192
 #, kde-format

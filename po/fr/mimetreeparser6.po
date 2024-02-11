@@ -1,18 +1,18 @@
-# SPDX-FileCopyrightText: 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-08 00:39+0000\n"
-"PO-Revision-Date: 2023-12-03 17:34+0100\n"
+"PO-Revision-Date: 2024-02-09 10:13+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -62,34 +62,26 @@ msgid "Failed to open attachment."
 msgstr "Impossible d'ouvrir une pièce jointe."
 
 #: core/attachmentmodel.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "No keys were found in this attachment"
+#, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr "Aucune clé n'a été trouvée dans cette pièce jointe."
+msgstr "Aucun certificat n'a été trouvé dans cette pièce jointe."
 
 #: core/attachmentmodel.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key imported"
-#| msgid_plural "%1 keys imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] "Une clé a été importée."
-msgstr[1] "%1 clés ont été importées."
+msgstr[0] "Un certificat a été importé."
+msgstr[1] "%1 certificats ont été importés."
 
 #: core/attachmentmodel.cpp:389
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key was already imported"
-#| msgid_plural "%1 keys were already imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "Une clé a déjà été importée."
-msgstr[1] "%1 clés ont déjà été importées."
+msgstr[0] "Un certificat a déjà été importé."
+msgstr[1] "%1 certificats ont déjà été importés."
 
 #: core/messageparser.cpp:47
 #, kde-format
@@ -236,7 +228,7 @@ msgstr "Enregistrer une pièce jointe comme"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "Importer un certificat"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
@@ -261,52 +253,40 @@ msgid "sent by %1 on %2"
 msgstr "envoyé par %1 vers %2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1."
-msgstr "Ce message a été signé en utilisant la clé %1."
+msgstr "Ce message a été signé en utilisant le certificat %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key details are not available."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate details are not available."
-msgstr "Les détails sur les clés sont indisponibles."
+msgstr "Les détails des certificats sont indisponibles."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1 by %2."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1 by %2."
-msgstr "Ce message a été signé en utilisant la clé %1 par %2."
+msgstr "Ce message a été signé en utilisant le certificat %1 parmi %2."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate was revoked."
-msgstr "La clé a été révoquée."
+msgstr "Le certificat a été révoqué."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate has expired."
-msgstr "La clé a expiré."
+msgstr "La certificat a expiré."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "You are trusting this key."
+#, kde-format
 msgctxt "@label"
 msgid "You are trusting this certificate."
-msgstr "Vous faites confiance à cette clé."
+msgstr "Vous faites confiance à ce certificat."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
@@ -317,40 +297,33 @@ msgstr "La signature est non valable."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid "This message is encrypted but we don't have the certificate for it."
 msgstr ""
-"Ce message est chiffré mais il n'y a aucune clé pour son déchiffrement."
+"Ce message est chiffré mais il n'y a aucun certificat pour son déchiffrement."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted to the certificate: %1"
-msgstr "Ce message est chiffré avec la clé : %1"
+msgstr "Ce message est chiffré avec le certificat : %1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed VS-NfD compliant using the key <a href="
-#| "\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
 msgstr ""
-"Ce message a été chiffré selon le mode « VS-NFD » en utilisant la clé <a "
-"href=\"%1\">%2</a>."
+"Ce message a été chiffré selon le mode « VS-NFD » en utilisant le certificat "
+"<a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "Ce message a été signé en utilisant la clé <a href=\"%1\">%2</a>."
+msgstr ""
+"Ce message a été signé en utilisant le certificat <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
@@ -365,95 +338,73 @@ msgid "This message has been signed by %1."
 msgstr "Ce message a été signé par %1."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr "La <a href=\"%1\">clé</a> a été révoquée."
+msgstr "Le <a href=\"%1\">certificat</a> a été révoqué."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was expired."
-msgstr "La <a href=\"%1\">clé</a> a expiré."
+msgstr "Le <a href=\"%1\">certificat</a> a expiré."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">key</a>'s validity is "
-#| "unknown."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
 msgstr ""
-"La signature est valable mais la validité de la <a href=\"%1\">clé</a> est "
-"inconnue."
+"La signature est valable mais la validité du <a href=\"%1\">certificat</a> "
+"est indéterminée."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is marginally "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a> est moyennement fiable."
+"La signature est valable et le <a href=\"%1\">certificat</a> est moyennement "
+"fiable."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a> est totalement fiable."
+"La signature est valable et le <a href=\"%1\">certificat</a> est totalement "
+"fiable."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is ultimately "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
 msgstr ""
-"La signature est valable et la <a href=\"%1\">clé</a> est en dernière "
-"analyse fiable."
+"La signature est valable et le <a href=\"%1\">certificat</a> est totalement "
+"fiable."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
 msgstr ""
-"La signature est valable mais la <a href=\"%1\">clé</a> n'est pas fiable."
+"La signature est valable mais le <a href=\"%1\">certificat> est non fiable."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the key for "
-#| "it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the certificate "
 "for it."
 msgstr ""
-"Ce message a été chiffré conformément au mode « VS-NFD » mais aucune clé "
-"n'est disponible pour le déchiffrement."
+"Ce message a été chiffré conformément au mode « VS-NFD » mais aucun "
+"certificat n'est disponible pour le déchiffrement."
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
@@ -466,12 +417,9 @@ msgid "This message is encrypted."
 msgstr "Ce message est chiffré."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following certificate:"
-#| msgid_plural "The message is encrypted for the following certificates:"
+#, kde-format
 msgid "The message is encrypted for the following certificates:"
-msgstr "Le message est chiffré avec le certificat suivant :"
+msgstr "Le message est chiffré avec les certificats suivants :"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
