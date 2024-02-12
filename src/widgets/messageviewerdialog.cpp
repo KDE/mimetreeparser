@@ -59,6 +59,12 @@ inline QString changeExtension(const QString &fileName)
 class MessageViewerDialog::Private
 {
 public:
+    Private(MessageViewerDialog *dialog)
+        : q(dialog)
+    {
+    }
+
+    MessageViewerDialog *const q;
     int currentIndex = 0;
     QList<KMime::Message::Ptr> messages;
     QString fileName;
@@ -85,6 +91,7 @@ void MessageViewerDialog::Private::setCurrentIndex(int index)
 
     currentIndex = index;
     messageViewer->setMessage(messages[currentIndex]);
+    q->setWindowTitle(messageViewer->subject());
 
     previousAction->setEnabled(currentIndex != 0);
     nextAction->setEnabled(currentIndex != messages.count() - 1);
@@ -212,7 +219,7 @@ void MessageViewerDialog::Private::printInternal(QPrinter *printer)
 
 MessageViewerDialog::MessageViewerDialog(const QList<KMime::Message::Ptr> &messages, QWidget *parent)
     : QDialog(parent)
-    , d(std::make_unique<Private>())
+    , d(std::make_unique<Private>(this))
 {
     d->messages += messages;
     initGUI();
@@ -220,7 +227,7 @@ MessageViewerDialog::MessageViewerDialog(const QList<KMime::Message::Ptr> &messa
 
 MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *parent)
     : QDialog(parent)
-    , d(std::make_unique<Private>())
+    , d(std::make_unique<Private>(this))
 {
     d->fileName = fileName;
     d->messages += MimeTreeParser::Core::FileOpener::openFile(fileName);
@@ -283,6 +290,7 @@ void MessageViewerDialog::initGUI()
 
     d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
     d->messageViewer->setMessage(d->messages[0]);
+    setWindowTitle(d->messageViewer->subject());
     layout->addWidget(d->messageViewer);
 
     auto buttonBox = new QDialogButtonBox(this);

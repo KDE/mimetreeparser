@@ -30,6 +30,9 @@ public:
     KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
 
+    /// Return the message subject
+    QString subject() const;
+
     void print(QPainter *painter, int width);
 
 private:
