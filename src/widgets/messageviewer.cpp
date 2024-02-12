@@ -194,6 +194,11 @@ MessageViewer::~MessageViewer()
     }
 }
 
+QString MessageViewer::subject() const
+{
+    return d->parser.subject();
+}
+
 KMime::Message::Ptr MessageViewer::message() const
 {
     return d->parser.message();
