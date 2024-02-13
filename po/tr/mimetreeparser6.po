@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-08 00:39+0000\n"
+"POT-Creation-Date: 2024-02-13 00:39+0000\n"
 "PO-Revision-Date: 2024-02-08 17:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -439,180 +439,180 @@ msgstr "adsız"
 msgid "Save Attachment As"
 msgstr "Eki Farklı Kaydet"
 
-#: widgets/messageviewer.cpp:264
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "Invitation"
 msgstr "Davet"
 
-#: widgets/messageviewer.cpp:267
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "&Summary:"
 msgstr "&Özet:"
 
-#: widgets/messageviewer.cpp:268
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizatör:"
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&Location:"
 msgstr "&Konum:"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Start date:"
 msgstr "&Başlangıç tarihi:"
 
-#: widgets/messageviewer.cpp:274
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&End date:"
 msgstr "B&itiş tarihi:"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:282
 #, kde-format
 msgid "&Details:"
 msgstr "&Ayrıntılar:"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsüllenmiş E-posta"
 
-#: widgets/messageviewer.cpp:306
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgid "From:"
 msgstr "Kimden:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:312
 #, kde-format
 msgid "Date:"
 msgstr "Tarih:"
 
-#: widgets/messageviewer.cpp:384
+#: widgets/messageviewer.cpp:389
 #, kde-format
 msgid "&Subject:"
 msgstr "K&onu:"
 
-#: widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp:392
 #, kde-format
 msgid "&From:"
 msgstr "&Kimden:"
 
-#: widgets/messageviewer.cpp:390
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Sender:"
 msgstr "&Gönderen:"
 
-#: widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:398
 #, kde-format
 msgid "&To:"
 msgstr "Kim&e:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp:401
 #, kde-format
 msgid "&CC:"
 msgstr "&Kopya:"
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp:404
 #, kde-format
 msgid "&BCC:"
 msgstr "&Gizli kopya:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp:407
 #, kde-format
 msgid "&Date:"
 msgstr "&Tarih:"
 
-#: widgets/messageviewerdialog.cpp:98
+#: widgets/messageviewerdialog.cpp:105
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&Dosya"
 
-#: widgets/messageviewerdialog.cpp:100
+#: widgets/messageviewerdialog.cpp:107
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Kaydet"
 
-#: widgets/messageviewerdialog.cpp:106
+#: widgets/messageviewerdialog.cpp:113
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Şifresi Çözülmüş Kaydet"
 
-#: widgets/messageviewerdialog.cpp:112
+#: widgets/messageviewerdialog.cpp:119
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Yazdırma Önizlemesi"
 
-#: widgets/messageviewerdialog.cpp:118
+#: widgets/messageviewerdialog.cpp:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Ya&zdır"
 
-#: widgets/messageviewerdialog.cpp:125
+#: widgets/messageviewerdialog.cpp:132
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&Dolaşım"
 
-#: widgets/messageviewerdialog.cpp:126
+#: widgets/messageviewerdialog.cpp:133
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Önceki İleti"
 
-#: widgets/messageviewerdialog.cpp:130
+#: widgets/messageviewerdialog.cpp:137
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Sonraki İleti"
 
-#: widgets/messageviewerdialog.cpp:140
+#: widgets/messageviewerdialog.cpp:147
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerdialog.cpp:158
+#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerdialog.cpp:165
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
 msgstr "E-posta dosyaları (*.eml *.mbox)"
 
-#: widgets/messageviewerdialog.cpp:146
+#: widgets/messageviewerdialog.cpp:153
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "%1 dosyası oluşturulamadı."
 
-#: widgets/messageviewerdialog.cpp:146 widgets/messageviewerdialog.cpp:162
+#: widgets/messageviewerdialog.cpp:153 widgets/messageviewerdialog.cpp:169
 #, kde-format
 msgid "Error saving message"
 msgstr "İleti kaydedilirken hata"
 
-#: widgets/messageviewerdialog.cpp:156
+#: widgets/messageviewerdialog.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Şifresi Çözülmüş Dosya Kaydet"
 
-#: widgets/messageviewerdialog.cpp:162
+#: widgets/messageviewerdialog.cpp:169
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "%1 dosyası oluşturulamadı."
 
-#: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:192
+#: widgets/messageviewerdialog.cpp:187 widgets/messageviewerdialog.cpp:199
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Belgeyi Yazdır"
 
-#: widgets/messageviewerdialog.cpp:244
+#: widgets/messageviewerdialog.cpp:251
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
