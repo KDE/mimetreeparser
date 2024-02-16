@@ -42,13 +42,13 @@ Item {
 
                 Component.onCompleted: loadHtml(content, "file:///")
                 onLoadingChanged: loadingInfo => {
-                    if (loadingInfo.status == WebEngineView.LoadFailedStatus) {
+                    if (loadingInfo.status === WebEngineView.LoadFailedStatus) {
                         console.warn("Failed to load html content.")
                         console.warn("Error is ", loadingInfo.errorString)
                     }
                     root.contentWidth = Math.max(contentsSize.width, flickable.minimumSize)
 
-                    if (loadingInfo.status == WebEngineView.LoadSucceededStatus) {
+                    if (loadingInfo.status === WebEngineView.LoadSucceededStatus) {
                         runJavaScript("[document.body.scrollHeight, document.body.scrollWidth, document.documentElement.scrollHeight]", function(result) {
                             root.contentHeight = Math.min(Math.max(result[0], result[2]), 4000);
                             root.contentWidth = Math.min(Math.max(result[1], flickable.width), 2000)
@@ -62,7 +62,7 @@ Item {
                 }
                 onNavigationRequested: request => {
                     console.debug("Nav request ", request.navigationType, request.url)
-                    if (request.navigationType == WebEngineNavigationRequest.LinkClickedNavigation) {
+                    if (request.navigationType === WebEngineNavigationRequest.LinkClickedNavigation) {
                         Qt.openUrlExternally(request.url)
                         request.action = WebEngineNavigationRequest.IgnoreRequest
                     }
