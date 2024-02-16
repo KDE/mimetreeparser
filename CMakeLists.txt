@@ -104,7 +104,7 @@ install(FILES
 )
 ecm_qt_install_logging_categories(
     EXPORT MIMETREEPARSERNG
-    FILE mimetreeparser2.categories
+    FILE mimetreeparser.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
