@@ -72,9 +72,36 @@ class MultiPartMixedBodyPartFormatter : public MimeTreeParser::Interface::BodyPa
 public:
     MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
-        const auto contents = node->contents();
+        auto contents = node->contents();
         if (contents.isEmpty()) {
             return {};
+        }
+
+        bool isActuallyMixedEncrypted = false;
+        for (const auto &content : std::as_const(contents)) {
+            if (content->contentType()->mimeType() == QByteArrayLiteral("application/pgp-encrypted")
+                || content->contentType()->mimeType() == QByteArrayLiteral("application/pkcs7-mime")) {
+                isActuallyMixedEncrypted = true;
+            }
+        }
+
+        if (isActuallyMixedEncrypted) {
+            // Remove explaination
+            contents.erase(std::remove_if(contents.begin(),
+                                          contents.end(),
+                                          [](const auto content) {
+                                              return content->contentType()->mimeType() == "text/plain";
+                                          }),
+                           contents.end());
+
+            if (contents.count() == 1 && contents[0]->contentType()->mimeType() == QByteArrayLiteral("application/pkcs7-mime")) {
+                qWarning() << contents[0]->decodedText() << contents[0]->decodedContent();
+
+                auto data = findTypeInDirectChildren(node, "application/pkcs7-mime");
+                auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), node, data));
+                mp->setIsEncrypted(true);
+                return mp;
+            }
         }
 
         // we need the intermediate part to preserve the headers (necessary for with protected headers using multipart mixed)
