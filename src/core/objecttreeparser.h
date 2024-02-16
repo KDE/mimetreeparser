@@ -37,26 +37,26 @@ public:
     explicit ObjectTreeParser() = default;
     virtual ~ObjectTreeParser() = default;
 
-    QString structureAsString() const;
+    [[nodiscard]] QString structureAsString() const;
     void print();
 
     /// The text of the message, ie. what would appear in the
     /// composer's text editor if this was edited or replied to.
     /// This is usually the content of the first text/plain MIME part.
-    QString plainTextContent();
+    [[nodiscard]] QString plainTextContent();
 
     /// Similar to plainTextContent(), but returns the HTML source of
     /// the first text/html MIME part.
-    QString htmlContent();
+    [[nodiscard]] QString htmlContent();
 
     /// Returns whether the parsed message contains encrypted parts.
-    bool hasEncryptedParts() const;
+    [[nodiscard]] bool hasEncryptedParts() const;
 
     /// Returns whether the parsed message contains signed parts.
     ///
     /// \warning This doesn't check whether signed parts exists inside
     /// encrypted parts that have not been decrypted yet.
-    bool hasSignedParts() const;
+    [[nodiscard]] bool hasSignedParts() const;
 
     /** Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
@@ -64,27 +64,27 @@ public:
     void parseObjectTree(const QByteArray &mimeMessage);
     MessagePart::Ptr parsedPart() const;
     KMime::Content *find(const std::function<bool(KMime::Content *)> &select);
-    MessagePart::List collectContentParts();
-    MessagePart::List collectContentParts(MessagePart::Ptr start);
-    MessagePart::List collectAttachmentParts();
+    [[nodiscard]] MessagePart::List collectContentParts();
+    [[nodiscard]] MessagePart::List collectContentParts(MessagePart::Ptr start);
+    [[nodiscard]] MessagePart::List collectAttachmentParts();
 
     /** Decrypt parts and verify signatures */
     void decryptAndVerify();
 
     /** Embedd content referenced by cid by inlining */
-    QString resolveCidLinks(const QString &html);
+    [[nodiscard]] QString resolveCidLinks(const QString &html);
 
 private:
     /**
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
      * top-level content.
      */
-    MessagePart::Ptr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    MessagePart::List processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType);
+    MIMETREEPARSER_CORE_NO_EXPORT MessagePart::Ptr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
+    MIMETREEPARSER_CORE_NO_EXPORT MessagePart::List processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType);
 
-    MessagePart::List defaultHandling(KMime::Content *node);
+    MIMETREEPARSER_CORE_NO_EXPORT MessagePart::List defaultHandling(KMime::Content *node);
 
-    QByteArray codecNameFor(KMime::Content *node) const;
+    MIMETREEPARSER_CORE_NO_EXPORT QByteArray codecNameFor(KMime::Content *node) const;
 
     KMime::Content *mTopLevelContent{nullptr};
     MessagePart::Ptr mParsedPart;

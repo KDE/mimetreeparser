@@ -36,7 +36,7 @@ protected:
     bool event(QEvent *event) override;
 
 private:
-    void createLayout();
+    MIMETREEPARSER_WIDGETS_NO_EXPORT void createLayout();
 
     bool m_isSigned;
     SignatureInfo const m_signatureInfo;

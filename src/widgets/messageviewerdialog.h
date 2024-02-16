@@ -33,10 +33,10 @@ public:
 
     QToolBar *toolBar() const;
 
-    QList<KMime::Message::Ptr> messages() const;
+    [[nodiscard]] QList<KMime::Message::Ptr> messages() const;
 
 private:
-    void initGUI();
+    MIMETREEPARSER_WIDGETS_NO_EXPORT void initGUI();
 
     class Private;
     std::unique_ptr<Private> const d;

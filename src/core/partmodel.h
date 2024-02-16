@@ -80,8 +80,8 @@ public:
     int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
     void setShowHtml(bool html);
-    bool showHtml() const;
-    bool containsHtml() const;
+    [[nodiscard]] bool showHtml() const;
+    [[nodiscard]] bool containsHtml() const;
 
     void setTrimMail(bool trim);
     bool trimMail() const;

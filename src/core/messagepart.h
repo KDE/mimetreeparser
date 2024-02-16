@@ -72,30 +72,35 @@ public:
 
     virtual bool isHtml() const;
 
-    QByteArray mimeType() const;
-    QByteArray charset() const;
-    QString filename() const;
-    Disposition disposition() const;
-    bool isText() const;
+    [[nodiscard]] QByteArray mimeType() const;
+    [[nodiscard]] QByteArray charset() const;
+    [[nodiscard]] QString filename() const;
+    [[nodiscard]] Disposition disposition() const;
+    [[nodiscard]] bool isText() const;
 
-    enum Error { NoError = 0, PassphraseError, NoKeyError, UnknownError };
+    enum Error {
+        NoError = 0,
+        PassphraseError,
+        NoKeyError,
+        UnknownError,
+    };
 
-    Error error() const;
-    QString errorString() const;
+    [[nodiscard]] Error error() const;
+    [[nodiscard]] QString errorString() const;
 
     PartMetaData *partMetaData();
 
     void appendSubPart(const MessagePart::Ptr &messagePart);
     const QList<MessagePart::Ptr> &subParts() const;
-    bool hasSubParts() const;
+    [[nodiscard]] bool hasSubParts() const;
 
     KMime::Content *node() const;
 
     virtual KMMsgSignatureState signatureState() const;
     virtual KMMsgEncryptionState encryptionState() const;
 
-    QList<SignedMessagePart *> signatures() const;
-    QList<EncryptedMessagePart *> encryptions() const;
+    [[nodiscard]] QList<SignedMessagePart *> signatures() const;
+    [[nodiscard]] QList<EncryptedMessagePart *> encryptions() const;
 
     /**
      * Retrieve the header @header in this part or any parent parent.
@@ -109,7 +114,7 @@ public:
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart = false);
     void parseInternal(const QByteArray &data);
-    QString renderInternalText() const;
+    [[nodiscard]] QString renderInternalText() const;
 
     QString mText;
     ObjectTreeParser *mOtp;

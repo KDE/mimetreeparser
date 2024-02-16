@@ -27,11 +27,11 @@ public:
     explicit MessageViewer(QWidget *parent = nullptr);
     ~MessageViewer() override;
 
-    KMime::Message::Ptr message() const;
+    [[nodiscard]] KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
 
     /// Return the message subject
-    QString subject() const;
+    [[nodiscard]] QString subject() const;
 
     void print(QPainter *painter, int width);
 
