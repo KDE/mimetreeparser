@@ -68,7 +68,7 @@ PUBLIC
     KPim6::Mime
     KPim6::Mbox
     KF6::I18n
-    Qt6::Gui
+    Qt::Gui
 PRIVATE
     KF6::Codecs
     Gpgmepp

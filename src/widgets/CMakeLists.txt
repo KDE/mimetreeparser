@@ -44,10 +44,10 @@ target_include_directories(KPim6MimeTreeParserWidgets INTERFACE "$<INSTALL_INTER
 
 target_link_libraries(KPim6MimeTreeParserWidgets
 PUBLIC
-    Qt6::Widgets
+    Qt::Widgets
     KPim6::MimeTreeParserCore
 PRIVATE
-    Qt6::PrintSupport
+    Qt::PrintSupport
     KF6::Codecs
     KF6::I18n
     KF6::CalendarCore
