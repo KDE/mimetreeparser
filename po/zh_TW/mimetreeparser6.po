@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:39+0000\n"
-"PO-Revision-Date: 2024-01-22 17:40+0900\n"
+"PO-Revision-Date: 2024-02-19 08:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -228,7 +228,7 @@ msgstr "另存附件"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "匯入憑證"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
@@ -261,12 +261,10 @@ msgid "This message has been signed using the certificate %1."
 msgstr "這個信件已使用金鑰 %1 簽署。"
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key details are not available."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate details are not available."
-msgstr "金鑰詳細資料不可用。"
+msgstr "憑證詳細資料不可用。"
 
 #: quick/qml/private/MailPartModel.qml:58
 #, fuzzy, kde-format
@@ -277,28 +275,22 @@ msgid "This message has been signed using the certificate %1 by %2."
 msgstr "這個信件已由 %2 使用金鑰 %1 簽署。"
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate was revoked."
-msgstr "此金鑰已撤銷。"
+msgstr "此憑證已撤銷。"
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate has expired."
-msgstr "此金鑰已過期。"
+msgstr "此憑證已過期。"
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "You are trusting this key."
+#, kde-format
 msgctxt "@label"
 msgid "You are trusting this certificate."
-msgstr "您正信任此金鑰。"
+msgstr "您正信任此憑證。"
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
@@ -309,16 +301,14 @@ msgstr "簽章無效。"
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid "This message is encrypted but we don't have the certificate for it."
-msgstr "這個信件已加密，但我們沒有它的金鑰。"
+msgstr "這個信件已加密，但我們沒有它的憑證。"
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted to the certificate: %1"
-msgstr "這個信件已加密給金鑰：%1"
+msgstr "這個信件已加密給憑證：%1"
 
 #: widgets/messagecontainerwidget.cpp:60
 #, fuzzy, kde-format
@@ -352,76 +342,55 @@ msgid "This message has been signed by %1."
 msgstr "這個信件已由 %1 簽署。"
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr "此<a href=\"%1\">金鑰</a>已撤銷。"
+msgstr "此<a href=\"%1\">憑證</a>已撤銷。"
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was expired."
-msgstr "此<a href=\"%1\">金鑰</a>已過期。"
+msgstr "此<a href=\"%1\">憑證</a>已過期。"
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">key</a>'s validity is "
-#| "unknown."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
-msgstr "此簽章是有效的，但是無法辨識<a href=\"%1\">鍵值</a>是否有效。"
+msgstr "此簽章是有效的，但是無法辨識<a href=\"%1\">憑證</a>是否有效。"
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is marginally "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
-msgstr "此簽章是有效的，而且<a href=\"%1\">鍵值</a>有最低的可信度。"
+msgstr "此簽章是有效的，而且<a href=\"%1\">憑證</a>有最低的可信度。"
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
-msgstr "此簽章是有效的，而且<a href=\"%1\">鍵值</a>完全可信。"
+msgstr "此簽章是有效的，而且<a href=\"%1\">憑證</a>完全可信。"
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is ultimately "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
-msgstr "此簽章是有效的，而且<a href=\"%1\">鍵值</a>絕對可信。"
+msgstr "此簽章是有效的，而且<a href=\"%1\">憑證</a>絕對可信。"
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
-msgstr "此簽章是有效的，不過<a href=\"%1\">鍵值</a>不可信。"
+msgstr "此簽章是有效的，不過<a href=\"%1\">憑證</a>不可信。"
 
 #: widgets/messagecontainerwidget.cpp:205
 #, fuzzy, kde-format
@@ -442,10 +411,7 @@ msgid "This message is encrypted."
 msgstr "此信件已加密。"
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following certificate:"
-#| msgid_plural "The message is encrypted for the following certificates:"
+#, kde-format
 msgid "The message is encrypted for the following certificates:"
 msgstr "這個信件為以下憑證加密："
 
