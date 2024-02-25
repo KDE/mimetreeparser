@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# Tommi Nieminen <translator@legisign.org>, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:39+0000\n"
-"PO-Revision-Date: 2023-12-11 18:17+0200\n"
+"PO-Revision-Date: 2024-02-14 19:04+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -65,34 +65,26 @@ msgid "Failed to open attachment."
 msgstr "Liitettä ei voitu avata."
 
 #: core/attachmentmodel.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "No keys were found in this attachment"
+#, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr "Liitteestä ei löytynyt avaimia."
+msgstr "Liitteestä ei löytynyt varmenteita"
 
 #: core/attachmentmodel.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key imported"
-#| msgid_plural "%1 keys imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] "tuotiin yksi avain"
-msgstr[1] "tuotiin %1 avainta"
+msgstr[0] "tuotiin yksi varmenne"
+msgstr[1] "tuotiin %1 varmennetta"
 
 #: core/attachmentmodel.cpp:389
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key was already imported"
-#| msgid_plural "%1 keys were already imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "yksi avain oli jo tuotu"
-msgstr[1] "%1 avainta oli jo tuotu"
+msgstr[0] "yksi varmenne oli jo tuotu"
+msgstr[1] "%1 varmennetta oli jo tuotu"
 
 #: core/messageparser.cpp:47
 #, kde-format
@@ -233,7 +225,7 @@ msgstr "Tallenna liite nimellä"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "Tuo varmenne"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
@@ -258,52 +250,40 @@ msgid "sent by %1 on %2"
 msgstr "lähettänyt %1 %2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1."
-msgstr "Viesti on allekirjoitettu avaimella %1."
+msgstr "Viesti on allekirjoitettu varmenteella %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key details are not available."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate details are not available."
-msgstr "Avaimen tietoja ei ole saatavilla."
+msgstr "Varmenteen tiedot eivät ole saatavilla."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1 by %2."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1 by %2."
-msgstr "Viesti on allekirjoitettu käyttäjän %2 avaimella %1."
+msgstr "Viesti on allekirjoitettu käyttäjän %2 varmenteella %1."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate was revoked."
-msgstr "Avain on peruttu."
+msgstr "Varmenne on peruttu."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate has expired."
-msgstr "Avain on vanhentunut."
+msgstr "Varmenne on vanhentunut."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "You are trusting this key."
+#, kde-format
 msgctxt "@label"
 msgid "You are trusting this certificate."
-msgstr "Luotat tähän avaimeen."
+msgstr "Luotat tähän varmenteeseen."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
@@ -314,39 +294,31 @@ msgstr "Allekirjoitus on virheellinen."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid "This message is encrypted but we don't have the certificate for it."
-msgstr "Viesti on salattu, mutta sille ei vielä ole avainta."
+msgstr "Viesti on salattu, mutta sille ei vielä ole varmennetta."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted to the certificate: %1"
-msgstr "Viesti on salattu avaimella: %1"
+msgstr "Viesti on salattu varmenteella: %1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed VS-NfD compliant using the key <a href="
-#| "\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
 msgstr ""
-"Viesti on allekirjoitettu VS-NfD-yhteensopivasti avaimella <a href=\"%1\">"
+"Viesti on allekirjoitettu VS-NfD-yhteensopivasti varmenteella <a href=\"%1\">"
 "%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "Viesti on allekirjoitettu avaimella <a href=\"%1\">%2</a>."
+msgstr "Viesti on allekirjoitettu varmenteella <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
@@ -361,96 +333,73 @@ msgid "This message has been signed by %1."
 msgstr "Viestin on allekirjoittanut %1."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr "<a href=\"%1\">Avain</a> on peruttu."
+msgstr "<a href=\"%1\">Varmenne</a> on peruttu."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">key</a> was expired."
+#, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was expired."
-msgstr "<a href=\"%1\">Avain</a> on vanhentunut."
+msgstr "<a href=\"%1\">Varmenne</a> on vanhentunut."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">key</a>'s validity is "
-#| "unknown."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
 msgstr ""
-"Allekirjoitus on kelvollinen, mutta <a href=\"%1\">avaimen</a> luotettavuus "
-"on tuntematon."
+"Allekirjoitus on kelvollinen mutta <a href=\"%1\">varmenteen</a> "
+"kelvollisuutta ei tunneta."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is marginally "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
 msgstr ""
-"Allekirjoitus on kelvollinen, ja <a href=\"%1\">avaimen</a> luotettavuus on "
-"ehdollinen."
+"Allekirjoitus on kelvollinen, ja <a href=\"%1\">varmenteeseen</a> luotetaan "
+"ehdollisesti."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr ""
-"Allekirjoitus on kelvollinen, ja <a href=\"%1\">avaimen</a> luotettavuus on "
-"täysi."
+"Allekirjoitus on kelvollinen, ja <a href=\"%1\">varmenteeseen</a> luotetaan "
+"täysin."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">key</a> is ultimately "
-#| "trusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
 msgstr ""
-"Allekirjoitus on kelvollinen, ja <a href=\"%1\">avaimen</a> luotettavuus on "
-"äärimmäinen."
+"Allekirjoitus on kelvollinen, ja <a href=\"%1\">varmenteeseen</a> luotetaan "
+"ehdottomasti."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
 msgstr ""
-"Allekirjoitus on kelvollinen, mutta <a href=\"%1\">avain</a> ei ole "
+"Allekirjoitus on kelvollinen, mutta <a href=\"%1\">varmenne</a> ei ole "
 "luotettava."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the key for "
-#| "it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the certificate "
 "for it."
-msgstr "Viesti on VS-NfD-yhteensopivasti salattu, mutta siihen ei ole avainta."
+msgstr ""
+"Viesti on VS-NfD-yhteensopivasti salattu, mutta siihen ei ole varmennetta."
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
@@ -463,12 +412,9 @@ msgid "This message is encrypted."
 msgstr "Viesti on salattu."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following certificate:"
-#| msgid_plural "The message is encrypted for the following certificates:"
+#, kde-format
 msgid "The message is encrypted for the following certificates:"
-msgstr "Viesti on salattu seuraavalle avaimelle:"
+msgstr "Viesti on salattu seuraaville varmenteille:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
