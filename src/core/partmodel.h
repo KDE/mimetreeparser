@@ -84,8 +84,8 @@ public:
     [[nodiscard]] bool containsHtml() const;
 
     void setTrimMail(bool trim);
-    bool trimMail() const;
-    bool isTrimmed() const;
+    [[nodiscard]] bool trimMail() const;
+    [[nodiscard]] bool isTrimmed() const;
 
 Q_SIGNALS:
     void showHtmlChanged();
