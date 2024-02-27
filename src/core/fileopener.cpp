@@ -104,7 +104,7 @@ QList<KMime::Message::Ptr> FileOpener::openFile(const QString &fileName)
 
     const auto content = file.readAll();
 
-    if (content.length() == 0) {
+    if (content.isEmpty()) {
         qCWarning(MIMETREEPARSER_CORE_LOG) << "File is empty";
         return {};
     }
