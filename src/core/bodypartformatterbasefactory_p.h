@@ -25,7 +25,6 @@ public:
 
     BodyPartFormatterBaseFactory *q;
     std::optional<TypeRegistry> all;
-    ObjectTreeParser *mOtp;
 };
 
 }
