@@ -36,20 +36,20 @@ public:
     explicit MessageParser(QObject *parent = Q_NULLPTR);
     ~MessageParser();
 
-    KMime::Message::Ptr message() const;
+    [[nodiscard]] KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
     PartModel *parts() const;
     AttachmentModel *attachments() const;
-    QString structureAsString() const;
-    bool loaded() const;
+    [[nodiscard]] QString structureAsString() const;
+    [[nodiscard]] bool loaded() const;
 
-    QString subject() const;
-    QString from() const;
-    QString sender() const;
-    QString to() const;
-    QString cc() const;
-    QString bcc() const;
-    QDateTime date() const;
+    [[nodiscard]] QString subject() const;
+    [[nodiscard]] QString from() const;
+    [[nodiscard]] QString sender() const;
+    [[nodiscard]] QString to() const;
+    [[nodiscard]] QString cc() const;
+    [[nodiscard]] QString bcc() const;
+    [[nodiscard]] QDateTime date() const;
 
 Q_SIGNALS:
     void htmlChanged();

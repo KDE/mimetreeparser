@@ -7,5 +7,5 @@
 
 namespace MimeTreeParser
 {
-QString linkify(const QString &in);
+[[nodiscard]] QString linkify(const QString &in);
 }

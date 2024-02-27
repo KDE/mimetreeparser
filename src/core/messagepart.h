@@ -57,20 +57,20 @@ public:
 
     virtual ~MessagePart();
 
-    virtual QString text() const;
+    [[nodiscard]] virtual QString text() const;
     void setText(const QString &text);
     virtual bool isAttachment() const;
 
     void setIsRoot(bool root);
-    bool isRoot() const;
+    [[nodiscard]] bool isRoot() const;
 
     void setParentPart(MessagePart *parentPart);
     MessagePart *parentPart() const;
 
-    virtual QString plaintextContent() const;
-    virtual QString htmlContent() const;
+    [[nodiscard]] virtual QString plaintextContent() const;
+    [[nodiscard]] virtual QString htmlContent() const;
 
-    virtual bool isHtml() const;
+    [[nodiscard]] virtual bool isHtml() const;
 
     [[nodiscard]] QByteArray mimeType() const;
     [[nodiscard]] QByteArray charset() const;
@@ -137,10 +137,10 @@ public:
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart = false);
     virtual ~MimeMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
 
 private:
     friend class AlternativeMessagePart;
@@ -154,10 +154,10 @@ public:
     MessagePartList(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~MessagePartList() = default;
 
-    QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
 };
 
 class MIMETREEPARSER_CORE_EXPORT TextMessagePart : public MessagePartList
@@ -168,8 +168,8 @@ public:
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~TextMessagePart() = default;
 
-    KMMsgSignatureState signatureState() const Q_DECL_OVERRIDE;
-    KMMsgEncryptionState encryptionState() const Q_DECL_OVERRIDE;
+    [[nodiscard]] KMMsgSignatureState signatureState() const Q_DECL_OVERRIDE;
+    [[nodiscard]] KMMsgEncryptionState encryptionState() const Q_DECL_OVERRIDE;
 
 private:
     void parseContent();
@@ -187,7 +187,7 @@ public:
     typedef QSharedPointer<AttachmentMessagePart> Ptr;
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~AttachmentMessagePart() = default;
-    virtual bool isAttachment() const Q_DECL_OVERRIDE
+    [[nodiscard]] virtual bool isAttachment() const Q_DECL_OVERRIDE
     {
         return true;
     }
@@ -200,7 +200,7 @@ public:
     typedef QSharedPointer<HtmlMessagePart> Ptr;
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~HtmlMessagePart() = default;
-    bool isHtml() const Q_DECL_OVERRIDE
+    [[nodiscard]] bool isHtml() const Q_DECL_OVERRIDE
     {
         return true;
     };
@@ -222,15 +222,15 @@ public:
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~AlternativeMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
 
-    bool isHtml() const Q_DECL_OVERRIDE;
+    [[nodiscard]] bool isHtml() const Q_DECL_OVERRIDE;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
-    QString icalContent() const;
+    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString icalContent() const;
 
-    QList<HtmlMode> availableModes();
+    [[nodiscard]] QList<HtmlMode> availableModes();
 
 private:
     QMap<HtmlMode, MessagePart::Ptr> mChildParts;
@@ -247,7 +247,7 @@ public:
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, QGpgME::Protocol *cryptoProto);
     virtual ~CertMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
 
 private:
     const QGpgME::Protocol *mCryptoProto;
@@ -262,9 +262,9 @@ public:
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
     virtual ~EncapsulatedRfc822MessagePart() = default;
 
-    QString text() const Q_DECL_OVERRIDE;
-    QString from() const;
-    QDateTime date() const;
+    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString from() const;
+    [[nodiscard]] QDateTime date() const;
 
 private:
     const KMime::Message::Ptr mMessage;
@@ -288,7 +288,7 @@ public:
 
     virtual ~EncryptedMessagePart() = default;
 
-    QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
 
     void setDecryptMessage(bool decrypt);
     [[nodiscard]] bool decryptMessage() const;
@@ -306,15 +306,15 @@ public:
 
     QByteArray mDecryptedData;
 
-    QString plaintextContent() const override;
-    QString htmlContent() const override;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 
     const QGpgME::Protocol *cryptoProto() const;
 
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> decryptRecipients() const;
 
 private:
-    bool decrypt(KMime::Content &data);
+    [[nodiscard]] bool decrypt(KMime::Content &data);
     bool mParseAfterDecryption{true};
 
 protected:
@@ -342,12 +342,12 @@ public:
     virtual ~SignedMessagePart();
 
     void setIsSigned(bool isSigned);
-    bool isSigned() const;
+    [[nodiscard]] bool isSigned() const;
 
     void startVerification();
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
 
     const QGpgME::Protocol *cryptoProto() const;
 

@@ -15,7 +15,7 @@ namespace Core
 namespace FileOpener
 {
 /// Open messages from file
-QList<KMime::Message::Ptr> MIMETREEPARSER_CORE_EXPORT openFile(const QString &fileName);
+[[nodiscard]] QList<KMime::Message::Ptr> MIMETREEPARSER_CORE_EXPORT openFile(const QString &fileName);
 }
 }
 }
