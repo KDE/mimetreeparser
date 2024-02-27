@@ -5,7 +5,6 @@
 #include "bodypartformatterbasefactory.h"
 #include "bodypartformatter.h"
 #include "bodypartformatterbasefactory_p.h"
-#include "mimetreeparser_core_debug.h"
 
 #include <assert.h>
 
