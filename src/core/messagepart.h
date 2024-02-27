@@ -172,7 +172,7 @@ public:
     [[nodiscard]] KMMsgEncryptionState encryptionState() const override;
 
 private:
-    void parseContent();
+    MIMETREEPARSER_CORE_NO_EXPORT void parseContent();
 
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
@@ -314,7 +314,7 @@ public:
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> decryptRecipients() const;
 
 private:
-    [[nodiscard]] bool decrypt(KMime::Content &data);
+    [[nodiscard]] MIMETREEPARSER_CORE_NO_EXPORT bool decrypt(KMime::Content &data);
     bool mParseAfterDecryption{true};
 
 protected:
@@ -352,8 +352,8 @@ public:
     const QGpgME::Protocol *cryptoProto() const;
 
 private:
-    void sigStatusToMetaData();
-    void setVerificationResult(const GpgME::VerificationResult &result, const QByteArray &signedData);
+    MIMETREEPARSER_CORE_NO_EXPORT void sigStatusToMetaData();
+    MIMETREEPARSER_CORE_NO_EXPORT void setVerificationResult(const GpgME::VerificationResult &result, const QByteArray &signedData);
     bool mParseAfterDecryption{true};
 
 protected:
