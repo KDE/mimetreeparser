@@ -137,10 +137,10 @@ public:
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart = false);
     virtual ~MimeMessagePart();
 
-    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const override;
 
-    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
-    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 
 private:
     friend class AlternativeMessagePart;
@@ -154,10 +154,10 @@ public:
     MessagePartList(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~MessagePartList() = default;
 
-    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const override;
 
-    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
-    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 };
 
 class MIMETREEPARSER_CORE_EXPORT TextMessagePart : public MessagePartList
@@ -168,8 +168,8 @@ public:
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~TextMessagePart() = default;
 
-    [[nodiscard]] KMMsgSignatureState signatureState() const Q_DECL_OVERRIDE;
-    [[nodiscard]] KMMsgEncryptionState encryptionState() const Q_DECL_OVERRIDE;
+    [[nodiscard]] KMMsgSignatureState signatureState() const override;
+    [[nodiscard]] KMMsgEncryptionState encryptionState() const override;
 
 private:
     void parseContent();
@@ -187,7 +187,7 @@ public:
     typedef QSharedPointer<AttachmentMessagePart> Ptr;
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~AttachmentMessagePart() = default;
-    [[nodiscard]] virtual bool isAttachment() const Q_DECL_OVERRIDE
+    [[nodiscard]] virtual bool isAttachment() const override
     {
         return true;
     }
@@ -200,7 +200,7 @@ public:
     typedef QSharedPointer<HtmlMessagePart> Ptr;
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~HtmlMessagePart() = default;
-    [[nodiscard]] bool isHtml() const Q_DECL_OVERRIDE
+    [[nodiscard]] bool isHtml() const override
     {
         return true;
     };
@@ -222,12 +222,12 @@ public:
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     virtual ~AlternativeMessagePart();
 
-    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const override;
 
-    [[nodiscard]] bool isHtml() const Q_DECL_OVERRIDE;
+    [[nodiscard]] bool isHtml() const override;
 
-    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
-    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
     [[nodiscard]] QString icalContent() const;
 
     [[nodiscard]] QList<HtmlMode> availableModes();
@@ -247,7 +247,7 @@ public:
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, QGpgME::Protocol *cryptoProto);
     virtual ~CertMessagePart();
 
-    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const override;
 
 private:
     const QGpgME::Protocol *mCryptoProto;
@@ -262,7 +262,7 @@ public:
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
     virtual ~EncapsulatedRfc822MessagePart() = default;
 
-    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const override;
     [[nodiscard]] QString from() const;
     [[nodiscard]] QDateTime date() const;
 
@@ -288,7 +288,7 @@ public:
 
     virtual ~EncryptedMessagePart() = default;
 
-    [[nodiscard]] QString text() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString text() const override;
 
     void setDecryptMessage(bool decrypt);
     [[nodiscard]] bool decryptMessage() const;
@@ -346,8 +346,8 @@ public:
 
     void startVerification();
 
-    [[nodiscard]] QString plaintextContent() const Q_DECL_OVERRIDE;
-    [[nodiscard]] QString htmlContent() const Q_DECL_OVERRIDE;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 
     const QGpgME::Protocol *cryptoProto() const;
 

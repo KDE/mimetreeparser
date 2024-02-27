@@ -27,7 +27,7 @@ class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartForma
 class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         return MessagePart::Ptr(new EncapsulatedRfc822MessagePart(objectTreeParser, node, node->bodyAsMessage()));
     }
@@ -36,7 +36,7 @@ public:
 class HeadersBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         return MessagePart::Ptr(new HeadersPart(objectTreeParser, node));
     }
@@ -45,7 +45,7 @@ public:
 class MultiPartRelatedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    QList<MessagePart::Ptr> processList(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    QList<MessagePart::Ptr> processList(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().isEmpty()) {
             return {};
@@ -70,7 +70,7 @@ public:
 class MultiPartMixedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         const auto contents = node->contents();
         if (contents.isEmpty()) {
@@ -87,7 +87,7 @@ public:
 class ApplicationPGPEncryptedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->decodedContent().trimmed() != "Version: 1") {
             qCWarning(MIMETREEPARSER_CORE_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
@@ -112,7 +112,7 @@ public:
 class ApplicationPkcs7MimeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->head().isEmpty()) {
             return MessagePart::Ptr();
@@ -194,7 +194,7 @@ public:
 class MultiPartAlternativeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().isEmpty()) {
             return MessagePart::Ptr();
@@ -211,7 +211,7 @@ public:
 class MultiPartEncryptedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().isEmpty()) {
             Q_ASSERT(false);
@@ -270,7 +270,7 @@ public:
         return protocol;
     }
 
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().size() != 2) {
             qCDebug(MIMETREEPARSER_CORE_LOG) << "mulitpart/signed must have exactly two child parts!" << Qt::endl << "processing as multipart/mixed";
@@ -300,7 +300,7 @@ public:
 class TextHtmlBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         return HtmlMessagePart::Ptr(new HtmlMessagePart(objectTreeParser, node));
     }
@@ -309,7 +309,7 @@ public:
 class TextPlainBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const Q_DECL_OVERRIDE
+    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (KMime::isAttachment(node)) {
             return AttachmentMessagePart::Ptr(new AttachmentMessagePart(objectTreeParser, node));
