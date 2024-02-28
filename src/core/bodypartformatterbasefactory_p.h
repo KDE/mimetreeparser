@@ -11,7 +11,6 @@
 namespace MimeTreeParser
 {
 class BodyPartFormatterBaseFactory;
-class ObjectTreeParser;
 
 class BodyPartFormatterBaseFactoryPrivate
 {
