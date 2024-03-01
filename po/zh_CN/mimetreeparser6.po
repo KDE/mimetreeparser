@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:39+0000\n"
-"PO-Revision-Date: 2024-02-05 11:37\n"
+"PO-Revision-Date: 2024-02-29 12:53\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -65,32 +65,24 @@ msgid "Failed to open attachment."
 msgstr "无法打开附件。"
 
 #: core/attachmentmodel.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "No keys were found in this attachment"
+#, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr "没有在此附件中找到密钥"
+msgstr ""
 
 #: core/attachmentmodel.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key imported"
-#| msgid_plural "%1 keys imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] "已导入 %1 个密钥"
+msgstr[0] ""
 
 #: core/attachmentmodel.cpp:389
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key was already imported"
-#| msgid_plural "%1 keys were already imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "%1 个密钥已经被导入过了"
+msgstr[0] ""
 
 #: core/messageparser.cpp:47
 #, kde-format
@@ -253,52 +245,40 @@ msgid "sent by %1 on %2"
 msgstr "由 %1 发送于 %2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1."
-msgstr "此消息已使用密钥 %1 签名。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key details are not available."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate details are not available."
-msgstr "无法获取密钥详情。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1 by %2."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1 by %2."
-msgstr "此消息已由 %2 使用密钥 %1 签名。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key was revoked."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate was revoked."
-msgstr "此密钥已被吊销。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The key has expired."
+#, kde-format
 msgctxt "@label"
 msgid "The certificate has expired."
-msgstr "此密钥已过期。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "You are trusting this key."
+#, kde-format
 msgctxt "@label"
 msgid "You are trusting this certificate."
-msgstr "您信任此密钥。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
@@ -309,35 +289,29 @@ msgstr "此签名无效。"
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid "This message is encrypted but we don't have the certificate for it."
-msgstr "此消息已加密，但我们没有它的密钥。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "This message is encrypted to the certificate: %1"
-msgstr "此消息已使用密钥 %1 加密"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1 by %2."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
-msgstr "此消息已由 %2 使用密钥 %1 签名。"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "此消息已使用密钥 %1 签名。"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
@@ -403,12 +377,11 @@ msgid ""
 msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the certificate "
 "for it."
-msgstr "此消息已加密，但我们没有它的密钥。"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
@@ -421,10 +394,9 @@ msgid "This message is encrypted."
 msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the key: %1"
+#, kde-format
 msgid "The message is encrypted for the following certificates:"
-msgstr "此消息已使用密钥 %1 加密"
+msgstr ""
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -642,7 +614,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr ""
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "导入密钥"
