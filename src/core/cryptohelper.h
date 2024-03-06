@@ -10,6 +10,7 @@
 #include <KMime/Message>
 #include <QByteArray>
 #include <QList>
+#include <gpgme++/global.h>
 
 namespace MimeTreeParser
 {
@@ -47,7 +48,7 @@ public:
 
 namespace CryptoUtils
 {
-[[nodiscard]] MIMETREEPARSER_CORE_EXPORT KMime::Message::Ptr decryptMessage(const KMime::Message::Ptr &decrypt, bool &wasEncrypted);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT KMime::Message::Ptr decryptMessage(const KMime::Message::Ptr &decrypt, bool &wasEncrypted, GpgME::Protocol &protoName);
 }
 
 } // namespace MimeTreeParser

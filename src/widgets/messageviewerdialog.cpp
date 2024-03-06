@@ -33,27 +33,19 @@ using namespace MimeTreeParser::Widgets;
 namespace
 {
 
-/// On windows, force the filename to end with .eml
-/// On Linux, do nothing as this is handled by the file picker
-inline QString changeExtension(const QString &fileName)
+inline QString changeExtension(const QString &fileName, const QString &extension)
 {
-#ifdef Q_OS_WIN
     auto renamedFileName = fileName;
-    renamedFileName.replace(QRegularExpression(QStringLiteral("\\.(mbox|p7m|asc)$")), QStringLiteral(".eml"));
+    renamedFileName.replace(QRegularExpression(QStringLiteral("\\.(mbox|p7m|asc)$")), extension);
 
     // In case the file name didn't contain any of the expected extension: mbox, p7m, asc and eml
     // or doesn't contains an extension at all.
-    if (!renamedFileName.endsWith(QStringLiteral(".eml"))) {
-        renamedFileName += QStringLiteral(".eml");
+    if (!renamedFileName.endsWith(extension)) {
+        renamedFileName += extension;
     }
 
     return renamedFileName;
-#else
-    // Handled automatically by the file picker on linux
-    return fileName;
-#endif
 }
-
 }
 
 class MessageViewerDialog::Private
@@ -143,10 +135,28 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
 
 void MessageViewerDialog::Private::save(QWidget *parent)
 {
-    const QString location = QFileDialog::getSaveFileName(parent,
-                                                          i18nc("@title:window", "Save File"),
-                                                          changeExtension(fileName),
-                                                          i18nc("File dialog accepted files", "Email files (*.eml *.mbox)"));
+    QString extension;
+    QString alternatives;
+    auto message = messages[currentIndex];
+    bool wasEncrypted = false;
+    GpgME::Protocol protocol;
+    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
+    Q_UNUSED(decryptedMessage); // we save the message without modifying it
+
+    if (wasEncrypted) {
+        extension = QStringLiteral(".mime");
+        if (protocol == GpgME::OpenPGP) {
+            alternatives = i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)");
+        } else {
+            alternatives = i18nc("File dialog accepted files", "Encrypted S/MIME files (*.p7m)");
+        }
+    } else {
+        extension = QStringLiteral(".eml");
+        alternatives = i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)");
+    }
+
+    const QString location =
+        QFileDialog::getSaveFileName(parent, i18nc("@title:window", "Save File"), changeExtension(fileName, QStringLiteral(".mime")), alternatives);
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
@@ -161,8 +171,8 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
 {
     const QString location = QFileDialog::getSaveFileName(parent,
                                                           i18nc("@title:window", "Save Decrypted File"),
-                                                          changeExtension(fileName),
-                                                          i18nc("File dialog accepted files", "Email files (*.eml *.mbox)"));
+                                                          changeExtension(fileName, QStringLiteral(".eml")),
+                                                          i18nc("File dialog accepted files", "Email files (*.eml *.mbox *mime)"));
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
@@ -171,7 +181,8 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
     }
     auto message = messages[currentIndex];
     bool wasEncrypted = false;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted);
+    GpgME::Protocol protocol;
+    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
     if (!wasEncrypted) {
         decryptedMessage = message;
     }

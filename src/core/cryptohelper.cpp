@@ -226,9 +226,9 @@ KMime::Message::Ptr assembleMessage(const KMime::Message::Ptr &orig, const KMime
 }
 }
 
-KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, bool &wasEncrypted)
+KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, bool &wasEncrypted, GpgME::Protocol &protoName)
 {
-    GpgME::Protocol protoName = GpgME::UnknownProtocol;
+    protoName = GpgME::UnknownProtocol;
     bool multipart = false;
     if (msg->contentType(false) && msg->contentType(false)->isMimeType("multipart/encrypted")) {
         multipart = true;

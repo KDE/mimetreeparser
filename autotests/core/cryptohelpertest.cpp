@@ -145,7 +145,8 @@ void CryptoHelperTest::testDecryptMessage()
     message->parse();
 
     bool wasEncrypted = false;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted);
+    GpgME::Protocol protocol;
+    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
     QVERIFY(wasEncrypted);
     QVERIFY(decryptedMessage);
     QCOMPARE(decryptedMessage->decodedContent(), QByteArray("encrypted message text"));
@@ -153,6 +154,7 @@ void CryptoHelperTest::testDecryptMessage()
              QByteArray("From test@kolab.org Wed, 08 Sep 2010 17: 02:52 +0200\nFrom: OpenPGP Test <test@kolab.org>\nTo: test@kolab.org\nSubject: OpenPGP "
                         "encrypted\nDate: Wed, 08 Sep 2010 17:02:52 +0200\nUser-Agent: KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; "
                         ")\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7Bit\nContent-Type: text/plain; charset=\"us-ascii\"\n\nencrypted message text"));
+    QCOMPARE(protocol, GpgME::OpenPGP);
 }
 
 void CryptoHelperTest::testDecryptInlineMessage()
@@ -164,7 +166,8 @@ void CryptoHelperTest::testDecryptInlineMessage()
     qWarning() << message->decodedContent();
 
     bool wasEncrypted = false;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted);
+    GpgME::Protocol protocol;
+    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
     QVERIFY(wasEncrypted);
     QVERIFY(decryptedMessage);
     QCOMPARE(decryptedMessage->decodedContent(), QByteArray("Not encrypted not signed :(\n\nsome random text\n"));
@@ -175,6 +178,7 @@ void CryptoHelperTest::testDecryptInlineMessage()
                         "<1786696.yKXrOjjflF@herrwackelpudding.localhost>\nX-KMail-Transport: GMX\nX-KMail-Fcc: 28\nX-KMail-Drafts: 7\nX-KMail-Templates: "
                         "9\nUser-Agent: KMail/4.6 beta5 (Linux/2.6.34.7-0.7-desktop; KDE/4.6.41; x86_64;\n git-0269848; 2011-04-19)\nMIME-Version: "
                         "1.0\nContent-Type: text/plain; charset=\"us-ascii\"\n\nNot encrypted not signed :(\n\nsome random text\n"));
+    QCOMPARE(protocol, GpgME::OpenPGP);
 }
 
 QTEST_APPLESS_MAIN(CryptoHelperTest)
