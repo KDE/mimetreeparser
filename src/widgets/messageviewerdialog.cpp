@@ -46,6 +46,38 @@ inline QString changeExtension(const QString &fileName, const QString &extension
 
     return renamedFileName;
 }
+
+#define SLASHES "/\\"
+
+inline QString changeFileName(const QString &fileName, const QString &subject)
+{
+    if (subject.isEmpty()) {
+        return fileName;
+    }
+
+    if (fileName.isEmpty()) {
+        return subject;
+    }
+
+    auto cleanedSubject = subject;
+
+    static const char notAllowedChars[] = ",^@={}[]~!?:&*\"|#%<>$\"'();`'/\\.";
+    static const char *notAllowedSubStrings[] = {"..", "  "};
+
+    for (const char *c = notAllowedChars; *c; c++) {
+        cleanedSubject.replace(QLatin1Char(*c), QStringLiteral(" "));
+    }
+
+    const int notAllowedSubStringCount = sizeof(notAllowedSubStrings) / sizeof(const char *);
+    for (int s = 0; s < notAllowedSubStringCount; s++) {
+        const QLatin1StringView notAllowedSubString(notAllowedSubStrings[s]);
+        cleanedSubject.replace(notAllowedSubString, QStringLiteral(" "));
+    }
+
+    QStringList splitedFileName = fileName.split(QLatin1Char('/'));
+    splitedFileName[splitedFileName.count() - 1] = cleanedSubject;
+    return splitedFileName.join(QLatin1Char('/'));
+}
 }
 
 class MessageViewerDialog::Private
@@ -155,8 +187,10 @@ void MessageViewerDialog::Private::save(QWidget *parent)
         alternatives = i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)");
     }
 
-    const QString location =
-        QFileDialog::getSaveFileName(parent, i18nc("@title:window", "Save File"), changeExtension(fileName, QStringLiteral(".mime")), alternatives);
+    const QString location = QFileDialog::getSaveFileName(parent,
+                                                          i18nc("@title:window", "Save File"),
+                                                          changeExtension(changeFileName(fileName, messageViewer->subject()), extension),
+                                                          alternatives);
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
@@ -171,7 +205,7 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
 {
     const QString location = QFileDialog::getSaveFileName(parent,
                                                           i18nc("@title:window", "Save Decrypted File"),
-                                                          changeExtension(fileName, QStringLiteral(".eml")),
+                                                          changeExtension(changeFileName(fileName, messageViewer->subject()), QStringLiteral(".eml")),
                                                           i18nc("File dialog accepted files", "Email files (*.eml *.mbox *mime)"));
 
     QSaveFile file(location);
