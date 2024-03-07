@@ -206,7 +206,7 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
     const QString location = QFileDialog::getSaveFileName(parent,
                                                           i18nc("@title:window", "Save Decrypted File"),
                                                           changeExtension(changeFileName(fileName, messageViewer->subject()), QStringLiteral(".eml")),
-                                                          i18nc("File dialog accepted files", "Email files (*.eml *.mbox *mime)"));
+                                                          i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"));
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
