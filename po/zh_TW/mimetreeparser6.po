@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
 "PO-Revision-Date: 2024-02-19 08:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -577,6 +577,7 @@ msgid "Next Message"
 msgstr "下一封信件"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
+#: widgets/messageviewerdialog.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "File dialog accepted files"
 #| msgid "Email files (*.eml *.mbox)"
@@ -612,14 +613,6 @@ msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "儲存已解密的檔案"
 
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "電子郵件檔 (*.eml *.mbox)"
-
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
 msgctxt "Error message"
@@ -647,6 +640,13 @@ msgstr "無法啟動憑證管理員。請檢查您的安裝。"
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 錯誤"
+
+#, fuzzy
+#~| msgctxt "File dialog accepted files"
+#~| msgid "Email files (*.eml *.mbox)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "電子郵件檔 (*.eml *.mbox)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"

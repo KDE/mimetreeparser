@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
 "PO-Revision-Date: 2024-01-14 00:38+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -569,6 +569,7 @@ msgid "Next Message"
 msgstr ""
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
+#: widgets/messageviewerdialog.cpp:209
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
@@ -600,12 +601,6 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
-
-#: widgets/messageviewerdialog.cpp:209
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
 msgstr ""
 
 #: widgets/messageviewerdialog.cpp:213

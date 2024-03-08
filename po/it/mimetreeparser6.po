@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
 "PO-Revision-Date: 2024-02-09 01:54+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -582,6 +582,7 @@ msgid "Next Message"
 msgstr "Messaggio successivo"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
+#: widgets/messageviewerdialog.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "File dialog accepted files"
 #| msgid "Email files (*.eml *.mbox)"
@@ -617,14 +618,6 @@ msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Salva il file decifrato"
 
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "File di messaggi di posta (*.eml *.mbox)"
-
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
 msgctxt "Error message"
@@ -654,6 +647,13 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Errore di KMail"
+
+#, fuzzy
+#~| msgctxt "File dialog accepted files"
+#~| msgid "Email files (*.eml *.mbox)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "File di messaggi di posta (*.eml *.mbox)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"

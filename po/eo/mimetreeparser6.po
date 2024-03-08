@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
 "PO-Revision-Date: 2024-01-14 12:36+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -579,6 +579,7 @@ msgid "Next Message"
 msgstr "Sekvanta Mesaĝo"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
+#: widgets/messageviewerdialog.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "File dialog accepted files"
 #| msgid "Email files (*.eml *.mbox)"
@@ -614,14 +615,6 @@ msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Konservi Malĉifritan Dosieron"
 
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "Retpoŝtaj dosieroj (*.eml *.mbox)"
-
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
 msgctxt "Error message"
@@ -649,3 +642,10 @@ msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
+
+#, fuzzy
+#~| msgctxt "File dialog accepted files"
+#~| msgid "Email files (*.eml *.mbox)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "Retpoŝtaj dosieroj (*.eml *.mbox)"

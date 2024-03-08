@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
-"PO-Revision-Date: 2024-02-08 22:32+0100\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"PO-Revision-Date: 2024-03-07 19:19+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -579,18 +579,17 @@ msgid "Next Message"
 msgstr "Hurrengo mezua"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#: widgets/messageviewerdialog.cpp:209
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "E-posta fitxategiak (*.eml *.mbox)"
+msgstr "E-posta fitxategiak (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "Zifratutako S/MIME fitxategiak (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format
@@ -613,14 +612,6 @@ msgstr "Errorea mezua gordetzean"
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Gorde deszifratutako fitxategia"
-
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "E-posta fitxategiak (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
@@ -651,6 +642,12 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail errorea"
+
+#~| msgctxt "File dialog accepted files"
+#~| msgid "Email files (*.eml *.mbox)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "E-posta fitxategiak (*.eml *.mbox *.mime)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"

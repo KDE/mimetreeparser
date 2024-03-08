@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
-"PO-Revision-Date: 2024-02-08 09:14+0100\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"PO-Revision-Date: 2024-03-07 08:05+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -580,18 +580,17 @@ msgid "Next Message"
 msgstr "Naslednje sporočilo"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#: widgets/messageviewerdialog.cpp:209
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Poštne datoteke (*.eml *.mbox)"
+msgstr "Poštne datoteke (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "Šifrirane datoteke S/MIME (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format
@@ -614,14 +613,6 @@ msgstr "Napaka pri shranjevanju datoteke"
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Shrani dešifrirano datoteko"
-
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "Poštne datoteke (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
@@ -651,6 +642,10 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Napaka KMaila"
+
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "Poštne datoteke (*.eml *.mbox *mime)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"

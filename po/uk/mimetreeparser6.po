@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
-"PO-Revision-Date: 2024-02-08 10:35+0200\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"PO-Revision-Date: 2024-03-07 08:51+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -584,18 +584,17 @@ msgid "Next Message"
 msgstr "Наступне повідомлення"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#: widgets/messageviewerdialog.cpp:209
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "файли пошти (*.eml *.mbox)"
+msgstr "файли пошти (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "шифровані файли S/MIME (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format
@@ -618,14 +617,6 @@ msgstr "Помилка під час спроби збереження пові�
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Збереження розшифрованого файла"
-
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "файли пошти (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
@@ -656,6 +647,12 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Помилка KMail"
+
+#~| msgctxt "File dialog accepted files"
+#~| msgid "Email files (*.eml *.mbox)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "файли пошти (*.eml *.mbox *.mime)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"

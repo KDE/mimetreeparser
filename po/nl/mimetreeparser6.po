@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
-"PO-Revision-Date: 2024-02-08 12:42+0100\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"PO-Revision-Date: 2024-03-07 10:24+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -581,18 +581,17 @@ msgid "Next Message"
 msgstr "Volgend bericht"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#: widgets/messageviewerdialog.cpp:209
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "E-mailbestanden (*.eml *.mbox)"
+msgstr "E-mailbestanden (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "Versleutelde S/MIME bestanden (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format
@@ -615,14 +614,6 @@ msgstr "Fout bij opslaan van bericht"
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Gedecodeerd bestand opslaan"
-
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "E-mailbestanden (*.eml *.mbox)"
 
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
@@ -652,6 +643,12 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail - foutmelding"
+
+#~| msgctxt "File dialog accepted files"
+#~| msgid "Email files (*.eml *.mbox)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "E-mailbestanden (*.eml *.mbox *.mime)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"

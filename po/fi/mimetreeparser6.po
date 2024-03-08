@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 00:38+0000\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
 "PO-Revision-Date: 2024-02-14 19:04+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -578,6 +578,7 @@ msgid "Next Message"
 msgstr "Seuraava viesti"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
+#: widgets/messageviewerdialog.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "File dialog accepted files"
 #| msgid "Email files (*.eml *.mbox)"
@@ -613,14 +614,6 @@ msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Tallenna purettu viesti"
 
-#: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *mime)"
-msgstr "Sähköpostitiedostot (*.eml *.mbox)"
-
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
 msgctxt "Error message"
@@ -648,6 +641,13 @@ msgstr "Varmennehallintaa ei voitu käynnistää. Tarkista asennus."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-virhe"
+
+#, fuzzy
+#~| msgctxt "File dialog accepted files"
+#~| msgid "Email files (*.eml *.mbox)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Email files (*.eml *.mbox *mime)"
+#~ msgstr "Sähköpostitiedostot (*.eml *.mbox)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"
