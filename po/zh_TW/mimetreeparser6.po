@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-08 00:38+0000\n"
-"PO-Revision-Date: 2024-02-19 08:04+0900\n"
+"PO-Revision-Date: 2024-03-08 23:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -333,7 +333,7 @@ msgstr "這個信件已使用金鑰 <a href=\"%1\">%2</a> 簽署。"
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr ""
+msgstr "這個信件已由 %1 依 VS-NfD 規範簽署。"
 
 #: widgets/messagecontainerwidget.cpp:82
 #, kde-format
@@ -393,17 +393,16 @@ msgid ""
 msgstr "此簽章是有效的，不過<a href=\"%1\">憑證</a>不可信。"
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the certificate "
 "for it."
-msgstr "這個信件已加密，但我們沒有它的金鑰。"
+msgstr "這個信件已依 VS-NfD 規範加密，但我們沒有它的憑證。"
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr ""
+msgstr "這個信件已依 VS-NfD 規範加密。"
 
 #: widgets/messagecontainerwidget.cpp:215
 #, kde-format
@@ -589,7 +588,7 @@ msgstr "電子郵件檔 (*.eml *.mbox)"
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "已加密的 S/MIME 檔案 (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format

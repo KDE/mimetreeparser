@@ -567,12 +567,10 @@ msgstr "Následující zpráva"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
 #: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Soubory pošty (*.eml *.mbox)"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
@@ -630,10 +628,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Chyba KMailu"
-
-#, fuzzy
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Soubory pošty (*.eml *.mbox)"
