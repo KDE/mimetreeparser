@@ -60,22 +60,22 @@ if(BUILD_TESTING)
 endif()
 
 ########### Find packages ###########
-find_package(Qt6Gui ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(Qt6PrintSupport ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(Qt6Gui ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
+find_package(Qt6PrintSupport ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
 find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF6WidgetsAddons ${QT_MIN_VERSION} CONFIG)
+find_package(KF6WidgetsAddons ${KF_MIN_VERSION} CONFIG)
 find_package(KPim6Mime ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 find_package(KPim6Mbox ${KPIM_MBOX_VERSION} CONFIG REQUIRED)
 find_package(KPim6Libkleo ${KPIM_LIBKLEO_VERSION} CONFIG REQUIRED)
 find_package(Gpgmepp ${GPGME_REQUIRED_VERSION} CONFIG REQUIRED)
 
-find_package(Qt6Quick ${QT_MIN_VERSION} CONFIG)
-find_package(Qt6Widgets ${QT_MIN_VERSION} CONFIG)
+find_package(Qt6Quick ${QT_REQUIRED_VERSION} CONFIG)
+find_package(Qt6Widgets ${QT_REQUIRED_VERSION} CONFIG)
 
 if (BUILD_TESTING)
-    find_package(Qt6Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+    find_package(Qt6Test ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
 endif()
 
 ########### Targets ###########
