@@ -4,15 +4,15 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-08 00:38+0000\n"
-"PO-Revision-Date: 2024-02-09 10:13+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: fr\n"
+"PO-Revision-Date: 2024-03-08 09:10+0100\n"
+"Last-Translator: xavier <xyz@yahoo.com>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -584,18 +584,16 @@ msgstr "Message suivant"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
 #: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Fichiers de courriels  (*.eml *.mbox)"
+msgstr "Fichiers de courriels (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "Fichiers chiffrés « S / MIME » (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format
