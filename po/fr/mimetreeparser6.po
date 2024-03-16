@@ -395,7 +395,8 @@ msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
 msgstr ""
-"La signature est valable mais le <a href=\"%1\">certificat> est non fiable."
+"La signature est valable mais le <a href=\"%1\">certificat</a> est non "
+"fiable."
 
 #: widgets/messagecontainerwidget.cpp:205
 #, kde-format
