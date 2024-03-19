@@ -253,6 +253,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
             for (const auto &block : blocks) {
                 if (block.type() == PgpMessageBlock) {
                     const auto proto = QGpgME::openpgp();
+                    protoName = GpgME::OpenPGP;
                     wasEncrypted = true;
                     QByteArray outData;
                     auto inData = block.text();

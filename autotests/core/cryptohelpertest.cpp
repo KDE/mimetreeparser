@@ -163,8 +163,6 @@ void CryptoHelperTest::testDecryptInlineMessage()
     message->setContent(readMailFromFile(QLatin1StringView("openpgp-inline-encrypted+nonenc.mbox")));
     message->parse();
 
-    qWarning() << message->decodedContent();
-
     bool wasEncrypted = false;
     GpgME::Protocol protocol;
     auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
