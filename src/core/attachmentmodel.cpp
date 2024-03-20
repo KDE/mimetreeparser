@@ -296,7 +296,7 @@ QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart:
     }
 
     QFile f(path);
-    if (!f.open(QIODevice::ReadWrite)) {
+    if (!f.open(QIODevice::WriteOnly)) {
         qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to write attachment to file:" << path << " Error: " << f.errorString();
         Q_EMIT errorOccurred(i18ndc("mimetreeparser", "@info", "Failed to save attachment."));
         return {};
