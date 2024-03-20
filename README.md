@@ -5,7 +5,7 @@ goal is given a MIME tree to extract a list of parts (e.g. text, html) and a
 list of attachments, check the validity of the signatures and decrypt any
 encrypted part.
 
-![coverage](https://invent.kde.org/carlschwan/mimetreeparser/badges/master/coverage.svg?job=suse_tumbleweed_qt515)
+![coverage](https://invent.kde.org/carlschwan/mimetreeparser/badges/master/coverage.svg)
 
 ## Example
 
