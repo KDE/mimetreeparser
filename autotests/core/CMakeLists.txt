@@ -49,6 +49,7 @@ add_gpg_crypto_test(cryptohelpertest core-cryptohelpertest)
 target_link_libraries(cryptohelpertest PUBLIC
     Qt::Test
     KPim6::MimeTreeParserCore
+    Gpgmepp
 )
 
 add_executable(mimetreeparsertest mimetreeparsertest.cpp)
