@@ -31,7 +31,7 @@ class MIMETREEPARSER_CORE_EXPORT PartModel : public QAbstractItemModel
     Q_PROPERTY(bool isTrimmed READ isTrimmed NOTIFY trimMailChanged)
 public:
     PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
-    ~PartModel();
+    ~PartModel() override;
 
     static std::pair<QString, bool> trim(const QString &text);
 

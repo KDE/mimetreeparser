@@ -22,7 +22,7 @@ class MIMETREEPARSER_CORE_EXPORT AttachmentModel : public QAbstractTableModel
     Q_OBJECT
 public:
     AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
-    ~AttachmentModel();
+    ~AttachmentModel() override;
 
 public:
     enum Roles {
