@@ -1,8 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Sandro Knauß <knauss@kolabsys.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#ifndef __MIMETREEPARSER_ENUMS_H__
-#define __MIMETREEPARSER_ENUMS_H__
+#pragma once
 
 namespace MimeTreeParser
 {
@@ -20,5 +19,3 @@ typedef enum { KMMsgEncryptionStateUnknown, KMMsgNotEncrypted, KMMsgPartiallyEnc
 typedef enum { KMMsgSignatureStateUnknown, KMMsgNotSigned, KMMsgPartiallySigned, KMMsgFullySigned, KMMsgSignatureProblematic } KMMsgSignatureState;
 
 }
-
-#endif

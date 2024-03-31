@@ -2,8 +2,7 @@
 // SPDX-FileCopyrightText: 2010 Leo Franchi <lfranchi@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#ifndef MESSAGECORE_TESTS_UTIL_H
-#define MESSAGECORE_TESTS_UTIL_H
+#pragma once
 
 #include "bodypartformatter.h"
 #include "bodypartformatterbasefactory.h"
@@ -23,5 +22,3 @@ void setupEnv();
 }
 
 }
-
-#endif
