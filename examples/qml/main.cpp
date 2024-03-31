@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     parser.process(app);
 
     const QStringList args = parser.positionalArguments();
-    if (args.length() > 0) {
+    if (!args.isEmpty()) {
         for (auto obj : rootObjects) {
             auto view = qobject_cast<QQuickWindow *>(obj);
             auto messageHandler = view->findChild<MessageHandler *>(QStringLiteral("MessageHandler"));
