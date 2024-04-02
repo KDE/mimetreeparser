@@ -307,7 +307,7 @@ void MessageViewerDialog::initGUI()
 #else
         // on other platforms the default is IconOnly which is bad for
         // accessibility and can't be changed by the user.
-        toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        d->toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 #endif
 
         d->toolBar->addAction(d->previousAction);
