@@ -2,3 +2,4 @@ build*/
 .clang-format
 CMakeLists.txt.user*
 .cache
+/.vscode/
