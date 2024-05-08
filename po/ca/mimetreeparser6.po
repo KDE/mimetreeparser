@@ -647,20 +647,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error al KMail"
-
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Fitxers de correu electrònic (*eml *.mbox *.mime)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Importa la clau"
-
-#~ msgid "The message is encrypted for the following keys:"
-#~ msgstr "El missatge està encriptat per a les claus següents:"
-
-#~ msgctxt "@info:status"
-#~ msgid "No secret key found to decrypt the message."
-#~ msgstr "No s'ha trobat cap clau secreta per a desencriptar el missatge."
