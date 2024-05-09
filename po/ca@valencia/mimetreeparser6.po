@@ -424,7 +424,7 @@ msgstr "El missatge està encriptat per als certificats següents:"
 #: widgets/messageviewer.cpp:65
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "Guar&da l'adjunt com a..."
+msgstr "Guar&da l'adjunt com a…"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -568,7 +568,7 @@ msgstr "Im&primix"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "&Navegació"
+msgstr "&Navegueu"
 
 #: widgets/messageviewerdialog.cpp:157
 #, kde-format
@@ -645,7 +645,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error a KMail"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Fitxers de correu electrònic (*eml *.mbox *.mime)"
