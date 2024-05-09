@@ -62,7 +62,7 @@ public:
 
     void createActions()
     {
-        saveAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("&Save Attachment As..."), q);
+        saveAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("&Save Attachment As…"), q);
         connect(saveAttachmentAction, &QAction::triggered, q, [this]() {
             saveSelectedAttachments();
         });
