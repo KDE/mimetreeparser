@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -451,9 +451,10 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "Správa je šifrovaná pre nasledujúce kľúče:"
 
 #: widgets/messageviewer.cpp:65
-#, kde-format
-msgid "&Save Attachment As..."
-msgstr "&Uložiť prílohu ako..."
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgid "&Save Attachment As…"
+msgstr "Uložiť prílohu ako"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -674,6 +675,9 @@ msgstr "Nemôžem spustiť manažéra certifikátov. Prosím overte si inštalá
 #, fuzzy, kde-format
 msgid "KMail Error"
 msgstr "Chybová správa KMail"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "&Uložiť prílohu ako..."
 
 #~ msgctxt "@action:button"
 #~ msgid "Import key"

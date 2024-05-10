@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-04-15 07:33+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -412,9 +412,10 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "ההודעה מוצפנת לאישורים הבאים:"
 
 #: widgets/messageviewer.cpp:65
-#, kde-format
-msgid "&Save Attachment As..."
-msgstr "שמירת הקובץ המ&צורף בשם..."
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgid "&Save Attachment As…"
+msgstr "שמירת הקובץ המצורף בשם"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -634,3 +635,6 @@ msgstr "לא ניתן להפעיל את מנהל האישורים. נא לבדו
 #, kde-format
 msgid "KMail Error"
 msgstr "שגיאה של KMail"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "שמירת הקובץ המ&צורף בשם..."

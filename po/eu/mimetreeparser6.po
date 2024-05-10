@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-03-07 19:19+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -418,9 +418,10 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "Mezua ondoko ziurtagirirako zifratuta dago:"
 
 #: widgets/messageviewer.cpp:65
-#, kde-format
-msgid "&Save Attachment As..."
-msgstr "&Gorde eranskina honela..."
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgid "&Save Attachment As…"
+msgstr "Gorde eranskina honela"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -642,6 +643,9 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail errorea"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "&Gorde eranskina honela..."
 
 #~| msgctxt "File dialog accepted files"
 #~| msgid "Email files (*.eml *.mbox)"

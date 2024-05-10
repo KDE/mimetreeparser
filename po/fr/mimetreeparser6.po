@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-03-08 09:10+0100\n"
 "Last-Translator: xavier <xyz@yahoo.com>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -423,9 +423,10 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "Le message est chiffré avec les certificats suivants :"
 
 #: widgets/messageviewer.cpp:65
-#, kde-format
-msgid "&Save Attachment As..."
-msgstr "&Enregistrer une pièce jointe comme..."
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgid "&Save Attachment As…"
+msgstr "Enregistrer une pièce jointe comme"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -647,6 +648,9 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Erreur de KMail"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "&Enregistrer une pièce jointe comme..."
 
 #, fuzzy
 #~| msgctxt "File dialog accepted files"

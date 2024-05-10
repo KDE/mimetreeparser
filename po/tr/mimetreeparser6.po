@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-03-07 10:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -412,9 +412,10 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "İleti, şu sertifikalar için şifrelendi:"
 
 #: widgets/messageviewer.cpp:65
-#, kde-format
-msgid "&Save Attachment As..."
-msgstr "Eki Farklı &Kaydet..."
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgid "&Save Attachment As…"
+msgstr "Eki Farklı Kaydet"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -634,6 +635,9 @@ msgstr "Sertifika yöneticisi başlatılamadı. Lütfen kurulumunuzu denetleyin.
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "Eki Farklı &Kaydet..."
 
 #~| msgctxt "File dialog accepted files"
 #~| msgid "Email files (*.eml *.mbox)"

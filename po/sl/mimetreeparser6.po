@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-03-07 08:05+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -419,9 +419,10 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "Sporočilo je šifrirano za naslednja potrdila:"
 
 #: widgets/messageviewer.cpp:65
-#, kde-format
-msgid "&Save Attachment As..."
-msgstr "&Shrani priloge kot..."
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgid "&Save Attachment As…"
+msgstr "Shrani prilogo kot"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -642,6 +643,9 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Napaka KMaila"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "&Shrani priloge kot..."
 
 #~ msgctxt "File dialog accepted files"
 #~ msgid "Email files (*.eml *.mbox *mime)"

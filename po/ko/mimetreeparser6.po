@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-02-10 23:59+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -403,9 +403,10 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "이 메시지는 다음 인증서로 암호화되어 있습니다:"
 
 #: widgets/messageviewer.cpp:65
-#, kde-format
-msgid "&Save Attachment As..."
-msgstr "다른 이름으로 첨부 파일 저장(&S)..."
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgid "&Save Attachment As…"
+msgstr "다른 이름으로 첨부 파일 저장"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -627,6 +628,9 @@ msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확�
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 오류"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "다른 이름으로 첨부 파일 저장(&S)..."
 
 #, fuzzy
 #~| msgctxt "File dialog accepted files"
