@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-04-15 07:33+0300\n"
+"PO-Revision-Date: 2024-05-10 20:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -412,10 +412,9 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "ההודעה מוצפנת לאישורים הבאים:"
 
 #: widgets/messageviewer.cpp:65
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "שמירת הקובץ המצורף בשם"
+msgstr "שמירת הקובץ המ&צורף בשם…"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-03-07 13:25+0100\n"
+"PO-Revision-Date: 2024-05-10 12:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -423,10 +423,9 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "El missatge està encriptat per als certificats següents:"
 
 #: widgets/messageviewer.cpp:65
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "Desa l'adjunt com a"
+msgstr "De&sa l'adjunt com a…"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format

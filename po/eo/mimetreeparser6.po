@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-03-10 10:31+0100\n"
+"PO-Revision-Date: 2024-05-10 09:14+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -418,10 +418,9 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "La mesaĝo estas ĉifrita por la sekvantaj atestiloj:"
 
 #: widgets/messageviewer.cpp:65
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "Konservi Aldonaĵon Kiel"
+msgstr "Kon&servi Aldonaĵon Kiel…"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -641,6 +640,3 @@ msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Eraro"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "Kon&servi Aldonaĵon Kiel..."

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-03-07 08:05+0100\n"
+"PO-Revision-Date: 2024-05-10 06:20+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -419,10 +419,9 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "Sporočilo je šifrirano za naslednja potrdila:"
 
 #: widgets/messageviewer.cpp:65
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "Shrani prilogo kot"
+msgstr "&Shrani prilogo kot…"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -566,7 +565,7 @@ msgstr "Tiskaj"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "Navigacija"
+msgstr "&Navigacija"
 
 #: widgets/messageviewerdialog.cpp:157
 #, kde-format

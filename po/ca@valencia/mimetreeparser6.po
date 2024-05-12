@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-03-07 13:25+0100\n"
+"PO-Revision-Date: 2024-05-10 12:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -223,7 +223,7 @@ msgstr "Guarda l'adjunt"
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "Guarda l'adjunt com a"
+msgstr "Anomeneu i guardeu l'adjunt"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -422,10 +422,9 @@ msgid "The message is encrypted for the following certificates:"
 msgstr "El missatge està encriptat per als certificats següents:"
 
 #: widgets/messageviewer.cpp:65
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "Guarda l'adjunt com a"
+msgstr "Anomena i &guarda l'adjunt…"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -448,7 +447,7 @@ msgstr "sense nom"
 #: widgets/messageviewer.cpp:107
 #, kde-format
 msgid "Save Attachment As"
-msgstr "Guarda l'adjunt com a"
+msgstr "Anomeneu i guardeu l'adjunt"
 
 #: widgets/messageviewer.cpp:269
 #, kde-format
@@ -569,7 +568,7 @@ msgstr "Im&primix"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr "&Navegació"
+msgstr "&Navegueu"
 
 #: widgets/messageviewerdialog.cpp:157
 #, kde-format
@@ -646,10 +645,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error a KMail"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "Guar&da l'adjunt com a..."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Fitxers de correu electrònic (*eml *.mbox *.mime)"
