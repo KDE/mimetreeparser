@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-08 00:38+0000\n"
-"PO-Revision-Date: 2024-03-08 23:30+0900\n"
+"PO-Revision-Date: 2024-05-10 16:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -65,32 +65,24 @@ msgid "Failed to open attachment."
 msgstr "開啟附件失敗。"
 
 #: core/attachmentmodel.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "No keys were found in this attachment"
+#, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr "附件中未找到金鑰。"
+msgstr "附件中未找到憑證。"
 
 #: core/attachmentmodel.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key imported"
-#| msgid_plural "%1 keys imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] "已匯入 %1 個金鑰"
+msgstr[0] "已匯入 %1 個憑證"
 
 #: core/attachmentmodel.cpp:389
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "one key was already imported"
-#| msgid_plural "%1 keys were already imported"
+#, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "%1 個金鑰原本就已經匯入"
+msgstr[0] "%1 個憑證原本就已匯入"
 
 #: core/messageparser.cpp:47
 #, kde-format
@@ -102,7 +94,7 @@ msgstr "未知"
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr "、"
 
 #: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
 #, kde-format
@@ -135,7 +127,7 @@ msgstr "錯誤：%1"
 msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any S/MIME certificate in your keyring."
-msgstr ""
+msgstr "這個信件無法使用您的鑰匙圈當中的任何 S/MIME 憑證解密。"
 
 #: core/partmodel.cpp:517
 #, kde-format
@@ -143,7 +135,7 @@ msgctxt "@info:status"
 msgid ""
 "This message cannot be decrypted with any OpenPGP certificate in your "
 "keyring."
-msgstr ""
+msgstr "這個信件無法使用您的鑰匙圈當中的任何 OpenPGP 憑證解密。"
 
 #: core/partmodel.cpp:523
 #, kde-format
@@ -253,12 +245,10 @@ msgid "sent by %1 on %2"
 msgstr "由 %1 於 %2 傳送"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1."
-msgstr "這個信件已使用金鑰 %1 簽署。"
+msgstr "這個信件已使用憑證 %1 簽署。"
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
 #, kde-format
@@ -267,12 +257,10 @@ msgid "The certificate details are not available."
 msgstr "憑證詳細資料不可用。"
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key %1 by %2."
+#, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1 by %2."
-msgstr "這個信件已由 %2 使用金鑰 %1 簽署。"
+msgstr "這個信件已由 %2 使用憑證 %1 簽署。"
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
@@ -311,23 +299,19 @@ msgid "This message is encrypted to the certificate: %1"
 msgstr "這個信件已加密給憑證：%1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
-msgstr "這個信件已使用金鑰 <a href=\"%1\">%2</a> 簽署。"
+msgstr "這個信件已使用憑證 <a href=\"%1\">%2</a> 依 VS-NfD 規範簽署。"
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "這個信件已使用金鑰 <a href=\"%1\">%2</a> 簽署。"
+msgstr "這個信件已使用憑證 <a href=\"%1\">%2</a> 簽署。"
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
@@ -577,12 +561,10 @@ msgstr "下一封信件"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
 #: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "電子郵件檔 (*.eml *.mbox)"
+msgstr "電子郵件檔 (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
