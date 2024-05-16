@@ -405,10 +405,9 @@ msgid "The message is encrypted for the following certificates:"
 msgstr ""
 
 #: widgets/messageviewer.cpp:65
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "Uložit přílohu jako"
+msgstr ""
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -629,6 +628,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Chyba KMailu"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "&Uložit přílohu jako..."
