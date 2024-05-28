@@ -38,9 +38,9 @@ include(ECMFeatureSummary)
 include(ECMAddQch)
 include(ECMAddTests)
 
-set(KPIM_MIME_VERSION "6.1.0")
-set(KPIM_LIBKLEO_VERSION "6.1.0")
-set(KPIM_MBOX_VERSION "6.1.0")
+set(KPIM_MIME_VERSION "6.1.1")
+set(KPIM_LIBKLEO_VERSION "6.1.1")
+set(KPIM_MBOX_VERSION "6.1.1")
 set(GPGME_REQUIRED_VERSION "1.20.0")
 
 ecm_setup_version(PROJECT
