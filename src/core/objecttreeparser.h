@@ -63,7 +63,7 @@ public:
     void parseObjectTree(KMime::Content *node);
     void parseObjectTree(const QByteArray &mimeMessage);
     MessagePart::Ptr parsedPart() const;
-    KMime::Content *find(const std::function<bool(KMime::Content *)> &select);
+    [[nodiscard]] KMime::Content *find(const std::function<bool(KMime::Content *)> &select);
     [[nodiscard]] MessagePart::List collectContentParts();
     [[nodiscard]] MessagePart::List collectContentParts(MessagePart::Ptr start);
     [[nodiscard]] MessagePart::List collectAttachmentParts();

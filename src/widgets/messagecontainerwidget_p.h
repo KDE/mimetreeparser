@@ -33,7 +33,7 @@ public:
 
 protected:
     void paintEvent(QPaintEvent *event) override;
-    bool event(QEvent *event) override;
+    [[nodiscard]] bool event(QEvent *event) override;
 
 private:
     MIMETREEPARSER_WIDGETS_NO_EXPORT void createLayout();

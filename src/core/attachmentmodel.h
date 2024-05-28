@@ -43,11 +43,11 @@ public:
         ColumnCount,
     };
 
-    QHash<int, QByteArray> roleNames() const override;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    [[nodiscard]] QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
     Q_INVOKABLE bool openAttachment(const int row);
     Q_INVOKABLE bool importPublicKey(const int row);
@@ -56,7 +56,7 @@ public:
     bool importPublicKey(const MimeTreeParser::MessagePart::Ptr &message);
 
     Q_INVOKABLE QString saveAttachmentToPath(const int row, const QString &path);
-    QString saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path);
+    [[nodiscard]] QString saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path);
 
 Q_SIGNALS:
     void info(const QString &message);

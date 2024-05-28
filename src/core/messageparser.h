@@ -38,8 +38,8 @@ public:
 
     [[nodiscard]] KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
-    PartModel *parts() const;
-    AttachmentModel *attachments() const;
+    [[nodiscard]] PartModel *parts() const;
+    [[nodiscard]] AttachmentModel *attachments() const;
     [[nodiscard]] QString structureAsString() const;
     [[nodiscard]] bool loaded() const;
 

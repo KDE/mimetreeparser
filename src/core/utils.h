@@ -18,12 +18,12 @@
 
 namespace MimeTreeParser
 {
-KMime::Content *findTypeInDirectChildren(KMime::Content *content, const QByteArray &mimeType);
+[[nodiscard]] KMime::Content *findTypeInDirectChildren(KMime::Content *content, const QByteArray &mimeType);
 
 /// Convert a list of recipients to an html list
-MIMETREEPARSER_CORE_EXPORT QString decryptRecipientsToHtml(const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &recipients,
-                                                           const QGpgME::Protocol *cryptoProto);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QString
+decryptRecipientsToHtml(const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &recipients, const QGpgME::Protocol *cryptoProto);
 
 /// Convert a DN to a more compact display name (usually just Common name + organization name)
-MIMETREEPARSER_CORE_EXPORT QString dnToDisplayName(const Kleo::DN &dn);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QString dnToDisplayName(const Kleo::DN &dn);
 }

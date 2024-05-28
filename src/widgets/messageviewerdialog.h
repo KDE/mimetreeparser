@@ -31,7 +31,7 @@ public:
     MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
     ~MessageViewerDialog() override;
 
-    QToolBar *toolBar() const;
+    [[nodiscard]] QToolBar *toolBar() const;
 
     [[nodiscard]] QList<KMime::Message::Ptr> messages() const;
 

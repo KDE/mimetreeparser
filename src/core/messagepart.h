@@ -59,13 +59,13 @@ public:
 
     [[nodiscard]] virtual QString text() const;
     void setText(const QString &text);
-    virtual bool isAttachment() const;
+    [[nodiscard]] virtual bool isAttachment() const;
 
     void setIsRoot(bool root);
     [[nodiscard]] bool isRoot() const;
 
     void setParentPart(MessagePart *parentPart);
-    MessagePart *parentPart() const;
+    [[nodiscard]] MessagePart *parentPart() const;
 
     [[nodiscard]] virtual QString plaintextContent() const;
     [[nodiscard]] virtual QString htmlContent() const;
@@ -88,10 +88,10 @@ public:
     [[nodiscard]] Error error() const;
     [[nodiscard]] QString errorString() const;
 
-    PartMetaData *partMetaData();
+    [[nodiscard]] PartMetaData *partMetaData();
 
     void appendSubPart(const MessagePart::Ptr &messagePart);
-    const QList<MessagePart::Ptr> &subParts() const;
+    [[nodiscard]] const QList<MessagePart::Ptr> &subParts() const;
     [[nodiscard]] bool hasSubParts() const;
 
     KMime::Content *node() const;
@@ -107,7 +107,7 @@ public:
      *
      * Useful for MemoryHole support.
      */
-    KMime::Headers::Base *header(const char *header) const;
+    [[nodiscard]] KMime::Headers::Base *header(const char *header) const;
 
     void bindLifetime(KMime::Content *);
 
