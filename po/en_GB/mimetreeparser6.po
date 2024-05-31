@@ -1,0 +1,644 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the mimetreeparser package.
+#
+# SPDX-FileCopyrightText: 2024 Steve Allewell <steve.allewell@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: mimetreeparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-08 00:38+0000\n"
+"PO-Revision-Date: 2024-05-30 19:28+0100\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: British English\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.02.2\n"
+
+#: core/attachmentmodel.cpp:202
+#, kde-format
+msgctxt "@title:column"
+msgid "Name"
+msgstr "Name"
+
+#: core/attachmentmodel.cpp:204
+#, kde-format
+msgctxt "@title:column"
+msgid "Size"
+msgstr "Size"
+
+#: core/attachmentmodel.cpp:206
+#, kde-format
+msgctxt "@title:column"
+msgid "Encrypted"
+msgstr "Encrypted"
+
+#: core/attachmentmodel.cpp:208
+#, kde-format
+msgctxt "@title:column"
+msgid "Signed"
+msgstr "Signed"
+
+#: core/attachmentmodel.cpp:301
+#, kde-format
+msgctxt "@info"
+msgid "Failed to save attachment."
+msgstr "Failed to save attachment."
+
+#: core/attachmentmodel.cpp:324
+#, kde-format
+msgid "attachment"
+msgstr "attachment"
+
+#: core/attachmentmodel.cpp:331
+#, kde-format
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "Failed to write attachment for opening."
+
+#: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
+#, kde-format
+msgctxt "@info"
+msgid "Failed to open attachment."
+msgstr "Failed to open attachment."
+
+#: core/attachmentmodel.cpp:381
+#, kde-format
+msgctxt "@info"
+msgid "No certificates were found in this attachment"
+msgstr "No certificates were found in this attachment"
+
+#: core/attachmentmodel.cpp:384
+#, kde-format
+msgctxt "@info"
+msgid "one certificate imported"
+msgid_plural "%1 certificates imported"
+msgstr[0] "one certificate imported"
+msgstr[1] "%1 certificates imported"
+
+#: core/attachmentmodel.cpp:389
+#, kde-format
+msgctxt "@info"
+msgid "one certificate was already imported"
+msgid_plural "%1 certificates were already imported"
+msgstr[0] "one certificate was already imported"
+msgstr[1] "%1 certificates were already imported"
+
+#: core/messageparser.cpp:47
+#, kde-format
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknown"
+msgstr "Unknown"
+
+#: core/messageparser.cpp:52
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong Crypto Plug-In."
+msgstr "Wrong Crypto Plug-In."
+
+#: core/messagepart.cpp:988
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "No appropriate crypto plug-in was found."
+
+#: core/messagepart.cpp:990
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Crypto plug-in \"%1\" cannot decrypt messages."
+
+#: core/messagepart.cpp:992
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Crypto plug-in \"%1\" could not decrypt the data."
+
+#: core/messagepart.cpp:993
+#, kde-format
+msgid "Error: %1"
+msgstr "Error: %1"
+
+#: core/partmodel.cpp:514
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+msgstr ""
+"This message cannot be decrypted with any S/MIME certificate in your keyring."
+
+#: core/partmodel.cpp:517
+#, kde-format
+msgctxt "@info:status"
+msgid ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+msgstr ""
+"This message cannot be decrypted with any OpenPGP certificate in your "
+"keyring."
+
+#: core/partmodel.cpp:523
+#, kde-format
+msgctxt "@info:status"
+msgid "The message is encrypted for the following certificate:"
+msgid_plural "The message is encrypted for the following certificates:"
+msgstr[0] "The message is encrypted for the following certificate:"
+msgstr[1] "The message is encrypted for the following certificates:"
+
+#: core/partmodel.cpp:537
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr "Wrong passphrase."
+
+#: core/utils.cpp:46
+#, kde-format
+msgctxt "@info"
+msgid "Unknown Key"
+msgstr "Unknown Key"
+
+#: core/utils.cpp:60
+#, kde-format
+msgctxt "Separator"
+msgid " - "
+msgstr " - "
+
+#: quick/qml/MailViewer.qml:40
+#, kde-format
+msgctxt "@title:window"
+msgid "Message viewer"
+msgstr "Message viewer"
+
+#: quick/qml/MailViewer.qml:77
+#, kde-format
+msgctxt "@label"
+msgid "Subject:"
+msgstr "Subject:"
+
+#: quick/qml/MailViewer.qml:98
+#, kde-format
+msgctxt "@label"
+msgid "From:"
+msgstr "From:"
+
+#: quick/qml/MailViewer.qml:114
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr "Sender:"
+
+#: quick/qml/MailViewer.qml:130
+#, kde-format
+msgctxt "@label"
+msgid "To:"
+msgstr "To:"
+
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "CC:"
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "BCC:"
+
+#: quick/qml/MailViewer.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Save attachment"
+msgstr "Save attachment"
+
+#: quick/qml/MailViewer.qml:242
+#, kde-format
+msgctxt "@window:title"
+msgid "Save Attachment As"
+msgstr "Save Attachment As"
+
+#: quick/qml/private/AttachmentDelegate.qml:56
+#, kde-format
+msgctxt "@action:button"
+msgid "Import certificate"
+msgstr "Import certificate"
+
+#: quick/qml/private/Banner.qml:188
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Close"
+
+#: quick/qml/private/ErrorPart.qml:27
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "An error occurred: %1"
+
+#: quick/qml/private/ICalPart.qml:27
+#, kde-format
+msgid "This mail contains an invitation"
+msgstr "This mail contains an invitation"
+
+#: quick/qml/private/MailPart.qml:41
+#, kde-format
+msgctxt "@info"
+msgid "sent by %1 on %2"
+msgstr "sent by %1 on %2"
+
+#: quick/qml/private/MailPartModel.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed using the certificate %1."
+msgstr "This message has been signed using the certificate %1."
+
+#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
+#, kde-format
+msgctxt "@label"
+msgid "The certificate details are not available."
+msgstr "The certificate details are not available."
+
+#: quick/qml/private/MailPartModel.qml:58
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed using the certificate %1 by %2."
+msgstr "This message has been signed using the certificate %1 by %2."
+
+#: quick/qml/private/MailPartModel.qml:60
+#, kde-format
+msgctxt "@label"
+msgid "The certificate was revoked."
+msgstr "The certificate was revoked."
+
+#: quick/qml/private/MailPartModel.qml:63
+#, kde-format
+msgctxt "@label"
+msgid "The certificate has expired."
+msgstr "The certificate has expired."
+
+#: quick/qml/private/MailPartModel.qml:66
+#, kde-format
+msgctxt "@label"
+msgid "You are trusting this certificate."
+msgstr "You are trusting this certificate."
+
+#: quick/qml/private/MailPartModel.qml:69
+#: widgets/messagecontainerwidget.cpp:109
+#, kde-format
+msgctxt "@label"
+msgid "The signature is invalid."
+msgstr "The signature is invalid."
+
+#: quick/qml/private/MailPartModel.qml:98
+#: widgets/messagecontainerwidget.cpp:207
+#, kde-format
+msgid "This message is encrypted but we don't have the certificate for it."
+msgstr "This message is encrypted but we don't have the certificate for it."
+
+#: quick/qml/private/MailPartModel.qml:98
+#, kde-format
+msgid "This message is encrypted to the certificate: %1"
+msgstr "This message is encrypted to the certificate: %1"
+
+#: widgets/messagecontainerwidget.cpp:60
+#, kde-format
+msgctxt "@label"
+msgid ""
+"This message has been signed VS-NfD compliant using the certificate <a href="
+"\"%1\">%2</a>."
+msgstr ""
+"This message has been signed VS-NfD compliant using the certificate <a href="
+"\"%1\">%2</a>."
+
+#: widgets/messagecontainerwidget.cpp:67
+#, kde-format
+msgctxt "@label"
+msgid ""
+"This message has been signed using the certificate <a href=\"%1\">%2</a>."
+msgstr ""
+"This message has been signed using the certificate <a href=\"%1\">%2</a>."
+
+#: widgets/messagecontainerwidget.cpp:80
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed VS-NfD compliant by %1."
+msgstr "This message has been signed VS-NfD compliant by %1."
+
+#: widgets/messagecontainerwidget.cpp:82
+#, kde-format
+msgctxt "@label"
+msgid "This message has been signed by %1."
+msgstr "This message has been signed by %1."
+
+#: widgets/messagecontainerwidget.cpp:85
+#, kde-format
+msgctxt "@label"
+msgid "The <a href=\"%1\">certificate</a> was revoked."
+msgstr "The <a href=\"%1\">certificate</a> was revoked."
+
+#: widgets/messagecontainerwidget.cpp:88
+#, kde-format
+msgctxt "@label"
+msgid "The <a href=\"%1\">certificate</a> was expired."
+msgstr "The <a href=\"%1\">certificate</a> was expired."
+
+#: widgets/messagecontainerwidget.cpp:93
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
+"unknown."
+msgstr ""
+"The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
+"unknown."
+
+#: widgets/messagecontainerwidget.cpp:96
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
+"trusted."
+msgstr ""
+"The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
+"trusted."
+
+#: widgets/messagecontainerwidget.cpp:99
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">certificate</a> is fully "
+"trusted."
+msgstr ""
+"The signature is valid and the <a href=\"%1\">certificate</a> is fully "
+"trusted."
+
+#: widgets/messagecontainerwidget.cpp:102
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
+"trusted."
+msgstr ""
+"The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
+"trusted."
+
+#: widgets/messagecontainerwidget.cpp:105
+#, kde-format
+msgctxt "@label"
+msgid ""
+"The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
+msgstr ""
+"The signature is valid, but the <a href=\"%1\">certificate</a> is not "
+"trusted."
+
+#: widgets/messagecontainerwidget.cpp:205
+#, kde-format
+msgid ""
+"This message is VS-NfD compliant encrypted but we don't have the certificate "
+"for it."
+msgstr ""
+"This message is VS-NfD compliant encrypted but we don't have the certificate "
+"for it."
+
+#: widgets/messagecontainerwidget.cpp:213
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "This message is VS-NfD compliant encrypted."
+
+#: widgets/messagecontainerwidget.cpp:215
+#, kde-format
+msgid "This message is encrypted."
+msgstr "This message is encrypted."
+
+#: widgets/messagecontainerwidget.cpp:224
+#, kde-format
+msgid "The message is encrypted for the following certificates:"
+msgstr "The message is encrypted for the following certificates:"
+
+#: widgets/messageviewer.cpp:65
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "&Save Attachment As..."
+
+#: widgets/messageviewer.cpp:70
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Open"
+
+#: widgets/messageviewer.cpp:75
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import public key"
+msgstr "Import public key"
+
+#: widgets/messageviewer.cpp:104
+#, kde-format
+msgctxt "Fallback when file has no name"
+msgid "unnamed"
+msgstr "unnamed"
+
+#: widgets/messageviewer.cpp:107
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Save Attachment As"
+
+#: widgets/messageviewer.cpp:269
+#, kde-format
+msgid "Invitation"
+msgstr "Invitation"
+
+#: widgets/messageviewer.cpp:272
+#, kde-format
+msgid "&Summary:"
+msgstr "&Summary:"
+
+#: widgets/messageviewer.cpp:273
+#, kde-format
+msgid "&Organizer:"
+msgstr "&Organiser:"
+
+#: widgets/messageviewer.cpp:275
+#, kde-format
+msgid "&Location:"
+msgstr "&Location:"
+
+#: widgets/messageviewer.cpp:277
+#, kde-format
+msgid "&Start date:"
+msgstr "&Start date:"
+
+#: widgets/messageviewer.cpp:279
+#, kde-format
+msgid "&End date:"
+msgstr "&End date:"
+
+#: widgets/messageviewer.cpp:282
+#, kde-format
+msgid "&Details:"
+msgstr "&Details:"
+
+#: widgets/messageviewer.cpp:303
+#, kde-format
+msgid "Encapsulated email"
+msgstr "Encapsulated email"
+
+#: widgets/messageviewer.cpp:311
+#, kde-format
+msgid "From:"
+msgstr "From:"
+
+#: widgets/messageviewer.cpp:312
+#, kde-format
+msgid "Date:"
+msgstr "Date:"
+
+#: widgets/messageviewer.cpp:389
+#, kde-format
+msgid "&Subject:"
+msgstr "&Subject:"
+
+#: widgets/messageviewer.cpp:392
+#, kde-format
+msgid "&From:"
+msgstr "&From:"
+
+#: widgets/messageviewer.cpp:395
+#, kde-format
+msgid "&Sender:"
+msgstr "&Sender:"
+
+#: widgets/messageviewer.cpp:398
+#, kde-format
+msgid "&To:"
+msgstr "&To:"
+
+#: widgets/messageviewer.cpp:401
+#, kde-format
+msgid "&CC:"
+msgstr "&CC:"
+
+#: widgets/messageviewer.cpp:404
+#, kde-format
+msgid "&BCC:"
+msgstr "&BCC:"
+
+#: widgets/messageviewer.cpp:407
+#, kde-format
+msgid "&Date:"
+msgstr "&Date:"
+
+#: widgets/messageviewerdialog.cpp:129
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&File"
+
+#: widgets/messageviewerdialog.cpp:131
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr "&Save"
+
+#: widgets/messageviewerdialog.cpp:137
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr "Save Decrypted"
+
+#: widgets/messageviewerdialog.cpp:143
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr "Print Preview"
+
+#: widgets/messageviewerdialog.cpp:149
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr "&Print"
+
+#: widgets/messageviewerdialog.cpp:156
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&Navigation"
+
+#: widgets/messageviewerdialog.cpp:157
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr "Previous Message"
+
+#: widgets/messageviewerdialog.cpp:161
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr "Next Message"
+
+#: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
+#: widgets/messageviewerdialog.cpp:209
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "Email files (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerdialog.cpp:183
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "Encrypted S/MIME files (*.p7m)"
+
+#: widgets/messageviewerdialog.cpp:191
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Save File"
+
+#: widgets/messageviewerdialog.cpp:197
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "File %1 could not be created."
+
+#: widgets/messageviewerdialog.cpp:197 widgets/messageviewerdialog.cpp:213
+#, kde-format
+msgid "Error saving message"
+msgstr "Error saving message"
+
+#: widgets/messageviewerdialog.cpp:207
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "Save Decrypted File"
+
+#: widgets/messageviewerdialog.cpp:213
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "File %1 could not be created."
+
+#: widgets/messageviewerdialog.cpp:232 widgets/messageviewerdialog.cpp:244
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "Print Document"
+
+#: widgets/messageviewerdialog.cpp:296
+#, kde-format
+msgctxt "@info"
+msgid "Unable to read file"
+msgstr "Unable to read file"
+
+#: widgets/urlhandler.cpp:46
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr "Could not start certificate manager. Please check your installation."
+
+#: widgets/urlhandler.cpp:48
+#, kde-format
+msgid "KMail Error"
+msgstr "KMail Error"
