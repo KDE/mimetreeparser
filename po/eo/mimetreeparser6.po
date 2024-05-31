@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-05-10 09:14+0100\n"
+"PO-Revision-Date: 2024-05-30 07:49+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -508,7 +508,7 @@ msgstr "&De:"
 #: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Sender:"
-msgstr "Sendanto:"
+msgstr "&Sendanto:"
 
 #: widgets/messageviewer.cpp:398
 #, kde-format
