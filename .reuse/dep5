@@ -2,6 +2,6 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: MimeTreeParser
 Upstream-Contact: Carl Schwan <carl@carlschwan.eu>
 
-Files: autotests/testdata/* autotests/gnupg_home/* README.md .gitignore screenshots/screenshot.png screenshots/widgets.png
+Files: autotests/testdata/* autotests/gnupg_home/* README.md .gitignore screenshots/screenshot.png screenshots/widgets.png readme-build-ftime.txt
 Copyright: none
 License: CC0-1.0
