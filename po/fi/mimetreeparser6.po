@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-02-14 19:04+0200\n"
+"PO-Revision-Date: 2024-03-20 16:56+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -580,18 +580,16 @@ msgstr "Seuraava viesti"
 
 #: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
 #: widgets/messageviewerdialog.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Sähköpostitiedostot (*.eml *.mbox)"
+msgstr "Sähköpostitiedostot (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "Salatut S/MIME-tiedostot (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format
