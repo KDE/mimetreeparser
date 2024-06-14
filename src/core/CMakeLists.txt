@@ -106,6 +106,7 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         ObjectTreeParser
         PartModel
         PartMetaData
+        Enums
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )

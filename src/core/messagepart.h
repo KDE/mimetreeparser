@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "enums.h"
 #include "mimetreeparser_core_export.h"
 #include "partmetadata.h"
 
@@ -28,12 +29,6 @@ class Protocol;
 
 namespace MimeTreeParser
 {
-
-/** Flags for the encryption state. */
-typedef enum { KMMsgEncryptionStateUnknown, KMMsgNotEncrypted, KMMsgPartiallyEncrypted, KMMsgFullyEncrypted, KMMsgEncryptionProblematic } KMMsgEncryptionState;
-
-/** Flags for the signature state. */
-typedef enum { KMMsgSignatureStateUnknown, KMMsgNotSigned, KMMsgPartiallySigned, KMMsgFullySigned, KMMsgSignatureProblematic } KMMsgSignatureState;
 
 class ObjectTreeParser;
 class MultiPartAlternativeBodyPartFormatter;
