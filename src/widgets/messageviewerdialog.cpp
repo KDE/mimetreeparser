@@ -5,7 +5,6 @@
 #include "messageviewerdialog.h"
 
 #include "messageviewer.h"
-#include "mimetreeparser_widgets_debug.h"
 #include <MimeTreeParserCore/CryptoHelper>
 #include <MimeTreeParserCore/FileOpener>
 
