@@ -1,21 +1,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# SPDX-FileCopyrightText: 2023 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-08 00:38+0000\n"
-"PO-Revision-Date: 2023-11-08 14:27+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-05-30 10:38+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -45,7 +45,7 @@ msgstr "Podepsáno"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr ""
+msgstr "Přílohu nelze uložit."
 
 #: core/attachmentmodel.cpp:324
 #, kde-format
@@ -62,37 +62,37 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "Přílohu nelze načíst."
 
 #: core/attachmentmodel.cpp:381
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr ""
+msgstr "V této příloze nebyly nalezeny žádné certifikáty"
 
 #: core/attachmentmodel.cpp:384
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "jeden certifikát byl importován"
+msgstr[1] "%1 certifikáty byly importovány"
+msgstr[2] "%1 certifikátů bylo importováno"
 
 #: core/attachmentmodel.cpp:389
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "jeden certifikát byl již importován"
+msgstr[1] "%1 certifikáty byly již importovány"
+msgstr[2] "%1 certifikátů bylo již importováno"
 
 #: core/messageparser.cpp:47
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámý"
 
 #: core/messageparser.cpp:52
 #, kde-format
@@ -146,9 +146,9 @@ msgstr ""
 msgctxt "@info:status"
 msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Zpráva je šifrována pro následující certifikát:"
+msgstr[1] "Zpráva je šifrována pro následující certifikáty:"
+msgstr[2] "Zpráva je šifrována pro následující certifikáty:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -160,13 +160,13 @@ msgstr "Špatné heslo."
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr ""
+msgstr "Neznámý klíč"
 
 #: core/utils.cpp:60
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -226,7 +226,7 @@ msgstr "Uložit přílohu jako"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "Importovat certifikát"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
@@ -254,37 +254,37 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1."
-msgstr ""
+msgstr "Zpráva byla podepsána pomocí certifikátu %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "The certificate details are not available."
-msgstr ""
+msgstr "Podrobnosti certifikátu nejsou dostupné."
 
 #: quick/qml/private/MailPartModel.qml:58
 #, kde-format
 msgctxt "@label"
 msgid "This message has been signed using the certificate %1 by %2."
-msgstr ""
+msgstr "Zpráva byla podepsána pomocí certifikátu %1 od %2."
 
 #: quick/qml/private/MailPartModel.qml:60
 #, kde-format
 msgctxt "@label"
 msgid "The certificate was revoked."
-msgstr ""
+msgstr "Certifikát byl odvolán."
 
 #: quick/qml/private/MailPartModel.qml:63
 #, kde-format
 msgctxt "@label"
 msgid "The certificate has expired."
-msgstr ""
+msgstr "Certifikát vypršel."
 
 #: quick/qml/private/MailPartModel.qml:66
 #, kde-format
 msgctxt "@label"
 msgid "You are trusting this certificate."
-msgstr ""
+msgstr "Věříte tomuto certifikátu."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
@@ -297,12 +297,12 @@ msgstr "Podpis není platný."
 #: widgets/messagecontainerwidget.cpp:207
 #, kde-format
 msgid "This message is encrypted but we don't have the certificate for it."
-msgstr ""
+msgstr "Zpráva je šifrována ale nemáme pro ni certifikát."
 
 #: quick/qml/private/MailPartModel.qml:98
 #, kde-format
 msgid "This message is encrypted to the certificate: %1"
-msgstr ""
+msgstr "Zpráva je šifrována pro certifikát: %1"
 
 #: widgets/messagecontainerwidget.cpp:60
 #, kde-format
@@ -311,13 +311,15 @@ msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
 msgstr ""
+"Zpráva byla podepsána pomocí certifikátu splňujícího VS-NfD <a href=\"%1\">"
+"%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
 #, kde-format
 msgctxt "@label"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr ""
+msgstr "Zpráva byla podepsána pomocí certifikátu <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
 #, kde-format
@@ -335,13 +337,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr ""
+msgstr "<a href=\"%1\">Certifikát</a> byl odvolán."
 
 #: widgets/messagecontainerwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "The <a href=\"%1\">certificate</a> was expired."
-msgstr ""
+msgstr "<a href=\"%1\">Certifikát</a> vypršel."
 
 #: widgets/messagecontainerwidget.cpp:93
 #, kde-format
@@ -350,6 +352,7 @@ msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
 msgstr ""
+"Podpis je v pořádku, ale platnost <a href=\"%1\">certifikátu</a> je neznámá."
 
 #: widgets/messagecontainerwidget.cpp:96
 #, kde-format
@@ -358,6 +361,8 @@ msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
 msgstr ""
+"Podpis je v pořádku a <a href=\"%1\">certifikátu</a> je na hranici "
+"důvěryhodnosti."
 
 #: widgets/messagecontainerwidget.cpp:99
 #, kde-format
@@ -366,6 +371,7 @@ msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr ""
+"Podpis je v pořádku a <a href=\"%1\">certifikátu</a> je plně důvěryhodný."
 
 #: widgets/messagecontainerwidget.cpp:102
 #, kde-format
@@ -374,6 +380,7 @@ msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
 msgstr ""
+"Podpis je v pořádku a <a href=\"%1\">certifikátu</a> je naprosto důvěryhodný."
 
 #: widgets/messagecontainerwidget.cpp:105
 #, kde-format
@@ -381,6 +388,7 @@ msgctxt "@label"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
 msgstr ""
+"Podpis je v pořádku, ale <a href=\"%1\">certifikátu</a> není důvěryhodný."
 
 #: widgets/messagecontainerwidget.cpp:205
 #, kde-format
@@ -402,7 +410,7 @@ msgstr "Tato zpráva je šifrovaná."
 #: widgets/messagecontainerwidget.cpp:224
 #, kde-format
 msgid "The message is encrypted for the following certificates:"
-msgstr ""
+msgstr "Zpráva je šifrována pro následující certifikáty:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -419,7 +427,7 @@ msgstr "Otevřít"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr ""
+msgstr "Importovat veřejný klíč"
 
 #: widgets/messageviewer.cpp:104
 #, kde-format
@@ -470,7 +478,7 @@ msgstr "Po&drobnosti:"
 #: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Encapsulated email"
-msgstr ""
+msgstr "Zapouzdřená zpráva"
 
 #: widgets/messageviewer.cpp:311
 #, kde-format
@@ -533,7 +541,7 @@ msgstr "&Uložit"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr ""
+msgstr "Uložit dešifrované"
 
 #: widgets/messageviewerdialog.cpp:143
 #, kde-format
@@ -570,13 +578,13 @@ msgstr "Následující zpráva"
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr ""
+msgstr "Soubory pošty (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:183
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "Šifrované soubory S/MIME (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:191
 #, kde-format
@@ -598,7 +606,7 @@ msgstr "Chyba při ukládání zprávy"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "Uložit dešifrovaný soubor"
 
 #: widgets/messageviewerdialog.cpp:213
 #, kde-format
@@ -616,7 +624,7 @@ msgstr "Vytisknout dokument"
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "Soubor nelze přečíst"
 
 #: widgets/urlhandler.cpp:46
 #, kde-format
