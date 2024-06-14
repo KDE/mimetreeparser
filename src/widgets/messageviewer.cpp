@@ -44,7 +44,7 @@ public:
         messageWidget->hide();
     }
 
-    MessageViewer *q;
+    MessageViewer *const q;
 
     QVBoxLayout *layout = nullptr;
     KMime::Message::Ptr message;
