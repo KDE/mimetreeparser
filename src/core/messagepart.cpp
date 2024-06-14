@@ -96,7 +96,7 @@ static KMime::Headers::ContentType *contentType(KMime::Content *node)
 QByteArray MessagePart::charset() const
 {
     if (!mNode) {
-        return "us-ascii";
+        return QByteArrayLiteral("us-ascii");
     }
     if (auto ct = contentType(mNode)) {
         return ct->charset();
@@ -220,7 +220,7 @@ void MessagePart::parseInternal(const QByteArray &data)
     bindLifetime(tempNode);
 
     if (!tempNode->head().isEmpty()) {
-        tempNode->contentDescription()->from7BitString("temporary node");
+        tempNode->contentDescription()->from7BitString(QByteArrayLiteral("temporary node"));
     }
 
     parseInternal(tempNode);

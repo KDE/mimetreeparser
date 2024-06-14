@@ -236,7 +236,7 @@ MessagePart::List ObjectTreeParser::collectContentParts(MessagePart::Ptr start)
         },
         [start](const MessagePart::Ptr &part) {
             if (const auto attachment = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(part.data())) {
-                return attachment->mimeType() == "text/calendar";
+                return attachment->mimeType() == QByteArrayLiteral("text/calendar");
             } else if (const auto text = dynamic_cast<MimeTreeParser::TextMessagePart *>(part.data())) {
                 auto enc = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(text->parentPart());
                 if (enc && enc->error()) {
@@ -433,7 +433,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
             }
             // Fallback to the generic handler
             {
-                auto list = processType(node, mediaType, "*");
+                auto list = processType(node, mediaType, QByteArrayLiteral("*"));
                 if (!list.isEmpty()) {
                     return list;
                 }

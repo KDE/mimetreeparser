@@ -151,7 +151,7 @@ public:
 
         if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
             auto node = attachmentPart->node();
-            if (node && mMimeTypeCache[attachmentPart] == "text/calendar") {
+            if (node && mMimeTypeCache[attachmentPart] == QByteArrayLiteral("text/calendar")) {
                 return messagePart->text();
             }
         }
@@ -197,7 +197,7 @@ public:
         }
 
         for (const auto &part : std::as_const(filteredParts)) {
-            if (mMimeTypeCache[part.data()] == "text/calendar") {
+            if (mMimeTypeCache[part.data()] == QByteArrayLiteral("text/calendar")) {
                 mParts.prepend(part);
             } else {
                 mParts.append(part);
@@ -272,21 +272,21 @@ bool PartModel::containsHtml() const
 QHash<int, QByteArray> PartModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
-    roles[TypeRole] = "type";
-    roles[ContentRole] = "content";
-    roles[IsEmbeddedRole] = "embedded";
-    roles[IsEncryptedRole] = "encrypted";
-    roles[IsSignedRole] = "signed";
-    roles[SecurityLevelRole] = "securityLevel";
-    roles[EncryptionSecurityLevelRole] = "encryptionSecurityLevel";
-    roles[SignatureSecurityLevelRole] = "signatureSecurityLevel";
-    roles[ErrorType] = "errorType";
-    roles[ErrorString] = "errorString";
-    roles[IsErrorRole] = "error";
-    roles[SenderRole] = "sender";
-    roles[SignatureDetails] = "signatureDetails";
-    roles[EncryptionDetails] = "encryptionDetails";
-    roles[DateRole] = "date";
+    roles[TypeRole] = QByteArrayLiteral("type");
+    roles[ContentRole] = QByteArrayLiteral("content");
+    roles[IsEmbeddedRole] = QByteArrayLiteral("embedded");
+    roles[IsEncryptedRole] = QByteArrayLiteral("encrypted");
+    roles[IsSignedRole] = QByteArrayLiteral("signed");
+    roles[SecurityLevelRole] = QByteArrayLiteral("securityLevel");
+    roles[EncryptionSecurityLevelRole] = QByteArrayLiteral("encryptionSecurityLevel");
+    roles[SignatureSecurityLevelRole] = QByteArrayLiteral("signatureSecurityLevel");
+    roles[ErrorType] = QByteArrayLiteral("errorType");
+    roles[ErrorString] = QByteArrayLiteral("errorString");
+    roles[IsErrorRole] = QByteArrayLiteral("error");
+    roles[SenderRole] = QByteArrayLiteral("sender");
+    roles[SignatureDetails] = QByteArrayLiteral("signatureDetails");
+    roles[EncryptionDetails] = QByteArrayLiteral("encryptionDetails");
+    roles[DateRole] = QByteArrayLiteral("date");
     return roles;
 }
 
@@ -396,7 +396,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                     qWarning() << "no content for attachment";
                     return {};
                 }
-                if (d->mMimeTypeCache[attachmentPart] == "text/calendar") {
+                if (d->mMimeTypeCache[attachmentPart] == QByteArrayLiteral("text/calendar")) {
                     return QVariant::fromValue(Types::Ical);
                 }
             }

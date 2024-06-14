@@ -19,7 +19,7 @@ KMime::Message::Ptr openSmimeEncrypted(const QByteArray &content)
     KMime::Message::Ptr message(new KMime::Message);
 
     auto contentType = message->contentType();
-    contentType->setMimeType("application/pkcs7-mime");
+    contentType->setMimeType(QByteArrayLiteral("application/pkcs7-mime"));
     contentType->setParameter(QStringLiteral("smime-type"), QStringLiteral("enveloped-data"));
 
     auto contentDisposition = new KMime::Headers::ContentDisposition;
@@ -42,7 +42,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     KMime::Message::Ptr message(new KMime::Message);
 
     auto contentType = message->contentType();
-    contentType->setMimeType("multipart/encrypted");
+    contentType->setMimeType(QByteArrayLiteral("multipart/encrypted"));
     contentType->setBoundary(KMime::multiPartBoundary());
     contentType->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
 
@@ -51,7 +51,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     cte->setDecoded(true);
 
     auto pgpEncrypted = new KMime::Content;
-    pgpEncrypted->contentType()->setMimeType("application/pgp-encrypted");
+    pgpEncrypted->contentType()->setMimeType(QByteArrayLiteral("application/pgp-encrypted"));
     auto contentDisposition = new KMime::Headers::ContentDisposition;
     contentDisposition->setDisposition(KMime::Headers::CDattachment);
     pgpEncrypted->appendHeader(contentDisposition);
@@ -59,7 +59,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     message->appendContent(pgpEncrypted);
 
     auto encryptedContent = new KMime::Content;
-    encryptedContent->contentType()->setMimeType("application/octet-stream");
+    encryptedContent->contentType()->setMimeType(QByteArrayLiteral("application/octet-stream"));
     contentDisposition = new KMime::Headers::ContentDisposition;
     contentDisposition->setDisposition(KMime::Headers::CDinline);
     contentDisposition->setFilename(QStringLiteral("msg.asc"));
