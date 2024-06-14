@@ -46,7 +46,7 @@ static bool linkify_pmatch(const QString &str1, int at, const QString &str2)
     if (str2.length() > (str1.length() - at))
         return false;
 
-    for (int n = 0; n < (int)str2.length(); ++n) {
+    for (int n = 0; n < str2.length(); ++n) {
         if (str1.at(n + at).toLower() != str2.at(n).toLower())
             return false;
     }
@@ -56,7 +56,7 @@ static bool linkify_pmatch(const QString &str1, int at, const QString &str2)
 
 static bool linkify_isOneOf(const QChar &c, const QString &charlist)
 {
-    for (int i = 0; i < (int)charlist.length(); ++i) {
+    for (int i = 0; i < charlist.length(); ++i) {
         if (c == charlist.at(i))
             return true;
     }
