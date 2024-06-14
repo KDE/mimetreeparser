@@ -5,6 +5,7 @@
 #include <KLocalizedString>
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDebug>
 #include <QDir>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -34,6 +35,7 @@ int main(int argc, char *argv[])
     engine.load(QUrl(QStringLiteral("qrc:/content/main.qml")));
     const auto rootObjects = engine.rootObjects();
     if (rootObjects.isEmpty()) {
+        qWarning() << "Impossible to load main.qml. Please verify installation";
         return -1;
     }
     parser.process(app);
