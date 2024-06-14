@@ -61,7 +61,7 @@ public:
         ErrorType,
         ErrorString,
         SenderRole,
-        DateRole
+        DateRole,
     };
 
     enum SecurityLevel {

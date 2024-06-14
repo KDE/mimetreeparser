@@ -45,7 +45,11 @@ class MIMETREEPARSER_CORE_EXPORT MessagePart : public QObject
     Q_PROPERTY(QString plaintextContent READ plaintextContent CONSTANT)
     Q_PROPERTY(QString htmlContent READ htmlContent CONSTANT)
 public:
-    enum Disposition { Inline, Attachment, Invalid };
+    enum Disposition {
+        Inline,
+        Attachment,
+        Invalid,
+    };
     using Ptr = QSharedPointer<MessagePart>;
     using List = QList<Ptr>;
     MessagePart(ObjectTreeParser *otp, const QString &text, KMime::Content *node = nullptr);
