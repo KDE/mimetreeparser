@@ -21,7 +21,7 @@ class MIMETREEPARSER_CORE_EXPORT AttachmentModel : public QAbstractTableModel
 {
     Q_OBJECT
 public:
-    AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
+    explicit AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
     ~AttachmentModel() override;
 
 public:
