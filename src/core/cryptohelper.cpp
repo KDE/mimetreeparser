@@ -158,13 +158,13 @@ PGPBlockType Block::type() const
 namespace
 {
 
-bool isPGP(const KMime::Content *part, bool allowOctetStream = false)
+[[nodiscard]] bool isPGP(const KMime::Content *part, bool allowOctetStream = false)
 {
     const auto ct = static_cast<KMime::Headers::ContentType *>(part->headerByType("Content-Type"));
     return ct && (ct->isSubtype("pgp-encrypted") || ct->isSubtype("encrypted") || (allowOctetStream && ct->isMimeType("application/octet-stream")));
 }
 
-bool isSMIME(const KMime::Content *part)
+[[nodiscard]] bool isSMIME(const KMime::Content *part)
 {
     const auto ct = static_cast<KMime::Headers::ContentType *>(part->headerByType("Content-Type"));
     return ct && (ct->isSubtype("pkcs7-mime") || ct->isSubtype("x-pkcs7-mime"));
@@ -180,12 +180,12 @@ void copyHeader(const KMime::Headers::Base *header, KMime::Message::Ptr msg)
     msg->appendHeader(newHdr);
 }
 
-bool isContentHeader(const KMime::Headers::Base *header)
+[[nodiscard]] bool isContentHeader(const KMime::Headers::Base *header)
 {
     return header->is("Content-Type") || header->is("Content-Transfer-Encoding") || header->is("Content-Disposition");
 }
 
-KMime::Message::Ptr assembleMessage(const KMime::Message::Ptr &orig, const KMime::Content *newContent)
+[[nodiscard]] KMime::Message::Ptr assembleMessage(const KMime::Message::Ptr &orig, const KMime::Content *newContent)
 {
     auto out = KMime::Message::Ptr::create();
     // Use the new content as message content
