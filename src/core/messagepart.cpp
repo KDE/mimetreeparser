@@ -102,7 +102,7 @@ QByteArray MessagePart::charset() const
         return ct->charset();
     }
     // Per rfc2045 us-ascii is the default
-    return "us-ascii";
+    return QByteArrayLiteral("us-ascii");
 }
 
 QByteArray MessagePart::mimeType() const

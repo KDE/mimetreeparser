@@ -97,7 +97,7 @@ public:
             if (contents.count() == 1 && contents[0]->contentType()->mimeType() == QByteArrayLiteral("application/pkcs7-mime")) {
                 qWarning() << contents[0]->decodedText() << contents[0]->decodedContent();
 
-                auto data = findTypeInDirectChildren(node, "application/pkcs7-mime");
+                auto data = findTypeInDirectChildren(node, QByteArrayLiteral("application/pkcs7-mime"));
                 auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), node, data));
                 mp->setIsEncrypted(true);
                 return mp;
@@ -116,7 +116,7 @@ class ApplicationPGPEncryptedBodyPartFormatter : public MimeTreeParser::Interfac
 public:
     MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
-        if (node->decodedContent().trimmed() != "Version: 1") {
+        if (node->decodedContent().trimmed() != QByteArrayLiteral("Version: 1")) {
             qCWarning(MIMETREEPARSER_CORE_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
         }
 
@@ -124,7 +124,7 @@ public:
             return MessagePart::Ptr();
         }
 
-        KMime::Content *data = findTypeInDirectChildren(node->parent(), "application/octet-stream");
+        KMime::Content *data = findTypeInDirectChildren(node->parent(), QByteArrayLiteral("application/octet-stream"));
 
         if (!data) {
             return MessagePart::Ptr(); // new MimeMessagePart(objectTreeParser, node));
@@ -250,11 +250,11 @@ public:
         /*
         ATTENTION: This code is to be replaced by the new 'auto-detect' feature. --------------------------------------
         */
-        KMime::Content *data = findTypeInDirectChildren(node, "application/octet-stream");
+        KMime::Content *data = findTypeInDirectChildren(node, QByteArrayLiteral("application/octet-stream"));
         if (data) {
             protocol = QGpgME::openpgp();
         } else {
-            data = findTypeInDirectChildren(node, "application/pkcs7-mime");
+            data = findTypeInDirectChildren(node, QByteArrayLiteral("application/pkcs7-mime"));
             if (data) {
                 protocol = QGpgME::smime();
             }

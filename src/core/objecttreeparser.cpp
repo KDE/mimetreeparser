@@ -478,8 +478,8 @@ QByteArray ObjectTreeParser::codecNameFor(KMime::Content *node) const
 
     // utf-8 is a superset of us-ascii, so we don't lose anything if we use it instead
     // utf-8 is used so widely nowadays that it is a good idea to use it to fix issues with broken clients.
-    if (charset == "us-ascii") {
-        charset = "utf-8";
+    if (charset == QByteArrayLiteral("us-ascii")) {
+        charset = QByteArrayLiteral("utf-8");
     }
     if (!charset.isEmpty()) {
         if (const QStringDecoder c(charset.constData()); c.isValid()) {
