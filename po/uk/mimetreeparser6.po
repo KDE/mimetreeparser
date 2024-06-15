@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2024-05-10 14:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -535,102 +535,102 @@ msgstr "&Пр. копія:"
 msgid "&Date:"
 msgstr "&Дата:"
 
-#: widgets/messageviewerdialog.cpp:129
+#: widgets/messageviewerdialog.cpp:128
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&Файл"
 
-#: widgets/messageviewerdialog.cpp:131
+#: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Зберегти"
 
-#: widgets/messageviewerdialog.cpp:137
+#: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Зберегти розшифрований файл"
 
-#: widgets/messageviewerdialog.cpp:143
+#: widgets/messageviewerdialog.cpp:142
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Перегляд друку"
 
-#: widgets/messageviewerdialog.cpp:149
+#: widgets/messageviewerdialog.cpp:148
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "На&друкувати"
 
-#: widgets/messageviewerdialog.cpp:156
+#: widgets/messageviewerdialog.cpp:155
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&Навігація"
 
-#: widgets/messageviewerdialog.cpp:157
+#: widgets/messageviewerdialog.cpp:156
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Попереднє повідомлення"
 
-#: widgets/messageviewerdialog.cpp:161
+#: widgets/messageviewerdialog.cpp:160
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Наступне повідомлення"
 
-#: widgets/messageviewerdialog.cpp:181 widgets/messageviewerdialog.cpp:187
-#: widgets/messageviewerdialog.cpp:209
+#: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
+#: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "файли пошти (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerdialog.cpp:183
+#: widgets/messageviewerdialog.cpp:182
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "шифровані файли S/MIME (*.p7m)"
 
-#: widgets/messageviewerdialog.cpp:191
+#: widgets/messageviewerdialog.cpp:190
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Збереження файла"
 
-#: widgets/messageviewerdialog.cpp:197
+#: widgets/messageviewerdialog.cpp:196
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Не вдалося створити файл %1."
 
-#: widgets/messageviewerdialog.cpp:197 widgets/messageviewerdialog.cpp:213
+#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
 #, kde-format
 msgid "Error saving message"
 msgstr "Помилка під час спроби збереження повідомлення"
 
-#: widgets/messageviewerdialog.cpp:207
+#: widgets/messageviewerdialog.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Збереження розшифрованого файла"
 
-#: widgets/messageviewerdialog.cpp:213
+#: widgets/messageviewerdialog.cpp:212
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Не вдалося створити файл %1."
 
-#: widgets/messageviewerdialog.cpp:232 widgets/messageviewerdialog.cpp:244
+#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerdialog.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Друк документа"
 
-#: widgets/messageviewerdialog.cpp:296
+#: widgets/messageviewerdialog.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
