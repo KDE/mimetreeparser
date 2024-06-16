@@ -71,6 +71,7 @@ PUBLIC
     Qt::Gui
 PRIVATE
     KF6::Codecs
+    KF6::CoreAddons
     Gpgmepp
     KPim6::Libkleo
 
@@ -107,6 +108,7 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         PartModel
         PartMetaData
         Enums
+        BodyPartFormatter
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )

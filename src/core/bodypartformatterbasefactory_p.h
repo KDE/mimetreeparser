@@ -20,7 +20,8 @@ public:
 
     void setup();
     void messageviewer_create_builtin_bodypart_formatters(); // defined in bodypartformatter.cpp
-    void insert(const char *type, const char *subtype, Interface::BodyPartFormatter *formatter);
+    void insert(const QString &type, const QString &subtype, const Interface::BodyPartFormatter *formatter);
+    void loadPlugins();
 
     BodyPartFormatterBaseFactory *const q;
     std::optional<TypeRegistry> all;

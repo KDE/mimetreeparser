@@ -389,8 +389,8 @@ MessagePart::Ptr ObjectTreeParser::parsedPart() const
 MessagePart::List ObjectTreeParser::processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType)
 {
     static MimeTreeParser::BodyPartFormatterBaseFactory factory;
-    const auto sub = factory.subtypeRegistry(mediaType.constData());
-    const auto range = sub.equal_range(subType.constData());
+    const auto sub = factory.subtypeRegistry(QString::fromUtf8(mediaType));
+    const auto range = sub.equal_range(QString::fromUtf8(subType));
     for (auto it = range.first; it != range.second; ++it) {
         const auto formatter = it->second;
         if (!formatter) {

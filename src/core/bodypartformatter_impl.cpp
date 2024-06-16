@@ -17,6 +17,7 @@
 
 using namespace MimeTreeParser;
 using namespace MimeTreeParser::Interface;
+using namespace Qt::StringLiterals;
 
 namespace MimeTreeParser
 {
@@ -362,28 +363,28 @@ void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_
     auto message = new MessageRfc822BodyPartFormatter;
     auto multipartRelated = new MultiPartRelatedBodyPartFormatter;
 
-    insert("application", "octet-stream", any);
-    insert("application", "pgp", textPlain);
-    insert("application", "pkcs7-mime", pkcs7);
-    insert("application", "x-pkcs7-mime", pkcs7);
-    insert("application", "pgp-encrypted", pgp);
-    insert("application", "*", any);
+    insert(u"application"_s, u"octet-stream"_s, any);
+    insert(u"application"_s, u"pgp"_s, textPlain);
+    insert(u"application"_s, u"pkcs7-mime"_s, pkcs7);
+    insert(u"application"_s, u"x-pkcs7-mime"_s, pkcs7);
+    insert(u"application"_s, u"pgp-encrypted"_s, pgp);
+    insert(u"application"_s, u"*"_s, any);
 
-    insert("text", "html", html);
-    insert("text", "rtf", any);
-    insert("text", "plain", textPlain);
-    insert("text", "rfc822-headers", headers);
-    insert("text", "*", textPlain);
+    insert(u"text"_s, u"html"_s, html);
+    insert(u"text"_s, u"rtf"_s, any);
+    insert(u"text"_s, u"plain"_s, textPlain);
+    insert(u"text"_s, u"rfc822-headers"_s, headers);
+    insert(u"text"_s, u"*"_s, textPlain);
 
-    insert("image", "*", any);
+    insert(u"image"_s, u"*"_s, any);
 
-    insert("message", "rfc822", message);
-    insert("message", "*", any);
+    insert(u"message"_s, u"rfc822"_s, message);
+    insert(u"message"_s, u"*"_s, any);
 
-    insert("multipart", "alternative", multipartAlternative);
-    insert("multipart", "encrypted", multipartEncrypted);
-    insert("multipart", "signed", multipartSigned);
-    insert("multipart", "related", multipartRelated);
-    insert("multipart", "*", multipartMixed);
-    insert("*", "*", any);
+    insert(u"multipart"_s, u"alternative"_s, multipartAlternative);
+    insert(u"multipart"_s, u"encrypted"_s, multipartEncrypted);
+    insert(u"multipart"_s, u"signed"_s, multipartSigned);
+    insert(u"multipart"_s, u"related"_s, multipartRelated);
+    insert(u"multipart"_s, u"*"_s, multipartMixed);
+    insert(u"*"_s, u"*"_s, any);
 }

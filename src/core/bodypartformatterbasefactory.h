@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QByteArray>
+#include <QString>
 #include <map>
 #include <memory>
 
@@ -17,14 +18,14 @@ class BodyPartFormatter;
 }
 
 struct ltstr {
-    bool operator()(const char *s1, const char *s2) const
+    bool operator()(const QString &s1, const QString &s2) const
     {
-        return qstricmp(s1, s2) < 0;
+        return s1.compare(s2);
     }
 };
 
-typedef std::multimap<const char *, Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
-typedef std::map<const char *, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
+typedef std::multimap<QString, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
+typedef std::map<QString, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate;
 
@@ -34,10 +35,10 @@ public:
     BodyPartFormatterBaseFactory();
     ~BodyPartFormatterBaseFactory();
 
-    const SubtypeRegistry &subtypeRegistry(const char *type) const;
+    const SubtypeRegistry &subtypeRegistry(const QString &type) const;
 
 protected:
-    void insert(const char *type, const char *subtype, Interface::BodyPartFormatter *formatter);
+    void insert(const QString &type, const QString &subtype, Interface::BodyPartFormatter *formatter);
 
 private:
     static BodyPartFormatterBaseFactory *mSelf;
