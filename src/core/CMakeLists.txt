@@ -70,7 +70,6 @@ PUBLIC
     KF6::I18n
     Qt::Gui
 PRIVATE
-    KF6::Codecs
     Gpgmepp
     KPim6::Libkleo
 

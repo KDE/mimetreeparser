@@ -48,7 +48,6 @@ PUBLIC
     KPim6::MimeTreeParserCore
 PRIVATE
     Qt::PrintSupport
-    KF6::Codecs
     KF6::I18n
     KF6::CalendarCore
     KF6::WidgetsAddons
