@@ -15,6 +15,7 @@ add_gpg_crypto_test(messageviewertest widgets-messageviewertest)
 target_link_libraries(messageviewertest PUBLIC
     Qt::Test
     KPim6::MimeTreeParserWidgets
+    KPim6::MimeTreeParserCore
     KF6::WidgetsAddons
     Gpgmepp
 )

@@ -11,4 +11,5 @@ target_link_libraries(mimetreeparser-widgets PUBLIC
     Qt::Widgets
     KPim6::MimeTreeParserWidgets
     KPim6::Mbox
+    KF6::I18n
 )

@@ -66,13 +66,12 @@ target_include_directories(KPim6MimeTreeParserCore
 target_link_libraries(KPim6MimeTreeParserCore
 PUBLIC
     KPim6::Mime
-    KPim6::Mbox
-    KF6::I18n
+    KPim6::Libkleo
+    Gpgmepp
     Qt::Gui
 PRIVATE
-    Gpgmepp
-    KPim6::Libkleo
-
+    KPim6::Mbox
+    KF6::I18n
 )
 
 set_target_properties(KPim6MimeTreeParserCore PROPERTIES
