@@ -34,7 +34,7 @@ ecm_qt_declare_logging_category(KPim6MimeTreeParserWidgets
     EXPORT MIMETREEPARSER
 )
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MimeTreeParserWidgets PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KPim6MimeTreeParserWidgets BASE_NAME mimetreeparser_widgets)
@@ -95,7 +95,7 @@ install(FILES
     COMPONENT Devel
 )
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MimeTreeParserWidgets_QCH
         NAME MimeTreeParserWidgets
@@ -115,19 +115,19 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+   )
 endif()
 
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserWidgets")
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KPim6MimeTreeParserWidgets_QCH
         FILE KPim6MimeTreeParserWidgetsQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+   )
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MimeTreeParserWidgetsQchTargets.cmake\")")
 endif()
 

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
-add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata" )
+add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata")
 
 include(ECMAddTests)
 include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
@@ -13,7 +13,7 @@ function(add_mimetreeparser_class_unittest _name _additionalSource)
     target_link_libraries(${_name} PRIVATE
         Qt::Test
         KPim6::MimeTreeParserCore
-    )
+   )
     target_include_directories(${_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
     add_test(NAME core-${_name} COMMAND $<TARGET_FILE:${_name}>)
 endfunction()
@@ -24,17 +24,17 @@ function(add_mimetreeparser_crypto_unittest _name)
     target_include_directories(${_name} PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/..
         ${GPGME_INCLUDE_DIRS}
-    )
+   )
     target_link_libraries(${_name} PRIVATE
         Qt::Test
         KPim6::MimeTreeParserCore
-    )
+   )
     add_gpg_crypto_test(${_name} core-${_name})
 endfunction()
 
 add_mimetreeparser_crypto_unittest(attachmenttest)
 
-add_definitions( -DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata" )
+add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata")
 include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}

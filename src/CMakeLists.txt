@@ -4,11 +4,11 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"mimetreeparser6\")
 add_subdirectory(core)
 
-if (Qt6Quick_FOUND)
+if(Qt6Quick_FOUND)
     add_subdirectory(quick)
 endif()
 
-if (Qt6Widgets_FOUND)
+if(Qt6Widgets_FOUND)
     add_subdirectory(widgets)
 endif()
 
