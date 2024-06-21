@@ -34,15 +34,11 @@ endfunction()
 
 add_mimetreeparser_crypto_unittest(attachmenttest)
 
-add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata")
-include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/..
 )
 include_directories(${GPGME_INCLUDE_DIRS})
-
-include(ECMAddTests)
 
 add_executable(cryptohelpertest cryptohelpertest.cpp)
 add_gpg_crypto_test(cryptohelpertest core-cryptohelpertest)
