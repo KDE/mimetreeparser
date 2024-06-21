@@ -203,7 +203,7 @@ public:
     [[nodiscard]] bool isHtml() const override
     {
         return true;
-    };
+    }
 };
 
 class MIMETREEPARSER_CORE_EXPORT AlternativeMessagePart : public MessagePart
