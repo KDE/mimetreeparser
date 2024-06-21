@@ -1,5 +1,8 @@
 # SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
 # SPDX-License-Identifier: BSD-3-Clause
+find_package(Qt6Qml ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
+find_package(Qt6Quick ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
+find_package(KPim6Mbox ${KPIM_MBOX_VERSION} CONFIG REQUIRED)
 
 add_executable(mimetreeparser-qml
     main.cpp
@@ -8,9 +11,6 @@ add_executable(mimetreeparser-qml
     resources.qrc
 )
 
-find_package(Qt6Qml ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(Qt6Quick ${QT_MIN_VERSION} CONFIG REQUIRED)
-find_package(KPim6Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)
 target_link_libraries(mimetreeparser-qml PUBLIC
     Qt::Quick
     Qt::Widgets

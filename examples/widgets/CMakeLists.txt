@@ -5,7 +5,7 @@ add_executable(mimetreeparser-widgets
     main.cpp
 )
 
-find_package(KPim6Mbox ${KPIM_MIME_VERSION} CONFIG REQUIRED)
+find_package(KPim6Mbox ${KPIM_MBOX_VERSION} CONFIG REQUIRED)
 
 target_link_libraries(mimetreeparser-widgets PUBLIC
     Qt::Widgets
