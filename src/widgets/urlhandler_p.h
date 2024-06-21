@@ -14,5 +14,5 @@ public:
     bool handleClick(const QUrl &url, QWindow *window);
 
 private:
-    bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId);
+    [[nodiscard]] bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId);
 };
