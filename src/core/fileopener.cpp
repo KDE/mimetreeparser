@@ -29,7 +29,6 @@ KMime::Message::Ptr openSmimeEncrypted(const QByteArray &content)
 
     auto cte = message->contentTransferEncoding();
     cte->setEncoding(KMime::Headers::CE7Bit);
-    cte->setDecoded(true);
 
     message->setBody(content);
     message->assemble();
@@ -48,7 +47,6 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
 
     auto cte = message->contentTransferEncoding();
     cte->setEncoding(KMime::Headers::CE7Bit);
-    cte->setDecoded(true);
 
     auto pgpEncrypted = new KMime::Content;
     pgpEncrypted->contentType()->setMimeType(QByteArrayLiteral("application/pgp-encrypted"));
