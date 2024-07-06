@@ -681,7 +681,7 @@ private Q_SLOTS:
         part = partList[1].dynamicCast<MimeTreeParser::MessagePart>();
         QVERIFY(bool(part));
         QCOMPARE(part->text(), QString());
-        QCOMPARE(part->charset(), QStringLiteral("ISO-8859-1").toLocal8Bit());
+        QCOMPARE(part->charset(), QStringLiteral("UTF-8").toLocal8Bit());
         QCOMPARE(part->signatures().size(), 1);
         QCOMPARE(part->signatures()[0]->partMetaData()->isGoodSignature, true);
         auto contentAttachmentList = otp.collectAttachmentParts();
