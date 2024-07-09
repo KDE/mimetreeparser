@@ -33,7 +33,7 @@ class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
     Q_PROPERTY(QDateTime date READ date NOTIFY htmlChanged)
 
 public:
-    explicit MessageParser(QObject *parent = Q_NULLPTR);
+    explicit MessageParser(QObject *parent = nullptr);
     ~MessageParser();
 
     [[nodiscard]] KMime::Message::Ptr message() const;
