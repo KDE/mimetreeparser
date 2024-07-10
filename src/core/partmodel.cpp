@@ -38,7 +38,7 @@ std::pair<QString, bool> PartModel::trim(const QString &text)
     };
 
     for (const auto &expression : delimiters) {
-        auto i = expression.globalMatch(text);
+        auto i = expression.globalMatchView(text);
         while (i.hasNext()) {
             const auto match = i.next();
             const int startOffset = match.capturedStart(0);

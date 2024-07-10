@@ -318,7 +318,7 @@ QString ObjectTreeParser::resolveCidLinks(const QString &html)
 {
     auto text = html;
     static const auto regex = QRegularExpression(QLatin1StringView("(src)\\s*=\\s*(\"|')(cid:[^\"']+)\\2"));
-    auto it = regex.globalMatch(text);
+    auto it = regex.globalMatchView(text);
     while (it.hasNext()) {
         const auto match = it.next();
         const auto link = QUrl(match.captured(3));
