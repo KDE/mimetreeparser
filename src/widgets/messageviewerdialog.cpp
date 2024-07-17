@@ -228,7 +228,7 @@ void MessageViewerDialog::Private::print(QWidget *parent)
 {
     QPrinter printer;
     QPrintDialog dialog(&printer, parent);
-    dialog.setWindowTitle(i18nc("@title:window", "Print Document"));
+    dialog.setWindowTitle(i18nc("@title:window", "Print"));
     if (dialog.exec() != QDialog::Accepted)
         return;
 
@@ -240,7 +240,7 @@ void MessageViewerDialog::Private::printPreview(QWidget *parent)
     auto dialog = new QPrintPreviewDialog(parent);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->resize(800, 750);
-    dialog->setWindowTitle(i18nc("@title:window", "Print Document"));
+    dialog->setWindowTitle(i18nc("@title:window", "Print Preview"));
     QObject::connect(dialog, &QPrintPreviewDialog::paintRequested, parent, [this](QPrinter *printer) {
         printInternal(printer);
     });

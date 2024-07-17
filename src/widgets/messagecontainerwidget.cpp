@@ -56,20 +56,20 @@ QString getDetails(const SignatureInfo &signatureDetails)
     if (signatureDetails.keyMissing) {
         if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
             details += i18ndc("mimetreeparser",
-                              "@label",
+                              "@info",
                               "This message has been signed VS-NfD compliant using the certificate <a href=\"%1\">%2</a>.",
                               href,
                               Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
                 + QLatin1Char('\n');
         } else {
             details += i18ndc("mimetreeparser",
-                              "@label",
+                              "@info",
                               "This message has been signed using the certificate <a href=\"%1\">%2</a>.",
                               href,
                               Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
                 + QLatin1Char('\n');
         }
-        details += i18ndc("mimetreeparser", "@label", "The certificate details are not available.");
+        details += i18ndc("mimetreeparser", "@info", "The certificate details are not available.");
     } else {
         QString signerDisplayName = signatureDetails.signer.toHtmlEscaped();
         if (signatureDetails.cryptoProto == QGpgME::smime()) {
@@ -77,36 +77,36 @@ QString getDetails(const SignatureInfo &signatureDetails)
             signerDisplayName = MimeTreeParser::dnToDisplayName(dn).toHtmlEscaped();
         }
         if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed VS-NfD compliant by %1.", signerDisplayName);
+            details += i18ndc("mimetreeparser", "@info", "This message has been signed VS-NfD compliant by %1.", signerDisplayName);
         } else {
-            details += i18ndc("mimetreeparser", "@label", "This message has been signed by %1.", signerDisplayName);
+            details += i18ndc("mimetreeparser", "@info", "This message has been signed by %1.", signerDisplayName);
         }
         if (signatureDetails.keyRevoked) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The <a href=\"%1\">certificate</a> was revoked.", href);
+            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@info", "The <a href=\"%1\">certificate</a> was revoked.", href);
         }
         if (signatureDetails.keyExpired) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@label", "The <a href=\"%1\">certificate</a> was expired.", href);
+            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@info", "The <a href=\"%1\">certificate</a> is expired.", href);
         }
 
         if (signatureDetails.keyTrust == GpgME::Signature::Unknown) {
             details += QLatin1Char(' ')
-                + i18ndc("mimetreeparser", "@label", "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is unknown.", href);
+                + i18ndc("mimetreeparser", "@info", "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is unknown.", href);
         } else if (signatureDetails.keyTrust == GpgME::Signature::Marginal) {
             details += QLatin1Char(' ')
-                + i18ndc("mimetreeparser", "@label", "The signature is valid and the <a href=\"%1\">certificate</a> is marginally trusted.", href);
+                + i18ndc("mimetreeparser", "@info", "The signature is valid and the <a href=\"%1\">certificate</a> is marginally trusted.", href);
         } else if (signatureDetails.keyTrust == GpgME::Signature::Full) {
             details +=
-                QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is valid and the <a href=\"%1\">certificate</a> is fully trusted.", href);
+                QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is valid and the <a href=\"%1\">certificate</a> is fully trusted.", href);
         } else if (signatureDetails.keyTrust == GpgME::Signature::Ultimate) {
             details += QLatin1Char(' ')
-                + i18ndc("mimetreeparser", "@label", "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately trusted.", href);
+                + i18ndc("mimetreeparser", "@info", "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately trusted.", href);
         } else {
             details +=
-                QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted.", href);
+                QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is valid, but the <a href=\"%1\">certificate</a> is not certified.", href);
         }
         if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired
             && signatureDetails.keyTrust != GpgME::Signature::Unknown) {
-            details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@label", "The signature is invalid.");
+            details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is invalid.");
         }
     }
     return details;
@@ -202,9 +202,9 @@ void MessageWidgetContainer::createLayout()
             encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-error")));
             encryptionMessage->setMessageType(KMessageWidget::Error);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
-                text = i18n("This message is VS-NfD compliant encrypted but we don't have the certificate for it.", QString::fromUtf8(m_encryptionInfo.keyId));
+                text = i18n("This message is VS-NfD compliant encrypted but you don't have a matching secret key.", QString::fromUtf8(m_encryptionInfo.keyId));
             } else {
-                text = i18n("This message is encrypted but we don't have the certificate for it.");
+                text = i18n("This message is encrypted but you don't have a matching secret key.");
             }
         } else {
             encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
@@ -221,7 +221,7 @@ void MessageWidgetContainer::createLayout()
         connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
             QUrl url(link);
             if (url.path() == QStringLiteral("showDetails")) {
-                QString newText = text + QLatin1Char(' ') + i18n("The message is encrypted for the following certificates:");
+                QString newText = text + QLatin1Char(' ') + i18n("The message is encrypted for the following recipients:");
 
                 newText += MimeTreeParser::decryptRecipientsToHtml(m_encryptionInfo.decryptRecipients, m_encryptionInfo.cryptoProto);
 

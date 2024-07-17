@@ -511,17 +511,17 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                         QString errorMessage;
                         if (encryptedMessagePart->cryptoProto() == QGpgME::smime()) {
                             errorMessage +=
-                                i18ndc("mimetreeparser", "@info:status", "This message cannot be decrypted with any S/MIME certificate in your keyring.");
+                                i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
                         } else {
                             errorMessage +=
-                                i18ndc("mimetreeparser", "@info:status", "This message cannot be decrypted with any OpenPGP certificate in your keyring.");
+                                i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
                         }
                         if (!encryptedMessagePart->decryptRecipients().empty()) {
                             errorMessage += QLatin1Char(' ')
                                 + i18ndcp("mimetreeparser",
                                           "@info:status",
-                                          "The message is encrypted for the following certificate:",
-                                          "The message is encrypted for the following certificates:",
+                                          "The message is encrypted for the following recipient:",
+                                          "The message is encrypted for the following recipients:",
                                           encryptedMessagePart->decryptRecipients().size());
                             errorMessage +=
                                 MimeTreeParser::decryptRecipientsToHtml(encryptedMessagePart->decryptRecipients(), encryptedMessagePart->cryptoProto());
