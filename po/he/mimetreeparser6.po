@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-07-18 00:40+0000\n"
 "PO-Revision-Date: 2024-05-10 20:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -129,28 +129,21 @@ msgstr "תוסף ההצפנה „%1” לא יכול לפענח את הנתונ�
 msgid "Error: %1"
 msgstr "שגיאה: %1"
 
-#: core/partmodel.cpp:514
-#, kde-format
+#: core/partmodel.cpp:514 core/partmodel.cpp:517
+#, fuzzy, kde-format
+#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgctxt "@info:status"
-msgid ""
-"This message cannot be decrypted with any S/MIME certificate in your keyring."
-msgstr ""
-"אי אפשר לפענח את ההודעה הזאת עם אף אחד מאישורי ה־S/MIME שבצרור המפתחות שלך."
-
-#: core/partmodel.cpp:517
-#, kde-format
-msgctxt "@info:status"
-msgid ""
-"This message cannot be decrypted with any OpenPGP certificate in your "
-"keyring."
-msgstr ""
-"אי אפשר לפענח את ההודעה הזאת עם אף אחד מאישורי ה־OpenPGP שבצרור המפתחות שלך."
+msgid "You cannot decrypt this message."
+msgstr "תוסף ההצפנה „%1” לא יכול לפענח הודעות."
 
 #: core/partmodel.cpp:523
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "The message is encrypted for the following certificate:"
+#| msgid_plural "The message is encrypted for the following certificates:"
 msgctxt "@info:status"
-msgid "The message is encrypted for the following certificate:"
-msgid_plural "The message is encrypted for the following certificates:"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "ההודעה הזאת מוצפנת לאישור הבא:"
 msgstr[1] "ההודעה הזאת מוצפנת לאישורים הבאים:"
 msgstr[2] "ההודעה הזאת מוצפנת לאישורים הבאים:"
@@ -257,62 +250,82 @@ msgid "sent by %1 on %2"
 msgstr "נשלח על ידי %1 ב־%2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, kde-format
-msgctxt "@label"
-msgid "This message has been signed using the certificate %1."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the certificate %1."
+msgctxt "@info"
+msgid "This message was signed with certificate %1."
 msgstr "ההודעה הזאת נחתמה באמצעות האישור %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate details are not available."
+msgctxt "@info"
 msgid "The certificate details are not available."
 msgstr "פרטי האישור לא זמינים."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, kde-format
-msgctxt "@label"
-msgid "This message has been signed using the certificate %1 by %2."
-msgstr "ההודעה הזאת נחתמה באמצעות האישור %1 מאת %2."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the certificate %1."
+msgctxt "@info"
+msgid "This message was signed by %1 with certificate %2."
+msgstr "ההודעה הזאת נחתמה באמצעות האישור %1."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate was revoked."
+msgctxt "@info"
 msgid "The certificate was revoked."
 msgstr "האישור הזה נשלל."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate has expired."
+msgctxt "@info"
 msgid "The certificate has expired."
 msgstr "תוקף האישור הזה פג."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, kde-format
-msgctxt "@label"
-msgid "You are trusting this certificate."
-msgstr "האישור הזה אמין מבחינתך."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate has expired."
+msgctxt "@info"
+msgid "The certificate is certified."
+msgstr "תוקף האישור הזה פג."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The signature is invalid."
+msgctxt "@info"
 msgid "The signature is invalid."
 msgstr "החתימה שגויה."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, kde-format
-msgid "This message is encrypted but we don't have the certificate for it."
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but we don't have the certificate for it."
+msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "ההודעה הזאת חתומה אך אין לנו אישור עבורה."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, kde-format
-msgid "This message is encrypted to the certificate: %1"
-msgstr "ההודעה הזאת מוצפנת לאישור: %1"
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgid "This message is encrypted for: %1"
+msgstr "ההודעה מצפנת."
 
 #: widgets/messagecontainerwidget.cpp:60
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "This message has been signed VS-NfD compliant using the certificate <a "
+#| "href=\"%1\">%2</a>."
+msgctxt "@info"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
@@ -320,80 +333,115 @@ msgstr ""
 "ההודעה הזאת נחתמה עם תאימות ל־VS-NfD באמצעות האישור <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+msgctxt "@info"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
 msgstr "ההודעה הזאת נחתמה באמצעות האישור <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed VS-NfD compliant by %1."
+msgctxt "@info"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "ההודעה נחתמה לפי תקן VS-NfD על ידי %1."
 
 #: widgets/messagecontainerwidget.cpp:82
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed by %1."
+msgctxt "@info"
 msgid "This message has been signed by %1."
 msgstr "ההודעה נחתמה על ידי %1."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The <a href=\"%1\">certificate</a> was revoked."
+msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
 msgstr "ה<a href=\"%1\">אישור</a> נשלל."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, kde-format
-msgctxt "@label"
-msgid "The <a href=\"%1\">certificate</a> was expired."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The <a href=\"%1\">certificate</a> was expired."
+msgctxt "@info"
+msgid "The <a href=\"%1\">certificate</a> is expired."
 msgstr "תוקף ה<a href=\"%1\">אישור</a> פג."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
+#| "is unknown."
+msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
 msgstr "החתימה תקפה, אבל התוקף של ה<a href=\"%1\">אישור</a> לא ידוע."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#| "marginally trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
 msgstr "החתימה תקפה וה<a href=\"%1\">אישור</a> אמין באופן גבולי."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
+#| "trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr "החתימה תקפה וה<a href=\"%1\">אישור</a> אמין לחלוטין."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#| "ultimately trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
 msgstr "החתימה תקפה וה<a href=\"%1\">אישור</a> אמין באופן מוחלט."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid, but the <a href=\"%1\">certificate</a> is "
+#| "untrusted."
+msgctxt "@info"
 msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
+"The signature is valid, but the <a href=\"%1\">certificate</a> is not "
+"certified."
 msgstr "החתימה תקפה, אך ה<a href=\"%1\">אישור</a> מפוקפק."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but we don't have the "
+#| "certificate for it."
 msgid ""
-"This message is VS-NfD compliant encrypted but we don't have the certificate "
-"for it."
+"This message is VS-NfD compliant encrypted but you don't have a matching "
+"secret key."
 msgstr "ההודעה הזאת מוצפנת בתאימות מול VS-NfD אך אין לנו אישור עבורה."
 
 #: widgets/messagecontainerwidget.cpp:213
@@ -407,8 +455,9 @@ msgid "This message is encrypted."
 msgstr "ההודעה מצפנת."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, kde-format
-msgid "The message is encrypted for the following certificates:"
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following certificates:"
+msgid "The message is encrypted for the following recipients:"
 msgstr "ההודעה מוצפנת לאישורים הבאים:"
 
 #: widgets/messageviewer.cpp:65
@@ -613,11 +662,21 @@ msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "לא ניתן ליצור את הקובץ %1."
 
-#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerdialog.cpp:243
-#, kde-format
+#: widgets/messageviewerdialog.cpp:231
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "&Print"
 msgctxt "@title:window"
-msgid "Print Document"
-msgstr "הדפסת מסמך"
+msgid "Print"
+msgstr "ה&דפסה"
+
+#: widgets/messageviewerdialog.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Print Preview"
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "הצגה מקדימה להדפסה"
 
 #: widgets/messageviewerdialog.cpp:295
 #, kde-format
@@ -634,6 +693,37 @@ msgstr "לא ניתן להפעיל את מנהל האישורים. נא לבדו
 #, kde-format
 msgid "KMail Error"
 msgstr "שגיאה של KMail"
+
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "This message cannot be decrypted with any S/MIME certificate in your "
+#~ "keyring."
+#~ msgstr ""
+#~ "אי אפשר לפענח את ההודעה הזאת עם אף אחד מאישורי ה־S/MIME שבצרור המפתחות "
+#~ "שלך."
+
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "This message cannot be decrypted with any OpenPGP certificate in your "
+#~ "keyring."
+#~ msgstr ""
+#~ "אי אפשר לפענח את ההודעה הזאת עם אף אחד מאישורי ה־OpenPGP שבצרור המפתחות "
+#~ "שלך."
+
+#~ msgctxt "@label"
+#~ msgid "This message has been signed using the certificate %1 by %2."
+#~ msgstr "ההודעה הזאת נחתמה באמצעות האישור %1 מאת %2."
+
+#~ msgctxt "@label"
+#~ msgid "You are trusting this certificate."
+#~ msgstr "האישור הזה אמין מבחינתך."
+
+#~ msgid "This message is encrypted to the certificate: %1"
+#~ msgstr "ההודעה הזאת מוצפנת לאישור: %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "Print Document"
+#~ msgstr "הדפסת מסמך"
 
 #~ msgid "&Save Attachment As..."
 #~ msgstr "שמירת הקובץ המ&צורף בשם..."

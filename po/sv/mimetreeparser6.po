@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-07-18 00:40+0000\n"
 "PO-Revision-Date: 2024-06-21 10:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -124,28 +124,21 @@ msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
 msgid "Error: %1"
 msgstr "Fel: %1"
 
-#: core/partmodel.cpp:514
-#, kde-format
+#: core/partmodel.cpp:514 core/partmodel.cpp:517
+#, fuzzy, kde-format
+#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgctxt "@info:status"
-msgid ""
-"This message cannot be decrypted with any S/MIME certificate in your keyring."
-msgstr "Brevet kan inte avkodas med något S/MIME-certifikat i din nyckelring."
-
-#: core/partmodel.cpp:517
-#, kde-format
-msgctxt "@info:status"
-msgid ""
-"This message cannot be decrypted with any OpenPGP certificate in your "
-"keyring."
-msgstr "Brevet kan inte avkodas med något OpenPGP-certifikat i din nyckelring."
+msgid "You cannot decrypt this message."
+msgstr "Kryptoinsticksprogrammet \"%1\" kan inte dekryptera några brev."
 
 #: core/partmodel.cpp:523
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "The message is encrypted for the following certificate:"
-msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "Brevet är krypterat för följande certifikat:"
-msgstr[1] "Brevet är krypterat för följande certifikat:"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] "Brevet är krypterat för följande nycklar:"
+msgstr[1] "Brevet är krypterat för följande nycklar:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -248,62 +241,82 @@ msgid "sent by %1 on %2"
 msgstr "skickat av %1 %2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, kde-format
-msgctxt "@label"
-msgid "This message has been signed using the certificate %1."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the certificate %1."
+msgctxt "@info"
+msgid "This message was signed with certificate %1."
 msgstr "Brevet har signerats med användning av certifikat %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate details are not available."
+msgctxt "@info"
 msgid "The certificate details are not available."
 msgstr "Certifikatinformationen är inte tillgänglig."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, kde-format
-msgctxt "@label"
-msgid "This message has been signed using the certificate %1 by %2."
-msgstr "Brevet har signerats med användning av certifikat %1 av %2."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the certificate %1."
+msgctxt "@info"
+msgid "This message was signed by %1 with certificate %2."
+msgstr "Brevet har signerats med användning av certifikat %1."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate was revoked."
+msgctxt "@info"
 msgid "The certificate was revoked."
 msgstr "Certifikatet har återkallats."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate has expired."
+msgctxt "@info"
 msgid "The certificate has expired."
 msgstr "Certifikatet har gått ut."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, kde-format
-msgctxt "@label"
-msgid "You are trusting this certificate."
-msgstr "Du litar på det här certifikatet."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate has expired."
+msgctxt "@info"
+msgid "The certificate is certified."
+msgstr "Certifikatet har gått ut."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The signature is invalid."
+msgctxt "@info"
 msgid "The signature is invalid."
 msgstr "Signaturen är ogiltig."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, kde-format
-msgid "This message is encrypted but we don't have the certificate for it."
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but we don't have the certificate for it."
+msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Brevet är krypterat men vi har inte certifikatet för det."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, kde-format
-msgid "This message is encrypted to the certificate: %1"
-msgstr "Brevet är krypterat med certifikatet: %1"
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgid "This message is encrypted for: %1"
+msgstr "Brevet är krypterat."
 
 #: widgets/messagecontainerwidget.cpp:60
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "This message has been signed VS-NfD compliant using the certificate <a "
+#| "href=\"%1\">%2</a>."
+msgctxt "@info"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
@@ -312,40 +325,55 @@ msgstr ""
 "href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+msgctxt "@info"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
 msgstr ""
 "Brevet har signerats med användning av certifikat <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed VS-NfD compliant by %1."
+msgctxt "@info"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "Brevet har signerats VS-NfD kompatibelt av %1."
 
 #: widgets/messagecontainerwidget.cpp:82
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed by %1."
+msgctxt "@info"
 msgid "This message has been signed by %1."
 msgstr "Brevet har signerats av %1."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The <a href=\"%1\">certificate</a> was revoked."
+msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
 msgstr "<a href=\"%1\">Certifikatet</a> har återkallats."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, kde-format
-msgctxt "@label"
-msgid "The <a href=\"%1\">certificate</a> was expired."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The <a href=\"%1\">certificate</a> was expired."
+msgctxt "@info"
+msgid "The <a href=\"%1\">certificate</a> is expired."
 msgstr "<a href=\"%1\">Certifikatet</a> har gått ut."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
+#| "is unknown."
+msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
@@ -354,8 +382,12 @@ msgstr ""
 "okänd."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#| "marginally trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
@@ -364,16 +396,24 @@ msgstr ""
 "pålitligt."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
+#| "trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr "Signaturen är giltig och <a href=\"%1\">certifikatet</a> är pålitligt."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#| "ultimately trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
@@ -382,18 +422,26 @@ msgstr ""
 "pålitlig."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid, but the <a href=\"%1\">certificate</a> is "
+#| "untrusted."
+msgctxt "@info"
 msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
+"The signature is valid, but the <a href=\"%1\">certificate</a> is not "
+"certified."
 msgstr ""
 "Signaturen är giltig, men <a href=\"%1\">certifikatet</a> är opålitlig."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but we don't have the "
+#| "certificate for it."
 msgid ""
-"This message is VS-NfD compliant encrypted but we don't have the certificate "
-"for it."
+"This message is VS-NfD compliant encrypted but you don't have a matching "
+"secret key."
 msgstr ""
 "Brevet är krypterat VS-NfD kompatibelt men vi har inte certifikatet för det."
 
@@ -408,9 +456,10 @@ msgid "This message is encrypted."
 msgstr "Brevet är krypterat."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, kde-format
-msgid "The message is encrypted for the following certificates:"
-msgstr "Brevet är krypterat för följande certifikat:"
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
+msgid "The message is encrypted for the following recipients:"
+msgstr "Brevet är krypterat för följande nycklar:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -614,11 +663,21 @@ msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Filen %1 kunde inte skapas."
 
-#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerdialog.cpp:243
-#, kde-format
+#: widgets/messageviewerdialog.cpp:231
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "&Print"
 msgctxt "@title:window"
-msgid "Print Document"
-msgstr "Skriv ut dokument"
+msgid "Print"
+msgstr "Skriv &ut"
+
+#: widgets/messageviewerdialog.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Print Preview"
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "Förhandsgranskning av utskrift"
 
 #: widgets/messageviewerdialog.cpp:295
 #, kde-format
@@ -636,6 +695,44 @@ msgstr "Kunde inte starta certifikathanteraren. Kontrollera installationen."
 msgid "KMail Error"
 msgstr "Kmail-fel"
 
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "This message cannot be decrypted with any S/MIME certificate in your "
+#~ "keyring."
+#~ msgstr ""
+#~ "Brevet kan inte avkodas med något S/MIME-certifikat i din nyckelring."
+
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "This message cannot be decrypted with any OpenPGP certificate in your "
+#~ "keyring."
+#~ msgstr ""
+#~ "Brevet kan inte avkodas med något OpenPGP-certifikat i din nyckelring."
+
+#~ msgctxt "@info:status"
+#~ msgid "The message is encrypted for the following certificate:"
+#~ msgid_plural "The message is encrypted for the following certificates:"
+#~ msgstr[0] "Brevet är krypterat för följande certifikat:"
+#~ msgstr[1] "Brevet är krypterat för följande certifikat:"
+
+#~ msgctxt "@label"
+#~ msgid "This message has been signed using the certificate %1 by %2."
+#~ msgstr "Brevet har signerats med användning av certifikat %1 av %2."
+
+#~ msgctxt "@label"
+#~ msgid "You are trusting this certificate."
+#~ msgstr "Du litar på det här certifikatet."
+
+#~ msgid "This message is encrypted to the certificate: %1"
+#~ msgstr "Brevet är krypterat med certifikatet: %1"
+
+#~ msgid "The message is encrypted for the following certificates:"
+#~ msgstr "Brevet är krypterat för följande certifikat:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Print Document"
+#~ msgstr "Skriv ut dokument"
+
 #~ msgid "&Save Attachment As..."
 #~ msgstr "&Spara bilaga som..."
 
@@ -649,9 +746,6 @@ msgstr "Kmail-fel"
 #~ msgctxt "@action:button"
 #~ msgid "Import key"
 #~ msgstr "Importera nyckel"
-
-#~ msgid "The message is encrypted for the following keys:"
-#~ msgstr "Brevet är krypterat för följande nycklar:"
 
 #, fuzzy
 #~| msgid "The message is encrypted for the following keys:"

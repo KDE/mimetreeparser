@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-07-18 00:40+0000\n"
 "PO-Revision-Date: 2024-05-10 07:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -125,31 +125,21 @@ msgstr "კრიპტოს დამატებას \"%1\" მონაც
 msgid "Error: %1"
 msgstr "შეცდომა: %1"
 
-#: core/partmodel.cpp:514
-#, kde-format
+#: core/partmodel.cpp:514 core/partmodel.cpp:517
+#, fuzzy, kde-format
+#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgctxt "@info:status"
-msgid ""
-"This message cannot be decrypted with any S/MIME certificate in your keyring."
-msgstr ""
-"ამ შეტყობინებას თქვენს ბრელოკში არსებული S/MIME სერტიფიკატებით ვერ გაშიფრავთ."
-
-#: core/partmodel.cpp:517
-#, kde-format
-msgctxt "@info:status"
-msgid ""
-"This message cannot be decrypted with any OpenPGP certificate in your "
-"keyring."
-msgstr ""
-"ამ შეტყობინებას თქვენს ბრელოკში არსებული OpenPGP სერტიფიკატებით ვერ "
-"გაშიფრავთ."
+msgid "You cannot decrypt this message."
+msgstr "კრიპტოს დამატებას \"%1\" შეტყობინებების გაშიფვრა არ შეუძლია."
 
 #: core/partmodel.cpp:523
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
-msgid "The message is encrypted for the following certificate:"
-msgid_plural "The message is encrypted for the following certificates:"
-msgstr[0] "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატისთვის:"
-msgstr[1] "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატებისთვის:"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
+msgstr[1] "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -252,62 +242,82 @@ msgid "sent by %1 on %2"
 msgstr "გაგზავნილია %1-ის მიერ. თარიღი %2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, kde-format
-msgctxt "@label"
-msgid "This message has been signed using the certificate %1."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the certificate %1."
+msgctxt "@info"
+msgid "This message was signed with certificate %1."
 msgstr "ეს შეტყობინება ხელმოწერილია სერტიფიკატით %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate details are not available."
+msgctxt "@info"
 msgid "The certificate details are not available."
 msgstr "სერტიფიკატის დეტალები ხელმიუწვდომელია."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, kde-format
-msgctxt "@label"
-msgid "This message has been signed using the certificate %1 by %2."
-msgstr "ეს შეტყობინება ხელმოწერილია სერტიფიკატით %1, %2-ის მიერ."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed using the certificate %1."
+msgctxt "@info"
+msgid "This message was signed by %1 with certificate %2."
+msgstr "ეს შეტყობინება ხელმოწერილია სერტიფიკატით %1."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate was revoked."
+msgctxt "@info"
 msgid "The certificate was revoked."
 msgstr "სერტიფიკატი გაუქმებულია."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate has expired."
+msgctxt "@info"
 msgid "The certificate has expired."
 msgstr "სერტიფიკატი ვადაგასულია."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, kde-format
-msgctxt "@label"
-msgid "You are trusting this certificate."
-msgstr "თქვენ ენდობით ამ სერტიფიკატს."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The certificate has expired."
+msgctxt "@info"
+msgid "The certificate is certified."
+msgstr "სერტიფიკატი ვადაგასულია."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The signature is invalid."
+msgctxt "@info"
 msgid "The signature is invalid."
 msgstr "ხელმოწერა არასწორია."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, kde-format
-msgid "This message is encrypted but we don't have the certificate for it."
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but we don't have the certificate for it."
+msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "შეტყობინება დაშიფრულია, მაგრამ მისი სერტიფიკატი არ გვაქვს."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, kde-format
-msgid "This message is encrypted to the certificate: %1"
-msgstr "შეტყობინება დაშიფრულია სერტიფიკატამდე: %1"
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgid "This message is encrypted for: %1"
+msgstr "ეს შეტყობინება დაშიფრულია."
 
 #: widgets/messagecontainerwidget.cpp:60
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "This message has been signed VS-NfD compliant using the certificate <a "
+#| "href=\"%1\">%2</a>."
+msgctxt "@info"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
 "\"%1\">%2</a>."
@@ -316,39 +326,54 @@ msgstr ""
 "%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+msgctxt "@info"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
 msgstr "ეს შეტყობინება ხელმოწერილია სერტიფიკატით <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed VS-NfD compliant by %1."
+msgctxt "@info"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "ამ შეტყობინების ხელმოწერა თავსებადია VS-NfD-სთან. ავტორია %1."
 
 #: widgets/messagecontainerwidget.cpp:82
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "This message has been signed by %1."
+msgctxt "@info"
 msgid "This message has been signed by %1."
 msgstr "შეტყობინება ხელმოწერილია %1-ის მიერ."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The <a href=\"%1\">certificate</a> was revoked."
+msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
 msgstr "<a href=\"%1\">სერტიფიკატი</a> გაუქმებულია."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, kde-format
-msgctxt "@label"
-msgid "The <a href=\"%1\">certificate</a> was expired."
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "The <a href=\"%1\">certificate</a> was expired."
+msgctxt "@info"
+msgid "The <a href=\"%1\">certificate</a> is expired."
 msgstr "<a href=\"%1\">სერტიფიკატის</a> ვადა ამოწურულია."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
+#| "is unknown."
+msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
@@ -357,41 +382,61 @@ msgstr ""
 "შეუძლებელია."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#| "marginally trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
 "trusted."
 msgstr "ხელმოწერა სწორია და <a href=\"%1\">სერტიფიკატი</a> ოდნავ საეჭვოა."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
+#| "trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
 "trusted."
 msgstr "ხელმოწერა სწორია და <a href=\"%1\">სერტიფიკატი</a> სრულად სანდოა."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#| "ultimately trusted."
+msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
 "trusted."
 msgstr "ხელმოწერა სწორია და <a href=\"%1\">სერტიფიკატი</a> უპირობოდ სანდოა."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, kde-format
-msgctxt "@label"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "The signature is valid, but the <a href=\"%1\">certificate</a> is "
+#| "untrusted."
+msgctxt "@info"
 msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a> is untrusted."
+"The signature is valid, but the <a href=\"%1\">certificate</a> is not "
+"certified."
 msgstr "ხელმოწერა სწორია, მაგრამ <a href=\"%1\">სერტიფიკატი</a> სანდო არაა."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but we don't have the "
+#| "certificate for it."
 msgid ""
-"This message is VS-NfD compliant encrypted but we don't have the certificate "
-"for it."
+"This message is VS-NfD compliant encrypted but you don't have a matching "
+"secret key."
 msgstr ""
 "ეს შეტყობინება დაშიფრულია VS-NfD-სთან თავსებადად, მაგრამ მისი სერტიფიკატი არ "
 "გვაქვს."
@@ -407,9 +452,10 @@ msgid "This message is encrypted."
 msgstr "ეს შეტყობინება დაშიფრულია."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, kde-format
-msgid "The message is encrypted for the following certificates:"
-msgstr "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატებისთვის:"
+#, fuzzy, kde-format
+#| msgid "The message is encrypted for the following keys:"
+msgid "The message is encrypted for the following recipients:"
+msgstr "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -613,11 +659,21 @@ msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "%1: ფაილის შექმნის შეცდომა."
 
-#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerdialog.cpp:243
-#, kde-format
+#: widgets/messageviewerdialog.cpp:231
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "&Print"
 msgctxt "@title:window"
-msgid "Print Document"
-msgstr "დოკუმენტის დაბეჭდვა"
+msgid "Print"
+msgstr "&ბეჭდვა"
+
+#: widgets/messageviewerdialog.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Print Preview"
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "დასაბეჭდის გადახედვა"
 
 #: widgets/messageviewerdialog.cpp:295
 #, kde-format
@@ -635,6 +691,46 @@ msgstr "სერტიფიკატების მმართველი�
 msgid "KMail Error"
 msgstr "KMail-ის შეცდომა"
 
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "This message cannot be decrypted with any S/MIME certificate in your "
+#~ "keyring."
+#~ msgstr ""
+#~ "ამ შეტყობინებას თქვენს ბრელოკში არსებული S/MIME სერტიფიკატებით ვერ "
+#~ "გაშიფრავთ."
+
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "This message cannot be decrypted with any OpenPGP certificate in your "
+#~ "keyring."
+#~ msgstr ""
+#~ "ამ შეტყობინებას თქვენს ბრელოკში არსებული OpenPGP სერტიფიკატებით ვერ "
+#~ "გაშიფრავთ."
+
+#~ msgctxt "@info:status"
+#~ msgid "The message is encrypted for the following certificate:"
+#~ msgid_plural "The message is encrypted for the following certificates:"
+#~ msgstr[0] "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატისთვის:"
+#~ msgstr[1] "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატებისთვის:"
+
+#~ msgctxt "@label"
+#~ msgid "This message has been signed using the certificate %1 by %2."
+#~ msgstr "ეს შეტყობინება ხელმოწერილია სერტიფიკატით %1, %2-ის მიერ."
+
+#~ msgctxt "@label"
+#~ msgid "You are trusting this certificate."
+#~ msgstr "თქვენ ენდობით ამ სერტიფიკატს."
+
+#~ msgid "This message is encrypted to the certificate: %1"
+#~ msgstr "შეტყობინება დაშიფრულია სერტიფიკატამდე: %1"
+
+#~ msgid "The message is encrypted for the following certificates:"
+#~ msgstr "შეტყობინება დაშიფრულია შემდეგი სერტიფიკატებისთვის:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Print Document"
+#~ msgstr "დოკუმენტის დაბეჭდვა"
+
 #~ msgid "&Save Attachment As..."
 #~ msgstr "მიმაგრებული ფაილის &შენახვა, როგორც…"
 
@@ -645,9 +741,6 @@ msgstr "KMail-ის შეცდომა"
 #~ msgctxt "@action:button"
 #~ msgid "Import key"
 #~ msgstr "გასაღების შემოტანა"
-
-#~ msgid "The message is encrypted for the following keys:"
-#~ msgstr "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
 
 #~ msgctxt "@info:status"
 #~ msgid "No secret key found to decrypt the message."
