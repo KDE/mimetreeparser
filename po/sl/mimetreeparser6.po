@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-10 06:20+0200\n"
+"PO-Revision-Date: 2024-07-18 06:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -130,22 +130,20 @@ msgid "Error: %1"
 msgstr "Napaka: %1"
 
 #: core/partmodel.cpp:514 core/partmodel.cpp:517
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr "Kripto-vtičnik \"%1\" ne more dešifrirati sporočil."
+msgstr "Ne morete dešifrirati tega sporočila."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "Sporočilo je šifrirano za naslednje ključe:"
-msgstr[1] "Sporočilo je šifrirano za naslednje ključe:"
-msgstr[2] "Sporočilo je šifrirano za naslednje ključe:"
-msgstr[3] "Sporočilo je šifrirano za naslednje ključe:"
+msgstr[0] "Sporočilo je šifrirano za naslednje prejemnike:"
+msgstr[1] "Sporočilo je šifrirano za naslednjega prejemnika:"
+msgstr[2] "Sporočilo je šifrirano za naslednje prejemnike:"
+msgstr[3] "Sporočilo je šifrirano za naslednje prejemnike:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -248,81 +246,61 @@ msgid "sent by %1 on %2"
 msgstr "poslal %1 dne %2"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message was signed with certificate %1."
 msgstr "To sporočilo je bilo podpisano s potrdilom %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate details are not available."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate details are not available."
 msgstr "Podrobnosti potrdila niso na voljo."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message was signed by %1 with certificate %2."
-msgstr "To sporočilo je bilo podpisano s potrdilom %1."
+msgstr "To sporočilo je podpisal %1s potrdilom %2."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate was revoked."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate was revoked."
-msgstr "Potrdilo je bil preklicano."
+msgstr "To potrdilo je bil preklicano."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate has expired."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate has expired."
-msgstr "Potrdilo je poteklo."
+msgstr "To potrdilo je poteklo."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate has expired."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate is certified."
-msgstr "Potrdilo je poteklo."
+msgstr "To potrdilo je potrjeno."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is invalid."
+#, kde-format
 msgctxt "@info"
 msgid "The signature is invalid."
-msgstr "Podpis je neveljaven."
+msgstr "Ta podpis je neveljaven."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the certificate for it."
+#, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "To sporočilo je šifrirano, vendar nimamo potrdila zanj."
+msgstr "To sporočilo je šifrirano, a nimate ustreznega skrivnega ključa zanj."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgid "This message is encrypted for: %1"
-msgstr "To sporočilo je šifrirano."
+msgstr "To sporočilo je šifrirano za: %1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed VS-NfD compliant using the certificate <a "
-#| "href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
@@ -332,65 +310,47 @@ msgstr ""
 "%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
 msgstr "To sporočilo je bilo podpisano s potrdilom <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed VS-NfD compliant by %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "To sporočilo je bilo podpisano ustrezno z VS-NfD z %1."
+msgstr "To sporočilo je bilo podpisano ustrezno z VS-NfD %1."
 
 #: widgets/messagecontainerwidget.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed by %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message has been signed by %1."
 msgstr "To sporočilo je bilo podpisano s %1."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">certificate</a> was revoked."
+#, kde-format
 msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
 msgstr "<a href=\"%1\">Potrdilo</a> je bil preklicano."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">certificate</a> was expired."
+#, kde-format
 msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> is expired."
 msgstr "<a href=\"%1\">Potrdilo</a> je poteklo."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#| "is unknown."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
 "unknown."
-msgstr "Podpis je veljaven, a veljavnost <a href=\"%1\">potrdila</a> ni znana."
+msgstr ""
+"Podpis je veljaven, a veljavnost <a href=\"%1\">potrdila</a> je neznana."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#| "marginally trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
@@ -399,11 +359,7 @@ msgstr ""
 "Podpis je veljaven in <a href=\"%1\">potrdilo</a> je le malo zaupanja vredno."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#| "trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
@@ -412,11 +368,7 @@ msgstr ""
 "Podpis je veljaven in <a href=\"%1\">potrdilo</a> je vsega zaupanja vredno."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#| "ultimately trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
@@ -425,27 +377,21 @@ msgstr ""
 "Podpis je veljaven in <a href=\"%1\">potrdilo</a> je končno vredno zaupanja."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">certificate</a> is "
-#| "untrusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
 "certified."
-msgstr "Podpis je veljaven, a <a href=\"%1\">potrdilo</a> ni vredno zaupanja."
+msgstr "Podpis je veljaven, a <a href=\"%1\">potrdilo</a> ni potrjeno."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the "
-#| "certificate for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr ""
-"To sporočilo je šifrirano v skladu z VS-NfD, vendar nimamo potrdila zanj."
+"To sporočilo je šifrirano v skladu z VS-NfD, vendar nimate ustreznega "
+"skrivnega ključa zanj."
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
@@ -458,10 +404,9 @@ msgid "This message is encrypted."
 msgstr "To sporočilo je šifrirano."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgid "The message is encrypted for the following recipients:"
-msgstr "Sporočilo je šifrirano za naslednje ključe:"
+msgstr "Sporočilo je šifrirano za naslednje prejemnike:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -666,17 +611,13 @@ msgid "File %1 could not be created."
 msgstr "Datoteke %1 ni bilo mogoče ustvariti."
 
 #: widgets/messageviewerdialog.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "&Print"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Tiskaj"
 
 #: widgets/messageviewerdialog.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Print Preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Natisni predogled"

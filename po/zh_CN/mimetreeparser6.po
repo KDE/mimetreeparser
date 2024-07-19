@@ -123,11 +123,10 @@ msgid "Error: %1"
 msgstr "错误：%1"
 
 #: core/partmodel.cpp:514 core/partmodel.cpp:517
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr "加密算法插件“%1”无法解密任何信件。"
+msgstr ""
 
 #: core/partmodel.cpp:523
 #, kde-format
@@ -274,12 +273,10 @@ msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is invalid."
+#, kde-format
 msgctxt "@info"
 msgid "The signature is invalid."
-msgstr "此签名无效。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207

@@ -7,21 +7,21 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-30 10:38+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-07-18 10:55+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "Název"
+msgstr "4Název"
 
 #: core/attachmentmodel.cpp:204
 #, kde-format
@@ -127,23 +127,19 @@ msgid "Error: %1"
 msgstr "Chyba: %1"
 
 #: core/partmodel.cpp:514 core/partmodel.cpp:517
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat zprávy."
+msgstr "Tuto zprávu nemůžete dešifrovat."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "The message is encrypted for the following certificate:"
-#| msgid_plural "The message is encrypted for the following certificates:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "Zpráva je šifrována pro následující certifikát:"
-msgstr[1] "Zpráva je šifrována pro následující certifikáty:"
-msgstr[2] "Zpráva je šifrována pro následující certifikáty:"
+msgstr[0] "Zpráva je šifrována pro následujícího příjemce:"
+msgstr[1] "Zpráva je šifrována pro následující příjemce:"
+msgstr[2] "Zpráva je šifrována pro následující příjemce:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -237,7 +233,7 @@ msgstr "Vyskytla se chyba: %1"
 #: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr ""
+msgstr "Tato zpráva obsahuje pozvánku"
 
 #: quick/qml/private/MailPart.qml:41
 #, kde-format
@@ -246,81 +242,61 @@ msgid "sent by %1 on %2"
 msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message was signed with certificate %1."
 msgstr "Zpráva byla podepsána pomocí certifikátu %1."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate details are not available."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate details are not available."
 msgstr "Podrobnosti certifikátu nejsou dostupné."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message was signed by %1 with certificate %2."
-msgstr "Zpráva byla podepsána pomocí certifikátu %1."
+msgstr "Zpráva byla podepsána %1 pomocí certifikátu %2."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate was revoked."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate was revoked."
 msgstr "Certifikát byl odvolán."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate has expired."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate has expired."
 msgstr "Certifikát vypršel."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate has expired."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate is certified."
-msgstr "Certifikát vypršel."
+msgstr "Certifikát je certfikován."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is invalid."
+#, kde-format
 msgctxt "@info"
 msgid "The signature is invalid."
 msgstr "Podpis není platný."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the certificate for it."
+#, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Zpráva je šifrována ale nemáme pro ni certifikát."
+msgstr "Zpráva je šifrována ale nemáme pro ni odpovídající klíč."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgid "This message is encrypted for: %1"
-msgstr "Tato zpráva je šifrovaná."
+msgstr "Tato zpráva je šifrovaná pro: %1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed VS-NfD compliant using the certificate <a "
-#| "href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
@@ -330,53 +306,38 @@ msgstr ""
 "%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
 msgstr "Zpráva byla podepsána pomocí certifikátu <a href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "Zpráva byla podepsána pomocí certifikátu %1."
+msgstr "Zpráva byla podepsána pomocí certifikátu splňujícího VS-NfD %1."
 
 #: widgets/messagecontainerwidget.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message has been signed by %1."
-msgstr "Zpráva byla podepsána pomocí certifikátu %1."
+msgstr "Zpráva byla podepsána %1."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">certificate</a> was revoked."
+#, kde-format
 msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
 msgstr "<a href=\"%1\">Certifikát</a> byl odvolán."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">certificate</a> was expired."
+#, kde-format
 msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> is expired."
 msgstr "<a href=\"%1\">Certifikát</a> vypršel."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#| "is unknown."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
@@ -385,11 +346,7 @@ msgstr ""
 "Podpis je v pořádku, ale platnost <a href=\"%1\">certifikátu</a> je neznámá."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#| "marginally trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
@@ -399,11 +356,7 @@ msgstr ""
 "důvěryhodnosti."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#| "trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
@@ -412,11 +365,7 @@ msgstr ""
 "Podpis je v pořádku a <a href=\"%1\">certifikátu</a> je plně důvěryhodný."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#| "ultimately trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
@@ -425,30 +374,25 @@ msgstr ""
 "Podpis je v pořádku a <a href=\"%1\">certifikátu</a> je naprosto důvěryhodný."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">certificate</a> is "
-#| "untrusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
 "certified."
 msgstr ""
-"Podpis je v pořádku, ale <a href=\"%1\">certifikátu</a> není důvěryhodný."
+"Podpis je v pořádku, ale <a href=\"%1\">certifikátu</a> není certifikován."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the certificate for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
-msgstr "Zpráva je šifrována ale nemáme pro ni certifikát."
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr ""
+msgstr "Tato zpráva je šifrovaná podle VS-NfD."
 
 #: widgets/messagecontainerwidget.cpp:215
 #, kde-format
@@ -456,10 +400,9 @@ msgid "This message is encrypted."
 msgstr "Tato zpráva je šifrovaná."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following certificates:"
+#, kde-format
 msgid "The message is encrypted for the following recipients:"
-msgstr "Zpráva je šifrována pro následující certifikáty:"
+msgstr "Zpráva je šifrována pro následující příjemce:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
@@ -664,17 +607,13 @@ msgid "File %1 could not be created."
 msgstr "Soubor %1 nelze vytvořit."
 
 #: widgets/messageviewerdialog.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "&Print"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print"
-msgstr "Vy&tisknout"
+msgstr "Tisk"
 
 #: widgets/messageviewerdialog.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Print Preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Náhled před tiskem"
@@ -695,18 +634,3 @@ msgstr ""
 #, kde-format
 msgid "KMail Error"
 msgstr "Chyba KMailu"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Zpráva byla podepsána pomocí certifikátu %1 od %2."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Věříte tomuto certifikátu."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Zpráva je šifrována pro certifikát: %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Vytisknout dokument"
