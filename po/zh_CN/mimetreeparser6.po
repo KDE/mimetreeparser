@@ -285,7 +285,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "The signature is invalid."
-msgstr "此签名无效。"
+msgstr ""
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
