@@ -5,7 +5,7 @@
 #include <MimeTreeParserCore/MessageParser>
 #include <MimeTreeParserCore/PartModel>
 
-#include <QtQml/qqmlregistration.h>
+#include <QQmlEngine>
 
 class MessageParserForeign : public QObject
 {
