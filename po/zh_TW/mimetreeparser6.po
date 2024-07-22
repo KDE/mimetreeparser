@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-18 00:40+0000\n"
+"POT-Creation-Date: 2024-07-22 00:40+0000\n"
 "PO-Revision-Date: 2024-05-10 16:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -231,7 +231,7 @@ msgstr "發生錯誤：%1"
 msgid "This mail contains an invitation"
 msgstr "這個郵件包含邀請"
 
-#: quick/qml/private/MailPart.qml:41
+#: quick/qml/private/MailPart.qml:42
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"

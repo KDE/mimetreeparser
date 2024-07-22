@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-18 00:40+0000\n"
+"POT-Creation-Date: 2024-07-22 00:40+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -237,7 +237,7 @@ msgstr "Vyskytla sa chyba: %1"
 msgid "This mail contains an invitation"
 msgstr "Tento e-mail obsahuje pozvánku"
 
-#: quick/qml/private/MailPart.qml:41
+#: quick/qml/private/MailPart.qml:42
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"

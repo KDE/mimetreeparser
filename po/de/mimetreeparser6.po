@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-18 00:40+0000\n"
+"POT-Creation-Date: 2024-07-22 00:40+0000\n"
 "PO-Revision-Date: 2024-02-02 13:54+0100\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -245,7 +245,7 @@ msgstr "Es ist ein Fehler aufgetreten: %1"
 msgid "This mail contains an invitation"
 msgstr "Diese E-Mail enthält eine Einladung"
 
-#: quick/qml/private/MailPart.qml:41
+#: quick/qml/private/MailPart.qml:42
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
