@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-22 00:40+0000\n"
-"PO-Revision-Date: 2024-07-20 17:03+0200\n"
+"PO-Revision-Date: 2024-07-27 14:20+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -384,20 +384,18 @@ msgstr ""
 "La subskribo validas, sed la <a href=\"%1\">atestilo</a> estas neatestita."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the "
-#| "certificate for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr ""
-"Ĉi tiu mesaĝo estas ĉifrita kun VS-NfD, sed ni ne havas la atestilon por ĝi."
+"Ĉi tiu mesaĝo estas ĉifrita laŭ VS-NfD, sed vi ne havas kongruan atestilon "
+"por ĝi."
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr "Ĉi tiu mesaĝo estas ĉifrita konforma al VS-NfD."
+msgstr "Ĉi tiu mesaĝo estas ĉifrita konforme al VS-NfD."
 
 #: widgets/messagecontainerwidget.cpp:215
 #, kde-format
@@ -405,10 +403,9 @@ msgid "This message is encrypted."
 msgstr "Ĉi tiu mesaĝo estas ĉifrita."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following certificates:"
+#, kde-format
 msgid "The message is encrypted for the following recipients:"
-msgstr "La mesaĝo estas ĉifrita por la sekvantaj atestiloj:"
+msgstr "La mesaĝo estas ĉifrita por la sekvaj ricevantoj:"
 
 #: widgets/messageviewer.cpp:65
 #, kde-format
