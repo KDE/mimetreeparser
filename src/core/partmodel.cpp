@@ -178,7 +178,7 @@ public:
         for (const auto &part : parts) {
             if (part->node()) {
                 const auto contentType = part->node()->contentType();
-                if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
+                if (contentType && contentType->hasParameter("protected-headers")) {
                     const auto contentDisposition = part->node()->contentDisposition();
                     if (contentDisposition && contentDisposition->disposition() == KMime::Headers::CDinline) {
                         continue;

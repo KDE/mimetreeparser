@@ -102,7 +102,7 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
             continue;
         }
         const auto contentType = part->node()->contentType();
-        if (contentType && contentType->hasParameter(QStringLiteral("protected-headers"))) {
+        if (contentType && contentType->hasParameter("protected-headers")) {
             const auto contentDisposition = part->node()->contentDisposition();
 
             // Check for legacy format for protected-headers

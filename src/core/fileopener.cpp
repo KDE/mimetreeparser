@@ -20,7 +20,7 @@ KMime::Message::Ptr openSmimeEncrypted(const QByteArray &content)
 
     auto contentType = message->contentType();
     contentType->setMimeType(QByteArrayLiteral("application/pkcs7-mime"));
-    contentType->setParameter(QStringLiteral("smime-type"), QStringLiteral("enveloped-data"));
+    contentType->setParameter(QByteArrayLiteral("smime-type"), QStringLiteral("enveloped-data"));
 
     auto contentDisposition = new KMime::Headers::ContentDisposition;
     contentDisposition->setDisposition(KMime::Headers::CDattachment);
@@ -43,7 +43,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     auto contentType = message->contentType();
     contentType->setMimeType(QByteArrayLiteral("multipart/encrypted"));
     contentType->setBoundary(KMime::multiPartBoundary());
-    contentType->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
+    contentType->setParameter(QByteArrayLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
 
     auto cte = message->contentTransferEncoding();
     cte->setEncoding(KMime::Headers::CE7Bit);

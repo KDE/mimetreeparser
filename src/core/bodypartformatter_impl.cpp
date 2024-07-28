@@ -145,7 +145,7 @@ public:
             return MessagePart::Ptr();
         }
 
-        const QString smimeType = node->contentType()->parameter(QStringLiteral("smime-type")).toLower();
+        const QString smimeType = node->contentType()->parameter("smime-type").toLower();
 
         if (smimeType == QLatin1StringView("certs-only")) {
             return CertMessagePart::Ptr(new CertMessagePart(objectTreeParser, node, QGpgME::smime()));
@@ -313,8 +313,7 @@ public:
         Q_ASSERT(signedData);
         Q_ASSERT(signature);
 
-        auto protocol = detectProtocol(node->contentType()->parameter(QStringLiteral("protocol")).toLower(),
-                                       QLatin1StringView(signature->contentType()->mimeType().toLower()));
+        auto protocol = detectProtocol(node->contentType()->parameter("protocol").toLower(), QLatin1StringView(signature->contentType()->mimeType().toLower()));
 
         if (!protocol) {
             return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, signedData));

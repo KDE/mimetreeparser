@@ -49,7 +49,7 @@ private Q_SLOTS:
         auto message = messages[0];
 
         QCOMPARE(message->contentType()->mimeType(), "application/pkcs7-mime");
-        QCOMPARE(message->contentType()->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
+        QCOMPARE(message->contentType()->parameter("smime-type"), QStringLiteral("enveloped-data"));
         QCOMPARE(message->contentDisposition()->filename(), QStringLiteral("smime.p7m"));
     }
 
