@@ -193,7 +193,7 @@ void MessageViewerDialog::Private::save(QWidget *parent)
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18n("File %1 could not be created.", location), i18n("Error saving message"));
+        KMessageBox::error(parent, i18n("File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
         return;
     }
     file.write(messages[currentIndex]->encodedContent());
@@ -209,7 +209,7 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", location), i18n("Error saving message"));
+        KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
         return;
     }
     auto message = messages[currentIndex];

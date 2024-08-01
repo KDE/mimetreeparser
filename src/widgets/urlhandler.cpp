@@ -45,7 +45,7 @@ bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
         KMessageBox::errorWId(window->winId(),
                               i18n("Could not start certificate manager. "
                                    "Please check your installation."),
-                              i18n("KMail Error"));
+                              i18nc("@title:window", "KMail Error"));
         return false;
     }
     QProcess::startDetached(exec, lst);
