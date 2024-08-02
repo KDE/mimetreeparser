@@ -7,7 +7,6 @@
 
 #include <KLocalizedString>
 #include <Libkleo/Formatting>
-#include <libkleo/dn.h>
 
 using namespace MimeTreeParser;
 
