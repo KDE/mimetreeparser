@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:40+0000\n"
+"POT-Creation-Date: 2024-08-02 00:41+0000\n"
 "PO-Revision-Date: 2024-07-18 12:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -595,7 +595,9 @@ msgid "File %1 could not be created."
 msgstr "File %1 non poteva esser create"
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Error durante que on salveguardava message"
 
@@ -637,7 +639,9 @@ msgstr ""
 "installation."
 
 #: widgets/urlhandler.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KMail Error"
+msgctxt "@title:window"
 msgid "KMail Error"
 msgstr "Error de KMail"
 
@@ -646,7 +650,7 @@ msgstr "Error de KMail"
 #~ "This message cannot be decrypted with any S/MIME certificate in your "
 #~ "keyring."
 #~ msgstr ""
-#~ "Iste message nonpote essere decryptate con ulle certificato S/MIME in tu "
+#~ "Iste message non pote essere decryptate con ulle certificato S/MIME in tu "
 #~ "portaclaves. "
 
 #~ msgctxt "@info:status"
@@ -654,8 +658,8 @@ msgstr "Error de KMail"
 #~ "This message cannot be decrypted with any OpenPGP certificate in your "
 #~ "keyring."
 #~ msgstr ""
-#~ "Iste message nonpote essere decryptate con ulle certificato de OpenPGP in "
-#~ "tu portaclaves. "
+#~ "Iste message non pote essere decryptate con ulle certificato de OpenPGP "
+#~ "in tu portaclaves. "
 
 #~ msgctxt "@info:status"
 #~ msgid "The message is encrypted for the following certificate:"
