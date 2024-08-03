@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:41+0000\n"
-"PO-Revision-Date: 2024-07-18 08:18+0300\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"PO-Revision-Date: 2024-08-02 07:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -151,13 +151,13 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "מילת צופן שגויה."
 
-#: core/utils.cpp:46
+#: core/utils.cpp:45
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "מפתח לא ידוע"
 
-#: core/utils.cpp:60
+#: core/utils.cpp:59
 #, kde-format
 msgctxt "Separator"
 msgid " - "
@@ -587,8 +587,7 @@ msgid "File %1 could not be created."
 msgstr "לא ניתן ליצור את הקובץ %1."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "שגיאה בשמירת הודעה"
@@ -629,8 +628,7 @@ msgid "Could not start certificate manager. Please check your installation."
 msgstr "לא ניתן להפעיל את מנהל האישורים. נא לבדוק שההתקנה שלך תקינה."
 
 #: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "KMail Error"
 msgstr "שגיאה של KMail"

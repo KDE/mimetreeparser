@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:41+0000\n"
-"PO-Revision-Date: 2024-07-18 10:23+0200\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"PO-Revision-Date: 2024-08-02 12:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -146,13 +146,13 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Frase de pas incorrecta."
 
-#: core/utils.cpp:46
+#: core/utils.cpp:45
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Clau desconeguda"
 
-#: core/utils.cpp:60
+#: core/utils.cpp:59
 #, kde-format
 msgctxt "Separator"
 msgid " - "
@@ -598,8 +598,7 @@ msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Error en desar el missatge"
@@ -642,11 +641,10 @@ msgstr ""
 "instal·lació."
 
 #: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "KMail Error"
-msgstr "S'ha produït un error al KMail"
+msgstr "Error del KMail"
 
 #~ msgctxt "@info:status"
 #~ msgid ""
