@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-03 00:40+0000\n"
-"PO-Revision-Date: 2024-07-18 10:23+0200\n"
+"PO-Revision-Date: 2024-08-02 12:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -596,8 +596,7 @@ msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "S'ha produït un error en guardar el missatge"
@@ -639,8 +638,7 @@ msgstr ""
 "No s'ha pogut iniciar el gestor de certificats. Comproveu esta instal·lació."
 
 #: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "KMail Error"
-msgstr "S'ha produït un error a KMail"
+msgstr "S'ha produït un error de KMail"
