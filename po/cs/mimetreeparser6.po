@@ -590,8 +590,7 @@ msgid "File %1 could not be created."
 msgstr "Soubor %1 nelze vytvořit."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Chyba při ukládání zprávy"
@@ -633,8 +632,7 @@ msgstr ""
 "Nelze spustit správce certifikátů. Prosím zkontrolujte svoji instalaci."
 
 #: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "KMail Error"
 msgstr "Chyba KMailu"
