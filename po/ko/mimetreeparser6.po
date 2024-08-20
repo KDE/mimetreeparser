@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-03 00:40+0000\n"
-"PO-Revision-Date: 2024-02-10 23:59+0100\n"
+"PO-Revision-Date: 2024-08-20 00:35+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -123,19 +123,17 @@ msgid "Error: %1"
 msgstr "오류: %1"
 
 #: core/partmodel.cpp:514 core/partmodel.cpp:517
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습니다."
+msgstr "이 메시지를 복호화할 수 없습니다."
 
 #: core/partmodel.cpp:523
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "이 메시지는 다음 키로 암호화되어 있습니다:"
+msgstr[0] "이 메시지는 다음 수신자로 암호화되어 있습니다:"
 
 #: core/partmodel.cpp:537
 #, kde-format
@@ -238,81 +236,61 @@ msgid "sent by %1 on %2"
 msgstr "%1 님이 %2에 보냄"
 
 #: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message was signed with certificate %1."
-msgstr "이 메시지는 인증서 %1(으)로 서명되었습니다."
+msgstr "이 메시지는 %1 인증서로 서명되었습니다."
 
 #: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate details are not available."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate details are not available."
 msgstr "인증서 정보를 알 수 없습니다."
 
 #: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message was signed by %1 with certificate %2."
-msgstr "이 메시지는 인증서 %1(으)로 서명되었습니다."
+msgstr "이 메시지는 %1에 의해 %2 인증서로 서명되었습니다."
 
 #: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate was revoked."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate was revoked."
 msgstr "인증서가 취소되었습니다."
 
 #: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate has expired."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate has expired."
 msgstr "인증서가 만료되었습니다."
 
 #: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate has expired."
+#, kde-format
 msgctxt "@info"
 msgid "The certificate is certified."
-msgstr "인증서가 만료되었습니다."
+msgstr "인증서가 인증되었습니다."
 
 #: quick/qml/private/MailPartModel.qml:69
 #: widgets/messagecontainerwidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is invalid."
+#, kde-format
 msgctxt "@info"
 msgid "The signature is invalid."
 msgstr "서명이 잘못되었습니다."
 
 #: quick/qml/private/MailPartModel.qml:98
 #: widgets/messagecontainerwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the certificate for it."
+#, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "메시지가 암호화되어 있지만 인증서가 없습니다."
+msgstr "메시지가 암호화되어 있지만 일치하는 비밀 키가 없습니다."
 
 #: quick/qml/private/MailPartModel.qml:98
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgid "This message is encrypted for: %1"
-msgstr "이 메시지는 암호화되어 있습니다."
+msgstr "이 메시지는 다음 수신자에게 암호화되어 있습니다: %1"
 
 #: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed VS-NfD compliant using the certificate <a "
-#| "href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This message has been signed VS-NfD compliant using the certificate <a href="
@@ -322,53 +300,38 @@ msgstr ""
 "명되었습니다."
 
 #: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This message has been signed using the certificate <a href=\"%1\">%2</a>."
 msgstr "이 메시지는 인증서 <a href=\"%1\">%2</a>(으)로 서명되었습니다."
 
 #: widgets/messagecontainerwidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed VS-NfD compliant by %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message has been signed VS-NfD compliant by %1."
 msgstr "%1이(가) 이 메시지에 VS-NfD를 준수하는 방법으로 서명했습니다."
 
 #: widgets/messagecontainerwidget.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed by %1."
+#, kde-format
 msgctxt "@info"
 msgid "This message has been signed by %1."
 msgstr "%1이(가) 메시지에 서명했습니다."
 
 #: widgets/messagecontainerwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">certificate</a> was revoked."
+#, kde-format
 msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> was revoked."
 msgstr "<a href=\"%1\">인증서</a>가 취소되었습니다."
 
 #: widgets/messagecontainerwidget.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The <a href=\"%1\">certificate</a> was expired."
+#, kde-format
 msgctxt "@info"
 msgid "The <a href=\"%1\">certificate</a> is expired."
 msgstr "<a href=\"%1\">인증서</a>가 만료되었습니다."
 
 #: widgets/messagecontainerwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#| "is unknown."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
@@ -376,11 +339,7 @@ msgid ""
 msgstr "서명이 올바르지만 <a href=\"%1\">인증서</a> 유효성을 알 수 없습니다."
 
 #: widgets/messagecontainerwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#| "marginally trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
@@ -388,11 +347,7 @@ msgid ""
 msgstr "서명이 올바르지만 <a href=\"%1\">인증서</a>를 그럭저럭 신뢰합니다."
 
 #: widgets/messagecontainerwidget.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#| "trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
@@ -400,11 +355,7 @@ msgid ""
 msgstr "서명이 올바르고 <a href=\"%1\">인증서</a>를 웬만큼 신뢰합니다."
 
 #: widgets/messagecontainerwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#| "ultimately trusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
@@ -412,11 +363,7 @@ msgid ""
 msgstr "서명이 올바르고 <a href=\"%1\">인증서</a>를 완전히 신뢰합니다."
 
 #: widgets/messagecontainerwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "The signature is valid, but the <a href=\"%1\">certificate</a> is "
-#| "untrusted."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
@@ -424,15 +371,13 @@ msgid ""
 msgstr "서명이 올바르지만 <a href=\"%1\">인증서</a>를 신뢰할 수 없습니다."
 
 #: widgets/messagecontainerwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the "
-#| "certificate for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr ""
-"이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 인증서가 없습니다."
+"이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 일치하는 비밀 키가 없습"
+"니다."
 
 #: widgets/messagecontainerwidget.cpp:213
 #, kde-format
@@ -445,16 +390,14 @@ msgid "This message is encrypted."
 msgstr "이 메시지는 암호화되어 있습니다."
 
 #: widgets/messagecontainerwidget.cpp:224
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgid "The message is encrypted for the following recipients:"
-msgstr "이 메시지는 다음 키로 암호화되어 있습니다:"
+msgstr "이 메시지는 다음 수신자로 암호화되어 있습니다:"
 
 #: widgets/messageviewer.cpp:65
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "다른 이름으로 첨부 파일 저장"
+msgstr "다른 이름으로 첨부 파일 저장(&S)…"
 
 #: widgets/messageviewer.cpp:70
 #, kde-format
@@ -614,18 +557,16 @@ msgstr "다음 메시지"
 
 #: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
 #: widgets/messageviewerdialog.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "이메일 파일 (*.eml *.mbox)"
+msgstr "이메일 파일 (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:182
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "암호화된 S/MIME 파일 (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:190
 #, kde-format
@@ -639,8 +580,7 @@ msgid "File %1 could not be created."
 msgstr "파일 %1을(를) 만들 수 없습니다."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "메시지 저장 오류"
@@ -658,17 +598,13 @@ msgid "File %1 could not be created."
 msgstr "파일 %1을(를) 만들 수 없습니다."
 
 #: widgets/messageviewerdialog.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "&Print"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print"
-msgstr "인쇄(&P)"
+msgstr "인쇄"
 
 #: widgets/messageviewerdialog.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Print Preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
@@ -685,8 +621,7 @@ msgid "Could not start certificate manager. Please check your installation."
 msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확인하십시오."
 
 #: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "KMail Error"
 msgstr "KMail 오류"
