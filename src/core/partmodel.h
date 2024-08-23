@@ -10,6 +10,7 @@
 
 #include "mimetreeparser_core_export.h"
 #include <memory>
+#include <verificationresult.h>
 
 namespace QGpgME
 {
@@ -50,13 +51,13 @@ public:
         TypeRole = Qt::UserRole + 1,
         ContentRole,
         IsEmbeddedRole,
-        IsEncryptedRole,
-        IsSignedRole,
         IsErrorRole,
-        SecurityLevelRole,
+        SidebarSecurityLevelRole,
         EncryptionSecurityLevelRole,
+        EncryptionIconNameRole,
         SignatureSecurityLevelRole,
-        SignatureDetails,
+        SignatureDetailsRole,
+        SignatureIconNameRole,
         EncryptionDetails,
         ErrorType,
         ErrorString,
@@ -64,11 +65,15 @@ public:
         DateRole,
     };
 
+    /// This enum maps directly to color displayed in the UI for the following elements:
+    /// - Encryption info box
+    /// - Signature info box
+    /// - Sidebar (worse of the two above)
     enum SecurityLevel {
-        Unknow,
-        Good,
-        NotSoGood,
-        Bad,
+        Unknow, ///< Do not display element (not encrypted or not signed)
+        Good, ///< Green
+        NotSoGood, ///< Orange
+        Bad, ////< Red
     };
     Q_ENUM(SecurityLevel);
 
@@ -115,6 +120,8 @@ class MIMETREEPARSER_CORE_EXPORT SignatureInfo
     /// Validity information of the key who signed the message.
     Q_PROPERTY(QString keyTrust MEMBER keyTrust CONSTANT)
 
+    Q_PROPERTY(GpgME::Signature::Summary signatureSummary MEMBER signatureSummary CONSTANT)
+
 public:
     bool keyRevoked = false;
     bool keyExpired = false;
@@ -129,6 +136,7 @@ public:
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> decryptRecipients;
 
     QString signer;
+    GpgME::Signature::Summary signatureSummary;
     QStringList signerMailAddresses;
     bool signatureIsGood = false;
 };

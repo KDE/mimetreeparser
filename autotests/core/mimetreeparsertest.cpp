@@ -363,7 +363,6 @@ private Q_SLOTS:
 
         auto signaturePart = part->signatures().first();
         QCOMPARE(signaturePart->partMetaData()->isGoodSignature, true);
-        QCOMPARE(signaturePart->partMetaData()->isTrusted(), true);
         QCOMPARE(signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyMissing, false);
         QCOMPARE(signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyExpired, false);
         QCOMPARE(signaturePart->partMetaData()->sigSummary & GpgME::Signature::KeyRevoked, false);

@@ -707,6 +707,24 @@ static int signatureToStatus(const GpgME::Signature &sig)
     }
 }
 
+static QString senderUserIdValidity(const GpgME::UserID &uid)
+{
+    switch (uid.validity()) {
+    case GpgME::UserID::Ultimate:
+        return i18n("The certificate is marked as your own.");
+    case GpgME::UserID::Full:
+        return i18n("The certificate belongs to this sender.");
+    case GpgME::UserID::Marginal:
+        return i18n("The trust model indicates marginally that the certificate belongs to this sender.");
+    case GpgME::UserID::Never:
+        return i18n("This certificate should not be used.");
+    case GpgME::UserID::Undefined:
+    case GpgME::UserID::Unknown:
+    default:
+        return i18n("There is no indication that this certificate belongs to this sender.");
+    }
+}
+
 void SignedMessagePart::sigStatusToMetaData()
 {
     if (!partMetaData()->isSigned) {
@@ -742,7 +760,9 @@ void SignedMessagePart::sigStatusToMetaData()
     if (partMetaData()->keyId.isEmpty()) {
         partMetaData()->keyId = signature.fingerprint();
     }
-    partMetaData()->keyTrust = Kleo::Formatting::validity(key.userID(0));
+    partMetaData()->keyTrust = senderUserIdValidity(key.userID(0));
+    partMetaData()->signatureSummary = signature.summary();
+
     if (key.numUserIDs() > 0 && key.userID(0).id()) {
         partMetaData()->signer = prettifyDN(key.userID(0).id());
     }

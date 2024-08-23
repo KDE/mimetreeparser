@@ -8,6 +8,8 @@
 #include "utils.h"
 
 #include <KLocalizedString>
+#include <Libkleo/Compliance>
+#include <Libkleo/Formatting>
 
 #include <QDebug>
 #include <QGpgME/Protocol>
@@ -269,23 +271,24 @@ bool PartModel::containsHtml() const
 
 QHash<int, QByteArray> PartModel::roleNames() const
 {
-    QHash<int, QByteArray> roles;
-    roles[TypeRole] = QByteArrayLiteral("type");
-    roles[ContentRole] = QByteArrayLiteral("content");
-    roles[IsEmbeddedRole] = QByteArrayLiteral("embedded");
-    roles[IsEncryptedRole] = QByteArrayLiteral("encrypted");
-    roles[IsSignedRole] = QByteArrayLiteral("signed");
-    roles[SecurityLevelRole] = QByteArrayLiteral("securityLevel");
-    roles[EncryptionSecurityLevelRole] = QByteArrayLiteral("encryptionSecurityLevel");
-    roles[SignatureSecurityLevelRole] = QByteArrayLiteral("signatureSecurityLevel");
-    roles[ErrorType] = QByteArrayLiteral("errorType");
-    roles[ErrorString] = QByteArrayLiteral("errorString");
-    roles[IsErrorRole] = QByteArrayLiteral("error");
-    roles[SenderRole] = QByteArrayLiteral("sender");
-    roles[SignatureDetails] = QByteArrayLiteral("signatureDetails");
-    roles[EncryptionDetails] = QByteArrayLiteral("encryptionDetails");
-    roles[DateRole] = QByteArrayLiteral("date");
-    return roles;
+    return {
+        {TypeRole, QByteArrayLiteral("type")},
+        {ContentRole, QByteArrayLiteral("content")},
+        {IsEmbeddedRole, QByteArrayLiteral("isEmbedded")},
+        {SidebarSecurityLevelRole, QByteArrayLiteral("sidebarSecurityLevel")},
+        {EncryptionSecurityLevelRole, QByteArrayLiteral("encryptionSecurityLevel")},
+        {SignatureSecurityLevelRole, QByteArrayLiteral("signatureSecurityLevel")},
+        {EncryptionSecurityLevelRole, QByteArrayLiteral("encryptionSecurityLevel")},
+        {ErrorType, QByteArrayLiteral("errorType")},
+        {ErrorString, QByteArrayLiteral("errorString")},
+        {IsErrorRole, QByteArrayLiteral("error")},
+        {SenderRole, QByteArrayLiteral("sender")},
+        {SignatureDetailsRole, QByteArrayLiteral("signatureDetails")},
+        {SignatureIconNameRole, QByteArrayLiteral("signatureIconName")},
+        {EncryptionDetails, QByteArrayLiteral("encryptionDetails")},
+        {EncryptionIconNameRole, QByteArrayLiteral("encryptionIconName")},
+        {DateRole, QByteArrayLiteral("date")},
+    };
 }
 
 QModelIndex PartModel::index(int row, int column, const QModelIndex &parent) const
@@ -347,6 +350,7 @@ SignatureInfo signatureInfo(MimeTreeParser::MessagePart *messagePart)
         signatureInfo.signerMailAddresses = signaturePart->partMetaData()->signerMailAddresses;
         signatureInfo.signatureIsGood = signaturePart->partMetaData()->isGoodSignature;
         signatureInfo.keyTrust = signaturePart->partMetaData()->keyTrust;
+        signatureInfo.signatureSummary = signaturePart->partMetaData()->signatureSummary;
     }
     return signatureInfo;
 }
@@ -440,63 +444,127 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return messagePart->error();
         case ContentRole:
             return d->contentForPart(messagePart);
-        case IsEncryptedRole:
-            return messagePart->encryptionState() != MimeTreeParser::KMMsgNotEncrypted;
-        case IsSignedRole:
-            return messagePart->signatureState() != MimeTreeParser::KMMsgNotSigned;
-        case SecurityLevelRole: {
-            auto signature = messagePart->signatureState();
-            auto encryption = messagePart->encryptionState();
-            bool messageIsSigned = signature == MimeTreeParser::KMMsgPartiallySigned || signature == MimeTreeParser::KMMsgFullySigned;
-            bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
+        case SidebarSecurityLevelRole: {
+            const auto signature = index.data(SignatureSecurityLevelRole).value<SecurityLevel>();
+            const auto encryption = index.data(EncryptionSecurityLevelRole).value<SecurityLevel>();
 
-            if (messageIsSigned) {
-                const auto sigInfo = signatureInfo(messagePart);
-                if (!sigInfo.signatureIsGood) {
-                    if (sigInfo.keyMissing || sigInfo.keyExpired) {
-                        return SecurityLevel::NotSoGood;
-                    }
-                    return SecurityLevel::Bad;
-                }
-            }
-            // All good
-            if ((messageIsSigned || messageIsEncrypted) && !messagePart->error()) {
-                return SecurityLevel::Good;
-            }
-            // No info
-            return SecurityLevel::Unknow;
-        }
-        case EncryptionSecurityLevelRole: {
-            auto encryption = messagePart->encryptionState();
-            bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
-            if (messagePart->error()) {
+            if (signature == SecurityLevel::Bad || encryption == SecurityLevel::Bad) {
                 return SecurityLevel::Bad;
             }
-            // All good
-            if (messageIsEncrypted) {
+
+            if (signature == SecurityLevel::NotSoGood || encryption == SecurityLevel::NotSoGood) {
+                return SecurityLevel::NotSoGood;
+            }
+
+            if (signature == SecurityLevel::Good || encryption == SecurityLevel::Good) {
                 return SecurityLevel::Good;
             }
-            // No info
+
             return SecurityLevel::Unknow;
         }
         case SignatureSecurityLevelRole: {
-            auto signature = messagePart->signatureState();
-            bool messageIsSigned = signature == MimeTreeParser::KMMsgPartiallySigned || signature == MimeTreeParser::KMMsgFullySigned;
-            if (messageIsSigned) {
-                const auto sigInfo = signatureInfo(messagePart);
-                if (!sigInfo.signatureIsGood) {
-                    if (sigInfo.keyMissing || sigInfo.keyExpired) {
-                        return SecurityLevel::NotSoGood;
-                    }
-                    return SecurityLevel::Bad;
-                }
+            // Color displayed for the signature info box
+            const auto signature = messagePart->signatureState();
+            const bool messageIsSigned = signature == MimeTreeParser::KMMsgPartiallySigned || signature == MimeTreeParser::KMMsgFullySigned;
+            if (!messageIsSigned) {
+                return SecurityLevel::Unknow;
+            }
+
+            const auto sigInfo = signatureInfo(messagePart);
+            if (sigInfo.signatureSummary & GpgME::Signature::Summary::Red) {
+                return SecurityLevel::Bad;
+            }
+            if (sigInfo.signatureSummary & GpgME::Signature::Summary::Valid) {
                 return SecurityLevel::Good;
             }
-            // No info
-            return SecurityLevel::Unknow;
+
+            return SecurityLevel::NotSoGood;
         }
-        case SignatureDetails:
-            return QVariant::fromValue(signatureInfo(messagePart));
+        case EncryptionSecurityLevelRole: {
+            // Color displayed for the encryption info box
+            const auto encryption = messagePart->encryptionState();
+            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
+
+            if (messagePart->error()) {
+                return SecurityLevel::Bad;
+            }
+
+            return messageIsEncrypted ? SecurityLevel::Good : SecurityLevel::Unknow;
+        }
+        case EncryptionIconNameRole: {
+            const auto encryption = messagePart->encryptionState();
+            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
+
+            if (messagePart->error()) {
+                return QStringLiteral("data-error");
+            }
+
+            return messageIsEncrypted ? QStringLiteral("mail-encrypted") : QString();
+        }
+        case SignatureIconNameRole: {
+            const auto signatureDetails = signatureInfo(messagePart);
+            if (signatureDetails.signatureSummary & GpgME::Signature::Valid) {
+                return QStringLiteral("mail-signed");
+            } else if (signatureDetails.signatureSummary & GpgME::Signature::Red) {
+                return QStringLiteral("data-error");
+            } else {
+                return QStringLiteral("data-warning");
+            }
+        }
+        case SignatureDetailsRole: {
+            const auto signatureDetails = signatureInfo(messagePart);
+            QString href;
+            if (signatureDetails.cryptoProto) {
+                href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
+                           .arg(signatureDetails.cryptoProto->displayName(), signatureDetails.cryptoProto->name(), QString::fromLatin1(signatureDetails.keyId));
+            }
+
+            QString details;
+            if (signatureDetails.keyMissing) {
+                if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
+                    details += i18ndc("mimetreeparser",
+                                      "@info",
+                                      "This message has been signed VS-NfD compliant using the certificate <a href=\"%1\">%2</a>.",
+                                      href,
+                                      Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
+                        + QLatin1Char('\n');
+                } else {
+                    details += i18ndc("mimetreeparser",
+                                      "@info",
+                                      "This message has been signed using the certificate <a href=\"%1\">%2</a>.",
+                                      href,
+                                      Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
+                        + QLatin1Char('\n');
+                }
+                details += i18ndc("mimetreeparser", "@info", "The certificate details are not available.");
+            } else {
+                QString signerDisplayName = signatureDetails.signer.toHtmlEscaped();
+                if (signatureDetails.cryptoProto == QGpgME::smime()) {
+                    Kleo::DN dn(signatureDetails.signer);
+                    signerDisplayName = MimeTreeParser::dnToDisplayName(dn).toHtmlEscaped();
+                }
+                if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
+                    details +=
+                        i18ndc("mimetreeparser", "@info", "This message has been signed VS-NfD compliant by <a href=\"%1\">%2</a>.", href, signerDisplayName);
+                } else {
+                    details += i18ndc("mimetreeparser", "@info", "This message has been signed by <a href=\"%1\">%2</a>.", href, signerDisplayName);
+                }
+                if (signatureDetails.keyRevoked) {
+                    details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@info", "The <a href=\"%1\">certificate</a> was revoked.", href);
+                }
+                if (signatureDetails.keyExpired) {
+                    details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@info", "The <a href=\"%1\">certificate</a> is expired.", href);
+                }
+            }
+
+            if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired) {
+                details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is invalid.");
+            } else {
+                details += QLatin1Char(' ') + signatureDetails.keyTrust;
+            }
+
+            return details;
+        }
         case EncryptionDetails:
             return QVariant::fromValue(encryptionInfo(messagePart));
         case ErrorType:

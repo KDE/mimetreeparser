@@ -6,6 +6,7 @@
 #include "attachmentview_p.h"
 #include "messagecontainerwidget_p.h"
 #include "mimetreeparser_widgets_debug.h"
+#include "partmodel.h"
 #include "urlhandler_p.h"
 
 #include <KCalendarCore/Event>
@@ -213,35 +214,32 @@ KMime::Message::Ptr MessageViewer::message() const
 void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent)
 {
     for (int i = 0, count = parts->rowCount(parent); i < count; i++) {
-        const auto type = static_cast<PartModel::Types>(parts->data(parts->index(i, 0, parent), PartModel::TypeRole).toUInt());
-        const auto content = parts->data(parts->index(i, 0, parent), PartModel::ContentRole).toString();
+        const auto idx = parts->index(i, 0, parent);
+        const auto type = idx.data(PartModel::TypeRole).value<PartModel::Types>();
+        const auto content = idx.data(PartModel::ContentRole).toString();
 
-        const auto signatureInfo = parts->data(parts->index(i, 0, parent), PartModel::SignatureDetails).value<SignatureInfo>();
-        const auto isSigned = parts->data(parts->index(i, 0, parent), PartModel::IsSignedRole).toBool();
-        const auto signatureSecurityLevel =
-            static_cast<PartModel::SecurityLevel>(parts->data(parts->index(i, 0, parent), PartModel::SignatureSecurityLevelRole).toInt());
+        // signature
+        const auto signatureSecurityLevel = idx.data(PartModel::SignatureSecurityLevelRole).value<PartModel::SecurityLevel>();
+        const auto signatureInfo = idx.data(PartModel::SignatureDetailsRole).toString();
+        const auto signatureIconName = idx.data(PartModel::SignatureIconNameRole).toString();
 
-        const auto encryptionInfo = parts->data(parts->index(i, 0, parent), PartModel::EncryptionDetails).value<SignatureInfo>();
-        const auto isEncrypted = parts->data(parts->index(i, 0, parent), PartModel::IsEncryptedRole).toBool();
-        const auto encryptionSecurityLevel =
-            static_cast<PartModel::SecurityLevel>(parts->data(parts->index(i, 0, parent), PartModel::EncryptionSecurityLevelRole).toInt());
+        // encryption
+        const auto encryptionSecurityLevel = idx.data(PartModel::EncryptionSecurityLevelRole).value<PartModel::SecurityLevel>();
+        const auto encryptionInfo = idx.data(PartModel::EncryptionDetails).value<SignatureInfo>();
+        const auto encryptionIconName = idx.data(PartModel::EncryptionIconNameRole).toString();
 
-        const auto displayEncryptionInfo =
-            i == 0 || parts->data(parts->index(i - 1, 0, parent), PartModel::EncryptionDetails).value<SignatureInfo>().keyId != encryptionInfo.keyId;
-
-        const auto displaySignatureInfo =
-            i == 0 || parts->data(parts->index(i - 1, 0, parent), PartModel::SignatureDetails).value<SignatureInfo>().keyId != signatureInfo.keyId;
+        // sidebar
+        const auto sidebarSecurityLevel = idx.data(PartModel::SidebarSecurityLevelRole).value<PartModel::SecurityLevel>();
 
         switch (type) {
         case PartModel::Types::Plain: {
-            auto container = new MessageWidgetContainer(isSigned,
-                                                        signatureInfo,
+            auto container = new MessageWidgetContainer(signatureInfo,
+                                                        signatureIconName,
                                                         signatureSecurityLevel,
-                                                        displaySignatureInfo,
-                                                        isEncrypted,
                                                         encryptionInfo,
+                                                        encryptionIconName,
                                                         encryptionSecurityLevel,
-                                                        displayEncryptionInfo,
+                                                        sidebarSecurityLevel,
                                                         urlHandler);
             auto label = new QLabel(content);
             label->setTextInteractionFlags(Qt::TextBrowserInteraction);
@@ -252,14 +250,13 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Ical: {
-            auto container = new MessageWidgetContainer(isSigned,
-                                                        signatureInfo,
+            auto container = new MessageWidgetContainer(signatureInfo,
+                                                        signatureIconName,
                                                         signatureSecurityLevel,
-                                                        displaySignatureInfo,
-                                                        isEncrypted,
                                                         encryptionInfo,
+                                                        encryptionIconName,
                                                         encryptionSecurityLevel,
-                                                        displayEncryptionInfo,
+                                                        sidebarSecurityLevel,
                                                         urlHandler);
 
             KCalendarCore::ICalFormat format;
@@ -288,14 +285,13 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Encapsulated: {
-            auto container = new MessageWidgetContainer(isSigned,
-                                                        signatureInfo,
+            auto container = new MessageWidgetContainer(signatureInfo,
+                                                        signatureIconName,
                                                         signatureSecurityLevel,
-                                                        displaySignatureInfo,
-                                                        isEncrypted,
                                                         encryptionInfo,
+                                                        encryptionIconName,
                                                         encryptionSecurityLevel,
-                                                        displayEncryptionInfo,
+                                                        sidebarSecurityLevel,
                                                         urlHandler);
 
             auto groupBox = new QGroupBox(container);
@@ -322,7 +318,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         }
 
         case PartModel::Types::Error: {
-            const auto errorString = parts->data(parts->index(i, 0, parent), PartModel::ErrorString).toString();
+            const auto errorString = idx.data(PartModel::ErrorString).toString();
             auto errorWidget = new KMessageWidget(errorString);
             errorWidget->setCloseButtonVisible(false);
             errorWidget->setMessageType(KMessageWidget::MessageType::Error);

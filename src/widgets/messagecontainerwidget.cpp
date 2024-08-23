@@ -4,6 +4,7 @@
 
 #include "../core/utils.h"
 #include "messagecontainerwidget_p.h"
+#include "partmodel.h"
 #include "urlhandler_p.h"
 
 #include <KLocalizedString>
@@ -16,6 +17,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QVBoxLayout>
+#include <verificationresult.h>
 
 namespace
 {
@@ -43,82 +45,27 @@ KMessageWidget::MessageType getType(PartModel::SecurityLevel securityLevel)
 
     return messageTypes.value(securityLevel, KMessageWidget::MessageType::Information);
 }
-
-QString getDetails(const SignatureInfo &signatureDetails)
-{
-    QString href;
-    if (signatureDetails.cryptoProto) {
-        href = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                   .arg(signatureDetails.cryptoProto->displayName(), signatureDetails.cryptoProto->name(), QString::fromLatin1(signatureDetails.keyId));
-    }
-
-    QString details;
-    if (signatureDetails.keyMissing) {
-        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
-            details += i18ndc("mimetreeparser",
-                              "@info",
-                              "This message has been signed VS-NfD compliant using the certificate <a href=\"%1\">%2</a>.",
-                              href,
-                              Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
-                + QLatin1Char('\n');
-        } else {
-            details += i18ndc("mimetreeparser",
-                              "@info",
-                              "This message has been signed using the certificate <a href=\"%1\">%2</a>.",
-                              href,
-                              Kleo::Formatting::prettyID(signatureDetails.keyId.toStdString().data()))
-                + QLatin1Char('\n');
-        }
-        details += i18ndc("mimetreeparser", "@info", "The certificate details are not available.");
-    } else {
-        QString signerDisplayName = signatureDetails.signer.toHtmlEscaped();
-        if (signatureDetails.cryptoProto == QGpgME::smime()) {
-            Kleo::DN dn(signatureDetails.signer);
-            signerDisplayName = MimeTreeParser::dnToDisplayName(dn).toHtmlEscaped();
-        }
-        if (Kleo::DeVSCompliance::isCompliant() && signatureDetails.isCompliant) {
-            details += i18ndc("mimetreeparser", "@info", "This message has been signed VS-NfD compliant by %1.", signerDisplayName);
-        } else {
-            details += i18ndc("mimetreeparser", "@info", "This message has been signed by %1.", signerDisplayName);
-        }
-        if (signatureDetails.keyRevoked) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@info", "The <a href=\"%1\">certificate</a> was revoked.", href);
-        }
-        if (signatureDetails.keyExpired) {
-            details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@info", "The <a href=\"%1\">certificate</a> is expired.", href);
-        }
-
-        details += QLatin1Char(' ') + signatureDetails.keyTrust;
-    }
-
-    if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired) {
-        details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is invalid.");
-    }
-
-    return details;
 }
 
-}
-
-MessageWidgetContainer::MessageWidgetContainer(bool isSigned,
-                                               const SignatureInfo &signatureInfo,
+MessageWidgetContainer::MessageWidgetContainer(const QString &signatureInfo,
+                                               const QString &signatureIconName,
                                                PartModel::SecurityLevel signatureSecurityLevel,
-                                               bool displaySignatureInfo,
-                                               bool isEncrypted,
                                                const SignatureInfo &encryptionInfo,
+                                               const QString &encryptionIconName,
                                                PartModel::SecurityLevel encryptionSecurityLevel,
-                                               bool displayEncryptionInfo,
+                                               PartModel::SecurityLevel sidebarSecurityLevel,
                                                UrlHandler *urlHandler,
                                                QWidget *parent)
     : QFrame(parent)
-    , m_isSigned(isSigned)
     , m_signatureInfo(signatureInfo)
     , m_signatureSecurityLevel(signatureSecurityLevel)
-    , m_displaySignatureInfo(displaySignatureInfo)
-    , m_isEncrypted(isEncrypted)
+    , m_displaySignatureInfo(signatureSecurityLevel != PartModel::Unknow)
+    , m_signatureIconName(signatureIconName)
     , m_encryptionInfo(encryptionInfo)
     , m_encryptionSecurityLevel(encryptionSecurityLevel)
-    , m_displayEncryptionInfo(displayEncryptionInfo)
+    , m_displayEncryptionInfo(encryptionSecurityLevel != PartModel::Unknow)
+    , m_encryptionIconName(encryptionIconName)
+    , m_sidebarSecurityLevel(sidebarSecurityLevel)
     , m_urlHandler(urlHandler)
 {
     createLayout();
@@ -130,7 +77,7 @@ void MessageWidgetContainer::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
 
-    if (!m_isSigned && !m_isEncrypted) {
+    if (m_sidebarSecurityLevel == PartModel::Unknow) {
         return;
     }
 
@@ -139,7 +86,7 @@ void MessageWidgetContainer::paintEvent(QPaintEvent *event)
         auto r = rect();
         r.setX(width() - borderWidth);
         r.setWidth(borderWidth);
-        const QColor color = getColor(PartModel::SecurityLevel::Good);
+        const QColor color = getColor(m_sidebarSecurityLevel);
         painter.setRenderHint(QPainter::Antialiasing);
         painter.setBrush(QColor(color));
         painter.setPen(QPen(Qt::NoPen));
@@ -147,7 +94,7 @@ void MessageWidgetContainer::paintEvent(QPaintEvent *event)
     } else {
         auto r = rect();
         r.setWidth(borderWidth);
-        const QColor color = getColor(PartModel::SecurityLevel::Good);
+        const QColor color = getColor(m_sidebarSecurityLevel);
         painter.setRenderHint(QPainter::Antialiasing);
         painter.setBrush(QColor(color));
         painter.setPen(QPen(Qt::NoPen));
@@ -170,23 +117,25 @@ void MessageWidgetContainer::createLayout()
 
     auto vLayout = new QVBoxLayout(this);
 
-    if (m_isSigned || m_isEncrypted) {
-        if (layoutDirection() == Qt::RightToLeft) {
-            layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
-        } else {
-            layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
-        }
+    if (m_sidebarSecurityLevel == PartModel::Unknow) {
+        return;
     }
 
-    if (m_isEncrypted && m_displayEncryptionInfo) {
+    if (layoutDirection() == Qt::RightToLeft) {
+        layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
+    } else {
+        layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
+    }
+
+    if (m_displayEncryptionInfo) {
         auto encryptionMessage = new KMessageWidget(this);
         encryptionMessage->setObjectName(QLatin1StringView("EncryptionMessage"));
         encryptionMessage->setCloseButtonVisible(false);
+        encryptionMessage->setMessageType(getType(m_encryptionSecurityLevel));
 
         QString text;
-        if (m_encryptionInfo.keyId.isEmpty()) {
+        if (m_encryptionSecurityLevel == PartModel::Bad) {
             encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-error")));
-            encryptionMessage->setMessageType(KMessageWidget::Error);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted but you don't have a matching secret key.", QString::fromUtf8(m_encryptionInfo.keyId));
             } else {
@@ -194,7 +143,6 @@ void MessageWidgetContainer::createLayout()
             }
         } else {
             encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
-            encryptionMessage->setMessageType(KMessageWidget::Positive);
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted.");
             } else {
@@ -223,29 +171,17 @@ void MessageWidgetContainer::createLayout()
         vLayout->addWidget(encryptionMessage);
     }
 
-    if (m_isSigned && m_displaySignatureInfo) {
+    if (m_displaySignatureInfo) {
         auto signatureMessage = new KMessageWidget(this);
         signatureMessage->setObjectName(QStringLiteral("SignatureMessage"));
         signatureMessage->setCloseButtonVisible(false);
-        signatureMessage->setText(getDetails(m_signatureInfo));
+        signatureMessage->setText(m_signatureInfo);
         connect(signatureMessage, &KMessageWidget::linkActivated, this, [this](const QString &link) {
             m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
         });
         signatureMessage->setMessageType(getType(m_signatureSecurityLevel));
-        switch (m_signatureSecurityLevel) {
-        case PartModel::Good:
-            signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-signed")));
-            break;
-        case PartModel::Bad:
-            signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-error")));
-            break;
-        case PartModel::NotSoGood:
-            signatureMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-warning")));
-            break;
-        default:
-            break;
-        }
         signatureMessage->setWordWrap(true);
+        signatureMessage->setIcon(QIcon::fromTheme(m_signatureIconName));
 
         vLayout->addWidget(signatureMessage);
     }

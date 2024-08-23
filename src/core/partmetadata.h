@@ -34,6 +34,7 @@ public:
     QStringList signerMailAddresses;
     QByteArray keyId;
     QString keyTrust;
+    GpgME::Signature::Summary signatureSummary;
     QString status; // to be used for unknown plug-ins
     int status_code = 0; // = GPGME_SIG_STAT_NONE; to be used for i18n of OpenPGP and S/MIME CryptPlugs
     QString errorText;

@@ -18,12 +18,30 @@ DelegateModel {
     property url icalCustomComponent
 
     delegate: RowLayout {
-        id: partColumn
+        id: partDelegate
 
-        width: ListView.view.width - Kirigami.Units.largeSpacing
-        x: Kirigami.Units.smallSpacing
+        required property int type
+        required property string content
+        required property bool isEmbedded
+        required property int sidebarSecurityLevel
 
-        function getType(securityLevel) {
+        required property int encryptionSecurityLevel
+        required property string encryptionIconName
+        required property var encryptionDetails
+
+        required property int signatureSecurityLevel
+        required property string signatureIconName
+        required property string signatureDetails
+
+        required property int errorType
+        required property string errorString
+
+        readonly property bool isEncrypted: encryptionSecurityLevel !== PartModel.Unknow
+        readonly property bool isSigned: signatureSecurityLevel !== PartModel.Unknow
+
+        width: ListView.view.width
+
+        function getType(securityLevel: int): int {
             if (securityLevel === PartModel.Good) {
                 return Kirigami.MessageType.Positive
             }
@@ -36,7 +54,7 @@ DelegateModel {
             return Kirigami.MessageType.Information
         }
 
-        function getColor(securityLevel) {
+        function getColor(securityLevel: int): color {
             if (securityLevel === PartModel.Good) {
                 return Kirigami.Theme.positiveTextColor
             }
@@ -49,62 +67,40 @@ DelegateModel {
             return "transparent"
         }
 
-        function getDetails(signatureDetails) {
-            let details = "";
-            if (signatureDetails.keyMissing) {
-                details += i18ndc("mimetreeparser", "@info", "This message was signed with certificate %1.", signatureDetails.keyId) + "\n";
-                details += i18ndc("mimetreeparser", "@info", "The certificate details are not available.")
-            } else {
-                details += i18ndc("mimetreeparser", "@info", "This message was signed by %1 with certificate %2.", signatureDetails.signer, signatureDetails.keyId) + "\n";
-                if (signatureDetails.keyRevoked) {
-                    details += "\n" + i18ndc("mimetreeparser", "@info", "The certificate was revoked.")
-                }
-                if (signatureDetails.keyExpired) {
-                    details += "\n" + i18ndc("mimetreeparser", "@info", "The certificate has expired.")
-                }
-                if (signatureDetails.keyIsTrusted) {
-                    details += "\n" + i18ndc("mimetreeparser", "@info", "The certificate is certified.")
-                }
-                if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired && !signatureDetails.keyIsTrusted) {
-                    details += "\n" + i18ndc("mimetreeparser", "@info", "The signature is invalid.")
-                }
-            }
-            return details
-        }
-
         QQC2.Control {
+            id: sidebar
+
             Layout.preferredWidth: Kirigami.Units.smallSpacing
             Layout.fillHeight: true
 
-            visible: model.encrypted
+            visible: partDelegate.sidebarSecurityLevel !== PartModel.Unknown
 
             background: Rectangle {
                 id: border
-
-                color: getColor(model.securityLevel)
-                opacity: 0.5
+                color: getColor(partDelegate.sidebarSecurityLevel)
             }
-
-            QQC2.ToolTip.text: getDetails(model.encryptionSecurityLevel)
-            QQC2.ToolTip.visible: hovered
-            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
 
         ColumnLayout {
+            spacing: Kirigami.Units.smallSpacing
+
+            Layout.leftMargin: sidebar.visible ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+
             Banner {
-                iconName: "mail-encrypted"
-                type: getType(model.encryptionSecurityLevel)
-                visible: model.encrypted
-                text: !model.encryptionDetails.keyId ? i18n("This message is encrypted but you don't have a matching secret key.") : i18n("This message is encrypted for: %1", model.encryptionDetails.keyId);
+                iconName: partDelegate.encryptionIconName
+                type: getType(partDelegate.encryptionSecurityLevel)
+                visible: partDelegate.isEncrypted
+                text: !partDelegate.encryptionDetails.keyId ? i18n("This message is encrypted but you don't have a matching secret key.") : i18n("This message is encrypted for: %1", partDelegate.encryptionDetails.keyId);
 
                 Layout.fillWidth: true
             }
 
             Banner {
-                iconName: 'mail-signed'
-                visible: model.signed
-                type: getType(model.signatureSecurityLevel)
-                text: getDetails(model.signatureDetails)
+                iconName: partDelegate.signatureIconName
+                visible: partDelegate.isSigned
+                type: getType(partDelegate.signatureSecurityLevel)
+                text: partDelegate.signatureDetails
 
                 Layout.fillWidth: true
             }
@@ -118,22 +114,22 @@ DelegateModel {
                 Layout.rightMargin: root.padding
 
                 Component.onCompleted: {
-                    switch (model.type + 0) {
+                    switch (partDelegate.type) {
                         case PartModel.Plain:
                             partLoader.setSource("TextPart.qml", {
-                                content: model.content,
-                                embedded: model.embedded,
+                                content: partDelegate.content,
+                                embedded: partDelegate.isEmbedded,
                             })
                             break
                         case PartModel.Html:
                             partLoader.setSource("HtmlPart.qml", {
-                                content: model.content,
+                                content: partDelegate.content,
                             })
                             break;
                         case PartModel.Error:
                             partLoader.setSource("ErrorPart.qml", {
-                                errorType: model.errorType,
-                                errorString: model.errorString,
+                                errorType: partDelegate.errorType,
+                                errorString: partDelegate.errorString,
                             })
                             break;
                         case PartModel.Encapsulated:
@@ -146,7 +142,7 @@ DelegateModel {
                             break;
                         case PartModel.Ical:
                             partLoader.setSource(root.icalCustomComponent ? root.icalCustomComponent : "ICalPart.qml", {
-                                content: model.content,
+                                content: partDelegate.content,
                             })
                             break;
                     }
