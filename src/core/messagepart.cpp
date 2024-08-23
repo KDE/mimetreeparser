@@ -708,77 +708,76 @@ static int signatureToStatus(const GpgME::Signature &sig)
 
 void SignedMessagePart::sigStatusToMetaData()
 {
-    GpgME::Key key;
-    if (partMetaData()->isSigned) {
-        GpgME::Signature signature = mSignatures.front();
-        mMetaData.status_code = signatureToStatus(signature);
-        mMetaData.isGoodSignature = partMetaData()->status_code == GPGME_SIG_STAT_GOOD;
-        // save extended signature status flags
-        mMetaData.sigSummary = signature.summary();
+    if (!partMetaData()->isSigned) {
+        return;
+    }
 
-        if (partMetaData()->isGoodSignature && !key.keyID()) {
-            // Search for the key by its fingerprint so that we can check for
-            // trust etc.
-            key = Kleo::KeyCache::instance()->findByFingerprint(signature.fingerprint());
-            if (key.isNull() && signature.fingerprint()) {
-                // try to find a subkey that was used for signing;
-                // assumes that the key ID is the last 16 characters of the fingerprint
-                const auto fpr = std::string_view{signature.fingerprint()};
-                const auto keyID = std::string{fpr, fpr.size() - 16, 16};
-                const auto subkeys = Kleo::KeyCache::instance()->findSubkeysByKeyID({keyID});
-                if (subkeys.size() > 0) {
-                    key = subkeys[0].parent();
-                }
-            }
-            if (key.isNull()) {
-                qCDebug(MIMETREEPARSER_CORE_LOG) << "Found no key or subkey for fingerprint" << signature.fingerprint();
-            }
-        }
+    GpgME::Signature signature = mSignatures.front();
+    mMetaData.status_code = signatureToStatus(signature);
+    mMetaData.isGoodSignature = partMetaData()->status_code == GPGME_SIG_STAT_GOOD;
+    // save extended signature status flags
+    mMetaData.sigSummary = signature.summary();
 
-        if (key.keyID()) {
-            partMetaData()->keyId = key.keyID();
+    // Search for the key by its fingerprint so that we can check for
+    // trust etc.
+    GpgME::Key key = Kleo::KeyCache::instance()->findByFingerprint(signature.fingerprint());
+    if (key.isNull() && signature.fingerprint()) {
+        // try to find a subkey that was used for signing;
+        // assumes that the key ID is the last 16 characters of the fingerprint
+        const auto fpr = std::string_view{signature.fingerprint()};
+        const auto keyID = std::string{fpr, fpr.size() - 16, 16};
+        const auto subkeys = Kleo::KeyCache::instance()->findSubkeysByKeyID({keyID});
+        if (subkeys.size() > 0) {
+            key = subkeys[0].parent();
         }
-        if (partMetaData()->keyId.isEmpty()) {
-            partMetaData()->keyId = signature.fingerprint();
-        }
-        partMetaData()->keyTrust = signature.validity();
-        if (key.numUserIDs() > 0 && key.userID(0).id()) {
-            partMetaData()->signer = prettifyDN(key.userID(0).id());
-        }
-        for (const auto &uid : key.userIDs()) {
-            // The following if /should/ always result in TRUE but we
-            // won't trust implicitly the plugin that gave us these data.
-            if (uid.email()) {
-                QString email = QString::fromUtf8(uid.email());
-                if (!email.isEmpty()) {
-                    partMetaData()->signerMailAddresses.append(email);
-                }
-            }
-        }
+    }
+    if (key.isNull()) {
+        qCDebug(MIMETREEPARSER_CORE_LOG) << "Found no key or subkey for fingerprint" << signature.fingerprint();
+    }
 
-        if (signature.creationTime()) {
-            partMetaData()->creationTime.setSecsSinceEpoch(signature.creationTime());
-        } else {
-            partMetaData()->creationTime = QDateTime();
-        }
-        if (partMetaData()->signer.isEmpty()) {
-            if (key.numUserIDs() > 0 && key.userID(0).name()) {
-                partMetaData()->signer = prettifyDN(key.userID(0).name());
+    if (key.keyID()) {
+        partMetaData()->keyId = key.keyID();
+    }
+    if (partMetaData()->keyId.isEmpty()) {
+        partMetaData()->keyId = signature.fingerprint();
+    }
+    partMetaData()->keyTrust = signature.validity();
+    if (key.numUserIDs() > 0 && key.userID(0).id()) {
+        partMetaData()->signer = prettifyDN(key.userID(0).id());
+    }
+    for (const auto &uid : key.userIDs()) {
+        // The following if /should/ always result in TRUE but we
+        // won't trust implicitly the plugin that gave us these data.
+        if (uid.email()) {
+            QString email = QString::fromUtf8(uid.email());
+            if (!email.isEmpty()) {
+                partMetaData()->signerMailAddresses.append(email);
             }
-            if (!partMetaData()->signerMailAddresses.empty()) {
-                if (partMetaData()->signer.isEmpty()) {
-                    partMetaData()->signer = partMetaData()->signerMailAddresses.front();
-                } else {
-                    partMetaData()->signer += QLatin1StringView(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
-                }
+        }
+    }
+
+    if (signature.creationTime()) {
+        partMetaData()->creationTime.setSecsSinceEpoch(signature.creationTime());
+    } else {
+        partMetaData()->creationTime = QDateTime();
+    }
+    if (partMetaData()->signer.isEmpty()) {
+        if (key.numUserIDs() > 0 && key.userID(0).name()) {
+            partMetaData()->signer = prettifyDN(key.userID(0).name());
+        }
+        if (!partMetaData()->signerMailAddresses.empty()) {
+            if (partMetaData()->signer.isEmpty()) {
+                partMetaData()->signer = partMetaData()->signerMailAddresses.front();
+            } else {
+                partMetaData()->signer += QLatin1StringView(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
             }
         }
-        if (Kleo::DeVSCompliance::isCompliant()) {
-            partMetaData()->isCompliant = signature.isDeVs();
-            partMetaData()->compliance = Kleo::DeVSCompliance::name(signature.isDeVs());
-        } else {
-            partMetaData()->isCompliant = true;
-        }
+    }
+    if (Kleo::DeVSCompliance::isCompliant()) {
+        partMetaData()->isCompliant = signature.isDeVs();
+        partMetaData()->compliance = Kleo::DeVSCompliance::name(signature.isDeVs());
+    } else {
+        partMetaData()->isCompliant = true;
     }
 }
 
