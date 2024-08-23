@@ -25,6 +25,7 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
+#include <libkleo/formatting.h>
 
 using namespace MimeTreeParser;
 
@@ -741,7 +742,7 @@ void SignedMessagePart::sigStatusToMetaData()
     if (partMetaData()->keyId.isEmpty()) {
         partMetaData()->keyId = signature.fingerprint();
     }
-    partMetaData()->keyTrust = signature.validity();
+    partMetaData()->keyTrust = Kleo::Formatting::validity(key.userID(0));
     if (key.numUserIDs() > 0 && key.userID(0).id()) {
         partMetaData()->signer = prettifyDN(key.userID(0).id());
     }

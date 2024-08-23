@@ -111,7 +111,9 @@ class MIMETREEPARSER_CORE_EXPORT SignatureInfo
     Q_PROPERTY(QStringList signerMailAddresses MEMBER signerMailAddresses CONSTANT)
     Q_PROPERTY(bool signatureIsGood MEMBER signatureIsGood CONSTANT)
     Q_PROPERTY(bool isCompliant MEMBER isCompliant CONSTANT)
-    Q_PROPERTY(GpgME::Signature::Validity keyTrust MEMBER keyTrust CONSTANT)
+
+    /// Validity information of the key who signed the message.
+    Q_PROPERTY(QString keyTrust MEMBER keyTrust CONSTANT)
 
 public:
     bool keyRevoked = false;
@@ -121,7 +123,7 @@ public:
     bool crlMissing = false;
     bool crlTooOld = false;
     bool isCompliant = false;
-    GpgME::Signature::Validity keyTrust;
+    QString keyTrust;
     QByteArray keyId;
     const QGpgME::Protocol *cryptoProto = nullptr;
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> decryptRecipients;

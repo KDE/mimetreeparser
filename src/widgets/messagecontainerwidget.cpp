@@ -88,27 +88,13 @@ QString getDetails(const SignatureInfo &signatureDetails)
             details += QLatin1Char('\n') + i18ndc("mimetreeparser", "@info", "The <a href=\"%1\">certificate</a> is expired.", href);
         }
 
-        if (signatureDetails.keyTrust == GpgME::Signature::Unknown) {
-            details += QLatin1Char(' ')
-                + i18ndc("mimetreeparser", "@info", "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is unknown.", href);
-        } else if (signatureDetails.keyTrust == GpgME::Signature::Marginal) {
-            details += QLatin1Char(' ')
-                + i18ndc("mimetreeparser", "@info", "The signature is valid and the <a href=\"%1\">certificate</a> is marginally trusted.", href);
-        } else if (signatureDetails.keyTrust == GpgME::Signature::Full) {
-            details +=
-                QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is valid and the <a href=\"%1\">certificate</a> is fully trusted.", href);
-        } else if (signatureDetails.keyTrust == GpgME::Signature::Ultimate) {
-            details += QLatin1Char(' ')
-                + i18ndc("mimetreeparser", "@info", "The signature is valid and the <a href=\"%1\">certificate</a> is ultimately trusted.", href);
-        } else {
-            details +=
-                QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is valid, but the <a href=\"%1\">certificate</a> is not certified.", href);
-        }
-        if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired
-            && signatureDetails.keyTrust != GpgME::Signature::Unknown) {
-            details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is invalid.");
-        }
+        details += QLatin1Char(' ') + signatureDetails.keyTrust;
     }
+
+    if (!signatureDetails.signatureIsGood && !signatureDetails.keyRevoked && !signatureDetails.keyExpired) {
+        details += QLatin1Char(' ') + i18ndc("mimetreeparser", "@info", "The signature is invalid.");
+    }
+
     return details;
 }
 

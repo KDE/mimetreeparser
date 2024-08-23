@@ -33,7 +33,7 @@ public:
     QString signer;
     QStringList signerMailAddresses;
     QByteArray keyId;
-    GpgME::Signature::Validity keyTrust = GpgME::Signature::Validity::Unknown;
+    QString keyTrust;
     QString status; // to be used for unknown plug-ins
     int status_code = 0; // = GPGME_SIG_STAT_NONE; to be used for i18n of OpenPGP and S/MIME CryptPlugs
     QString errorText;
@@ -51,11 +51,6 @@ public:
     bool isEncapsulatedRfc822Message : 1;
     bool isCompliant : 1; // corresponds to the isDeVS flag of signature or decryption result
     bool keyRevoked : 1;
-
-    inline bool isTrusted()
-    {
-        return keyTrust == GpgME::Signature::Full || keyTrust == GpgME::Signature::Ultimate;
-    }
 };
 
 }
