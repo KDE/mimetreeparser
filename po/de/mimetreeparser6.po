@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-03 00:40+0000\n"
-"PO-Revision-Date: 2024-07-19 16:27+0200\n"
+"PO-Revision-Date: 2024-08-16 13:58+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
 "Language: de\n"
@@ -599,8 +599,7 @@ msgid "File %1 could not be created."
 msgstr "Datei %1 konnte nicht erstellt werden."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Fehler beim Abspeichern der Datei"
@@ -643,8 +642,7 @@ msgstr ""
 "ihre Installation."
 
 #: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "KMail Error"
 msgstr "KMail Fehler"
