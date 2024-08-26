@@ -330,9 +330,9 @@ protected:
 class MIMETREEPARSER_CORE_EXPORT SignedMessagePart : public MessagePart
 {
     Q_OBJECT
-    Q_PROPERTY(bool isSigned READ isSigned CONSTANT)
+
 public:
-    typedef QSharedPointer<SignedMessagePart> Ptr;
+    using Ptr = QSharedPointer<SignedMessagePart>;
     SignedMessagePart(ObjectTreeParser *otp,
                       const QGpgME::Protocol *protocol,
                       KMime::Content *node,
@@ -340,9 +340,6 @@ public:
                       bool parseAfterDecryption = true);
 
     ~SignedMessagePart() override;
-
-    void setIsSigned(bool isSigned);
-    [[nodiscard]] bool isSigned() const;
 
     void startVerification();
 
@@ -352,7 +349,6 @@ public:
     const QGpgME::Protocol *cryptoProto() const;
 
 private:
-    MIMETREEPARSER_CORE_NO_EXPORT void sigStatusToMetaData();
     MIMETREEPARSER_CORE_NO_EXPORT void setVerificationResult(const GpgME::VerificationResult &result, const QByteArray &signedData);
     bool mParseAfterDecryption{true};
 

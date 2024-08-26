@@ -16,9 +16,7 @@ class PartMetaData
 {
 public:
     PartMetaData()
-        : isSigned(false)
-        , isGoodSignature(false)
-        , isEncrypted(false)
+        : isEncrypted(false)
         , isDecryptable(false)
         , inProgress(false)
         , technicalProblem(false)
@@ -28,13 +26,18 @@ public:
     {
     }
 
-    GpgME::Signature::Summary sigSummary = GpgME::Signature::None;
+    inline bool isSigned() const
+    {
+        return verificationResult.signatures().size() > 0;
+    }
+
+    GpgME::VerificationResult verificationResult;
+
     QString signClass;
     QString signer;
     QStringList signerMailAddresses;
     QByteArray keyId;
     QString keyTrust;
-    GpgME::Signature::Summary signatureSummary;
     QString status; // to be used for unknown plug-ins
     int status_code = 0; // = GPGME_SIG_STAT_NONE; to be used for i18n of OpenPGP and S/MIME CryptPlugs
     QString errorText;
@@ -43,8 +46,6 @@ public:
     QString auditLog;
     QString compliance; // textual representation of compliance status; empty if compliance isn't enforced
     GpgME::Error auditLogError;
-    bool isSigned : 1;
-    bool isGoodSignature : 1;
     bool isEncrypted : 1;
     bool isDecryptable : 1;
     bool inProgress : 1;
