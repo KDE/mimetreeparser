@@ -223,9 +223,7 @@ PartModel::PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser)
 {
 }
 
-PartModel::~PartModel()
-{
-}
+PartModel::~PartModel() = default;
 
 void PartModel::setShowHtml(bool html)
 {
