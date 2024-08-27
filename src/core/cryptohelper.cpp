@@ -11,6 +11,8 @@
 #include <QGpgME/Protocol>
 #include <QGpgME/VerifyOpaqueJob>
 
+#include <Libkleo/Formatting>
+
 #include <gpgme++/context.h>
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/verificationresult.h>
@@ -248,7 +250,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
         } else if (isSMIME(msg.data())) {
             protoName = GpgME::CMS;
         } else {
-            const auto blocks = prepareMessageForDecryption(msg->body());
+            const auto blocks = prepareMessageForDecryption(msg->decodedContent());
             QByteArray content;
             for (const auto &block : blocks) {
                 if (block.type() == PgpMessageBlock) {
@@ -263,7 +265,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
                     auto result = decrypt->exec(inData, outData);
                     if (result.error()) {
                         // unknown key, invalid algo, or general error
-                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << result.error().asString();
+                        qWarning() << "Failed to decrypt:" << Kleo::Formatting::errorAsString(result.error());
                         return {};
                     }
 
@@ -271,7 +273,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
                     auto verify = proto->verifyOpaqueJob(true);
                     auto resultVerify = verify->exec(inData, outData);
                     if (resultVerify.error()) {
-                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to verify:" << resultVerify.error().asString();
+                        qWarning() << "Failed to verify:" << Kleo::Formatting::errorAsString(resultVerify.error()) << "inData" << inData;
                         return {};
                     }
 
@@ -291,8 +293,8 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
     }
 
     if (protoName == GpgME::UnknownProtocol) {
-        // Not encrypted, or we don't recognize the encryption
         wasEncrypted = false;
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "Not encrypted, or we don't recognize the encryption";
         return {};
     }
 

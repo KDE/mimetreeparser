@@ -169,7 +169,6 @@ void CryptoHelperTest::testDecryptInlineMessage()
     QVERIFY(wasEncrypted);
     QVERIFY(decryptedMessage);
     QCOMPARE(decryptedMessage->decodedContent(), QByteArray("Not encrypted not signed :(\n\nsome random text\n"));
-    qWarning() << decryptedMessage->encodedContent();
     QCOMPARE(decryptedMessage->encodedContent(),
              QByteArray("From test@kolab.org Wed, 25 May 2011 23: 49:40 +0100\nFrom: OpenPGP Test <test@kolab.org>\nTo: test@kolab.org\nSubject: "
                         "inlinepgpencrypted + non enc text\nDate: Wed, 25 May 2011 23:49:40 +0100\nMessage-ID: "

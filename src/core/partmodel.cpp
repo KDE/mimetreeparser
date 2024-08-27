@@ -5,6 +5,7 @@
 
 #include "enums.h"
 #include "htmlutils.h"
+#include "messagepart.h"
 #include "mimetreeparser_core_debug.h"
 #include "objecttreeparser.h"
 #include "utils.h"
@@ -360,11 +361,54 @@ SignatureInfo encryptionInfo(MimeTreeParser::MessagePart *messagePart)
 template<typename T>
 const T *findHeader(KMime::Content *content)
 {
+    if (!content) {
+        return {};
+    }
     auto header = content->header<T>();
     if (header || !content->parent()) {
         return header;
     }
     return findHeader<T>(content->parent());
+}
+
+PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::MessagePart *messagePart)
+{
+    auto signature = signatureFromMessagePart(messagePart);
+    if (!signature) {
+        return SecurityLevel::Unknow;
+    }
+
+    const auto summary = signature->summary();
+
+    if (summary & GpgME::Signature::Summary::Red) {
+        return SecurityLevel::Bad;
+    }
+    if (summary & GpgME::Signature::Summary::Valid) {
+        return SecurityLevel::Good;
+    }
+
+    return SecurityLevel::NotSoGood;
+}
+
+QString PartModel::signatureDetails(MimeTreeParser::MessagePart *messagePart)
+{
+    auto signature = signatureFromMessagePart(messagePart);
+    if (!signature) {
+        return QString{};
+    }
+
+    // guess sender from mime node or parent node
+    auto from = findHeader<KMime::Headers::From>(messagePart->node());
+    if (from) {
+        const auto mailboxes = from->mailboxes();
+        if (!mailboxes.isEmpty()) {
+            auto mailBox = mailboxes.front();
+            if (mailBox.hasAddress()) {
+                return Kleo::Formatting::prettySignature(*signature, mailboxes.front());
+            }
+        }
+    }
+    return Kleo::Formatting::prettySignature(*signature, {});
 }
 
 QVariant PartModel::data(const QModelIndex &index, int role) const
@@ -474,24 +518,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
 
             return SecurityLevel::Unknow;
         }
-        case SignatureSecurityLevelRole: {
+        case SignatureSecurityLevelRole:
             // Color displayed for the signature info box
-            auto signature = signatureFromMessagePart(messagePart);
-            if (!signature) {
-                return SecurityLevel::Unknow;
-            }
-
-            const auto summary = signature->summary();
-
-            if (summary & GpgME::Signature::Summary::Red) {
-                return SecurityLevel::Bad;
-            }
-            if (summary & GpgME::Signature::Summary::Valid) {
-                return SecurityLevel::Good;
-            }
-
-            return SecurityLevel::NotSoGood;
-        }
+            return signatureSecurityLevel(messagePart);
         case EncryptionSecurityLevelRole: {
             // Color displayed for the encryption info box
             const auto encryption = messagePart->encryptionState();
@@ -528,48 +557,8 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                 return QStringLiteral("data-warning");
             }
         }
-        case SignatureDetailsRole: {
-            auto signature = signatureFromMessagePart(messagePart);
-            if (!signature) {
-                return QString{};
-            }
-
-            GpgME::Key key = signature->key();
-            if (key.isNull()) {
-                key = Kleo::KeyCache::instance()->findByFingerprint(signature->fingerprint());
-            }
-            if (key.isNull() && signature->fingerprint()) {
-                // try to find a subkey that was used for signing;
-                // assumes that the key ID is the last 16 characters of the fingerprint
-                const auto fpr = std::string_view{signature->fingerprint()};
-                const auto keyID = std::string{fpr, fpr.size() - 16, 16};
-                const auto subkeys = Kleo::KeyCache::instance()->findSubkeysByKeyID({keyID});
-                if (subkeys.size() > 0) {
-                    key = subkeys[0].parent();
-                }
-            }
-            if (key.isNull()) {
-                qCWarning(MIMETREEPARSER_CORE_LOG) << "Found no key or subkey for fingerprint" << signature->fingerprint();
-            }
-
-            QStringList senderUserId;
-            for (int i = 0, count = key.userIDs().size(); i < count; i++) {
-                senderUserId << QString::fromUtf8(key.userID(i).email());
-            }
-
-            // guess sender from mime node or parent node
-            auto from = findHeader<KMime::Headers::From>(messagePart->node());
-            if (from) {
-                const auto mailboxes = from->mailboxes();
-                if (!mailboxes.isEmpty()) {
-                    auto mailBox = mailboxes.front();
-                    if (mailBox.hasAddress()) {
-                        return Kleo::Formatting::prettySignature(*signature, mailboxes.front());
-                    }
-                }
-            }
-            return Kleo::Formatting::prettySignature(*signature, {});
-        }
+        case SignatureDetailsRole:
+            return signatureDetails(messagePart);
         case EncryptionDetails:
             return QVariant::fromValue(encryptionInfo(messagePart));
         case ErrorType:

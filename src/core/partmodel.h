@@ -8,6 +8,7 @@
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
 
+#include "messagepart.h"
 #include "mimetreeparser_core_export.h"
 #include <memory>
 #include <verificationresult.h>
@@ -91,6 +92,9 @@ public:
     void setTrimMail(bool trim);
     [[nodiscard]] bool trimMail() const;
     [[nodiscard]] bool isTrimmed() const;
+
+    static SecurityLevel signatureSecurityLevel(MimeTreeParser::MessagePart *messagePart);
+    static QString signatureDetails(MimeTreeParser::MessagePart *messagePart);
 
 Q_SIGNALS:
     void showHtmlChanged();

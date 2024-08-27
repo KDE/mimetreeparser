@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2016 Sandro Knauß <knauss@kolabsystems.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+#include "partmodel.h"
 #include <MimeTreeParserCore/ObjectTreeParser>
 
-#include <QDebug>
 #include <QTest>
 #include <QTimeZone>
 
@@ -361,20 +361,10 @@ private Q_SLOTS:
 
         QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("ohno öäü")));
 
-        const auto signaturePart = part->signatures().first();
-        const auto signatures = signaturePart->partMetaData()->verificationResult.signatures();
-        QVERIFY(signatures.size() > 0);
-        const auto signature = signatures.front();
-
-        QCOMPARE(signature.summary() & GpgME::Signature::KeyMissing, false);
-        QCOMPARE(signature.summary() & GpgME::Signature::KeyExpired, false);
-        QCOMPARE(signature.summary() & GpgME::Signature::KeyRevoked, false);
-        QCOMPARE(signature.summary() & GpgME::Signature::SigExpired, false);
-        QCOMPARE(signature.summary() & GpgME::Signature::CrlMissing, false);
-        QCOMPARE(signature.summary() & GpgME::Signature::CrlTooOld, false);
-        QCOMPARE(QByteArray(signature.fingerprint()), QByteArray{"8D9860C58F246DE6"});
-        // QCOMPARE(signaturePart->partMetaData()->signer, QLatin1StringView{"unittest key (no password) <test@kolab.org>"});
-        // QCOMPARE(signaturePart->partMetaData()->signerMailAddresses, QStringList{{QStringLiteral("test@kolab.org")}});
+        const auto details = PartModel::signatureDetails(part.get());
+        QCOMPARE(details,
+                 QStringLiteral("With certificate: <a href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
+                                "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
     }
 
     void testEncryptedAndSigned()
@@ -391,15 +381,10 @@ private Q_SLOTS:
         QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
         QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("encrypted message text")));
 
-        auto signaturePart = part->signatures().first();
-        const auto signatures = signaturePart->partMetaData()->verificationResult.signatures();
-        QVERIFY(signatures.size() > 0);
-        const auto signature = signatures.front();
-
-        QCOMPARE(QByteArray(signature.fingerprint()), QByteArray{"8D9860C58F246DE6"});
-
-        QCOMPARE(signaturePart->partMetaData()->keyId, QByteArray{"8D9860C58F246DE6"});
-        QCOMPARE(signature.summary() & GpgME::Signature::Valid, true);
+        const auto details = PartModel::signatureDetails(part.get());
+        QCOMPARE(details,
+                 QStringLiteral("With unavailable certificate:<br>ID: 0xCBD116485DB9560CA3CD91E02E3B7787B1B75920<br/>You can search the certificate on a "
+                                "keyserver or import it from a file."));
     }
 
     void testOpenpgpMultipartEmbedded()
@@ -431,11 +416,10 @@ private Q_SLOTS:
         QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
         QCOMPARE(otp.plainTextContent(), QString::fromUtf8("test\n\n-- \nThis is a HTML signature.\n"));
 
-        auto signaturePart = part->signatures().first();
-        // QVERIFY(signaturePart->partMetaData()->keyId.endsWith(QByteArray{"2E3B7787B1B75920"}));
-        //// We lack the public key for this message
-        // QCOMPARE(false, signaturePart->partMetaData()->isGoodSignature);
-        // QCOMPARE(GpgME::Signature::KeyMissing, signaturePart->partMetaData()->sigSummary);
+        const auto details = PartModel::signatureDetails(part.get());
+        QCOMPARE(details,
+                 QStringLiteral("With certificate: <a href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
+                                "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
     }
 
     void testAppleHtmlWithAttachments()
@@ -661,7 +645,7 @@ private Q_SLOTS:
         QCOMPARE(part->charset(), QStringLiteral("utf-8").toLocal8Bit());
         QCOMPARE(part->encryptions().size(), 1);
         QCOMPARE(part->signatures().size(), 1);
-        QCOMPARE(part->signatures()[0]->partMetaData()->isGoodSignature, true);
+        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::Good);
         QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
         QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
         auto contentAttachmentList = otp.collectAttachmentParts();
@@ -691,7 +675,7 @@ private Q_SLOTS:
         QCOMPARE(part->text(), QString());
         QCOMPARE(part->charset(), QStringLiteral("UTF-8").toLocal8Bit());
         QCOMPARE(part->signatures().size(), 1);
-        QCOMPARE(part->signatures()[0]->partMetaData()->isGoodSignature, true);
+        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::Good);
         auto contentAttachmentList = otp.collectAttachmentParts();
         QCOMPARE(contentAttachmentList.size(), 1);
     }
