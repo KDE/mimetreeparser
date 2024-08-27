@@ -3,15 +3,17 @@
 
 #pragma once
 
-#include <QAbstractItemModel>
-#include <QModelIndex>
-#include <gpgme++/decryptionresult.h>
-#include <gpgme++/key.h>
-
 #include "messagepart.h"
 #include "mimetreeparser_core_export.h"
+
+#include <QAbstractItemModel>
+#include <QModelIndex>
+
+#include <gpgme++/decryptionresult.h>
+#include <gpgme++/key.h>
+#include <gpgme++/verificationresult.h>
+
 #include <memory>
-#include <verificationresult.h>
 
 namespace QGpgME
 {

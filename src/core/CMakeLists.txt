@@ -39,6 +39,7 @@ target_sources(KPim6MimeTreeParserCore PRIVATE
      objecttreeparser.h
      partmetadata.h
      partmodel.h
+     urlhandler.h
      utils.h
      attachmentmodel.cpp
      bodypartformatter.cpp
@@ -51,6 +52,7 @@ target_sources(KPim6MimeTreeParserCore PRIVATE
      messagepart.cpp
      objecttreeparser.cpp
      partmodel.cpp
+     urlhandler.cpp
      utils.cpp
 )
 
@@ -105,6 +107,7 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
         PartModel
         PartMetaData
         Enums
+        UrlHandler
     REQUIRED_HEADERS MimeTreeParserCore_HEADERS
     PREFIX MimeTreeParserCore
 )

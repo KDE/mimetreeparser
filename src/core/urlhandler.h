@@ -4,14 +4,22 @@
 
 #pragma once
 
+#include "mimetreeparser_core_export.h"
+
 #include <QObject>
 #include <QWindow>
 
-class UrlHandler : public QObject
+class MIMETREEPARSER_CORE_EXPORT UrlHandler : public QObject
 {
+    Q_OBJECT
+
 public:
     explicit UrlHandler(QObject *parent = nullptr);
-    bool handleClick(const QUrl &url, QWindow *window);
+
+    Q_INVOKABLE bool handleClick(const QUrl &url, QWindow *window);
+
+Q_SIGNALS:
+    void errorOccurred(const QString &errorMessage);
 
 private:
     [[nodiscard]] bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId);

@@ -5,7 +5,7 @@
 #include "../core/utils.h"
 #include "messagecontainerwidget_p.h"
 #include "partmodel.h"
-#include "urlhandler_p.h"
+#include <MimeTreeParserCore/UrlHandler>
 
 #include <KLocalizedString>
 #include <KMessageWidget>

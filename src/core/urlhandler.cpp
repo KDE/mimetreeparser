@@ -2,17 +2,17 @@
 // SPDX-FileContributor: Carl Schwan <carl.schwan@gnupg.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "urlhandler_p.h"
+#include "urlhandler.h"
 
-#include "mimetreeparser_widgets_debug.h"
+#include "mimetreeparser_core_debug.h"
 
 #include <KLocalizedString>
-#include <KMessageBox>
 
 #include <QCoreApplication>
 #include <QProcess>
 #include <QStandardPaths>
 #include <QUrl>
+#include <QWindow>
 
 UrlHandler::UrlHandler(QObject *parent)
     : QObject(parent)
@@ -21,13 +21,15 @@ UrlHandler::UrlHandler(QObject *parent)
 
 bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
 {
-    if (!url.hasFragment()) {
+    QString keyId;
+    if (url.scheme() == QStringLiteral("key")) {
+        keyId = url.path();
+    } else if (!url.hasFragment()) {
         return false;
     }
     QString displayName;
     QString libName;
-    QString keyId;
-    if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
+    if (keyId.isEmpty() && !foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
         return false;
     }
     QStringList lst;
@@ -41,11 +43,8 @@ bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
     const QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra"));
 #endif
     if (exec.isEmpty()) {
-        qCWarning(MIMETREEPARSER_WIDGET_LOG) << "Could not find kleopatra executable in PATH";
-        KMessageBox::errorWId(window->winId(),
-                              i18n("Could not start certificate manager. "
-                                   "Please check your installation."),
-                              i18nc("@title:window", "KMail Error"));
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "Could not find kleopatra executable in PATH";
+        Q_EMIT errorOccurred(i18n("Could not start certificate manager. Please check your installation."));
         return false;
     }
     QProcess::startDetached(exec, lst);

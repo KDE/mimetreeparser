@@ -4,6 +4,7 @@
 #include <MimeTreeParserCore/AttachmentModel>
 #include <MimeTreeParserCore/MessageParser>
 #include <MimeTreeParserCore/PartModel>
+#include <MimeTreeParserCore/UrlHandler>
 
 #include <QQmlEngine>
 
@@ -28,4 +29,11 @@ class AttachmentModelForeign : public QObject
     QML_NAMED_ELEMENT(AttachmentModel)
     QML_UNCREATABLE("Enum only")
     QML_FOREIGN(AttachmentModel)
+};
+
+class UrlHandlerForeign : public QObject
+{
+    Q_OBJECT
+    QML_NAMED_ELEMENT(MimeUrlHandler)
+    QML_FOREIGN(UrlHandler)
 };

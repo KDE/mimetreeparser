@@ -36,9 +36,16 @@ ListView {
         id: visualModel
         model: messageParser.parts
         icalCustomComponent: root.icalCustomComponent
+        urlHandler: urlHandler
     }
 
     MessageParser {
         id: messageParser
+    }
+
+    MimeUrlHandler {
+        id: urlHandler
+
+        onErrorOccurred: (errorMessage) => QQC2.ApplicationWindow.window.showPassiveNotification(errorMessage)
     }
 }

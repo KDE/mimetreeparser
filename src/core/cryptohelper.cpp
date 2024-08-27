@@ -265,7 +265,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
                     auto result = decrypt->exec(inData, outData);
                     if (result.error()) {
                         // unknown key, invalid algo, or general error
-                        qWarning() << "Failed to decrypt:" << Kleo::Formatting::errorAsString(result.error());
+                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << Kleo::Formatting::errorAsString(result.error());
                         return {};
                     }
 
@@ -273,7 +273,8 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
                     auto verify = proto->verifyOpaqueJob(true);
                     auto resultVerify = verify->exec(inData, outData);
                     if (resultVerify.error()) {
-                        qWarning() << "Failed to verify:" << Kleo::Formatting::errorAsString(resultVerify.error()) << "inData" << inData;
+                        qCWarning(MIMETREEPARSER_CORE_LOG)
+                            << "Failed to verify:" << Kleo::Formatting::errorAsString(resultVerify.error()) << "inData" << inData;
                         return {};
                     }
 

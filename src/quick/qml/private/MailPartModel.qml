@@ -6,7 +6,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import QtQml.Models 2.2
-import org.kde.pim.mimetreeparser 1.0
+import org.kde.pim.mimetreeparser
 import org.kde.kirigami 2.19 as Kirigami
 
 DelegateModel {
@@ -16,6 +16,7 @@ DelegateModel {
     property bool autoLoadImages: false
     property int padding: Kirigami.Units.largeSpacing
     property url icalCustomComponent
+    required property var urlHandler
 
     delegate: RowLayout {
         id: partDelegate
@@ -101,6 +102,8 @@ DelegateModel {
                 visible: partDelegate.isSigned
                 type: getType(partDelegate.signatureSecurityLevel)
                 text: partDelegate.signatureDetails
+
+                onLinkActivated: (link) => root.urlHandler.handleClick(link, QQC2.ApplicationWindow.window)
 
                 Layout.fillWidth: true
             }

@@ -12,6 +12,7 @@
 #include <KLocalizedString>
 #include <KMime/Content>
 #include <Libkleo/Compliance>
+#include <Libkleo/Formatting>
 #include <Libkleo/KeyCache>
 
 #include <QGpgME/DN>
@@ -25,7 +26,6 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
-#include <libkleo/formatting.h>
 
 using namespace MimeTreeParser;
 
@@ -670,7 +670,6 @@ void SignedMessagePart::startVerification()
 void SignedMessagePart::setVerificationResult(const GpgME::VerificationResult &result, const QByteArray &signedData)
 {
     mMetaData.verificationResult = result;
-    qWarning() << "set mMetaData.verificationResult" << this;
 
     if (mMetaData.isSigned()) {
         if (!signedData.isEmpty() && mParseAfterDecryption) {

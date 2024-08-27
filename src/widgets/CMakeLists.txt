@@ -22,8 +22,6 @@ target_sources(KPim6MimeTreeParserWidgets PRIVATE
      messageviewer.cpp
      messageviewerdialog.h
      messageviewerdialog.cpp
-     urlhandler_p.h
-     urlhandler.cpp
 )
 
 ecm_qt_declare_logging_category(KPim6MimeTreeParserWidgets

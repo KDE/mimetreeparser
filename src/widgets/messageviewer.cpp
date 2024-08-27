@@ -7,7 +7,7 @@
 #include "messagecontainerwidget_p.h"
 #include "mimetreeparser_widgets_debug.h"
 #include "partmodel.h"
-#include "urlhandler_p.h"
+#include "urlhandler.h"
 
 #include <KCalendarCore/Event>
 #include <KCalendarCore/ICalFormat>
