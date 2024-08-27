@@ -620,13 +620,9 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp,
     , mSignedData(signedData)
 {
     mMetaData.status = i18ndc("mimetreeparser", "@info:status", "Wrong Crypto Plug-In.");
-    qWarning() << "created" << this;
 }
 
-SignedMessagePart::~SignedMessagePart()
-{
-    qWarning() << "desctrued" << this;
-}
+SignedMessagePart::~SignedMessagePart() = default;
 
 static QString prettifyDN(const char *uid)
 {
@@ -668,10 +664,6 @@ void SignedMessagePart::startVerification()
         setVerificationResult(job->exec(mSignedData->decodedContent(), outdata), outdata);
         job->deleteLater();
         setText(codec.decode(KMime::CRLFtoLF(outdata)));
-    }
-
-    if (!mMetaData.isSigned()) {
-        mMetaData.creationTime = QDateTime();
     }
 }
 
