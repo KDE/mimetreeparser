@@ -383,8 +383,8 @@ private Q_SLOTS:
 
         const auto details = PartModel::signatureDetails(part.get());
         QCOMPARE(details,
-                 QStringLiteral("With unavailable certificate:<br>ID: 0xCBD116485DB9560CA3CD91E02E3B7787B1B75920<br/>You can search the certificate on a "
-                                "keyserver or import it from a file."));
+                 QStringLiteral("With certificate: <a href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
+                                "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
     }
 
     void testOpenpgpMultipartEmbedded()
@@ -418,8 +418,8 @@ private Q_SLOTS:
 
         const auto details = PartModel::signatureDetails(part.get());
         QCOMPARE(details,
-                 QStringLiteral("With certificate: <a href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
-                                "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
+                 QStringLiteral("With unavailable certificate:<br/>ID: 0xCBD116485DB9560CA3CD91E02E3B7787B1B75920<br/>You can search the certificate on a "
+                                "keyserver or import it from a file."));
     }
 
     void testAppleHtmlWithAttachments()

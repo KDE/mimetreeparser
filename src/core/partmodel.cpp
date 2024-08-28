@@ -404,7 +404,7 @@ QString PartModel::signatureDetails(MimeTreeParser::MessagePart *messagePart)
         if (!mailboxes.isEmpty()) {
             auto mailBox = mailboxes.front();
             if (mailBox.hasAddress()) {
-                return Kleo::Formatting::prettySignature(*signature, mailboxes.front());
+                return Kleo::Formatting::prettySignature(*signature, QString::fromUtf8(mailboxes.front().address()));
             }
         }
     }
