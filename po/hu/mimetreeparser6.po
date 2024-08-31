@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 22:19+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -98,39 +98,39 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
+#: core/messagepart.cpp:622 core/messagepart.cpp:644 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Hibás titkosítási bővítmény."
 
-#: core/messagepart.cpp:988
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nem található megfelelő titkosítási bővítmény."
 
-#: core/messagepart.cpp:990
+#: core/messagepart.cpp:868
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "A(z) „%1” titkosítási bővítmény nem tudja visszafejteni az üzeneteket."
 
-#: core/messagepart.cpp:992
+#: core/messagepart.cpp:870
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "A(z) „%1” titkosítási bővítmény nem tudta visszafejteni az adatokat."
 
-#: core/messagepart.cpp:993
+#: core/messagepart.cpp:871
 #, kde-format
 msgid "Error: %1"
 msgstr "Hiba: %1"
 
-#: core/partmodel.cpp:512 core/partmodel.cpp:515
+#: core/partmodel.cpp:574 core/partmodel.cpp:577
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Ezt az üzenetet nem lehet visszafejteni."
 
-#: core/partmodel.cpp:521
+#: core/partmodel.cpp:583
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -138,11 +138,18 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Az üzenetet a következő címzettnek titkosították:"
 msgstr[1] "Az üzenetet a következő címzetteknek titkosították:"
 
-#: core/partmodel.cpp:535
+#: core/partmodel.cpp:597
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Hibás jelszó."
+
+#: core/urlhandler.cpp:47
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Nem sikerült elindítani a tanúsítványkezelőt. Kérjük, ellenőrizze a "
+"telepítését."
 
 #: core/utils.cpp:45
 #, kde-format
@@ -238,150 +245,18 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 küldte ekkor: %2"
 
-#: quick/qml/private/MailPartModel.qml:55
-#, kde-format
-msgctxt "@info"
-msgid "This message was signed with certificate %1."
-msgstr "Az üzenetet a(z) %1 tanúsítvánnyal írták alá."
-
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, kde-format
-msgctxt "@info"
-msgid "The certificate details are not available."
-msgstr "A tanúsítvány részletei nem érhetők el."
-
-#: quick/qml/private/MailPartModel.qml:58
-#, kde-format
-msgctxt "@info"
-msgid "This message was signed by %1 with certificate %2."
-msgstr "Az üzenet %1 írta alá a(z) %2 tanúsítvánnyal."
-
-#: quick/qml/private/MailPartModel.qml:60
-#, kde-format
-msgctxt "@info"
-msgid "The certificate was revoked."
-msgstr "A tanúsítványt visszavonták."
-
-#: quick/qml/private/MailPartModel.qml:63
-#, kde-format
-msgctxt "@info"
-msgid "The certificate has expired."
-msgstr "A tanúsítvány lejárt."
-
-#: quick/qml/private/MailPartModel.qml:66
-#, kde-format
-msgctxt "@info"
-msgid "The certificate is certified."
-msgstr "A tanúsítvány hitelesített."
-
-#: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:109
-#, kde-format
-msgctxt "@info"
-msgid "The signature is invalid."
-msgstr "Az aláírás érvénytelen."
-
-#: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:207
+#: quick/qml/private/MailPartModel.qml:95
+#: widgets/messagecontainerwidget.cpp:142
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
 
-#: quick/qml/private/MailPartModel.qml:98
+#: quick/qml/private/MailPartModel.qml:95
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "Az üzenetet %1 számára titkosították."
 
-#: widgets/messagecontainerwidget.cpp:60
-#, kde-format
-msgctxt "@info"
-msgid ""
-"This message has been signed VS-NfD compliant using the certificate <a href="
-"\"%1\">%2</a>."
-msgstr ""
-"Az üzenetet a(z) <a href=\"%1\">%2</a> tanúsítvánnyal a VS-NfD-nek "
-"megfelelően írták alá."
-
-#: widgets/messagecontainerwidget.cpp:67
-#, kde-format
-msgctxt "@info"
-msgid ""
-"This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "Az üzenetet a(z)  <a href=\"%1\">%2</a> tanúsítvánnyal írták alá."
-
-#: widgets/messagecontainerwidget.cpp:80
-#, kde-format
-msgctxt "@info"
-msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "Az üzenetet %1 írta alá a VS-NfD-nek megfelelően."
-
-#: widgets/messagecontainerwidget.cpp:82
-#, kde-format
-msgctxt "@info"
-msgid "This message has been signed by %1."
-msgstr "Az üzenetet %1 írta alá."
-
-#: widgets/messagecontainerwidget.cpp:85
-#, kde-format
-msgctxt "@info"
-msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr "A <a href=\"%1\">tanúsítványt</a> visszavonták."
-
-#: widgets/messagecontainerwidget.cpp:88
-#, kde-format
-msgctxt "@info"
-msgid "The <a href=\"%1\">certificate</a> is expired."
-msgstr "A <a href=\"%1\">tanúsítvány</a> lejárt."
-
-#: widgets/messagecontainerwidget.cpp:93
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
-"unknown."
-msgstr ""
-"Az aláírás érvényes, de a <a href=\"%1\">tanúsítvány</a> érvényessége "
-"ismeretlen."
-
-#: widgets/messagecontainerwidget.cpp:96
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
-"trusted."
-msgstr ""
-"Az aláírás érvényes és a <a href=\"%1\">tanúsítvány</a> marginálisan "
-"megbízható."
-
-#: widgets/messagecontainerwidget.cpp:99
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-"trusted."
-msgstr ""
-"Az aláírás érvényes és a <a href=\"%1\">tanúsítvány</a> teljesen megbízható."
-
-#: widgets/messagecontainerwidget.cpp:102
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
-"trusted."
-msgstr ""
-"Az aláírás érvényes és a <a href=\"%1\">tanúsítvány</a> alapvetően "
-"megbízható."
-
-#: widgets/messagecontainerwidget.cpp:105
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-"certified."
-msgstr ""
-"Az aláírás érvényes, de a <a href=\"%1\">tanúsítvány</a> nem megbízható."
-
-#: widgets/messagecontainerwidget.cpp:205
+#: widgets/messagecontainerwidget.cpp:140
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -390,130 +265,130 @@ msgstr ""
 "Az üzenetet a VS-NfD-nek megfelelően titkosították, de nincs hozzá titkos "
 "kulcsa."
 
-#: widgets/messagecontainerwidget.cpp:213
+#: widgets/messagecontainerwidget.cpp:147
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Az üzenetet a VS-NfD-nek megfelelően titkosították."
 
-#: widgets/messagecontainerwidget.cpp:215
+#: widgets/messagecontainerwidget.cpp:149
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Az üzenetet titkosították."
 
-#: widgets/messagecontainerwidget.cpp:224
+#: widgets/messagecontainerwidget.cpp:158
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Az üzenetet a következő címzetteknek titkosították:"
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "&Melléklet mentése másként…"
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:71
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Megnyitás"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Nyilvános kulcs importálása"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "névtelen"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Melléklet mentése másként"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "Invitation"
 msgstr "Meghívó"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Summary:"
 msgstr "Ö&sszegzés:"
 
-#: widgets/messageviewer.cpp:273
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Organizer:"
 msgstr "S&zervező:"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "&Location:"
 msgstr "&Hely:"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&Start date:"
 msgstr "&Kezdődátum:"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:276
 #, kde-format
 msgid "&End date:"
 msgstr "Zá&ró dátum:"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Details:"
 msgstr "Rész&letek:"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Beágyazott e-mail"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "From:"
 msgstr "Feladó:"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "Date:"
 msgstr "Dátum:"
 
-#: widgets/messageviewer.cpp:389
+#: widgets/messageviewer.cpp:385
 #, kde-format
 msgid "&Subject:"
 msgstr "Tá&rgy:"
 
-#: widgets/messageviewer.cpp:392
+#: widgets/messageviewer.cpp:388
 #, kde-format
 msgid "&From:"
 msgstr "F&eladó:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:391
 #, kde-format
 msgid "&Sender:"
 msgstr "&Küldő:"
 
-#: widgets/messageviewer.cpp:398
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&To:"
 msgstr "&Címzett:"
 
-#: widgets/messageviewer.cpp:401
+#: widgets/messageviewer.cpp:397
 #, kde-format
 msgid "&CC:"
 msgstr "Más&olat:"
 
-#: widgets/messageviewer.cpp:404
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&BCC:"
 msgstr "&Titkos másolat:"
 
-#: widgets/messageviewer.cpp:407
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Date:"
 msgstr "&Dátum:"
@@ -627,19 +502,107 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Nem lehet olvasni a fájlt"
 
-#: widgets/urlhandler.cpp:46
-#, kde-format
-msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
-"Nem sikerült elindítani a tanúsítványkezelőt. Kérjük, ellenőrizze a "
-"telepítését."
+#~ msgctxt "@info"
+#~ msgid "This message was signed with certificate %1."
+#~ msgstr "Az üzenetet a(z) %1 tanúsítvánnyal írták alá."
 
-#: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
-msgctxt "@title:window"
-msgid "KMail Error"
-msgstr "KMail hiba"
+#~ msgctxt "@info"
+#~ msgid "The certificate details are not available."
+#~ msgstr "A tanúsítvány részletei nem érhetők el."
+
+#~ msgctxt "@info"
+#~ msgid "This message was signed by %1 with certificate %2."
+#~ msgstr "Az üzenet %1 írta alá a(z) %2 tanúsítvánnyal."
+
+#~ msgctxt "@info"
+#~ msgid "The certificate was revoked."
+#~ msgstr "A tanúsítványt visszavonták."
+
+#~ msgctxt "@info"
+#~ msgid "The certificate has expired."
+#~ msgstr "A tanúsítvány lejárt."
+
+#~ msgctxt "@info"
+#~ msgid "The certificate is certified."
+#~ msgstr "A tanúsítvány hitelesített."
+
+#~ msgctxt "@info"
+#~ msgid "The signature is invalid."
+#~ msgstr "Az aláírás érvénytelen."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This message has been signed VS-NfD compliant using the certificate <a "
+#~ "href=\"%1\">%2</a>."
+#~ msgstr ""
+#~ "Az üzenetet a(z) <a href=\"%1\">%2</a> tanúsítvánnyal a VS-NfD-nek "
+#~ "megfelelően írták alá."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+#~ msgstr "Az üzenetet a(z)  <a href=\"%1\">%2</a> tanúsítvánnyal írták alá."
+
+#~ msgctxt "@info"
+#~ msgid "This message has been signed VS-NfD compliant by %1."
+#~ msgstr "Az üzenetet %1 írta alá a VS-NfD-nek megfelelően."
+
+#~ msgctxt "@info"
+#~ msgid "This message has been signed by %1."
+#~ msgstr "Az üzenetet %1 írta alá."
+
+#~ msgctxt "@info"
+#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
+#~ msgstr "A <a href=\"%1\">tanúsítványt</a> visszavonták."
+
+#~ msgctxt "@info"
+#~ msgid "The <a href=\"%1\">certificate</a> is expired."
+#~ msgstr "A <a href=\"%1\">tanúsítvány</a> lejárt."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
+#~ "is unknown."
+#~ msgstr ""
+#~ "Az aláírás érvényes, de a <a href=\"%1\">tanúsítvány</a> érvényessége "
+#~ "ismeretlen."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#~ "marginally trusted."
+#~ msgstr ""
+#~ "Az aláírás érvényes és a <a href=\"%1\">tanúsítvány</a> marginálisan "
+#~ "megbízható."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
+#~ "trusted."
+#~ msgstr ""
+#~ "Az aláírás érvényes és a <a href=\"%1\">tanúsítvány</a> teljesen "
+#~ "megbízható."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#~ "ultimately trusted."
+#~ msgstr ""
+#~ "Az aláírás érvényes és a <a href=\"%1\">tanúsítvány</a> alapvetően "
+#~ "megbízható."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
+#~ "certified."
+#~ msgstr ""
+#~ "Az aláírás érvényes, de a <a href=\"%1\">tanúsítvány</a> nem megbízható."
+
+#, fuzzy
+#~| msgid "KMail Error"
+#~ msgctxt "@title:window"
+#~ msgid "KMail Error"
+#~ msgstr "KMail hiba"
 
 #~ msgctxt "@info:status"
 #~ msgid ""

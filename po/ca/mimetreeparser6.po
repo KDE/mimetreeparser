@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:40+0000\n"
 "PO-Revision-Date: 2024-08-02 12:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -100,39 +100,39 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
+#: core/messagepart.cpp:622 core/messagepart.cpp:644 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Connector criptogràfic erroni."
 
-#: core/messagepart.cpp:988
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "No s'ha trobat cap connector criptogràfic apropiat."
 
-#: core/messagepart.cpp:990
+#: core/messagepart.cpp:868
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "El connector criptogràfic «%1» no pot desencriptar missatges."
 
-#: core/messagepart.cpp:992
+#: core/messagepart.cpp:870
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 
-#: core/messagepart.cpp:993
+#: core/messagepart.cpp:871
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/partmodel.cpp:512 core/partmodel.cpp:515
+#: core/partmodel.cpp:574 core/partmodel.cpp:577
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "No es pot desencriptar aquest missatge."
 
-#: core/partmodel.cpp:521
+#: core/partmodel.cpp:583
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -140,11 +140,18 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "El missatge està encriptat per al destinatari següent:"
 msgstr[1] "El missatge està encriptat per als destinataris següents:"
 
-#: core/partmodel.cpp:535
+#: core/partmodel.cpp:597
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Frase de pas incorrecta."
+
+#: core/urlhandler.cpp:47
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"No s'ha pogut iniciar el gestor de certificats. Comproveu aquesta "
+"instal·lació."
 
 #: core/utils.cpp:45
 #, kde-format
@@ -240,155 +247,20 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "enviat per %1 a %2"
 
-#: quick/qml/private/MailPartModel.qml:55
-#, kde-format
-msgctxt "@info"
-msgid "This message was signed with certificate %1."
-msgstr "Aquest missatge s'ha signat amb el certificat %1."
-
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, kde-format
-msgctxt "@info"
-msgid "The certificate details are not available."
-msgstr "Els detalls del certificat no són disponibles."
-
-#: quick/qml/private/MailPartModel.qml:58
-#, kde-format
-msgctxt "@info"
-msgid "This message was signed by %1 with certificate %2."
-msgstr "Aquest missatge l'ha signat %1 amb el certificat %2."
-
-#: quick/qml/private/MailPartModel.qml:60
-#, kde-format
-msgctxt "@info"
-msgid "The certificate was revoked."
-msgstr "El certificat està revocat."
-
-#: quick/qml/private/MailPartModel.qml:63
-#, kde-format
-msgctxt "@info"
-msgid "The certificate has expired."
-msgstr "El certificat ha caducat."
-
-#: quick/qml/private/MailPartModel.qml:66
-#, kde-format
-msgctxt "@info"
-msgid "The certificate is certified."
-msgstr "El certificat està certificat."
-
-#: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:109
-#, kde-format
-msgctxt "@info"
-msgid "The signature is invalid."
-msgstr "La signatura no és vàlida."
-
-#: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:207
+#: quick/qml/private/MailPartModel.qml:95
+#: widgets/messagecontainerwidget.cpp:142
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
 "Aquest missatge està encriptat, però no teniu cap clau secreta que "
 "coincideixi."
 
-#: quick/qml/private/MailPartModel.qml:98
+#: quick/qml/private/MailPartModel.qml:95
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "Aquest missatge està encriptat amb: %1"
 
-#: widgets/messagecontainerwidget.cpp:60
-#, kde-format
-msgctxt "@info"
-msgid ""
-"This message has been signed VS-NfD compliant using the certificate <a href="
-"\"%1\">%2</a>."
-msgstr ""
-"Aquest missatge s'ha signat conforme amb VS-NfD utilitzant el certificat <a "
-"href=\"%1\">%2</a>."
-
-#: widgets/messagecontainerwidget.cpp:67
-#, kde-format
-msgctxt "@info"
-msgid ""
-"This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr ""
-"Aquest missatge s'ha signat emprant el certificat <a href=\"%1\">%2</a>."
-
-#: widgets/messagecontainerwidget.cpp:80
-#, kde-format
-msgctxt "@info"
-msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "Aquest missatge s'ha signat conforme amb VS-NfD per %1."
-
-#: widgets/messagecontainerwidget.cpp:82
-#, kde-format
-msgctxt "@info"
-msgid "This message has been signed by %1."
-msgstr "Aquest missatge s'ha signat per %1."
-
-#: widgets/messagecontainerwidget.cpp:85
-#, kde-format
-msgctxt "@info"
-msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr "S'ha revocat el <a href=\"%1\">certificat</a>."
-
-#: widgets/messagecontainerwidget.cpp:88
-#, kde-format
-msgctxt "@info"
-msgid "The <a href=\"%1\">certificate</a> is expired."
-msgstr "El <a href=\"%1\">certificat</a> està caducat."
-
-#: widgets/messagecontainerwidget.cpp:93
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
-"unknown."
-msgstr ""
-"La signatura és vàlida, però no es coneix la validesa del <a href="
-"\"%1\">certificat</a>."
-
-#: widgets/messagecontainerwidget.cpp:96
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
-"trusted."
-msgstr ""
-"La signatura és vàlida, però el <a href=\"%1\">certificat</a> és de "
-"confiança parcial."
-
-#: widgets/messagecontainerwidget.cpp:99
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-"trusted."
-msgstr ""
-"La signatura és vàlida i el <a href=\"%1\">certificat</a> és de plena "
-"confiança."
-
-#: widgets/messagecontainerwidget.cpp:102
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
-"trusted."
-msgstr ""
-"La signatura és vàlida i el <a href=\"%1\">certificat</a> és de confiança "
-"absoluta."
-
-#: widgets/messagecontainerwidget.cpp:105
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-"certified."
-msgstr ""
-"La signatura és vàlida, però el <a href=\"%1\">certificat</a> no està "
-"certficat."
-
-#: widgets/messagecontainerwidget.cpp:205
+#: widgets/messagecontainerwidget.cpp:140
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -397,130 +269,130 @@ msgstr ""
 "Aquest missatge està encriptat conforme amb VS-NfD, però no teniu cap clau "
 "secreta que coincideixi."
 
-#: widgets/messagecontainerwidget.cpp:213
+#: widgets/messagecontainerwidget.cpp:147
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Aquest missatge està encriptat conforme amb VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:215
+#: widgets/messagecontainerwidget.cpp:149
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Aquest missatge està encriptat."
 
-#: widgets/messagecontainerwidget.cpp:224
+#: widgets/messagecontainerwidget.cpp:158
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "El missatge està encriptat per als destinataris següents:"
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:66
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "De&sa l'adjunt com a…"
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:71
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Obre"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Importa la clau pública"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "sense nom"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Desa l'adjunt com a"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "Invitation"
 msgstr "Invitació"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Summary:"
 msgstr "&Resum:"
 
-#: widgets/messageviewer.cpp:273
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organitzador:"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "&Location:"
 msgstr "&Emplaçament:"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&Start date:"
 msgstr "Data d'&inici:"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:276
 #, kde-format
 msgid "&End date:"
 msgstr "Data &final:"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Details:"
 msgstr "&Detalls:"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Correu electrònic encapsulat"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:389
+#: widgets/messageviewer.cpp:385
 #, kde-format
 msgid "&Subject:"
 msgstr "A&ssumpte:"
 
-#: widgets/messageviewer.cpp:392
+#: widgets/messageviewer.cpp:388
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:391
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remitent:"
 
-#: widgets/messageviewer.cpp:398
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
 
-#: widgets/messageviewer.cpp:401
+#: widgets/messageviewer.cpp:397
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:404
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:407
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
@@ -633,18 +505,107 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "No s'ha pogut llegir el fitxer"
 
-#: widgets/urlhandler.cpp:46
-#, kde-format
-msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
-"No s'ha pogut iniciar el gestor de certificats. Comproveu aquesta "
-"instal·lació."
+#~ msgctxt "@info"
+#~ msgid "This message was signed with certificate %1."
+#~ msgstr "Aquest missatge s'ha signat amb el certificat %1."
 
-#: widgets/urlhandler.cpp:48
-#, kde-format
-msgctxt "@title:window"
-msgid "KMail Error"
-msgstr "Error del KMail"
+#~ msgctxt "@info"
+#~ msgid "The certificate details are not available."
+#~ msgstr "Els detalls del certificat no són disponibles."
+
+#~ msgctxt "@info"
+#~ msgid "This message was signed by %1 with certificate %2."
+#~ msgstr "Aquest missatge l'ha signat %1 amb el certificat %2."
+
+#~ msgctxt "@info"
+#~ msgid "The certificate was revoked."
+#~ msgstr "El certificat està revocat."
+
+#~ msgctxt "@info"
+#~ msgid "The certificate has expired."
+#~ msgstr "El certificat ha caducat."
+
+#~ msgctxt "@info"
+#~ msgid "The certificate is certified."
+#~ msgstr "El certificat està certificat."
+
+#~ msgctxt "@info"
+#~ msgid "The signature is invalid."
+#~ msgstr "La signatura no és vàlida."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This message has been signed VS-NfD compliant using the certificate <a "
+#~ "href=\"%1\">%2</a>."
+#~ msgstr ""
+#~ "Aquest missatge s'ha signat conforme amb VS-NfD utilitzant el certificat "
+#~ "<a href=\"%1\">%2</a>."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+#~ msgstr ""
+#~ "Aquest missatge s'ha signat emprant el certificat <a href=\"%1\">%2</a>."
+
+#~ msgctxt "@info"
+#~ msgid "This message has been signed VS-NfD compliant by %1."
+#~ msgstr "Aquest missatge s'ha signat conforme amb VS-NfD per %1."
+
+#~ msgctxt "@info"
+#~ msgid "This message has been signed by %1."
+#~ msgstr "Aquest missatge s'ha signat per %1."
+
+#~ msgctxt "@info"
+#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
+#~ msgstr "S'ha revocat el <a href=\"%1\">certificat</a>."
+
+#~ msgctxt "@info"
+#~ msgid "The <a href=\"%1\">certificate</a> is expired."
+#~ msgstr "El <a href=\"%1\">certificat</a> està caducat."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
+#~ "is unknown."
+#~ msgstr ""
+#~ "La signatura és vàlida, però no es coneix la validesa del <a href="
+#~ "\"%1\">certificat</a>."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#~ "marginally trusted."
+#~ msgstr ""
+#~ "La signatura és vàlida, però el <a href=\"%1\">certificat</a> és de "
+#~ "confiança parcial."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
+#~ "trusted."
+#~ msgstr ""
+#~ "La signatura és vàlida i el <a href=\"%1\">certificat</a> és de plena "
+#~ "confiança."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
+#~ "ultimately trusted."
+#~ msgstr ""
+#~ "La signatura és vàlida i el <a href=\"%1\">certificat</a> és de confiança "
+#~ "absoluta."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
+#~ "certified."
+#~ msgstr ""
+#~ "La signatura és vàlida, però el <a href=\"%1\">certificat</a> no està "
+#~ "certficat."
+
+#~ msgctxt "@title:window"
+#~ msgid "KMail Error"
+#~ msgstr "Error del KMail"
 
 #~ msgctxt "@info:status"
 #~ msgid ""

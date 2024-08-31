@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:40+0000\n"
 "PO-Revision-Date: 2024-02-11 11:27+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -103,40 +103,40 @@ msgctxt "list separator"
 msgid ", "
 msgstr ""
 
-#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
+#: core/messagepart.cpp:622 core/messagepart.cpp:644 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Неверный модуль шифрования."
 
-#: core/messagepart.cpp:988
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Не найдено соответствующего модуля шифрования."
 
-#: core/messagepart.cpp:990
+#: core/messagepart.cpp:868
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Модуль шифрования «%1» не может расшифровать письма."
 
-#: core/messagepart.cpp:992
+#: core/messagepart.cpp:870
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Модуль шифрования %1 не может расшифровать эти данные."
 
-#: core/messagepart.cpp:993
+#: core/messagepart.cpp:871
 #, kde-format
 msgid "Error: %1"
 msgstr "Ошибка: %1"
 
-#: core/partmodel.cpp:512 core/partmodel.cpp:515
+#: core/partmodel.cpp:574 core/partmodel.cpp:577
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Модуль шифрования «%1» не может расшифровать письма."
 
-#: core/partmodel.cpp:521
+#: core/partmodel.cpp:583
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -146,11 +146,18 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: core/partmodel.cpp:535
+#: core/partmodel.cpp:597
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Неверный пароль."
+
+#: core/urlhandler.cpp:47
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Невозможно запустить менеджер сертификатов. Проверьте правильность установки "
+"программы."
 
 #: core/utils.cpp:45
 #, kde-format
@@ -246,163 +253,19 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "отправлено %1 %2"
 
-#: quick/qml/private/MailPartModel.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
-msgctxt "@info"
-msgid "This message was signed with certificate %1."
-msgstr "Это сообщение подписано сертификатом %1."
-
-#: quick/qml/private/MailPartModel.qml:56 widgets/messagecontainerwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate details are not available."
-msgctxt "@info"
-msgid "The certificate details are not available."
-msgstr "Сведения о сертификате недоступны."
-
-#: quick/qml/private/MailPartModel.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
-msgctxt "@info"
-msgid "This message was signed by %1 with certificate %2."
-msgstr "Это сообщение подписано сертификатом %1."
-
-#: quick/qml/private/MailPartModel.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate details are not available."
-msgctxt "@info"
-msgid "The certificate was revoked."
-msgstr "Сведения о сертификате недоступны."
-
-#: quick/qml/private/MailPartModel.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate details are not available."
-msgctxt "@info"
-msgid "The certificate has expired."
-msgstr "Сведения о сертификате недоступны."
-
-#: quick/qml/private/MailPartModel.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The certificate details are not available."
-msgctxt "@info"
-msgid "The certificate is certified."
-msgstr "Сведения о сертификате недоступны."
-
-#: quick/qml/private/MailPartModel.qml:69
-#: widgets/messagecontainerwidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "The signature is invalid."
-msgctxt "@info"
-msgid "The signature is invalid."
-msgstr "Недействительная подпись."
-
-#: quick/qml/private/MailPartModel.qml:98
-#: widgets/messagecontainerwidget.cpp:207
+#: quick/qml/private/MailPartModel.qml:95
+#: widgets/messagecontainerwidget.cpp:142
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
 
-#: quick/qml/private/MailPartModel.qml:98
+#: quick/qml/private/MailPartModel.qml:95
 #, fuzzy, kde-format
 #| msgid "This message is encrypted."
 msgid "This message is encrypted for: %1"
 msgstr "Это письмо зашифровано."
 
-#: widgets/messagecontainerwidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
-msgctxt "@info"
-msgid ""
-"This message has been signed VS-NfD compliant using the certificate <a href="
-"\"%1\">%2</a>."
-msgstr "Это сообщение подписано сертификатом %1."
-
-#: widgets/messagecontainerwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed using the certificate %1."
-msgctxt "@info"
-msgid ""
-"This message has been signed using the certificate <a href=\"%1\">%2</a>."
-msgstr "Это сообщение подписано сертификатом %1."
-
-#: widgets/messagecontainerwidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed VS-NfD compliant by %1."
-msgctxt "@info"
-msgid "This message has been signed VS-NfD compliant by %1."
-msgstr "Это сообщение подписано %1 по стандарту VS-NfD."
-
-#: widgets/messagecontainerwidget.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "This message has been signed by %1."
-msgctxt "@info"
-msgid "This message has been signed by %1."
-msgstr "Это сообщение подписано %1."
-
-#: widgets/messagecontainerwidget.cpp:85
-#, kde-format
-msgctxt "@info"
-msgid "The <a href=\"%1\">certificate</a> was revoked."
-msgstr ""
-
-#: widgets/messagecontainerwidget.cpp:88
-#, kde-format
-msgctxt "@info"
-msgid "The <a href=\"%1\">certificate</a> is expired."
-msgstr ""
-
-#: widgets/messagecontainerwidget.cpp:93
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a>'s validity is "
-"unknown."
-msgstr ""
-
-#: widgets/messagecontainerwidget.cpp:96
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is marginally "
-"trusted."
-msgstr ""
-
-#: widgets/messagecontainerwidget.cpp:99
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-"trusted."
-msgstr ""
-
-#: widgets/messagecontainerwidget.cpp:102
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid and the <a href=\"%1\">certificate</a> is ultimately "
-"trusted."
-msgstr ""
-
-#: widgets/messagecontainerwidget.cpp:105
-#, kde-format
-msgctxt "@info"
-msgid ""
-"The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-"certified."
-msgstr ""
-
-#: widgets/messagecontainerwidget.cpp:205
+#: widgets/messagecontainerwidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "This message is VS-NfD compliant encrypted."
 msgid ""
@@ -410,131 +273,131 @@ msgid ""
 "secret key."
 msgstr "Это письмо зашифровано с использованием стандарта VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:213
+#: widgets/messagecontainerwidget.cpp:147
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Это письмо зашифровано с использованием стандарта VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:215
+#: widgets/messagecontainerwidget.cpp:149
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Это письмо зашифровано."
 
-#: widgets/messagecontainerwidget.cpp:224
+#: widgets/messagecontainerwidget.cpp:158
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr ""
 
-#: widgets/messageviewer.cpp:65
+#: widgets/messageviewer.cpp:66
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgid "&Save Attachment As…"
 msgstr "Сохранить вложение как"
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:71
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Открыть"
 
-#: widgets/messageviewer.cpp:75
+#: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Импортировать открытый ключ"
 
-#: widgets/messageviewer.cpp:104
+#: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "без_имени"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Сохранить вложение как"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:266
 #, kde-format
 msgid "Invitation"
 msgstr "Приглашение"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:269
 #, kde-format
 msgid "&Summary:"
 msgstr "&Краткое описание:"
 
-#: widgets/messageviewer.cpp:273
+#: widgets/messageviewer.cpp:270
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Организатор:"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "&Location:"
 msgstr "&Местоположение:"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&Start date:"
 msgstr "&Дата начала:"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:276
 #, kde-format
 msgid "&End date:"
 msgstr "Дата о&кончания:"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Details:"
 msgstr "&Сведения:"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Инкапсулированное письмо"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "From:"
 msgstr "От:"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "Date:"
 msgstr "Дата:"
 
-#: widgets/messageviewer.cpp:389
+#: widgets/messageviewer.cpp:385
 #, kde-format
 msgid "&Subject:"
 msgstr "&Тема:"
 
-#: widgets/messageviewer.cpp:392
+#: widgets/messageviewer.cpp:388
 #, kde-format
 msgid "&From:"
 msgstr "&От:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:391
 #, kde-format
 msgid "&Sender:"
 msgstr "&Отправитель:"
 
-#: widgets/messageviewer.cpp:398
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&To:"
 msgstr "&Кому:"
 
-#: widgets/messageviewer.cpp:401
+#: widgets/messageviewer.cpp:397
 #, kde-format
 msgid "&CC:"
 msgstr "&Копия:"
 
-#: widgets/messageviewer.cpp:404
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&BCC:"
 msgstr "&Скрытая копия:"
 
-#: widgets/messageviewer.cpp:407
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Date:"
 msgstr ""
@@ -654,19 +517,91 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Не удалось прочитать файл"
 
-#: widgets/urlhandler.cpp:46
-#, kde-format
-msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
-"Невозможно запустить менеджер сертификатов. Проверьте правильность установки "
-"программы."
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "This message has been signed using the certificate %1."
+#~ msgctxt "@info"
+#~ msgid "This message was signed with certificate %1."
+#~ msgstr "Это сообщение подписано сертификатом %1."
 
-#: widgets/urlhandler.cpp:48
-#, fuzzy, kde-format
-#| msgid "KMail Error"
-msgctxt "@title:window"
-msgid "KMail Error"
-msgstr "Ошибка KMail"
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "The certificate details are not available."
+#~ msgctxt "@info"
+#~ msgid "The certificate details are not available."
+#~ msgstr "Сведения о сертификате недоступны."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "This message has been signed using the certificate %1."
+#~ msgctxt "@info"
+#~ msgid "This message was signed by %1 with certificate %2."
+#~ msgstr "Это сообщение подписано сертификатом %1."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "The certificate details are not available."
+#~ msgctxt "@info"
+#~ msgid "The certificate was revoked."
+#~ msgstr "Сведения о сертификате недоступны."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "The certificate details are not available."
+#~ msgctxt "@info"
+#~ msgid "The certificate has expired."
+#~ msgstr "Сведения о сертификате недоступны."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "The certificate details are not available."
+#~ msgctxt "@info"
+#~ msgid "The certificate is certified."
+#~ msgstr "Сведения о сертификате недоступны."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "The signature is invalid."
+#~ msgctxt "@info"
+#~ msgid "The signature is invalid."
+#~ msgstr "Недействительная подпись."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "This message has been signed using the certificate %1."
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This message has been signed VS-NfD compliant using the certificate <a "
+#~ "href=\"%1\">%2</a>."
+#~ msgstr "Это сообщение подписано сертификатом %1."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "This message has been signed using the certificate %1."
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
+#~ msgstr "Это сообщение подписано сертификатом %1."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "This message has been signed VS-NfD compliant by %1."
+#~ msgctxt "@info"
+#~ msgid "This message has been signed VS-NfD compliant by %1."
+#~ msgstr "Это сообщение подписано %1 по стандарту VS-NfD."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "This message has been signed by %1."
+#~ msgctxt "@info"
+#~ msgid "This message has been signed by %1."
+#~ msgstr "Это сообщение подписано %1."
+
+#, fuzzy
+#~| msgid "KMail Error"
+#~ msgctxt "@title:window"
+#~ msgid "KMail Error"
+#~ msgstr "Ошибка KMail"
 
 #~ msgctxt "@title:window"
 #~ msgid "Print Document"
