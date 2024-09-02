@@ -570,11 +570,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                     if (encryptedMessagePart->isNoSecKey()) {
                         QString errorMessage;
                         if (encryptedMessagePart->cryptoProto() == QGpgME::smime()) {
-                            errorMessage +=
-                                i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
+                            errorMessage += i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
                         } else {
-                            errorMessage +=
-                                i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
+                            errorMessage += i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
                         }
                         if (!encryptedMessagePart->decryptRecipients().empty()) {
                             errorMessage += QLatin1Char(' ')
