@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-31 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-02 09:25+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -129,13 +129,13 @@ msgstr "Додатку шифрування «%1» не вдалося розш�
 msgid "Error: %1"
 msgstr "Помилка: %1"
 
-#: core/partmodel.cpp:574 core/partmodel.cpp:577
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Ви не можете розшифрувати це повідомлення."
 
-#: core/partmodel.cpp:583
+#: core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -145,7 +145,7 @@ msgstr[1] "Повідомлення зашифровано для таких о�
 msgstr[2] "Повідомлення зашифровано для таких отримувачів:"
 msgstr[3] "Повідомлення зашифровано для такого отримувача:"
 
-#: core/partmodel.cpp:597
+#: core/partmodel.cpp:595
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

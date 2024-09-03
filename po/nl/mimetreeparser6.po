@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-31 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-02 13:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -124,13 +124,13 @@ msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
 msgid "Error: %1"
 msgstr "Fout: %1"
 
-#: core/partmodel.cpp:574 core/partmodel.cpp:577
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "U kunt dit bericht niet ontcijferen."
 
-#: core/partmodel.cpp:583
+#: core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -138,7 +138,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Het bericht is versleuteld voor de volgende ontvanger:"
 msgstr[1] "Het bericht is versleuteld voor de volgende ontvangers:"
 
-#: core/partmodel.cpp:597
+#: core/partmodel.cpp:595
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
