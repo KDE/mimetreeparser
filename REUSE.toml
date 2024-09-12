@@ -1,0 +1,9 @@
+version = 1
+SPDX-PackageName = "MimeTreeParser"
+SPDX-PackageSupplier = "Carl Schwan <carl@carlschwan.eu>"
+
+[[annotations]]
+path = ["autotests/testdata/**", "autotests/gnupg_home/**", "README.md", ".gitignore", "screenshots/screenshot.png", "screenshots/widgets.png", "readme-build-ftime.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
