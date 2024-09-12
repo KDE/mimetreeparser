@@ -1,4 +1,6 @@
 version = 1
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
 SPDX-PackageName = "MimeTreeParser"
 SPDX-PackageSupplier = "Carl Schwan <carl@carlschwan.eu>"
 
