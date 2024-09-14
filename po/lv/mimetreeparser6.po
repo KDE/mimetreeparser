@@ -1,0 +1,504 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the mimetreeparser package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: mimetreeparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"PO-Revision-Date: 2024-09-12 15:31+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 24.08.0\n"
+
+#: core/attachmentmodel.cpp:202
+#, kde-format
+msgctxt "@title:column"
+msgid "Name"
+msgstr "Nosaukums"
+
+#: core/attachmentmodel.cpp:204
+#, kde-format
+msgctxt "@title:column"
+msgid "Size"
+msgstr "Izmērs"
+
+#: core/attachmentmodel.cpp:206
+#, kde-format
+msgctxt "@title:column"
+msgid "Encrypted"
+msgstr "Šifrēts"
+
+#: core/attachmentmodel.cpp:208
+#, kde-format
+msgctxt "@title:column"
+msgid "Signed"
+msgstr "Parakstīts"
+
+#: core/attachmentmodel.cpp:301
+#, kde-format
+msgctxt "@info"
+msgid "Failed to save attachment."
+msgstr "Neizdevās saglabāt pielikumu."
+
+#: core/attachmentmodel.cpp:324
+#, kde-format
+msgid "attachment"
+msgstr "pielikums"
+
+#: core/attachmentmodel.cpp:331
+#, kde-format
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr "Neizdevās rakstīt pielikumu atvēršanai."
+
+#: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
+#, kde-format
+msgctxt "@info"
+msgid "Failed to open attachment."
+msgstr "Neizdevās atvērt pielikumu."
+
+#: core/attachmentmodel.cpp:381
+#, kde-format
+msgctxt "@info"
+msgid "No certificates were found in this attachment"
+msgstr "Šim pielikumam nav atrasti sertifikāti"
+
+#: core/attachmentmodel.cpp:384
+#, kde-format
+msgctxt "@info"
+msgid "one certificate imported"
+msgid_plural "%1 certificates imported"
+msgstr[0] "importēts %1 sertifikāts"
+msgstr[1] "importēti %1 sertifikāti"
+msgstr[2] "importēts %1 sertifikātu"
+
+#: core/attachmentmodel.cpp:389
+#, kde-format
+msgctxt "@info"
+msgid "one certificate was already imported"
+msgid_plural "%1 certificates were already imported"
+msgstr[0] "%1 sertifikāts ir jau importēts"
+msgstr[1] "%1 sertifikāti ir jau importēti"
+msgstr[2] "%1 sertifikātu ir jau importēts"
+
+#: core/messageparser.cpp:47
+#, kde-format
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknown"
+msgstr "Nezināms"
+
+#: core/messageparser.cpp:52
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: core/messagepart.cpp:622 core/messagepart.cpp:644 core/messagepart.cpp:716
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong Crypto Plug-In."
+msgstr "Nepareizs šifrēšanas spraudnis."
+
+#: core/messagepart.cpp:866
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Nav atrasts piemērots šifrēšanas spraudnis."
+
+#: core/messagepart.cpp:868
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Šifrēšanas spraudnis „%1“ nespēj atšifrēt vēstules."
+
+#: core/messagepart.cpp:870
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Šifrēšanas spraudnim „%1“ neizdevās atšifrēt datus."
+
+#: core/messagepart.cpp:871
+#, kde-format
+msgid "Error: %1"
+msgstr "Kļūda: %1"
+
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#, kde-format
+msgctxt "@info:status"
+msgid "You cannot decrypt this message."
+msgstr "Nevarat atšifrēt šo vēstuli."
+
+#: core/partmodel.cpp:581
+#, kde-format
+msgctxt "@info:status"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] "Vēstule ir šifrēta šim saņēmējam:"
+msgstr[1] "Vēstule ir šifrēta šiem saņēmējiem:"
+msgstr[2] "Vēstule ir šifrēta šiem saņēmējiem:"
+
+#: core/partmodel.cpp:595
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr "Nepareiza parole."
+
+#: core/urlhandler.cpp:47
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr "Neizdevās palaist sertifikātu pārvaldnieku. Pārbaudiet instalāciju."
+
+#: core/utils.cpp:45
+#, kde-format
+msgctxt "@info"
+msgid "Unknown Key"
+msgstr "Nezināma atslēga"
+
+#: core/utils.cpp:59
+#, kde-format
+msgctxt "Separator"
+msgid " - "
+msgstr " — "
+
+#: quick/qml/MailViewer.qml:40
+#, kde-format
+msgctxt "@title:window"
+msgid "Message viewer"
+msgstr "Vēstuļu skatītājs"
+
+#: quick/qml/MailViewer.qml:77
+#, kde-format
+msgctxt "@label"
+msgid "Subject:"
+msgstr "Temats:"
+
+#: quick/qml/MailViewer.qml:98
+#, kde-format
+msgctxt "@label"
+msgid "From:"
+msgstr "No:"
+
+#: quick/qml/MailViewer.qml:114
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr "Nosūtītājs:"
+
+#: quick/qml/MailViewer.qml:130
+#, kde-format
+msgctxt "@label"
+msgid "To:"
+msgstr "Kam:"
+
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "CC:"
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "BCC:"
+
+#: quick/qml/MailViewer.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Save attachment"
+msgstr "Saglabāt pielikumu"
+
+#: quick/qml/MailViewer.qml:242
+#, kde-format
+msgctxt "@window:title"
+msgid "Save Attachment As"
+msgstr "Saglabāt pielikumu kā"
+
+#: quick/qml/private/AttachmentDelegate.qml:56
+#, kde-format
+msgctxt "@action:button"
+msgid "Import certificate"
+msgstr "Importēt sertifikātu"
+
+#: quick/qml/private/Banner.qml:188
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Aizvērt"
+
+#: quick/qml/private/ErrorPart.qml:27
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "Programma saskārās ar kļūdu: %1"
+
+#: quick/qml/private/ICalPart.qml:27
+#, kde-format
+msgid "This mail contains an invitation"
+msgstr "Šī vēstule satur uzaicinājumu"
+
+#: quick/qml/private/MailPart.qml:42
+#, kde-format
+msgctxt "@info"
+msgid "sent by %1 on %2"
+msgstr "%2 nosūtīja %1"
+
+#: quick/qml/private/MailPartModel.qml:95
+#: widgets/messagecontainerwidget.cpp:142
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr "Šī vēstule ir šifrēta, bet tai nav atbilstošas slepenās atslēgas."
+
+#: quick/qml/private/MailPartModel.qml:95
+#, kde-format
+msgid "This message is encrypted for: %1"
+msgstr "Šī vēstule ir šifrēta pusēm: %1"
+
+#: widgets/messagecontainerwidget.cpp:140
+#, kde-format
+msgid ""
+"This message is VS-NfD compliant encrypted but you don't have a matching "
+"secret key."
+msgstr ""
+"Šī vēstule ir šifrēta ar „VS-NfD“ saderīgā veidā, bet jums nav atbilstošas "
+"slepenās atslēgas."
+
+#: widgets/messagecontainerwidget.cpp:147
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Šī vēstule ir šifrēta saderīgi ar „VS-NfD“."
+
+#: widgets/messagecontainerwidget.cpp:149
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Šī vēstule ir šifrēta."
+
+#: widgets/messagecontainerwidget.cpp:158
+#, kde-format
+msgid "The message is encrypted for the following recipients:"
+msgstr "Šī vēstule ir šifrēta saņēmējiem:"
+
+#: widgets/messageviewer.cpp:66
+#, kde-format
+msgid "&Save Attachment As…"
+msgstr "&Saglabāt pielikumu kā…"
+
+#: widgets/messageviewer.cpp:71
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Atvērt"
+
+#: widgets/messageviewer.cpp:76
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import public key"
+msgstr "Importēt publisko atslēgu"
+
+#: widgets/messageviewer.cpp:105
+#, kde-format
+msgctxt "Fallback when file has no name"
+msgid "unnamed"
+msgstr "nenosaukts"
+
+#: widgets/messageviewer.cpp:108
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Saglabāt pielikumu kā"
+
+#: widgets/messageviewer.cpp:266
+#, kde-format
+msgid "Invitation"
+msgstr "Uzaicinājums"
+
+#: widgets/messageviewer.cpp:269
+#, kde-format
+msgid "&Summary:"
+msgstr "&Kopsavilkums:"
+
+#: widgets/messageviewer.cpp:270
+#, kde-format
+msgid "&Organizer:"
+msgstr "&Organizators:"
+
+#: widgets/messageviewer.cpp:272
+#, kde-format
+msgid "&Location:"
+msgstr "&Atrašanās vieta:"
+
+#: widgets/messageviewer.cpp:274
+#, kde-format
+msgid "&Start date:"
+msgstr "&Sākuma datums:"
+
+#: widgets/messageviewer.cpp:276
+#, kde-format
+msgid "&End date:"
+msgstr "&Beigu datums:"
+
+#: widgets/messageviewer.cpp:279
+#, kde-format
+msgid "&Details:"
+msgstr "&Informācija:"
+
+#: widgets/messageviewer.cpp:299
+#, kde-format
+msgid "Encapsulated email"
+msgstr "Iekapsulēta vēstule"
+
+#: widgets/messageviewer.cpp:307
+#, kde-format
+msgid "From:"
+msgstr "No:"
+
+#: widgets/messageviewer.cpp:308
+#, kde-format
+msgid "Date:"
+msgstr "Datums:"
+
+#: widgets/messageviewer.cpp:385
+#, kde-format
+msgid "&Subject:"
+msgstr "&Temats:"
+
+#: widgets/messageviewer.cpp:388
+#, kde-format
+msgid "&From:"
+msgstr "&No:"
+
+#: widgets/messageviewer.cpp:391
+#, kde-format
+msgid "&Sender:"
+msgstr "&Nosūtītājs:"
+
+#: widgets/messageviewer.cpp:394
+#, kde-format
+msgid "&To:"
+msgstr "&Uz:"
+
+#: widgets/messageviewer.cpp:397
+#, kde-format
+msgid "&CC:"
+msgstr "&CC:"
+
+#: widgets/messageviewer.cpp:400
+#, kde-format
+msgid "&BCC:"
+msgstr "&BCC:"
+
+#: widgets/messageviewer.cpp:403
+#, kde-format
+msgid "&Date:"
+msgstr "&Datums:"
+
+#: widgets/messageviewerdialog.cpp:128
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&Datne"
+
+#: widgets/messageviewerdialog.cpp:130
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr "&Saglabāt"
+
+#: widgets/messageviewerdialog.cpp:136
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr "Saglabāt atšifrētu"
+
+#: widgets/messageviewerdialog.cpp:142
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr "Drukas priekšskatījums"
+
+#: widgets/messageviewerdialog.cpp:148
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr "&Drukāt"
+
+#: widgets/messageviewerdialog.cpp:155
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&Navigācija"
+
+#: widgets/messageviewerdialog.cpp:156
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr "Iepriekšējā vēstule"
+
+#: widgets/messageviewerdialog.cpp:160
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr "Nākamā vēstule"
+
+#: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
+#: widgets/messageviewerdialog.cpp:208
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "E-pasta datnes (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerdialog.cpp:182
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "Šifrētas S/MIME datnes (*.p7m)"
+
+#: widgets/messageviewerdialog.cpp:190
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Saglabāt datni"
+
+#: widgets/messageviewerdialog.cpp:196
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Datni „%1“ nevar izveidot."
+
+#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "Kļūda, saglabājot vēstuli"
+
+#: widgets/messageviewerdialog.cpp:206
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "Saglabāt atšifrētu datni"
+
+#: widgets/messageviewerdialog.cpp:212
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "Datni „%1“ nevar izveidot."
+
+#: widgets/messageviewerdialog.cpp:231
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "Drukāt"
+
+#: widgets/messageviewerdialog.cpp:243
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "Drukas priekšskatījums"
+
+#: widgets/messageviewerdialog.cpp:295
+#, kde-format
+msgctxt "@info"
+msgid "Unable to read file"
+msgstr "Neizdodas nolasīt datni"
