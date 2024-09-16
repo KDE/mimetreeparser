@@ -363,7 +363,8 @@ private Q_SLOTS:
 
         const auto details = PartModel::signatureDetails(part.get());
         QCOMPARE(details,
-                 QStringLiteral("With certificate: <a href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
+                 QStringLiteral("Signature created on Tuesday, August 25, 2015 2:47:11\u202FPM UTC with certificate: <a "
+                                "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
                                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
     }
 
@@ -383,7 +384,8 @@ private Q_SLOTS:
 
         const auto details = PartModel::signatureDetails(part.get());
         QCOMPARE(details,
-                 QStringLiteral("With certificate: <a href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
+                 QStringLiteral("Signature created on Tuesday, October 6, 2015 10:11:52\u202FAM UTC with certificate: <a "
+                                "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
                                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
     }
 
@@ -418,7 +420,8 @@ private Q_SLOTS:
 
         const auto details = PartModel::signatureDetails(part.get());
         QCOMPARE(details,
-                 QStringLiteral("With unavailable certificate:<br/>ID: 0xCBD116485DB9560CA3CD91E02E3B7787B1B75920<br/>You can search the certificate on a "
+                 QStringLiteral("Signature created on Tuesday, April 24, 2018 4:47:20\u202FPM UTC with unavailable certificate: <br/>ID: "
+                                "0xCBD116485DB9560CA3CD91E02E3B7787B1B75920<br/>You can search the certificate on a "
                                 "keyserver or import it from a file."));
     }
 

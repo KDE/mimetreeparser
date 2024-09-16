@@ -9,5 +9,6 @@
 void MimeTreeParser::Test::setupEnv()
 {
     qputenv("LC_ALL", "en_US.UTF-8");
+    qputenv("TZ", "Europe/Paris");
     QStandardPaths::setTestModeEnabled(true);
 }
