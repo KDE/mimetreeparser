@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2024-08-01 22:19+0200\n"
+"PO-Revision-Date: 2024-09-16 21:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -466,8 +466,7 @@ msgid "File %1 could not be created."
 msgstr "A(z) %1 fájl létrehozása nem sikerült."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Hiba az üzenet mentésekor"
