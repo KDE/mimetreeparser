@@ -21,19 +21,23 @@ UrlHandler::UrlHandler(QObject *parent)
 
 bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
 {
-    QString keyId;
-    if (url.scheme() == QStringLiteral("key")) {
-        keyId = url.path();
-    } else if (!url.hasFragment()) {
-        return false;
-    }
-    QString displayName;
-    QString libName;
-    if (keyId.isEmpty() && !foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
-        return false;
-    }
     QStringList lst;
-    lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(window->winId())) << QStringLiteral("--query") << keyId;
+    if (url.scheme() == QStringLiteral("key")) {
+        QString keyId = url.path();
+        if (keyId.isEmpty()) {
+            return false;
+        }
+        lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(window->winId())) << QStringLiteral("--query") << keyId;
+    } else if (url.scheme() == QStringLiteral("certificate")) {
+        QString certificateId = url.path();
+        if (certificateId.isEmpty()) {
+            return false;
+        }
+        lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(window->winId())) << QStringLiteral("--search") << certificateId;
+    } else {
+        return false;
+    }
+
 #ifdef Q_OS_WIN
     QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra.exe"), {QCoreApplication::applicationDirPath()});
     if (exec.isEmpty()) {
@@ -49,29 +53,4 @@ bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
     }
     QProcess::startDetached(exec, lst);
     return true;
-}
-
-bool UrlHandler::foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId)
-{
-    static QString showCertMan(QStringLiteral("showCertificate#"));
-    displayName.clear();
-    libName.clear();
-    keyId.clear();
-    int i1 = aUrl.indexOf(showCertMan);
-    if (-1 < i1) {
-        i1 += showCertMan.length();
-        int i2 = aUrl.indexOf(QLatin1StringView(" ### "), i1);
-        if (i1 < i2) {
-            displayName = aUrl.mid(i1, i2 - i1);
-            i1 = i2 + 5;
-            i2 = aUrl.indexOf(QLatin1StringView(" ### "), i1);
-            if (i1 < i2) {
-                libName = aUrl.mid(i1, i2 - i1);
-                i2 += 5;
-
-                keyId = aUrl.mid(i2);
-            }
-        }
-    }
-    return !keyId.isEmpty();
 }

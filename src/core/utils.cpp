@@ -35,12 +35,10 @@ QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgM
                 displayName = dnToDisplayName(dn);
             }
             displayName = displayName.toHtmlEscaped();
-            const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                  .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(key.keyID()));
+            const auto link = QStringLiteral("key:%1").arg(QString::fromLatin1(key.keyID()));
             text += QStringLiteral("<li>%1 (<a href=\"%2\">%3</a>)</li>").arg(displayName, link, Kleo::Formatting::prettyID(key.keyID()));
         } else {
-            const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                  .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(recipient.keyID()));
+            const auto link = QStringLiteral("key:%1").arg(QString::fromLatin1(recipient.keyID()));
             text +=
                 QStringLiteral("<li>%1 (<a href=\"%2\">%3</a>)</li>").arg(i18nc("@info", "Unknown Key"), link, Kleo::Formatting::prettyID(recipient.keyID()));
         }

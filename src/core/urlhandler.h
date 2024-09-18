@@ -20,7 +20,4 @@ public:
 
 Q_SIGNALS:
     void errorOccurred(const QString &errorMessage);
-
-private:
-    [[nodiscard]] bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId);
 };
