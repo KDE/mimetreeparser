@@ -53,4 +53,4 @@ namespace CryptoUtils
 
 } // namespace MimeTreeParser
 
-Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_RELOCATABLE_TYPE);
