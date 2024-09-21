@@ -75,3 +75,5 @@ bool UrlHandler::foundSMIMEData(const QString &aUrl, QString &displayName, QStri
     }
     return !keyId.isEmpty();
 }
+
+#include "moc_urlhandler.cpp"
