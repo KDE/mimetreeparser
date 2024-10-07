@@ -420,9 +420,9 @@ private Q_SLOTS:
 
         const auto details = PartModel::signatureDetails(part.get());
         QCOMPARE(details,
-                 QStringLiteral("Signature created on Tuesday, April 24, 2018 4:47:20\u202FPM UTC with unavailable certificate: <br/>ID: "
-                                "0xCBD116485DB9560CA3CD91E02E3B7787B1B75920<br/>You can search the certificate on a "
-                                "keyserver or import it from a file."));
+                 QStringLiteral("Signature created on Tuesday, April 24, 2018 4:47:20\u202FPM UTC using an unknown certificate "
+                                "with fingerprint <br/>CBD1 1648 5DB9 560C A3CD  91E0 2E3B 7787 B1B7 5920<br/>You can search "
+                                "the certificate on a keyserver or import it from a file."));
     }
 
     void testAppleHtmlWithAttachments()
