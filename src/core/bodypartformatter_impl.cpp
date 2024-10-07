@@ -95,10 +95,15 @@ public:
                            contents.end());
 
             if (contents.count() == 1 && contents[0]->contentType()->mimeType() == QByteArrayLiteral("application/pkcs7-mime")) {
-                qWarning() << contents[0]->decodedText() << contents[0]->decodedContent();
-
                 auto data = findTypeInDirectChildren(node, QByteArrayLiteral("application/pkcs7-mime"));
                 auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), node, data));
+                mp->setIsEncrypted(true);
+                return mp;
+            }
+
+            if (contents.count() == 2 && contents[1]->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")) {
+                KMime::Content *data = findTypeInDirectChildren(node, QByteArrayLiteral("application/octet-stream"));
+                auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
                 mp->setIsEncrypted(true);
                 return mp;
             }
