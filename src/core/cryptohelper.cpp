@@ -213,9 +213,9 @@ void copyHeader(const KMime::Headers::Base *header, KMime::Message::Ptr msg)
         copyHeader(hdr, out);
     }
 
-    // Overwrite some headers by those provided by the new content
-    headers = newContent->headers();
-    for (const auto hdr : std::as_const(headers)) {
+    // Overwrite some headers by those provided by the new content;
+    const auto newContentHeaders = newContent->headers();
+    for (const auto hdr : newContentHeaders) {
         if (isContentHeader(hdr)) {
             copyHeader(hdr, out);
         }
