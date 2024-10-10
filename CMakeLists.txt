@@ -38,6 +38,18 @@ include(ECMFeatureSummary)
 include(ECMAddQch)
 include(ECMAddTests)
 
+include(ECMCheckOutboundLicense)
+file(GLOB_RECURSE ALL_SOURCE_FILES
+autotests/*.cpp
+autotests/*.h
+src/*.cpp
+src/*.h
+examples/*.cpp
+examples/*.h
+)
+ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
+
+
 set(KPIM_MIME_VERSION "6.2.40")
 set(KPIM_LIBKLEO_VERSION "6.2.40")
 set(KPIM_MBOX_VERSION "6.2.40")
