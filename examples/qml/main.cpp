@@ -12,6 +12,7 @@
 #include <QQuickWindow>
 
 #include "messagehandler.h"
+#include <KLocalizedContext>
 #include <MimeTreeParserCore/FileOpener>
 #include <MimeTreeParserCore/MessageParser>
 
