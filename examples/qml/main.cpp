@@ -15,6 +15,9 @@
 #include <KLocalizedContext>
 #include <MimeTreeParserCore/FileOpener>
 #include <MimeTreeParserCore/MessageParser>
+#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+#include <KLocalizedQmlContext>
+#endif
 
 int main(int argc, char *argv[])
 {
@@ -25,7 +28,11 @@ int main(int argc, char *argv[])
     parser.addPositionalArgument(QStringLiteral("file"), i18n("mbox file"));
 
     QQmlApplicationEngine engine;
+#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+#else
+    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
+#endif
     QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
 
     constexpr auto uri = "org.kde.mimetreeparser";

@@ -21,3 +21,8 @@ target_link_libraries(mimetreeparser-qml PUBLIC
     KPim6::Mbox
     Gpgmepp
 )
+if(TARGET KF6::I18nQml)
+target_link_libraries(mimetreeparser-qml PUBLIC
+        KF6::I18nQml
+)
+endif()
