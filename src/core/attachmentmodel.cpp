@@ -47,7 +47,7 @@ QString sizeHuman(float size)
         size /= 1024.0;
     }
 
-    if (unit == QStringLiteral("Bytes")) {
+    if (unit == QLatin1StringView("Bytes")) {
         return QString().setNum(size) + QStringLiteral(" ") + unit;
     } else {
         return QString().setNum(size, 'f', 2) + QStringLiteral(" ") + unit;

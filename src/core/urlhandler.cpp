@@ -22,7 +22,7 @@ UrlHandler::UrlHandler(QObject *parent)
 bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
 {
     QString keyId;
-    if (url.scheme() == QStringLiteral("key")) {
+    if (url.scheme() == QLatin1StringView("key")) {
         keyId = url.path();
     } else if (!url.hasFragment()) {
         return false;

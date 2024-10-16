@@ -154,7 +154,7 @@ void MessageWidgetContainer::createLayout()
 
         connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
             QUrl url(link);
-            if (url.path() == QStringLiteral("showDetails")) {
+            if (url.path() == QLatin1StringView("showDetails")) {
                 QString newText = text + QLatin1Char(' ') + i18n("The message is encrypted for the following recipients:");
 
                 newText += MimeTreeParser::decryptRecipientsToHtml(m_encryptionInfo.decryptRecipients, m_encryptionInfo.cryptoProto);
@@ -163,7 +163,7 @@ void MessageWidgetContainer::createLayout()
                 return;
             }
 
-            if (url.path() == QStringLiteral("showCertificate")) {
+            if (url.path() == QLatin1StringView("showCertificate")) {
                 m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
             }
         });

@@ -324,7 +324,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             errorWidget->setMessageType(KMessageWidget::MessageType::Error);
             QObject::connect(errorWidget, &KMessageWidget::linkActivated, errorWidget, [this, errorWidget](const QString &link) {
                 QUrl url(link);
-                if (url.path() == QStringLiteral("showCertificate")) {
+                if (url.path() == QLatin1StringView("showCertificate")) {
                     urlHandler->handleClick(QUrl(link), errorWidget->window()->windowHandle());
                 }
             });
