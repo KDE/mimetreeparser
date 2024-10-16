@@ -624,12 +624,6 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp,
 
 SignedMessagePart::~SignedMessagePart() = default;
 
-static QString prettifyDN(const char *uid)
-{
-    // We used to use QGpgME::DN::prettyDN here. But I'm not sure what we actually need it for.
-    return QString::fromUtf8(uid);
-}
-
 const QGpgME::Protocol *SignedMessagePart::cryptoProto() const
 {
     return mCryptoProto;
