@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2024-10-17 00:41+0000\n"
 "PO-Revision-Date: 2024-08-02 08:02+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -98,28 +98,28 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:622 core/messagepart.cpp:644 core/messagepart.cpp:716
+#: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Felaktigt kryptoinsticksprogram."
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:860
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Inget lämpligt kryptoinsticksprogram hittades."
 
-#: core/messagepart.cpp:868
+#: core/messagepart.cpp:862
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Kryptoinsticksprogrammet \"%1\" kan inte dekryptera några brev."
 
-#: core/messagepart.cpp:870
+#: core/messagepart.cpp:864
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
 
-#: core/messagepart.cpp:871
+#: core/messagepart.cpp:865
 #, kde-format
 msgid "Error: %1"
 msgstr "Fel: %1"

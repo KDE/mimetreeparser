@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2024-10-17 00:41+0000\n"
 "PO-Revision-Date: 2024-08-03 11:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -101,28 +101,28 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:622 core/messagepart.cpp:644 core/messagepart.cpp:716
+#: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Kriptografia-plugin okerra."
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:860
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Ez da kriptografia-plugin egokirik aurkitu."
 
-#: core/messagepart.cpp:868
+#: core/messagepart.cpp:862
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "\"%1\" kriptografia-pluginak ezin ditu mezuak deszifratu."
 
-#: core/messagepart.cpp:870
+#: core/messagepart.cpp:864
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "\"%1\" kriptografia-pluginak ezin du daturik deszifratu."
 
-#: core/messagepart.cpp:871
+#: core/messagepart.cpp:865
 #, kde-format
 msgid "Error: %1"
 msgstr "Errorea: %1"
