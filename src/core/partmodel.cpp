@@ -20,7 +20,8 @@
 #include <QRegularExpression>
 #include <QStringLiteral>
 #include <QTextDocument>
-#include <verificationresult.h>
+
+#include <gpgme++/verificationresult.h>
 
 static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::MessagePart *messagePart)
 {
