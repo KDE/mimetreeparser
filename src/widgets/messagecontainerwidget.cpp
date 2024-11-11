@@ -17,7 +17,8 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QVBoxLayout>
-#include <verificationresult.h>
+
+#include <gpgme++/verificationresult.h>
 
 namespace
 {
