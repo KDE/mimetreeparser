@@ -12,5 +12,4 @@ Dependencies:
     'pim/libkleo' : '@same'
 
 Options:
-  require-passing-tests-on: ['Linux']
   gcovr-arguments: '--exclude "_install/.*" --exclude "examples/.*"'
