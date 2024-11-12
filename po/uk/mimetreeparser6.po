@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 00:41+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2024-08-02 09:25+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -129,13 +129,13 @@ msgstr "Додатку шифрування «%1» не вдалося розш�
 msgid "Error: %1"
 msgstr "Помилка: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:574 core/partmodel.cpp:576
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Ви не можете розшифрувати це повідомлення."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:582
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -145,7 +145,7 @@ msgstr[1] "Повідомлення зашифровано для таких о�
 msgstr[2] "Повідомлення зашифровано для таких отримувачів:"
 msgstr[3] "Повідомлення зашифровано для такого отримувача:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:596
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -253,7 +253,7 @@ msgid "sent by %1 on %2"
 msgstr "надіслано %1, %2"
 
 #: quick/qml/private/MailPartModel.qml:95
-#: widgets/messagecontainerwidget.cpp:142
+#: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
@@ -264,7 +264,7 @@ msgstr ""
 msgid "This message is encrypted for: %1"
 msgstr "Це повідомлення зашифровано для %1"
 
-#: widgets/messagecontainerwidget.cpp:140
+#: widgets/messagecontainerwidget.cpp:141
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -273,17 +273,17 @@ msgstr ""
 "Це повідомлення зашифровано відповідно до VS-NfD, але у вас немає "
 "відповідного закритого ключа."
 
-#: widgets/messagecontainerwidget.cpp:147
+#: widgets/messagecontainerwidget.cpp:148
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Це повідомлення зашифровано відповідно до VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:149
+#: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Це повідомлення зашифровано."
 
-#: widgets/messagecontainerwidget.cpp:158
+#: widgets/messagecontainerwidget.cpp:159
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Повідомлення зашифровано для таких отримувачів:"

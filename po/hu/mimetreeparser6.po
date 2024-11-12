@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 00:41+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2024-09-16 21:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -124,13 +124,13 @@ msgstr "A(z) „%1” titkosítási bővítmény nem tudta visszafejteni az adat
 msgid "Error: %1"
 msgstr "Hiba: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:574 core/partmodel.cpp:576
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Ezt az üzenetet nem lehet visszafejteni."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:582
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -138,7 +138,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Az üzenetet a következő címzettnek titkosították:"
 msgstr[1] "Az üzenetet a következő címzetteknek titkosították:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:596
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -246,7 +246,7 @@ msgid "sent by %1 on %2"
 msgstr "%1 küldte ekkor: %2"
 
 #: quick/qml/private/MailPartModel.qml:95
-#: widgets/messagecontainerwidget.cpp:142
+#: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
@@ -256,7 +256,7 @@ msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
 msgid "This message is encrypted for: %1"
 msgstr "Az üzenetet %1 számára titkosították."
 
-#: widgets/messagecontainerwidget.cpp:140
+#: widgets/messagecontainerwidget.cpp:141
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -265,17 +265,17 @@ msgstr ""
 "Az üzenetet a VS-NfD-nek megfelelően titkosították, de nincs hozzá titkos "
 "kulcsa."
 
-#: widgets/messagecontainerwidget.cpp:147
+#: widgets/messagecontainerwidget.cpp:148
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Az üzenetet a VS-NfD-nek megfelelően titkosították."
 
-#: widgets/messagecontainerwidget.cpp:149
+#: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Az üzenetet titkosították."
 
-#: widgets/messagecontainerwidget.cpp:158
+#: widgets/messagecontainerwidget.cpp:159
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Az üzenetet a következő címzetteknek titkosították:"
