@@ -186,7 +186,7 @@ QString MessageParser::sender() const
         if (!header) {
             return {};
         }
-        return mailboxesToHtml(header->mailboxes());
+        return mailboxesToHtml({header->mailbox()});
     }
 
     return QString();
