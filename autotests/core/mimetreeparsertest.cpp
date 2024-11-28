@@ -7,6 +7,8 @@
 #include <QTest>
 #include <QTimeZone>
 
+using namespace Qt::Literals::StringLiterals;
+
 QByteArray readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
@@ -362,8 +364,9 @@ private Q_SLOTS:
         QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("ohno öäü")));
 
         const auto details = PartModel::signatureDetails(part.get());
-        QCOMPARE(details,
-                 QStringLiteral("Signature created on Tuesday, August 25, 2015 2:47:11\u202FPM UTC with certificate: <a "
+        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
+        QCOMPARE(detailsWithoutTimestamp,
+                 QStringLiteral("Signature created on TIMESTAMP with certificate: <a "
                                 "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
                                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
     }
@@ -383,8 +386,9 @@ private Q_SLOTS:
         QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("encrypted message text")));
 
         const auto details = PartModel::signatureDetails(part.get());
-        QCOMPARE(details,
-                 QStringLiteral("Signature created on Tuesday, October 6, 2015 10:11:52\u202FAM UTC with certificate: <a "
+        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
+        QCOMPARE(detailsWithoutTimestamp,
+                 QStringLiteral("Signature created on TIMESTAMP with certificate: <a "
                                 "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
                                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."));
     }
@@ -419,8 +423,9 @@ private Q_SLOTS:
         QCOMPARE(otp.plainTextContent(), QString::fromUtf8("test\n\n-- \nThis is a HTML signature.\n"));
 
         const auto details = PartModel::signatureDetails(part.get());
-        QCOMPARE(details,
-                 QStringLiteral("Signature created on Tuesday, April 24, 2018 4:47:20\u202FPM UTC using an unknown certificate "
+        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* using"_s}, u"on TIMESTAMP using"_s);
+        QCOMPARE(detailsWithoutTimestamp,
+                 QStringLiteral("Signature created on TIMESTAMP using an unknown certificate "
                                 "with fingerprint <br/>CBD1 1648 5DB9 560C A3CD  91E0 2E3B 7787 B1B7 5920<br/>You can search "
                                 "the certificate on a keyserver or import it from a file."));
     }
