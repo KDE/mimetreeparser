@@ -12,4 +12,5 @@ Dependencies:
     'pim/libkleo' : '@same'
 
 Options:
+  require-passing-tests-on: ['Linux', 'FreeBSD']
   gcovr-arguments: '--exclude "_install/.*" --exclude "examples/.*"'
