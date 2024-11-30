@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 00:41+0000\n"
+"POT-Creation-Date: 2024-11-30 02:30+0000\n"
 "PO-Revision-Date: 2024-09-12 15:31+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -127,13 +127,13 @@ msgstr "Šifrēšanas spraudnim „%1“ neizdevās atšifrēt datus."
 msgid "Error: %1"
 msgstr "Kļūda: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:574 core/partmodel.cpp:576
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Nevarat atšifrēt šo vēstuli."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:582
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -142,7 +142,7 @@ msgstr[0] "Vēstule ir šifrēta šim saņēmējam:"
 msgstr[1] "Vēstule ir šifrēta šiem saņēmējiem:"
 msgstr[2] "Vēstule ir šifrēta šiem saņēmējiem:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:596
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -248,7 +248,7 @@ msgid "sent by %1 on %2"
 msgstr "%2 nosūtīja %1"
 
 #: quick/qml/private/MailPartModel.qml:95
-#: widgets/messagecontainerwidget.cpp:142
+#: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Šī vēstule ir šifrēta, bet tai nav atbilstošas slepenās atslēgas."
@@ -258,7 +258,7 @@ msgstr "Šī vēstule ir šifrēta, bet tai nav atbilstošas slepenās atslēgas
 msgid "This message is encrypted for: %1"
 msgstr "Šī vēstule ir šifrēta pusēm: %1"
 
-#: widgets/messagecontainerwidget.cpp:140
+#: widgets/messagecontainerwidget.cpp:141
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -267,17 +267,17 @@ msgstr ""
 "Šī vēstule ir šifrēta ar „VS-NfD“ saderīgā veidā, bet jums nav atbilstošas "
 "slepenās atslēgas."
 
-#: widgets/messagecontainerwidget.cpp:147
+#: widgets/messagecontainerwidget.cpp:148
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Šī vēstule ir šifrēta saderīgi ar „VS-NfD“."
 
-#: widgets/messagecontainerwidget.cpp:149
+#: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Šī vēstule ir šifrēta."
 
-#: widgets/messagecontainerwidget.cpp:158
+#: widgets/messagecontainerwidget.cpp:159
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Šī vēstule ir šifrēta saņēmējiem:"

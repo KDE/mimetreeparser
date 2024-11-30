@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 00:41+0000\n"
+"POT-Creation-Date: 2024-11-30 02:30+0000\n"
 "PO-Revision-Date: 2024-03-20 16:56+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -124,14 +124,14 @@ msgstr "Salausliitännäinen ”%1” ei voinut purkaa tiedon salausta."
 msgid "Error: %1"
 msgstr "Virhe: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:574 core/partmodel.cpp:576
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Salausliitännäinen ”%1” ei osaa purkaa viestien salausta."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:582
 #, fuzzy, kde-format
 #| msgid "The message is encrypted for the following keys:"
 msgctxt "@info:status"
@@ -140,7 +140,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Viesti on salattu seuraaville avaimille:"
 msgstr[1] "Viesti on salattu seuraaville avaimille:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:596
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -246,7 +246,7 @@ msgid "sent by %1 on %2"
 msgstr "lähettänyt %1 %2"
 
 #: quick/qml/private/MailPartModel.qml:95
-#: widgets/messagecontainerwidget.cpp:142
+#: widgets/messagecontainerwidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "This message is encrypted but we don't have the certificate for it."
 msgid "This message is encrypted but you don't have a matching secret key."
@@ -258,7 +258,7 @@ msgstr "Viesti on salattu, mutta sille ei vielä ole varmennetta."
 msgid "This message is encrypted for: %1"
 msgstr "Viesti on salattu."
 
-#: widgets/messagecontainerwidget.cpp:140
+#: widgets/messagecontainerwidget.cpp:141
 #, fuzzy, kde-format
 #| msgid ""
 #| "This message is VS-NfD compliant encrypted but we don't have the "
@@ -269,17 +269,17 @@ msgid ""
 msgstr ""
 "Viesti on VS-NfD-yhteensopivasti salattu, mutta siihen ei ole varmennetta."
 
-#: widgets/messagecontainerwidget.cpp:147
+#: widgets/messagecontainerwidget.cpp:148
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Viesti on VS-NfD-yhteensopivasti salattu."
 
-#: widgets/messagecontainerwidget.cpp:149
+#: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Viesti on salattu."
 
-#: widgets/messagecontainerwidget.cpp:158
+#: widgets/messagecontainerwidget.cpp:159
 #, fuzzy, kde-format
 #| msgid "The message is encrypted for the following keys:"
 msgid "The message is encrypted for the following recipients:"

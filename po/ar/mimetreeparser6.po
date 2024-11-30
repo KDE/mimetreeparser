@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 00:41+0000\n"
+"POT-Creation-Date: 2024-11-30 02:30+0000\n"
 "PO-Revision-Date: 2024-10-10 13:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -133,13 +133,13 @@ msgstr "تعذّر على ملحقة التّعمية ”%1“ فكّ تعمية
 msgid "Error: %1"
 msgstr "الخطأ: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:574 core/partmodel.cpp:576
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "فشلت في فكّ تعمية هذه الرّسالة."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:582
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -151,7 +151,7 @@ msgstr[3] "الرسالة مشفرة للمستلمين التاليين:"
 msgstr[4] "الرسالة مشفرة للمستلمين التاليين:"
 msgstr[5] "الرسالة مشفرة للمستلمين التاليين:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:596
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -257,7 +257,7 @@ msgid "sent by %1 on %2"
 msgstr "أرسلها %1 في %2"
 
 #: quick/qml/private/MailPartModel.qml:95
-#: widgets/messagecontainerwidget.cpp:142
+#: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "هذه الرسالة مشفرة، لكن ليس لديك مفتاح سري مطابق."
@@ -267,24 +267,24 @@ msgstr "هذه الرسالة مشفرة، لكن ليس لديك مفتاح س�
 msgid "This message is encrypted for: %1"
 msgstr "هذه الرّسالة معمّاة لـ: %1"
 
-#: widgets/messagecontainerwidget.cpp:140
+#: widgets/messagecontainerwidget.cpp:141
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr "هذه الرسالة معماة وفقًا لمعيار VS-NfD ولكن ليس لديك مفتاح سري مطابق."
 
-#: widgets/messagecontainerwidget.cpp:147
+#: widgets/messagecontainerwidget.cpp:148
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "هذه الرسالة معماة وفقًا لمعيار VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:149
+#: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is encrypted."
 msgstr "هذه الرّسالة معمّاة."
 
-#: widgets/messagecontainerwidget.cpp:158
+#: widgets/messagecontainerwidget.cpp:159
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "الرسالة مشفرة للمستلمين التاليين:"

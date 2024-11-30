@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 00:41+0000\n"
+"POT-Creation-Date: 2024-11-30 02:30+0000\n"
 "PO-Revision-Date: 2024-08-02 07:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -129,13 +129,13 @@ msgstr "תוסף ההצפנה „%1” לא יכול לפענח את הנתונ�
 msgid "Error: %1"
 msgstr "שגיאה: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:574 core/partmodel.cpp:576
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "אי אפשר לפענח את ההודעה הזאת."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:582
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -145,7 +145,7 @@ msgstr[1] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[2] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[3] "ההודעה מוצפנת לנמענים הבאים:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:596
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -251,7 +251,7 @@ msgid "sent by %1 on %2"
 msgstr "נשלח על ידי %1 ב־%2"
 
 #: quick/qml/private/MailPartModel.qml:95
-#: widgets/messagecontainerwidget.cpp:142
+#: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "ההודעה מוצפנת אבל אין לך מפתח סודי תואם."
@@ -261,24 +261,24 @@ msgstr "ההודעה מוצפנת אבל אין לך מפתח סודי תואם.
 msgid "This message is encrypted for: %1"
 msgstr "ההודעה מוצפנת עבור: %1"
 
-#: widgets/messagecontainerwidget.cpp:140
+#: widgets/messagecontainerwidget.cpp:141
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr "ההודעה הזאת מוצפנת בתאימות מול VS-NfD אך אין לנו מפתח סודי תואם."
 
-#: widgets/messagecontainerwidget.cpp:147
+#: widgets/messagecontainerwidget.cpp:148
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "ההודעה הזאת מוצפנת בתאימות מול VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:149
+#: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is encrypted."
 msgstr "ההודעה מצפנת."
 
-#: widgets/messagecontainerwidget.cpp:158
+#: widgets/messagecontainerwidget.cpp:159
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "ההודעה מוצפנת לנמענים הבאים:"
