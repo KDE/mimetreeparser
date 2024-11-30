@@ -8,8 +8,8 @@
 #include "mimetreeparser_core_debug.h"
 
 #include <QGpgME/DecryptJob>
+#include <QGpgME/DecryptVerifyJob>
 #include <QGpgME/Protocol>
-#include <QGpgME/VerifyOpaqueJob>
 
 #include <Libkleo/Formatting>
 
@@ -258,23 +258,14 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
                     protoName = GpgME::OpenPGP;
                     wasEncrypted = true;
                     QByteArray outData;
-                    auto inData = block.text();
-                    auto decrypt = proto->decryptJob();
-                    auto ctx = QGpgME::Job::context(decrypt);
-                    ctx->setDecryptionFlags(GpgME::Context::DecryptUnwrap);
-                    auto result = decrypt->exec(inData, outData);
-                    if (result.error()) {
+                    const auto decryptVerify = proto->decryptVerifyJob();
+                    const auto [decryptResult, verifyResult] = decryptVerify->exec(block.text(), outData);
+                    if (decryptResult.error()) {
                         // unknown key, invalid algo, or general error
-                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << Kleo::Formatting::errorAsString(result.error());
+                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << Kleo::Formatting::errorAsString(decryptResult.error());
                         return {};
-                    }
-
-                    inData = outData;
-                    auto verify = proto->verifyOpaqueJob(true);
-                    auto resultVerify = verify->exec(inData, outData);
-                    if (resultVerify.error()) {
-                        qCWarning(MIMETREEPARSER_CORE_LOG)
-                            << "Failed to verify:" << Kleo::Formatting::errorAsString(resultVerify.error()) << "inData" << inData;
+                    } else if (verifyResult.error()) {
+                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to verify:" << Kleo::Formatting::errorAsString(verifyResult.error());
                         return {};
                     }
 
