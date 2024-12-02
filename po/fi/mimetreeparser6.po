@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# Tommi Nieminen <translator@legisign.org>, 2023, 2024.
+# SPDX-FileCopyrightText: 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-03-20 16:56+0200\n"
+"PO-Revision-Date: 2024-10-17 11:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -125,20 +125,18 @@ msgid "Error: %1"
 msgstr "Virhe: %1"
 
 #: core/partmodel.cpp:574 core/partmodel.cpp:576
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr "Salausliitännäinen ”%1” ei osaa purkaa viestien salausta."
+msgstr "Tämän viestin salausta ei voida purkaa."
 
 #: core/partmodel.cpp:582
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "Viesti on salattu seuraaville avaimille:"
-msgstr[1] "Viesti on salattu seuraaville avaimille:"
+msgstr[0] "Viesti on salattu seuraavalle vastaanottajalle:"
+msgstr[1] "Viesti on salattu seuraaville vastaanottajille:"
 
 #: core/partmodel.cpp:596
 #, kde-format
@@ -247,27 +245,23 @@ msgstr "lähettänyt %1 %2"
 
 #: quick/qml/private/MailPartModel.qml:95
 #: widgets/messagecontainerwidget.cpp:143
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the certificate for it."
+#, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Viesti on salattu, mutta sille ei vielä ole varmennetta."
+msgstr "Viesti on salattu, mutta sitä vastaava salainen avain puuttuu."
 
 #: quick/qml/private/MailPartModel.qml:95
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgid "This message is encrypted for: %1"
-msgstr "Viesti on salattu."
+msgstr "Viesti on salattu: %1"
 
 #: widgets/messagecontainerwidget.cpp:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but we don't have the "
-#| "certificate for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr ""
-"Viesti on VS-NfD-yhteensopivasti salattu, mutta siihen ei ole varmennetta."
+"Viesti on VS-NfD-yhteensopivasti salattu, mutta sitä vastaava salainen avain "
+"puuttuu."
 
 #: widgets/messagecontainerwidget.cpp:148
 #, kde-format
@@ -280,16 +274,14 @@ msgid "This message is encrypted."
 msgstr "Viesti on salattu."
 
 #: widgets/messagecontainerwidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgid "The message is encrypted for the following recipients:"
-msgstr "Viesti on salattu seuraaville avaimille:"
+msgstr "Viesti on salattu seuraaville vastaanottajille:"
 
 #: widgets/messageviewer.cpp:66
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
-msgstr "Tallenna liite nimellä"
+msgstr "Tallenna &liite nimellä…"
 
 #: widgets/messageviewer.cpp:71
 #, kde-format
@@ -472,8 +464,7 @@ msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Virhe tallennettaessa viestiä"
@@ -491,17 +482,13 @@ msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
 #: widgets/messageviewerdialog.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "&Print"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print"
-msgstr "T&ulosta"
+msgstr "Tulosta"
 
 #: widgets/messageviewerdialog.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Print Preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Tulostusesikatselu"
