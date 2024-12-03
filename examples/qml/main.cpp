@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 #else
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
 #endif
-    QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
 
     constexpr auto uri = "org.kde.mimetreeparser";
 
