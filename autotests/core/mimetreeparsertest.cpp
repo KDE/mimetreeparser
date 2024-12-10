@@ -426,7 +426,8 @@ private Q_SLOTS:
         const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* using"_s}, u"on TIMESTAMP using"_s);
         QCOMPARE(detailsWithoutTimestamp,
                  QStringLiteral("Signature created on TIMESTAMP using an unknown certificate "
-                                "with fingerprint <br/>CBD1 1648 5DB9 560C A3CD  91E0 2E3B 7787 B1B7 5920<br/>You can search "
+                                "with fingerprint <br/><a href='certificate:CBD116485DB9560CA3CD91E02E3B7787B1B75920'>CBD1 1648 5DB9 560C A3CD  91E0 2E3B 7787 "
+                                "B1B7 5920</a><br/>You can search "
                                 "the certificate on a keyserver or import it from a file."));
     }
 
