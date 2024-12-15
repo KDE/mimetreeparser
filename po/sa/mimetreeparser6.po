@@ -21,31 +21,31 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr ""
+msgstr "नामः"
 
 #: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
-msgstr ""
+msgstr "आकृति"
 
 #: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr ""
+msgstr "एन्क्रिप्टेड्"
 
 #: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
-msgstr ""
+msgstr "हस्ताक्षरितम्"
 
 #: core/attachmentmodel.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr ""
+msgstr "आसक्तिं रक्षितुं असफलम्।"
 
 #: core/attachmentmodel.cpp:324
 #, kde-format
@@ -56,53 +56,53 @@ msgstr "संलग्न"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr ""
+msgstr "उद्घाटनार्थं संलग्नकं लिखितुं असफलम्।"
 
 #: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "आसक्तिं उद्घाटयितुं असफलम्।"
 
 #: core/attachmentmodel.cpp:381
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr ""
+msgstr "अस्मिन् संलग्नके प्रमाणपत्राणि न प्राप्तानि"
 
 #: core/attachmentmodel.cpp:384
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एकं प्रमाणपत्रं आयातितम्"
+msgstr[1] "%1 प्रमाणपत्राणि आयातानि"
 
 #: core/attachmentmodel.cpp:389
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एकं प्रमाणपत्रं पूर्वमेव आयातितम् आसीत्"
+msgstr[1] "%1 प्रमाणपत्राणि पूर्वमेव आयातानि आसन्"
 
 #: core/messageparser.cpp:47
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: core/messageparser.cpp:52
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", ९. "
 
 #: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr ""
+msgstr "गलत क्रिप्टो प्लग-इन।"
 
 #: core/messagepart.cpp:860
 #, kde-format
@@ -128,21 +128,21 @@ msgstr "त्रुटिः %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr ""
+msgstr "भवन्तः एतत् सन्देशं विगुप्तीकरणं कर्तुं न शक्नुवन्ति ।"
 
 #: core/partmodel.cpp:582
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "सन्देशः निम्नलिखितग्राहकस्य कृते एन्क्रिप्टेड् भवति ।"
+msgstr[1] "सन्देशः निम्नलिखितग्राहिणां कृते एन्क्रिप्टेड् भवति ।"
 
 #: core/partmodel.cpp:596
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr ""
+msgstr "गलत् गुप्तवाक्यम्।"
 
 #: core/urlhandler.cpp:47
 #, kde-format
@@ -153,25 +153,25 @@ msgstr "प्रमाणपत्रप्रबन्धकं आरभु�
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr ""
+msgstr "अज्ञात कील"
 
 #: core/utils.cpp:59
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - ९. "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
-msgstr ""
+msgstr "सन्देशदर्शकः"
 
 #: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
-msgstr ""
+msgstr "विषयः:"
 
 #: quick/qml/MailViewer.qml:98
 #, kde-format
@@ -183,31 +183,31 @@ msgstr "इत्यस्मात्‌:"
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr ""
+msgstr "प्रेषकः : १."
 
 #: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
-msgstr ""
+msgstr "इत्यस्मै:"
 
 #: quick/qml/MailViewer.qml:146
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr ""
+msgstr "सी. सी. १."
 
 #: quick/qml/MailViewer.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
-msgstr ""
+msgstr "बीसीसी : १."
 
 #: quick/qml/MailViewer.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
-msgstr ""
+msgstr "आसक्तिं रक्षतु"
 
 #: quick/qml/MailViewer.qml:242
 #, kde-format
@@ -219,13 +219,13 @@ msgstr "आसक्तिः यथा रक्षतु"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "आयात प्रमाणपत्रम्"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "पिधानं करोतु"
 
 #: quick/qml/private/ErrorPart.qml:27
 #, kde-format
@@ -241,7 +241,7 @@ msgstr "अस्मिन् मेलपत्रे आमन्त्रण�
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
-msgstr ""
+msgstr "%2 इत्यत्र %1 द्वारा प्रेषितम्"
 
 #: quick/qml/private/MailPartModel.qml:95
 #: widgets/messagecontainerwidget.cpp:143
@@ -285,19 +285,19 @@ msgstr "&संलग्नकं यथा..."
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr ""
+msgstr "उद्घाटित"
 
 #: widgets/messageviewer.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr ""
+msgstr "सार्वजनिक कुंजी आयात करें"
 
 #: widgets/messageviewer.cpp:105
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "अनामिका"
 
 #: widgets/messageviewer.cpp:108
 #, kde-format
@@ -393,68 +393,68 @@ msgstr "&दिनाङ्कः:"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "&संचिका"
 
 #: widgets/messageviewerdialog.cpp:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "&रक्ष्"
 
 #: widgets/messageviewerdialog.cpp:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr ""
+msgstr "विगुप्तं रक्षतु"
 
 #: widgets/messageviewerdialog.cpp:142
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "मुद्रण पूर्वावलोकनम्"
 
 #: widgets/messageviewerdialog.cpp:148
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "&मुद्रण"
 
 #: widgets/messageviewerdialog.cpp:155
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr ""
+msgstr "&नेविगेशन"
 
 #: widgets/messageviewerdialog.cpp:156
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "पूर्वसन्देशः"
 
 #: widgets/messageviewerdialog.cpp:160
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "अग्रिमः सन्देशः"
 
 #: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
 #: widgets/messageviewerdialog.cpp:208
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr ""
+msgstr "ईमेल सञ्चिकाः (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:182
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "एन्क्रिप्टेड् S/MIME सञ्चिकाः (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:190
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "सञ्चिकां रक्षतु"
 
 #: widgets/messageviewerdialog.cpp:196
 #, kde-format
@@ -465,13 +465,13 @@ msgstr "%1 सञ्चिका निर्मातुं न शक्यत
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
-msgstr ""
+msgstr "सन्देशस्य रक्षणे त्रुटिः"
 
 #: widgets/messageviewerdialog.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "विगुप्तसञ्चिकां रक्षन्तु"
 
 #: widgets/messageviewerdialog.cpp:212
 #, kde-format
@@ -483,16 +483,16 @@ msgstr "%1 सञ्चिका निर्मातुं न शक्यत
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
-msgstr ""
+msgstr "मुद्रणम्"
 
 #: widgets/messageviewerdialog.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
-msgstr ""
+msgstr "मुद्रण पूर्वावलोकनम्"
 
 #: widgets/messageviewerdialog.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "सञ्चिकां पठितुं असमर्थः"
