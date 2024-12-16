@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-30 02:30+0000\n"
-"PO-Revision-Date: 2024-08-03 12:19+0200\n"
+"PO-Revision-Date: 2024-12-16 01:05+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -102,22 +102,22 @@ msgstr ", "
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr "O complemento de cifrado é incorrecto."
+msgstr "O complemento criptográfico é incorrecto."
 
 #: core/messagepart.cpp:860
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr "Non se atopou ningún complemento de cifrado axeitado."
+msgstr "Non se atopou ningún complemento criptográfico axeitado."
 
 #: core/messagepart.cpp:862
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "O complemento de cifrado «%1» non pode descifrar mensaxes."
+msgstr "O complemento criptográfico «%1» non pode descifrar mensaxes."
 
 #: core/messagepart.cpp:864
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "O complemento de cifrado «%1» non puido descifrar os datos."
+msgstr "O complemento criptográfico «%1» non puido descifrar os datos."
 
 #: core/messagepart.cpp:865
 #, kde-format
@@ -214,7 +214,7 @@ msgstr "Gardar o anexo"
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr "Gardar o ficheiro anexo como"
+msgstr "Gardar o anexo como"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
@@ -282,7 +282,7 @@ msgstr "A mensaxe está cifrada para as seguintes persoas destinatarias:"
 #: widgets/messageviewer.cpp:66
 #, kde-format
 msgid "&Save Attachment As…"
-msgstr "&Gardar o ficheiro anexo como…"
+msgstr "&Gardar o anexo como…"
 
 #: widgets/messageviewer.cpp:71
 #, kde-format
@@ -305,7 +305,7 @@ msgstr "sen nome"
 #: widgets/messageviewer.cpp:108
 #, kde-format
 msgid "Save Attachment As"
-msgstr "Gardar o ficheiro anexo como"
+msgstr "Gardar o anexo como"
 
 #: widgets/messageviewer.cpp:266
 #, kde-format
