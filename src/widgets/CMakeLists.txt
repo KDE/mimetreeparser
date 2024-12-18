@@ -22,6 +22,8 @@ target_sources(KPim6MimeTreeParserWidgets PRIVATE
      messageviewer.cpp
      messageviewerdialog.h
      messageviewerdialog.cpp
+     messageviewerwindow.h
+     messageviewerwindow.cpp
 )
 
 ecm_qt_declare_logging_category(KPim6MimeTreeParserWidgets
@@ -77,6 +79,7 @@ ecm_generate_headers(MimeTreeParserWidgets_CamelCase_HEADERS
     HEADER_NAMES
         MessageViewer
         MessageViewerDialog
+        MessageViewerWindow
     REQUIRED_HEADERS MimeTreeParserWidgets_HEADERS
     PREFIX MimeTreeParserWidgets
 )
