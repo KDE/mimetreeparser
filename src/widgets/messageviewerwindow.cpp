@@ -13,8 +13,10 @@
 #include <KMessageWidget>
 
 #include <QFileDialog>
+#include <QFontMetrics>
 #include <QMenuBar>
 #include <QPainter>
+#include <QPlainTextEdit>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QPrinter>
@@ -27,6 +29,7 @@
 #include <QVBoxLayout>
 
 using namespace MimeTreeParser::Widgets;
+using namespace Qt::StringLiterals;
 
 namespace
 {
@@ -151,12 +154,44 @@ QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
     });
     fileMenu->addAction(printAction);
 
-    // Navigation menu
+    // Message menu
+    const auto messageMenu = menuBar->addMenu(i18nc("@action:inmenu", "&Message"));
+    messageMenu->setObjectName("messageMenu"); // gpgol.js relies on this. Don't remove!
+
+    auto viewRawAction = new QAction(QIcon::fromTheme(u"code-context-symbolic"_s), i18nc("@action:button", "View Source"));
+    QObject::connect(viewRawAction, &QAction::triggered, parent, [this, parent]() {
+        const auto message = messageViewer->message();
+        const auto content = message->encodedContent();
+
+        auto dialog = new QDialog(parent);
+        auto layout = new QVBoxLayout(dialog);
+        layout->setContentsMargins({});
+        auto plainTextEdit = new QPlainTextEdit;
+        plainTextEdit->setReadOnly(true);
+        plainTextEdit->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+        plainTextEdit->appendPlainText(QString::fromUtf8(content));
+        layout->addWidget(plainTextEdit);
+        dialog->setAttribute(Qt::WA_DeleteOnClose);
+        QFontMetrics metrics(plainTextEdit->font());
+        dialog->setMinimumSize(80 * metrics.averageCharWidth() + 20, 500);
+        dialog->show();
+    });
+    messageMenu->addAction(viewRawAction);
+
+    auto fixedFontAction = new QAction(i18nc("@action:button", "Use Fixed Font"), parent);
+    fixedFontAction->setCheckable(true);
+    QObject::connect(fixedFontAction, &QAction::toggled, parent, [this](bool checked) {
+        messageViewer->setFixedFont(checked);
+    });
+    messageMenu->addAction(fixedFontAction);
+
     previousAction = new QAction(QIcon::fromTheme(QStringLiteral("go-previous")), i18nc("@action:button Previous email", "Previous Message"), parent);
     previousAction->setEnabled(false);
+    messageMenu->addAction(previousAction);
 
     nextAction = new QAction(QIcon::fromTheme(QStringLiteral("go-next")), i18nc("@action:button Next email", "Next Message"), parent);
     nextAction->setEnabled(false);
+    messageMenu->addAction(nextAction);
 
     return menuBar;
 }

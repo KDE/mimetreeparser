@@ -21,6 +21,7 @@
 #include <QAction>
 #include <QDesktopServices>
 #include <QFileDialog>
+#include <QFontDatabase>
 #include <QFormLayout>
 #include <QGroupBox>
 #include <QLabel>
@@ -60,6 +61,7 @@ public:
     QAction *saveAttachmentAction = nullptr;
     QAction *openAttachmentAction = nullptr;
     QAction *importPublicKeyAction = nullptr;
+    bool fixedFont = false;
 
     void createActions()
     {
@@ -245,6 +247,9 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             label->setTextInteractionFlags(Qt::TextBrowserInteraction);
             label->setOpenExternalLinks(true);
             label->setWordWrap(true);
+            if (fixedFont) {
+                label->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+            }
             container->layout()->addWidget(label);
             layout->addWidget(container);
             break;
@@ -438,4 +443,16 @@ void MessageViewer::print(QPainter *painter, int width)
     render(painter);
     d->scrollArea->setFrameShape(QFrame::StyledPanel);
     resize(oldSize);
+}
+
+bool MessageViewer::fixedFont() const
+{
+    return d->fixedFont;
+}
+
+void MessageViewer::setFixedFont(bool checked)
+{
+    d->fixedFont = checked;
+
+    setMessage(message()); // rebuild UI
 }

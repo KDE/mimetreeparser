@@ -30,6 +30,10 @@ public:
     [[nodiscard]] KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr message);
 
+    /// Return whether the viewer should use a fixed size font.
+    [[nodiscard]] bool fixedFont() const;
+    void setFixedFont(bool checked);
+
     /// Return the message subject
     [[nodiscard]] QString subject() const;
 
