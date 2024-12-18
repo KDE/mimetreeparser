@@ -158,7 +158,7 @@ QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
     const auto messageMenu = menuBar->addMenu(i18nc("@action:inmenu", "&Message"));
     messageMenu->setObjectName("messageMenu"); // gpgol.js relies on this. Don't remove!
 
-    auto viewRawAction = new QAction(QIcon::fromTheme(u"code-context-symbolic"_s), i18nc("@action:button", "View Source"));
+    auto viewRawAction = new QAction(QIcon::fromTheme(u"format-text-code-symbolic"_s), i18nc("@action:button", "View Source"));
     QObject::connect(viewRawAction, &QAction::triggered, parent, [this, parent]() {
         const auto message = messageViewer->message();
         const auto content = message->encodedContent();
