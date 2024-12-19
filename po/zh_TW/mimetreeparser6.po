@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2024-12-19 00:41+0000\n"
 "PO-Revision-Date: 2024-08-06 05:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -273,144 +273,144 @@ msgstr "此信件已加密。"
 msgid "The message is encrypted for the following recipients:"
 msgstr "這個信件為以下收件者加密："
 
-#: widgets/messageviewer.cpp:66
+#: widgets/messageviewer.cpp:68
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "另存附件(&S)…"
 
-#: widgets/messageviewer.cpp:71
+#: widgets/messageviewer.cpp:73
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "開啟"
 
-#: widgets/messageviewer.cpp:76
+#: widgets/messageviewer.cpp:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "匯入公鑰"
 
-#: widgets/messageviewer.cpp:105
+#: widgets/messageviewer.cpp:107
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "未命名"
 
-#: widgets/messageviewer.cpp:108
+#: widgets/messageviewer.cpp:110
 #, kde-format
 msgid "Save Attachment As"
 msgstr "另存附件"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "Invitation"
 msgstr "邀請"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&Summary:"
 msgstr "摘要(&S)："
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&Organizer:"
 msgstr "發起人(&O)："
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Location:"
 msgstr "位置(&L)："
 
-#: widgets/messageviewer.cpp:274
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Start date:"
 msgstr "開始日期(&S)："
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "&End date:"
 msgstr "結束日期(&E)："
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:284
 #, kde-format
 msgid "&Details:"
 msgstr "詳細資料(&D)："
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:304
 #, kde-format
 msgid "Encapsulated email"
 msgstr "封裝郵件"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:312
 #, kde-format
 msgid "From:"
 msgstr "從："
 
-#: widgets/messageviewer.cpp:308
+#: widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Date:"
 msgstr "日期："
 
-#: widgets/messageviewer.cpp:385
+#: widgets/messageviewer.cpp:390
 #, kde-format
 msgid "&Subject:"
 msgstr "主旨(&S)："
 
-#: widgets/messageviewer.cpp:388
+#: widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&From:"
 msgstr "從(&F)："
 
-#: widgets/messageviewer.cpp:391
+#: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&Sender:"
 msgstr "寄件者(&S)："
 
-#: widgets/messageviewer.cpp:394
+#: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&To:"
 msgstr "收件者(&T)："
 
-#: widgets/messageviewer.cpp:397
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&CC:"
 msgstr "副本(&C)："
 
-#: widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&BCC:"
 msgstr "密件副本(&B)："
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&Date:"
 msgstr "日期(&D)："
 
-#: widgets/messageviewerdialog.cpp:128
+#: widgets/messageviewerdialog.cpp:128 widgets/messageviewerwindow.cpp:131
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "檔案(&F)"
 
-#: widgets/messageviewerdialog.cpp:130
+#: widgets/messageviewerdialog.cpp:130 widgets/messageviewerwindow.cpp:133
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "儲存(&S)"
 
-#: widgets/messageviewerdialog.cpp:136
+#: widgets/messageviewerdialog.cpp:136 widgets/messageviewerwindow.cpp:139
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "儲存已解密的"
 
-#: widgets/messageviewerdialog.cpp:142
+#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "預覽列印"
 
-#: widgets/messageviewerdialog.cpp:148
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:151
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
@@ -422,67 +422,69 @@ msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "導覽(&N)"
 
-#: widgets/messageviewerdialog.cpp:156
+#: widgets/messageviewerdialog.cpp:156 widgets/messageviewerwindow.cpp:188
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "上一封信件"
 
-#: widgets/messageviewerdialog.cpp:160
+#: widgets/messageviewerdialog.cpp:160 widgets/messageviewerwindow.cpp:192
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "下一封信件"
 
 #: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
-#: widgets/messageviewerdialog.cpp:208
+#: widgets/messageviewerdialog.cpp:208 widgets/messageviewerwindow.cpp:227
+#: widgets/messageviewerwindow.cpp:233 widgets/messageviewerwindow.cpp:255
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "電子郵件檔 (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerdialog.cpp:182
+#: widgets/messageviewerdialog.cpp:182 widgets/messageviewerwindow.cpp:229
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "已加密的 S/MIME 檔案 (*.p7m)"
 
-#: widgets/messageviewerdialog.cpp:190
+#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:237
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/messageviewerdialog.cpp:196
+#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "檔案 %1 無法被建立。"
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
+#: widgets/messageviewerwindow.cpp:243 widgets/messageviewerwindow.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
 
-#: widgets/messageviewerdialog.cpp:206
+#: widgets/messageviewerdialog.cpp:206 widgets/messageviewerwindow.cpp:253
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "儲存已解密的檔案"
 
-#: widgets/messageviewerdialog.cpp:212
+#: widgets/messageviewerdialog.cpp:212 widgets/messageviewerwindow.cpp:259
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "檔案 %1 無法被建立。"
 
-#: widgets/messageviewerdialog.cpp:231
+#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerwindow.cpp:278
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "列印"
 
-#: widgets/messageviewerdialog.cpp:243
+#: widgets/messageviewerdialog.cpp:243 widgets/messageviewerwindow.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
@@ -493,6 +495,26 @@ msgstr "預覽列印"
 msgctxt "@info"
 msgid "Unable to read file"
 msgstr "無法讀取檔案"
+
+#: widgets/messageviewerwindow.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "@action:button Next email"
+#| msgid "Next Message"
+msgctxt "@action:inmenu"
+msgid "&Message"
+msgstr "下一封信件"
+
+#: widgets/messageviewerwindow.cpp:161
+#, kde-format
+msgctxt "@action:button"
+msgid "View Source"
+msgstr ""
+
+#: widgets/messageviewerwindow.cpp:181
+#, kde-format
+msgctxt "@action:button"
+msgid "Use Fixed Font"
+msgstr ""
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

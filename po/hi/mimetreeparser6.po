@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2024-12-19 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -276,144 +276,144 @@ msgstr "यह संदेश एन्क्रिप्टेड है."
 msgid "The message is encrypted for the following recipients:"
 msgstr "संदेश निम्नलिखित प्राप्तकर्ताओं के लिए एन्क्रिप्ट किया गया है:"
 
-#: widgets/messageviewer.cpp:66
+#: widgets/messageviewer.cpp:68
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "&अनुलग्नक को इस रूप में सहेजें…"
 
-#: widgets/messageviewer.cpp:71
+#: widgets/messageviewer.cpp:73
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "खुला"
 
-#: widgets/messageviewer.cpp:76
+#: widgets/messageviewer.cpp:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "सार्वजनिक कुंजी आयात करें"
 
-#: widgets/messageviewer.cpp:105
+#: widgets/messageviewer.cpp:107
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "अज्ञात"
 
-#: widgets/messageviewer.cpp:108
+#: widgets/messageviewer.cpp:110
 #, kde-format
 msgid "Save Attachment As"
 msgstr "अनुलग्नक को इस रूप में सहेजें"
 
-#: widgets/messageviewer.cpp:266
+#: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "Invitation"
 msgstr "आमंत्रण"
 
-#: widgets/messageviewer.cpp:269
+#: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&Summary:"
 msgstr "&सारांश:"
 
-#: widgets/messageviewer.cpp:270
+#: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&Organizer:"
 msgstr "&व्यवस्था करनेवाला:"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Location:"
 msgstr "&जगह:"
 
-#: widgets/messageviewer.cpp:274
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Start date:"
 msgstr "&आरंभ करने की तिथि:"
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "&End date:"
 msgstr "&अंतिम तिथि:"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:284
 #, kde-format
 msgid "&Details:"
 msgstr "&विवरण:"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:304
 #, kde-format
 msgid "Encapsulated email"
 msgstr "संपुटित ईमेल"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:312
 #, kde-format
 msgid "From:"
 msgstr "से:"
 
-#: widgets/messageviewer.cpp:308
+#: widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Date:"
 msgstr "तारीख:"
 
-#: widgets/messageviewer.cpp:385
+#: widgets/messageviewer.cpp:390
 #, kde-format
 msgid "&Subject:"
 msgstr "&विषय:"
 
-#: widgets/messageviewer.cpp:388
+#: widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&From:"
 msgstr "&से:"
 
-#: widgets/messageviewer.cpp:391
+#: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&Sender:"
 msgstr "&प्रेषक:"
 
-#: widgets/messageviewer.cpp:394
+#: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&To:"
 msgstr "&को:"
 
-#: widgets/messageviewer.cpp:397
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&CC:"
 msgstr "एवंसीसी:"
 
-#: widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&BCC:"
 msgstr "औरबीसीसी:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&Date:"
 msgstr "&तारीख:"
 
-#: widgets/messageviewerdialog.cpp:128
+#: widgets/messageviewerdialog.cpp:128 widgets/messageviewerwindow.cpp:131
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&फ़ाइल"
 
-#: widgets/messageviewerdialog.cpp:130
+#: widgets/messageviewerdialog.cpp:130 widgets/messageviewerwindow.cpp:133
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&बचाना"
 
-#: widgets/messageviewerdialog.cpp:136
+#: widgets/messageviewerdialog.cpp:136 widgets/messageviewerwindow.cpp:139
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "डिक्रिप्टेड सहेजें"
 
-#: widgets/messageviewerdialog.cpp:142
+#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "मुद्रण पूर्वावलोकन"
 
-#: widgets/messageviewerdialog.cpp:148
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:151
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
@@ -425,67 +425,69 @@ msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&मार्गदर्शन"
 
-#: widgets/messageviewerdialog.cpp:156
+#: widgets/messageviewerdialog.cpp:156 widgets/messageviewerwindow.cpp:188
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "पिछले संदेश"
 
-#: widgets/messageviewerdialog.cpp:160
+#: widgets/messageviewerdialog.cpp:160 widgets/messageviewerwindow.cpp:192
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "अगला संदेश"
 
 #: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
-#: widgets/messageviewerdialog.cpp:208
+#: widgets/messageviewerdialog.cpp:208 widgets/messageviewerwindow.cpp:227
+#: widgets/messageviewerwindow.cpp:233 widgets/messageviewerwindow.cpp:255
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "ईमेल फ़ाइलें (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerdialog.cpp:182
+#: widgets/messageviewerdialog.cpp:182 widgets/messageviewerwindow.cpp:229
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "एन्क्रिप्टेड S/MIME फ़ाइलें (*.p7m)"
 
-#: widgets/messageviewerdialog.cpp:190
+#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:237
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "फाइल सुरक्षित करें"
 
-#: widgets/messageviewerdialog.cpp:196
+#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "फ़ाइल %1 नहीं बनाई जा सकी."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
+#: widgets/messageviewerwindow.cpp:243 widgets/messageviewerwindow.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "संदेश सहेजने में त्रुटि"
 
-#: widgets/messageviewerdialog.cpp:206
+#: widgets/messageviewerdialog.cpp:206 widgets/messageviewerwindow.cpp:253
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "डिक्रिप्टेड फ़ाइल सहेजें"
 
-#: widgets/messageviewerdialog.cpp:212
+#: widgets/messageviewerdialog.cpp:212 widgets/messageviewerwindow.cpp:259
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "फ़ाइल %1 नहीं बनाई जा सकी."
 
-#: widgets/messageviewerdialog.cpp:231
+#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerwindow.cpp:278
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "छाप"
 
-#: widgets/messageviewerdialog.cpp:243
+#: widgets/messageviewerdialog.cpp:243 widgets/messageviewerwindow.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
@@ -496,3 +498,23 @@ msgstr "मुद्रण पूर्वावलोकन"
 msgctxt "@info"
 msgid "Unable to read file"
 msgstr "फ़ाइल पढ़ने में असमर्थ"
+
+#: widgets/messageviewerwindow.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "@action:button Next email"
+#| msgid "Next Message"
+msgctxt "@action:inmenu"
+msgid "&Message"
+msgstr "अगला संदेश"
+
+#: widgets/messageviewerwindow.cpp:161
+#, kde-format
+msgctxt "@action:button"
+msgid "View Source"
+msgstr ""
+
+#: widgets/messageviewerwindow.cpp:181
+#, kde-format
+msgctxt "@action:button"
+msgid "Use Fixed Font"
+msgstr ""
