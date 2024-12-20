@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-08-02 09:30+0200\n"
+"PO-Revision-Date: 2024-12-19 10:20+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -505,24 +505,22 @@ msgid "Unable to read file"
 msgstr "Incapace a leger file"
 
 #: widgets/messageviewerwindow.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Message Proxime"
+msgstr "&Message"
 
 #: widgets/messageviewerwindow.cpp:161
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Vider Fonte"
 
 #: widgets/messageviewerwindow.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Usa font fixate"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

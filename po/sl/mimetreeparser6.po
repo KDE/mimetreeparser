@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-08-02 05:34+0200\n"
+"PO-Revision-Date: 2024-12-19 07:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -510,24 +510,22 @@ msgid "Unable to read file"
 msgstr "Ni mogoče prebrati datoteke"
 
 #: widgets/messageviewerwindow.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Naslednje sporočilo"
+msgstr "Sporočilo"
 
 #: widgets/messageviewerwindow.cpp:161
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Poglej vir"
 
 #: widgets/messageviewerwindow.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Uporabi pisavo stalne širine"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

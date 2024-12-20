@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-08-02 09:25+0300\n"
+"PO-Revision-Date: 2024-12-19 22:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -512,24 +512,22 @@ msgid "Unable to read file"
 msgstr "Не вдалося прочитати дані з файла"
 
 #: widgets/messageviewerwindow.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Наступне повідомлення"
+msgstr "&Повідомлення"
 
 #: widgets/messageviewerwindow.cpp:161
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Переглянути початковий код"
 
 #: widgets/messageviewerwindow.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Моноширинний шрифт"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

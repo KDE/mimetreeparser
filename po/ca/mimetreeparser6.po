@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-08-02 12:53+0200\n"
+"PO-Revision-Date: 2024-12-19 09:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -508,24 +508,22 @@ msgid "Unable to read file"
 msgstr "No s'ha pogut llegir el fitxer"
 
 #: widgets/messageviewerwindow.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Missatge següent"
+msgstr "&Missatge"
 
 #: widgets/messageviewerwindow.cpp:161
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Mostra el codi font"
 
 #: widgets/messageviewerwindow.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Usa una lletra d'amplada fixa"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

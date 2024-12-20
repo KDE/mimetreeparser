@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-08-02 12:53+0200\n"
+"PO-Revision-Date: 2024-12-19 09:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -506,123 +506,19 @@ msgid "Unable to read file"
 msgstr "No s'ha pogut llegir el fitxer"
 
 #: widgets/messageviewerwindow.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Missatge següent"
+msgstr "&Missatge"
 
 #: widgets/messageviewerwindow.cpp:161
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Mostra el codi font"
 
 #: widgets/messageviewerwindow.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Este missatge s'ha signat amb el certificat %1."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Els detalls del certificat no estan disponibles."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Este missatge l'ha signat %1 amb el certificat %2."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "El certificat està revocat."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "El certificat ha caducat."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "El certificat està certificat."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "La signatura no és vàlida."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Este missatge s'ha signat conforme amb VS-NfD utilitzant el certificat <a "
-#~ "href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Este missatge s'ha signat emprant el certificat <a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Este missatge s'ha signat conforme amb VS-NfD per %1."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Este missatge s'ha signat per %1."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "S'ha revocat el <a href=\"%1\">certificat</a>."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "El <a href=\"%1\">certificat</a> està caducat."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "La signatura és vàlida, però no es coneix la validesa del <a href="
-#~ "\"%1\">certificat</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "La signatura és vàlida, però el <a href=\"%1\">certificat</a> és de "
-#~ "confiança parcial."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "La signatura és vàlida i el <a href=\"%1\">certificat</a> és de plena "
-#~ "confiança."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "La signatura és vàlida i el <a href=\"%1\">certificat</a> és de confiança "
-#~ "absoluta."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr ""
-#~ "La signatura és vàlida, però el <a href=\"%1\">certificat</a> no està "
-#~ "certficat."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "S'ha produït un error de KMail"
+msgstr "Utilitza una lletra d'amplària fixa"
