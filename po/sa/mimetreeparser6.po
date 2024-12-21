@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-19 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 22:12+0530\n"
+"PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -185,7 +185,7 @@ msgstr "इत्यस्मात्‌:"
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr "प्रेषकः : १."
+msgstr "प्रेषकः :"
 
 #: quick/qml/MailViewer.qml:130
 #, kde-format
@@ -197,13 +197,13 @@ msgstr "इत्यस्मै:"
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "सी. सी. १."
+msgstr "सी. सी."
 
 #: quick/qml/MailViewer.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
-msgstr "बीसीसी : १."
+msgstr "बीसीसी :"
 
 #: quick/qml/MailViewer.qml:219
 #, kde-format
@@ -319,7 +319,7 @@ msgstr "&संक्षेपः:"
 #: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&Organizer:"
-msgstr "&आयोजक : १."
+msgstr "&आयोजक :"
 
 #: widgets/messageviewer.cpp:277
 #, kde-format
@@ -329,12 +329,12 @@ msgstr "&स्थानीय:"
 #: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Start date:"
-msgstr "&प्रारम्भतिथिः : १."
+msgstr "&प्रारम्भतिथिः :"
 
 #: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "&End date:"
-msgstr "&समाप्ततिथिः : १."
+msgstr "&समाप्ततिथिः :"
 
 #: widgets/messageviewer.cpp:284
 #, kde-format
@@ -369,7 +369,7 @@ msgstr "&इत्यस्मात्‌:"
 #: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&Sender:"
-msgstr "&प्रेषकः : १."
+msgstr "&प्रेषकः :"
 
 #: widgets/messageviewer.cpp:399
 #, kde-format
@@ -384,7 +384,7 @@ msgstr "&CC: 1 ."
 #: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&BCC:"
-msgstr "&बीसीसी: १."
+msgstr "&बीसीसी:"
 
 #: widgets/messageviewer.cpp:408
 #, kde-format
