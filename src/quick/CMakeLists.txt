@@ -13,7 +13,7 @@ target_sources(mimetreeparser_plugin PRIVATE
 )
 
 target_link_libraries(mimetreeparser_plugin PRIVATE
-    Qt6::Qml
+    Qt::Qml
     KPim6::MimeTreeParserCore
 )
 
