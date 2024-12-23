@@ -41,6 +41,7 @@ DelegateModel {
         readonly property bool isSigned: signatureSecurityLevel !== PartModel.Unknow
 
         width: ListView.view.width
+        spacing: Kirigami.Units.smallSpacing
 
         function getType(securityLevel: int): int {
             if (securityLevel === PartModel.Good) {
@@ -71,6 +72,7 @@ DelegateModel {
         QQC2.Control {
             id: sidebar
 
+            Layout.leftMargin: Kirigami.Units.largeSpacing
             Layout.preferredWidth: Kirigami.Units.smallSpacing
             Layout.fillHeight: true
 
@@ -85,8 +87,8 @@ DelegateModel {
         ColumnLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            Layout.leftMargin: sidebar.visible ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
-            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.leftMargin: Kirigami.Units.gridUnit - (sidebar.visible ? Kirigami.Units.largeSpacing : 0) - Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.gridUnit
 
             Banner {
                 iconName: partDelegate.encryptionIconName
@@ -113,8 +115,6 @@ DelegateModel {
 
                 Layout.preferredHeight: item ? item.contentHeight : 0
                 Layout.fillWidth: true
-                Layout.leftMargin: root.padding
-                Layout.rightMargin: root.padding
 
                 Component.onCompleted: {
                     switch (partDelegate.type) {
