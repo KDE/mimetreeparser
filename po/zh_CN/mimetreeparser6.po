@@ -497,12 +497,10 @@ msgid "Unable to read file"
 msgstr "无法读取文件"
 
 #: widgets/messageviewerwindow.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "下一条消息"
+msgstr ""
 
 #: widgets/messageviewerwindow.cpp:161
 #, kde-format
