@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:41+0000\n"
+"POT-Creation-Date: 2024-12-24 00:41+0000\n"
 "PO-Revision-Date: 2024-08-16 13:58+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
@@ -248,7 +248,7 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "Gesendet von %1 am %2"
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
@@ -256,7 +256,7 @@ msgstr ""
 "Diese Nachricht ist verschlüsselt, aber Ihnen fehlt ein passender geheimer "
 "Schlüssel."
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "Diese Nachricht ist für %1 verschlüsselt."

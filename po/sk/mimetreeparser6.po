@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:41+0000\n"
+"POT-Creation-Date: 2024-12-24 00:41+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -248,14 +248,14 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "odoslané %1 na %2"
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "This message is encrypted but we don't have the key for it."
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Táto správa je zašifrovaná, ale nemáme k nej kľúč."
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #, fuzzy, kde-format
 #| msgid "This message is encrypted."
 msgid "This message is encrypted for: %1"

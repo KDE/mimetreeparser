@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:41+0000\n"
+"POT-Creation-Date: 2024-12-24 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -243,13 +243,13 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 द्वारा %2 पर भेजा गया"
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "यह संदेश एन्क्रिप्टेड है लेकिन आपके पास इससे मेल खाती गुप्त कुंजी नहीं है."
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "यह संदेश इसके लिए एन्क्रिप्ट किया गया है: %1"

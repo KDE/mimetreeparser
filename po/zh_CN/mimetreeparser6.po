@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:41+0000\n"
+"POT-Creation-Date: 2024-12-24 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -240,13 +240,13 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "由 %1 发送于 %2"
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "此消息已加密，但您没有匹配的密钥。"
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "此消息已加密：%1"

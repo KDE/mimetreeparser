@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:41+0000\n"
+"POT-Creation-Date: 2024-12-24 00:41+0000\n"
 "PO-Revision-Date: 2024-09-16 21:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -245,13 +245,13 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 küldte ekkor: %2"
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
 
-#: quick/qml/private/MailPartModel.qml:95
+#: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "Az üzenetet %1 számára titkosították."
