@@ -188,6 +188,8 @@ Kirigami.ScrollablePage {
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
 
+        visible: attachmentRepeater.count > 0
+
         background: Item {
             Kirigami.Separator {
                 anchors {
@@ -203,6 +205,8 @@ Kirigami.ScrollablePage {
             anchors.fill: parent
             spacing: Kirigami.Units.smallSpacing
             Repeater {
+                id: attachmentRepeater
+
                 model: mailPartView.attachmentModel
 
                 delegate: AttachmentDelegate {
