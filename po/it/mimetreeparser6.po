@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
-"PO-Revision-Date: 2024-08-02 14:14+0200\n"
+"POT-Creation-Date: 2024-12-27 00:42+0000\n"
+"PO-Revision-Date: 2024-12-19 19:30+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -205,13 +205,13 @@ msgctxt "@label"
 msgid "BCC:"
 msgstr "CCN:"
 
-#: quick/qml/MailViewer.qml:219
+#: quick/qml/MailViewer.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Salva allegato"
 
-#: quick/qml/MailViewer.qml:242
+#: quick/qml/MailViewer.qml:246
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
@@ -505,24 +505,22 @@ msgid "Unable to read file"
 msgstr "Impossibile leggere il file"
 
 #: widgets/messageviewerwindow.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Messaggio successivo"
+msgstr "&Messaggio"
 
 #: widgets/messageviewerwindow.cpp:161
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Visualizza sorgente"
 
 #: widgets/messageviewerwindow.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Utilizza caratteri a dimensione &fissa"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
+"POT-Creation-Date: 2024-12-27 00:42+0000\n"
 "PO-Revision-Date: 2024-08-02 08:02+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -203,13 +203,13 @@ msgctxt "@label"
 msgid "BCC:"
 msgstr "Dold kopia:"
 
-#: quick/qml/MailViewer.qml:219
+#: quick/qml/MailViewer.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Spara bilaga"
 
-#: quick/qml/MailViewer.qml:242
+#: quick/qml/MailViewer.qml:246
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
+"POT-Creation-Date: 2024-12-27 00:42+0000\n"
 "PO-Revision-Date: 2024-12-19 16:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -204,13 +204,13 @@ msgctxt "@label"
 msgid "BCC:"
 msgstr "Gizli kopya:"
 
-#: quick/qml/MailViewer.qml:219
+#: quick/qml/MailViewer.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Eki Kaydet"
 
-#: quick/qml/MailViewer.qml:242
+#: quick/qml/MailViewer.qml:246
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"

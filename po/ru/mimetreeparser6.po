@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
+"POT-Creation-Date: 2024-12-27 00:42+0000\n"
 "PO-Revision-Date: 2024-12-04 10:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -213,13 +213,13 @@ msgctxt "@label"
 msgid "BCC:"
 msgstr "Скрытая копия:"
 
-#: quick/qml/MailViewer.qml:219
+#: quick/qml/MailViewer.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Сохранить вложение"
 
-#: quick/qml/MailViewer.qml:242
+#: quick/qml/MailViewer.qml:246
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
