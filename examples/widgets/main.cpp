@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain(QByteArrayLiteral("mimetreeparser"));
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("mimetreeparser6"));
 #ifdef Q_OS_WIN
     if (AttachConsole(ATTACH_PARENT_PROCESS)) {
         freopen("CONOUT$", "w", stdout);
