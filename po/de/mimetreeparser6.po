@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-28 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 13:58+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
@@ -398,117 +398,117 @@ msgstr "BCC:"
 msgid "&Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewerdialog.cpp:128 widgets/messageviewerwindow.cpp:131
+#: widgets/messageviewerdialog.cpp:79 widgets/messageviewerwindow.cpp:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "Datei"
 
-#: widgets/messageviewerdialog.cpp:130 widgets/messageviewerwindow.cpp:133
+#: widgets/messageviewerdialog.cpp:81 widgets/messageviewerwindow.cpp:84
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "Speichern"
 
-#: widgets/messageviewerdialog.cpp:136 widgets/messageviewerwindow.cpp:139
+#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:90
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Unverschlüsselt abspeichern"
 
-#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:145
+#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Preview drucken"
 
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:151
+#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Drucken"
 
-#: widgets/messageviewerdialog.cpp:155
+#: widgets/messageviewerdialog.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "Navigation"
 
-#: widgets/messageviewerdialog.cpp:156 widgets/messageviewerwindow.cpp:188
+#: widgets/messageviewerdialog.cpp:107 widgets/messageviewerwindow.cpp:139
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Vorige Nachricht"
 
-#: widgets/messageviewerdialog.cpp:160 widgets/messageviewerwindow.cpp:192
+#: widgets/messageviewerdialog.cpp:111 widgets/messageviewerwindow.cpp:143
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Nächste Nachricht"
 
-#: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
-#: widgets/messageviewerdialog.cpp:208 widgets/messageviewerwindow.cpp:227
-#: widgets/messageviewerwindow.cpp:233 widgets/messageviewerwindow.cpp:255
+#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
+#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
+#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "E-Mail Dateien (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerdialog.cpp:182 widgets/messageviewerwindow.cpp:229
+#: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "Verschlüsselte S/MIME Dateien (*.p7m)"
 
-#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:237
+#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:189
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Datei speichern"
 
-#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:195
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Datei %1 konnte nicht erstellt werden."
 
-#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#: widgets/messageviewerwindow.cpp:243 widgets/messageviewerwindow.cpp:259
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerwindow.cpp:195 widgets/messageviewerwindow.cpp:212
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Fehler beim Abspeichern der Datei"
 
-#: widgets/messageviewerdialog.cpp:206 widgets/messageviewerwindow.cpp:253
+#: widgets/messageviewerdialog.cpp:159 widgets/messageviewerwindow.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Entschlüsselte Datei abspeichern"
 
-#: widgets/messageviewerdialog.cpp:212 widgets/messageviewerwindow.cpp:259
+#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:212
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Datei %1 konnte nicht erstellt werden."
 
-#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerwindow.cpp:278
+#: widgets/messageviewerdialog.cpp:184 widgets/messageviewerwindow.cpp:231
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Drucken"
 
-#: widgets/messageviewerdialog.cpp:243 widgets/messageviewerwindow.cpp:290
+#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Vorschau drucken"
 
-#: widgets/messageviewerdialog.cpp:295
+#: widgets/messageviewerdialog.cpp:248
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Datei nicht lesbar"
 
-#: widgets/messageviewerwindow.cpp:158
+#: widgets/messageviewerwindow.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "@action:button Next email"
 #| msgid "Next Message"
@@ -516,13 +516,13 @@ msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "Nächste Nachricht"
 
-#: widgets/messageviewerwindow.cpp:161
+#: widgets/messageviewerwindow.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr ""
 
-#: widgets/messageviewerwindow.cpp:181
+#: widgets/messageviewerwindow.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
