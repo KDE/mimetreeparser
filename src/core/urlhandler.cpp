@@ -12,7 +12,6 @@
 #include <QProcess>
 #include <QStandardPaths>
 #include <QUrl>
-#include <QWindow>
 
 UrlHandler::UrlHandler(QObject *parent)
     : QObject(parent)

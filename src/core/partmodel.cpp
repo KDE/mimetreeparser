@@ -5,7 +5,6 @@
 
 #include "enums.h"
 #include "htmlutils.h"
-#include "messagepart.h"
 #include "mimetreeparser_core_debug.h"
 #include "objecttreeparser.h"
 #include "utils.h"
