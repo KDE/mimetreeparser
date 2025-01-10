@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-28 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-10-17 11:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -124,13 +124,13 @@ msgstr "Salausliitännäinen ”%1” ei voinut purkaa tiedon salausta."
 msgid "Error: %1"
 msgstr "Virhe: %1"
 
-#: core/partmodel.cpp:574 core/partmodel.cpp:576
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Tämän viestin salausta ei voida purkaa."
 
-#: core/partmodel.cpp:582
+#: core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -138,13 +138,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Viesti on salattu seuraavalle vastaanottajalle:"
 msgstr[1] "Viesti on salattu seuraaville vastaanottajille:"
 
-#: core/partmodel.cpp:596
+#: core/partmodel.cpp:595
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Väärä salasana."
 
-#: core/urlhandler.cpp:47
+#: core/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Varmennehallintaa ei voitu käynnistää. Tarkista asennus."

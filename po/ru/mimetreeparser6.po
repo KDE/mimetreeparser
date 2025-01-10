@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-28 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-12-04 10:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -130,13 +130,13 @@ msgstr "Модуль шифрования %1 не может расшифров�
 msgid "Error: %1"
 msgstr "Ошибка: %1"
 
-#: core/partmodel.cpp:574 core/partmodel.cpp:576
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Это письмо нельзя расшифровать."
 
-#: core/partmodel.cpp:582
+#: core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -146,13 +146,13 @@ msgstr[1] "Это письмо зашифровано для следующих 
 msgstr[2] "Это письмо зашифровано для следующих получателей:"
 msgstr[3] "Это письмо зашифровано для следующего получателя:"
 
-#: core/partmodel.cpp:596
+#: core/partmodel.cpp:595
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Неверный пароль."
 
-#: core/urlhandler.cpp:47
+#: core/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""

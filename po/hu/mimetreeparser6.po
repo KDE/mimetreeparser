@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-28 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-09-16 21:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -124,13 +124,13 @@ msgstr "A(z) „%1” titkosítási bővítmény nem tudta visszafejteni az adat
 msgid "Error: %1"
 msgstr "Hiba: %1"
 
-#: core/partmodel.cpp:574 core/partmodel.cpp:576
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Ezt az üzenetet nem lehet visszafejteni."
 
-#: core/partmodel.cpp:582
+#: core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -138,13 +138,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Az üzenetet a következő címzettnek titkosították:"
 msgstr[1] "Az üzenetet a következő címzetteknek titkosították:"
 
-#: core/partmodel.cpp:596
+#: core/partmodel.cpp:595
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Hibás jelszó."
 
-#: core/urlhandler.cpp:47
+#: core/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""

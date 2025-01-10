@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-28 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -124,13 +124,13 @@ msgstr "क्रिप्टो प्लग-इन \"%1\" डेटा को 
 msgid "Error: %1"
 msgstr "त्रुटि: %1"
 
-#: core/partmodel.cpp:574 core/partmodel.cpp:576
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "आप इस संदेश को डिक्रिप्ट नहीं कर सकते."
 
-#: core/partmodel.cpp:582
+#: core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -138,13 +138,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "संदेश निम्नलिखित प्राप्तकर्ताओं के लिए एन्क्रिप्ट किया गया है:"
 msgstr[1] "संदेश निम्नलिखित प्राप्तकर्ताओं के लिए एन्क्रिप्ट किया गया है:"
 
-#: core/partmodel.cpp:596
+#: core/partmodel.cpp:595
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "ग़लत पासफ़्रेज़."
 
-#: core/urlhandler.cpp:47
+#: core/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "प्रमाणपत्र प्रबंधक प्रारंभ नहीं किया जा सका। कृपया अपनी स्थापना जांचें।"
