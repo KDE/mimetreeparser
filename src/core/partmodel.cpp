@@ -237,7 +237,7 @@ public:
         }
     }
 
-    PartModel *q;
+    PartModel *const q;
     MimeTreeParser::MessagePart::List mParts;
     QHash<MimeTreeParser::MessagePart *, QByteArray> mMimeTypeCache;
     QHash<MimeTreeParser::MessagePart *, MimeTreeParser::MessagePart::List> mEncapsulatedParts;

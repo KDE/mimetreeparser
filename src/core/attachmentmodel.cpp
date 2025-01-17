@@ -132,7 +132,7 @@ class AttachmentModelPrivate
 public:
     AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::ObjectTreeParser> &parser);
 
-    AttachmentModel *q;
+    AttachmentModel *const q;
     QMimeDatabase mimeDb;
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     MimeTreeParser::MessagePart::List mAttachments;
