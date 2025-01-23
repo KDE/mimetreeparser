@@ -2,15 +2,15 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['Linux', 'FreeBSD', 'Windows']
-  'require':
+ - 'on': ['Linux', 'FreeBSD', 'Windows']
+   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kcalendarcore' : '@latest-kf6'
-    'frameworks/kwidgetsaddons' : '@latest-kf6'
-    'pim/kmime' : '@same'
-    'pim/kmbox' : '@same'
-    'pim/libkleo' : '@same'
+    'frameworks/kcalendarcore': '@latest-kf6'
+    'frameworks/kwidgetsaddons': '@latest-kf6'
+    'pim/kmime': '@same'
+    'pim/kmbox': '@same'
+    'pim/libkleo': '@same'
 
 Options:
-  require-passing-tests-on: ['Linux', 'FreeBSD']
-  gcovr-arguments: '--exclude "_install/.*" --exclude "examples/.*"'
+ require-passing-tests-on: ['Linux', 'FreeBSD']
+ gcovr-arguments: '--exclude "_install/.*" --exclude "examples/.*"'
