@@ -405,7 +405,7 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
         d->formLayout->addRow(i18n("&BCC:"), new HeaderLabel(d->parser.bcc()));
     }
     if (!d->parser.date().isNull()) {
-        d->formLayout->addRow(i18n("&Date:"), new HeaderLabel(QLocale::system().toString(d->parser.date().toLocalTime())));
+        d->formLayout->addRow(i18n("&Date:"), new HeaderLabel(QLocale::system().toString(d->parser.date().toLocalTime(), QLocale::ShortFormat)));
     }
 
     const auto parts = d->parser.parts();
