@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-10 09:29+0000\n"
-"PO-Revision-Date: 2024-09-12 15:31+0300\n"
+"PO-Revision-Date: 2025-02-02 10:36+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -506,21 +506,19 @@ msgid "Unable to read file"
 msgstr "Neizdodas nolasīt datni"
 
 #: widgets/messageviewerwindow.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Nākamā vēstule"
+msgstr "&Vēstule"
 
 #: widgets/messageviewerwindow.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Skatīt avotu"
 
 #: widgets/messageviewerwindow.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Lietot fiksētu fontu"
