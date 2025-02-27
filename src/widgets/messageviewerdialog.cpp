@@ -128,13 +128,13 @@ void MessageViewerDialog::Private::save(QWidget *parent)
     if (wasEncrypted) {
         extension = QStringLiteral(".mime");
         if (protocol == GpgME::OpenPGP) {
-            alternatives = i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)");
+            alternatives = i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
         } else {
             alternatives = i18nc("File dialog accepted files", "Encrypted S/MIME files (*.p7m)");
         }
     } else {
         extension = QStringLiteral(".eml");
-        alternatives = i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)");
+        alternatives = i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
     }
 
     const QString location =
@@ -158,7 +158,7 @@ void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
         parent,
         i18nc("@title:window", "Save Decrypted File"),
         MesageViewerUtils::changeExtension(MesageViewerUtils::changeFileName(fileName, messageViewer->subject()), QStringLiteral(".eml")),
-        i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"));
+        i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"));
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {
