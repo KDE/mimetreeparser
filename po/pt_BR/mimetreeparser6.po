@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-30 02:30+0000\n"
-"PO-Revision-Date: 2025-02-12 23:52-0300\n"
+"PO-Revision-Date: 2025-02-27 20:43-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -476,7 +476,7 @@ msgstr "Salvar arquivo"
 #: widgets/messageviewerdialog.cpp:196
 #, kde-format
 msgid "File %1 could not be created."
-msgstr "O  arquivo %1 não pôde ser criado."
+msgstr "O arquivo %1 não pôde ser criado."
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
 #, kde-format
