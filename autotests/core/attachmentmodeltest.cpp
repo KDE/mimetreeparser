@@ -11,6 +11,8 @@
 #include <QSignalSpy>
 #include <QTemporaryFile>
 
+using namespace Qt::StringLiterals;
+
 KMime::Message::Ptr readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
@@ -65,6 +67,9 @@ private Q_SLOTS:
 
     void openTest()
     {
+#ifdef Q_OS_WIN
+        QSKIP("Test requires an application handling a jpeg file which we don't have in the Windows docker.");
+#endif
         MessageParser messageParser;
         messageParser.setMessage(readMailFromFile(QLatin1StringView("attachment.mbox")));
 
@@ -92,8 +97,11 @@ private Q_SLOTS:
         QVERIFY(spy.isValid());
 
         const auto fileName = attachmentModel->saveAttachmentToPath(0, QStringLiteral("/does/not/exist"));
+        QCOMPARE(spy.count(), 1);
+
         QList<QVariant> arguments = spy.takeFirst();
         QVERIFY(arguments.at(0).userType() == QMetaType::QString);
+        QVERIFY(arguments.at(0).toString() == "Failed to save attachment."_L1);
     }
 };
 
