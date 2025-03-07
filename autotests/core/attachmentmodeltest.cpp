@@ -74,6 +74,10 @@ private Q_SLOTS:
 
         attachmentModel->openAttachment(0);
 
+        if (spy.count() > 0) {
+            qWarning() << spy.constFirst();
+        }
+
         // Check no error occurred
         QCOMPARE(spy.count(), 0);
     }
