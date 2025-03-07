@@ -65,17 +65,17 @@ public:
 
     void createActions()
     {
-        saveAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("&Save Attachment As…"), q);
+        saveAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as-symbolic")), i18n("&Save Attachment As…"), q);
         connect(saveAttachmentAction, &QAction::triggered, q, [this]() {
             saveSelectedAttachments();
         });
 
-        openAttachmentAction = new QAction(i18nc("to open", "Open"), q);
+        openAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("document-open-symbolic")), i18nc("to open", "Open"), q);
         connect(openAttachmentAction, &QAction::triggered, q, [this]() {
             openSelectedAttachments();
         });
 
-        importPublicKeyAction = new QAction(i18nc("@action:inmenu", "Import public key"), q);
+        importPublicKeyAction = new QAction(QIcon::fromTheme(QStringLiteral("document-import-key-symbolic")), i18nc("@action:inmenu", "Import public key"), q);
         connect(importPublicKeyAction, &QAction::triggered, q, [this]() {
             importPublicKey();
         });
