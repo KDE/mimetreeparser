@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-03-08 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 02:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -445,11 +445,12 @@ msgid "Next Message"
 msgstr "Mensaje siguiente"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
-#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
-#, kde-format
+#: widgets/messageviewerdialog.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "File dialog accepted files"
+#| msgid "Email files (*.eml *.mbox *.mime)"
 msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "Archivos de correo electrónico (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
@@ -523,6 +524,13 @@ msgstr "Ver fuente"
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Usar tipo de letra de ancho fijo"
+
+#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
+#: widgets/messageviewerwindow.cpp:208
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "Archivos de correo electrónico (*.eml *.mbox *.mime)"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

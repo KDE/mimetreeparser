@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-03-08 00:44+0000\n"
 "PO-Revision-Date: 2025-02-01 12:26+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -448,11 +448,12 @@ msgid "Next Message"
 msgstr "Następna wiadomość"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
-#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
-#, kde-format
+#: widgets/messageviewerdialog.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "File dialog accepted files"
+#| msgid "Email files (*.eml *.mbox *.mime)"
 msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "Pliki wiadomości (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
@@ -526,6 +527,13 @@ msgstr "Pokaż źródło"
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Czcionka o stałej szerokości"
+
+#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
+#: widgets/messageviewerwindow.cpp:208
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "Pliki wiadomości (*.eml *.mbox *.mime)"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

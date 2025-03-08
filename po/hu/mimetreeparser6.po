@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-03-08 00:44+0000\n"
 "PO-Revision-Date: 2024-09-16 21:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -442,11 +442,12 @@ msgid "Next Message"
 msgstr "Következő üzenet"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
-#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
-#, kde-format
+#: widgets/messageviewerdialog.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "File dialog accepted files"
+#| msgid "Email files (*.eml *.mbox *.mime)"
 msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "E-mail fájlok (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
@@ -522,6 +523,13 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr ""
+
+#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
+#: widgets/messageviewerwindow.cpp:208
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "E-mail fájlok (*.eml *.mbox *.mime)"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

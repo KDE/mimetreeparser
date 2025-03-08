@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-03-08 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -440,11 +440,12 @@ msgid "Next Message"
 msgstr "अग्रिमः सन्देशः"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
-#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
-#, kde-format
+#: widgets/messageviewerdialog.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "File dialog accepted files"
+#| msgid "Email files (*.eml *.mbox *.mime)"
 msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "ईमेल सञ्चिकाः (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
@@ -518,3 +519,10 @@ msgstr "स्रोतः पश्यन्तु"
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "स्थिर-अक्षरस्य उपयोगं कुर्वन्तु"
+
+#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
+#: widgets/messageviewerwindow.cpp:208
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "ईमेल सञ्चिकाः (*.eml *.mbox *.mime)"

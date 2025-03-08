@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-03-08 00:44+0000\n"
 "PO-Revision-Date: 2024-12-22 09:31+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -445,11 +445,12 @@ msgid "Next Message"
 msgstr "Hurrengo mezua"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
-#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
-#, kde-format
+#: widgets/messageviewerdialog.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "File dialog accepted files"
+#| msgid "Email files (*.eml *.mbox *.mime)"
 msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "E-posta fitxategiak (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
@@ -523,6 +524,13 @@ msgstr "Ikusi sorburua"
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Erabili zabalera finkoko letra-tipoa"
+
+#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
+#: widgets/messageviewerwindow.cpp:208
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "E-posta fitxategiak (*.eml *.mbox *.mime)"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."
