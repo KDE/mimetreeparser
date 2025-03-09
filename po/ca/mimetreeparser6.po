@@ -1,15 +1,15 @@
 # Translation of mimetreeparser6.po to Catalan
-# Copyright (C) 2023-2024 This_file_is_part_of_KDE
+# Copyright (C) 2023-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-08 00:44+0000\n"
-"PO-Revision-Date: 2024-12-19 09:40+0100\n"
+"PO-Revision-Date: 2025-03-08 10:29+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -447,12 +447,10 @@ msgstr "Missatge següent"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
 #: widgets/messageviewerdialog.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox *.mime)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "Fitxers de correu electrònic (*.eml *.mbox *.mime)"
+msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
 #, kde-format
@@ -532,162 +530,3 @@ msgstr "Usa una lletra d'amplada fixa"
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "Fitxers de correu electrònic (*.eml *.mbox *.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Aquest missatge s'ha signat amb el certificat %1."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Els detalls del certificat no són disponibles."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Aquest missatge l'ha signat %1 amb el certificat %2."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "El certificat està revocat."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "El certificat ha caducat."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "El certificat està certificat."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "La signatura no és vàlida."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Aquest missatge s'ha signat conforme amb VS-NfD utilitzant el certificat "
-#~ "<a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Aquest missatge s'ha signat emprant el certificat <a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Aquest missatge s'ha signat conforme amb VS-NfD per %1."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Aquest missatge s'ha signat per %1."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "S'ha revocat el <a href=\"%1\">certificat</a>."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "El <a href=\"%1\">certificat</a> està caducat."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "La signatura és vàlida, però no es coneix la validesa del <a href="
-#~ "\"%1\">certificat</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "La signatura és vàlida, però el <a href=\"%1\">certificat</a> és de "
-#~ "confiança parcial."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "La signatura és vàlida i el <a href=\"%1\">certificat</a> és de plena "
-#~ "confiança."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "La signatura és vàlida i el <a href=\"%1\">certificat</a> és de confiança "
-#~ "absoluta."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr ""
-#~ "La signatura és vàlida, però el <a href=\"%1\">certificat</a> no està "
-#~ "certficat."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "Error del KMail"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Aquest missatge no es pot desencriptar amb cap certificat S/MIME del "
-#~ "vostre anell de claus."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Aquest missatge no es pot desencriptar amb cap certificat OpenPGP del "
-#~ "vostre anell de claus."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "El missatge està encriptat per al certificat següent:"
-#~ msgstr[1] "El missatge està encriptat per als certificats següents:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Aquest missatge s'ha signat emprant el certificat %1 de %2."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Esteu confiant en aquest certificat."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Aquest missatge està encriptat per al certificat: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "El missatge està encriptat per als certificats següents:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Impressió del document"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "De&sa l'adjunt com a..."
-
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Fitxers de correu electrònic (*eml *.mbox *.mime)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Importa la clau"
-
-#~ msgctxt "@info:status"
-#~ msgid "No secret key found to decrypt the message."
-#~ msgstr "No s'ha trobat cap clau secreta per a desencriptar el missatge."

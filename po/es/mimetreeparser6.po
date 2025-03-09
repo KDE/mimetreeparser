@@ -1,15 +1,15 @@
-# Spanish translations for mimetreeparser.po package.
-# Copyright (C) 2023 This file is copyright:
+# Spanish translations for mimetreeparser6.po package.
+# Copyright (C) 2023-2025 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
 # Automatically generated, 2023.
-# SPDX-FileCopyrightText: 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: mimetreeparser\n"
+"Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-08 00:44+0000\n"
-"PO-Revision-Date: 2024-12-20 02:59+0100\n"
+"PO-Revision-Date: 2025-03-09 00:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -286,7 +286,7 @@ msgstr "El mensaje está cifrado para los siguientes destinatarios:"
 #: widgets/messageviewer.cpp:68
 #, kde-format
 msgid "&Save Attachment As…"
-msgstr "&Guardar adjunto como..."
+msgstr "&Guardar adjunto como…"
 
 #: widgets/messageviewer.cpp:73
 #, kde-format
@@ -446,12 +446,10 @@ msgstr "Mensaje siguiente"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
 #: widgets/messageviewerdialog.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox *.mime)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "Archivos de correo electrónico (*.eml *.mbox *.mime)"
+msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
 #, kde-format
@@ -531,184 +529,3 @@ msgstr "Usar tipo de letra de ancho fijo"
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "Archivos de correo electrónico (*.eml *.mbox *.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Este mensaje ha sido firmado con el certificado %1."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Los detalles del certificado no están disponibles."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Este mensaje ha sido firmado por %1 con el certificado %2."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "El certificado ha sido revocado."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "El certificado ha expirado."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "El certificado está certificado."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "La firma no es válida."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Este mensaje ha sido firmado de conformidad con VS-NfD usando el "
-#~ "certificado <a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Este mensaje ha sido firmado usando el certificado <a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Este mensaje ha sido firmado de conformidad con VS-NfD por %1."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Este mensaje ha sido firmado por %1."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "El <a href=\"%1\">certificado</a> ha sido revocado."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "El <a href=\"%1\">certificado</a> ha expirado."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "La firma es válida, pero se desconoce la validez del <a href="
-#~ "\"%1\">certificado</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "La firma es válida y el <a href=\"%1\">certificado</a> es de mínima "
-#~ "confianza."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "La firma es válida y el <a href=\"%1\">certificado</a> es de total "
-#~ "confianza."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "La firma es válida y el <a href=\"%1\">certificado</a> es definitivamente "
-#~ "de confianza."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr ""
-#~ "La firma es válida, pero el <a href=\"%1\">certificado</a> no está "
-#~ "certificado."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "Error de KMail"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Este mensaje no se puede descifrar con ningún certificado S/MIME de su "
-#~ "anillo de claves."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Este mensaje no se puede descifrar con ningún certificado OpenPGP de su "
-#~ "anillo de claves."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "El mensaje está cifrado para el siguiente certificado:"
-#~ msgstr[1] "El mensaje está cifrado para los siguientes certificados:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Este mensaje ha sido firmado usando el certificado %1 por %2."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Este certificado es de su confianza."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Este mensaje está cifrado para el certificado: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "El mensaje está cifrado para los siguientes certificados:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Imprimir documento"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "&Guardar adjunto como..."
-
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Archivos de correo electrónico (*.eml *.mbox *.mime)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Importar clave"
-
-#~ msgctxt "@info:status"
-#~ msgid "No secret key found to decrypt the message."
-#~ msgstr ""
-#~ "No se ha encontrado ninguna clave secreta para descifrar el mensaje."
-
-#~ msgid "Unknown key"
-#~ msgstr "Clave desconocida"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "No hay ninguna clave disponible."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Ha fallado la creación del archivo temporal."
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Adjunto guardado en disco: %1"
-
-#~ msgid "fwd"
-#~ msgstr "fwd"
-
-#~ msgid "re"
-#~ msgstr "re"
