@@ -7,14 +7,14 @@ set(PIM_VERSION "6.4.40")
 project(MimeTreeParserNG VERSION ${PIM_VERSION})
 
 # ECM setup
-set(KF_MIN_VERSION "6.9.0")
+set(KF_MIN_VERSION "6.11.0")
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH}
     ${ECM_MODULE_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules
 )
-set(QT_REQUIRED_VERSION "6.7.0")
+set(QT_REQUIRED_VERSION "6.8.0")
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
