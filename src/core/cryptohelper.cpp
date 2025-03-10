@@ -299,7 +299,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
     auto result = decrypt->exec(inData, outData);
     if (result.error()) {
         // unknown key, invalid algo, or general error
-        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << result.error().asString();
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << result.error().asStdString();
         return {};
     }
 
