@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/mimetreeparser/mimetreeparser6.pot\n"
-"X-Crowdin-File-ID: 49072\n"
+"X-Crowdin-File: /kf6-stable/messages/mimetreeparser/mimetreeparser6.pot\n"
+"X-Crowdin-File-ID: 51844\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
