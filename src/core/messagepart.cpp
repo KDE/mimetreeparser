@@ -816,7 +816,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
             setDecryptMessage(false);
         }
 
-        partMetaData()->errorText = QString::fromStdString(decryptResult.error().asStdString());
+        partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
         if (Kleo::DeVSCompliance::isCompliant()) {
             partMetaData()->isCompliant = decryptResult.isDeVs();
             partMetaData()->compliance = Kleo::DeVSCompliance::name(decryptResult.isDeVs());
