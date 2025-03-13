@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-08 00:44+0000\n"
-"PO-Revision-Date: 2023-08-13 17:34-0700\n"
+"PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -18,235 +18,238 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr ""
+msgstr "名前"
 
 #: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
-msgstr ""
+msgstr "サイズ"
 
 #: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr ""
+msgstr "暗号化"
 
 #: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
-msgstr ""
+msgstr "署名"
 
 #: core/attachmentmodel.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr ""
+msgstr "添付ファイルの保存に失敗しました。"
 
 #: core/attachmentmodel.cpp:324
 #, kde-format
 msgid "attachment"
-msgstr ""
+msgstr "添付ファイル"
 
 #: core/attachmentmodel.cpp:331
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr ""
+msgstr "添付ファイルの書き込みのために開くのに失敗しました。"
 
 #: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "添付ファイルを開くのに失敗しました。"
 
 #: core/attachmentmodel.cpp:381
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
-msgstr ""
+msgstr "この添付ファイルには証明書が見つかりませんでした"
 
 #: core/attachmentmodel.cpp:384
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] ""
+msgstr[0] "%1 件の証明書がインポートされました。"
 
 #: core/attachmentmodel.cpp:389
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] ""
+msgstr[0] "%1 件の証明書がすでにインポートされています。"
 
 #: core/messageparser.cpp:47
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
-msgstr ""
+msgstr "不明"
 
 #: core/messageparser.cpp:52
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
-msgstr ""
+msgstr "間違った暗号プラグイン。"
 
 #: core/messagepart.cpp:860
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr ""
+msgstr "適切な暗号プラグインが見つかりませんでした。"
 
 #: core/messagepart.cpp:862
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr ""
+msgstr "暗号プラグイン\"%1\"はメッセージを復号できません。"
 
 #: core/messagepart.cpp:864
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr ""
+msgstr "暗号プラグイン\"%1\"はメッセージを復号できませんでした。"
 
 #: core/messagepart.cpp:865
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "エラー: %1"
 
 #: core/partmodel.cpp:573 core/partmodel.cpp:575
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr ""
+msgstr "あなたはこのメッセージを復号できません。"
 
 #: core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] ""
+msgstr[0] "このメッセージは以下の受け取り手のために暗号化されています:"
 
 #: core/partmodel.cpp:595
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
-msgstr ""
+msgstr "間違ったパスフレーズ。"
 
 #: core/urlhandler.cpp:46
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
+"証明書マネージャを開始できませんでした。インストレーションを確認ください。"
 
 #: core/utils.cpp:45
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
-msgstr ""
+msgstr "不明な鍵"
 
 #: core/utils.cpp:59
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
-msgstr ""
+msgstr "メッセージビューア"
 
 #: quick/qml/MailViewer.qml:77
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
-msgstr ""
+msgstr "Subject:"
 
 #: quick/qml/MailViewer.qml:98
 #, kde-format
 msgctxt "@label"
 msgid "From:"
-msgstr ""
+msgstr "From:"
 
 #: quick/qml/MailViewer.qml:114
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
-msgstr ""
+msgstr "Sender:"
 
 #: quick/qml/MailViewer.qml:130
 #, kde-format
 msgctxt "@label"
 msgid "To:"
-msgstr ""
+msgstr "To:"
 
 #: quick/qml/MailViewer.qml:146
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr ""
+msgstr "CC:"
 
 #: quick/qml/MailViewer.qml:162
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
-msgstr ""
+msgstr "BCC:"
 
 #: quick/qml/MailViewer.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
-msgstr ""
+msgstr "添付ファイルを保存"
 
 #: quick/qml/MailViewer.qml:246
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
-msgstr ""
+msgstr "添付ファイルを名前を付けて保存"
 
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "証明書をインポート"
 
 #: quick/qml/private/Banner.qml:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "閉じる"
 
 #: quick/qml/private/ErrorPart.qml:27
 #, kde-format
 msgid "An error occurred: %1"
-msgstr ""
+msgstr "エラーが発生しました: %1"
 
 #: quick/qml/private/ICalPart.qml:27
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr ""
+msgstr "このメールにはインビテーションがあります"
 
 #: quick/qml/private/MailPart.qml:42
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
-msgstr ""
+msgstr "%1 により %2 に送信"
 
 #: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
+"このメッセージは暗号化されていますが、あなたは対応する秘密鍵を持っていませ"
+"ん。"
 
 #: quick/qml/private/MailPartModel.qml:97
 #, kde-format
 msgid "This message is encrypted for: %1"
-msgstr ""
+msgstr "このメッセージはこちらのために暗号化: %1"
 
 #: widgets/messagecontainerwidget.cpp:141
 #, kde-format
@@ -254,182 +257,184 @@ msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr ""
+"このメッセージは VS-NfD 準拠で暗号化されていますが、あなたは対応する秘密鍵を"
+"持っていません。"
 
 #: widgets/messagecontainerwidget.cpp:148
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr ""
+msgstr "このメッセージは VS-NfD 準拠で暗号化されています。"
 
 #: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is encrypted."
-msgstr ""
+msgstr "このメッセージは暗号化されています。"
 
 #: widgets/messagecontainerwidget.cpp:159
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
-msgstr ""
+msgstr "このメッセージは以下の受け取り手のために暗号化されています:"
 
 #: widgets/messageviewer.cpp:68
 #, kde-format
 msgid "&Save Attachment As…"
-msgstr ""
+msgstr "添付ファイルを名前を付けて保存(&S)…"
 
 #: widgets/messageviewer.cpp:73
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr ""
+msgstr "開く"
 
 #: widgets/messageviewer.cpp:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr ""
+msgstr "公開鍵をインポート"
 
 #: widgets/messageviewer.cpp:107
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
-msgstr ""
+msgstr "名前なし"
 
 #: widgets/messageviewer.cpp:110
 #, kde-format
 msgid "Save Attachment As"
-msgstr ""
+msgstr "添付ファイルを名前を付けて保存"
 
 #: widgets/messageviewer.cpp:271
 #, kde-format
 msgid "Invitation"
-msgstr ""
+msgstr "インビテーション"
 
 #: widgets/messageviewer.cpp:274
 #, kde-format
 msgid "&Summary:"
-msgstr ""
+msgstr "サマリ(&S):"
 
 #: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&Organizer:"
-msgstr ""
+msgstr "組織(&O):"
 
 #: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Location:"
-msgstr ""
+msgstr "場所(&L):"
 
 #: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Start date:"
-msgstr ""
+msgstr "開始日(&S):"
 
 #: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "&End date:"
-msgstr ""
+msgstr "終了日(&E):"
 
 #: widgets/messageviewer.cpp:284
 #, kde-format
 msgid "&Details:"
-msgstr ""
+msgstr "詳細(&D):"
 
 #: widgets/messageviewer.cpp:304
 #, kde-format
 msgid "Encapsulated email"
-msgstr ""
+msgstr "カプセル化メール"
 
 #: widgets/messageviewer.cpp:312
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "From:"
 
 #: widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Date:"
-msgstr ""
+msgstr "Date:"
 
 #: widgets/messageviewer.cpp:390
 #, kde-format
 msgid "&Subject:"
-msgstr ""
+msgstr "&Subject:"
 
 #: widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&From:"
-msgstr ""
+msgstr "&From:"
 
 #: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&Sender:"
-msgstr ""
+msgstr "&Sender:"
 
 #: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&To:"
-msgstr ""
+msgstr "&To:"
 
 #: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&CC:"
-msgstr ""
+msgstr "&CC:"
 
 #: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&BCC:"
-msgstr ""
+msgstr "&BCC:"
 
 #: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&Date:"
-msgstr ""
+msgstr "日付(&D):"
 
 #: widgets/messageviewerdialog.cpp:79 widgets/messageviewerwindow.cpp:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr ""
+msgstr "ファイル(&F)"
 
 #: widgets/messageviewerdialog.cpp:81 widgets/messageviewerwindow.cpp:84
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
-msgstr ""
+msgstr "保存(&S)"
 
 #: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:90
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr ""
+msgstr "復号を保存"
 
 #: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
-msgstr ""
+msgstr "印刷プレビュー"
 
 #: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
-msgstr ""
+msgstr "印刷(&P)"
 
 #: widgets/messageviewerdialog.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
-msgstr ""
+msgstr "ナビゲーション(&N)"
 
 #: widgets/messageviewerdialog.cpp:107 widgets/messageviewerwindow.cpp:139
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
-msgstr ""
+msgstr "前のメッセージ"
 
 #: widgets/messageviewerdialog.cpp:111 widgets/messageviewerwindow.cpp:143
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
-msgstr ""
+msgstr "次のメッセージ"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
 #: widgets/messageviewerdialog.cpp:161
@@ -442,77 +447,77 @@ msgstr ""
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "暗号化 S/MIME ファイル (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:189
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "ファイルを保存"
 
 #: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:195
 #, kde-format
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "ファイル%1が作成できませんでした。"
 
 #: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:165
 #: widgets/messageviewerwindow.cpp:195 widgets/messageviewerwindow.cpp:212
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
-msgstr ""
+msgstr "メッセージの保存エラー"
 
 #: widgets/messageviewerdialog.cpp:159 widgets/messageviewerwindow.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
-msgstr ""
+msgstr "復号したファイルを保存する"
 
 #: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:212
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr ""
+msgstr "ファイル%1が作成できませんでした。"
 
 #: widgets/messageviewerdialog.cpp:184 widgets/messageviewerwindow.cpp:231
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
-msgstr ""
+msgstr "印刷"
 
 #: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
-msgstr ""
+msgstr "印刷プレビュー"
 
 #: widgets/messageviewerdialog.cpp:248
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
-msgstr ""
+msgstr "ファイルの読み込みができません"
 
 #: widgets/messageviewerwindow.cpp:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr ""
+msgstr "メッセージ(&M)"
 
 #: widgets/messageviewerwindow.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "ソースを見る"
 
 #: widgets/messageviewerwindow.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "固定幅フォントを使う"
 
 #: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
 #: widgets/messageviewerwindow.cpp:208
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr ""
+msgstr "メールファイル (*.eml *.mbox *.mime)"
