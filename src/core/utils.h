@@ -7,10 +7,11 @@
 
 #include <KMime/Content>
 
+#include <QGpgME/DN>
 #include <QGpgME/Protocol>
+
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
-#include <libkleo/dn.h>
 
 #include <vector>
 
@@ -25,5 +26,5 @@ namespace MimeTreeParser
 decryptRecipientsToHtml(const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &recipients, const QGpgME::Protocol *cryptoProto);
 
 /// Convert a DN to a more compact display name (usually just Common name + organization name)
-[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QString dnToDisplayName(const Kleo::DN &dn);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QString dnToDisplayName(const QGpgME::DN &dn);
 }

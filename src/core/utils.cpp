@@ -6,6 +6,8 @@
 #include "utils.h"
 
 #include <KLocalizedString>
+
+#include <Libkleo/DnAttributes>
 #include <Libkleo/Formatting>
 
 using namespace MimeTreeParser;
@@ -31,7 +33,8 @@ QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgM
         if (key.keyID()) {
             QString displayName = QString::fromLatin1(key.userID(0).id());
             if (cryptoProto == QGpgME::smime()) {
-                Kleo::DN dn(displayName);
+                QGpgME::DN dn(displayName);
+                dn.setAttributeOrder(Kleo::DNAttributes::order());
                 displayName = dnToDisplayName(dn);
             }
             displayName = displayName.toHtmlEscaped();
@@ -49,7 +52,7 @@ QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgM
     return text;
 }
 
-QString MimeTreeParser::dnToDisplayName(const Kleo::DN &dn)
+QString MimeTreeParser::dnToDisplayName(const QGpgME::DN &dn)
 {
     QString displayName = dn[QStringLiteral("CN")];
     if (displayName.isEmpty()) {
