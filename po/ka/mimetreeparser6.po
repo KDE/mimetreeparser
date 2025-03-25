@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-25 00:42+0000\n"
 "PO-Revision-Date: 2025-03-08 06:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -150,13 +150,13 @@ msgstr "არასწორი საიდუმლო ფრაზა."
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "სერტიფიკატების მმართველის გაშვების შეცდომა. გადაამოწმეთ ფაილები."
 
-#: core/utils.cpp:45
+#: core/utils.cpp:48
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "უცნობი გასაღები"
 
-#: core/utils.cpp:59
+#: core/utils.cpp:62
 #, kde-format
 msgctxt "Separator"
 msgid " - "

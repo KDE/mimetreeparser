@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-25 00:42+0000\n"
 "PO-Revision-Date: 2024-12-24 18:07+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -146,13 +146,13 @@ msgstr "암구호가 잘못되었습니다."
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확인하십시오."
 
-#: core/utils.cpp:45
+#: core/utils.cpp:48
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "알 수 없는 키"
 
-#: core/utils.cpp:59
+#: core/utils.cpp:62
 #, kde-format
 msgctxt "Separator"
 msgid " - "

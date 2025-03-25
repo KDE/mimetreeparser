@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-25 00:42+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -151,13 +151,13 @@ msgstr "गलत् गुप्तवाक्यम्।"
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "प्रमाणपत्रप्रबन्धकं आरभुं न शक्तवान्। कृपया स्वस्य संस्थापनं पश्यन्तु।"
 
-#: core/utils.cpp:45
+#: core/utils.cpp:48
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "अज्ञात कील"
 
-#: core/utils.cpp:59
+#: core/utils.cpp:62
 #, kde-format
 msgctxt "Separator"
 msgid " - "

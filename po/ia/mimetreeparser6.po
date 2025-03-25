@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-25 00:42+0000\n"
 "PO-Revision-Date: 2025-03-11 10:25+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -152,13 +152,13 @@ msgstr ""
 "Il non pote initiar gestion de certificato; pro favor tu verifica tu "
 "installation."
 
-#: core/utils.cpp:45
+#: core/utils.cpp:48
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Clave incognite"
 
-#: core/utils.cpp:59
+#: core/utils.cpp:62
 #, kde-format
 msgctxt "Separator"
 msgid " - "
