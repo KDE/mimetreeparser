@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the mimetreeparser package.
 #
 # SPDX-FileCopyrightText: 2023, 2024 Alexander Yavorsky <kekcuha@gmail.com>
-# SPDX-FileCopyrightText: 2024 Olesya Gerasimenko <translation-team@basealt.ru>
+# SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-25 00:42+0000\n"
-"PO-Revision-Date: 2024-12-04 10:28+0300\n"
+"PO-Revision-Date: 2025-04-03 10:09+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -452,12 +452,10 @@ msgstr "Следующее письмо"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
 #: widgets/messageviewerdialog.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox *.mime)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "Электронные письма (*.eml *.mbox *.mime)"
+msgstr "Файл EML (*.eml);;Файл MBOX (*.mbox);;Файл MIME (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
 #, kde-format
@@ -514,24 +512,22 @@ msgid "Unable to read file"
 msgstr "Не удалось прочитать файл"
 
 #: widgets/messageviewerwindow.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Следующее письмо"
+msgstr "&Письмо"
 
 #: widgets/messageviewerwindow.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Исходный код"
 
 #: widgets/messageviewerwindow.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Моноширинный шрифт"
 
 #: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
 #: widgets/messageviewerwindow.cpp:208
