@@ -186,11 +186,7 @@ QString MessageParser::sender() const
         if (!header) {
             return {};
         }
-#if KMIME_VERSION >= QT_VERSION_CHECK(6, 3, 40)
         return mailboxesToHtml({header->mailbox()});
-#else
-        return mailboxesToHtml(header->mailboxes());
-#endif
     }
 
     return QString();
