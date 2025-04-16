@@ -8,7 +8,7 @@
 #include <QProcess>
 #include <QTest>
 
-QByteArray readMailFromFile(const QString &mailFile)
+static QByteArray readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
@@ -16,7 +16,7 @@ QByteArray readMailFromFile(const QString &mailFile)
     return file.readAll();
 }
 
-void killAgent(const QString &dir)
+static void killAgent(const QString &dir)
 {
     QProcess proc;
     proc.setProgram(QStringLiteral("gpg-connect-agent"));

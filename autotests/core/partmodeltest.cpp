@@ -10,7 +10,7 @@
 #include "messageparser.h"
 #include "partmodel.h"
 
-KMime::Message::Ptr readMailFromFile(const QString &mailFile)
+static KMime::Message::Ptr readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);

@@ -20,7 +20,7 @@ private Q_SLOTS:
 
 QTEST_MAIN(AttachmentTest)
 
-QByteArray readMailFromFile(const QString &mailFile)
+static QByteArray readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
