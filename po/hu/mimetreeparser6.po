@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
+# SPDX-FileCopyrightText: 2024, 2025 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-08 00:44+0000\n"
-"PO-Revision-Date: 2024-09-16 21:38+0200\n"
+"PO-Revision-Date: 2025-04-21 22:10+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -443,12 +443,10 @@ msgstr "Következő üzenet"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
 #: widgets/messageviewerdialog.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox *.mime)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "E-mail fájlok (*.eml *.mbox *.mime)"
+msgstr "E-mail fájlok (*.eml);;MBOX-fájlok (*.mbox);;MIME-fájlok (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
 #, kde-format
@@ -505,24 +503,22 @@ msgid "Unable to read file"
 msgstr "Nem lehet olvasni a fájlt"
 
 #: widgets/messageviewerwindow.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr "Következő üzenet"
+msgstr "Üze&net"
 
 #: widgets/messageviewerwindow.cpp:112
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Forrás megtekintése"
 
 #: widgets/messageviewerwindow.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Rögzített betűtípus használata"
 
 #: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
 #: widgets/messageviewerwindow.cpp:208
