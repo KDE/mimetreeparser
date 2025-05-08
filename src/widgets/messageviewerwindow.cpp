@@ -181,7 +181,7 @@ void MessageViewerWindow::Private::save(QWidget *parent)
         }
     } else {
         extension = QStringLiteral(".eml");
-        alternatives = i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)");
+        alternatives = i18nc("Accepted files in a file dialog. You only need to translate 'file'", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
     }
 
     const QString location =
