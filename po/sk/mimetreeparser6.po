@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:42+0000\n"
+"POT-Creation-Date: 2025-05-09 00:42+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -448,8 +448,7 @@ msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Nasledujúca správa"
 
-#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161
+#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:161
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
@@ -459,6 +458,12 @@ msgstr ""
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:137 widgets/messageviewerwindow.cpp:184
+#, kde-format
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr ""
 
 #: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:189
@@ -532,8 +537,7 @@ msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr ""
 
-#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
-#: widgets/messageviewerwindow.cpp:208
+#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:208
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:42+0000\n"
+"POT-Creation-Date: 2025-05-09 00:42+0000\n"
 "PO-Revision-Date: 2025-03-09 00:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -444,8 +444,7 @@ msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Mensaje siguiente"
 
-#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161
+#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:161
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
@@ -456,6 +455,14 @@ msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "Archivos cifrados S/MIME (*.p7m)"
+
+#: widgets/messageviewerdialog.cpp:137 widgets/messageviewerwindow.cpp:184
+#, fuzzy, kde-format
+#| msgctxt "File dialog accepted files"
+#| msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:189
 #, kde-format
@@ -523,8 +530,7 @@ msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Usar tipo de letra de ancho fijo"
 
-#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:184
-#: widgets/messageviewerwindow.cpp:208
+#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:208
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
