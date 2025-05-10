@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-09 00:42+0000\n"
-"PO-Revision-Date: 2025-03-08 10:29+0100\n"
+"PO-Revision-Date: 2025-05-09 10:58+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -458,9 +458,7 @@ msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "Fitxers S/MIME encriptats (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:137 widgets/messageviewerwindow.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
