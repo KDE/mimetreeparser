@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-09 00:42+0000\n"
-"PO-Revision-Date: 2025-03-08 22:02+0400\n"
+"PO-Revision-Date: 2025-05-10 13:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -463,9 +463,7 @@ msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "ملفات S/MIME المشفرة (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:137 widgets/messageviewerwindow.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "ملف EML (*.eml); ملف MBOX (*.mbox); ملف MIME (*.mime)"
