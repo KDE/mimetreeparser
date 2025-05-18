@@ -448,8 +448,6 @@ msgstr "已加密的 S/MIME 檔案 (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:137 widgets/messageviewerwindow.cpp:184
 #, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML 檔案 (*.eml);;MBOX 檔案 (*.mbox);;MIME 檔案 (*.mime)"
