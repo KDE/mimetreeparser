@@ -1,23 +1,23 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
 # SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-09 00:42+0000\n"
-"PO-Revision-Date: 2025-04-03 10:09+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2025-05-22 18:14+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -463,9 +463,7 @@ msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "Зашифрованные файлы S/MIME (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:137 widgets/messageviewerwindow.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "Файл EML (*.eml);;Файл MBOX (*.mbox);;Файл MIME (*.mime)"
