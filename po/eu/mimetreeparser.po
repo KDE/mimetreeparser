@@ -1,16 +1,16 @@
-# Translation for mimetreeparser6.po to Euskara/Basque (eu).
-# Copyright (C) 2024 This file is copyright:
+# Translation for mimetreeparser.po to Euskara/Basque (eu).
+# Copyright (C) 2023-2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# SPDX-FileCopyrightText: 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 00:42+0000\n"
-"PO-Revision-Date: 2024-02-08 22:37+0100\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"PO-Revision-Date: 2024-12-22 09:31+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,54 +18,511 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.12.0\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:202
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Izena"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Neurria"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Zifratuta"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Sinatuta"
 
-#: core/attachmentmodel.cpp:302
+#: core/attachmentmodel.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Eranskina gordetzea huts egin du."
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:324
 #, kde-format
 msgid "attachment"
 msgstr "eranskina"
 
-#: core/attachmentmodel.cpp:332
+#: core/attachmentmodel.cpp:331
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Eranskina irekitzeko idaztea huts egin du."
 
-#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
+#: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Eranskina irekitzea huts egin du."
+
+#: core/attachmentmodel.cpp:381
+#, kde-format
+msgctxt "@info"
+msgid "No certificates were found in this attachment"
+msgstr "Eranskin honetan ez da ziurtagiririk aurkitu"
+
+#: core/attachmentmodel.cpp:384
+#, kde-format
+msgctxt "@info"
+msgid "one certificate imported"
+msgid_plural "%1 certificates imported"
+msgstr[0] "ziurtagiri bat inportatu da"
+msgstr[1] "%1 ziurtagiri inportatu dira"
+
+#: core/attachmentmodel.cpp:389
+#, kde-format
+msgctxt "@info"
+msgid "one certificate was already imported"
+msgid_plural "%1 certificates were already imported"
+msgstr[0] "ziurtagiri bat jada inportatuta zegoen"
+msgstr[1] "%1 ziurtagiri jada inportatuta zeuden"
+
+#: core/messageparser.cpp:47
+#, kde-format
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknown"
+msgstr "Ezezaguna"
+
+#: core/messageparser.cpp:52
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong Crypto Plug-In."
+msgstr "Kriptografia-plugin okerra."
+
+#: core/messagepart.cpp:860
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Ez da kriptografia-plugin egokirik aurkitu."
+
+#: core/messagepart.cpp:862
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "\"%1\" kriptografia-pluginak ezin ditu mezuak deszifratu."
+
+#: core/messagepart.cpp:864
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "\"%1\" kriptografia-pluginak ezin du daturik deszifratu."
+
+#: core/messagepart.cpp:865
+#, kde-format
+msgid "Error: %1"
+msgstr "Errorea: %1"
+
+#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#, kde-format
+msgctxt "@info:status"
+msgid "You cannot decrypt this message."
+msgstr "Ezin duzu mezu hau deszifratu."
+
+#: core/partmodel.cpp:581
+#, kde-format
+msgctxt "@info:status"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] "Mezua ondoko gakorako zifratuta dago:"
+msgstr[1] "Mezua ondoko gakoetarako zifratuta dago:"
+
+#: core/partmodel.cpp:595
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr "Pasaesaldi okerra."
+
+#: core/urlhandler.cpp:46
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Ezin izan du ziurtagiri-kudeatzailea abiatu. Mesedez, ikuskatu zure "
+"instalazioa."
+
+#: core/utils.cpp:45
+#, kde-format
+msgctxt "@info"
+msgid "Unknown Key"
+msgstr "Gako ezezaguna"
+
+#: core/utils.cpp:59
+#, kde-format
+msgctxt "Separator"
+msgid " - "
+msgstr " - "
+
+#: quick/qml/MailViewer.qml:40
+#, kde-format
+msgctxt "@title:window"
+msgid "Message viewer"
+msgstr "Mezu-erakuslea"
+
+#: quick/qml/MailViewer.qml:77
+#, kde-format
+msgctxt "@label"
+msgid "Subject:"
+msgstr "Gaia:"
+
+#: quick/qml/MailViewer.qml:98
+#, kde-format
+msgctxt "@label"
+msgid "From:"
+msgstr "Nork:"
+
+#: quick/qml/MailViewer.qml:114
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr "Bidaltzailea:"
+
+#: quick/qml/MailViewer.qml:130
+#, kde-format
+msgctxt "@label"
+msgid "To:"
+msgstr "Nori:"
+
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "CC:"
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "BCC:"
+
+#: quick/qml/MailViewer.qml:223
+#, kde-format
+msgctxt "@action:button"
+msgid "Save attachment"
+msgstr "Gorde eranskina"
+
+#: quick/qml/MailViewer.qml:246
+#, kde-format
+msgctxt "@window:title"
+msgid "Save Attachment As"
+msgstr "Gorde eranskina honela"
+
+#: quick/qml/private/AttachmentDelegate.qml:56
+#, kde-format
+msgctxt "@action:button"
+msgid "Import certificate"
+msgstr "Inportatu ziurtagiria"
+
+#: quick/qml/private/Banner.qml:188
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Itxi"
+
+#: quick/qml/private/ErrorPart.qml:27
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "Errore bat gertatu da: %1"
+
+#: quick/qml/private/ICalPart.qml:27
+#, kde-format
+msgid "This mail contains an invitation"
+msgstr "Posta honek gonbidapen bat du"
+
+#: quick/qml/private/MailPart.qml:42
+#, kde-format
+msgctxt "@info"
+msgid "sent by %1 on %2"
+msgstr "%1(e)k %2(e)an bidalia"
+
+#: quick/qml/private/MailPartModel.qml:97
+#: widgets/messagecontainerwidget.cpp:143
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr "Mezu hau zifratuta dago baina ez duzu dagokion gako sekretua."
+
+#: quick/qml/private/MailPartModel.qml:97
+#, kde-format
+msgid "This message is encrypted for: %1"
+msgstr "Mezu hau honetarako zifratuta dago: %1"
+
+#: widgets/messagecontainerwidget.cpp:141
+#, kde-format
+msgid ""
+"This message is VS-NfD compliant encrypted but you don't have a matching "
+"secret key."
+msgstr ""
+"Mezu hau «VS-NfD»rekiko manakor zifratuta dago baina ez duzu dagokion gako "
+"sekretua."
+
+#: widgets/messagecontainerwidget.cpp:148
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Mezu hau «VS-NfD»rekiko manakor zifratuta dago."
+
+#: widgets/messagecontainerwidget.cpp:150
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Mezu hau zifratuta dago."
+
+#: widgets/messagecontainerwidget.cpp:159
+#, kde-format
+msgid "The message is encrypted for the following recipients:"
+msgstr "Mezua ondoko gakoetarako zifratuta dago:"
+
+#: widgets/messageviewer.cpp:68
+#, kde-format
+msgid "&Save Attachment As…"
+msgstr "&Gorde eranskina honela..."
+
+#: widgets/messageviewer.cpp:73
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Ireki"
+
+#: widgets/messageviewer.cpp:78
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import public key"
+msgstr "Inportatu gako publikoa"
+
+#: widgets/messageviewer.cpp:107
+#, kde-format
+msgctxt "Fallback when file has no name"
+msgid "unnamed"
+msgstr "izengabea"
+
+#: widgets/messageviewer.cpp:110
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Gorde eranskina honela"
+
+#: widgets/messageviewer.cpp:271
+#, kde-format
+msgid "Invitation"
+msgstr "Gonbidapena"
+
+#: widgets/messageviewer.cpp:274
+#, kde-format
+msgid "&Summary:"
+msgstr "&Laburpena:"
+
+#: widgets/messageviewer.cpp:275
+#, kde-format
+msgid "&Organizer:"
+msgstr "&Antolatzailea:"
+
+#: widgets/messageviewer.cpp:277
+#, kde-format
+msgid "&Location:"
+msgstr "&Kokalekua:"
+
+#: widgets/messageviewer.cpp:279
+#, kde-format
+msgid "&Start date:"
+msgstr "&Hasiera-data:"
+
+#: widgets/messageviewer.cpp:281
+#, kde-format
+msgid "&End date:"
+msgstr "&Amaiera-data:"
+
+#: widgets/messageviewer.cpp:284
+#, kde-format
+msgid "&Details:"
+msgstr "&Xehetasunak:"
+
+#: widgets/messageviewer.cpp:304
+#, kde-format
+msgid "Encapsulated email"
+msgstr "Kapsulatutako e-posta"
+
+#: widgets/messageviewer.cpp:312
+#, kde-format
+msgid "From:"
+msgstr "Nork:"
+
+#: widgets/messageviewer.cpp:313
+#, kde-format
+msgid "Date:"
+msgstr "Data:"
+
+#: widgets/messageviewer.cpp:390
+#, kde-format
+msgid "&Subject:"
+msgstr "&Gaia:"
+
+#: widgets/messageviewer.cpp:393
+#, kde-format
+msgid "&From:"
+msgstr "&Nork:"
+
+#: widgets/messageviewer.cpp:396
+#, kde-format
+msgid "&Sender:"
+msgstr "&Bidaltzailea:"
+
+#: widgets/messageviewer.cpp:399
+#, kde-format
+msgid "&To:"
+msgstr "Nor&i:"
+
+#: widgets/messageviewer.cpp:402
+#, kde-format
+msgid "&CC:"
+msgstr "&CC:"
+
+#: widgets/messageviewer.cpp:405
+#, kde-format
+msgid "&BCC:"
+msgstr "&BCC:"
+
+#: widgets/messageviewer.cpp:408
+#, kde-format
+msgid "&Date:"
+msgstr "&Data:"
+
+#: widgets/messageviewerdialog.cpp:79 widgets/messageviewerwindow.cpp:82
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&Fitxategia"
+
+#: widgets/messageviewerdialog.cpp:81 widgets/messageviewerwindow.cpp:84
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr "&Gorde"
+
+#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:90
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr "Gorde deszifratuta"
+
+#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:96
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr "Inprimatzeko aurrebista"
+
+#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:102
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr "In&primatu"
+
+#: widgets/messageviewerdialog.cpp:106
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&Nabigatzea"
+
+#: widgets/messageviewerdialog.cpp:107 widgets/messageviewerwindow.cpp:139
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr "Aurreko mezua"
+
+#: widgets/messageviewerdialog.cpp:111 widgets/messageviewerwindow.cpp:143
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr "Hurrengo mezua"
+
+#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
+#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
+#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "E-posta fitxategiak (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "Zifratutako S/MIME fitxategiak (*.p7m)"
+
+#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:189
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Gorde fitxategia"
+
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:195
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Ezin izan du %1 fitxategi sortu."
+
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:165
+#: widgets/messageviewerwindow.cpp:195 widgets/messageviewerwindow.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "Errorea mezua gordetzean"
+
+#: widgets/messageviewerdialog.cpp:159 widgets/messageviewerwindow.cpp:206
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "Gorde deszifratutako fitxategia"
+
+#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:212
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "Ezin izan da %1 fitxategi sortu."
+
+#: widgets/messageviewerdialog.cpp:184 widgets/messageviewerwindow.cpp:231
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "Inprimatu"
+
+#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "Inprimatze aurreikuspegia"
+
+#: widgets/messageviewerdialog.cpp:248
+#, kde-format
+msgctxt "@info"
+msgid "Unable to read file"
+msgstr "Ezin izan du fitxategia irakurri"
+
+#: widgets/messageviewerwindow.cpp:109
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Message"
+msgstr "&Mezua"
+
+#: widgets/messageviewerwindow.cpp:112
+#, kde-format
+msgctxt "@action:button"
+msgid "View Source"
+msgstr "Ikusi sorburua"
+
+#: widgets/messageviewerwindow.cpp:132
+#, kde-format
+msgctxt "@action:button"
+msgid "Use Fixed Font"
+msgstr "Erabili zabalera finkoko letra-tipoa"
 
 #: core/attachmentmodel.cpp:382
 #, kde-format
@@ -88,44 +545,6 @@ msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] "gako bat jada inportatuta zegoen"
 msgstr[1] "%1 gako jada inportatuta zeuden"
-
-#: core/messageparser.cpp:48
-#, kde-format
-msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-msgid "Unknown"
-msgstr "Ezezaguna"
-
-#: core/messageparser.cpp:53
-#, kde-format
-msgctxt "list separator"
-msgid ", "
-msgstr ", "
-
-#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong Crypto Plug-In."
-msgstr "Kriptografia-plugin okerra."
-
-#: core/messagepart.cpp:988
-#, kde-format
-msgid "No appropriate crypto plug-in was found."
-msgstr "Ez da kriptografia-plugin egokirik aurkitu."
-
-#: core/messagepart.cpp:990
-#, kde-format
-msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "\"%1\" kriptografia-pluginak ezin ditu mezuak deszifratu."
-
-#: core/messagepart.cpp:992
-#, kde-format
-msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "\"%1\" kriptografia-pluginak ezin du daturik deszifratu."
-
-#: core/messagepart.cpp:993
-#, kde-format
-msgid "Error: %1"
-msgstr "Errorea: %1"
 
 #: core/partmodel.cpp:514
 #, kde-format
@@ -150,105 +569,17 @@ msgid_plural "The message is encrypted for the following certificates:"
 msgstr[0] "Mezua ondoko ziurtagirirako zifratuta dago:"
 msgstr[1] "Mezua ondoko ziurtagirietarako zifratuta dago:"
 
-#: core/partmodel.cpp:537
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Pasaesaldi okerra."
-
 #: core/utils.cpp:46
 #, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "Gako ezezaguna"
 
-#: core/utils.cpp:60
-#, kde-format
-msgctxt "Separator"
-msgid " - "
-msgstr " - "
-
-#: quick/qml/MailViewer.qml:41
-#, kde-format
-msgctxt "@title:window"
-msgid "Message viewer"
-msgstr "Mezu-erakuslea"
-
-#: quick/qml/MailViewer.qml:78
-#, kde-format
-msgctxt "@label"
-msgid "Subject:"
-msgstr "Gaia:"
-
-#: quick/qml/MailViewer.qml:99
-#, kde-format
-msgctxt "@label"
-msgid "From:"
-msgstr "Nork:"
-
-#: quick/qml/MailViewer.qml:115
-#, kde-format
-msgctxt "@label"
-msgid "Sender:"
-msgstr "Bidaltzailea:"
-
-#: quick/qml/MailViewer.qml:131
-#, kde-format
-msgctxt "@label"
-msgid "To:"
-msgstr "Nori:"
-
-#: quick/qml/MailViewer.qml:147
-#, kde-format
-msgctxt "@label"
-msgid "CC:"
-msgstr "CC:"
-
-#: quick/qml/MailViewer.qml:163
-#, kde-format
-msgctxt "@label"
-msgid "BCC:"
-msgstr "BCC:"
-
-#: quick/qml/MailViewer.qml:220
-#, kde-format
-msgctxt "@action:button"
-msgid "Save attachment"
-msgstr "Gorde eranskina"
-
-#: quick/qml/MailViewer.qml:243
-#, kde-format
-msgctxt "@window:title"
-msgid "Save Attachment As"
-msgstr "Gorde eranskina honela"
-
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import key"
 msgstr "Inportatu gakoa"
-
-#: quick/qml/private/Banner.qml:188
-#, kde-format
-msgctxt "@action:button"
-msgid "Close"
-msgstr "Itxi"
-
-#: quick/qml/private/ErrorPart.qml:27
-#, kde-format
-msgid "An error occurred: %1"
-msgstr "Errore bat gertatu da: %1"
-
-#: quick/qml/private/ICalPart.qml:27
-#, kde-format
-msgid "This mail contains an invitation"
-msgstr "Posta honek gonbidapen bat du"
-
-#: quick/qml/private/MailPart.qml:41
-#, kde-format
-msgctxt "@info"
-msgid "sent by %1 on %2"
-msgstr "%1(e)k %2(e)an bidalia"
 
 #: quick/qml/private/MailPartModel.qml:55
 #, kde-format
@@ -390,16 +721,6 @@ msgid ""
 msgstr ""
 "Mezu hau «VS-NfD»rekiko manakor zifratuta dago baina ez dugu dagokion gakoa."
 
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Mezu hau «VS-NfD»rekiko manakor zifratuta dago."
-
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Mezu hau zifratuta dago."
-
 #: widgets/messagecontainerwidget.cpp:223
 #, kde-format
 msgid "The message is encrypted for the following keys:"
@@ -410,214 +731,22 @@ msgstr "Mezua ondoko gakoetarako zifratuta dago:"
 msgid "&Save Attachment As..."
 msgstr "&Gorde eranskina honela..."
 
-#: widgets/messageviewer.cpp:72
-#, kde-format
-msgctxt "to open"
-msgid "Open"
-msgstr "Ireki"
-
-#: widgets/messageviewer.cpp:77
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Import public key"
-msgstr "Inportatu gako publikoa"
-
-#: widgets/messageviewer.cpp:106
-#, kde-format
-msgctxt "Fallback when file has no name"
-msgid "unnamed"
-msgstr "izengabea"
-
-#: widgets/messageviewer.cpp:109
-#, kde-format
-msgid "Save Attachment As"
-msgstr "Gorde eranskina honela"
-
-#: widgets/messageviewer.cpp:265
-#, kde-format
-msgid "Invitation"
-msgstr "Gonbidapena"
-
-#: widgets/messageviewer.cpp:268
-#, kde-format
-msgid "&Summary:"
-msgstr "&Laburpena:"
-
-#: widgets/messageviewer.cpp:269
-#, kde-format
-msgid "&Organizer:"
-msgstr "&Antolatzailea:"
-
-#: widgets/messageviewer.cpp:271
-#, kde-format
-msgid "&Location:"
-msgstr "&Kokalekua:"
-
-#: widgets/messageviewer.cpp:273
-#, kde-format
-msgid "&Start date:"
-msgstr "&Hasierako data:"
-
-#: widgets/messageviewer.cpp:275
-#, kde-format
-msgid "&End date:"
-msgstr "&Amaierako data:"
-
-#: widgets/messageviewer.cpp:278
-#, kde-format
-msgid "&Details:"
-msgstr "&Xehetasunak:"
-
-#: widgets/messageviewer.cpp:299
-#, kde-format
-msgid "Encapsulated email"
-msgstr "Kapsulatutako e-posta"
-
-#: widgets/messageviewer.cpp:307
-#, kde-format
-msgid "From:"
-msgstr "Nork:"
-
-#: widgets/messageviewer.cpp:308
-#, kde-format
-msgid "Date:"
-msgstr "Data:"
-
-#: widgets/messageviewer.cpp:385
-#, kde-format
-msgid "&Subject:"
-msgstr "&Gaia:"
-
-#: widgets/messageviewer.cpp:388
-#, kde-format
-msgid "&From:"
-msgstr "&Nork:"
-
-#: widgets/messageviewer.cpp:391
-#, kde-format
-msgid "&Sender:"
-msgstr "&Bidaltzailea:"
-
-#: widgets/messageviewer.cpp:394
-#, kde-format
-msgid "&To:"
-msgstr "Nor&i:"
-
-#: widgets/messageviewer.cpp:397
-#, kde-format
-msgid "&CC:"
-msgstr "&CC:"
-
-#: widgets/messageviewer.cpp:400
-#, kde-format
-msgid "&BCC:"
-msgstr "&BCC:"
-
-#: widgets/messageviewer.cpp:403
-#, kde-format
-msgid "&Date:"
-msgstr "&Data:"
-
-#: widgets/messageviewerdialog.cpp:100
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "&Fitxategia"
-
-#: widgets/messageviewerdialog.cpp:102
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Save"
-msgstr "&Gorde"
-
-#: widgets/messageviewerdialog.cpp:108
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Save Decrypted"
-msgstr "Gorde deszifratuta"
-
-#: widgets/messageviewerdialog.cpp:114
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Print Preview"
-msgstr "Inprimatze aurreikuspegia"
-
-#: widgets/messageviewerdialog.cpp:120
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Print"
-msgstr "In&primatu"
-
-#: widgets/messageviewerdialog.cpp:127
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "&Nabigatzea"
-
-#: widgets/messageviewerdialog.cpp:128
-#, kde-format
-msgctxt "@action:button Previous email"
-msgid "Previous Message"
-msgstr "Aurreko mezua"
-
-#: widgets/messageviewerdialog.cpp:132
-#, kde-format
-msgctxt "@action:button Next email"
-msgid "Next Message"
-msgstr "Hurrengo mezua"
-
-#: widgets/messageviewerdialog.cpp:142
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "Gorde fitxategia"
-
 #: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
 msgstr "E-posta fitxategiak (*.eml *.mbox)"
 
-#: widgets/messageviewerdialog.cpp:148
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "Ezin izan du %1 fitxategi sortu."
-
 #: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgid "Error saving message"
 msgstr "Errorea mezua gordetzean"
-
-#: widgets/messageviewerdialog.cpp:158
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "Gorde deszifratutako fitxategia"
-
-#: widgets/messageviewerdialog.cpp:164
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "Ezin izan da %1 fitxategi sortu."
 
 #: widgets/messageviewerdialog.cpp:182 widgets/messageviewerdialog.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Inprimatu dokumentua"
-
-#: widgets/messageviewerdialog.cpp:237
-#, kde-format
-msgctxt "@info"
-msgid "Unable to read file"
-msgstr "Ezin izan du fitxategia irakurri"
-
-#: widgets/urlhandler.cpp:46
-#, kde-format
-msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
-"Ezin izan du ziurtagiri-kudeatzailea abiatu. Mesedez, ikuskatu zure "
-"instalazioa."
 
 #: widgets/urlhandler.cpp:48
 #, kde-format
