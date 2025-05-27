@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 11:00+0100\n"
+"POT-Creation-Date: 2025-05-27 10:22+0200\n"
 "PO-Revision-Date: 2024-12-24 18:07+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,593 +17,52 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "이름"
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "크기"
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "암호화됨"
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "서명됨"
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:301
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "첨부 파일을 저장할 수 없습니다."
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:324
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "첨부 파일"
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:331
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "첨부 파일에 기록하기 위해 열 수 없습니다."
 
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "첨부 파일을 열 수 없습니다."
-
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:381
-#, kde-format
-msgctxt "@info"
-msgid "No certificates were found in this attachment"
-msgstr "이 첨부 파일에서 인증서를 찾을 수 없음"
-
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:384
-#, kde-format
-msgctxt "@info"
-msgid "one certificate imported"
-msgid_plural "%1 certificates imported"
-msgstr[0] "인증서 %1개를 가져옴"
-
-#. +> trunk6 stable6
-#: core/attachmentmodel.cpp:389
-#, kde-format
-msgctxt "@info"
-msgid "one certificate was already imported"
-msgid_plural "%1 certificates were already imported"
-msgstr[0] "인증서 %1개는 이미 가져왔음"
-
-#. +> trunk6 stable6
-#: core/messageparser.cpp:47
-#, kde-format
-msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-msgid "Unknown"
-msgstr "알 수 없음"
-
-#. +> trunk6 stable6
-#: core/messageparser.cpp:52
-#, kde-format
-msgctxt "list separator"
-msgid ", "
-msgstr ", "
-
-#. +> trunk6 stable6
-#: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong Crypto Plug-In."
-msgstr "잘못된 암호화 플러그인입니다."
-
-#. +> trunk6 stable6
-#: core/messagepart.cpp:860
-#, kde-format
-msgid "No appropriate crypto plug-in was found."
-msgstr "적절한 암호화 플러그인을 찾을 수 없습니다."
-
-#. +> trunk6 stable6
-#: core/messagepart.cpp:862
-#, kde-format
-msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습니다."
-
-#. +> trunk6 stable6
-#: core/messagepart.cpp:864
-#, kde-format
-msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
-
-#. +> trunk6 stable6
-#: core/messagepart.cpp:865
-#, kde-format
-msgid "Error: %1"
-msgstr "오류: %1"
-
-#. +> trunk6 stable6
-#: core/partmodel.cpp:574 core/partmodel.cpp:576
-#, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "이 메시지를 복호화할 수 없습니다."
-
-#. +> trunk6 stable6
-#: core/partmodel.cpp:582
-#, kde-format
-msgctxt "@info:status"
-msgid "The message is encrypted for the following recipient:"
-msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "이 메시지는 다음 수신자로 암호화되어 있습니다:"
-
-#. +> trunk6 stable6
-#: core/partmodel.cpp:596
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "암구호가 잘못되었습니다."
-
-#. +> trunk6 stable6
-#: core/urlhandler.cpp:47
-#, kde-format
-msgid "Could not start certificate manager. Please check your installation."
-msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확인하십시오."
-
-#. +> trunk6 stable6
-#: core/utils.cpp:45
-#, kde-format
-msgctxt "@info"
-msgid "Unknown Key"
-msgstr "알 수 없는 키"
-
-#. +> trunk6 stable6
-#: core/utils.cpp:59
-#, kde-format
-msgctxt "Separator"
-msgid " - "
-msgstr " - "
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:40
-#, kde-format
-msgctxt "@title:window"
-msgid "Message viewer"
-msgstr "메시지 뷰어"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:77
-#, kde-format
-msgctxt "@label"
-msgid "Subject:"
-msgstr "제목:"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:98
-#, kde-format
-msgctxt "@label"
-msgid "From:"
-msgstr "보낸 사람:"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:114
-#, kde-format
-msgctxt "@label"
-msgid "Sender:"
-msgstr "전송한 사람:"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:130
-#, kde-format
-msgctxt "@label"
-msgid "To:"
-msgstr "받는 사람:"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:146
-#, kde-format
-msgctxt "@label"
-msgid "CC:"
-msgstr "참조:"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:162
-#, kde-format
-msgctxt "@label"
-msgid "BCC:"
-msgstr "숨은 참조:"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:219
-#, kde-format
-msgctxt "@action:button"
-msgid "Save attachment"
-msgstr "첨부 파일 저장"
-
-#. +> trunk6 stable6
-#: quick/qml/MailViewer.qml:242
-#, kde-format
-msgctxt "@window:title"
-msgid "Save Attachment As"
-msgstr "다른 이름으로 첨부 파일 저장"
-
-#. +> trunk6 stable6
-#: quick/qml/private/AttachmentDelegate.qml:56
-#, kde-format
-msgctxt "@action:button"
-msgid "Import certificate"
-msgstr "인증서 가져오기"
-
-#. +> trunk6 stable6
-#: quick/qml/private/Banner.qml:188
-#, kde-format
-msgctxt "@action:button"
-msgid "Close"
-msgstr "닫기"
-
-#. +> trunk6 stable6
-#: quick/qml/private/ErrorPart.qml:27
-#, kde-format
-msgid "An error occurred: %1"
-msgstr "오류 발생: %1"
-
-#. +> trunk6 stable6
-#: quick/qml/private/ICalPart.qml:27
-#, kde-format
-msgid "This mail contains an invitation"
-msgstr "이 메일에는 초대장이 첨부되어 있습니다"
-
-#. +> trunk6 stable6
-#: quick/qml/private/MailPart.qml:42
-#, kde-format
-msgctxt "@info"
-msgid "sent by %1 on %2"
-msgstr "%1 님이 %2에 보냄"
-
-#. +> trunk6 stable6
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:143
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "메시지가 암호화되어 있지만 일치하는 비밀 키가 없습니다."
-
-#. +> trunk6 stable6
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "이 메시지는 다음 수신자에게 암호화되어 있습니다: %1"
-
-#. +> trunk6 stable6
-#: widgets/messagecontainerwidget.cpp:141
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 일치하는 비밀 키가 없습"
-"니다."
-
-#. +> trunk6 stable6
-#: widgets/messagecontainerwidget.cpp:148
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었습니다."
-
-#. +> trunk6 stable6
-#: widgets/messagecontainerwidget.cpp:150
-#, kde-format
-msgid "This message is encrypted."
-msgstr "이 메시지는 암호화되어 있습니다."
-
-#. +> trunk6 stable6
-#: widgets/messagecontainerwidget.cpp:159
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "이 메시지는 다음 수신자로 암호화되어 있습니다:"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:68
-#, kde-format
-msgid "&Save Attachment As…"
-msgstr "다른 이름으로 첨부 파일 저장(&S)…"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:73
-#, kde-format
-msgctxt "to open"
-msgid "Open"
-msgstr "열기"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:78
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Import public key"
-msgstr "공개 키 가져오기"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:107
-#, kde-format
-msgctxt "Fallback when file has no name"
-msgid "unnamed"
-msgstr "이름 없음"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:110
-#, kde-format
-msgid "Save Attachment As"
-msgstr "다른 이름으로 첨부 파일 저장"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:271
-#, kde-format
-msgid "Invitation"
-msgstr "초대장"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:274
-#, kde-format
-msgid "&Summary:"
-msgstr "개요(&S):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:275
-#, kde-format
-msgid "&Organizer:"
-msgstr "주최(&O):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:277
-#, kde-format
-msgid "&Location:"
-msgstr "위치(&L):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:279
-#, kde-format
-msgid "&Start date:"
-msgstr "시작 날짜(&S):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:281
-#, kde-format
-msgid "&End date:"
-msgstr "종료 날짜(&E):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:284
-#, kde-format
-msgid "&Details:"
-msgstr "자세히(&D):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:304
-#, kde-format
-msgid "Encapsulated email"
-msgstr "캡슐화된 이메일"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:312
-#, kde-format
-msgid "From:"
-msgstr "보낸 사람:"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:313
-#, kde-format
-msgid "Date:"
-msgstr "날짜:"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:390
-#, kde-format
-msgid "&Subject:"
-msgstr "제목(&S):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:393
-#, kde-format
-msgid "&From:"
-msgstr "보낸 사람(&F):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:396
-#, kde-format
-msgid "&Sender:"
-msgstr "전송한 사람(&S):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:399
-#, kde-format
-msgid "&To:"
-msgstr "받는 사람(&T):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:402
-#, kde-format
-msgid "&CC:"
-msgstr "참조(&C):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:405
-#, kde-format
-msgid "&BCC:"
-msgstr "숨은 참조(&B):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewer.cpp:408
-#, kde-format
-msgid "&Date:"
-msgstr "날짜(&D):"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:128 widgets/messageviewerwindow.cpp:131
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "파일(&F)"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:130 widgets/messageviewerwindow.cpp:133
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Save"
-msgstr "저장(&S)"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:136 widgets/messageviewerwindow.cpp:139
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Save Decrypted"
-msgstr "복호화된 항목 저장"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:145
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Print Preview"
-msgstr "인쇄 미리 보기"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:151
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Print"
-msgstr "인쇄(&P)"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:155
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "탐색(&N)"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:156 widgets/messageviewerwindow.cpp:188
-#, kde-format
-msgctxt "@action:button Previous email"
-msgid "Previous Message"
-msgstr "이전 메시지"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:160 widgets/messageviewerwindow.cpp:192
-#, kde-format
-msgctxt "@action:button Next email"
-msgid "Next Message"
-msgstr "다음 메시지"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:180 widgets/messageviewerdialog.cpp:186
-#: widgets/messageviewerdialog.cpp:208 widgets/messageviewerwindow.cpp:227
-#: widgets/messageviewerwindow.cpp:233 widgets/messageviewerwindow.cpp:255
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "이메일 파일 (*.eml *.mbox *.mime)"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:182 widgets/messageviewerwindow.cpp:229
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "암호화된 S/MIME 파일 (*.p7m)"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:237
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "파일 저장"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "파일 %1을(를) 만들 수 없습니다."
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerdialog.cpp:212
-#: widgets/messageviewerwindow.cpp:243 widgets/messageviewerwindow.cpp:259
-#, kde-format
-msgctxt "@title:window"
-msgid "Error saving message"
-msgstr "메시지 저장 오류"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:206 widgets/messageviewerwindow.cpp:253
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "복호화된 파일 저장"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:212 widgets/messageviewerwindow.cpp:259
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "파일 %1을(를) 만들 수 없습니다."
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:231 widgets/messageviewerwindow.cpp:278
-#, kde-format
-msgctxt "@title:window"
-msgid "Print"
-msgstr "인쇄"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:243 widgets/messageviewerwindow.cpp:290
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Preview"
-msgstr "인쇄 미리 보기"
-
-#. +> trunk6 stable6
-#: widgets/messageviewerdialog.cpp:295
-#, kde-format
-msgctxt "@info"
-msgid "Unable to read file"
-msgstr "파일을 읽을 수 없음"
-
-#. +> trunk6
-#: widgets/messageviewerwindow.cpp:158
-#, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
-msgctxt "@action:inmenu"
-msgid "&Message"
-msgstr "메시지(&M)"
-
-#. +> trunk6
-#: widgets/messageviewerwindow.cpp:161
-#, kde-format
-msgctxt "@action:button"
-msgid "View Source"
-msgstr "소스 보기"
-
-#. +> trunk6
-#: widgets/messageviewerwindow.cpp:181
-#, kde-format
-msgctxt "@action:button"
-msgid "Use Fixed Font"
-msgstr "고정폭 글꼴 사용"
 
 #: core/attachmentmodel.cpp:382
 #, kde-format
@@ -624,6 +83,44 @@ msgctxt "@info"
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
 msgstr[0] "키 %1개는 이미 가져왔음"
+
+#: core/messageparser.cpp:48
+#, kde-format
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#: core/messageparser.cpp:53
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong Crypto Plug-In."
+msgstr "잘못된 암호화 플러그인입니다."
+
+#: core/messagepart.cpp:988
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "적절한 암호화 플러그인을 찾을 수 없습니다."
+
+#: core/messagepart.cpp:990
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습니다."
+
+#: core/messagepart.cpp:992
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
+
+#: core/messagepart.cpp:993
+#, kde-format
+msgid "Error: %1"
+msgstr "오류: %1"
 
 #: core/partmodel.cpp:514
 #, kde-format
@@ -648,17 +145,105 @@ msgid "The message is encrypted for the following certificate:"
 msgid_plural "The message is encrypted for the following certificates:"
 msgstr[0] "이 메시지는 다음 인증서로 암호화되어 있습니다:"
 
+#: core/partmodel.cpp:537
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr "암구호가 잘못되었습니다."
+
 #: core/utils.cpp:46
 #, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "알 수 없는 키"
 
+#: core/utils.cpp:60
+#, kde-format
+msgctxt "Separator"
+msgid " - "
+msgstr " - "
+
+#: quick/qml/MailViewer.qml:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Message viewer"
+msgstr "메시지 뷰어"
+
+#: quick/qml/MailViewer.qml:78
+#, kde-format
+msgctxt "@label"
+msgid "Subject:"
+msgstr "제목:"
+
+#: quick/qml/MailViewer.qml:99
+#, kde-format
+msgctxt "@label"
+msgid "From:"
+msgstr "보낸 사람:"
+
+#: quick/qml/MailViewer.qml:115
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr "전송한 사람:"
+
+#: quick/qml/MailViewer.qml:131
+#, kde-format
+msgctxt "@label"
+msgid "To:"
+msgstr "받는 사람:"
+
+#: quick/qml/MailViewer.qml:147
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "참조:"
+
+#: quick/qml/MailViewer.qml:163
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "숨은 참조:"
+
+#: quick/qml/MailViewer.qml:220
+#, kde-format
+msgctxt "@action:button"
+msgid "Save attachment"
+msgstr "첨부 파일 저장"
+
+#: quick/qml/MailViewer.qml:243
+#, kde-format
+msgctxt "@window:title"
+msgid "Save Attachment As"
+msgstr "다른 이름으로 첨부 파일 저장"
+
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import key"
 msgstr "키 가져오기..."
+
+#: quick/qml/private/Banner.qml:188
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "닫기"
+
+#: quick/qml/private/ErrorPart.qml:27
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "오류 발생: %1"
+
+#: quick/qml/private/ICalPart.qml:27
+#, kde-format
+msgid "This mail contains an invitation"
+msgstr "이 메일에는 초대장이 첨부되어 있습니다"
+
+#: quick/qml/private/MailPart.qml:41
+#, kde-format
+msgctxt "@info"
+msgid "sent by %1 on %2"
+msgstr "%1 님이 %2에 보냄"
 
 #: quick/qml/private/MailPartModel.qml:55
 #, kde-format
@@ -718,8 +303,8 @@ msgstr "이 메시지는 다음 키로 암호화되어 있습니다: %1"
 #, kde-format
 msgctxt "@label"
 msgid ""
-"This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
-"%2</a>."
+"This message has been signed VS-NfD compliant using the key <a "
+"href=\"%1\">%2</a>."
 msgstr ""
 "이 메시지는 VS-NfD를 준수하는 방법으로 키 <a href=\"%1\">%2</a>(으)로 서명되"
 "었습니다."
@@ -793,6 +378,16 @@ msgid ""
 "This message is VS-NfD compliant encrypted but we don't have the key for it."
 msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 키가 없습니다."
 
+#: widgets/messagecontainerwidget.cpp:212
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었습니다."
+
+#: widgets/messagecontainerwidget.cpp:214
+#, kde-format
+msgid "This message is encrypted."
+msgstr "이 메시지는 암호화되어 있습니다."
+
 #: widgets/messagecontainerwidget.cpp:223
 #, kde-format
 msgid "The message is encrypted for the following keys:"
@@ -803,16 +398,195 @@ msgstr "이 메시지는 다음 키로 암호화되어 있습니다:"
 msgid "&Save Attachment As..."
 msgstr "다른 이름으로 첨부 파일 저장(&S)..."
 
+#: widgets/messageviewer.cpp:72
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "열기"
+
+#: widgets/messageviewer.cpp:77
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import public key"
+msgstr "공개 키 가져오기"
+
+#: widgets/messageviewer.cpp:106
+#, kde-format
+msgctxt "Fallback when file has no name"
+msgid "unnamed"
+msgstr "이름 없음"
+
+#: widgets/messageviewer.cpp:109
+#, kde-format
+msgid "Save Attachment As"
+msgstr "다른 이름으로 첨부 파일 저장"
+
+#: widgets/messageviewer.cpp:265
+#, kde-format
+msgid "Invitation"
+msgstr "초대장"
+
+#: widgets/messageviewer.cpp:268
+#, kde-format
+msgid "&Summary:"
+msgstr "개요(&S):"
+
+#: widgets/messageviewer.cpp:269
+#, kde-format
+msgid "&Organizer:"
+msgstr "주최(&O):"
+
+#: widgets/messageviewer.cpp:271
+#, kde-format
+msgid "&Location:"
+msgstr "위치(&L):"
+
+#: widgets/messageviewer.cpp:273
+#, kde-format
+msgid "&Start date:"
+msgstr "시작 날짜(&S):"
+
+#: widgets/messageviewer.cpp:275
+#, kde-format
+msgid "&End date:"
+msgstr "종료 날짜(&E):"
+
+#: widgets/messageviewer.cpp:278
+#, kde-format
+msgid "&Details:"
+msgstr "자세히(&D):"
+
+#: widgets/messageviewer.cpp:299
+#, kde-format
+msgid "Encapsulated email"
+msgstr "캡슐화된 이메일"
+
+#: widgets/messageviewer.cpp:307
+#, kde-format
+msgid "From:"
+msgstr "보낸 사람:"
+
+#: widgets/messageviewer.cpp:308
+#, kde-format
+msgid "Date:"
+msgstr "날짜:"
+
+#: widgets/messageviewer.cpp:385
+#, kde-format
+msgid "&Subject:"
+msgstr "제목(&S):"
+
+#: widgets/messageviewer.cpp:388
+#, kde-format
+msgid "&From:"
+msgstr "보낸 사람(&F):"
+
+#: widgets/messageviewer.cpp:391
+#, kde-format
+msgid "&Sender:"
+msgstr "전송한 사람(&S):"
+
+#: widgets/messageviewer.cpp:394
+#, kde-format
+msgid "&To:"
+msgstr "받는 사람(&T):"
+
+#: widgets/messageviewer.cpp:397
+#, kde-format
+msgid "&CC:"
+msgstr "참조(&C):"
+
+#: widgets/messageviewer.cpp:400
+#, kde-format
+msgid "&BCC:"
+msgstr "숨은 참조(&B):"
+
+#: widgets/messageviewer.cpp:403
+#, kde-format
+msgid "&Date:"
+msgstr "날짜(&D):"
+
+#: widgets/messageviewerdialog.cpp:100
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "파일(&F)"
+
+#: widgets/messageviewerdialog.cpp:102
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr "저장(&S)"
+
+#: widgets/messageviewerdialog.cpp:108
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr "복호화된 항목 저장"
+
+#: widgets/messageviewerdialog.cpp:114
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr "인쇄 미리 보기"
+
+#: widgets/messageviewerdialog.cpp:120
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr "인쇄(&P)"
+
+#: widgets/messageviewerdialog.cpp:127
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "탐색(&N)"
+
+#: widgets/messageviewerdialog.cpp:128
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr "이전 메시지"
+
+#: widgets/messageviewerdialog.cpp:132
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr "다음 메시지"
+
+#: widgets/messageviewerdialog.cpp:142
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "파일 저장"
+
 #: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
 msgstr "이메일 파일 (*.eml *.mbox)"
 
+#: widgets/messageviewerdialog.cpp:148
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "파일 %1을(를) 만들 수 없습니다."
+
 #: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgid "Error saving message"
 msgstr "메시지 저장 오류"
+
+#: widgets/messageviewerdialog.cpp:158
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "복호화된 파일 저장"
+
+#: widgets/messageviewerdialog.cpp:164
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "파일 %1을(를) 만들 수 없습니다."
 
 #: widgets/messageviewerdialog.cpp:182 widgets/messageviewerdialog.cpp:194
 #, kde-format
@@ -820,34 +594,18 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "문서 인쇄"
 
+#: widgets/messageviewerdialog.cpp:237
+#, kde-format
+msgctxt "@info"
+msgid "Unable to read file"
+msgstr "파일을 읽을 수 없음"
+
+#: widgets/urlhandler.cpp:46
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확인하십시오."
+
 #: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 오류"
-
-#, fuzzy
-#~| msgid "The message is encrypted for the following keys:"
-#~ msgctxt "@info:status"
-#~ msgid "No secret key found to decrypt the message."
-#~ msgstr "이 메시지는 다음 키로 암호화되어 있습니다:"
-
-#~ msgid "Unknown key"
-#~ msgstr "알 수 없는 키"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "키를 사용할 수 없습니다."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "임시 파일을 만들 수 없습니다."
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "첨부 파일을 디스크에 저장함: %1"
-
-#~ msgid "fwd"
-#~ msgstr "fwd"
-
-#~ msgid "re"
-#~ msgstr "re"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-05-27 10:22+0200\n"
 "PO-Revision-Date: 2024-12-19 22:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -14,520 +14,56 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Назва"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Розмір"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Зашифровано"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Підписано"
 
-#: core/attachmentmodel.cpp:301
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Не вдалося зберегти долучення."
 
-#: core/attachmentmodel.cpp:324
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "долучення"
 
-#: core/attachmentmodel.cpp:331
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Не вдалося записати долучення для відкриття."
 
-#: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Не вдалося відкрити долучення."
-
-#: core/attachmentmodel.cpp:381
-#, kde-format
-msgctxt "@info"
-msgid "No certificates were found in this attachment"
-msgstr "У цьому долученні не було знайдено сертифікатів"
-
-#: core/attachmentmodel.cpp:384
-#, kde-format
-msgctxt "@info"
-msgid "one certificate imported"
-msgid_plural "%1 certificates imported"
-msgstr[0] "імпортовано %1 сертифікат"
-msgstr[1] "імпортовано %1 сертифікати"
-msgstr[2] "імпортовано %1 сертифікатів"
-msgstr[3] "імпортовано %1 сертифікат"
-
-#: core/attachmentmodel.cpp:389
-#, kde-format
-msgctxt "@info"
-msgid "one certificate was already imported"
-msgid_plural "%1 certificates were already imported"
-msgstr[0] "%1 сертифікат вже імпортовано"
-msgstr[1] "%1 сертифікати вже імпортовано"
-msgstr[2] "%1 сертифікатів вже імпортовано"
-msgstr[3] "%1 сертифікат вже імпортовано"
-
-#: core/messageparser.cpp:47
-#, kde-format
-msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-msgid "Unknown"
-msgstr "Невідомо"
-
-#: core/messageparser.cpp:52
-#, kde-format
-msgctxt "list separator"
-msgid ", "
-msgstr ", "
-
-#: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong Crypto Plug-In."
-msgstr "Неправильний додаток шифрування."
-
-#: core/messagepart.cpp:860
-#, kde-format
-msgid "No appropriate crypto plug-in was found."
-msgstr "Не знайдено відповідного додатка шифрування."
-
-#: core/messagepart.cpp:862
-#, kde-format
-msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "Додатку шифрування «%1» не вдалося розшифрувати повідомлення."
-
-#: core/messagepart.cpp:864
-#, kde-format
-msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "Додатку шифрування «%1» не вдалося розшифрувати дані."
-
-#: core/messagepart.cpp:865
-#, kde-format
-msgid "Error: %1"
-msgstr "Помилка: %1"
-
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
-#, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Ви не можете розшифрувати це повідомлення."
-
-#: core/partmodel.cpp:581
-#, kde-format
-msgctxt "@info:status"
-msgid "The message is encrypted for the following recipient:"
-msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "Повідомлення зашифровано для таких отримувачів:"
-msgstr[1] "Повідомлення зашифровано для таких отримувачів:"
-msgstr[2] "Повідомлення зашифровано для таких отримувачів:"
-msgstr[3] "Повідомлення зашифровано для такого отримувача:"
-
-#: core/partmodel.cpp:595
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Неправильний пароль."
-
-#: core/urlhandler.cpp:46
-#, kde-format
-msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
-"Не вдається запустити програму керування сертифікатами. Будь ласка, "
-"перевірте, чи належним чином встановлено програму."
-
-#: core/utils.cpp:45
-#, kde-format
-msgctxt "@info"
-msgid "Unknown Key"
-msgstr "Невідомий ключ"
-
-#: core/utils.cpp:59
-#, kde-format
-msgctxt "Separator"
-msgid " - "
-msgstr " - "
-
-#: quick/qml/MailViewer.qml:40
-#, kde-format
-msgctxt "@title:window"
-msgid "Message viewer"
-msgstr "Перегляд повідомлень"
-
-#: quick/qml/MailViewer.qml:77
-#, kde-format
-msgctxt "@label"
-msgid "Subject:"
-msgstr "Тема:"
-
-#: quick/qml/MailViewer.qml:98
-#, kde-format
-msgctxt "@label"
-msgid "From:"
-msgstr "Від:"
-
-#: quick/qml/MailViewer.qml:114
-#, kde-format
-msgctxt "@label"
-msgid "Sender:"
-msgstr "Відправник:"
-
-#: quick/qml/MailViewer.qml:130
-#, kde-format
-msgctxt "@label"
-msgid "To:"
-msgstr "Кому:"
-
-#: quick/qml/MailViewer.qml:146
-#, kde-format
-msgctxt "@label"
-msgid "CC:"
-msgstr "Копія:"
-
-#: quick/qml/MailViewer.qml:162
-#, kde-format
-msgctxt "@label"
-msgid "BCC:"
-msgstr "Прих.копія:"
-
-#: quick/qml/MailViewer.qml:223
-#, kde-format
-msgctxt "@action:button"
-msgid "Save attachment"
-msgstr "Зберегти долучення"
-
-#: quick/qml/MailViewer.qml:246
-#, kde-format
-msgctxt "@window:title"
-msgid "Save Attachment As"
-msgstr "Зберегти долучення як"
-
-#: quick/qml/private/AttachmentDelegate.qml:56
-#, kde-format
-msgctxt "@action:button"
-msgid "Import certificate"
-msgstr "Імпортувати сертифікат"
-
-#: quick/qml/private/Banner.qml:188
-#, kde-format
-msgctxt "@action:button"
-msgid "Close"
-msgstr "Закрити"
-
-#: quick/qml/private/ErrorPart.qml:27
-#, kde-format
-msgid "An error occurred: %1"
-msgstr "Сталася помилка: %1"
-
-#: quick/qml/private/ICalPart.qml:27
-#, kde-format
-msgid "This mail contains an invitation"
-msgstr "У цьому повідомленні міститься запрошення"
-
-#: quick/qml/private/MailPart.qml:42
-#, kde-format
-msgctxt "@info"
-msgid "sent by %1 on %2"
-msgstr "надіслано %1, %2"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:143
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr ""
-"Це повідомлення зашифровано, але у нас немає відповідного закритого ключа."
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Це повідомлення зашифровано для %1"
-
-#: widgets/messagecontainerwidget.cpp:141
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Це повідомлення зашифровано відповідно до VS-NfD, але у вас немає "
-"відповідного закритого ключа."
-
-#: widgets/messagecontainerwidget.cpp:148
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Це повідомлення зашифровано відповідно до VS-NfD."
-
-#: widgets/messagecontainerwidget.cpp:150
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Це повідомлення зашифровано."
-
-#: widgets/messagecontainerwidget.cpp:159
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Повідомлення зашифровано для таких отримувачів:"
-
-#: widgets/messageviewer.cpp:68
-#, kde-format
-msgid "&Save Attachment As…"
-msgstr "З&берегти долучення як…"
-
-#: widgets/messageviewer.cpp:73
-#, kde-format
-msgctxt "to open"
-msgid "Open"
-msgstr "Відкрити"
-
-#: widgets/messageviewer.cpp:78
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Import public key"
-msgstr "Імпортувати відкритий ключ"
-
-#: widgets/messageviewer.cpp:107
-#, kde-format
-msgctxt "Fallback when file has no name"
-msgid "unnamed"
-msgstr "без назви"
-
-#: widgets/messageviewer.cpp:110
-#, kde-format
-msgid "Save Attachment As"
-msgstr "Зберегти долучення як"
-
-#: widgets/messageviewer.cpp:271
-#, kde-format
-msgid "Invitation"
-msgstr "Запрошення"
-
-#: widgets/messageviewer.cpp:274
-#, kde-format
-msgid "&Summary:"
-msgstr "&Резюме:"
-
-#: widgets/messageviewer.cpp:275
-#, kde-format
-msgid "&Organizer:"
-msgstr "&Організатор:"
-
-#: widgets/messageviewer.cpp:277
-#, kde-format
-msgid "&Location:"
-msgstr "&Розташування:"
-
-#: widgets/messageviewer.cpp:279
-#, kde-format
-msgid "&Start date:"
-msgstr "Дата &початку:"
-
-#: widgets/messageviewer.cpp:281
-#, kde-format
-msgid "&End date:"
-msgstr "Дата за&кінчення:"
-
-#: widgets/messageviewer.cpp:284
-#, kde-format
-msgid "&Details:"
-msgstr "&Подробиці:"
-
-#: widgets/messageviewer.cpp:304
-#, kde-format
-msgid "Encapsulated email"
-msgstr "Вбудовано повідомлення"
-
-#: widgets/messageviewer.cpp:312
-#, kde-format
-msgid "From:"
-msgstr "Від:"
-
-#: widgets/messageviewer.cpp:313
-#, kde-format
-msgid "Date:"
-msgstr "Дата:"
-
-#: widgets/messageviewer.cpp:390
-#, kde-format
-msgid "&Subject:"
-msgstr "&Тема:"
-
-#: widgets/messageviewer.cpp:393
-#, kde-format
-msgid "&From:"
-msgstr "&Від:"
-
-#: widgets/messageviewer.cpp:396
-#, kde-format
-msgid "&Sender:"
-msgstr "В&ідправник:"
-
-#: widgets/messageviewer.cpp:399
-#, kde-format
-msgid "&To:"
-msgstr "&Кому:"
-
-#: widgets/messageviewer.cpp:402
-#, kde-format
-msgid "&CC:"
-msgstr "&Копія:"
-
-#: widgets/messageviewer.cpp:405
-#, kde-format
-msgid "&BCC:"
-msgstr "&Пр. копія:"
-
-#: widgets/messageviewer.cpp:408
-#, kde-format
-msgid "&Date:"
-msgstr "&Дата:"
-
-#: widgets/messageviewerdialog.cpp:79 widgets/messageviewerwindow.cpp:82
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "&Файл"
-
-#: widgets/messageviewerdialog.cpp:81 widgets/messageviewerwindow.cpp:84
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Save"
-msgstr "&Зберегти"
-
-#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:90
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Save Decrypted"
-msgstr "Зберегти розшифрований файл"
-
-#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:96
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Print Preview"
-msgstr "Перегляд друку"
-
-#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:102
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Print"
-msgstr "На&друкувати"
-
-#: widgets/messageviewerdialog.cpp:106
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "&Навігація"
-
-#: widgets/messageviewerdialog.cpp:107 widgets/messageviewerwindow.cpp:139
-#, kde-format
-msgctxt "@action:button Previous email"
-msgid "Previous Message"
-msgstr "Попереднє повідомлення"
-
-#: widgets/messageviewerdialog.cpp:111 widgets/messageviewerwindow.cpp:143
-#, kde-format
-msgctxt "@action:button Next email"
-msgid "Next Message"
-msgstr "Наступне повідомлення"
-
-#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
-#: widgets/messageviewerdialog.cpp:161 widgets/messageviewerwindow.cpp:178
-#: widgets/messageviewerwindow.cpp:184 widgets/messageviewerwindow.cpp:208
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "файли пошти (*.eml *.mbox *.mime)"
-
-#: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "шифровані файли S/MIME (*.p7m)"
-
-#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:189
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "Збереження файла"
-
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:195
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "Не вдалося створити файл %1."
-
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:165
-#: widgets/messageviewerwindow.cpp:195 widgets/messageviewerwindow.cpp:212
-#, kde-format
-msgctxt "@title:window"
-msgid "Error saving message"
-msgstr "Помилка під час спроби збереження повідомлення"
-
-#: widgets/messageviewerdialog.cpp:159 widgets/messageviewerwindow.cpp:206
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "Збереження розшифрованого файла"
-
-#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:212
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "Не вдалося створити файл %1."
-
-#: widgets/messageviewerdialog.cpp:184 widgets/messageviewerwindow.cpp:231
-#, kde-format
-msgctxt "@title:window"
-msgid "Print"
-msgstr "Друк"
-
-#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Preview"
-msgstr "Перегляд друку"
-
-#: widgets/messageviewerdialog.cpp:248
-#, kde-format
-msgctxt "@info"
-msgid "Unable to read file"
-msgstr "Не вдалося прочитати дані з файла"
-
-#: widgets/messageviewerwindow.cpp:109
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Message"
-msgstr "&Повідомлення"
-
-#: widgets/messageviewerwindow.cpp:112
-#, kde-format
-msgctxt "@action:button"
-msgid "View Source"
-msgstr "Переглянути початковий код"
-
-#: widgets/messageviewerwindow.cpp:132
-#, kde-format
-msgctxt "@action:button"
-msgid "Use Fixed Font"
-msgstr "Моноширинний шрифт"
 
 #: core/attachmentmodel.cpp:382
 #, kde-format
@@ -554,6 +90,44 @@ msgstr[0] "%1 ключ вже імпортовано"
 msgstr[1] "%1 ключі вже імпортовано"
 msgstr[2] "%1 ключів вже імпортовано"
 msgstr[3] "%1 ключ вже імпортовано"
+
+#: core/messageparser.cpp:48
+#, kde-format
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: core/messageparser.cpp:53
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: core/messagepart.cpp:624 core/messagepart.cpp:659 core/messagepart.cpp:836
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong Crypto Plug-In."
+msgstr "Неправильний додаток шифрування."
+
+#: core/messagepart.cpp:988
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Не знайдено відповідного додатка шифрування."
+
+#: core/messagepart.cpp:990
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Додатку шифрування «%1» не вдалося розшифрувати повідомлення."
+
+#: core/messagepart.cpp:992
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Додатку шифрування «%1» не вдалося розшифрувати дані."
+
+#: core/messagepart.cpp:993
+#, kde-format
+msgid "Error: %1"
+msgstr "Помилка: %1"
 
 #: core/partmodel.cpp:514
 #, kde-format
@@ -584,17 +158,105 @@ msgstr[1] "Повідомлення зашифровано для таких с�
 msgstr[2] "Повідомлення зашифровано для таких сертифікатів:"
 msgstr[3] "Повідомлення зашифровано для такого сертифіката:"
 
+#: core/partmodel.cpp:537
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr "Неправильний пароль."
+
 #: core/utils.cpp:46
 #, kde-format
 msgctxt "@info"
 msgid "Unknow Key"
 msgstr "Невідомий ключ"
 
+#: core/utils.cpp:60
+#, kde-format
+msgctxt "Separator"
+msgid " - "
+msgstr " - "
+
+#: quick/qml/MailViewer.qml:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Message viewer"
+msgstr "Перегляд повідомлень"
+
+#: quick/qml/MailViewer.qml:78
+#, kde-format
+msgctxt "@label"
+msgid "Subject:"
+msgstr "Тема:"
+
+#: quick/qml/MailViewer.qml:99
+#, kde-format
+msgctxt "@label"
+msgid "From:"
+msgstr "Від:"
+
+#: quick/qml/MailViewer.qml:115
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr "Відправник:"
+
+#: quick/qml/MailViewer.qml:131
+#, kde-format
+msgctxt "@label"
+msgid "To:"
+msgstr "Кому:"
+
+#: quick/qml/MailViewer.qml:147
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "Копія:"
+
+#: quick/qml/MailViewer.qml:163
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "Прих.копія:"
+
+#: quick/qml/MailViewer.qml:220
+#, kde-format
+msgctxt "@action:button"
+msgid "Save attachment"
+msgstr "Зберегти долучення"
+
+#: quick/qml/MailViewer.qml:243
+#, kde-format
+msgctxt "@window:title"
+msgid "Save Attachment As"
+msgstr "Зберегти долучення як"
+
 #: quick/qml/private/AttachmentDelegate.qml:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Import key"
 msgstr "Імпортувати ключ"
+
+#: quick/qml/private/Banner.qml:188
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Закрити"
+
+#: quick/qml/private/ErrorPart.qml:27
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "Сталася помилка: %1"
+
+#: quick/qml/private/ICalPart.qml:27
+#, kde-format
+msgid "This mail contains an invitation"
+msgstr "У цьому повідомленні міститься запрошення"
+
+#: quick/qml/private/MailPart.qml:41
+#, kde-format
+msgctxt "@info"
+msgid "sent by %1 on %2"
+msgstr "надіслано %1, %2"
 
 #: quick/qml/private/MailPartModel.qml:55
 #, kde-format
@@ -655,11 +317,11 @@ msgstr "Це повідомлення зашифровано таким ключ
 #, kde-format
 msgctxt "@label"
 msgid ""
-"This message has been signed VS-NfD compliant using the key <a href=\"%1\">"
-"%2</a>."
+"This message has been signed VS-NfD compliant using the key <a "
+"href=\"%1\">%2</a>."
 msgstr ""
-"Це повідомлення підписано відповідно до VS-NfD за допомогою ключа <a href="
-"\"%1\">%2</a>."
+"Це повідомлення підписано відповідно до VS-NfD за допомогою ключа <a "
+"href=\"%1\">%2</a>."
 
 #: widgets/messagecontainerwidget.cpp:68
 #, kde-format
@@ -733,6 +395,16 @@ msgstr ""
 "Це повідомлення зашифровано відповідно до VS-NfD, але у нас немає ключа для "
 "його розшифровування."
 
+#: widgets/messagecontainerwidget.cpp:212
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Це повідомлення зашифровано відповідно до VS-NfD."
+
+#: widgets/messagecontainerwidget.cpp:214
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Це повідомлення зашифровано."
+
 #: widgets/messagecontainerwidget.cpp:223
 #, kde-format
 msgid "The message is encrypted for the following keys:"
@@ -743,16 +415,195 @@ msgstr "Повідомлення зашифровано для таких клю
 msgid "&Save Attachment As..."
 msgstr "&Зберегти долучення як…"
 
+#: widgets/messageviewer.cpp:72
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Відкрити"
+
+#: widgets/messageviewer.cpp:77
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import public key"
+msgstr "Імпортувати відкритий ключ"
+
+#: widgets/messageviewer.cpp:106
+#, kde-format
+msgctxt "Fallback when file has no name"
+msgid "unnamed"
+msgstr "без назви"
+
+#: widgets/messageviewer.cpp:109
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Зберегти долучення як"
+
+#: widgets/messageviewer.cpp:265
+#, kde-format
+msgid "Invitation"
+msgstr "Запрошення"
+
+#: widgets/messageviewer.cpp:268
+#, kde-format
+msgid "&Summary:"
+msgstr "&Резюме:"
+
+#: widgets/messageviewer.cpp:269
+#, kde-format
+msgid "&Organizer:"
+msgstr "&Організатор:"
+
+#: widgets/messageviewer.cpp:271
+#, kde-format
+msgid "&Location:"
+msgstr "&Розташування:"
+
+#: widgets/messageviewer.cpp:273
+#, kde-format
+msgid "&Start date:"
+msgstr "Дата &початку:"
+
+#: widgets/messageviewer.cpp:275
+#, kde-format
+msgid "&End date:"
+msgstr "Дата за&кінчення:"
+
+#: widgets/messageviewer.cpp:278
+#, kde-format
+msgid "&Details:"
+msgstr "&Подробиці:"
+
+#: widgets/messageviewer.cpp:299
+#, kde-format
+msgid "Encapsulated email"
+msgstr "Вбудовано повідомлення"
+
+#: widgets/messageviewer.cpp:307
+#, kde-format
+msgid "From:"
+msgstr "Від:"
+
+#: widgets/messageviewer.cpp:308
+#, kde-format
+msgid "Date:"
+msgstr "Дата:"
+
+#: widgets/messageviewer.cpp:385
+#, kde-format
+msgid "&Subject:"
+msgstr "&Тема:"
+
+#: widgets/messageviewer.cpp:388
+#, kde-format
+msgid "&From:"
+msgstr "&Від:"
+
+#: widgets/messageviewer.cpp:391
+#, kde-format
+msgid "&Sender:"
+msgstr "В&ідправник:"
+
+#: widgets/messageviewer.cpp:394
+#, kde-format
+msgid "&To:"
+msgstr "&Кому:"
+
+#: widgets/messageviewer.cpp:397
+#, kde-format
+msgid "&CC:"
+msgstr "&Копія:"
+
+#: widgets/messageviewer.cpp:400
+#, kde-format
+msgid "&BCC:"
+msgstr "&Пр. копія:"
+
+#: widgets/messageviewer.cpp:403
+#, kde-format
+msgid "&Date:"
+msgstr "&Дата:"
+
+#: widgets/messageviewerdialog.cpp:100
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&Файл"
+
+#: widgets/messageviewerdialog.cpp:102
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr "&Зберегти"
+
+#: widgets/messageviewerdialog.cpp:108
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr "Зберегти розшифрований файл"
+
+#: widgets/messageviewerdialog.cpp:114
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr "Перегляд друку"
+
+#: widgets/messageviewerdialog.cpp:120
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr "На&друкувати"
+
+#: widgets/messageviewerdialog.cpp:127
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&Навігація"
+
+#: widgets/messageviewerdialog.cpp:128
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr "Попереднє повідомлення"
+
+#: widgets/messageviewerdialog.cpp:132
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr "Наступне повідомлення"
+
+#: widgets/messageviewerdialog.cpp:142
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Збереження файла"
+
 #: widgets/messageviewerdialog.cpp:144 widgets/messageviewerdialog.cpp:160
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox)"
 msgstr "файли пошти (*.eml *.mbox)"
 
+#: widgets/messageviewerdialog.cpp:148
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Не вдалося створити файл %1."
+
 #: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:164
 #, kde-format
 msgid "Error saving message"
 msgstr "Помилка під час спроби збереження повідомлення"
+
+#: widgets/messageviewerdialog.cpp:158
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "Збереження розшифрованого файла"
+
+#: widgets/messageviewerdialog.cpp:164
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "Не вдалося створити файл %1."
 
 #: widgets/messageviewerdialog.cpp:182 widgets/messageviewerdialog.cpp:194
 #, kde-format
@@ -760,36 +611,20 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Друк документа"
 
+#: widgets/messageviewerdialog.cpp:237
+#, kde-format
+msgctxt "@info"
+msgid "Unable to read file"
+msgstr "Не вдалося прочитати дані з файла"
+
+#: widgets/urlhandler.cpp:46
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Не вдається запустити програму керування сертифікатами. Будь ласка, "
+"перевірте, чи належним чином встановлено програму."
+
 #: widgets/urlhandler.cpp:48
 #, kde-format
 msgid "KMail Error"
 msgstr "Помилка KMail"
-
-#~ msgctxt "@info:status"
-#~ msgid "No secret key found to decrypt the message."
-#~ msgstr "Не знайдено закритого ключа для розшифровування повідомлення."
-
-#~ msgid "Unknown key"
-#~ msgstr "Невідомий ключ"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Немає доступних ключів."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Не вдалося створити тимчасовий файл."
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Збереження долучення на диску: %1"
-
-#~ msgid "fwd"
-#~ msgstr "fwd"
-
-#~ msgid "re"
-#~ msgstr "re"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr "Не вдалося розшифрувати дані. Не знайдено ключа для отримувачів."
