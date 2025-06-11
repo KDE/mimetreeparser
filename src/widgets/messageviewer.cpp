@@ -69,7 +69,6 @@ public:
         connect(saveAttachmentAction, &QAction::triggered, q, [this]() {
             saveSelectedAttachments();
         });
-        qWarning() << "creating" << saveAttachmentAction;
 
         openAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("document-open-symbolic")), i18nc("to open", "Open"), q);
         connect(openAttachmentAction, &QAction::triggered, q, [this]() {
@@ -94,7 +93,6 @@ void MessageViewer::Private::openSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
     for (const auto &part : std::as_const(selectedParts)) {
-        qWarning() << "opening part";
         parser.attachments()->openAttachment(part);
     }
 }
