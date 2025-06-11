@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-08 00:44+0000\n"
-"PO-Revision-Date: 2025-01-09 19:58+0100\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2025-05-23 14:27+0200\n"
+"Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -449,12 +449,10 @@ msgstr "Nächste Nachricht"
 
 #: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:137
 #: widgets/messageviewerdialog.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "File dialog accepted files"
-#| msgid "Email files (*.eml *.mbox *.mime)"
+#, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "E-Mail Dateien (*.eml *.mbox *.mime)"
+msgstr "EML Datei (*.eml);;MBOX Datei (*.mbox);;MIME Datei (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
 #, kde-format
