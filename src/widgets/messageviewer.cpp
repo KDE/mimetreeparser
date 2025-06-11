@@ -69,6 +69,7 @@ public:
         connect(saveAttachmentAction, &QAction::triggered, q, [this]() {
             saveSelectedAttachments();
         });
+        qWarning() << "creating" << saveAttachmentAction;
 
         openAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("document-open-symbolic")), i18nc("to open", "Open"), q);
         connect(openAttachmentAction, &QAction::triggered, q, [this]() {
@@ -93,6 +94,7 @@ void MessageViewer::Private::openSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
     for (const auto &part : std::as_const(selectedParts)) {
+        qWarning() << "opening part";
         parser.attachments()->openAttachment(part);
     }
 }
@@ -191,6 +193,28 @@ MessageViewer::MessageViewer(QWidget *parent)
     connect(d->attachmentView, &AttachmentView::contextMenuRequested, this, [this] {
         d->selectionChanged();
         d->showContextMenu();
+    });
+
+    connect(d->parser.attachments(), &AttachmentModel::info, this, [this](const QString &message) {
+        d->messageWidget->setMessageType(KMessageWidget::Information);
+        d->messageWidget->setText(message);
+        d->messageWidget->animatedShow();
+    });
+
+    connect(d->parser.attachments(), &AttachmentModel::errorOccurred, this, [this](const QString &message) {
+        d->messageWidget->setMessageType(KMessageWidget::Error);
+        d->messageWidget->setText(message);
+        d->messageWidget->animatedShow();
+    });
+
+    connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
+        d->selectionChanged();
+    });
+
+    connect(d->attachmentView, &QAbstractItemView::doubleClicked, this, [this](const QModelIndex &) {
+        // Since this is only emitted if a valid index is double clicked we can assume
+        // that the first click of the double click set the selection accordingly.
+        d->openSelectedAttachments();
     });
 }
 
@@ -369,18 +393,6 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
     setUpdatesEnabled(false);
     d->parser.setMessage(message);
 
-    connect(d->parser.attachments(), &AttachmentModel::info, this, [this](const QString &message) {
-        d->messageWidget->setMessageType(KMessageWidget::Information);
-        d->messageWidget->setText(message);
-        d->messageWidget->animatedShow();
-    });
-
-    connect(d->parser.attachments(), &AttachmentModel::errorOccurred, this, [this](const QString &message) {
-        d->messageWidget->setMessageType(KMessageWidget::Error);
-        d->messageWidget->setText(message);
-        d->messageWidget->animatedShow();
-    });
-
     for (int i = d->formLayout->rowCount() - 1; i >= 0; i--) {
         d->formLayout->removeRow(i);
     }
@@ -421,16 +433,6 @@ void MessageViewer::setMessage(const KMime::Message::Ptr message)
 
     d->attachmentView->setModel(d->parser.attachments());
     d->attachmentView->setVisible(d->parser.attachments()->rowCount() > 0);
-
-    connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
-        d->selectionChanged();
-    });
-
-    connect(d->attachmentView, &QAbstractItemView::doubleClicked, this, [this](const QModelIndex &) {
-        // Since this is only emitted if a valid index is double clicked we can assume
-        // that the first click of the double click set the selection accordingly.
-        d->openSelectedAttachments();
-    });
 
     setUpdatesEnabled(true);
 }
