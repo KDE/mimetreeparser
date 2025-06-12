@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-06-12 02:39+0000\n"
 "PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -303,87 +303,87 @@ msgstr "名前なし"
 msgid "Save Attachment As"
 msgstr "添付ファイルを名前を付けて保存"
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:293
 #, kde-format
 msgid "Invitation"
 msgstr "インビテーション"
 
-#: widgets/messageviewer.cpp:274
+#: widgets/messageviewer.cpp:296
 #, kde-format
 msgid "&Summary:"
 msgstr "サマリ(&S):"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp:297
 #, kde-format
 msgid "&Organizer:"
 msgstr "組織(&O):"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "&Location:"
 msgstr "場所(&L):"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "&Start date:"
 msgstr "開始日(&S):"
 
-#: widgets/messageviewer.cpp:281
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "&End date:"
 msgstr "終了日(&E):"
 
-#: widgets/messageviewer.cpp:284
+#: widgets/messageviewer.cpp:306
 #, kde-format
 msgid "&Details:"
 msgstr "詳細(&D):"
 
-#: widgets/messageviewer.cpp:304
+#: widgets/messageviewer.cpp:326
 #, kde-format
 msgid "Encapsulated email"
 msgstr "カプセル化メール"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:334
 #, kde-format
 msgid "From:"
 msgstr "From:"
 
-#: widgets/messageviewer.cpp:313
+#: widgets/messageviewer.cpp:335
 #, kde-format
 msgid "Date:"
 msgstr "Date:"
 
-#: widgets/messageviewer.cpp:390
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&Subject:"
 msgstr "&Subject:"
 
-#: widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&From:"
 msgstr "&From:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&Sender:"
 msgstr "&Sender:"
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&To:"
 msgstr "&To:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:408
+#: widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&Date:"
 msgstr "日付(&D):"
