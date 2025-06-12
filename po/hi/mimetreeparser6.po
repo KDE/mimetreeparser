@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:42+0000\n"
+"POT-Creation-Date: 2025-06-12 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -304,87 +304,87 @@ msgstr "अज्ञात"
 msgid "Save Attachment As"
 msgstr "अनुलग्नक को इस रूप में सहेजें"
 
-#: widgets/messageviewer.cpp:271
+#: widgets/messageviewer.cpp:293
 #, kde-format
 msgid "Invitation"
 msgstr "आमंत्रण"
 
-#: widgets/messageviewer.cpp:274
+#: widgets/messageviewer.cpp:296
 #, kde-format
 msgid "&Summary:"
 msgstr "&सारांश:"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp:297
 #, kde-format
 msgid "&Organizer:"
 msgstr "&व्यवस्था करनेवाला:"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "&Location:"
 msgstr "&जगह:"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "&Start date:"
 msgstr "&आरंभ करने की तिथि:"
 
-#: widgets/messageviewer.cpp:281
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "&End date:"
 msgstr "&अंतिम तिथि:"
 
-#: widgets/messageviewer.cpp:284
+#: widgets/messageviewer.cpp:306
 #, kde-format
 msgid "&Details:"
 msgstr "&विवरण:"
 
-#: widgets/messageviewer.cpp:304
+#: widgets/messageviewer.cpp:326
 #, kde-format
 msgid "Encapsulated email"
 msgstr "संपुटित ईमेल"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:334
 #, kde-format
 msgid "From:"
 msgstr "से:"
 
-#: widgets/messageviewer.cpp:313
+#: widgets/messageviewer.cpp:335
 #, kde-format
 msgid "Date:"
 msgstr "तारीख:"
 
-#: widgets/messageviewer.cpp:390
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&Subject:"
 msgstr "&विषय:"
 
-#: widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&From:"
 msgstr "&से:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&Sender:"
 msgstr "&प्रेषक:"
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&To:"
 msgstr "&को:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&CC:"
 msgstr "एवंसीसी:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&BCC:"
 msgstr "औरबीसीसी:"
 
-#: widgets/messageviewer.cpp:408
+#: widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&Date:"
 msgstr "&तारीख:"
