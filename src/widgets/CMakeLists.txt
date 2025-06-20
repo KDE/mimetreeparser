@@ -52,6 +52,7 @@ PRIVATE
     KPim6::MimeTreeParserCore
     Qt::PrintSupport
     KF6::I18n
+    KF6::ColorScheme
     KF6::CalendarCore
     KF6::WidgetsAddons
     KPim6::Libkleo

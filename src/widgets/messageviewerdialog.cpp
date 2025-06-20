@@ -9,12 +9,17 @@
 #include <MimeTreeParserCore/CryptoHelper>
 #include <MimeTreeParserCore/FileOpener>
 
+#include <KColorScheme>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KMessageWidget>
+#include <KSeparator>
+#include <Libkleo/Compliance>
 
+#include <QApplication>
 #include <QDialogButtonBox>
 #include <QFileDialog>
+#include <QLabel>
 #include <QMenuBar>
 #include <QPainter>
 #include <QPrintDialog>
@@ -24,6 +29,7 @@
 #include <QRegularExpression>
 #include <QSaveFile>
 #include <QStandardPaths>
+#include <QStatusBar>
 #include <QStyle>
 #include <QToolBar>
 #include <QVBoxLayout>
@@ -298,6 +304,29 @@ void MessageViewerDialog::initGUI()
     auto closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     connect(closeButton, &QPushButton::pressed, this, &QDialog::accept);
     layout->addWidget(buttonBox);
+
+    if (Kleo::DeVSCompliance::isActive()) {
+        auto separator = new KSeparator(Qt::Horizontal, this);
+        layout->addWidget(separator);
+
+        auto statusBar = new QStatusBar(this);
+        auto statusLbl = std::make_unique<QLabel>(Kleo::DeVSCompliance::name());
+        {
+            auto statusPalette = qApp->palette();
+            KColorScheme::adjustForeground(statusPalette,
+                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::NormalText : KColorScheme::NegativeText,
+                                           statusLbl->foregroundRole(),
+                                           KColorScheme::View);
+            statusLbl->setAutoFillBackground(true);
+            KColorScheme::adjustBackground(statusPalette,
+                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::PositiveBackground : KColorScheme::NegativeBackground,
+                                           QPalette::Window,
+                                           KColorScheme::View);
+            statusLbl->setPalette(statusPalette);
+        }
+        statusBar->addPermanentWidget(statusLbl.release());
+        layout->addWidget(statusBar);
+    }
 
     setMinimumSize(300, 300);
     resize(600, 600);
