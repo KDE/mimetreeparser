@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-12 00:43+0000\n"
+"POT-Creation-Date: 2025-06-21 00:43+0000\n"
 "PO-Revision-Date: 2025-06-10 22:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -388,139 +388,139 @@ msgstr "숨은 참조(&B):"
 msgid "&Date:"
 msgstr "날짜(&D):"
 
-#: widgets/messageviewerdialog.cpp:79 widgets/messageviewerwindow.cpp:82
+#: widgets/messageviewerdialog.cpp:85 widgets/messageviewerwindow.cpp:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "파일(&F)"
 
-#: widgets/messageviewerdialog.cpp:81 widgets/messageviewerwindow.cpp:84
+#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:88
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "저장(&S)"
 
-#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:90
+#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:94
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "복호화된 항목 저장"
 
-#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:96
+#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:100
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
 
-#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:102
+#: widgets/messageviewerdialog.cpp:105 widgets/messageviewerwindow.cpp:106
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "인쇄(&P)"
 
-#: widgets/messageviewerdialog.cpp:106
+#: widgets/messageviewerdialog.cpp:112
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "탐색(&N)"
 
-#: widgets/messageviewerdialog.cpp:107 widgets/messageviewerwindow.cpp:139
+#: widgets/messageviewerdialog.cpp:113 widgets/messageviewerwindow.cpp:143
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "이전 메시지"
 
-#: widgets/messageviewerdialog.cpp:111 widgets/messageviewerwindow.cpp:143
+#: widgets/messageviewerdialog.cpp:117 widgets/messageviewerwindow.cpp:147
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "다음 메시지"
 
-#: widgets/messageviewerdialog.cpp:131 widgets/messageviewerdialog.cpp:161
+#: widgets/messageviewerdialog.cpp:137 widgets/messageviewerdialog.cpp:167
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML 파일 (*.eml);;MBOX 파일 (*.mbox);;MIME 파일 (*.mime)"
 
-#: widgets/messageviewerdialog.cpp:133 widgets/messageviewerwindow.cpp:180
+#: widgets/messageviewerdialog.cpp:139 widgets/messageviewerwindow.cpp:184
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "암호화된 S/MIME 파일 (*.p7m)"
 
-#: widgets/messageviewerdialog.cpp:137 widgets/messageviewerwindow.cpp:184
+#: widgets/messageviewerdialog.cpp:143 widgets/messageviewerwindow.cpp:188
 #, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML 파일 (*.eml);;MBOX 파일 (*.mbox);;MIME 파일 (*.mime)"
 
-#: widgets/messageviewerdialog.cpp:142 widgets/messageviewerwindow.cpp:189
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:193
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "파일 저장"
 
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:195
+#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerwindow.cpp:199
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "파일 %1을(를) 만들 수 없습니다."
 
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerdialog.cpp:165
-#: widgets/messageviewerwindow.cpp:195 widgets/messageviewerwindow.cpp:212
+#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:171
+#: widgets/messageviewerwindow.cpp:199 widgets/messageviewerwindow.cpp:216
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "메시지 저장 오류"
 
-#: widgets/messageviewerdialog.cpp:159 widgets/messageviewerwindow.cpp:206
+#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:210
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "복호화된 파일 저장"
 
-#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:212
+#: widgets/messageviewerdialog.cpp:171 widgets/messageviewerwindow.cpp:216
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "파일 %1을(를) 만들 수 없습니다."
 
-#: widgets/messageviewerdialog.cpp:184 widgets/messageviewerwindow.cpp:231
+#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:235
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "인쇄"
 
-#: widgets/messageviewerdialog.cpp:196 widgets/messageviewerwindow.cpp:243
+#: widgets/messageviewerdialog.cpp:202 widgets/messageviewerwindow.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
 
-#: widgets/messageviewerdialog.cpp:248
+#: widgets/messageviewerdialog.cpp:254
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
 msgstr "파일을 읽을 수 없음"
 
-#: widgets/messageviewerwindow.cpp:109
+#: widgets/messageviewerwindow.cpp:113
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "메시지(&M)"
 
-#: widgets/messageviewerwindow.cpp:112
+#: widgets/messageviewerwindow.cpp:116
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "소스 보기"
 
-#: widgets/messageviewerwindow.cpp:132
+#: widgets/messageviewerwindow.cpp:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "고정폭 글꼴 사용"
 
-#: widgets/messageviewerwindow.cpp:178 widgets/messageviewerwindow.cpp:208
+#: widgets/messageviewerwindow.cpp:182 widgets/messageviewerwindow.cpp:212
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
