@@ -76,6 +76,9 @@ void MessageViewerWindow::Private::setCurrentIndex(int index)
 
     previousAction->setEnabled(currentIndex != 0);
     nextAction->setEnabled(currentIndex != messages.count() - 1);
+
+    auto subject = messages[currentIndex]->subject()->asUnicodeString();
+    q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
 }
 
 QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
@@ -163,6 +166,9 @@ void MessageViewerWindow::Private::updateUI()
 
     if (messages.length() > 0) {
         messageViewer->setMessage(messages[0]);
+
+        auto subject = messages[currentIndex]->subject()->asUnicodeString();
+        q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
     }
 }
 
