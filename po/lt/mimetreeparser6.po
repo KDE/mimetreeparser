@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:43+0000\n"
+"POT-Creation-Date: 2025-07-10 00:43+0000\n"
 "PO-Revision-Date: 2024-01-14 00:38+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -151,7 +151,7 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr ""
 
-#: core/urlhandler.cpp:46
+#: core/urlhandler.cpp:52
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
@@ -396,31 +396,31 @@ msgstr ""
 msgid "&Date:"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:85 widgets/messageviewerwindow.cpp:86
+#: widgets/messageviewerdialog.cpp:85 widgets/messageviewerwindow.cpp:89
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:88
+#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:91
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:94
+#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:97
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:100
+#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:105 widgets/messageviewerwindow.cpp:106
+#: widgets/messageviewerdialog.cpp:105 widgets/messageviewerwindow.cpp:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
@@ -432,13 +432,13 @@ msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:113 widgets/messageviewerwindow.cpp:143
+#: widgets/messageviewerdialog.cpp:113 widgets/messageviewerwindow.cpp:146
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:117 widgets/messageviewerwindow.cpp:147
+#: widgets/messageviewerdialog.cpp:117 widgets/messageviewerwindow.cpp:150
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
@@ -450,55 +450,55 @@ msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:139 widgets/messageviewerwindow.cpp:184
+#: widgets/messageviewerdialog.cpp:139 widgets/messageviewerwindow.cpp:190
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:143 widgets/messageviewerwindow.cpp:188
+#: widgets/messageviewerdialog.cpp:143 widgets/messageviewerwindow.cpp:194
 #, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:193
+#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:199
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerwindow.cpp:199
+#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerwindow.cpp:205
 #, kde-format
 msgid "File %1 could not be created."
 msgstr ""
 
 #: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:171
-#: widgets/messageviewerwindow.cpp:199 widgets/messageviewerwindow.cpp:216
+#: widgets/messageviewerwindow.cpp:205 widgets/messageviewerwindow.cpp:222
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:210
+#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:216
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:171 widgets/messageviewerwindow.cpp:216
+#: widgets/messageviewerdialog.cpp:171 widgets/messageviewerwindow.cpp:222
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:235
+#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:241
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:202 widgets/messageviewerwindow.cpp:247
+#: widgets/messageviewerdialog.cpp:202 widgets/messageviewerwindow.cpp:253
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
@@ -510,25 +510,31 @@ msgctxt "@info"
 msgid "Unable to read file"
 msgstr ""
 
-#: widgets/messageviewerwindow.cpp:113
+#: widgets/messageviewerwindow.cpp:81 widgets/messageviewerwindow.cpp:171
+#, kde-format
+msgctxt "window title if email subject is empty"
+msgid "(No Subject)"
+msgstr ""
+
+#: widgets/messageviewerwindow.cpp:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr ""
 
-#: widgets/messageviewerwindow.cpp:116
+#: widgets/messageviewerwindow.cpp:119
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr ""
 
-#: widgets/messageviewerwindow.cpp:136
+#: widgets/messageviewerwindow.cpp:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr ""
 
-#: widgets/messageviewerwindow.cpp:182 widgets/messageviewerwindow.cpp:212
+#: widgets/messageviewerwindow.cpp:188 widgets/messageviewerwindow.cpp:218
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
