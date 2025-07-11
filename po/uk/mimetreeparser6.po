@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-10 00:43+0000\n"
-"PO-Revision-Date: 2025-05-09 13:25+0300\n"
+"PO-Revision-Date: 2025-07-10 16:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -516,12 +516,10 @@ msgid "Unable to read file"
 msgstr "Не вдалося прочитати дані з файла"
 
 #: widgets/messageviewerwindow.cpp:81 widgets/messageviewerwindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "Тема:"
+msgstr "(Немає теми)"
 
 #: widgets/messageviewerwindow.cpp:116
 #, kde-format
