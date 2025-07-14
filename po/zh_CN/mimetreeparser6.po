@@ -501,12 +501,10 @@ msgid "Unable to read file"
 msgstr "无法读取文件"
 
 #: widgets/messageviewerwindow.cpp:81 widgets/messageviewerwindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "主题："
+msgstr ""
 
 #: widgets/messageviewerwindow.cpp:116
 #, kde-format
