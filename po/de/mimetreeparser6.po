@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-10 02:34+0000\n"
-"PO-Revision-Date: 2025-05-23 14:27+0200\n"
+"PO-Revision-Date: 2025-07-15 13:01+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
 "Language: de\n"
@@ -514,12 +514,10 @@ msgid "Unable to read file"
 msgstr "Datei nicht lesbar"
 
 #: widgets/messageviewerwindow.cpp:81 widgets/messageviewerwindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "Betreff:"
+msgstr "(Kein Betreff)"
 
 #: widgets/messageviewerwindow.cpp:116
 #, kde-format
