@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-10 00:43+0000\n"
-"PO-Revision-Date: 2025-07-11 18:45+0200\n"
+"PO-Revision-Date: 2025-07-23 14:11+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -286,7 +286,7 @@ msgstr "Mezua ondoko gakoetarako zifratuta dago:"
 #: widgets/messageviewer.cpp:68
 #, kde-format
 msgid "&Save Attachment As…"
-msgstr "&Gorde eranskina honela..."
+msgstr "&Gorde eranskina honela…"
 
 #: widgets/messageviewer.cpp:73
 #, kde-format
