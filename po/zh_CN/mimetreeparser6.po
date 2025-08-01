@@ -504,7 +504,7 @@ msgstr "无法读取文件"
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr ""
+msgstr " (无主题) "
 
 #: widgets/messageviewerwindow.cpp:116
 #, kde-format
