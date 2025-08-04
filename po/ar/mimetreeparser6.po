@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-10 00:43+0000\n"
-"PO-Revision-Date: 2025-07-14 20:24+0400\n"
+"PO-Revision-Date: 2025-08-03 15:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -34,7 +34,7 @@ msgstr "الحجم"
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
-msgstr "مشفّر"
+msgstr "معماة"
 
 #: core/attachmentmodel.cpp:208
 #, kde-format
@@ -144,12 +144,12 @@ msgstr "فشلت في فكّ تعمية هذه الرّسالة."
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "الرسالة مشفرة للمستلم التالي:"
-msgstr[1] "الرسالة مشفرة للمستلم التالي:"
-msgstr[2] "الرسالة مشفرة للمستلمين التاليين:"
-msgstr[3] "الرسالة مشفرة للمستلمين التاليين:"
-msgstr[4] "الرسالة مشفرة للمستلمين التاليين:"
-msgstr[5] "الرسالة مشفرة للمستلمين التاليين:"
+msgstr[0] "الرسالة معماة للمستلم التالي:"
+msgstr[1] "الرسالة معماة للمستلم التالي:"
+msgstr[2] "الرسالة معماة للمستلمين التاليين:"
+msgstr[3] "الرسالة معماة للمستلمين التاليين:"
+msgstr[4] "الرسالة معماة للمستلمين التاليين:"
+msgstr[5] "الرسالة معماة للمستلمين التاليين:"
 
 #: core/partmodel.cpp:595
 #, kde-format
@@ -260,7 +260,7 @@ msgstr "أرسلها %1 في %2"
 #: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "هذه الرسالة مشفرة، لكن ليس لديك مفتاح سري مطابق."
+msgstr "هذه الرسالة معماة، لكن ليس لديك مفتاح سري مطابق."
 
 #: quick/qml/private/MailPartModel.qml:97
 #, kde-format
@@ -287,7 +287,7 @@ msgstr "هذه الرّسالة معمّاة."
 #: widgets/messagecontainerwidget.cpp:159
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
-msgstr "الرسالة مشفرة للمستلمين التاليين:"
+msgstr "الرسالة معماة للمستلمين التاليين:"
 
 #: widgets/messageviewer.cpp:68
 #, kde-format
@@ -460,7 +460,7 @@ msgstr "ملف EML (*.eml); ملف MBOX (*.mbox); ملف MIME (*.mime)"
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "ملفات S/MIME المشفرة (*.p7m)"
+msgstr "ملفات S/MIME المعماة (*.p7m)"
 
 #: widgets/messageviewerdialog.cpp:143 widgets/messageviewerwindow.cpp:194
 #, kde-format
