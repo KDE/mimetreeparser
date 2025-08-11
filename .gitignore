@@ -4,3 +4,4 @@ CMakeLists.txt.user*
 .cache
 /.vscode/
 .qtcreator/
+compile_commands.json
