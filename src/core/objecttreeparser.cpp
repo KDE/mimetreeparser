@@ -23,7 +23,7 @@
 #include <QUrl>
 
 using namespace MimeTreeParser;
-
+using namespace Qt::Literals::StringLiterals;
 /*
  * Collect message parts bottom up.
  * Filter to avoid evaluating a subtree.

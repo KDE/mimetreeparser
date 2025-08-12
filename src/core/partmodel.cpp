@@ -21,7 +21,7 @@
 #include <QTextDocument>
 
 #include <gpgme++/verificationresult.h>
-
+using namespace Qt::Literals::StringLiterals;
 static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::MessagePart *messagePart)
 {
     const auto signatureState = messagePart->signatureState();

@@ -17,7 +17,7 @@
 
 using namespace MimeTreeParser;
 using namespace MimeTreeParser::Interface;
-
+using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
 {
 class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
