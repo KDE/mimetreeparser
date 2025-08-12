@@ -13,12 +13,12 @@
 #include <cstdio>
 #include <windows.h>
 #endif
-
+using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain(QByteArrayLiteral("mimetreeparser6"));
+    KLocalizedString::setApplicationDomain("mimetreeparser6"_ba);
 #ifdef Q_OS_WIN
     if (AttachConsole(ATTACH_PARENT_PROCESS)) {
         freopen("CONOUT$", "w", stdout);

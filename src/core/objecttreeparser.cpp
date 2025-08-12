@@ -235,7 +235,7 @@ MessagePart::List ObjectTreeParser::collectContentParts(MessagePart::Ptr start)
         },
         [start](const MessagePart::Ptr &part) {
             if (const auto attachment = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(part.data())) {
-                return attachment->mimeType() == QByteArrayLiteral("text/calendar");
+                return attachment->mimeType() == "text/calendar"_ba;
             } else if (const auto text = dynamic_cast<MimeTreeParser::TextMessagePart *>(part.data())) {
                 auto enc = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(text->parentPart());
                 if (enc && enc->error()) {
@@ -432,7 +432,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
             }
             // Fallback to the generic handler
             {
-                auto list = processType(node, mediaType, QByteArrayLiteral("*"));
+                auto list = processType(node, mediaType, "*"_ba);
                 if (!list.isEmpty()) {
                     return list;
                 }
@@ -455,7 +455,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
 
 QList<MessagePart::Ptr> ObjectTreeParser::defaultHandling(KMime::Content *node)
 {
-    if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")
+    if (node->contentType()->mimeType() == "application/octet-stream"_ba
         && (node->contentType()->name().endsWith(QLatin1StringView("p7m")) || node->contentType()->name().endsWith(QLatin1StringView("p7s"))
             || node->contentType()->name().endsWith(QLatin1StringView("p7c")))) {
         auto list = processType(node, "application", "pkcs7-mime");
@@ -470,15 +470,15 @@ QList<MessagePart::Ptr> ObjectTreeParser::defaultHandling(KMime::Content *node)
 QByteArray ObjectTreeParser::codecNameFor(KMime::Content *node) const
 {
     if (!node) {
-        return QByteArrayLiteral("UTF-8");
+        return "UTF-8"_ba;
     }
 
     QByteArray charset = node->contentType()->charset().toLower();
 
     // utf-8 is a superset of us-ascii, so we don't lose anything if we use it instead
     // utf-8 is used so widely nowadays that it is a good idea to use it to fix issues with broken clients.
-    if (charset == QByteArrayLiteral("us-ascii")) {
-        charset = QByteArrayLiteral("utf-8");
+    if (charset == "us-ascii"_ba) {
+        charset = "utf-8"_ba;
     }
     if (!charset.isEmpty()) {
         if (const QStringDecoder c(charset.constData()); c.isValid()) {
@@ -487,5 +487,5 @@ QByteArray ObjectTreeParser::codecNameFor(KMime::Content *node) const
     }
     // no charset means us-ascii (RFC 2045), so using local encoding should
     // be okay
-    return QByteArrayLiteral("UTF-8");
+    return "UTF-8"_ba;
 }

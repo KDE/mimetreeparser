@@ -183,7 +183,7 @@ public:
 
         if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
             auto node = attachmentPart->node();
-            if (node && mMimeTypeCache[attachmentPart] == QByteArrayLiteral("text/calendar")) {
+            if (node && mMimeTypeCache[attachmentPart] == "text/calendar"_ba) {
                 return messagePart->text();
             }
         }
@@ -229,7 +229,7 @@ public:
         }
 
         for (const auto &part : std::as_const(filteredParts)) {
-            if (mMimeTypeCache[part.data()] == QByteArrayLiteral("text/calendar")) {
+            if (mMimeTypeCache[part.data()] == "text/calendar"_ba) {
                 mParts.prepend(part);
             } else {
                 mParts.append(part);
@@ -302,22 +302,22 @@ bool PartModel::containsHtml() const
 QHash<int, QByteArray> PartModel::roleNames() const
 {
     return {
-        {TypeRole, QByteArrayLiteral("type")},
-        {ContentRole, QByteArrayLiteral("content")},
-        {IsEmbeddedRole, QByteArrayLiteral("isEmbedded")},
-        {SidebarSecurityLevelRole, QByteArrayLiteral("sidebarSecurityLevel")},
-        {EncryptionSecurityLevelRole, QByteArrayLiteral("encryptionSecurityLevel")},
-        {SignatureSecurityLevelRole, QByteArrayLiteral("signatureSecurityLevel")},
-        {EncryptionSecurityLevelRole, QByteArrayLiteral("encryptionSecurityLevel")},
-        {ErrorType, QByteArrayLiteral("errorType")},
-        {ErrorString, QByteArrayLiteral("errorString")},
-        {IsErrorRole, QByteArrayLiteral("error")},
-        {SenderRole, QByteArrayLiteral("sender")},
-        {SignatureDetailsRole, QByteArrayLiteral("signatureDetails")},
-        {SignatureIconNameRole, QByteArrayLiteral("signatureIconName")},
-        {EncryptionDetails, QByteArrayLiteral("encryptionDetails")},
-        {EncryptionIconNameRole, QByteArrayLiteral("encryptionIconName")},
-        {DateRole, QByteArrayLiteral("date")},
+        {TypeRole, "type"_ba},
+        {ContentRole, "content"_ba},
+        {IsEmbeddedRole, "isEmbedded"_ba},
+        {SidebarSecurityLevelRole, "sidebarSecurityLevel"_ba},
+        {EncryptionSecurityLevelRole, "encryptionSecurityLevel"_ba},
+        {SignatureSecurityLevelRole, "signatureSecurityLevel"_ba},
+        {EncryptionSecurityLevelRole, "encryptionSecurityLevel"_ba},
+        {ErrorType, "errorType"_ba},
+        {ErrorString, "errorString"_ba},
+        {IsErrorRole, "error"_ba},
+        {SenderRole, "sender"_ba},
+        {SignatureDetailsRole, "signatureDetails"_ba},
+        {SignatureIconNameRole, "signatureIconName"_ba},
+        {EncryptionDetails, "encryptionDetails"_ba},
+        {EncryptionIconNameRole, "encryptionIconName"_ba},
+        {DateRole, "date"_ba},
     };
 }
 
@@ -454,7 +454,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                     qWarning() << "no content for attachment";
                     return {};
                 }
-                if (d->mMimeTypeCache[attachmentPart] == QByteArrayLiteral("text/calendar")) {
+                if (d->mMimeTypeCache[attachmentPart] == "text/calendar"_ba) {
                     return QVariant::fromValue(Types::Ical);
                 }
             }

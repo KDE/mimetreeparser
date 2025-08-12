@@ -79,8 +79,7 @@ public:
 
         bool isActuallyMixedEncrypted = false;
         for (const auto &content : std::as_const(contents)) {
-            if (content->contentType()->mimeType() == QByteArrayLiteral("application/pgp-encrypted")
-                || content->contentType()->mimeType() == QByteArrayLiteral("application/pkcs7-mime")) {
+            if (content->contentType()->mimeType() == "application/pgp-encrypted"_ba || content->contentType()->mimeType() == "application/pkcs7-mime"_ba) {
                 isActuallyMixedEncrypted = true;
             }
         }
@@ -94,15 +93,15 @@ public:
                                           }),
                            contents.end());
 
-            if (contents.count() == 1 && contents[0]->contentType()->mimeType() == QByteArrayLiteral("application/pkcs7-mime")) {
-                auto data = findTypeInDirectChildren(node, QByteArrayLiteral("application/pkcs7-mime"));
+            if (contents.count() == 1 && contents[0]->contentType()->mimeType() == "application/pkcs7-mime"_ba) {
+                auto data = findTypeInDirectChildren(node, "application/pkcs7-mime"_ba);
                 auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), node, data));
                 mp->setIsEncrypted(true);
                 return mp;
             }
 
-            if (contents.count() == 2 && contents[1]->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")) {
-                KMime::Content *data = findTypeInDirectChildren(node, QByteArrayLiteral("application/octet-stream"));
+            if (contents.count() == 2 && contents[1]->contentType()->mimeType() == "application/octet-stream"_ba) {
+                KMime::Content *data = findTypeInDirectChildren(node, "application/octet-stream"_ba);
                 auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
                 mp->setIsEncrypted(true);
                 return mp;
@@ -121,7 +120,7 @@ class ApplicationPGPEncryptedBodyPartFormatter : public MimeTreeParser::Interfac
 public:
     MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
-        if (node->decodedContent().trimmed() != QByteArrayLiteral("Version: 1")) {
+        if (node->decodedContent().trimmed() != "Version: 1"_ba) {
             qCWarning(MIMETREEPARSER_CORE_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
         }
 
@@ -129,7 +128,7 @@ public:
             return MessagePart::Ptr();
         }
 
-        KMime::Content *data = findTypeInDirectChildren(node->parent(), QByteArrayLiteral("application/octet-stream"));
+        KMime::Content *data = findTypeInDirectChildren(node->parent(), "application/octet-stream"_ba);
 
         if (!data) {
             return MessagePart::Ptr(); // new MimeMessagePart(objectTreeParser, node));
@@ -255,11 +254,11 @@ public:
         /*
         ATTENTION: This code is to be replaced by the new 'auto-detect' feature. --------------------------------------
         */
-        KMime::Content *data = findTypeInDirectChildren(node, QByteArrayLiteral("application/octet-stream"));
+        KMime::Content *data = findTypeInDirectChildren(node, "application/octet-stream"_ba);
         if (data) {
             protocol = QGpgME::openpgp();
         } else {
-            data = findTypeInDirectChildren(node, QByteArrayLiteral("application/pkcs7-mime"));
+            data = findTypeInDirectChildren(node, "application/pkcs7-mime"_ba);
             if (data) {
                 protocol = QGpgME::smime();
             }

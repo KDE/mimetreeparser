@@ -26,6 +26,7 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MimeTreeParser;
 
@@ -97,13 +98,13 @@ static KMime::Headers::ContentType *contentType(KMime::Content *node)
 QByteArray MessagePart::charset() const
 {
     if (!mNode) {
-        return QByteArrayLiteral("us-ascii");
+        return "us-ascii"_ba;
     }
     if (auto ct = contentType(mNode)) {
         return ct->charset();
     }
     // Per rfc2045 us-ascii is the default
-    return QByteArrayLiteral("us-ascii");
+    return "us-ascii"_ba;
 }
 
 QByteArray MessagePart::mimeType() const
@@ -221,7 +222,7 @@ void MessagePart::parseInternal(const QByteArray &data)
     bindLifetime(tempNode);
 
     if (!tempNode->head().isEmpty()) {
-        tempNode->contentDescription()->from7BitString(QByteArrayLiteral("temporary node"));
+        tempNode->contentDescription()->from7BitString("temporary node"_ba);
     }
 
     parseInternal(tempNode);

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "attachmentmodel.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "mimetreeparser_core_debug.h"
 
@@ -185,12 +186,12 @@ AttachmentModel::~AttachmentModel()
 QHash<int, QByteArray> AttachmentModel::roleNames() const
 {
     return {
-        {TypeRole, QByteArrayLiteral("type")},
-        {NameRole, QByteArrayLiteral("name")},
-        {SizeRole, QByteArrayLiteral("size")},
-        {IconRole, QByteArrayLiteral("iconName")},
-        {IsEncryptedRole, QByteArrayLiteral("encrypted")},
-        {IsSignedRole, QByteArrayLiteral("signed")},
+        {TypeRole, "type"_ba},
+        {NameRole, "name"_ba},
+        {SizeRole, "size"_ba},
+        {IconRole, "iconName"_ba},
+        {IsEncryptedRole, "encrypted"_ba},
+        {IsSignedRole, "signed"_ba},
     };
 }
 
