@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "messageparser.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "attachmentmodel.h"
 #include "mimetreeparser_core_debug.h"
@@ -36,7 +37,7 @@ QString mailboxesToHtml(const KMime::Types::Mailbox::List &mailboxes)
     QStringList html;
     for (const auto &mailbox : mailboxes) {
         if (mailbox.hasName() && mailbox.hasAddress()) {
-            html << QStringLiteral("%1 <%2>").arg(mailbox.name().toHtmlEscaped(), QString::fromUtf8(mailbox.address()).toHtmlEscaped());
+            html << u"%1 <%2>"_s.arg(mailbox.name().toHtmlEscaped(), QString::fromUtf8(mailbox.address()).toHtmlEscaped());
         } else if (mailbox.hasAddress()) {
             html << QString::fromUtf8(mailbox.address());
         } else {

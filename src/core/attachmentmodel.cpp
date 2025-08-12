@@ -38,10 +38,10 @@ namespace
 QString sizeHuman(float size)
 {
     QStringList list;
-    list << QStringLiteral("KB") << QStringLiteral("MB") << QStringLiteral("GB") << QStringLiteral("TB");
+    list << u"KB"_s << u"MB"_s << QStringLiteral("GB") << QStringLiteral("TB");
 
     QStringListIterator i(list);
-    QString unit = QStringLiteral("Bytes");
+    QString unit = u"Bytes"_s;
 
     while (size >= 1024.0 && i.hasNext()) {
         unit = i.next();
@@ -49,9 +49,9 @@ QString sizeHuman(float size)
     }
 
     if (unit == QLatin1StringView("Bytes")) {
-        return QString().setNum(size) + QStringLiteral(" ") + unit;
+        return QString().setNum(size) + u" "_s + unit;
     } else {
-        return QString().setNum(size, 'f', 2) + QStringLiteral(" ") + unit;
+        return QString().setNum(size, 'f', 2) + u" "_s + unit;
     }
 }
 
@@ -66,14 +66,14 @@ QString sizeHuman(float size)
 //  names.
 const QRegularExpression &windowsDeviceNoSubDirPattern()
 {
-    static const QRegularExpression rc(QStringLiteral("^" WINDOWS_DEVICES_PATTERN "$"), QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression rc(u"^" WINDOWS_DEVICES_PATTERN "$"_s, QRegularExpression::CaseInsensitiveOption);
     Q_ASSERT(rc.isValid());
     return rc;
 }
 
 const QRegularExpression &windowsDeviceSubDirPattern()
 {
-    static const QRegularExpression rc(QStringLiteral("^.*[/\\\\]" WINDOWS_DEVICES_PATTERN "$"), QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression rc(u"^.*[/\\\\]" WINDOWS_DEVICES_PATTERN "$"_s, QRegularExpression::CaseInsensitiveOption);
     Q_ASSERT(rc.isValid());
     return rc;
 }
@@ -317,7 +317,7 @@ bool AttachmentModel::openAttachment(const int row)
 bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
 {
     QString fileName = message->filename();
-    QTemporaryDir tempDir(QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName() + QStringLiteral(".XXXXXX"));
+    QTemporaryDir tempDir(QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName() + u".XXXXXX"_s);
     // TODO: We need some cleanup here. Otherwise the files will stay forever on Windows.
     tempDir.setAutoRemove(false);
     if (message->filename().isEmpty() || !validateFileName(fileName, false)) {
@@ -384,7 +384,7 @@ bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &pa
         } else {
             QString message = i18ndcp("mimetreeparser", "@info", "one certificate imported", "%1 certificates imported", result.numImported());
             if (result.numUnchanged() != 0) {
-                message += QStringLiteral("\n")
+                message += u"\n"_s
                     + i18ndcp("mimetreeparser",
                               "@info",
                               "one certificate was already imported",

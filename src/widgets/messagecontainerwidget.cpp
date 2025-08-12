@@ -3,6 +3,8 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "../core/utils.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecontainerwidget_p.h"
 #include "partmodel.h"
 #include <MimeTreeParserCore/UrlHandler>
@@ -136,14 +138,14 @@ void MessageWidgetContainer::createLayout()
 
         QString text;
         if (m_encryptionSecurityLevel == PartModel::Bad) {
-            encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("data-error")));
+            encryptionMessage->setIcon(QIcon::fromTheme(u"data-error"_s));
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted but you don't have a matching secret key.", QString::fromUtf8(m_encryptionInfo.keyId));
             } else {
                 text = i18n("This message is encrypted but you don't have a matching secret key.");
             }
         } else {
-            encryptionMessage->setIcon(QIcon::fromTheme(QStringLiteral("mail-encrypted")));
+            encryptionMessage->setIcon(QIcon::fromTheme(u"mail-encrypted"_s));
             if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
                 text = i18n("This message is VS-NfD compliant encrypted.");
             } else {
@@ -151,7 +153,7 @@ void MessageWidgetContainer::createLayout()
             }
         }
 
-        encryptionMessage->setText(text + QLatin1Char(' ') + QStringLiteral("<a href=\"messageviewer:showDetails\">Details</a>"));
+        encryptionMessage->setText(text + QLatin1Char(' ') + u"<a href=\"messageviewer:showDetails\">Details</a>"_s);
 
         connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
             QUrl url(link);
@@ -174,7 +176,7 @@ void MessageWidgetContainer::createLayout()
 
     if (m_displaySignatureInfo) {
         auto signatureMessage = new KMessageWidget(this);
-        signatureMessage->setObjectName(QStringLiteral("SignatureMessage"));
+        signatureMessage->setObjectName(u"SignatureMessage"_s);
         signatureMessage->setCloseButtonVisible(false);
         signatureMessage->setText(m_signatureInfo);
         connect(signatureMessage, &KMessageWidget::linkActivated, this, [this](const QString &link) {

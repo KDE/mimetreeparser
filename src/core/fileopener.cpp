@@ -20,11 +20,11 @@ KMime::Message::Ptr openSmimeEncrypted(const QByteArray &content)
 
     auto contentType = message->contentType();
     contentType->setMimeType("application/pkcs7-mime"_ba);
-    contentType->setParameter("smime-type"_ba, QStringLiteral("enveloped-data"));
+    contentType->setParameter("smime-type"_ba, u"enveloped-data"_s);
 
     auto contentDisposition = new KMime::Headers::ContentDisposition;
     contentDisposition->setDisposition(KMime::Headers::CDattachment);
-    contentDisposition->setFilename(QStringLiteral("smime.p7m"));
+    contentDisposition->setFilename(u"smime.p7m"_s);
     message->appendHeader(contentDisposition);
 
     auto cte = message->contentTransferEncoding();
@@ -43,7 +43,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     auto contentType = message->contentType();
     contentType->setMimeType("multipart/encrypted"_ba);
     contentType->setBoundary(KMime::multiPartBoundary());
-    contentType->setParameter("protocol"_ba, QStringLiteral("application/pgp-encrypted"));
+    contentType->setParameter("protocol"_ba, u"application/pgp-encrypted"_s);
 
     auto cte = message->contentTransferEncoding();
     cte->setEncoding(KMime::Headers::CE7Bit);
@@ -60,7 +60,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     encryptedContent->contentType()->setMimeType("application/octet-stream"_ba);
     contentDisposition = new KMime::Headers::ContentDisposition;
     contentDisposition->setDisposition(KMime::Headers::CDinline);
-    contentDisposition->setFilename(QStringLiteral("msg.asc"));
+    contentDisposition->setFilename(u"msg.asc"_s);
     encryptedContent->appendHeader(contentDisposition);
     encryptedContent->setBody(content);
     message->appendContent(encryptedContent);
@@ -107,9 +107,9 @@ QList<KMime::Message::Ptr> FileOpener::openFile(const QString &fileName)
         return {};
     }
 
-    if (mime.inherits(QStringLiteral("application/pkcs7-mime")) || fileName.endsWith(QStringLiteral("smime.p7m"))) {
+    if (mime.inherits(u"application/pkcs7-mime"_s) || fileName.endsWith(u"smime.p7m"_s)) {
         return {openSmimeEncrypted(content)};
-    } else if (mime.inherits(QStringLiteral("application/pgp-encrypted")) || fileName.endsWith(QStringLiteral(".asc"))) {
+    } else if (mime.inherits(u"application/pgp-encrypted"_s) || fileName.endsWith(u".asc"_s)) {
         return {openPgpEncrypted(content)};
     } else if (content.startsWith("From ")) {
         return openMbox(fileName);

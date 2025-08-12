@@ -5,7 +5,7 @@
 
 #include <QMap>
 #include <QUrl>
-
+using namespace Qt::Literals::StringLiterals;
 static QString resolveEntities(const QString &in)
 {
     QString out;
@@ -70,7 +70,7 @@ static QString linkify_htmlsafe(const QString &in)
     QString out;
 
     for (int n = 0; n < in.length(); ++n) {
-        if (linkify_isOneOf(in.at(n), QStringLiteral("\"\'`<>"))) {
+        if (linkify_isOneOf(in.at(n), u"\"\'`<>"_s)) {
             // hex encode
             QString hex;
             hex.asprintf("%%%02X", in.at(n).toLatin1());
@@ -103,7 +103,7 @@ static bool linkify_okEmail(const QString &addy)
         return false;
     if ((addy.length() - 1) - d <= 0)
         return false;
-    if (addy.indexOf(QStringLiteral("..")) != -1)
+    if (addy.indexOf(u".."_s) != -1)
         return false;
 
     return true;
@@ -124,47 +124,47 @@ QString MimeTreeParser::linkify(const QString &in)
         bool isAtStyle = false;
         x1 = n;
 
-        if (linkify_pmatch(out, n, QStringLiteral("xmpp:"))) {
+        if (linkify_pmatch(out, n, u"xmpp:"_s)) {
             n += 5;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("mailto:"))) {
+        } else if (linkify_pmatch(out, n, u"mailto:"_s)) {
             n += 7;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("http://"))) {
+        } else if (linkify_pmatch(out, n, u"http://"_s)) {
             n += 7;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("https://"))) {
+        } else if (linkify_pmatch(out, n, u"https://"_s)) {
             n += 8;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("ftp://"))) {
+        } else if (linkify_pmatch(out, n, u"ftp://"_s)) {
             n += 6;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("news://"))) {
+        } else if (linkify_pmatch(out, n, u"news://"_s)) {
             n += 7;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("ed2k://"))) {
+        } else if (linkify_pmatch(out, n, u"ed2k://"_s)) {
             n += 7;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("magnet:"))) {
+        } else if (linkify_pmatch(out, n, u"magnet:"_s)) {
             n += 7;
             isUrl = true;
             href = QString();
-        } else if (linkify_pmatch(out, n, QStringLiteral("www."))) {
+        } else if (linkify_pmatch(out, n, u"www."_s)) {
             isUrl = true;
-            href = QStringLiteral("http://");
-        } else if (linkify_pmatch(out, n, QStringLiteral("ftp."))) {
+            href = u"http://"_s;
+        } else if (linkify_pmatch(out, n, u"ftp."_s)) {
             isUrl = true;
-            href = QStringLiteral("ftp://");
-        } else if (linkify_pmatch(out, n, QStringLiteral("@"))) {
+            href = u"ftp://"_s;
+        } else if (linkify_pmatch(out, n, u"@"_s)) {
             isAtStyle = true;
-            href = QStringLiteral("x-psi-atstyle:");
+            href = u"x-psi-atstyle:"_s;
         }
 
         if (isUrl) {
@@ -181,9 +181,8 @@ QString MimeTreeParser::linkify(const QString &in)
             openingBracket[QLatin1Char(']')] = QLatin1Char('[');
             openingBracket[QLatin1Char('}')] = QLatin1Char('{');
             for (x2 = n; x2 < (int)out.length(); ++x2) {
-                if (out.at(x2).isSpace() || linkify_isOneOf(out.at(x2), QStringLiteral("\"\'`<>")) || linkify_pmatch(out, x2, QStringLiteral("&quot;"))
-                    || linkify_pmatch(out, x2, QStringLiteral("&apos;")) || linkify_pmatch(out, x2, QStringLiteral("&gt;"))
-                    || linkify_pmatch(out, x2, QStringLiteral("&lt;"))) {
+                if (out.at(x2).isSpace() || linkify_isOneOf(out.at(x2), u"\"\'`<>"_s) || linkify_pmatch(out, x2, u"&quot;"_s)
+                    || linkify_pmatch(out, x2, u"&apos;"_s) || linkify_pmatch(out, x2, u"&gt;"_s) || linkify_pmatch(out, x2, u"&lt;"_s)) {
                     break;
                 }
                 if (brackets.contains(out.at(x2))) {
@@ -196,9 +195,9 @@ QString MimeTreeParser::linkify(const QString &in)
             // go backward hacking off unwanted punctuation
             int cutoff;
             for (cutoff = pre.length() - 1; cutoff >= 0; --cutoff) {
-                if (!linkify_isOneOf(pre.at(cutoff), QStringLiteral("!?,.()[]{}<>\"")))
+                if (!linkify_isOneOf(pre.at(cutoff), u"!?,.()[]{}<>\""_s))
                     break;
-                if (linkify_isOneOf(pre.at(cutoff), QStringLiteral(")]}")) && brackets[pre.at(cutoff)] - brackets[openingBracket[pre.at(cutoff)]] <= 0) {
+                if (linkify_isOneOf(pre.at(cutoff), u")]}"_s) && brackets[pre.at(cutoff)] - brackets[openingBracket[pre.at(cutoff)]] <= 0) {
                     break; // in theory, there could be == above, but these are urls, not math ;)
                 }
                 if (brackets.contains(pre.at(cutoff))) {
@@ -218,8 +217,7 @@ QString MimeTreeParser::linkify(const QString &in)
             href = href.toHtmlEscaped();
             href = linkify_htmlsafe(href);
             // printf("link: [%s], href=[%s]\n", link.latin1(), href.latin1());
-            linked = QStringLiteral("<a href=\"%1\">").arg(href) + QUrl{link}.toDisplayString(QUrl::RemoveQuery) + QStringLiteral("</a>")
-                + pre.mid(cutoff).toHtmlEscaped();
+            linked = u"<a href=\"%1\">"_s.arg(href) + QUrl{link}.toDisplayString(QUrl::RemoveQuery) + u"</a>"_s + pre.mid(cutoff).toHtmlEscaped();
             out.replace(x1, len, linked);
             n = x1 + linked.length() - 1;
         } else if (isAtStyle) {
@@ -228,7 +226,7 @@ QString MimeTreeParser::linkify(const QString &in)
                 continue;
             --x1;
             for (; x1 >= 0; --x1) {
-                if (!linkify_isOneOf(out.at(x1), QStringLiteral("_.-+")) && !out.at(x1).isLetterOrNumber())
+                if (!linkify_isOneOf(out.at(x1), u"_.-+"_s) && !out.at(x1).isLetterOrNumber())
                     break;
             }
             ++x1;
@@ -236,7 +234,7 @@ QString MimeTreeParser::linkify(const QString &in)
             // go forward till we find the end
             x2 = n + 1;
             for (; x2 < (int)out.length(); ++x2) {
-                if (!linkify_isOneOf(out.at(x2), QStringLiteral("_.-+")) && !out.at(x2).isLetterOrNumber())
+                if (!linkify_isOneOf(out.at(x2), u"_.-+"_s) && !out.at(x2).isLetterOrNumber())
                     break;
             }
 
@@ -251,7 +249,7 @@ QString MimeTreeParser::linkify(const QString &in)
 
             href += link;
             // printf("link: [%s], href=[%s]\n", link.latin1(), href.latin1());
-            linked = QStringLiteral("<a href=\"%1\">").arg(href) + link + QStringLiteral("</a>");
+            linked = u"<a href=\"%1\">"_s.arg(href) + link + u"</a>"_s;
             out.replace(x1, len, linked);
             n = x1 + linked.length() - 1;
         }

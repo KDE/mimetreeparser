@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "messageviewerdialog.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer.h"
 #include "messageviewerutils_p.h"
@@ -84,25 +85,25 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
     // File menu
     const auto fileMenu = menuBar->addMenu(i18nc("@action:inmenu", "&File"));
 
-    const auto saveAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), i18nc("@action:inmenu", "&Save"));
+    const auto saveAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "&Save"));
     QObject::connect(saveAction, &QAction::triggered, parent, [parent, this] {
         save(parent);
     });
     fileMenu->addAction(saveAction);
 
-    const auto saveDecryptedAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), i18nc("@action:inmenu", "Save Decrypted"));
+    const auto saveDecryptedAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "Save Decrypted"));
     QObject::connect(saveDecryptedAction, &QAction::triggered, parent, [parent, this] {
         saveDecrypted(parent);
     });
     fileMenu->addAction(saveDecryptedAction);
 
-    const auto printPreviewAction = new QAction(QIcon::fromTheme(QStringLiteral("document-print-preview")), i18nc("@action:inmenu", "Print Preview"));
+    const auto printPreviewAction = new QAction(QIcon::fromTheme(u"document-print-preview"_s), i18nc("@action:inmenu", "Print Preview"));
     QObject::connect(printPreviewAction, &QAction::triggered, parent, [parent, this] {
         printPreview(parent);
     });
     fileMenu->addAction(printPreviewAction);
 
-    const auto printAction = new QAction(QIcon::fromTheme(QStringLiteral("document-print")), i18nc("@action:inmenu", "&Print"));
+    const auto printAction = new QAction(QIcon::fromTheme(u"document-print"_s), i18nc("@action:inmenu", "&Print"));
     QObject::connect(printAction, &QAction::triggered, parent, [parent, this] {
         print(parent);
     });
@@ -110,11 +111,11 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
 
     // Navigation menu
     const auto navigationMenu = menuBar->addMenu(i18nc("@action:inmenu", "&Navigation"));
-    previousAction = new QAction(QIcon::fromTheme(QStringLiteral("go-previous")), i18nc("@action:button Previous email", "Previous Message"), parent);
+    previousAction = new QAction(QIcon::fromTheme(u"go-previous"_s), i18nc("@action:button Previous email", "Previous Message"), parent);
     previousAction->setEnabled(false);
     navigationMenu->addAction(previousAction);
 
-    nextAction = new QAction(QIcon::fromTheme(QStringLiteral("go-next")), i18nc("@action:button Next email", "Next Message"), parent);
+    nextAction = new QAction(QIcon::fromTheme(u"go-next"_s), i18nc("@action:button Next email", "Next Message"), parent);
     nextAction->setEnabled(false);
     navigationMenu->addAction(nextAction);
 
@@ -132,14 +133,14 @@ void MessageViewerDialog::Private::save(QWidget *parent)
     Q_UNUSED(decryptedMessage); // we save the message without modifying it
 
     if (wasEncrypted) {
-        extension = QStringLiteral(".mime");
+        extension = u".mime"_s;
         if (protocol == GpgME::OpenPGP) {
             alternatives = i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
         } else {
             alternatives = i18nc("File dialog accepted files", "Encrypted S/MIME files (*.p7m)");
         }
     } else {
-        extension = QStringLiteral(".eml");
+        extension = u".eml"_s;
         alternatives = i18nc("Accepted files in a file dialog. You only need to translate 'file'", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
     }
 
@@ -160,11 +161,11 @@ void MessageViewerDialog::Private::save(QWidget *parent)
 
 void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
 {
-    const QString location = QFileDialog::getSaveFileName(
-        parent,
-        i18nc("@title:window", "Save Decrypted File"),
-        MesageViewerUtils::changeExtension(MesageViewerUtils::changeFileName(fileName, messageViewer->subject()), QStringLiteral(".eml")),
-        i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"));
+    const QString location =
+        QFileDialog::getSaveFileName(parent,
+                                     i18nc("@title:window", "Save Decrypted File"),
+                                     MesageViewerUtils::changeExtension(MesageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
+                                     i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"));
 
     QSaveFile file(location);
     if (!file.open(QIODevice::WriteOnly)) {

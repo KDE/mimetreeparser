@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "utils.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
@@ -26,7 +27,7 @@ KMime::Content *MimeTreeParser::findTypeInDirectChildren(KMime::Content *content
 QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &recipients,
                                                 const QGpgME::Protocol *cryptoProto)
 {
-    QString text = QStringLiteral("<ul>");
+    QString text = u"<ul>"_s;
     for (const auto &recipientIt : recipients) {
         const auto recipient = recipientIt.first;
         const auto key = recipientIt.second;
@@ -38,28 +39,28 @@ QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgM
                 displayName = dnToDisplayName(dn);
             }
             displayName = displayName.toHtmlEscaped();
-            const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                  .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(key.keyID()));
-            text += QStringLiteral("<li>%1 (<a href=\"%2\">%3</a>)</li>").arg(displayName, link, Kleo::Formatting::prettyID(key.keyID()));
+            const auto link =
+                u"messageviewer:showCertificate#%1 ### %2 ### %3"_s.arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(key.keyID()));
+            text += u"<li>%1 (<a href=\"%2\">%3</a>)</li>"_s.arg(displayName, link, Kleo::Formatting::prettyID(key.keyID()));
         } else {
-            const auto link = QStringLiteral("messageviewer:showCertificate#%1 ### %2 ### %3")
-                                  .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(recipient.keyID()));
-            text +=
-                QStringLiteral("<li>%1 (<a href=\"%2\">%3</a>)</li>").arg(i18nc("@info", "Unknown Key"), link, Kleo::Formatting::prettyID(recipient.keyID()));
+            const auto link = u"messageviewer:showCertificate#%1 ### %2 ### %3"_s.arg(cryptoProto->displayName(),
+                                                                                      cryptoProto->name(),
+                                                                                      QString::fromLatin1(recipient.keyID()));
+            text += u"<li>%1 (<a href=\"%2\">%3</a>)</li>"_s.arg(i18nc("@info", "Unknown Key"), link, Kleo::Formatting::prettyID(recipient.keyID()));
         }
     }
-    text += QStringLiteral("</ul>");
+    text += u"</ul>"_s;
     return text;
 }
 
 QString MimeTreeParser::dnToDisplayName(const QGpgME::DN &dn)
 {
-    QString displayName = dn[QStringLiteral("CN")];
+    QString displayName = dn[u"CN"_s];
     if (displayName.isEmpty()) {
         // In case there is no CN, put the full DN as display name
         displayName = dn.prettyDN();
-    } else if (!dn[QStringLiteral("O")].isEmpty()) {
-        displayName += i18nc("Separator", " - ") + dn[QStringLiteral("O")];
+    } else if (!dn[u"O"_s].isEmpty()) {
+        displayName += i18nc("Separator", " - ") + dn[u"O"_s];
     }
     return displayName;
 }

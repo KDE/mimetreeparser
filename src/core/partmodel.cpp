@@ -54,19 +54,19 @@ std::pair<QString, bool> PartModel::trim(const QString &text)
     // Microsoft-MacOutlook/10.1d.0.190908) We match both regulard withspace with \s and non-breaking spaces with \u00A0
     const QList<QRegularExpression> delimiters{
         // English
-        QRegularExpression{QStringLiteral("<p>.?-+Original(\\s|\u00A0)Message-+"), QRegularExpression::CaseInsensitiveOption},
+        QRegularExpression{u"<p>.?-+Original(\\s|\u00A0)Message-+"_s, QRegularExpression::CaseInsensitiveOption},
         // The remainder is not quoted
-        QRegularExpression{QStringLiteral("<p>.?On.*wrote:"), QRegularExpression::CaseInsensitiveOption},
+        QRegularExpression{u"<p>.?On.*wrote:"_s, QRegularExpression::CaseInsensitiveOption},
         // The remainder is quoted
-        QRegularExpression{QStringLiteral("&gt; On.*wrote:"), QRegularExpression::CaseInsensitiveOption},
+        QRegularExpression{u"&gt; On.*wrote:"_s, QRegularExpression::CaseInsensitiveOption},
 
         // German
         // Forwarded
-        QRegularExpression{QStringLiteral("<p>.?Von:.*</p>"), QRegularExpression::CaseInsensitiveOption},
+        QRegularExpression{u"<p>.?Von:.*</p>"_s, QRegularExpression::CaseInsensitiveOption},
         // Reply
-        QRegularExpression{QStringLiteral("<p>.?Am.*schrieb.*:</p>"), QRegularExpression::CaseInsensitiveOption},
+        QRegularExpression{u"<p>.?Am.*schrieb.*:</p>"_s, QRegularExpression::CaseInsensitiveOption},
         // Signature
-        QRegularExpression{QStringLiteral("<p>.?--(\\s|\u00A0)<br>"), QRegularExpression::CaseInsensitiveOption},
+        QRegularExpression{u"<p>.?--(\\s|\u00A0)<br>"_s, QRegularExpression::CaseInsensitiveOption},
     };
 
     for (const auto &expression : delimiters) {
@@ -93,7 +93,7 @@ static QString addCss(const QString &s)
     // Get the default font from QApplication
     static const QString fontFamily = QFont{}.family();
     // overflow:hidden ensures no scrollbars are ever shown.
-    static const QString css = QStringLiteral("<style>\n")
+    static const QString css = u"<style>\n"_s
         + QStringLiteral(
               "body {\n"
               "  overflow:hidden;\n"
@@ -105,13 +105,13 @@ static QString addCss(const QString &s)
         + QStringLiteral("blockquote { \n"
                          "  border-left: 2px solid #bdc3c7 ! important;\n"
                          "}\n")
-        + QStringLiteral("</style>");
+        + u"</style>"_s;
 
     const QString header = QLatin1StringView(
                                "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
                                "<html><head><title></title>")
         + css + QLatin1StringView("</head>\n<body>\n");
-    return header + s + QStringLiteral("</body></html>");
+    return header + s + u"</body></html>"_s;
 }
 
 class PartModelPrivate
@@ -157,7 +157,7 @@ public:
         auto preprocessPlaintext = [&](const QString &text) {
             // Reduce consecutive new lines to never exceed 2
             auto cleaned = text;
-            cleaned.replace(QRegularExpression(QStringLiteral("[\n\r]{2,}")), QStringLiteral("\n\n"));
+            cleaned.replace(QRegularExpression(u"[\n\r]{2,}"_s), u"\n\n"_s);
 
             // We always do rich text (so we get highlighted links and stuff).
             const auto html = Qt::convertFromPlainText(cleaned, Qt::WhiteSpaceNormal);
@@ -423,7 +423,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         Q_ASSERT(messagePart);
         switch (role) {
         case Qt::DisplayRole:
-            return QStringLiteral("Content%1");
+            return u"Content%1"_s;
         case SenderRole: {
             if (auto e = dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(messagePart)) {
                 return e->from();
@@ -465,23 +465,23 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             auto complexHtml = [&] {
                 if (messagePart->isHtml()) {
                     const auto text = messagePart->htmlContent();
-                    if (text.contains(QStringLiteral("<!DOCTYPE html PUBLIC"))) {
+                    if (text.contains(u"<!DOCTYPE html PUBLIC"_s)) {
                         // We can probably deal with this if it adheres to the strict dtd
                         //(that's what our composer produces as well)
-                        if (!text.contains(QStringLiteral("http://www.w3.org/TR/REC-html40/strict.dtd"))) {
+                        if (!text.contains(u"http://www.w3.org/TR/REC-html40/strict.dtd"_s)) {
                             return true;
                         }
                     }
                     // Blockquotes don't support any styling which would be necessary so they become readable.
-                    if (text.contains(QStringLiteral("blockquote"))) {
+                    if (text.contains(u"blockquote"_s)) {
                         return true;
                     }
                     // Media queries are too advanced
-                    if (text.contains(QStringLiteral("@media"))) {
+                    if (text.contains(u"@media"_s)) {
                         return true;
                     }
                     // auto css properties are not supported e.g margin-left: auto;
-                    if (text.contains(QStringLiteral(": auto;"))) {
+                    if (text.contains(u": auto;"_s)) {
                         return true;
                     }
                     return false;
@@ -537,10 +537,10 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
 
             if (messagePart->error()) {
-                return QStringLiteral("data-error");
+                return u"data-error"_s;
             }
 
-            return messageIsEncrypted ? QStringLiteral("mail-encrypted") : QString();
+            return messageIsEncrypted ? u"mail-encrypted"_s : QString();
         }
         case SignatureIconNameRole: {
             auto signature = signatureFromMessagePart(messagePart);
@@ -550,11 +550,11 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
 
             const auto summary = signature->summary();
             if (summary & GpgME::Signature::Valid) {
-                return QStringLiteral("mail-signed");
+                return u"mail-signed"_s;
             } else if (summary & GpgME::Signature::Red) {
-                return QStringLiteral("data-error");
+                return u"data-error"_s;
             } else {
-                return QStringLiteral("data-warning");
+                return u"data-warning"_s;
             }
         }
         case SignatureDetailsRole:
