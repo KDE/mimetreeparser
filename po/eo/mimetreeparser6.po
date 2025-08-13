@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -18,60 +18,60 @@ msgstr ""
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nomo"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Grandeco"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Ĉifrita"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Subskribita"
 
-#: core/attachmentmodel.cpp:301
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Malsukcesis konservi aldonaĵon."
 
-#: core/attachmentmodel.cpp:324
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "kunsendaĵo"
 
-#: core/attachmentmodel.cpp:331
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Malsukcesis skribi kunsendaĵon por malfermado."
 
-#: core/attachmentmodel.cpp:350 core/attachmentmodel.cpp:360
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Malsukcesis malfermi aldonaĵon."
 
-#: core/attachmentmodel.cpp:381
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Neniuj atestiloj estis trovitaj en ĉi tiu aldonaĵo"
 
-#: core/attachmentmodel.cpp:384
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -79,7 +79,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "unu atestilo importita"
 msgstr[1] "%1 atestiloj importitaj"
 
-#: core/attachmentmodel.cpp:389
+#: core/attachmentmodel.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -87,40 +87,40 @@ msgid_plural "%1 certificates were already imported"
 msgstr[0] "unu atestilo estis jam importita"
 msgstr[1] "%1 atestiloj estis jam importitaj"
 
-#: core/messageparser.cpp:47
+#: core/messageparser.cpp:48
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Nekonata"
 
-#: core/messageparser.cpp:52
+#: core/messageparser.cpp:53
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:622 core/messagepart.cpp:638 core/messagepart.cpp:710
+#: core/messagepart.cpp:623 core/messagepart.cpp:639 core/messagepart.cpp:711
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Malĝusta Kripta Kromaĵo."
 
-#: core/messagepart.cpp:860
+#: core/messagepart.cpp:861
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Neniu taŭga kripta kromprogramo estis trovita."
 
-#: core/messagepart.cpp:862
+#: core/messagepart.cpp:863
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Kripta kromprogramo \"%1\" ne povas deĉifri mesaĝojn."
 
-#: core/messagepart.cpp:864
+#: core/messagepart.cpp:865
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripta kromprogramo \"%1\" ne povis deĉifri la datumojn."
 
-#: core/messagepart.cpp:865
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "Error: %1"
 msgstr "Eraro: %1"
@@ -150,13 +150,13 @@ msgstr "Erara pasfrazo."
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Ne eblis startigi atestilmastrumanton. Bonvolu kontroli vian instalon."
 
-#: core/utils.cpp:48
+#: core/utils.cpp:49
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Nekonata Ŝlosilo"
 
-#: core/utils.cpp:62
+#: core/utils.cpp:63
 #, kde-format
 msgctxt "Separator"
 msgid " - "
@@ -245,7 +245,7 @@ msgid "sent by %1 on %2"
 msgstr "sendita de %1 sur %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:143
+#: widgets/messagecontainerwidget.cpp:145
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
@@ -256,7 +256,7 @@ msgstr ""
 msgid "This message is encrypted for: %1"
 msgstr "Ĉi tiu mesaĝo estas ĉifrita por: %1"
 
-#: widgets/messagecontainerwidget.cpp:141
+#: widgets/messagecontainerwidget.cpp:143
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -265,195 +265,195 @@ msgstr ""
 "Ĉi tiu mesaĝo estas ĉifrita laŭ VS-NfD, sed vi ne havas kongruan atestilon "
 "por ĝi."
 
-#: widgets/messagecontainerwidget.cpp:148
+#: widgets/messagecontainerwidget.cpp:150
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Ĉi tiu mesaĝo estas ĉifrita konforme al VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:150
+#: widgets/messagecontainerwidget.cpp:152
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Ĉi tiu mesaĝo estas ĉifrita."
 
-#: widgets/messagecontainerwidget.cpp:159
+#: widgets/messagecontainerwidget.cpp:161
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "La mesaĝo estas ĉifrita por la sekvaj ricevantoj:"
 
-#: widgets/messageviewer.cpp:68
+#: widgets/messageviewer.cpp:69
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "Kon&servi Aldonaĵon Kiel…"
 
-#: widgets/messageviewer.cpp:73
+#: widgets/messageviewer.cpp:74
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Malfermi"
 
-#: widgets/messageviewer.cpp:78
+#: widgets/messageviewer.cpp:79
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Importi publikan ŝlosilon"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "sennoma"
 
-#: widgets/messageviewer.cpp:110
+#: widgets/messageviewer.cpp:111
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Konservi Aldonaĵon Kiel"
 
-#: widgets/messageviewer.cpp:293
+#: widgets/messageviewer.cpp:294
 #, kde-format
 msgid "Invitation"
 msgstr "Invito"
 
-#: widgets/messageviewer.cpp:296
+#: widgets/messageviewer.cpp:297
 #, kde-format
 msgid "&Summary:"
 msgstr "&Resumo:"
 
-#: widgets/messageviewer.cpp:297
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizinto:"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "&Location:"
 msgstr "&Loko:"
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "&Start date:"
 msgstr "&Komenca dato:"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:304
 #, kde-format
 msgid "&End date:"
 msgstr "&Findato:"
 
-#: widgets/messageviewer.cpp:306
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "&Details:"
 msgstr "&Detaloj:"
 
-#: widgets/messageviewer.cpp:326
+#: widgets/messageviewer.cpp:327
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Enkapsuligita retpoŝto"
 
-#: widgets/messageviewer.cpp:334
+#: widgets/messageviewer.cpp:335
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:335
+#: widgets/messageviewer.cpp:336
 #, kde-format
 msgid "Date:"
 msgstr "Dato:"
 
-#: widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:401
 #, kde-format
 msgid "&Subject:"
 msgstr "&Temo:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:404
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:407
 #, kde-format
 msgid "&Sender:"
 msgstr "&Sendanto:"
 
-#: widgets/messageviewer.cpp:409
+#: widgets/messageviewer.cpp:410
 #, kde-format
 msgid "&To:"
 msgstr "&Al:"
 
-#: widgets/messageviewer.cpp:412
+#: widgets/messageviewer.cpp:413
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:415
+#: widgets/messageviewer.cpp:416
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:419
 #, kde-format
 msgid "&Date:"
 msgstr "&Dato:"
 
-#: widgets/messageviewerdialog.cpp:85 widgets/messageviewerwindow.cpp:89
+#: widgets/messageviewerdialog.cpp:86 widgets/messageviewerwindow.cpp:90
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&Dosiero"
 
-#: widgets/messageviewerdialog.cpp:87 widgets/messageviewerwindow.cpp:91
+#: widgets/messageviewerdialog.cpp:88 widgets/messageviewerwindow.cpp:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "Kon&servi"
 
-#: widgets/messageviewerdialog.cpp:93 widgets/messageviewerwindow.cpp:97
+#: widgets/messageviewerdialog.cpp:94 widgets/messageviewerwindow.cpp:98
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Konservi Malĉifrite"
 
-#: widgets/messageviewerdialog.cpp:99 widgets/messageviewerwindow.cpp:103
+#: widgets/messageviewerdialog.cpp:100 widgets/messageviewerwindow.cpp:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Presi Antaŭrigardon"
 
-#: widgets/messageviewerdialog.cpp:105 widgets/messageviewerwindow.cpp:109
+#: widgets/messageviewerdialog.cpp:106 widgets/messageviewerwindow.cpp:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&Presi"
 
-#: widgets/messageviewerdialog.cpp:112
+#: widgets/messageviewerdialog.cpp:113
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&Navigado"
 
-#: widgets/messageviewerdialog.cpp:113 widgets/messageviewerwindow.cpp:146
+#: widgets/messageviewerdialog.cpp:114 widgets/messageviewerwindow.cpp:147
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Antaŭa Mesaĝo"
 
-#: widgets/messageviewerdialog.cpp:117 widgets/messageviewerwindow.cpp:150
+#: widgets/messageviewerdialog.cpp:118 widgets/messageviewerwindow.cpp:151
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Sekvanta Mesaĝo"
 
-#: widgets/messageviewerdialog.cpp:137 widgets/messageviewerdialog.cpp:167
+#: widgets/messageviewerdialog.cpp:138 widgets/messageviewerdialog.cpp:168
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML-dosiero (*.eml);lMBOX-dosiero (*.mbox);;MIME-dosiero (*.mime)"
 
-#: widgets/messageviewerdialog.cpp:139 widgets/messageviewerwindow.cpp:190
+#: widgets/messageviewerdialog.cpp:140 widgets/messageviewerwindow.cpp:191
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "Ĉifritaj S/MIME-dosieroj (*.p7m)"
 
-#: widgets/messageviewerdialog.cpp:143 widgets/messageviewerwindow.cpp:194
+#: widgets/messageviewerdialog.cpp:144 widgets/messageviewerwindow.cpp:195
 #, fuzzy, kde-format
 #| msgctxt "File dialog accepted files"
 #| msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
@@ -461,55 +461,55 @@ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML-dosiero (*.eml);lMBOX-dosiero (*.mbox);;MIME-dosiero (*.mime)"
 
-#: widgets/messageviewerdialog.cpp:148 widgets/messageviewerwindow.cpp:199
+#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerwindow.cpp:200
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Konservi Dosieron"
 
-#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerwindow.cpp:205
+#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerwindow.cpp:206
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Dosiero %1 ne povis esti kreita."
 
-#: widgets/messageviewerdialog.cpp:154 widgets/messageviewerdialog.cpp:171
-#: widgets/messageviewerwindow.cpp:205 widgets/messageviewerwindow.cpp:222
+#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerdialog.cpp:172
+#: widgets/messageviewerwindow.cpp:206 widgets/messageviewerwindow.cpp:223
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Eraro konservante mesaĝon"
 
-#: widgets/messageviewerdialog.cpp:165 widgets/messageviewerwindow.cpp:216
+#: widgets/messageviewerdialog.cpp:166 widgets/messageviewerwindow.cpp:217
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Konservi Malĉifritan Dosieron"
 
-#: widgets/messageviewerdialog.cpp:171 widgets/messageviewerwindow.cpp:222
+#: widgets/messageviewerdialog.cpp:172 widgets/messageviewerwindow.cpp:223
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Dosiero %1 ne povis esti kreita."
 
-#: widgets/messageviewerdialog.cpp:190 widgets/messageviewerwindow.cpp:241
+#: widgets/messageviewerdialog.cpp:191 widgets/messageviewerwindow.cpp:242
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Presi"
 
-#: widgets/messageviewerdialog.cpp:202 widgets/messageviewerwindow.cpp:253
+#: widgets/messageviewerdialog.cpp:203 widgets/messageviewerwindow.cpp:254
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Presa Antaŭrigardo"
 
-#: widgets/messageviewerdialog.cpp:254
+#: widgets/messageviewerdialog.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid "Unable to read file"
 msgstr "Neebla legi dosieron"
 
-#: widgets/messageviewerwindow.cpp:81 widgets/messageviewerwindow.cpp:171
+#: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
@@ -517,25 +517,25 @@ msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "Temo:"
 
-#: widgets/messageviewerwindow.cpp:116
+#: widgets/messageviewerwindow.cpp:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mesaĝo"
 
-#: widgets/messageviewerwindow.cpp:119
+#: widgets/messageviewerwindow.cpp:120
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Rigardi Fonton"
 
-#: widgets/messageviewerwindow.cpp:139
+#: widgets/messageviewerwindow.cpp:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Uzi Fiksan Fonton"
 
-#: widgets/messageviewerwindow.cpp:188 widgets/messageviewerwindow.cpp:218
+#: widgets/messageviewerwindow.cpp:189 widgets/messageviewerwindow.cpp:219
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
