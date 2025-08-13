@@ -72,8 +72,7 @@ static QString linkify_htmlsafe(const QString &in)
     for (int n = 0; n < in.length(); ++n) {
         if (linkify_isOneOf(in.at(n), u"\"\'`<>"_s)) {
             // hex encode
-            QString hex;
-            hex.asprintf("%%%02X", in.at(n).toLatin1());
+            const QString hex = hex.asprintf("%%%02X", in.at(n).toLatin1());
             out.append(hex);
         } else {
             out.append(in.at(n));

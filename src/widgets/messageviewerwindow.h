@@ -28,7 +28,7 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerWindow : public QMainWindow
     Q_PROPERTY(QList<KMime::Message::Ptr> messages READ messages WRITE setMessages NOTIFY messagesChanged)
 
 public:
-    MessageViewerWindow(QWidget *parent = nullptr);
+    explicit MessageViewerWindow(QWidget *parent = nullptr);
     ~MessageViewerWindow() override;
 
     [[nodiscard]] QToolBar *toolBar() const;

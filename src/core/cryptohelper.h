@@ -29,7 +29,7 @@ class MIMETREEPARSER_CORE_EXPORT Block
 {
 public:
     Block();
-    Block(const QByteArray &m);
+    explicit Block(const QByteArray &m);
 
     Block(const QByteArray &m, PGPBlockType t);
 

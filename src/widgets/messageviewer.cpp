@@ -37,7 +37,7 @@ using namespace MimeTreeParser::Widgets;
 class MessageViewer::Private
 {
 public:
-    Private(MessageViewer *q_ptr)
+    explicit Private(MessageViewer *q_ptr)
         : q{q_ptr}
         , messageWidget(new KMessageWidget(q_ptr))
     {
@@ -369,7 +369,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 class HeaderLabel : public QLabel
 {
 public:
-    HeaderLabel(const QString &content)
+    explicit HeaderLabel(const QString &content)
         : QLabel(content)
     {
         setWordWrap(true);

@@ -40,7 +40,7 @@ using namespace Qt::StringLiterals;
 class MessageViewerWindow::Private
 {
 public:
-    Private(MessageViewerWindow *window)
+    explicit Private(MessageViewerWindow *window)
         : q(window)
     {
     }

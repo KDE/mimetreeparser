@@ -40,7 +40,7 @@ using namespace MimeTreeParser::Widgets;
 class MessageViewerDialog::Private
 {
 public:
-    Private(MessageViewerDialog *dialog)
+    explicit Private(MessageViewerDialog *dialog)
         : q(dialog)
     {
     }
