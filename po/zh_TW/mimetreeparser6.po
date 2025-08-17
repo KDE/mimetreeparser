@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-10 02:34+0000\n"
-"PO-Revision-Date: 2025-05-16 15:55+0900\n"
+"PO-Revision-Date: 2025-08-16 13:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -501,12 +501,10 @@ msgid "Unable to read file"
 msgstr "無法讀取檔案"
 
 #: widgets/messageviewerwindow.cpp:81 widgets/messageviewerwindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "主旨："
+msgstr "（沒有主旨）"
 
 #: widgets/messageviewerwindow.cpp:116
 #, kde-format
