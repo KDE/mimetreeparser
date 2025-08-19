@@ -345,8 +345,8 @@ private Q_SLOTS:
     {
         MimeTreeParser::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile("8bitencoded.mbox"_L1));
-        QVERIFY(otp.plainTextContent().contains("Why Pisa’s Tower"_L1));
-        QVERIFY(otp.htmlContent().contains("Why Pisa’s Tower"_L1));
+        QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("Why Pisa’s Tower")));
+        QVERIFY(otp.htmlContent().contains(QString::fromUtf8("Why Pisa’s Tower"_L1)));
     }
 
     void testInlineSigned()
@@ -360,9 +360,9 @@ private Q_SLOTS:
         QCOMPARE(part->signatures().size(), 1);
         QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
         QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
-        QCOMPARE(part->text(), "ohno öäü\n"_L1);
+        QCOMPARE(part->text(), QString::fromUtf8("ohno öäü\n"));
 
-        QVERIFY(otp.plainTextContent().contains("ohno öäü"_L1));
+        QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("ohno öäü"_L1)));
 
         const auto details = PartModel::signatureDetails(part.get());
         const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
@@ -634,7 +634,7 @@ private Q_SLOTS:
         otp.print();
 
         qWarning() << otp.plainTextContent();
-        QVERIFY(otp.plainTextContent().startsWith("Hi Christian,\n\nhabs gerade getestet:\n\n«This is a test"_L1));
+        QVERIFY(otp.plainTextContent().startsWith(u"Hi Christian,\n\nhabs gerade getestet:\n\n«This is a test"_s));
         QVERIFY(!otp.htmlContent().contains("\r\n"_L1));
     }
 
