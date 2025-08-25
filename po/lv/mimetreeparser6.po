@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-06-07 16:56+0300\n"
+"PO-Revision-Date: 2025-08-21 13:13+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -510,12 +510,10 @@ msgid "Unable to read file"
 msgstr "Neizdodas nolasīt datni"
 
 #: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "Temats:"
+msgstr "(Bez temata)"
 
 #: widgets/messageviewerwindow.cpp:117
 #, kde-format
