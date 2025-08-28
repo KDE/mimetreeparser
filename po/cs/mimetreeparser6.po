@@ -508,12 +508,10 @@ msgid "Unable to read file"
 msgstr "Soubor nelze přečíst"
 
 #: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "Předmět:"
+msgstr ""
 
 #: widgets/messageviewerwindow.cpp:117
 #, kde-format
