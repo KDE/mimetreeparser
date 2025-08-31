@@ -100,8 +100,8 @@ private Q_SLOTS:
         QCOMPARE(spy.count(), 1);
 
         QList<QVariant> arguments = spy.takeFirst();
-        QVERIFY(arguments.at(0).userType() == QMetaType::QString);
-        QVERIFY(arguments.at(0).toString() == "Failed to save attachment."_L1);
+        QCOMPARE(arguments.at(0).userType(), QMetaType::QString);
+        QCOMPARE(arguments.at(0).toString(), "Failedtosaveattachment."_L1);
     }
 };
 
