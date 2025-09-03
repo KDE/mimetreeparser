@@ -101,7 +101,7 @@ private Q_SLOTS:
 
         QList<QVariant> arguments = spy.takeFirst();
         QCOMPARE(arguments.at(0).userType(), QMetaType::QString);
-        QCOMPARE(arguments.at(0).toString(), "Failedtosaveattachment."_L1);
+        QCOMPARE(arguments.at(0).toString(), "Failed to save attachment."_L1);
     }
 };
 
