@@ -28,13 +28,14 @@ include(ECMQmlModule)
 include(ECMSetupVersion)
 include(KDEGitCommitHooks)
 include(KDEClangFormat)
-file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
-autotests/*.cpp
-autotests/*.h
-src/*.cpp
-src/*.h
-examples/*.cpp
-examples/*.h
+file(
+    GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
+    autotests/*.cpp
+    autotests/*.h
+    src/*.cpp
+    src/*.h
+    examples/*.cpp
+    examples/*.h
 )
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
@@ -45,16 +46,16 @@ include(ECMAddQch)
 include(ECMAddTests)
 
 include(ECMCheckOutboundLicense)
-file(GLOB_RECURSE ALL_SOURCE_FILES
-autotests/*.cpp
-autotests/*.h
-src/*.cpp
-src/*.h
-examples/*.cpp
-examples/*.h
+file(
+    GLOB_RECURSE ALL_SOURCE_FILES
+    autotests/*.cpp
+    autotests/*.h
+    src/*.cpp
+    src/*.h
+    examples/*.cpp
+    examples/*.h
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
-
 
 set(KPIM_MIME_VERSION "6.5.40")
 set(KPIM_LIBKLEO_VERSION "6.5.40")
@@ -68,13 +69,25 @@ ecm_setup_version(PROJECT
     SOVERSION 6
 )
 
-configure_file(mimetreeparserng-version.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h @ONLY)
+configure_file(
+    mimetreeparserng-version.h.in
+    ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h
+    @ONLY
+)
 
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
+option(
+    BUILD_QCH
+    "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
+    OFF
+)
+add_feature_info(
+    QCH
+    ${BUILD_QCH}
+    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
+)
 
 if(BUILD_TESTING)
-   add_definitions(-DBUILD_TESTING)
+    add_definitions(-DBUILD_TESTING)
 endif()
 
 ########### Find packages ###########
@@ -101,7 +114,11 @@ endif()
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(QT 6.10.0 KF 6.18.0)
 
-option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
+option(
+    USE_UNITY_CMAKE_SUPPORT
+    "Use UNITY cmake support (speedup compile time)"
+    OFF
+)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if(USE_UNITY_CMAKE_SUPPORT)
@@ -115,10 +132,10 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
-install(FILES
-   ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h
-   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore
-   COMPONENT Devel
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparserng_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore
+    COMPONENT Devel
 )
 ecm_qt_install_logging_categories(
     EXPORT MIMETREEPARSERNG

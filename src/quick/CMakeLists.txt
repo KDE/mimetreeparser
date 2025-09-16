@@ -8,13 +8,11 @@ ecm_add_qml_module(mimetreeparser_plugin
     DEPENDENCIES QtQuick
 )
 
-target_sources(mimetreeparser_plugin PRIVATE
-    types.h
-)
+target_sources(mimetreeparser_plugin PRIVATE types.h)
 
-target_link_libraries(mimetreeparser_plugin PRIVATE
-    Qt::Qml
-    KPim6::MimeTreeParserCore
+target_link_libraries(
+    mimetreeparser_plugin
+    PRIVATE Qt::Qml KPim6::MimeTreeParserCore
 )
 
 ecm_target_qml_sources(mimetreeparser_plugin
