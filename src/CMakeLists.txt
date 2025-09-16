@@ -11,4 +11,3 @@ endif()
 if(Qt6Widgets_FOUND)
     add_subdirectory(widgets)
 endif()
-

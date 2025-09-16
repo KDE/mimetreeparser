@@ -55,4 +55,3 @@ macro (ADD_GPG_CRYPTO_TEST _target _testname)
 
    endif (UNIX)
 endmacro (ADD_GPG_CRYPTO_TEST)
-

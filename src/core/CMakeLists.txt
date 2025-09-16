@@ -84,7 +84,7 @@ set_target_properties(KPim6MimeTreeParserCore PROPERTIES
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParserCore
     LIB_NAME KPim6MimeTreeParserCore
-    DEPS "MimeTreeParserCore" 
+    DEPS "MimeTreeParserCore"
     FILENAME_VAR PRI_FILENAME
 )
 

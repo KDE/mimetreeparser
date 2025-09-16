@@ -34,7 +34,7 @@ autotests/*.h
 src/*.cpp
 src/*.h
 examples/*.cpp
-examples/*.h	
+examples/*.h
 )
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
