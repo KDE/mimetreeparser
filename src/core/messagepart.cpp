@@ -358,7 +358,7 @@ void TextMessagePart::parseContent()
 {
     mSignatureState = KMMsgNotSigned;
     mEncryptionState = KMMsgNotEncrypted;
-    const auto blocks = prepareMessageForDecryption(mNode->decodedContent());
+    const auto blocks = prepareMessageForDecryption(mNode->decodedBody());
     // We also get blocks for unencrypted messages
     if (!blocks.isEmpty()) {
         auto aCodec = QStringDecoder(mOtp->codecNameFor(mNode).constData());
@@ -464,7 +464,7 @@ HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node)
         return;
     }
 
-    setText(QStringDecoder(mOtp->codecNameFor(mNode).constData()).decode(KMime::CRLFtoLF(mNode->decodedContent())));
+    setText(QStringDecoder(mOtp->codecNameFor(mNode).constData()).decode(KMime::CRLFtoLF(mNode->decodedBody())));
 }
 
 //-----MimeMessageBlock----------------------
@@ -644,7 +644,7 @@ void SignedMessagePart::startVerification()
 
     // If we have a mNode, this is a detached signature
     if (mNode) {
-        const auto signature = mNode->decodedContent();
+        const auto signature = mNode->decodedBody();
 
         // This is necessary in case the original data contained CRLF's. Otherwise the signature will not match the data (since KMIME normalizes to LF)
         const QByteArray signedData = KMime::LFtoCRLF(mSignedData->encodedContent());
@@ -656,7 +656,7 @@ void SignedMessagePart::startVerification()
     } else {
         QByteArray outdata;
         const auto job = mCryptoProto->verifyOpaqueJob();
-        setVerificationResult(job->exec(mSignedData->decodedContent(), outdata), outdata);
+        setVerificationResult(job->exec(mSignedData->decodedBody(), outdata), outdata);
         job->deleteLater();
         setText(codec.decode(KMime::CRLFtoLF(outdata)));
     }
@@ -759,7 +759,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
     //  mMetaData.auditLogError = GpgME::Error();
     mMetaData.auditLog.clear();
 
-    const QByteArray ciphertext = data.decodedContent();
+    const QByteArray ciphertext = data.decodedBody();
     QByteArray plainText;
     auto job = mCryptoProto->decryptVerifyJob();
     const std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> p = job->exec(ciphertext, plainText);

@@ -149,7 +149,7 @@ void CryptoHelperTest::testDecryptMessage()
     auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
     QVERIFY(wasEncrypted);
     QVERIFY(decryptedMessage);
-    QCOMPARE(decryptedMessage->decodedContent(), QByteArray("encrypted message text"));
+    QCOMPARE(decryptedMessage->decodedBody(), QByteArray("encrypted message text"));
     QCOMPARE(decryptedMessage->encodedContent(),
              QByteArray("From test@kolab.org Wed, 08 Sep 2010 17: 02:52 +0200\nFrom: OpenPGP Test <test@kolab.org>\nTo: test@kolab.org\nSubject: OpenPGP "
                         "encrypted\nDate: Wed, 08 Sep 2010 17:02:52 +0200\nUser-Agent: KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; "
@@ -168,7 +168,7 @@ void CryptoHelperTest::testDecryptInlineMessage()
     auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
     QVERIFY(wasEncrypted);
     QVERIFY(decryptedMessage);
-    QCOMPARE(decryptedMessage->decodedContent(), QByteArray("Not encrypted not signed :(\n\nsome random text\n"));
+    QCOMPARE(decryptedMessage->decodedBody(), QByteArray("Not encrypted not signed :(\n\nsome random text\n"));
     QCOMPARE(decryptedMessage->encodedContent(),
              QByteArray("From test@kolab.org Wed, 25 May 2011 23: 49:40 +0100\nFrom: OpenPGP Test <test@kolab.org>\nTo: test@kolab.org\nSubject: "
                         "inlinepgpencrypted + non enc text\nDate: Wed, 25 May 2011 23:49:40 +0100\nMessage-ID: "

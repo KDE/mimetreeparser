@@ -286,7 +286,7 @@ QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart:
 {
     Q_ASSERT(part);
     auto node = part->node();
-    auto data = node->decodedContent();
+    auto data = node->decodedBody();
     // This is necessary to store messages embedded messages (EncapsulatedRfc822MessagePart)
     if (data.isEmpty()) {
         data = node->encodedContent();
@@ -374,7 +374,7 @@ bool AttachmentModel::importPublicKey(const int row)
 bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &part)
 {
     Q_ASSERT(part);
-    const QByteArray certData = part->node()->decodedContent();
+    const QByteArray certData = part->node()->decodedBody();
     QGpgME::ImportJob *importJob = QGpgME::openpgp()->importJob();
 
     connect(importJob, &QGpgME::AbstractImportJob::result, this, [this](const GpgME::ImportResult &result) {

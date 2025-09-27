@@ -120,8 +120,8 @@ class ApplicationPGPEncryptedBodyPartFormatter : public MimeTreeParser::Interfac
 public:
     MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
-        if (node->decodedContent().trimmed() != "Version: 1"_ba) {
-            qCWarning(MIMETREEPARSER_CORE_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
+        if (node->decodedBody().trimmed() != "Version: 1"_ba) {
+            qCWarning(MIMETREEPARSER_CORE_LOG) << "Unknown PGP Version String:" << node->decodedBody().trimmed();
         }
 
         if (!node->parent()) {

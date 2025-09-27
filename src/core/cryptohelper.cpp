@@ -250,7 +250,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
         } else if (isSMIME(msg.data())) {
             protoName = GpgME::CMS;
         } else {
-            const auto blocks = prepareMessageForDecryption(msg->decodedContent());
+            const auto blocks = prepareMessageForDecryption(msg->decodedBody());
             QByteArray content;
             for (const auto &block : blocks) {
                 if (block.type() == PgpMessageBlock) {
@@ -294,7 +294,7 @@ KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, 
 
     wasEncrypted = true;
     QByteArray outData;
-    auto inData = multipart ? msg->encodedContent() : msg->decodedContent(); // decodedContent in fact returns decoded body
+    auto inData = multipart ? msg->encodedContent() : msg->decodedBody(); // decodedContent in fact returns decoded body
     auto decrypt = proto->decryptJob();
     auto result = decrypt->exec(inData, outData);
     if (result.error()) {

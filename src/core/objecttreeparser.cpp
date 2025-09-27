@@ -339,7 +339,7 @@ QString ObjectTreeParser::resolveCidLinks(const QString &html)
             const auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(contentType->mimeType())).name();
             if (mimetype.startsWith(QLatin1StringView("image/"))) {
                 // We reencode to base64 below.
-                const auto data = mailMime->decodedContent();
+                const auto data = mailMime->decodedBody();
                 if (data.isEmpty()) {
                     qWarning() << "Attachment is empty.";
                     continue;

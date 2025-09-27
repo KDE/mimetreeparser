@@ -111,7 +111,7 @@ void MessageParser::setMessage(const KMime::Message::Ptr message)
                 d->ownedContent = std::make_unique<KMime::Content>();
                 // we put the decoded content as encoded content of the new node
                 // as the header are inline in part->node()
-                d->ownedContent->setContent(part->node()->decodedContent());
+                d->ownedContent->setContent(part->node()->decodedBody());
                 d->ownedContent->parse();
                 d->protectedHeaderNode = d->ownedContent.get();
                 break;
