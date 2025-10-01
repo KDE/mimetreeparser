@@ -15,7 +15,7 @@ class BodyPartFormatterBaseFactory;
 class BodyPartFormatterBaseFactoryPrivate
 {
 public:
-    BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory);
+    explicit BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory);
     ~BodyPartFormatterBaseFactoryPrivate();
 
     void setup();

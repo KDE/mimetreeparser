@@ -134,7 +134,7 @@ class MIMETREEPARSER_CORE_EXPORT MimeMessagePart : public MessagePart
 public:
     typedef QSharedPointer<MimeMessagePart> Ptr;
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart = false);
-    virtual ~MimeMessagePart();
+    ~MimeMessagePart() override;
 
     [[nodiscard]] QString text() const override;
 
