@@ -16,7 +16,7 @@ namespace
 {
 
 template<typename T>
-const T *findHeader(KMime::Content *content, KMime::Content *protectedHeaderNode)
+const T *findHeader(const KMime::Content *content, const KMime::Content *protectedHeaderNode)
 {
     if (protectedHeaderNode) {
         auto header = protectedHeaderNode->header<T>();

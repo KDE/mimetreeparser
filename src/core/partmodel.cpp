@@ -359,7 +359,7 @@ SignatureInfo encryptionInfo(MimeTreeParser::MessagePart *messagePart)
     return signatureInfo;
 };
 template<typename T>
-const T *findHeader(KMime::Content *content)
+const T *findHeader(const KMime::Content *content)
 {
     if (!content) {
         return {};
