@@ -2,10 +2,8 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 # SPDX-FileCopyrightText: 2025 Johannes Obermayr <johannesobermayr@gmx.de>
-# Frederik Schwarzer <schwarzer@kde.org>, 2023.
-# Eva Bolten <eva.bolten@gnupg.com>, 2023, 2024, 2025.
-#
-# Automatically generated, 2023.
+# SPDX-FileCopyrightText: 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Eva Bolten <eva.bolten@gnupg.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
