@@ -58,8 +58,8 @@ file(
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 set(KPIM_MIME_VERSION "6.5.42")
-set(KPIM_LIBKLEO_VERSION "6.5.40")
-set(KPIM_MBOX_VERSION "6.5.40")
+set(KPIM_LIBKLEO_VERSION "6.6.40")
+set(KPIM_MBOX_VERSION "6.6.40")
 set(GPGME_REQUIRED_VERSION "1.23.2")
 
 ecm_setup_version(PROJECT
