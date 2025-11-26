@@ -72,7 +72,7 @@ QString ObjectTreeParser::plainTextContent()
                 }
                 return false;
             });
-        for (const auto &part : plainParts) {
+        for (const auto &part : std::as_const(plainParts)) {
             content += part->text();
         }
     }
@@ -97,7 +97,7 @@ QString ObjectTreeParser::htmlContent()
                 }
                 return false;
             });
-        for (const auto &part : contentParts) {
+        for (const auto &part : std::as_const(contentParts)) {
             if (auto p = dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
                 content += p->htmlContent();
             } else {
@@ -441,7 +441,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
             return defaultHandling(node);
         }();
 
-        for (const auto &part : messageParts) {
+        for (const auto &part : std::as_const(messageParts)) {
             parsedPart->appendSubPart(part);
         }
 

@@ -586,7 +586,7 @@ private Q_SLOTS:
         otp.print();
 
         auto partList = otp.collectContentParts();
-        for (const auto &part : partList) {
+        for (const auto &part : std::as_const(partList)) {
             qWarning() << "found part " << part->metaObject()->className();
         }
         QCOMPARE(partList.size(), 2);

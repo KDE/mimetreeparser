@@ -36,7 +36,7 @@ private Q_SLOTS:
         QCOMPARE(encryptionMessage->messageType(), KMessageWidget::Positive);
         QCOMPARE(encryptionMessage->text(), QStringLiteral("This message is encrypted. <a href=\"messageviewer:showDetails\">Details</a>"));
 
-        encryptionMessage->linkActivated(QStringLiteral("messageviewer:showDetails"));
+        Q_EMIT encryptionMessage->linkActivated(QStringLiteral("messageviewer:showDetails"));
 
         QCOMPARE(encryptionMessage->text(),
                  QStringLiteral("This message is encrypted. The message is encrypted for the following recipients:<ul><li>unittest cert - KDAB (<a "
