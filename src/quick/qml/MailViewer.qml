@@ -2,13 +2,13 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <espidev@gmail.com>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as QQC2
-import Qt.labs.platform 1.1 as QLP
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import Qt.labs.platform as QLP
 
-import org.kde.pim.mimetreeparser 1.0
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.pim.mimetreeparser
+import org.kde.kirigami as Kirigami
 import './private'
 
 Kirigami.ScrollablePage {

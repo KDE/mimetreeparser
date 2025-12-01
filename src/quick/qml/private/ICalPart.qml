@@ -2,11 +2,11 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQml.Models 2.2
-import org.kde.pim.mimetreeparser 1.0
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import QtQml.Models
+import org.kde.pim.mimetreeparser
+import org.kde.kirigami as Kirigami
 
 ColumnLayout {
     id: root
