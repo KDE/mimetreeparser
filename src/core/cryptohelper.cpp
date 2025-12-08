@@ -176,10 +176,10 @@ void copyHeader(const KMime::Headers::Base *header, KMime::Message::Ptr msg)
 {
     auto newHdr = KMime::Headers::createHeader(header->type());
     if (!newHdr) {
-        newHdr = new KMime::Headers::Generic(header->type());
+        newHdr = std::make_unique<KMime::Headers::Generic>(header->type());
     }
-    newHdr->from7BitString(header->as7BitString(false));
-    msg->appendHeader(newHdr);
+    newHdr->from7BitString(header->as7BitString());
+    msg->appendHeader(std::move(newHdr));
 }
 
 [[nodiscard]] bool isContentHeader(const KMime::Headers::Base *header)
