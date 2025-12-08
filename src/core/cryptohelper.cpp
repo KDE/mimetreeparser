@@ -176,10 +176,10 @@ void copyHeader(const KMime::Headers::Base *header, QSharedPointer<KMime::Messag
 {
     auto newHdr = KMime::Headers::createHeader(header->type());
     if (!newHdr) {
-        newHdr = new KMime::Headers::Generic(header->type());
+        newHdr = std::make_unique<KMime::Headers::Generic>(header->type());
     }
     newHdr->from7BitString(header->as7BitString());
-    msg->appendHeader(newHdr);
+    msg->appendHeader(std::move(newHdr));
 }
 
 [[nodiscard]] bool isContentHeader(const KMime::Headers::Base *header)
