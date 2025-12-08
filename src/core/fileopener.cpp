@@ -22,10 +22,10 @@ QSharedPointer<KMime::Message> openSmimeEncrypted(const QByteArray &content)
     contentType->setMimeType("application/pkcs7-mime"_ba);
     contentType->setParameter("smime-type"_ba, u"enveloped-data"_s);
 
-    auto contentDisposition = new KMime::Headers::ContentDisposition;
+    auto contentDisposition = std::make_unique<KMime::Headers::ContentDisposition>();
     contentDisposition->setDisposition(KMime::Headers::CDattachment);
     contentDisposition->setFilename(u"smime.p7m"_s);
-    message->appendHeader(contentDisposition);
+    message->appendHeader(std::move(contentDisposition));
 
     auto cte = message->contentTransferEncoding();
     cte->setEncoding(KMime::Headers::CE7Bit);
@@ -48,22 +48,22 @@ QSharedPointer<KMime::Message> openPgpEncrypted(const QByteArray &content)
     auto cte = message->contentTransferEncoding();
     cte->setEncoding(KMime::Headers::CE7Bit);
 
-    auto pgpEncrypted = new KMime::Content;
+    auto pgpEncrypted = std::make_unique<KMime::Content>();
     pgpEncrypted->contentType()->setMimeType("application/pgp-encrypted"_ba);
-    auto contentDisposition = new KMime::Headers::ContentDisposition;
+    auto contentDisposition = std::make_unique<KMime::Headers::ContentDisposition>();
     contentDisposition->setDisposition(KMime::Headers::CDattachment);
-    pgpEncrypted->appendHeader(contentDisposition);
+    pgpEncrypted->appendHeader(std::move(contentDisposition));
     pgpEncrypted->setBody("Version: 1");
-    message->appendContent(pgpEncrypted);
+    message->appendContent(std::move(pgpEncrypted));
 
-    auto encryptedContent = new KMime::Content;
+    auto encryptedContent = std::make_unique<KMime::Content>();
     encryptedContent->contentType()->setMimeType("application/octet-stream"_ba);
-    contentDisposition = new KMime::Headers::ContentDisposition;
+    contentDisposition = std::make_unique<KMime::Headers::ContentDisposition>();
     contentDisposition->setDisposition(KMime::Headers::CDinline);
     contentDisposition->setFilename(u"msg.asc"_s);
-    encryptedContent->appendHeader(contentDisposition);
+    encryptedContent->appendHeader(std::move(contentDisposition));
     encryptedContent->setBody(content);
-    message->appendContent(encryptedContent);
+    message->appendContent(std::move(encryptedContent));
 
     message->assemble();
 
