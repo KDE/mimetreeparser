@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# SPDX-FileCopyrightText: 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2024-07-18 10:55+0200\n"
+"PO-Revision-Date: 2025-12-02 11:44+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -445,7 +445,7 @@ msgstr "Následující zpráva"
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr ""
+msgstr "Soubor EML (*.eml);;soubor MBOX (*.mbox);;soubor MIME (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:140 widgets/messageviewerwindow.cpp:191
 #, kde-format
@@ -457,7 +457,7 @@ msgstr "Šifrované soubory S/MIME (*.p7m)"
 #, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr ""
+msgstr "Soubor EML (*.eml);;soubor MBOX (*.mbox);;soubor MIME (*.mime)"
 
 #: widgets/messageviewerdialog.cpp:149 widgets/messageviewerwindow.cpp:200
 #, kde-format
@@ -511,25 +511,25 @@ msgstr "Soubor nelze přečíst"
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr ""
+msgstr "(Žádný předmět)"
 
 #: widgets/messageviewerwindow.cpp:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
-msgstr ""
+msgstr "&Zpráva"
 
 #: widgets/messageviewerwindow.cpp:120
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "Zobrazit zdroj"
 
 #: widgets/messageviewerwindow.cpp:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Použít neproporcionální font"
 
 #: widgets/messageviewerwindow.cpp:189 widgets/messageviewerwindow.cpp:219
 #, kde-format
