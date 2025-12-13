@@ -411,7 +411,7 @@ QSharedPointer<MessagePart> ObjectTreeParser::parseObjectTreeInternal(KMime::Con
 
     auto parsedPart = QSharedPointer<MessagePart>(new MessagePartList(this, node));
     parsedPart->setIsRoot(node->isTopLevel());
-    const auto contents = node->parent() ? node->parent()->contents() : KMime::Content::List{node};
+    const auto contents = node->parent() ? node->parent()->contents() : QList<KMime::Content *>{node};
     for (int i = contents.indexOf(node); i < contents.size(); ++i) {
         node = contents.at(i);
 
