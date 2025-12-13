@@ -32,7 +32,7 @@ const T *findHeader(const KMime::Content *content, const KMime::Content *protect
     return findHeader<T>(content->parent(), nullptr);
 }
 
-QString mailboxesToHtml(const KMime::Types::Mailbox::List &mailboxes)
+QString mailboxesToHtml(const QList<KMime::Types::Mailbox> &mailboxes)
 {
     QStringList html;
     for (const auto &mailbox : mailboxes) {
