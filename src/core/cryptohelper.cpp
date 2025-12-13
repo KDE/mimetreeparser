@@ -178,7 +178,7 @@ void copyHeader(const KMime::Headers::Base *header, QSharedPointer<KMime::Messag
     if (!newHdr) {
         newHdr = new KMime::Headers::Generic(header->type());
     }
-    newHdr->from7BitString(header->as7BitString(false));
+    newHdr->from7BitString(header->as7BitString());
     msg->appendHeader(newHdr);
 }
 
@@ -232,7 +232,7 @@ QSharedPointer<KMime::Message> CryptoUtils::decryptMessage(const QSharedPointer<
 {
     protoName = GpgME::UnknownProtocol;
     bool multipart = false;
-    if (msg->contentType(false) && msg->contentType(false)->isMimeType("multipart/encrypted")) {
+    if (msg->contentType(KMime::DontCreate) && msg->contentType(KMime::DontCreate)->isMimeType("multipart/encrypted")) {
         multipart = true;
         const auto subparts = msg->contents();
         for (auto subpart : subparts) {

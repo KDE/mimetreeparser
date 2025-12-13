@@ -53,7 +53,7 @@ MessagePart::Disposition MessagePart::disposition() const
     if (!mNode) {
         return Invalid;
     }
-    const auto cd = mNode->contentDisposition(false);
+    const auto cd = mNode->contentDisposition(KMime::DontCreate);
     if (!cd) {
         return Invalid;
     }
@@ -73,7 +73,7 @@ QString MessagePart::filename() const
         return {};
     }
 
-    if (const auto cd = mNode->contentDisposition(false)) {
+    if (const auto cd = mNode->contentDisposition(KMime::DontCreate)) {
         const auto name = cd->filename();
         // Allow for a fallback for mails that have a ContentDisposition header, but don't set the filename anyways.
         // Not the recommended way, but exists.
@@ -81,7 +81,7 @@ QString MessagePart::filename() const
             return name;
         }
     }
-    if (const auto ct = mNode->contentType(false)) {
+    if (const auto ct = mNode->contentType(KMime::DontCreate)) {
         return ct->name();
     }
     return {};
@@ -90,7 +90,7 @@ QString MessagePart::filename() const
 static KMime::Headers::ContentType *contentType(KMime::Content *node)
 {
     if (node) {
-        return node->contentType(false);
+        return node->contentType(KMime::DontCreate);
     }
     return nullptr;
 }
@@ -947,7 +947,7 @@ QString EncapsulatedRfc822MessagePart::text() const
 
 QString EncapsulatedRfc822MessagePart::from() const
 {
-    if (auto from = mMessage->from(false)) {
+    if (auto from = mMessage->from(KMime::DontCreate)) {
         return from->asUnicodeString();
     }
     return {};
@@ -955,7 +955,7 @@ QString EncapsulatedRfc822MessagePart::from() const
 
 QDateTime EncapsulatedRfc822MessagePart::date() const
 {
-    if (auto date = mMessage->date(false)) {
+    if (auto date = mMessage->date(KMime::DontCreate)) {
         return date->dateTime();
     }
     return {};

@@ -150,7 +150,7 @@ static void print(QTextStream &stream, KMime::Content *node, const QString prefi
 {
     QByteArray mediaType("text");
     QByteArray subType("plain");
-    if (node->contentType(false) && !node->contentType()->mediaType().isEmpty() && !node->contentType()->subType().isEmpty()) {
+    if (node->contentType(KMime::DontCreate) && !node->contentType()->mediaType().isEmpty() && !node->contentType()->subType().isEmpty()) {
         mediaType = node->contentType()->mediaType();
         subType = node->contentType()->subType();
     }
@@ -193,7 +193,7 @@ static KMime::Content *find(KMime::Content *node, const std::function<bool(KMime
 {
     QByteArray mediaType("text");
     QByteArray subType("plain");
-    if (node->contentType(false) && !node->contentType()->mediaType().isEmpty() && !node->contentType()->subType().isEmpty()) {
+    if (node->contentType(KMime::DontCreate) && !node->contentType()->mediaType().isEmpty() && !node->contentType()->subType().isEmpty()) {
         mediaType = node->contentType()->mediaType();
         subType = node->contentType()->subType();
     }
@@ -324,13 +324,13 @@ QString ObjectTreeParser::resolveCidLinks(const QString &html)
         const auto link = QUrl(match.captured(3));
         auto cid = link.path();
         auto mailMime = const_cast<KMime::Content *>(find([=](KMime::Content *content) {
-            if (!content || !content->contentID(false)) {
+            if (!content || !content->contentID(KMime::DontCreate)) {
                 return false;
             }
-            return QString::fromLatin1(content->contentID(false)->identifier()) == cid;
+            return QString::fromLatin1(content->contentID(KMime::DontCreate)->identifier()) == cid;
         }));
         if (mailMime) {
-            const auto contentType = mailMime->contentType(false);
+            const auto contentType = mailMime->contentType(KMime::DontCreate);
             if (!contentType) {
                 qWarning() << "No content type, skipping";
                 continue;
@@ -417,7 +417,7 @@ QSharedPointer<MessagePart> ObjectTreeParser::parseObjectTreeInternal(KMime::Con
 
         QByteArray mediaType("text");
         QByteArray subType("plain");
-        if (node->contentType(false) && !node->contentType()->mediaType().isEmpty() && !node->contentType()->subType().isEmpty()) {
+        if (node->contentType(KMime::DontCreate) && !node->contentType()->mediaType().isEmpty() && !node->contentType()->subType().isEmpty()) {
             mediaType = node->contentType()->mediaType();
             subType = node->contentType()->subType();
         }
