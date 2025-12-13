@@ -14,9 +14,9 @@ using namespace MimeTreeParser::Core;
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-KMime::Message::Ptr openSmimeEncrypted(const QByteArray &content)
+QSharedPointer<KMime::Message> openSmimeEncrypted(const QByteArray &content)
 {
-    KMime::Message::Ptr message(new KMime::Message);
+    QSharedPointer<KMime::Message> message(new KMime::Message);
 
     auto contentType = message->contentType();
     contentType->setMimeType("application/pkcs7-mime"_ba);
@@ -36,9 +36,9 @@ KMime::Message::Ptr openSmimeEncrypted(const QByteArray &content)
     return message;
 }
 
-KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
+QSharedPointer<KMime::Message> openPgpEncrypted(const QByteArray &content)
 {
-    KMime::Message::Ptr message(new KMime::Message);
+    QSharedPointer<KMime::Message> message(new KMime::Message);
 
     auto contentType = message->contentType();
     contentType->setMimeType("multipart/encrypted"_ba);
@@ -70,7 +70,7 @@ KMime::Message::Ptr openPgpEncrypted(const QByteArray &content)
     return message;
 }
 
-QList<KMime::Message::Ptr> openMbox(const QString &fileName)
+QList<QSharedPointer<KMime::Message>> openMbox(const QString &fileName)
 {
     KMBox::MBox mbox;
     const bool ok = mbox.load(fileName);
@@ -79,16 +79,16 @@ QList<KMime::Message::Ptr> openMbox(const QString &fileName)
         return {};
     }
 
-    QList<KMime::Message::Ptr> messages;
+    QList<QSharedPointer<KMime::Message>> messages;
     const auto entries = mbox.entries();
     for (const auto &entry : entries) {
-        messages << KMime::Message::Ptr(mbox.readMessage(entry));
+        messages << QSharedPointer<KMime::Message>(mbox.readMessage(entry));
     }
     return messages;
 }
 }
 
-QList<KMime::Message::Ptr> FileOpener::openFile(const QString &fileName)
+QList<QSharedPointer<KMime::Message>> FileOpener::openFile(const QString &fileName)
 {
     QMimeDatabase db;
     QMimeType mime = db.mimeTypeForFile(fileName);
@@ -122,7 +122,7 @@ QList<KMime::Message::Ptr> FileOpener::openFile(const QString &fileName)
             msg = nullptr;
             return {};
         }
-        return {KMime::Message::Ptr(msg)};
+        return {QSharedPointer<KMime::Message>(msg)};
     }
 
     return {};

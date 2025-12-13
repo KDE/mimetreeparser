@@ -47,7 +47,7 @@ public:
 
     MessageViewerWindow *const q;
     int currentIndex = 0;
-    QList<KMime::Message::Ptr> messages;
+    QList<QSharedPointer<KMime::Message>> messages;
     QString fileName;
     MimeTreeParser::Widgets::MessageViewer *messageViewer = nullptr;
     QAction *nextAction = nullptr;
@@ -351,12 +351,12 @@ QToolBar *MessageViewerWindow::toolBar() const
     return d->toolBar;
 }
 
-QList<KMime::Message::Ptr> MessageViewerWindow::messages() const
+QList<QSharedPointer<KMime::Message>> MessageViewerWindow::messages() const
 {
     return d->messages;
 }
 
-void MessageViewerWindow::setMessages(const QList<KMime::Message::Ptr> &messages)
+void MessageViewerWindow::setMessages(const QList<QSharedPointer<KMime::Message>> &messages)
 {
     if (d->messages == messages) {
         return;

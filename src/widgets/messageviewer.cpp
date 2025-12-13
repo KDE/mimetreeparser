@@ -50,7 +50,7 @@ public:
     MessageViewer *const q;
 
     QVBoxLayout *layout = nullptr;
-    KMime::Message::Ptr message;
+    QSharedPointer<KMime::Message> message;
     MessageParser parser;
     QScrollArea *scrollArea = nullptr;
     QFormLayout *formLayout = nullptr;
@@ -231,7 +231,7 @@ QString MessageViewer::subject() const
     return d->parser.subject();
 }
 
-KMime::Message::Ptr MessageViewer::message() const
+QSharedPointer<KMime::Message> MessageViewer::message() const
 {
     return d->parser.message();
 }
@@ -387,7 +387,7 @@ public:
     }
 };
 
-void MessageViewer::setMessage(const KMime::Message::Ptr message)
+void MessageViewer::setMessage(const QSharedPointer<KMime::Message> message)
 {
     setUpdatesEnabled(false);
     d->parser.setMessage(message);

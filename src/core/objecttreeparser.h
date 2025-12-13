@@ -89,7 +89,7 @@ private:
     KMime::Content *mTopLevelContent{nullptr};
     MessagePart::Ptr mParsedPart;
 
-    KMime::Message::Ptr mMsg;
+    QSharedPointer<KMime::Message> mMsg;
 
     friend class MessagePart;
     friend class EncryptedMessagePart;

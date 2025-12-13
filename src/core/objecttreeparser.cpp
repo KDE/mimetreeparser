@@ -358,7 +358,7 @@ QString ObjectTreeParser::resolveCidLinks(const QString &html)
 void ObjectTreeParser::parseObjectTree(const QByteArray &mimeMessage)
 {
     const auto mailData = KMime::CRLFtoLF(mimeMessage);
-    mMsg = KMime::Message::Ptr(new KMime::Message);
+    mMsg = QSharedPointer<KMime::Message>(new KMime::Message);
     mMsg->setContent(mailData);
     mMsg->parse();
     // We avoid using mMsg->contentType()->charset(), because that will just return kmime's defaultCharset(), ISO-8859-1

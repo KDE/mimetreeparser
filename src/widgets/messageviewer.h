@@ -19,7 +19,7 @@ namespace MimeTreeParser
 namespace Widgets
 {
 
-/// MessageViewer that displays the given KMime::Message::Ptr
+/// MessageViewer that displays the given QSharedPointer<KMime::Message>
 /// \author Carl Schwan <carl.schwan@gnupg.com>
 class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
 {
@@ -27,8 +27,8 @@ public:
     explicit MessageViewer(QWidget *parent = nullptr);
     ~MessageViewer() override;
 
-    [[nodiscard]] KMime::Message::Ptr message() const;
-    void setMessage(const KMime::Message::Ptr message);
+    [[nodiscard]] QSharedPointer<KMime::Message> message() const;
+    void setMessage(const QSharedPointer<KMime::Message> message);
 
     /// Return whether the viewer should use a fixed size font.
     [[nodiscard]] bool fixedFont() const;

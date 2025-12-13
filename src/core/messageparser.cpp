@@ -58,7 +58,7 @@ class MessagePartPrivate
 {
 public:
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
-    KMime::Message::Ptr mMessage;
+    QSharedPointer<KMime::Message> mMessage;
     KMime::Content *protectedHeaderNode = nullptr;
     std::unique_ptr<KMime::Content> ownedContent;
 };
@@ -73,12 +73,12 @@ MessageParser::~MessageParser()
 {
 }
 
-KMime::Message::Ptr MessageParser::message() const
+QSharedPointer<KMime::Message> MessageParser::message() const
 {
     return d->mMessage;
 }
 
-void MessageParser::setMessage(const KMime::Message::Ptr message)
+void MessageParser::setMessage(const QSharedPointer<KMime::Message> message)
 {
     if (message == d->mMessage) {
         return;

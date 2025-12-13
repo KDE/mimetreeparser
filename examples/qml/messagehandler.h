@@ -15,5 +15,5 @@ public:
     Q_INVOKABLE void open(const QUrl &file);
 
 Q_SIGNALS:
-    void messageOpened(KMime::Message::Ptr message);
+    void messageOpened(QSharedPointer<KMime::Message> message);
 };

@@ -259,7 +259,7 @@ class MIMETREEPARSER_CORE_EXPORT EncapsulatedRfc822MessagePart : public MessageP
     Q_OBJECT
 public:
     typedef QSharedPointer<EncapsulatedRfc822MessagePart> Ptr;
-    EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
+    EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QSharedPointer<KMime::Message> &message);
     ~EncapsulatedRfc822MessagePart() override = default;
 
     [[nodiscard]] QString text() const override;
@@ -267,7 +267,7 @@ public:
     [[nodiscard]] QDateTime date() const;
 
 private:
-    const KMime::Message::Ptr mMessage;
+    const QSharedPointer<KMime::Message> mMessage;
 };
 
 class MIMETREEPARSER_CORE_EXPORT EncryptedMessagePart : public MessagePart

@@ -172,7 +172,7 @@ namespace
     return ct && (ct->isSubtype("pkcs7-mime") || ct->isSubtype("x-pkcs7-mime"));
 }
 
-void copyHeader(const KMime::Headers::Base *header, KMime::Message::Ptr msg)
+void copyHeader(const KMime::Headers::Base *header, QSharedPointer<KMime::Message> msg)
 {
     auto newHdr = KMime::Headers::createHeader(header->type());
     if (!newHdr) {
@@ -187,9 +187,9 @@ void copyHeader(const KMime::Headers::Base *header, KMime::Message::Ptr msg)
     return header->is("Content-Type") || header->is("Content-Transfer-Encoding") || header->is("Content-Disposition");
 }
 
-[[nodiscard]] KMime::Message::Ptr assembleMessage(const KMime::Message::Ptr &orig, const KMime::Content *newContent)
+[[nodiscard]] QSharedPointer<KMime::Message> assembleMessage(const QSharedPointer<KMime::Message> &orig, const KMime::Content *newContent)
 {
-    auto out = KMime::Message::Ptr::create();
+    auto out = QSharedPointer<KMime::Message>::create();
     // Use the new content as message content
     out->setBody(const_cast<KMime::Content *>(newContent)->encodedBody());
     out->parse();
@@ -228,7 +228,7 @@ void copyHeader(const KMime::Headers::Base *header, KMime::Message::Ptr msg)
 }
 }
 
-KMime::Message::Ptr CryptoUtils::decryptMessage(const KMime::Message::Ptr &msg, bool &wasEncrypted, GpgME::Protocol &protoName)
+QSharedPointer<KMime::Message> CryptoUtils::decryptMessage(const QSharedPointer<KMime::Message> &msg, bool &wasEncrypted, GpgME::Protocol &protoName)
 {
     protoName = GpgME::UnknownProtocol;
     bool multipart = false;

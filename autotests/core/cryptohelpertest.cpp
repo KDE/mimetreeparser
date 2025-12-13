@@ -140,7 +140,7 @@ void CryptoHelperTest::testMultipleBlockMessage()
 
 void CryptoHelperTest::testDecryptMessage()
 {
-    auto message = KMime::Message::Ptr(new KMime::Message);
+    auto message = QSharedPointer<KMime::Message>(new KMime::Message);
     message->setContent(readMailFromFile(QLatin1StringView("openpgp-encrypted+signed.mbox")));
     message->parse();
 
@@ -159,7 +159,7 @@ void CryptoHelperTest::testDecryptMessage()
 
 void CryptoHelperTest::testDecryptInlineMessage()
 {
-    auto message = KMime::Message::Ptr(new KMime::Message);
+    auto message = QSharedPointer<KMime::Message>(new KMime::Message);
     message->setContent(readMailFromFile(QLatin1StringView("openpgp-inline-encrypted+nonenc.mbox")));
     message->parse();
 
