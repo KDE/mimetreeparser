@@ -10,14 +10,14 @@ namespace MimeTreeParser
 namespace Interface
 {
 
-MessagePart::Ptr BodyPartFormatter::process(ObjectTreeParser *otp, KMime::Content *node) const
+QSharedPointer<MessagePart> BodyPartFormatter::process(ObjectTreeParser *otp, KMime::Content *node) const
 {
     Q_UNUSED(otp)
     Q_UNUSED(node)
     return {};
 }
 
-QList<MessagePart::Ptr> BodyPartFormatter::processList(ObjectTreeParser *otp, KMime::Content *node) const
+QList<QSharedPointer<MessagePart>> BodyPartFormatter::processList(ObjectTreeParser *otp, KMime::Content *node) const
 {
     if (auto p = process(otp, node)) {
         return {p};

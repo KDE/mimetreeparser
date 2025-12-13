@@ -126,7 +126,7 @@ public:
 
     ~PartModelPrivate() = default;
 
-    void checkPart(const MimeTreeParser::MessagePart::Ptr part)
+    void checkPart(const QSharedPointer<MimeTreeParser::MessagePart> part)
     {
         mMimeTypeCache[part.data()] = part->mimeType();
         // Extract the content of the part and
@@ -134,7 +134,7 @@ public:
     }
 
     // Recursively find encapsulated messages
-    void findEncapsulated(const MimeTreeParser::EncapsulatedRfc822MessagePart::Ptr &e)
+    void findEncapsulated(const QSharedPointer<MimeTreeParser::EncapsulatedRfc822MessagePart> &e)
     {
         mEncapsulatedParts[e.data()] = mParser->collectContentParts(e);
         for (const auto &subPart : std::as_const(mEncapsulatedParts[e.data()])) {
@@ -205,7 +205,7 @@ public:
         isTrimmed = false;
 
         const auto parts = mParser->collectContentParts();
-        MimeTreeParser::MessagePart::List filteredParts;
+        QList<QSharedPointer<MimeTreeParser::MessagePart>> filteredParts;
 
         for (const auto &part : parts) {
             if (part->node()) {
@@ -238,9 +238,9 @@ public:
     }
 
     PartModel *const q;
-    MimeTreeParser::MessagePart::List mParts;
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> mParts;
     QHash<MimeTreeParser::MessagePart *, QByteArray> mMimeTypeCache;
-    QHash<MimeTreeParser::MessagePart *, MimeTreeParser::MessagePart::List> mEncapsulatedParts;
+    QHash<MimeTreeParser::MessagePart *, QList<QSharedPointer<MimeTreeParser::MessagePart>>> mEncapsulatedParts;
     QHash<MimeTreeParser::MessagePart *, MimeTreeParser::MessagePart *> mParents;
     QMap<MimeTreeParser::MessagePart *, QVariant> mContents;
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;

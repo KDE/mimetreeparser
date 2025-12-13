@@ -52,11 +52,11 @@ public:
     Q_INVOKABLE bool openAttachment(const int row);
     Q_INVOKABLE bool importPublicKey(const int row);
 
-    bool openAttachment(const MimeTreeParser::MessagePart::Ptr &message);
-    bool importPublicKey(const MimeTreeParser::MessagePart::Ptr &message);
+    bool openAttachment(const QSharedPointer<MimeTreeParser::MessagePart> &message);
+    bool importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &message);
 
     Q_INVOKABLE QString saveAttachmentToPath(const int row, const QString &path);
-    [[nodiscard]] QString saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path);
+    [[nodiscard]] QString saveAttachmentToPath(const QSharedPointer<MimeTreeParser::MessagePart> &part, const QString &path);
 
 Q_SIGNALS:
     void info(const QString &message);

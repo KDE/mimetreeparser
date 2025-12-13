@@ -136,7 +136,7 @@ public:
     AttachmentModel *const q;
     QMimeDatabase mimeDb;
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
-    MimeTreeParser::MessagePart::List mAttachments;
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> mAttachments;
 
 #ifdef Q_OS_WIN
     std::vector<WindowFile> mOpenFiles;
@@ -282,7 +282,7 @@ QString AttachmentModel::saveAttachmentToPath(const int row, const QString &path
     return saveAttachmentToPath(part, path);
 }
 
-QString AttachmentModel::saveAttachmentToPath(const MimeTreeParser::MessagePart::Ptr &part, const QString &path)
+QString AttachmentModel::saveAttachmentToPath(const QSharedPointer<MimeTreeParser::MessagePart> &part, const QString &path)
 {
     Q_ASSERT(part);
     auto node = part->node();
@@ -314,7 +314,7 @@ bool AttachmentModel::openAttachment(const int row)
     return openAttachment(part);
 }
 
-bool AttachmentModel::openAttachment(const MimeTreeParser::MessagePart::Ptr &message)
+bool AttachmentModel::openAttachment(const QSharedPointer<MimeTreeParser::MessagePart> &message)
 {
     QString fileName = message->filename();
     QTemporaryDir tempDir(QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName() + u".XXXXXX"_s);
@@ -371,7 +371,7 @@ bool AttachmentModel::importPublicKey(const int row)
     return importPublicKey(part);
 }
 
-bool AttachmentModel::importPublicKey(const MimeTreeParser::MessagePart::Ptr &part)
+bool AttachmentModel::importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &part)
 {
     Q_ASSERT(part);
     const QByteArray certData = part->node()->decodedBody();

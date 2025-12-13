@@ -55,7 +55,7 @@ public:
     QScrollArea *scrollArea = nullptr;
     QFormLayout *formLayout = nullptr;
     AttachmentView *attachmentView = nullptr;
-    MimeTreeParser::MessagePart::List selectedParts;
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> selectedParts;
     UrlHandler *urlHandler = nullptr;
     KMessageWidget *const messageWidget = nullptr;
 
@@ -139,10 +139,10 @@ void MessageViewer::Private::showContextMenu()
 void MessageViewer::Private::selectionChanged()
 {
     const QModelIndexList selectedRows = attachmentView->selectionModel()->selectedRows();
-    MimeTreeParser::MessagePart::List selectedParts;
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> selectedParts;
     selectedParts.reserve(selectedRows.count());
     for (const QModelIndex &index : selectedRows) {
-        auto part = attachmentView->model()->data(index, AttachmentModel::AttachmentPartRole).value<MimeTreeParser::MessagePart::Ptr>();
+        auto part = attachmentView->model()->data(index, AttachmentModel::AttachmentPartRole).value<QSharedPointer<MimeTreeParser::MessagePart>>();
         selectedParts.append(part);
     }
     this->selectedParts = selectedParts;

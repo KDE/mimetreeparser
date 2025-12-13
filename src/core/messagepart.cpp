@@ -237,13 +237,13 @@ QString MessagePart::renderInternalText() const
     return text;
 }
 
-void MessagePart::appendSubPart(const MessagePart::Ptr &messagePart)
+void MessagePart::appendSubPart(const QSharedPointer<MessagePart> &messagePart)
 {
     messagePart->setParentPart(this);
     mBlocks.append(messagePart);
 }
 
-const QList<MessagePart::Ptr> &MessagePart::subParts() const
+const QList<QSharedPointer<MessagePart>> &MessagePart::subParts() const
 {
     return mBlocks;
 }
@@ -381,13 +381,13 @@ void TextMessagePart::parseContent()
 
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 fullySignedOrEncryptedTmp = false;
-                appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())))));
+                appendSubPart(QSharedPointer<MessagePart>(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())))));
             } else if (block.type() == PgpMessageBlock) {
                 auto content = new KMime::Content;
                 content->setBody(block.text());
                 content->parse();
                 content->contentType()->setCharset(charset());
-                EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, content, content, false));
+                QSharedPointer<EncryptedMessagePart> mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, content, content, false));
                 mp->bindLifetime(content);
                 mp->setIsEncrypted(true);
                 appendSubPart(mp);
@@ -396,7 +396,7 @@ void TextMessagePart::parseContent()
                 content->setBody(block.text());
                 content->parse();
                 content->contentType()->setCharset(charset());
-                SignedMessagePart::Ptr mp(new SignedMessagePart(mOtp, cryptProto, nullptr, content, false));
+                QSharedPointer<SignedMessagePart> mp(new SignedMessagePart(mOtp, cryptProto, nullptr, content, false));
                 mp->bindLifetime(content);
                 appendSubPart(mp);
             } else {
@@ -505,15 +505,15 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
     : MessagePart(otp, QString(), node)
 {
     if (auto dataIcal = findTypeInDirectChildren(mNode, "text/calendar")) {
-        mChildParts[MultipartIcal] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, dataIcal, true));
+        mChildParts[MultipartIcal] = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataIcal, true));
     }
 
     if (auto dataText = findTypeInDirectChildren(mNode, "text/plain")) {
-        mChildParts[MultipartPlain] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, dataText, true));
+        mChildParts[MultipartPlain] = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataText, true));
     }
 
     if (auto dataHtml = findTypeInDirectChildren(mNode, "text/html")) {
-        mChildParts[MultipartHtml] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, dataHtml, true));
+        mChildParts[MultipartHtml] = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataHtml, true));
     } else {
         // If we didn't find the HTML part as the first child of the multipart/alternative, it might
         // be that this is a HTML message with images, and text/plain and multipart/related are the
@@ -536,10 +536,10 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
                 if ((!p->contentType()->isEmpty()) && (p->contentType()->mimeType() == "text/html")) {
                     htmlContent += MimeMessagePart(mOtp, p, true).text();
                 } else if (KMime::isAttachment(p)) {
-                    appendSubPart(MimeMessagePart::Ptr(new MimeMessagePart(otp, p, true)));
+                    appendSubPart(QSharedPointer<MimeMessagePart>(new MimeMessagePart(otp, p, true)));
                 }
             }
-            mChildParts[MultipartHtml] = MessagePart::Ptr(new MessagePart(mOtp, htmlContent, nullptr));
+            mChildParts[MultipartHtml] = QSharedPointer<MessagePart>(new MessagePart(mOtp, htmlContent, nullptr));
         }
     }
 }
@@ -776,7 +776,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
     if (partMetaData()->isSigned()) {
         // We simply attach a signed message part to indicate that this content is also signed
         // We're forwarding mNode to not loose the encoding information
-        auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, mCryptoProto, mNode, nullptr));
+        auto subPart = QSharedPointer<SignedMessagePart>(new SignedMessagePart(mOtp, mCryptoProto, mNode, nullptr));
         subPart->setText(decoded);
         subPart->setVerificationResult(verifyResult, plainText);
         appendSubPart(subPart);

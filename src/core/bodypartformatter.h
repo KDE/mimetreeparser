@@ -27,8 +27,8 @@ public:
     {
     }
 
-    virtual MessagePart::Ptr process(ObjectTreeParser *otp, KMime::Content *node) const;
-    virtual QList<MessagePart::Ptr> processList(ObjectTreeParser *otp, KMime::Content *node) const;
+    virtual QSharedPointer<MessagePart> process(ObjectTreeParser *otp, KMime::Content *node) const;
+    virtual QList<QSharedPointer<MessagePart>> processList(ObjectTreeParser *otp, KMime::Content *node) const;
 };
 
 } // namespace Interface

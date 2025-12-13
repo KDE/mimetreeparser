@@ -27,25 +27,25 @@ class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartForma
 class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
-        return MessagePart::Ptr(new EncapsulatedRfc822MessagePart(objectTreeParser, node, node->bodyAsMessage()));
+        return QSharedPointer<MessagePart>(new EncapsulatedRfc822MessagePart(objectTreeParser, node, node->bodyAsMessage()));
     }
 };
 
 class HeadersBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
-        return MessagePart::Ptr(new HeadersPart(objectTreeParser, node));
+        return QSharedPointer<MessagePart>(new HeadersPart(objectTreeParser, node));
     }
 };
 
 class MultiPartRelatedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    QList<MessagePart::Ptr> processList(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QList<QSharedPointer<MessagePart>> processList(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().isEmpty()) {
             return {};
@@ -55,12 +55,12 @@ public:
         // https://tools.ietf.org/html/rfc2387#section-4
 
         // We want to display attachments even if displayed inline.
-        QList<MessagePart::Ptr> list;
-        list.append(MimeMessagePart::Ptr(new MimeMessagePart(objectTreeParser, node->contents().at(0), true)));
+        QList<QSharedPointer<MessagePart>> list;
+        list.append(QSharedPointer<MimeMessagePart>(new MimeMessagePart(objectTreeParser, node->contents().at(0), true)));
         for (int i = 1; i < node->contents().size(); i++) {
             auto p = node->contents().at(i);
             if (KMime::isAttachment(p)) {
-                list.append(MimeMessagePart::Ptr(new MimeMessagePart(objectTreeParser, p, true)));
+                list.append(QSharedPointer<MimeMessagePart>(new MimeMessagePart(objectTreeParser, p, true)));
             }
         }
         return list;
@@ -70,7 +70,7 @@ public:
 class MultiPartMixedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         auto contents = node->contents();
         if (contents.isEmpty()) {
@@ -95,22 +95,22 @@ public:
 
             if (contents.count() == 1 && contents[0]->contentType()->mimeType() == "application/pkcs7-mime"_ba) {
                 auto data = findTypeInDirectChildren(node, "application/pkcs7-mime"_ba);
-                auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), node, data));
+                auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), node, data));
                 mp->setIsEncrypted(true);
                 return mp;
             }
 
             if (contents.count() == 2 && contents[1]->contentType()->mimeType() == "application/octet-stream"_ba) {
                 KMime::Content *data = findTypeInDirectChildren(node, "application/octet-stream"_ba);
-                auto mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
+                auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
                 mp->setIsEncrypted(true);
                 return mp;
             }
         }
 
         // we need the intermediate part to preserve the headers (necessary for with protected headers using multipart mixed)
-        auto part = MessagePart::Ptr(new MessagePart(objectTreeParser, {}, node));
-        part->appendSubPart(MimeMessagePart::Ptr(new MimeMessagePart(objectTreeParser, contents.at(0), false)));
+        auto part = QSharedPointer<MessagePart>(new MessagePart(objectTreeParser, {}, node));
+        part->appendSubPart(QSharedPointer<MimeMessagePart>(new MimeMessagePart(objectTreeParser, contents.at(0), false)));
         return part;
     }
 };
@@ -118,23 +118,23 @@ public:
 class ApplicationPGPEncryptedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->decodedBody().trimmed() != "Version: 1"_ba) {
             qCWarning(MIMETREEPARSER_CORE_LOG) << "Unknown PGP Version String:" << node->decodedBody().trimmed();
         }
 
         if (!node->parent()) {
-            return MessagePart::Ptr();
+            return QSharedPointer<MessagePart>();
         }
 
         KMime::Content *data = findTypeInDirectChildren(node->parent(), "application/octet-stream"_ba);
 
         if (!data) {
-            return MessagePart::Ptr(); // new MimeMessagePart(objectTreeParser, node));
+            return QSharedPointer<MessagePart>(); // new MimeMessagePart(objectTreeParser, node));
         }
 
-        EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
+        QSharedPointer<EncryptedMessagePart> mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
         mp->setIsEncrypted(true);
         return mp;
     }
@@ -143,16 +143,16 @@ public:
 class ApplicationPkcs7MimeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->head().isEmpty()) {
-            return MessagePart::Ptr();
+            return QSharedPointer<MessagePart>();
         }
 
         const QString smimeType = node->contentType()->parameter("smime-type").toLower();
 
         if (smimeType == QLatin1StringView("certs-only")) {
-            return CertMessagePart::Ptr(new CertMessagePart(objectTreeParser, node, QGpgME::smime()));
+            return QSharedPointer<CertMessagePart>(new CertMessagePart(objectTreeParser, node, QGpgME::smime()));
         }
 
         bool isSigned = (smimeType == QLatin1StringView("signed-data"));
@@ -166,7 +166,7 @@ public:
         // We try decrypting the content
         // if we either *know* that it is an encrypted message part
         // or there is neither signed nor encrypted parameter.
-        MessagePart::Ptr mp;
+        QSharedPointer<MessagePart> mp;
         if (!isSigned) {
             if (isEncrypted) {
                 qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
@@ -174,7 +174,7 @@ public:
                 qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
             }
 
-            auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(objectTreeParser, node->decodedText(), QGpgME::smime(), node));
+            auto _mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, node->decodedText(), QGpgME::smime(), node));
             mp = _mp;
             _mp->setIsEncrypted(true);
             // PartMetaData *messagePart(_mp->partMetaData());
@@ -216,7 +216,7 @@ public:
                 qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
             }
 
-            return SignedMessagePart::Ptr(new SignedMessagePart(objectTreeParser, QGpgME::smime(), nullptr, signTestNode));
+            return QSharedPointer<SignedMessagePart>(new SignedMessagePart(objectTreeParser, QGpgME::smime(), nullptr, signTestNode));
         }
         return mp;
     }
@@ -225,15 +225,15 @@ public:
 class MultiPartAlternativeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().isEmpty()) {
-            return MessagePart::Ptr();
+            return QSharedPointer<MessagePart>();
         }
 
-        AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(objectTreeParser, node));
+        QSharedPointer<AlternativeMessagePart> mp(new AlternativeMessagePart(objectTreeParser, node));
         if (mp->mChildParts.isEmpty()) {
-            return MimeMessagePart::Ptr(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
+            return QSharedPointer<MimeMessagePart>(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
         }
         return mp;
     }
@@ -242,11 +242,11 @@ public:
 class MultiPartEncryptedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().isEmpty()) {
             Q_ASSERT(false);
-            return MessagePart::Ptr();
+            return QSharedPointer<MessagePart>();
         }
 
         const QGpgME::Protocol *protocol = nullptr;
@@ -268,10 +268,10 @@ public:
         */
 
         if (!data) {
-            return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
+            return QSharedPointer<MessagePart>(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
         }
 
-        EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), protocol, node, data));
+        QSharedPointer<EncryptedMessagePart> mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), protocol, node, data));
         mp->setIsEncrypted(true);
         return mp;
     }
@@ -301,14 +301,14 @@ public:
         return protocol;
     }
 
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (node->contents().size() != 2) {
             qCDebug(MIMETREEPARSER_CORE_LOG) << "mulitpart/signed must have exactly two child parts!" << Qt::endl << "processing as multipart/mixed";
             if (!node->contents().isEmpty()) {
-                return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
+                return QSharedPointer<MessagePart>(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
             } else {
-                return MessagePart::Ptr();
+                return QSharedPointer<MessagePart>();
             }
         }
 
@@ -320,31 +320,31 @@ public:
         auto protocol = detectProtocol(node->contentType()->parameter("protocol").toLower(), QLatin1StringView(signature->contentType()->mimeType().toLower()));
 
         if (!protocol) {
-            return MessagePart::Ptr(new MimeMessagePart(objectTreeParser, signedData));
+            return QSharedPointer<MessagePart>(new MimeMessagePart(objectTreeParser, signedData));
         }
 
-        return SignedMessagePart::Ptr(new SignedMessagePart(objectTreeParser, protocol, signature, signedData));
+        return QSharedPointer<SignedMessagePart>(new SignedMessagePart(objectTreeParser, protocol, signature, signedData));
     }
 };
 
 class TextHtmlBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
-        return HtmlMessagePart::Ptr(new HtmlMessagePart(objectTreeParser, node));
+        return QSharedPointer<HtmlMessagePart>(new HtmlMessagePart(objectTreeParser, node));
     }
 };
 
 class TextPlainBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
-    MessagePart::Ptr process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
         if (KMime::isAttachment(node)) {
-            return AttachmentMessagePart::Ptr(new AttachmentMessagePart(objectTreeParser, node));
+            return QSharedPointer<AttachmentMessagePart>(new AttachmentMessagePart(objectTreeParser, node));
         }
-        return TextMessagePart::Ptr(new TextMessagePart(objectTreeParser, node));
+        return QSharedPointer<TextMessagePart>(new TextMessagePart(objectTreeParser, node));
     }
 };
 

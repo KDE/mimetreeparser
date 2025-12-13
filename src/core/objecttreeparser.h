@@ -62,11 +62,11 @@ public:
       the children of that node and it's next sibling. */
     void parseObjectTree(KMime::Content *node);
     void parseObjectTree(const QByteArray &mimeMessage);
-    MessagePart::Ptr parsedPart() const;
+    QSharedPointer<MessagePart> parsedPart() const;
     [[nodiscard]] KMime::Content *find(const std::function<bool(KMime::Content *)> &select);
-    [[nodiscard]] MessagePart::List collectContentParts();
-    [[nodiscard]] MessagePart::List collectContentParts(MessagePart::Ptr start);
-    [[nodiscard]] MessagePart::List collectAttachmentParts();
+    [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts();
+    [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts(QSharedPointer<MessagePart> start);
+    [[nodiscard]] QList<QSharedPointer<MessagePart>> collectAttachmentParts();
 
     /** Decrypt parts and verify signatures */
     void decryptAndVerify();
@@ -79,15 +79,15 @@ private:
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
      * top-level content.
      */
-    MIMETREEPARSER_CORE_NO_EXPORT MessagePart::Ptr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    MIMETREEPARSER_CORE_NO_EXPORT MessagePart::List processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType);
+    MIMETREEPARSER_CORE_NO_EXPORT QSharedPointer<MessagePart> parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
+    MIMETREEPARSER_CORE_NO_EXPORT QList<QSharedPointer<MessagePart>> processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType);
 
-    MIMETREEPARSER_CORE_NO_EXPORT MessagePart::List defaultHandling(KMime::Content *node);
+    MIMETREEPARSER_CORE_NO_EXPORT QList<QSharedPointer<MessagePart>> defaultHandling(KMime::Content *node);
 
     MIMETREEPARSER_CORE_NO_EXPORT QByteArray codecNameFor(KMime::Content *node) const;
 
     KMime::Content *mTopLevelContent{nullptr};
-    MessagePart::Ptr mParsedPart;
+    QSharedPointer<MessagePart> mParsedPart;
 
     QSharedPointer<KMime::Message> mMsg;
 

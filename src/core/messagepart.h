@@ -50,8 +50,6 @@ public:
         Attachment,
         Invalid,
     };
-    using Ptr = QSharedPointer<MessagePart>;
-    using List = QList<Ptr>;
     MessagePart(ObjectTreeParser *otp, const QString &text, KMime::Content *node = nullptr);
 
     ~MessagePart() override;
@@ -89,8 +87,8 @@ public:
 
     [[nodiscard]] PartMetaData *partMetaData();
 
-    void appendSubPart(const MessagePart::Ptr &messagePart);
-    [[nodiscard]] const QList<MessagePart::Ptr> &subParts() const;
+    void appendSubPart(const QSharedPointer<MessagePart> &messagePart);
+    [[nodiscard]] const QList<QSharedPointer<MessagePart>> &subParts() const;
     [[nodiscard]] bool hasSubParts() const;
 
     KMime::Content *node() const;
@@ -124,7 +122,7 @@ protected:
     Error mError;
 
 private:
-    QList<MessagePart::Ptr> mBlocks;
+    QList<QSharedPointer<MessagePart>> mBlocks;
     bool mRoot;
 };
 
@@ -132,7 +130,6 @@ class MIMETREEPARSER_CORE_EXPORT MimeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<MimeMessagePart> Ptr;
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart = false);
     ~MimeMessagePart() override;
 
@@ -149,7 +146,6 @@ class MIMETREEPARSER_CORE_EXPORT MessagePartList : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<MessagePartList> Ptr;
     MessagePartList(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     ~MessagePartList() override = default;
 
@@ -163,7 +159,6 @@ class MIMETREEPARSER_CORE_EXPORT TextMessagePart : public MessagePartList
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<TextMessagePart> Ptr;
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     ~TextMessagePart() override = default;
 
@@ -183,7 +178,6 @@ class MIMETREEPARSER_CORE_EXPORT AttachmentMessagePart : public TextMessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<AttachmentMessagePart> Ptr;
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     ~AttachmentMessagePart() override = default;
     [[nodiscard]] virtual bool isAttachment() const override
@@ -196,7 +190,6 @@ class MIMETREEPARSER_CORE_EXPORT HtmlMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<HtmlMessagePart> Ptr;
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
 
     ~HtmlMessagePart() override = default;
@@ -218,7 +211,6 @@ public:
         MultipartIcal ///< A multipart/altervative message, the ICal part is currently displayed
     };
 
-    typedef QSharedPointer<AlternativeMessagePart> Ptr;
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
     ~AlternativeMessagePart() override;
 
@@ -233,7 +225,7 @@ public:
     [[nodiscard]] QList<HtmlMode> availableModes();
 
 private:
-    QMap<HtmlMode, MessagePart::Ptr> mChildParts;
+    QMap<HtmlMode, QSharedPointer<MessagePart>> mChildParts;
 
     friend class ObjectTreeParser;
     friend class MultiPartAlternativeBodyPartFormatter;
@@ -243,7 +235,6 @@ class MIMETREEPARSER_CORE_EXPORT CertMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<CertMessagePart> Ptr;
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, QGpgME::Protocol *cryptoProto);
     ~CertMessagePart() override;
 
@@ -258,7 +249,6 @@ class MIMETREEPARSER_CORE_EXPORT EncapsulatedRfc822MessagePart : public MessageP
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<EncapsulatedRfc822MessagePart> Ptr;
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QSharedPointer<KMime::Message> &message);
     ~EncapsulatedRfc822MessagePart() override = default;
 
@@ -278,7 +268,6 @@ class MIMETREEPARSER_CORE_EXPORT EncryptedMessagePart : public MessagePart
     Q_PROPERTY(bool isNoSecKey READ isNoSecKey)
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
-    typedef QSharedPointer<EncryptedMessagePart> Ptr;
     EncryptedMessagePart(ObjectTreeParser *otp,
                          const QString &text,
                          const QGpgME::Protocol *protocol,
@@ -332,7 +321,6 @@ class MIMETREEPARSER_CORE_EXPORT SignedMessagePart : public MessagePart
     Q_OBJECT
 
 public:
-    using Ptr = QSharedPointer<SignedMessagePart>;
     SignedMessagePart(ObjectTreeParser *otp,
                       const QGpgME::Protocol *protocol,
                       KMime::Content *node,
@@ -364,7 +352,6 @@ class MIMETREEPARSER_CORE_EXPORT HeadersPart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<HeadersPart> Ptr;
     HeadersPart(ObjectTreeParser *otp, KMime::Content *node);
     ~HeadersPart() override = default;
 };
