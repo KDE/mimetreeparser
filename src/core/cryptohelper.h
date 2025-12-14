@@ -48,8 +48,8 @@ public:
 
 namespace CryptoUtils
 {
-[[nodiscard]] MIMETREEPARSER_CORE_EXPORT QSharedPointer<KMime::Message>
-decryptMessage(const QSharedPointer<KMime::Message> &decrypt, bool &wasEncrypted, GpgME::Protocol &protoName);
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT std::shared_ptr<KMime::Message>
+decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, GpgME::Protocol &protoName);
 }
 
 } // namespace MimeTreeParser

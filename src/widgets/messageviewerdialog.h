@@ -27,13 +27,13 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit MessageViewerDialog(const QList<QSharedPointer<KMime::Message>> &messages, QWidget *parent = nullptr);
+    explicit MessageViewerDialog(const QList<std::shared_ptr<KMime::Message>> &messages, QWidget *parent = nullptr);
     explicit MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
     ~MessageViewerDialog() override;
 
     [[nodiscard]] QToolBar *toolBar() const;
 
-    [[nodiscard]] QList<QSharedPointer<KMime::Message>> messages() const;
+    [[nodiscard]] QList<std::shared_ptr<KMime::Message>> messages() const;
 
 private:
     MIMETREEPARSER_WIDGETS_NO_EXPORT void initGUI();

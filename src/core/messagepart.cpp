@@ -925,7 +925,7 @@ QString EncryptedMessagePart::text() const
     return MessagePart::text();
 }
 
-EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const QSharedPointer<KMime::Message> &message)
+EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const std::shared_ptr<KMime::Message> &message)
     : MessagePart(otp, QString(), node)
     , mMessage(message)
 {
@@ -937,7 +937,7 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
         return;
     }
 
-    parseInternal(message.data());
+    parseInternal(message.get());
 }
 
 QString EncapsulatedRfc822MessagePart::text() const

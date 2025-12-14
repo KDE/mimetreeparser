@@ -13,7 +13,7 @@
 
 using namespace Qt::StringLiterals;
 
-static QSharedPointer<KMime::Message> readMailFromFile(const QString &mailFile)
+static std::shared_ptr<KMime::Message> readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     if (!file.open(QIODevice::ReadOnly)) {
@@ -21,7 +21,7 @@ static QSharedPointer<KMime::Message> readMailFromFile(const QString &mailFile)
     }
     Q_ASSERT(file.isOpen());
     auto mailData = KMime::CRLFtoLF(file.readAll());
-    QSharedPointer<KMime::Message> message(new KMime::Message);
+    std::shared_ptr<KMime::Message> message(new KMime::Message);
     message->setContent(mailData);
     message->parse();
     return message;

@@ -58,7 +58,7 @@ class MessagePartPrivate
 {
 public:
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
-    QSharedPointer<KMime::Message> mMessage;
+    std::shared_ptr<KMime::Message> mMessage;
     KMime::Content *protectedHeaderNode = nullptr;
     std::unique_ptr<KMime::Content> ownedContent;
 };
@@ -73,12 +73,12 @@ MessageParser::~MessageParser()
 {
 }
 
-QSharedPointer<KMime::Message> MessageParser::message() const
+std::shared_ptr<KMime::Message> MessageParser::message() const
 {
     return d->mMessage;
 }
 
-void MessageParser::setMessage(const QSharedPointer<KMime::Message> message)
+void MessageParser::setMessage(const std::shared_ptr<KMime::Message> message)
 {
     if (message == d->mMessage) {
         return;
@@ -92,7 +92,7 @@ void MessageParser::setMessage(const QSharedPointer<KMime::Message> message)
     QElapsedTimer time;
     time.start();
     auto parser = std::make_shared<MimeTreeParser::ObjectTreeParser>();
-    parser->parseObjectTree(message.data());
+    parser->parseObjectTree(message.get());
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing took: " << time.elapsed();
     parser->decryptAndVerify();
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing and decryption/verification: " << time.elapsed();

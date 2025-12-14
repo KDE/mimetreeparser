@@ -18,7 +18,7 @@ class AttachmentModel;
 class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QSharedPointer<KMime::Message> message READ message WRITE setMessage NOTIFY htmlChanged)
+    Q_PROPERTY(std::shared_ptr<KMime::Message> message READ message WRITE setMessage NOTIFY htmlChanged)
     Q_PROPERTY(PartModel *parts READ parts NOTIFY htmlChanged)
     Q_PROPERTY(QAbstractItemModel *attachments READ attachments NOTIFY htmlChanged)
     Q_PROPERTY(QString structureAsString READ structureAsString NOTIFY htmlChanged)
@@ -36,8 +36,8 @@ public:
     explicit MessageParser(QObject *parent = nullptr);
     ~MessageParser();
 
-    [[nodiscard]] QSharedPointer<KMime::Message> message() const;
-    void setMessage(const QSharedPointer<KMime::Message> message);
+    [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    void setMessage(const std::shared_ptr<KMime::Message> message);
     [[nodiscard]] PartModel *parts() const;
     [[nodiscard]] AttachmentModel *attachments() const;
     [[nodiscard]] QString structureAsString() const;
