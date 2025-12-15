@@ -95,7 +95,8 @@ QList<QSharedPointer<KMime::Message>> FileOpener::openFile(const QString &fileNa
 
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
-        Q_ASSERT(false);
+        qCWarning(MIMETREEPARSER_CORE_LOG) << "Could not open file";
+        return {};
     }
     if (!file.isOpen()) {
         qCWarning(MIMETREEPARSER_CORE_LOG) << "Could not open file";
