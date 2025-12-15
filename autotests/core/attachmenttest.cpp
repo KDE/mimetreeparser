@@ -23,7 +23,9 @@ QTEST_MAIN(AttachmentTest)
 static QByteArray readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
-    file.open(QIODevice::ReadOnly);
+    if (!file.open(QIODevice::ReadOnly)) {
+        Q_ASSERT(false);
+    }
     Q_ASSERT(file.isOpen());
     return file.readAll();
 }
