@@ -48,7 +48,7 @@ public:
         None,
         Html,
     };
-    Q_ENUM(Types);
+    Q_ENUM(Types)
 
     enum Roles {
         TypeRole = Qt::UserRole + 1,
@@ -78,7 +78,7 @@ public:
         NotSoGood, ///< Orange
         Bad, ////< Red
     };
-    Q_ENUM(SecurityLevel);
+    Q_ENUM(SecurityLevel)
 
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     [[nodiscard]] QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
