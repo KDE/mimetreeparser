@@ -28,20 +28,32 @@ enum PGPBlockType {
 class MIMETREEPARSER_CORE_EXPORT Block
 {
 public:
+    /*!
+     */
     Block();
+    /*!
+     */
     explicit Block(const QByteArray &m);
 
+    /*!
+     */
     Block(const QByteArray &m, PGPBlockType t);
 
+    /*!
+     */
     [[nodiscard]] QByteArray text() const;
+    /*!
+     */
     [[nodiscard]] PGPBlockType type() const;
+    /*!
+     */
     [[nodiscard]] PGPBlockType determineType() const;
 
     QByteArray msg;
     PGPBlockType mType = UnknownBlock;
 };
 
-/** Parses the given message and splits it into OpenPGP blocks and
+/*! Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
 [[nodiscard]] MIMETREEPARSER_CORE_EXPORT QList<Block> prepareMessageForDecryption(const QByteArray &msg);

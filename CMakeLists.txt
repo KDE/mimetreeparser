@@ -42,7 +42,7 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMFeatureSummary)
-include(ECMAddQch)
+include(ECMGenerateQDoc)
 include(ECMAddTests)
 
 include(ECMCheckOutboundLicense)
@@ -73,17 +73,6 @@ configure_file(
     mimetreeparserng-version.h.in
     ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h
     @ONLY
-)
-
-option(
-    BUILD_QCH
-    "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-    OFF
-)
-add_feature_info(
-    QCH
-    ${BUILD_QCH}
-    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
 )
 
 if(BUILD_TESTING)

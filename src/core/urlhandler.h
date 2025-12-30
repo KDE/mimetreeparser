@@ -14,11 +14,15 @@ class MIMETREEPARSER_CORE_EXPORT UrlHandler : public QObject
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit UrlHandler(QObject *parent = nullptr);
 
     Q_INVOKABLE bool handleClick(const QUrl &url, QWindow *window);
 
 Q_SIGNALS:
+    /*!
+     */
     void errorOccurred(const QString &errorMessage);
 
 private:

@@ -126,44 +126,10 @@ install(
     COMPONENT Devel
 )
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6MimeTreeParserCore_QCH
-        NAME MimeTreeParserCore
-        BASE_NAME KPim6MimeTreeParserCore
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        # using only public headers, to cover only public API
-        SOURCES ${MimeTreeParserCore_HEADERS}
-        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        LINK_QCHS
-            Qt6Core_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            MIMETREEPARSERCORE_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR
     "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserCore"
 )
-
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KPim6MimeTreeParserCore_QCH
-        FILE KPim6MimeTreeParserCoreQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MimeTreeParserCoreQchTargets.cmake\")"
-    )
-endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMimeTreeParserCoreConfig.cmake.in"

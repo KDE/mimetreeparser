@@ -21,7 +21,13 @@ class MIMETREEPARSER_CORE_EXPORT AttachmentModel : public QAbstractTableModel
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief AttachmentModel
+     * \param parser
+     */
     explicit AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
+    /*!
+     */
     ~AttachmentModel() override;
 
 public:
@@ -49,17 +55,33 @@ public:
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
+    /*!
+     */
     Q_INVOKABLE bool openAttachment(const int row);
+    /*!
+     */
     Q_INVOKABLE bool importPublicKey(const int row);
 
+    /*!
+     */
     bool openAttachment(const QSharedPointer<MimeTreeParser::MessagePart> &message);
+    /*!
+     */
     bool importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &message);
 
+    /*!
+     */
     Q_INVOKABLE QString saveAttachmentToPath(const int row, const QString &path);
+    /*!
+     */
     [[nodiscard]] QString saveAttachmentToPath(const QSharedPointer<MimeTreeParser::MessagePart> &part, const QString &path);
 
 Q_SIGNALS:
+    /*!
+     */
     void info(const QString &message);
+    /*!
+     */
     void errorOccurred(const QString &message);
 
 private:

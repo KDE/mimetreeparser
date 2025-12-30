@@ -28,15 +28,27 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerWindow : public QMainWindow
     Q_PROPERTY(QList<std::shared_ptr<KMime::Message>> messages READ messages WRITE setMessages NOTIFY messagesChanged)
 
 public:
+    /*!
+     */
     explicit MessageViewerWindow(QWidget *parent = nullptr);
+    /*!
+     */
     ~MessageViewerWindow() override;
 
+    /*!
+     */
     [[nodiscard]] QToolBar *toolBar() const;
 
+    /*!
+     */
     [[nodiscard]] QList<std::shared_ptr<KMime::Message>> messages() const;
+    /*!
+     */
     void setMessages(const QList<std::shared_ptr<KMime::Message>> &messages);
 
 Q_SIGNALS:
+    /*!
+     */
     void messagesChanged();
 
 private:

@@ -34,7 +34,11 @@ class MIMETREEPARSER_CORE_EXPORT PartModel : public QAbstractItemModel
     Q_PROPERTY(bool trimMail READ trimMail WRITE setTrimMail NOTIFY trimMailChanged)
     Q_PROPERTY(bool isTrimmed READ isTrimmed NOTIFY trimMailChanged)
 public:
+    /*!
+     */
     explicit PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
+    /*!
+     */
     ~PartModel() override;
 
     static std::pair<QString, bool> trim(const QString &text);
@@ -87,20 +91,42 @@ public:
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
+    /*!
+     */
     void setShowHtml(bool html);
+    /*!
+     */
     [[nodiscard]] bool showHtml() const;
+    /*!
+     */
     [[nodiscard]] bool containsHtml() const;
 
+    /*!
+     */
     void setTrimMail(bool trim);
+    /*!
+     */
     [[nodiscard]] bool trimMail() const;
+    /*!
+     */
     [[nodiscard]] bool isTrimmed() const;
 
+    /*!
+     */
     static SecurityLevel signatureSecurityLevel(MimeTreeParser::MessagePart *messagePart);
+    /*!
+     */
     static QString signatureDetails(MimeTreeParser::MessagePart *messagePart);
 
 Q_SIGNALS:
+    /*!
+     */
     void showHtmlChanged();
+    /*!
+     */
     void trimMailChanged();
+    /*!
+     */
     void containsHtmlChanged();
 
 private:

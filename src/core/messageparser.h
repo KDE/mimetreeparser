@@ -33,25 +33,57 @@ class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
     Q_PROPERTY(QDateTime date READ date NOTIFY htmlChanged)
 
 public:
+    /*!
+     */
     explicit MessageParser(QObject *parent = nullptr);
+    /*!
+     */
     ~MessageParser();
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    /*!
+     */
     void setMessage(const std::shared_ptr<KMime::Message> message);
+    /*!
+     */
     [[nodiscard]] PartModel *parts() const;
+    /*!
+     */
     [[nodiscard]] AttachmentModel *attachments() const;
+    /*!
+     */
     [[nodiscard]] QString structureAsString() const;
+    /*!
+     */
     [[nodiscard]] bool loaded() const;
 
+    /*!
+     */
     [[nodiscard]] QString subject() const;
+    /*!
+     */
     [[nodiscard]] QString from() const;
+    /*!
+     */
     [[nodiscard]] QString sender() const;
+    /*!
+     */
     [[nodiscard]] QString to() const;
+    /*!
+     */
     [[nodiscard]] QString cc() const;
+    /*!
+     */
     [[nodiscard]] QString bcc() const;
+    /*!
+     */
     [[nodiscard]] QDateTime date() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void htmlChanged();
 
 private:

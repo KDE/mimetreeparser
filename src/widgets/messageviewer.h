@@ -24,10 +24,18 @@ namespace Widgets
 class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
 {
 public:
+    /*!
+     */
     explicit MessageViewer(QWidget *parent = nullptr);
+    /*!
+     */
     ~MessageViewer() override;
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    /*!
+     */
     void setMessage(const std::shared_ptr<KMime::Message> message);
 
     /// Return whether the viewer should use a fixed size font.
@@ -37,6 +45,8 @@ public:
     /// Return the message subject
     [[nodiscard]] QString subject() const;
 
+    /*!
+     */
     void print(QPainter *painter, int width);
 
 private:

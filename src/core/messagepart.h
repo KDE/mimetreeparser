@@ -50,29 +50,63 @@ public:
         Attachment,
         Invalid,
     };
+    /*!
+     */
     MessagePart(ObjectTreeParser *otp, const QString &text, KMime::Content *node = nullptr);
 
+    /*!
+     */
     ~MessagePart() override;
 
+    /*!
+     */
     [[nodiscard]] virtual QString text() const;
+    /*!
+     */
     void setText(const QString &text);
+    /*!
+     */
     [[nodiscard]] virtual bool isAttachment() const;
 
+    /*!
+     */
     void setIsRoot(bool root);
+    /*!
+     */
     [[nodiscard]] bool isRoot() const;
 
+    /*!
+     */
     void setParentPart(MessagePart *parentPart);
+    /*!
+     */
     [[nodiscard]] MessagePart *parentPart() const;
 
+    /*!
+     */
     [[nodiscard]] virtual QString plaintextContent() const;
+    /*!
+     */
     [[nodiscard]] virtual QString htmlContent() const;
 
+    /*!
+     */
     [[nodiscard]] virtual bool isHtml() const;
 
+    /*!
+     */
     [[nodiscard]] QByteArray mimeType() const;
+    /*!
+     */
     [[nodiscard]] QByteArray charset() const;
+    /*!
+     */
     [[nodiscard]] QString filename() const;
+    /*!
+     */
     [[nodiscard]] Disposition disposition() const;
+    /*!
+     */
     [[nodiscard]] bool isText() const;
 
     enum Error {
@@ -82,35 +116,65 @@ public:
         UnknownError,
     };
 
+    /*!
+     */
     [[nodiscard]] Error error() const;
+    /*!
+     */
     [[nodiscard]] QString errorString() const;
 
+    /*!
+     */
     [[nodiscard]] PartMetaData *partMetaData();
 
+    /*!
+     */
     void appendSubPart(const QSharedPointer<MessagePart> &messagePart);
+    /*!
+     */
     [[nodiscard]] const QList<QSharedPointer<MessagePart>> &subParts() const;
+    /*!
+     */
     [[nodiscard]] bool hasSubParts() const;
 
+    /*!
+     */
     KMime::Content *node() const;
 
+    /*!
+     */
     virtual KMMsgSignatureState signatureState() const;
+    /*!
+     */
     virtual KMMsgEncryptionState encryptionState() const;
 
+    /*!
+     */
     [[nodiscard]] QList<SignedMessagePart *> signatures() const;
+    /*!
+     */
     [[nodiscard]] QList<EncryptedMessagePart *> encryptions() const;
 
-    /**
+    /*!
      * Retrieve the header @header in this part or any parent parent.
      *
      * Useful for MemoryHole support.
      */
     [[nodiscard]] KMime::Headers::Base *header(const char *header) const;
 
+    /*!
+     */
     void bindLifetime(KMime::Content *);
 
 protected:
+    /*!
+     */
     void parseInternal(KMime::Content *node, bool onlyOneMimePart = false);
+    /*!
+     */
     void parseInternal(const QByteArray &data);
+    /*!
+     */
     [[nodiscard]] QString renderInternalText() const;
 
     QString mText;

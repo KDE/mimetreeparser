@@ -9,4 +9,3 @@ find_dependency(KPim6Mime "@KPIM_MIME_VERSION@")
 find_dependency(KPim6MimeTreeParserCore "@PIM_VERSION@")
 
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6MimeTreeParserWidgetsTargets.cmake")
-@PACKAGE_INCLUDE_QCHTARGETS@

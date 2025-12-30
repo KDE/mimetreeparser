@@ -22,7 +22,7 @@ class Content;
 namespace MimeTreeParser
 {
 
-/**
+/*!
     Entry point to parse mime messages.
 
     Content returned by the ObjectTreeParser (including messageparts),
@@ -34,10 +34,18 @@ class MIMETREEPARSER_CORE_EXPORT ObjectTreeParser
     ObjectTreeParser(const ObjectTreeParser &other);
 
 public:
+    /*!
+     */
     explicit ObjectTreeParser() = default;
+    /*!
+     */
     virtual ~ObjectTreeParser() = default;
 
+    /*!
+     */
     [[nodiscard]] QString structureAsString() const;
+    /*!
+     */
     void print();
 
     /// The text of the message, ie. what would appear in the
@@ -58,24 +66,36 @@ public:
     /// encrypted parts that have not been decrypted yet.
     [[nodiscard]] bool hasSignedParts() const;
 
-    /** Parse beginning at a given node and recursively parsing
+    /*! Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
     void parseObjectTree(KMime::Content *node);
+    /*!
+     */
     void parseObjectTree(const QByteArray &mimeMessage);
+    /*!
+     */
     QSharedPointer<MessagePart> parsedPart() const;
+    /*!
+     */
     [[nodiscard]] KMime::Content *find(const std::function<bool(KMime::Content *)> &select);
+    /*!
+     */
     [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts();
+    /*!
+     */
     [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts(QSharedPointer<MessagePart> start);
+    /*!
+     */
     [[nodiscard]] QList<QSharedPointer<MessagePart>> collectAttachmentParts();
 
-    /** Decrypt parts and verify signatures */
+    /*! Decrypt parts and verify signatures */
     void decryptAndVerify();
 
-    /** Embedd content referenced by cid by inlining */
+    /*! Embedd content referenced by cid by inlining */
     [[nodiscard]] QString resolveCidLinks(const QString &html);
 
 private:
-    /**
+    /*!
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
      * top-level content.
      */
