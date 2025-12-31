@@ -18,9 +18,14 @@ namespace MimeTreeParser
 {
 namespace Widgets
 {
-
-/// MessageViewer that displays the given std::shared_ptr<KMime::Message>
-/// \author Carl Schwan <carl.schwan@gnupg.com>
+/*!
+ * \class MimeTreeParser::MessageViewer
+ * \inmodule MimeTreeParserWidgets
+ * \inheaderfile MimeTreeParserWidgets/MessageViewer
+ *
+ * \author Carl Schwan <carl.schwan@gnupg.com>
+ * \brief MessageViewer that displays the given std::shared_ptr<KMime::Message>
+ */
 class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
 {
 public:

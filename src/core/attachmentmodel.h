@@ -16,7 +16,11 @@ namespace MimeTreeParser
 class ObjectTreeParser;
 }
 class AttachmentModelPrivate;
-
+/*!
+ * \class MimeTreeParser::AttachmentModel
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/AttachmentModel
+ */
 class MIMETREEPARSER_CORE_EXPORT AttachmentModel : public QAbstractTableModel
 {
     Q_OBJECT

@@ -23,6 +23,10 @@ namespace MimeTreeParser
 {
 
 /*!
+    \class MimeTreeParser::ObjectTreeParser
+    \inmodule MimeTreeParserCore
+    \inheaderfile MimeTreeParserCore/ObjectTreeParser
+
     Entry point to parse mime messages.
 
     Content returned by the ObjectTreeParser (including messageparts),

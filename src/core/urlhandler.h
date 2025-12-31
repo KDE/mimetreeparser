@@ -8,7 +8,11 @@
 
 #include <QObject>
 #include <QWindow>
-
+/*!
+ * \class MimeTreeParser::UrlHandler
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/UrlHandler
+ */
 class MIMETREEPARSER_CORE_EXPORT UrlHandler : public QObject
 {
     Q_OBJECT

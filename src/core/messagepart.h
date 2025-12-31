@@ -35,7 +35,11 @@ class MultiPartAlternativeBodyPartFormatter;
 
 class SignedMessagePart;
 class EncryptedMessagePart;
-
+/*!
+ * \class MimeTreeParser::MessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT MessagePart : public QObject
 {
     Q_OBJECT

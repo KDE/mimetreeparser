@@ -25,7 +25,11 @@ namespace MimeTreeParser
 class ObjectTreeParser;
 }
 class PartModelPrivate;
-
+/*!
+ * \class MimeTreeParser::PartModel
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/PartModel
+ */
 class MIMETREEPARSER_CORE_EXPORT PartModel : public QAbstractItemModel
 {
     Q_OBJECT

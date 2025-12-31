@@ -14,7 +14,6 @@
 #include <QUrl>
 
 using namespace Qt::StringLiterals;
-
 UrlHandler::UrlHandler(QObject *parent)
     : QObject(parent)
 {

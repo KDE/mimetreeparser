@@ -24,7 +24,11 @@ enum PGPBlockType {
     PublicKeyBlock = 5, // BEGIN PGP PUBLIC KEY BLOCK
     PrivateKeyBlock = 6, // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
 };
-
+/*!
+ * \class MimeTreeParser::Block
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/CryptoHelper
+ */
 class MIMETREEPARSER_CORE_EXPORT Block
 {
 public:

@@ -18,10 +18,14 @@ namespace MimeTreeParser
 namespace Widgets
 {
 
-/// MessageViewerWindow that displays the given email stored in the
-/// file.
-///
-/// \author Carl Schwan <carl.schwan@gnupg.com>
+/*!
+ * \class MimeTreeParser::MessageViewerDialog
+ * \inmodule MimeTreeParserWidgets
+ * \inheaderfile MimeTreeParserWidgets/MessageViewerDialog
+ *
+ * \author Carl Schwan <carl.schwan@gnupg.com>
+ * \brief MessageViewerWindow that displays the given email stored in the file.
+ */
 class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerWindow : public QMainWindow
 {
     Q_OBJECT
