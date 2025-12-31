@@ -151,3 +151,4 @@ install(
     FILE KPim6MimeTreeParserCoreTargets.cmake
     NAMESPACE KPim6::
 )
+ecm_generate_qdoc(KPim6MimeTreeParserCore mimetreeparser-core.qdocconf)

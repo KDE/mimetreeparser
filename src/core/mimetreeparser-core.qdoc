@@ -1,0 +1,9 @@
+/*!
+    \module MimeTreeParserCore
+    \title MimeTreeParser Core C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent MimeTreeParserCore
+
+    \brief MimeTreeParser Core Library.
+*/

@@ -1,0 +1,21 @@
+/*!
+    \page mimetreeparser-index.html
+    \title MimeTreeParserCore
+
+    MimeTreeParser Core Library
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KPim6} {MimeTreeParserCore} {KPim6::MimeTreeParserCore}
+
+    \section1 API Reference
+
+    \list
+        \li \l{MimeTreeParser Core C++ Classes}
+        \li \l{MimeTreeParser Widgets C++ Classes}
+    \endlist
+*/

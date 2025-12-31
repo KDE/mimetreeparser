@@ -1,0 +1,9 @@
+/*!
+    \module MimeTreeParserWidgets
+    \title MimeTreeParser Widgets C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent MimeTreeParserWidgets
+
+    \brief MimeTreeParser Widgets Library.
+*/

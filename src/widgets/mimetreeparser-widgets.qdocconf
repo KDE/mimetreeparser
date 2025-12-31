@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = MimeTreeParserWidgets
+description = MimeTreeParser Widgets Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "MimeTreeParserWidgets"
+
+qhp.projects            = mimetreeparserwidgets
+
+qhp.mimetreeparserwidgets.file                = mimetreeparserwidgets.qhp
+qhp.mimetreeparserwidgets.namespace           = org.kde.mimetreeparserwidgets.$QT_VERSION_TAG
+qhp.mimetreeparserwidgets.virtualFolder       = mimetreeparserwidgets
+qhp.mimetreeparserwidgets.indexTitle          = mimetreeparserwidgets
+qhp.mimetreeparserwidgets.indexRoot           =
+
+qhp.mimetreeparserwidgets.subprojects         = classes
+qhp.mimetreeparserwidgets.subprojects.classes.title = C++ Classes
+qhp.mimetreeparserwidgets.subprojects.classes.indexTitle = MimeTreeParser Widgets C++ Classes
+qhp.mimetreeparserwidgets.subprojects.classes.selectors = class fake:headerfile
+qhp.mimetreeparserwidgets.subprojects.classes.sortPages = true
+
+tagfile = mimetreeparserwidgets.tags
