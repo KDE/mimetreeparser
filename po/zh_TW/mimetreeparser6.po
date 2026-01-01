@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-01 00:43+0000\n"
 "PO-Revision-Date: 2025-08-16 13:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -141,7 +141,7 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "錯誤密碼。"
 
-#: core/urlhandler.cpp:52
+#: core/urlhandler.cpp:51
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "無法啟動憑證管理員。請檢查您的安裝。"

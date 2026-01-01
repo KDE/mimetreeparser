@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-01 00:43+0000\n"
 "PO-Revision-Date: 2025-07-10 03:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -146,7 +146,7 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Contraseña larga errónea."
 
-#: core/urlhandler.cpp:52
+#: core/urlhandler.cpp:51
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""

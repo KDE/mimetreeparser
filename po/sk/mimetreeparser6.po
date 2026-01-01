@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-01 00:43+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -149,7 +149,7 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Nesprávne heslo."
 
-#: core/urlhandler.cpp:52
+#: core/urlhandler.cpp:51
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Nemôžem spustiť manažéra certifikátov. Prosím overte si inštaláciu."

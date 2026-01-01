@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-01-01 00:43+0000\n"
 "PO-Revision-Date: 2025-05-16 11:26+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -144,7 +144,7 @@ msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "A frase de paso é incorrecta."
 
-#: core/urlhandler.cpp:52
+#: core/urlhandler.cpp:51
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
