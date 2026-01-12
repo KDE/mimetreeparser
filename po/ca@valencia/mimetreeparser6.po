@@ -47,7 +47,7 @@ msgstr "Signat"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr "No s'ha pogut guardar l'adjunt."
+msgstr "Ha fallat mentre es guardava l'adjunt."
 
 #: core/attachmentmodel.cpp:325
 #, kde-format
@@ -58,13 +58,13 @@ msgstr "adjunt"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr "No s'ha pogut escriure l'adjunt per a obrir-lo."
+msgstr "Ha fallat mentre s'escrivia l'adjunt per a obrir-lo."
 
 #: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr "No s'ha pogut obrir l'adjunt."
+msgstr "Ha fallat mentre s'obria l'adjunt."
 
 #: core/attachmentmodel.cpp:382
 #, kde-format
@@ -477,7 +477,7 @@ msgstr "No s'ha pogut crear el fitxer %1."
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
-msgstr "S'ha produït un error en guardar el missatge"
+msgstr "S'ha produït un error mentre es guardava el missatge"
 
 #: widgets/messageviewerdialog.cpp:166 widgets/messageviewerwindow.cpp:217
 #, kde-format
