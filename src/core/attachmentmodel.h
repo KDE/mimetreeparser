@@ -78,7 +78,7 @@ public:
     Q_INVOKABLE QString saveAttachmentToPath(const int row, const QString &path);
     /*!
      */
-    [[nodiscard]] QString saveAttachmentToPath(const QSharedPointer<MimeTreeParser::MessagePart> &part, const QString &path);
+    QString saveAttachmentToPath(const QSharedPointer<MimeTreeParser::MessagePart> &part, const QString &path);
 
 Q_SIGNALS:
     /*!
