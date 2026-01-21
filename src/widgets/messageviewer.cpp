@@ -139,13 +139,13 @@ void MessageViewer::Private::showContextMenu()
 void MessageViewer::Private::selectionChanged()
 {
     const QModelIndexList selectedRows = attachmentView->selectionModel()->selectedRows();
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> selectedParts;
-    selectedParts.reserve(selectedRows.count());
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> selectedMessageParts;
+    selectedMessageParts.reserve(selectedRows.count());
     for (const QModelIndex &index : selectedRows) {
         auto part = attachmentView->model()->data(index, AttachmentModel::AttachmentPartRole).value<QSharedPointer<MimeTreeParser::MessagePart>>();
-        selectedParts.append(part);
+        selectedMessageParts.append(part);
     }
-    this->selectedParts = selectedParts;
+    this->selectedParts = selectedMessageParts;
 }
 
 MessageViewer::MessageViewer(QWidget *parent)
@@ -236,7 +236,7 @@ std::shared_ptr<KMime::Message> MessageViewer::message() const
     return d->parser.message();
 }
 
-void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent)
+void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout *lay, const QModelIndex &parent)
 {
     for (int i = 0, count = parts->rowCount(parent); i < count; i++) {
         const auto idx = parts->index(i, 0, parent);
@@ -274,7 +274,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                 label->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
             }
             container->layout()->addWidget(label);
-            layout->addWidget(container);
+            lay->addWidget(container);
             break;
         }
         case PartModel::Types::Ical: {
@@ -309,7 +309,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             container->layout()->addWidget(widget);
 
-            layout->addWidget(container);
+            lay->addWidget(container);
             break;
         }
         case PartModel::Types::Encapsulated: {
@@ -341,7 +341,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             container->layout()->addWidget(groupBox);
 
-            layout->addWidget(container);
+            lay->addWidget(container);
             break;
         }
 
@@ -357,7 +357,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                 }
             });
             errorWidget->setWordWrap(true);
-            layout->addWidget(errorWidget);
+            lay->addWidget(errorWidget);
             break;
         }
         default:
