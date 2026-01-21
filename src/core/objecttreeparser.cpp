@@ -118,7 +118,7 @@ bool ObjectTreeParser::hasEncryptedParts() const
             return true;
         },
         [&result](const QSharedPointer<MessagePart> &part) {
-            if (const auto enc = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(part.data())) {
+            if (dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(part.data())) {
                 result = true;
             }
             return false;
@@ -137,7 +137,7 @@ bool ObjectTreeParser::hasSignedParts() const
             return true;
         },
         [&result](const QSharedPointer<MessagePart> &part) {
-            if (const auto enc = dynamic_cast<MimeTreeParser::SignedMessagePart *>(part.data())) {
+            if (dynamic_cast<MimeTreeParser::SignedMessagePart *>(part.data())) {
                 result = true;
             }
             return false;
