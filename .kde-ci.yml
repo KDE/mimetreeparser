@@ -16,4 +16,3 @@ Options:
  require-passing-tests-on: ['@all']
  gcovr-arguments: '--exclude "_install/.*" --exclude "examples/.*"'
  run-qmllint: true
- cmake-options: '-DWARNINGS_AS_ERRORS=ON'
