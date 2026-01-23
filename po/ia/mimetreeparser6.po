@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 giovanni <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-01 00:43+0000\n"
-"PO-Revision-Date: 2025-05-09 18:59+0200\n"
+"PO-Revision-Date: 2026-01-22 18:03+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -509,12 +509,10 @@ msgid "Unable to read file"
 msgstr "Incapace a leger file"
 
 #: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "Subjecto:"
+msgstr "(Necun Subjecto)"
 
 #: widgets/messageviewerwindow.cpp:117
 #, kde-format
