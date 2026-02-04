@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.pim.mimetreeparser
+import '../itinerary' as Itinerary
 
 ListView {
     id: root
@@ -31,6 +32,15 @@ ListView {
     bottomMargin: padding
 
     spacing: Kirigami.Units.smallSpacing
+
+    header: Itinerary.ItineraryComponent {
+        width: parent.width
+        itineraryModel.message: messageParser.message
+        onVisibleChanged: if (visible) {
+            console.log("Scroll at top")
+            root.positionViewAtBeginning();
+        }
+    }
 
     model: MailPartModel {
         id: visualModel

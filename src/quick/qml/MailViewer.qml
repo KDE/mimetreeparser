@@ -190,17 +190,6 @@ Kirigami.ScrollablePage {
 
         visible: attachmentRepeater.count > 0
 
-        background: Item {
-            Kirigami.Separator {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    top: undefined
-                    bottom:  parent.bottom
-                }
-            }
-        }
-
         Flow {
             anchors.fill: parent
             spacing: Kirigami.Units.smallSpacing
