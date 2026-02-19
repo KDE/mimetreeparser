@@ -10,12 +10,14 @@
 #include <QQmlEngine>
 #include <QString>
 
+class QTemporaryFile;
+
 class ItineraryModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
+    Q_PROPERTY(QString path READ path NOTIFY pathChanged)
     Q_PROPERTY(std::shared_ptr<KMime::Message> message READ message WRITE setMessage NOTIFY messageChanged)
 
 public:
@@ -23,10 +25,12 @@ public:
         NameRole = Qt::DisplayRole,
         TypeRole,
         DepartureLocationRole,
-        ArrivalLocationRole,
         DepartureTimeRole,
+        DepartureDayRole,
         DepartureAddressRole,
+        ArrivalLocationRole,
         ArrivalTimeRole,
+        ArrivalDayRole,
         ArrivalAddressRole,
         AddressRole,
         StartTimeRole,
@@ -45,7 +49,6 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     QString path() const;
-    void setPath(const QString &path);
 
     std::shared_ptr<KMime::Message> message() const;
     void setMessage(const std::shared_ptr<KMime::Message> &message);
@@ -60,6 +63,7 @@ Q_SIGNALS:
 
 private:
     QJsonArray m_data;
+    QTemporaryFile *m_temporary;
     QString m_path;
     std::shared_ptr<KMime::Message> m_message;
     void loadData();

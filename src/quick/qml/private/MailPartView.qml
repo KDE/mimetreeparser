@@ -28,7 +28,6 @@ ListView {
 
     property url icalCustomComponent
 
-    topMargin: padding
     bottomMargin: padding
 
     spacing: Kirigami.Units.smallSpacing
@@ -37,7 +36,6 @@ ListView {
         width: parent.width
         itineraryModel.message: messageParser.message
         onVisibleChanged: if (visible) {
-            console.log("Scroll at top")
             root.positionViewAtBeginning();
         }
     }

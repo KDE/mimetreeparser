@@ -11,9 +11,11 @@ ecm_add_qml_module(mimetreeparser_plugin
 )
 
 target_sources(mimetreeparser_plugin PRIVATE
-    types.h
-    itinerarymodel.h
+    itinerarykdeconnecthandler.h
+    itinerarykdeconnecthandler.cpp
     itinerarymodel.cpp
+    itinerarymodel.h
+    types.h
 )
 
 target_link_libraries(mimetreeparser_plugin PRIVATE
@@ -78,8 +80,9 @@ ecm_target_qml_sources(mimetreeparser_plugin PRIVATE
         qml/itinerary/ItineraryReservationComponent.qml
         qml/itinerary/TrainReservationComponent.qml
         qml/itinerary/JourneySectionStopDelegateLineSegment.qml
-	qml/itinerary/ItineraryComponent.qml
-	qml/itinerary/TransportIcon.qml
+        qml/itinerary/ItineraryComponent.qml
+        qml/itinerary/TransportIcon.qml
+        qml/itinerary/TripMenu.qml
 )
 
 ecm_finalize_qml_module(mimetreeparser_plugin DESTINATION ${KDE_INSTALL_QMLDIR})

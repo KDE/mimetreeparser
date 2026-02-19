@@ -25,6 +25,11 @@ ItineraryReservationComponent {
     required property string departureTime
 
     /**
+     * @brief The departure time of the train.
+     */
+    required property string departureDay
+
+    /**
      * @brief The departure station of the train.
      */
     required property string departureLocation
@@ -45,6 +50,11 @@ ItineraryReservationComponent {
     required property string arrivalTime
 
     /**
+     * @brief The arrival time of the train.
+     */
+    required property string arrivalDay
+
+    /**
      * @brief The arrival station of the train.
      */
     required property string arrivalLocation
@@ -59,37 +69,55 @@ ItineraryReservationComponent {
      */
     required property string arrivalPlatform
 
-    headerItem: RowLayout {
+    headerItem: [
         TransportIcon {
             source: "qrc:/qt/qml/org/kde/pim/mimetreeparser/train.svg"
             isMask: true
             size: Kirigami.Units.iconSizes.smallMedium
-        }
+        },
         QQC2.Label {
-            Layout.fillWidth: true
             text: root.name
             elide: Text.ElideRight
             horizontalAlignment: Text.AlignLeft
 
+            Layout.fillWidth: true
             Accessible.ignored: true
-        }
+        },
         QQC2.Label {
-            text: root.departureTime
+            text: root.departureDay
+        },
+        QQC2.ToolButton {
+            display: QQC2.Button.IconOnly
+            text: i18nc("@action", "Open Menu")
+            icon.name: 'overflow-menu-symbolic'
+            onClicked: root.importTrip()
+
+            QQC2.ToolTip.text: text
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            QQC2.ToolTip.visible: hovered
         }
-    }
+    ]
 
     contentItem: ColumnLayout {
         spacing: 0
 
         RowLayout {
             Layout.fillWidth: true
+
+            spacing: Kirigami.Units.largeSpacing
+
             ColumnLayout{
                 id: lineSectionColumn
+
                 spacing: 0
+
+                Layout.fillHeight: true
+
                 JourneySectionStopDelegateLineSegment {
-                    Layout.fillHeight: true
                     isDeparture: true
+                    Layout.fillHeight: true
                 }
+
                 JourneySectionStopDelegateLineSegment {
                     visible: departureCountryLayout.visible
                     Layout.fillHeight: true
@@ -97,18 +125,23 @@ ItineraryReservationComponent {
             }
 
             ColumnLayout{
-                Layout.bottomMargin:  Kirigami.Units.largeSpacing
+                spacing: 0
 
-                spacing:0
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     Layout.fillHeight: true
                     Layout.fillWidth: true
+
                     QQC2.Label {
                         id: depTime
                         text: root.departureTime
                     }
+
                     QQC2.Label {
                         Layout.fillWidth: true
                         font.bold: true
@@ -131,7 +164,7 @@ ItineraryReservationComponent {
                 RowLayout{
                     id: departureCountryLayout
                     visible: departureCountryLabel.text.length > 0
-                    Item{
+                    Item {
                         Layout.minimumWidth: depTime.width
                     }
                     QQC2.Label {

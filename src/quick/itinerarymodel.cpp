@@ -3,6 +3,7 @@
 
 #include "itinerarymodel.h"
 
+#include <QDir>
 #include <QJsonDocument>
 #include <QProcess>
 #include <QTemporaryFile>
@@ -17,6 +18,7 @@ using namespace Qt::StringLiterals;
 
 ItineraryModel::ItineraryModel(QObject *parent)
     : QAbstractListModel(parent)
+    , m_temporary(new QTemporaryFile(QDir::tempPath() + QLatin1Char('/') + QCoreApplication::applicationName() + QLatin1String(".XXXXXX.eml"), this))
 {
 }
 
@@ -85,21 +87,27 @@ QVariant ItineraryModel::data(const QModelIndex &index, int role) const
             return data["reservationFor"_L1]["arrivalAirport"_L1]["address"_L1]["addressCountry"_L1].toString();
         }
     }
-    if (role == DepartureTimeRole) {
+    if (role == DepartureTimeRole || role == DepartureDayRole) {
         const auto &time = data["reservationFor"_L1]["departureTime"_L1];
         auto dateTime = (time.isString() ? time : time["@value"_L1]).toVariant().toDateTime();
         if (const auto &timeZone = time["timezone"_L1].toString(); timeZone.length() > 0) {
             dateTime.setTimeZone(QTimeZone(timeZone.toLatin1().data()));
         }
-        return dateTime.toString(QLocale::system().dateTimeFormat(QLocale::ShortFormat));
+        if (role == DepartureDayRole) {
+            return QLocale::system().toString(dateTime.date(), QLocale::ShortFormat);
+        }
+        return dateTime.toString(QLocale::system().timeFormat(QLocale::ShortFormat));
     }
-    if (role == ArrivalTimeRole) {
+    if (role == ArrivalTimeRole || role == ArrivalDayRole) {
         const auto &time = data["reservationFor"_L1]["arrivalTime"_L1];
         auto dateTime = (time.isString() ? time : time["@value"_L1]).toVariant().toDateTime();
         if (const auto &timeZone = time["timezone"_L1].toString(); timeZone.length() > 0) {
             dateTime.setTimeZone(QTimeZone(timeZone.toLatin1().data()));
         }
-        return dateTime.toString(QLocale::system().dateTimeFormat(QLocale::ShortFormat));
+        if (role == ArrivalDayRole) {
+            return QLocale::system().toString(dateTime.date(), QLocale::ShortFormat);
+        }
+        return dateTime.toString(QLocale::system().timeFormat(QLocale::ShortFormat));
     }
     if (role == AddressRole) {
         const auto &addressData = data["reservationFor"_L1]["address"_L1];
@@ -152,9 +160,11 @@ QHash<int, QByteArray> ItineraryModel::roleNames() const
         {NameRole, "name"},
         {TypeRole, "type"},
         {DepartureLocationRole, "departureLocation"},
+        {DepartureDayRole, "departureDay"},
         {DepartureAddressRole, "departureAddress"},
         {ArrivalLocationRole, "arrivalLocation"},
         {ArrivalAddressRole, "arrivalAddress"},
+        {ArrivalDayRole, "arrivalDay"},
         {DepartureTimeRole, "departureTime"},
         {ArrivalTimeRole, "arrivalTime"},
         {AddressRole, "address"},
@@ -172,18 +182,6 @@ QString ItineraryModel::path() const
     return m_path;
 }
 
-void ItineraryModel::setPath(const QString &path)
-{
-    if (m_path == path) {
-        return;
-    }
-    m_path = path;
-    m_message = {};
-    Q_EMIT pathChanged();
-
-    loadData();
-}
-
 std::shared_ptr<KMime::Message> ItineraryModel::message() const
 {
     return m_message;
@@ -195,8 +193,13 @@ void ItineraryModel::setMessage(const std::shared_ptr<KMime::Message> &message)
         return;
     }
     m_message = message;
-    m_path = QString{};
     Q_EMIT messageChanged();
+
+    if (m_temporary->open()) {
+        m_temporary->write(m_message->encodedContent());
+        m_path = m_temporary->fileName();
+        Q_EMIT pathChanged();
+    }
 
     loadData();
 }
@@ -228,11 +231,9 @@ void ItineraryModel::sendToItinerary()
 {
     auto job = new KIO::ApplicationLauncherJob(KService::serviceByDesktopName(u"org.kde.itinerary"_s));
     if (m_message) {
-        QTemporaryFile file;
-        if (file.open()) {
-            file.setAutoRemove(false);
-            file.write(m_message->encodedContent());
-            job->setUrls({QUrl::fromLocalFile(file.fileName())});
+        if (m_temporary->open()) {
+            m_temporary->write(m_message->encodedContent());
+            job->setUrls({QUrl::fromLocalFile(m_temporary->fileName())});
         }
     } else {
         job->setUrls({QUrl::fromLocalFile(m_path.mid(7))});

@@ -21,42 +21,65 @@ ColumnLayout {
      */
     readonly property ItineraryModel itineraryModel: ItineraryModel {}
 
-    spacing: Kirigami.Units.largeSpacing
     visible: itinerary.count > 0
 
-    Layout.topMargin: visible ? Kirigami.Units.largeSpacing : 0
+    Flickable {
+        implicitHeight: visible ? Kirigami.Units.gridUnit * 10 : 0
 
-    Repeater {
-        id: itinerary
-        model: root.itineraryModel
-        delegate: DelegateChooser {
-            role: "type"
-            DelegateChoice {
-                roleValue: "TrainReservation"
-                delegate: TrainReservationComponent {}
-            }
-            DelegateChoice {
-                roleValue: "LodgingReservation"
-                delegate: HotelReservationComponent {}
-            }
-            DelegateChoice {
-                roleValue: "FoodEstablishmentReservation"
-                delegate: FoodReservationComponent {}
-            }
-            DelegateChoice {
-                roleValue: "FlightReservation"
-                delegate: FlightReservationComponent {}
+        contentWidth: itineraryRow.implicitWidth + Kirigami.Units.gridUnit
+        contentHeight: itineraryRow.implicitHeight
+        flickableDirection: Flickable.HorizontalFlick
+
+        Layout.fillWidth: true
+
+        RowLayout {
+            id: itineraryRow
+
+            x: 0
+            spacing: Kirigami.Units.largeSpacing
+
+            Repeater {
+                id: itinerary
+
+                model: root.itineraryModel
+                delegate: DelegateChooser {
+                    role: "type"
+                    DelegateChoice {
+                        roleValue: "TrainReservation"
+                        delegate: TrainReservationComponent {
+                            totalCount: itinerary.count
+                            onImportTrip: tripMenu.popup()
+                        }
+                    }
+                    DelegateChoice {
+                        roleValue: "LodgingReservation"
+                        delegate: HotelReservationComponent {
+                            totalCount: itinerary.count
+                            onImportTrip: tripMenu.popup()
+                        }
+                    }
+                    DelegateChoice {
+                        roleValue: "FoodEstablishmentReservation"
+                        delegate: FoodReservationComponent {
+                            totalCount: itinerary.count
+                            onImportTrip: tripMenu.popup()
+                        }
+                    }
+                    DelegateChoice {
+                        roleValue: "FlightReservation"
+                        delegate: FlightReservationComponent {
+                            totalCount: itinerary.count
+                            onImportTrip: tripMenu.popup()
+                        }
+                    }
+                }
             }
         }
     }
 
-    FormCard.FormCard {
-        visible: itinerary.count > 0
-
-        FormCard.FormButtonDelegate {
-            icon.name: "map-globe"
-            text: i18nc("@action", "Send to KDE Itinerary")
-            onClicked: root.itineraryModel.sendToItinerary()
-        }
+    TripMenu {
+        id: tripMenu
+        parent: root
+        itineraryModel: root.itineraryModel
     }
 }

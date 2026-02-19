@@ -40,13 +40,13 @@ Item {
      */
     property int lineWidth: Kirigami.Units.smallSpacing *4
 
-    implicitWidth: root.lineWidth * 2
+    implicitWidth: Kirigami.Units.iconSizes.smallMedium
     clip: true
 
     Kirigami.ShadowedRectangle {
         id: line
-        x: root.lineWidth / 2
-        y: root.isDeparture ? parent.height-height:0
+        x: (root.implicitWidth - root.lineWidth) / 2
+        y: root.isDeparture ? parent.height - height : 0
         width: root.lineWidth
         color: root.lineColor
 
@@ -57,20 +57,19 @@ Item {
             bottomRightRadius: root.isArrival ? Math.round(width / 2) : 0
             bottomLeftRadius: root.isArrival ? Math.round(width / 2) : 0
         }
-        height:
-            if (root.isArrival) {
-                return Math.round(parent.height / 2) + root.lineWidth / 2
-            } else if (root.isDeparture) {
-                return Math.round(parent.height / 2) + root.lineWidth / 2
-            } else {
-                return parent.height
-            }
+        height: parent.height
     }
 
     Rectangle {
         id: stopDot
         x: line.x + (line.width - width) / 2
-        y: parent.height / 2 - width / 2
+        y: if (root.isArrival) {
+            return parent.height - width * 1.5
+        } else if (root.isDeparture) {
+            return width / 2
+        } else {
+            return 0
+        }
         radius: width / 2
         width: root.lineWidth * 0.6
         height: width

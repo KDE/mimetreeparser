@@ -13,32 +13,41 @@ import org.kde.kirigamiaddons.formcard as FormCard
 FormCard.FormCard {
     id: root
 
+    signal importTrip();
+
+    required property int index
+    required property int totalCount
+
     /**
      * @brief An item with the header content.
      */
-    property alias headerItem: headerDelegate.contentItem
+    property alias headerItem: headerDelegate.contentItem.children
 
     /**
      * @brief An item with the main body content.
      */
     property alias contentItem: content.contentItem
 
-    Layout.fillWidth: true
+    Layout.fillHeight: true
+    Layout.topMargin: Kirigami.Units.largeSpacing
+    Layout.leftMargin: index === 0 ? Kirigami.Units.largeSpacing : 0
+    Layout.rightMargin: index === totalCount - 1 ? Kirigami.Units.largeSpacing : 0
+
     implicitWidth: Math.max(headerDelegate.implicitWidth, content.implicitWidth)
 
     Component.onCompleted: children[0].radius = Kirigami.Units.cornerRadius
 
     FormCard.AbstractFormDelegate {
         id: headerDelegate
-        Layout.fillWidth: true
-        background: Rectangle {
-            color: Kirigami.Theme.backgroundColor
-            Kirigami.Theme.colorSet: Kirigami.Theme.Header
-            Kirigami.Theme.inherit: false
-        }
+
+        contentItem: RowLayout {}
+        background: null
+        bottomPadding: 0
     }
+
     FormCard.AbstractFormDelegate {
         id: content
+
         Layout.fillWidth: true
         background: null
     }

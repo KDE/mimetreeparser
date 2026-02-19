@@ -27,6 +27,16 @@ ItineraryReservationComponent {
     required property string startTime
 
     /**
+     * @brief The departure time of the flight.
+     */
+    required property string departureTime
+
+    /**
+     * @brief The departure time of the flight.
+     */
+    required property string departureDay
+
+    /**
      * @brief The departure airport of the flight.
      */
     required property string departureLocation
@@ -46,23 +56,33 @@ ItineraryReservationComponent {
      */
     required property string arrivalAddress
 
-    headerItem: RowLayout {
+    headerItem: [
         TransportIcon {
             source: "qrc:/qt/qml/org/kde/pim/mimetreeparser/flight.svg"
             isMask: true
             size: Kirigami.Units.iconSizes.smallMedium
-        }
+        },
         QQC2.Label {
-            Layout.fillWidth: true
             text: root.name
             elide: Text.ElideRight
 
+            Layout.fillWidth: true
             Accessible.ignored: true
-        }
+        },
         QQC2.Label {
-            text: root.startTime
+            text: root.departureDay
+        },
+        QQC2.ToolButton {
+            display: QQC2.Button.IconOnly
+            text: i18nc("@action", "Open Menu")
+            icon.name: 'overflow-menu-symbolic'
+            onClicked: root.importTrip()
+
+            QQC2.ToolTip.text: text
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            QQC2.ToolTip.visible: hovered
         }
-    }
+    ]
 
     contentItem: ColumnLayout {
         id: topLayout
