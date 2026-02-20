@@ -32,20 +32,31 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerDialog : public QDialog
 
 public:
     /*!
+     * \brief Constructs a MessageViewerDialog from a list of messages
+     * \param messages The messages to display
+     * \param parent The parent widget
      */
     explicit MessageViewerDialog(const QList<std::shared_ptr<KMime::Message>> &messages, QWidget *parent = nullptr);
     /*!
+     * \brief Constructs a MessageViewerDialog from a file
+     * \param fileName The path to the file containing messages
+     * \param parent The parent widget
      */
     explicit MessageViewerDialog(const QString &fileName, QWidget *parent = nullptr);
     /*!
+     * \brief Destroys the MessageViewerDialog
      */
     ~MessageViewerDialog() override;
 
     /*!
+     * \brief Returns the tool bar of the dialog
+     * \return A pointer to the toolbar
      */
     [[nodiscard]] QToolBar *toolBar() const;
 
     /*!
+     * \brief Returns the list of messages being displayed
+     * \return A list of messages
      */
     [[nodiscard]] QList<std::shared_ptr<KMime::Message>> messages() const;
 

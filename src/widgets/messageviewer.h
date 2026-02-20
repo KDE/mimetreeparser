@@ -30,27 +30,47 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewer : public QSplitter
 {
 public:
     /*!
+     * \brief Constructs a MessageViewer widget
+     * \param parent The parent widget
      */
     explicit MessageViewer(QWidget *parent = nullptr);
     /*!
+     * \brief Destroys the MessageViewer
      */
     ~MessageViewer() override;
 
     /*!
+     * \brief Returns the currently displayed message
+     * \return A shared pointer to the message
      */
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
     /*!
+     * \brief Sets the message to display
+     * \param message The message to display
      */
     void setMessage(const std::shared_ptr<KMime::Message> message);
 
-    /// Return whether the viewer should use a fixed size font.
+    /*!
+     * \brief Returns whether a fixed width font is used
+     * \return True if fixed font is enabled
+     */
     [[nodiscard]] bool fixedFont() const;
+    /*!
+     * \brief Sets whether to use a fixed width font
+     * \param checked True to enable fixed width font
+     */
     void setFixedFont(bool checked);
 
-    /// Return the message subject
+    /*!
+     * \brief Returns the subject of the current message
+     * \return The message subject
+     */
     [[nodiscard]] QString subject() const;
 
     /*!
+     * \brief Prints the message to the given painter
+     * \param painter The painter to draw on
+     * \param width The width available for printing
      */
     void print(QPainter *painter, int width);
 

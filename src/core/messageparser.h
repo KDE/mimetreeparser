@@ -34,55 +34,85 @@ class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
 
 public:
     /*!
+     * \brief Constructs a MessageParser
+     * \param parent The parent object
      */
     explicit MessageParser(QObject *parent = nullptr);
     /*!
+     * \brief Destroys the MessageParser
      */
     ~MessageParser();
 
     /*!
+     * \brief Returns the current message
+     * \return A shared pointer to the message
      */
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
     /*!
+     * \brief Sets the message to parse
+     * \param message The message to parse
      */
     void setMessage(const std::shared_ptr<KMime::Message> message);
     /*!
+     * \brief Returns the part model
+     * \return A pointer to the parts model
      */
     [[nodiscard]] PartModel *parts() const;
     /*!
+     * \brief Returns the attachment model
+     * \return A pointer to the attachments model
      */
     [[nodiscard]] AttachmentModel *attachments() const;
     /*!
+     * \brief Returns the message structure as a string
+     * \return A string representation of the message structure
      */
     [[nodiscard]] QString structureAsString() const;
     /*!
+     * \brief Returns whether the message has been loaded and parsed
+     * \return True if the message is loaded, false otherwise
      */
     [[nodiscard]] bool loaded() const;
 
     /*!
+     * \brief Returns the message subject
+     * \return The subject line
      */
     [[nodiscard]] QString subject() const;
     /*!
+     * \brief Returns the message From header
+     * \return The from address
      */
     [[nodiscard]] QString from() const;
     /*!
+     * \brief Returns the message Sender header
+     * \return The sender address
      */
     [[nodiscard]] QString sender() const;
     /*!
+     * \brief Returns the message To header
+     * \return The recipient addresses
      */
     [[nodiscard]] QString to() const;
     /*!
+     * \brief Returns the message Cc header
+     * \return The carbon copy addresses
      */
     [[nodiscard]] QString cc() const;
     /*!
+     * \brief Returns the message Bcc header
+     * \return The blind carbon copy addresses
      */
     [[nodiscard]] QString bcc() const;
     /*!
+     * \brief Returns the message date
+     * \return The date the message was sent
      */
     [[nodiscard]] QDateTime date() const;
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when the message or its HTML content has changed
      */
     void htmlChanged();
 

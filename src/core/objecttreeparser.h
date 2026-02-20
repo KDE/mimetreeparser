@@ -39,16 +39,21 @@ class MIMETREEPARSER_CORE_EXPORT ObjectTreeParser
 
 public:
     /*!
+     * \brief Constructs an ObjectTreeParser
      */
     explicit ObjectTreeParser() = default;
     /*!
+     * \brief Destroys the ObjectTreeParser
      */
     virtual ~ObjectTreeParser() = default;
 
     /*!
+     * \brief Returns the structure of the message as a string
+     * \return A string representation of the message structure
      */
     [[nodiscard]] QString structureAsString() const;
     /*!
+     * \brief Prints the structure of the message
      */
     void print();
 
@@ -74,21 +79,35 @@ public:
       the children of that node and it's next sibling. */
     void parseObjectTree(KMime::Content *node);
     /*!
+     * \brief Parses a MIME message
+     * \param mimeMessage The MIME message data to parse
      */
     void parseObjectTree(const QByteArray &mimeMessage);
     /*!
+     * \brief Returns the parsed message part
+     * \return A shared pointer to the root message part
      */
     QSharedPointer<MessagePart> parsedPart() const;
     /*!
+     * \brief Finds content matching a predicate
+     * \param select A function that returns true for the desired content
+     * \return The matching content, or nullptr if not found
      */
     [[nodiscard]] KMime::Content *find(const std::function<bool(KMime::Content *)> &select);
     /*!
+     * \brief Collects all content parts from the parsed message
+     * \return A list of all message parts
      */
     [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts();
     /*!
+     * \brief Collects all content parts starting from a given message part
+     * \param start The starting message part
+     * \return A list of message parts
      */
     [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts(QSharedPointer<MessagePart> start);
     /*!
+     * \brief Collects all attachment parts from the parsed message
+     * \return A list of attachment message parts
      */
     [[nodiscard]] QList<QSharedPointer<MessagePart>> collectAttachmentParts();
 

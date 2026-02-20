@@ -39,9 +39,12 @@ class MIMETREEPARSER_CORE_EXPORT PartModel : public QAbstractItemModel
     Q_PROPERTY(bool isTrimmed READ isTrimmed NOTIFY trimMailChanged)
 public:
     /*!
+     * \brief Constructs a PartModel
+     * \param parser The object tree parser
      */
     explicit PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
     /*!
+     * \brief Destroys the PartModel
      */
     ~PartModel() override;
 
@@ -96,40 +99,61 @@ public:
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
     /*!
+     * \brief Sets whether to display HTML content
+     * \param html True to display HTML, false for plaintext
      */
     void setShowHtml(bool html);
     /*!
+     * \brief Returns whether HTML content is displayed
+     * \return True if HTML is shown
      */
     [[nodiscard]] bool showHtml() const;
     /*!
+     * \brief Returns whether the message contains HTML content
+     * \return True if HTML content is present
      */
     [[nodiscard]] bool containsHtml() const;
 
     /*!
+     * \brief Sets whether to trim mail content
+     * \param trim True to trim mail content
      */
     void setTrimMail(bool trim);
     /*!
+     * \brief Returns whether mail content is trimmed
+     * \return True if mail trimming is enabled
      */
     [[nodiscard]] bool trimMail() const;
     /*!
+     * \brief Returns whether the current content is trimmed
+     * \return True if the content has been trimmed
      */
     [[nodiscard]] bool isTrimmed() const;
 
     /*!
+     * \brief Returns the security level of a signature
+     * \param messagePart The message part to check
+     * \return The signature security level
      */
     static SecurityLevel signatureSecurityLevel(MimeTreeParser::MessagePart *messagePart);
     /*!
+     * \brief Returns the signature details for a message part
+     * \param messagePart The message part to check
+     * \return A string with signature details
      */
     static QString signatureDetails(MimeTreeParser::MessagePart *messagePart);
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when the HTML display preference changes
      */
     void showHtmlChanged();
     /*!
+     * \brief Emitted when the mail trimming preference changes
      */
     void trimMailChanged();
     /*!
+     * \brief Emitted when the message content changes with respect to HTML presence
      */
     void containsHtmlChanged();
 
@@ -137,6 +161,12 @@ private:
     std::unique_ptr<PartModelPrivate> d;
 };
 
+/*!
+ * \class MimeTreeParser::SignatureInfo
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/PartModel
+ * \brief Contains information about a message signature
+ */
 class MIMETREEPARSER_CORE_EXPORT SignatureInfo
 {
     Q_GADGET

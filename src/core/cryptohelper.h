@@ -33,23 +33,35 @@ class MIMETREEPARSER_CORE_EXPORT Block
 {
 public:
     /*!
+     * \brief Constructs an empty Block
      */
     Block();
     /*!
+     * \brief Constructs a Block with the given message
+     * \param m The message data
      */
     explicit Block(const QByteArray &m);
 
     /*!
+     * \brief Constructs a Block with the given message and type
+     * \param m The message data
+     * \param t The block type
      */
     Block(const QByteArray &m, PGPBlockType t);
 
     /*!
+     * \brief Returns the message text
+     * \return The message data
      */
     [[nodiscard]] QByteArray text() const;
     /*!
+     * \brief Returns the block type
+     * \return The PGP block type
      */
     [[nodiscard]] PGPBlockType type() const;
     /*!
+     * \brief Determines the type of the message block
+     * \return The determined PGP block type
      */
     [[nodiscard]] PGPBlockType determineType() const;
 

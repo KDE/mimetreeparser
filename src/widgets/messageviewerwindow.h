@@ -33,25 +33,35 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageViewerWindow : public QMainWindow
 
 public:
     /*!
+     * \brief Constructs a MessageViewerWindow
+     * \param parent The parent widget
      */
     explicit MessageViewerWindow(QWidget *parent = nullptr);
     /*!
+     * \brief Destroys the MessageViewerWindow
      */
     ~MessageViewerWindow() override;
 
     /*!
+     * \brief Returns the tool bar of the viewer window
+     * \return A pointer to the toolbar
      */
     [[nodiscard]] QToolBar *toolBar() const;
 
     /*!
+     * \brief Returns the list of messages being displayed
+     * \return A list of messages
      */
     [[nodiscard]] QList<std::shared_ptr<KMime::Message>> messages() const;
     /*!
+     * \brief Sets the messages to display
+     * \param messages The list of messages to display
      */
     void setMessages(const QList<std::shared_ptr<KMime::Message>> &messages);
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when the displayed messages change
      */
     void messagesChanged();
 
