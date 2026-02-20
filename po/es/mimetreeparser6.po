@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-01 00:43+0000\n"
+"POT-Creation-Date: 2026-02-20 00:47+0000\n"
 "PO-Revision-Date: 2025-07-10 03:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -164,6 +164,55 @@ msgctxt "Separator"
 msgid " - "
 msgstr " - "
 
+#: quick/qml/itinerary/FlightReservationComponent.qml:77
+#: quick/qml/itinerary/TrainReservationComponent.qml:91
+#, fuzzy, kde-format
+#| msgctxt "to open"
+#| msgid "Open"
+msgctxt "@action"
+msgid "Open Menu"
+msgstr "Abrir"
+
+#: quick/qml/itinerary/FlightReservationComponent.qml:93
+#, kde-format
+msgctxt "flight departure, %1 is airport, %2 is time"
+msgid "Departure from %1"
+msgstr ""
+
+#: quick/qml/itinerary/FlightReservationComponent.qml:110
+#, kde-format
+msgctxt "flight arrival, %1 is airport, %2 is time"
+msgid "Arrival at %1"
+msgstr ""
+
+#: quick/qml/itinerary/HotelReservationComponent.qml:65
+#, kde-format
+msgid "Check-in time: %1"
+msgstr ""
+
+#: quick/qml/itinerary/HotelReservationComponent.qml:69
+#, kde-format
+msgid "Check-out time: %1"
+msgstr ""
+
+#: quick/qml/itinerary/TrainReservationComponent.qml:157
+#: quick/qml/itinerary/TrainReservationComponent.qml:224
+#, kde-format
+msgid "Pl. %1"
+msgstr ""
+
+#: quick/qml/itinerary/TripMenu.qml:18
+#, kde-format
+msgctxt "@action"
+msgid "Send to KDE Itinerary"
+msgstr ""
+
+#: quick/qml/itinerary/TripMenu.qml:33
+#, kde-format
+msgctxt "@action"
+msgid "Send to %1"
+msgstr ""
+
 #: quick/qml/MailViewer.qml:40
 #, kde-format
 msgctxt "@title:window"
@@ -206,13 +255,13 @@ msgctxt "@label"
 msgid "BCC:"
 msgstr "Cco:"
 
-#: quick/qml/MailViewer.qml:223
+#: quick/qml/MailViewer.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Guardar adjunto"
 
-#: quick/qml/MailViewer.qml:246
+#: quick/qml/MailViewer.qml:235
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
