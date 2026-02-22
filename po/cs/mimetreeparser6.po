@@ -178,13 +178,13 @@ msgstr "Otevřít"
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr ""
+msgstr "Odlet z %1: "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:110
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
-msgstr ""
+msgstr "Přílet v %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:65
 #, kde-format
@@ -206,7 +206,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr ""
+msgstr "Poslat do itineráře KDE"
 
 #: quick/qml/itinerary/TripMenu.qml:33
 #, kde-format
