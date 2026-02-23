@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-20 00:47+0000\n"
-"PO-Revision-Date: 2025-07-11 08:59+0200\n"
+"PO-Revision-Date: 2026-02-21 08:38+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -165,52 +165,50 @@ msgstr " - "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
+#, kde-format
 msgctxt "@action"
 msgid "Open Menu"
-msgstr "Apri"
+msgstr "Apri menu"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:93
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr ""
+msgstr "Partenza da %1"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:110
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
-msgstr ""
+msgstr "Arrivo a %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:65
 #, kde-format
 msgid "Check-in time: %1"
-msgstr ""
+msgstr "Orario di check-in: %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:69
 #, kde-format
 msgid "Check-out time: %1"
-msgstr ""
+msgstr "Orario di check-out: %1"
 
 #: quick/qml/itinerary/TrainReservationComponent.qml:157
 #: quick/qml/itinerary/TrainReservationComponent.qml:224
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
+msgstr "Bin. %1"
 
 #: quick/qml/itinerary/TripMenu.qml:18
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr ""
+msgstr "Invia a KDE Itinerary"
 
 #: quick/qml/itinerary/TripMenu.qml:33
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
-msgstr ""
+msgstr "Invia a %1"
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
