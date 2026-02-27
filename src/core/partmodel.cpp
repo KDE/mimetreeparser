@@ -160,7 +160,13 @@ public:
             cleaned.replace(QRegularExpression(u"[\n\r]{2,}"_s), u"\n\n"_s);
 
             // We always do rich text (so we get highlighted links and stuff).
-            const auto html = Qt::convertFromPlainText(cleaned, Qt::WhiteSpaceNormal);
+            // Show signature in fixed font
+            int signature = cleaned.lastIndexOf(u"\n--"_s);
+            auto html = Qt::convertFromPlainText(cleaned.left(signature), Qt::WhiteSpaceNormal);
+            if (signature > 0) {
+                html.append(u"<tt style='white-space:pre-wrap'>%1</tt>"_s.arg(cleaned.mid(signature).replace(u"<"_s, u"&lt;"_s)));
+            }
+
             if (trimMail) {
                 const auto result = PartModel::trim(html);
                 isTrimmed = result.second;
