@@ -210,15 +210,20 @@ void MessagePart::parseInternal(const QByteArray &data)
     auto tempNode = new KMime::Content();
 
     const auto lfData = KMime::CRLFtoLF(data);
+    bool haveHeader = false;
     // We have to deal with both bodies and full parts. In inline encrypted/signed parts we can have nested parts,
     // or just plain-text, and both ends up here. setContent defaults to setting only the header, so we have to avoid this.
     if (lfData.contains("\n\n")) {
         tempNode->setContent(lfData);
+        haveHeader = true;
     } else {
         tempNode->setBody(lfData);
     }
     tempNode->parse();
-    tempNode->contentType()->setCharset(charset());
+    auto ct = contentType(tempNode);
+    if (!haveHeader || ct->parameter("charset").isEmpty()) {
+        ct->setCharset(charset());
+    }
     bindLifetime(tempNode);
 
     if (!tempNode->head().isEmpty()) {

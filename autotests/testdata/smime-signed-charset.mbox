@@ -1,0 +1,40 @@
+From: "alice" <alice@example.com>
+To: bob@example.com
+Subject: S/MIME signatur
+Date: Wed, 25 Feb 2026 16:31:20 +0100
+Message-ID: <bla>
+Content-Type: multipart/signed; boundary="nextPart8607171.Q0GTlolvmC";
+ micalg="sha256"; protocol="application/pkcs7-signature"
+MIME-Version: 1.0
+
+--nextPart8607171.Q0GTlolvmC
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="iso-8859-1"
+
+test
+
+=2D-=20
+g10 Code GmbH        -=3D- GnuPG.com -=3D-      AmtsGer. Wuppertal HRB 14459
+Bergstr. 3a                                 Gesch=E4ftsf=FChrung Werner Koch
+D-40699 Erkrath      https://gnupg.com      USt-Id DE215605608
+--nextPart8607171.Q0GTlolvmC
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Transfer-Encoding: base64
+
+MIICqgYJKoZIhvcNAQcCoIICmzCCApcCAQExDzANBglghkgBZQMEAgEFADALBgkqhkiG9w0BBwEx
+ggJyMIICbgIBATAkMBgxFjAUBgNVBAMTDU1laWsgTWljaGFsa2UCCDhWsVmNSmMZMA0GCWCGSAFl
+AwQCAQUAoIGgMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI2MDIy
+NTE1MzEyMFowLwYJKoZIhvcNAQkEMSIEINpgb26ZOBvISsqYcrNyGkAtbI2N95hHKIcHXeh5fmkG
+MDUGCSqGSIb3DQEJDzEoMCYwCwYJYIZIAWUDBAEqMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAN
+BgkqhkiG9w0BAQEFAASCAYCSu+nNo0767NukF/euZ1BiblgrFcmdQrkJrwiI64yLdojAhQFu78EB
+wVydhotVrGKVUlkXpDBeXj8qnowatEyokKDMoNxldoixJcAtub4Ja/HIJ8y03ooICitYINmVDxKn
+5i5EQsF+0czsw/PJMQAdu+HfuMSbTIAb3GUDuScW8ykfz4GTdbkdNrkBGkPT1HvGFNVIdZdjNAY8
+uJ1Z7zx2/RqqCuHeCLtcIDn7tkw04x5r6GenzU6yyLyDJnl1Bm+PYRmLAZpQnnDfPo0iaGGTELir
+hmtHZ2MCRlHDFb045ASnmT9ASxbHTOHpXOTXkNw2EO8hq7MgcV9S7zeIe850gqae8qAiWgx9c6sR
+iODktF4pi/S9CQ1y+ej3GdT1RSyUV4nxi9aylS05UYnT5xrm3913beKX3XhE5Bcjay4pb4JClAlQ
+D7WjSplGMX48LTTVz52aVpyAfE/+0YtToCxm0hsEwYnsDJsFlWUXR0l7nP4ixSgW6E7Zhvqye1mo
+M+E=
+
+
+--nextPart8607171.Q0GTlolvmC--

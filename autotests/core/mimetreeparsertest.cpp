@@ -732,6 +732,20 @@ private Q_SLOTS:
         // QCOMPARE(part->text(), u"A simple signed only test."_s);
     }
 
+    void testSmimeSignedCharset()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("smime-signed-charset.mbox"_L1));
+        otp.print();
+        otp.decryptAndVerify();
+        otp.print();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 1);
+        auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
+        QVERIFY(bool(part));
+        QCOMPARE(part->charset().toLower(), u"iso-8859-1"_s.toLocal8Bit());
+    }
+
     void testSmimeEncryptedOctetStream()
     {
         MimeTreeParser::ObjectTreeParser otp;
