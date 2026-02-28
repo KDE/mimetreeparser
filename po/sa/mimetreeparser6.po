@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-20 00:47+0000\n"
+"POT-Creation-Date: 2026-02-28 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -100,39 +100,39 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", ९. "
 
-#: core/messagepart.cpp:623 core/messagepart.cpp:639 core/messagepart.cpp:711
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "गलत क्रिप्टो प्लग-इन।"
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "कोऽपि समुचितः क्रिप्टो प्लग-इन् न प्राप्तः ।"
 
-#: core/messagepart.cpp:863
+#: core/messagepart.cpp:868
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "क्रिप्टो प्लग-इन् \"%1\" सन्देशान् विगुप्तीकर्तुं न शक्नोति ।"
 
-#: core/messagepart.cpp:865
+#: core/messagepart.cpp:870
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "क्रिप्टो प्लग-इन् \"%1\" दत्तांशं विगुप्तं कर्तुं न शक्तवान् ।"
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:871
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटिः %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:579 core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "भवन्तः एतत् सन्देशं विगुप्तीकरणं कर्तुं न शक्नुवन्ति ।"
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:587
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -140,7 +140,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "सन्देशः निम्नलिखितग्राहकस्य कृते एन्क्रिप्टेड् भवति ।"
 msgstr[1] "सन्देशः निम्नलिखितग्राहिणां कृते एन्क्रिप्टेड् भवति ।"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:601
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-20 00:47+0000\n"
+"POT-Creation-Date: 2026-02-28 00:45+0000\n"
 "PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -93,46 +93,46 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:623 core/messagepart.cpp:639 core/messagepart.cpp:711
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "間違った暗号プラグイン。"
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "適切な暗号プラグインが見つかりませんでした。"
 
-#: core/messagepart.cpp:863
+#: core/messagepart.cpp:868
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "暗号プラグイン\"%1\"はメッセージを復号できません。"
 
-#: core/messagepart.cpp:865
+#: core/messagepart.cpp:870
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "暗号プラグイン\"%1\"はメッセージを復号できませんでした。"
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:871
 #, kde-format
 msgid "Error: %1"
 msgstr "エラー: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:579 core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "あなたはこのメッセージを復号できません。"
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:587
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "このメッセージは以下の受け取り手のために暗号化されています:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:601
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

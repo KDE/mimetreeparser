@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-20 00:47+0000\n"
+"POT-Creation-Date: 2026-02-28 00:45+0000\n"
 "PO-Revision-Date: 2025-05-16 11:26+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -98,39 +98,39 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:623 core/messagepart.cpp:639 core/messagepart.cpp:711
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "O complemento criptográfico é incorrecto."
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Non se atopou ningún complemento criptográfico axeitado."
 
-#: core/messagepart.cpp:863
+#: core/messagepart.cpp:868
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "O complemento criptográfico «%1» non pode descifrar mensaxes."
 
-#: core/messagepart.cpp:865
+#: core/messagepart.cpp:870
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "O complemento criptográfico «%1» non puido descifrar os datos."
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:871
 #, kde-format
 msgid "Error: %1"
 msgstr "Erro: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:579 core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Non pode descifrar esta mensaxe."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:587
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -138,7 +138,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "A mensaxe está cifrada para a seguinte persoa destinataria:"
 msgstr[1] "A mensaxe está cifrada para as seguintes persoas destinatarias:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:601
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-20 00:47+0000\n"
+"POT-Creation-Date: 2026-02-28 00:45+0000\n"
 "PO-Revision-Date: 2026-02-20 09:13-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -98,40 +98,40 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:623 core/messagepart.cpp:639 core/messagepart.cpp:711
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Plugin de criptografia incorreto."
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:866
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nenhum plugin de criptografia apropriado foi encontrado."
 
-#: core/messagepart.cpp:863
+#: core/messagepart.cpp:868
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 "O plugin de criptografia \"%1\" não conseguiu descriptografar as mensagens."
 
-#: core/messagepart.cpp:865
+#: core/messagepart.cpp:870
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "O plugin de criptografia \"%1\" não pode descriptografar os dados."
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:871
 #, kde-format
 msgid "Error: %1"
 msgstr "Erro: %1"
 
-#: core/partmodel.cpp:573 core/partmodel.cpp:575
+#: core/partmodel.cpp:579 core/partmodel.cpp:581
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Você não pode descriptografar esta mensagem."
 
-#: core/partmodel.cpp:581
+#: core/partmodel.cpp:587
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -139,7 +139,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "A mensagem está criptografada para o seguinte destinatário:"
 msgstr[1] "A mensagem está criptografada para os seguintes destinatários:"
 
-#: core/partmodel.cpp:595
+#: core/partmodel.cpp:601
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
