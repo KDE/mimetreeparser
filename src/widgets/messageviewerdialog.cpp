@@ -85,25 +85,25 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
     // File menu
     const auto fileMenu = menuBar->addMenu(i18nc("@action:inmenu", "&File"));
 
-    const auto saveAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "&Save"));
+    const auto saveAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "&Save"), parent);
     QObject::connect(saveAction, &QAction::triggered, parent, [parent, this] {
         save(parent);
     });
     fileMenu->addAction(saveAction);
 
-    const auto saveDecryptedAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "Save Decrypted"));
+    const auto saveDecryptedAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "Save Decrypted"), parent);
     QObject::connect(saveDecryptedAction, &QAction::triggered, parent, [parent, this] {
         saveDecrypted(parent);
     });
     fileMenu->addAction(saveDecryptedAction);
 
-    const auto printPreviewAction = new QAction(QIcon::fromTheme(u"document-print-preview"_s), i18nc("@action:inmenu", "Print Preview"));
+    const auto printPreviewAction = new QAction(QIcon::fromTheme(u"document-print-preview"_s), i18nc("@action:inmenu", "Print Preview"), parent);
     QObject::connect(printPreviewAction, &QAction::triggered, parent, [parent, this] {
         printPreview(parent);
     });
     fileMenu->addAction(printPreviewAction);
 
-    const auto printAction = new QAction(QIcon::fromTheme(u"document-print"_s), i18nc("@action:inmenu", "&Print"));
+    const auto printAction = new QAction(QIcon::fromTheme(u"document-print"_s), i18nc("@action:inmenu", "&Print"), parent);
     QObject::connect(printAction, &QAction::triggered, parent, [parent, this] {
         print(parent);
     });
