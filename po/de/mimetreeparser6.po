@@ -1,23 +1,24 @@
 # German translations for mimetreeparser package.
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# SPDX-FileCopyrightText: 2025 Johannes Obermayr <johannesobermayr@gmx.de>
 # SPDX-FileCopyrightText: 2023 Frederik Schwarzer <schwarzer@kde.org>
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Eva Bolten <eva.bolten@gnupg.com>
+# SPDX-FileCopyrightText: 2023-2025 Eva Bolten <eva.bolten@gnupg.com>
+# SPDX-FileCopyrightText: 2025 Johannes Obermayr <johannesobermayr@gmx.de>
+# SPDX-FileCopyrightText: 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:45+0000\n"
-"PO-Revision-Date: 2025-07-15 13:01+0200\n"
-"Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
+"PO-Revision-Date: 2026-03-10 23:14+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -163,56 +164,54 @@ msgstr "Unbekannter Schlüssel"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr " - "
+msgstr " – "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
+#, kde-format
 msgctxt "@action"
 msgid "Open Menu"
-msgstr "Öffnen"
+msgstr "Menü öffnen"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:93
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr ""
+msgstr "Abflug von %1"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:110
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
-msgstr ""
+msgstr "Ankunft in %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:65
 #, kde-format
 msgid "Check-in time: %1"
-msgstr ""
+msgstr "Check-in-Zeit: %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:69
 #, kde-format
 msgid "Check-out time: %1"
-msgstr ""
+msgstr "Check-out-Zeit: %1"
 
 #: quick/qml/itinerary/TrainReservationComponent.qml:157
 #: quick/qml/itinerary/TrainReservationComponent.qml:224
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
+msgstr "Gl. %1"
 
 #: quick/qml/itinerary/TripMenu.qml:18
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr ""
+msgstr "An KDE Itinerary senden"
 
 #: quick/qml/itinerary/TripMenu.qml:33
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
-msgstr ""
+msgstr "An %1 senden"
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -336,7 +335,7 @@ msgstr "Diese Nachricht ist für die folgenden Empfänger verschlüsselt:"
 #: widgets/messageviewer.cpp:69
 #, kde-format
 msgid "&Save Attachment As…"
-msgstr "Anhang speichern unter …"
+msgstr "Anhang speichern &unter …"
 
 #: widgets/messageviewer.cpp:74
 #, kde-format
