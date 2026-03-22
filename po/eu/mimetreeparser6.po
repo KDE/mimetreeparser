@@ -169,8 +169,6 @@ msgstr " - "
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
 #, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
 msgctxt "@action"
 msgid "Open Menu"
 msgstr "Ireki menua"
