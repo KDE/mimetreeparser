@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "messageviewer.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "attachmentview_p.h"
 #include "messagecontainerwidget_p.h"
@@ -33,6 +32,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <qnamespace.h>
 
 using namespace MimeTreeParser::Widgets;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageViewer::Private
 {

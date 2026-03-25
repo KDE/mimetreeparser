@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "messageviewerwindow.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer.h"
 #include "messageviewerutils_p.h"
