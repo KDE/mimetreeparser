@@ -24,6 +24,47 @@
 using namespace MimeTreeParser;
 using namespace Qt::Literals::StringLiterals;
 
+MessageViewerBasePrivate::MessageViewerBasePrivate(QWidget *qq)
+    : q(qq)
+{
+    createActions(q);
+}
+
+void MessageViewerBasePrivate::createActions(QWidget *parent)
+{
+    saveAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "&Save"), parent);
+    QObject::connect(saveAction, &QAction::triggered, parent, [parent, this] {
+        save(parent);
+    });
+
+    saveDecryptedAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "Save Decrypted"), parent);
+    QObject::connect(saveDecryptedAction, &QAction::triggered, parent, [parent, this] {
+        saveDecrypted(parent);
+    });
+
+    printPreviewAction = new QAction(QIcon::fromTheme(u"document-print-preview"_s), i18nc("@action:inmenu", "Print Preview"), parent);
+    QObject::connect(printPreviewAction, &QAction::triggered, parent, [parent, this] {
+        printPreview(parent);
+    });
+
+    printAction = new QAction(QIcon::fromTheme(u"document-print"_s), i18nc("@action:inmenu", "&Print"), parent);
+    QObject::connect(printAction, &QAction::triggered, parent, [parent, this] {
+        print(parent);
+    });
+
+    previousAction = new QAction(QIcon::fromTheme(u"go-previous"_s), i18nc("@action:button Previous email", "Previous Message"), parent);
+    QObject::connect(previousAction, &QAction::triggered, parent, [this] {
+        setCurrentIndex(currentIndex - 1);
+    });
+    previousAction->setEnabled(false);
+
+    nextAction = new QAction(QIcon::fromTheme(u"go-next"_s), i18nc("@action:button Next email", "Next Message"), parent);
+    QObject::connect(nextAction, &QAction::triggered, parent, [this] {
+        setCurrentIndex(currentIndex + 1);
+    });
+    nextAction->setEnabled(false);
+}
+
 void MessageViewerBasePrivate::setCurrentIndex(int index)
 {
     Q_ASSERT(index >= 0);
@@ -56,18 +97,12 @@ void MessageViewerBasePrivate::createToolBar(QWidget *parent)
 #endif
 
     toolBar->addAction(previousAction);
-    QObject::connect(previousAction, &QAction::triggered, parent, [this] {
-        setCurrentIndex(currentIndex - 1);
-    });
 
     const auto spacer = new QWidget(parent);
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     toolBar->addWidget(spacer);
 
     toolBar->addAction(nextAction);
-    QObject::connect(nextAction, &QAction::triggered, parent, [this] {
-        setCurrentIndex(currentIndex + 1);
-    });
 }
 
 void MessageViewerBasePrivate::save(QWidget *parent)
