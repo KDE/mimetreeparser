@@ -33,6 +33,8 @@ public:
 
     void setCurrentIndex(int currentIndex);
 
+    void createToolBar(QWidget *parent);
+
     void save(QWidget *parent);
     void saveDecrypted(QWidget *parent);
     void print(QWidget *parent);
