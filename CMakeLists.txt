@@ -68,10 +68,6 @@ ecm_setup_version(PROJECT
     SOVERSION 6
 )
 
-if(BUILD_TESTING)
-    add_definitions(-DBUILD_TESTING)
-endif()
-
 ########### Find packages ###########
 find_package(Qt6Gui ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
 find_package(Qt6PrintSupport ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
