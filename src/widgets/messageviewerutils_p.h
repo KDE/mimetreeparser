@@ -4,7 +4,7 @@
 #pragma once
 #include <QString>
 
-struct MesageViewerUtils {
+struct MessageViewerUtils {
     static QString changeExtension(const QString &fileName, const QString &extension);
     static QString changeFileName(const QString &fileName, const QString &subject);
 };

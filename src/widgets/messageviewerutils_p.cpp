@@ -7,7 +7,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-QString MesageViewerUtils::changeExtension(const QString &fileName, const QString &extension)
+QString MessageViewerUtils::changeExtension(const QString &fileName, const QString &extension)
 {
     auto renamedFileName = fileName;
     renamedFileName.replace(QRegularExpression(u"\\.(mbox|p7m|asc)$"_s), extension);
@@ -23,7 +23,7 @@ QString MesageViewerUtils::changeExtension(const QString &fileName, const QStrin
 
 #define SLASHES "/\\"
 
-QString MesageViewerUtils::changeFileName(const QString &fileName, const QString &subject)
+QString MessageViewerUtils::changeFileName(const QString &fileName, const QString &subject)
 {
     if (subject.isEmpty()) {
         return fileName;
