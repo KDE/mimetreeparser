@@ -23,6 +23,21 @@
 using namespace MimeTreeParser;
 using namespace Qt::Literals::StringLiterals;
 
+void MessageViewerBasePrivate::setCurrentIndex(int index)
+{
+    Q_ASSERT(index >= 0);
+    Q_ASSERT(index < messages.count());
+
+    currentIndex = index;
+    messageViewer->setMessage(messages[currentIndex]);
+
+    previousAction->setEnabled(currentIndex != 0);
+    nextAction->setEnabled(currentIndex != messages.count() - 1);
+
+    const QString subject = messageViewer->subject();
+    q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
+}
+
 void MessageViewerBasePrivate::save(QWidget *parent)
 {
     QString extension;
