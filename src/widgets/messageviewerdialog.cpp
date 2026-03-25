@@ -8,16 +8,11 @@
 
 #include <MimeTreeParserCore/FileOpener>
 
-#include <KColorScheme>
 #include <KLocalizedString>
 #include <KMessageWidget>
 #include <KSeparator>
 
-#include <Libkleo/Compliance>
-
-#include <QApplication>
 #include <QDialogButtonBox>
-#include <QLabel>
 #include <QMenuBar>
 #include <QPushButton>
 #include <QStatusBar>
@@ -120,27 +115,10 @@ void MessageViewerDialog::initGUI()
     connect(closeButton, &QPushButton::pressed, this, &QDialog::accept);
     layout->addWidget(buttonBox);
 
-    if (Kleo::DeVSCompliance::isActive()) {
+    if (d->statusBar) {
         auto separator = new KSeparator(Qt::Horizontal, this);
         layout->addWidget(separator);
-
-        auto statusBar = new QStatusBar(this);
-        auto statusLbl = std::make_unique<QLabel>(Kleo::DeVSCompliance::name());
-        {
-            auto statusPalette = qApp->palette();
-            KColorScheme::adjustForeground(statusPalette,
-                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::NormalText : KColorScheme::NegativeText,
-                                           statusLbl->foregroundRole(),
-                                           KColorScheme::View);
-            statusLbl->setAutoFillBackground(true);
-            KColorScheme::adjustBackground(statusPalette,
-                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::PositiveBackground : KColorScheme::NegativeBackground,
-                                           QPalette::Window,
-                                           KColorScheme::View);
-            statusLbl->setPalette(statusPalette);
-        }
-        statusBar->addPermanentWidget(statusLbl.release());
-        layout->addWidget(statusBar);
+        layout->addWidget(d->statusBar);
     }
 
     setMinimumSize(300, 300);
