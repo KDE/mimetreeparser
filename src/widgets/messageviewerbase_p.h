@@ -11,6 +11,7 @@
 class QAction;
 class QMenuBar;
 class QPrinter;
+class QStatusBar;
 class QToolBar;
 class QWidget;
 
@@ -31,6 +32,7 @@ public:
     QAction *nextAction = nullptr;
     QAction *previousAction = nullptr;
     QToolBar *toolBar = nullptr;
+    QStatusBar *statusBar = nullptr;
 
     void setCurrentIndex(int currentIndex);
 
@@ -38,6 +40,7 @@ public:
 
 private:
     void createActions(QWidget *parent);
+    void createStatusBar(QWidget *parent);
 
     void save(QWidget *parent);
     void saveDecrypted(QWidget *parent);

@@ -8,15 +8,21 @@
 
 #include <MimeTreeParserCore/CryptoHelper>
 
+#include <Libkleo/Compliance>
+
+#include <KColorScheme>
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <QApplication>
 #include <QFileDialog>
+#include <QLabel>
 #include <QPainter>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QSaveFile>
+#include <QStatusBar>
 #include <QToolBar>
 
 #include <gpgme++/global.h>
@@ -28,6 +34,7 @@ MessageViewerBasePrivate::MessageViewerBasePrivate(QWidget *qq)
     : q(qq)
 {
     createActions(q);
+    createStatusBar(q);
 }
 
 void MessageViewerBasePrivate::createActions(QWidget *parent)
@@ -63,6 +70,28 @@ void MessageViewerBasePrivate::createActions(QWidget *parent)
         setCurrentIndex(currentIndex + 1);
     });
     nextAction->setEnabled(false);
+}
+
+void MessageViewerBasePrivate::createStatusBar(QWidget *parent)
+{
+    if (Kleo::DeVSCompliance::isActive()) {
+        statusBar = new QStatusBar(parent);
+        auto statusLbl = std::make_unique<QLabel>(Kleo::DeVSCompliance::name());
+        {
+            auto statusPalette = qApp->palette();
+            KColorScheme::adjustForeground(statusPalette,
+                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::NormalText : KColorScheme::NegativeText,
+                                           statusLbl->foregroundRole(),
+                                           KColorScheme::View);
+            statusLbl->setAutoFillBackground(true);
+            KColorScheme::adjustBackground(statusPalette,
+                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::PositiveBackground : KColorScheme::NegativeBackground,
+                                           QPalette::Window,
+                                           KColorScheme::View);
+            statusLbl->setPalette(statusPalette);
+        }
+        statusBar->addPermanentWidget(statusLbl.release());
+    }
 }
 
 void MessageViewerBasePrivate::setCurrentIndex(int index)
