@@ -30,26 +30,9 @@ public:
     {
     }
 
-    void setCurrentIndex(int currentIndex);
     QMenuBar *createMenuBar(QWidget *parent);
     void updateUI();
 };
-
-void MessageViewerWindow::Private::setCurrentIndex(int index)
-{
-    Q_ASSERT(index >= 0);
-    Q_ASSERT(index < messages.count());
-
-    currentIndex = index;
-    messageViewer->setMessage(messages[currentIndex]);
-    q->setWindowTitle(messageViewer->subject());
-
-    previousAction->setEnabled(currentIndex != 0);
-    nextAction->setEnabled(currentIndex != messages.count() - 1);
-
-    auto subject = messages[currentIndex]->subject()->asUnicodeString();
-    q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
-}
 
 QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
 {
