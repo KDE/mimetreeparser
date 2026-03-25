@@ -45,39 +45,14 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
 
     // File menu
     const auto fileMenu = menuBar->addMenu(i18nc("@action:inmenu", "&File"));
-
-    const auto saveAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "&Save"), parent);
-    QObject::connect(saveAction, &QAction::triggered, parent, [parent, this] {
-        save(parent);
-    });
     fileMenu->addAction(saveAction);
-
-    const auto saveDecryptedAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "Save Decrypted"), parent);
-    QObject::connect(saveDecryptedAction, &QAction::triggered, parent, [parent, this] {
-        saveDecrypted(parent);
-    });
     fileMenu->addAction(saveDecryptedAction);
-
-    const auto printPreviewAction = new QAction(QIcon::fromTheme(u"document-print-preview"_s), i18nc("@action:inmenu", "Print Preview"), parent);
-    QObject::connect(printPreviewAction, &QAction::triggered, parent, [parent, this] {
-        printPreview(parent);
-    });
     fileMenu->addAction(printPreviewAction);
-
-    const auto printAction = new QAction(QIcon::fromTheme(u"document-print"_s), i18nc("@action:inmenu", "&Print"), parent);
-    QObject::connect(printAction, &QAction::triggered, parent, [parent, this] {
-        print(parent);
-    });
     fileMenu->addAction(printAction);
 
     // Navigation menu
     const auto navigationMenu = menuBar->addMenu(i18nc("@action:inmenu", "&Navigation"));
-    previousAction = new QAction(QIcon::fromTheme(u"go-previous"_s), i18nc("@action:button Previous email", "Previous Message"), parent);
-    previousAction->setEnabled(false);
     navigationMenu->addAction(previousAction);
-
-    nextAction = new QAction(QIcon::fromTheme(u"go-next"_s), i18nc("@action:button Next email", "Next Message"), parent);
-    nextAction->setEnabled(false);
     navigationMenu->addAction(nextAction);
 
     return menuBar;
