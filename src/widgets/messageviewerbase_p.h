@@ -31,6 +31,8 @@ public:
     QAction *previousAction = nullptr;
     QToolBar *toolBar = nullptr;
 
+    void setCurrentIndex(int currentIndex);
+
     void save(QWidget *parent);
     void saveDecrypted(QWidget *parent);
     void print(QWidget *parent);
