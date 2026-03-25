@@ -68,12 +68,6 @@ ecm_setup_version(PROJECT
     SOVERSION 6
 )
 
-configure_file(
-    mimetreeparserng-version.h.in
-    ${CMAKE_CURRENT_BINARY_DIR}/src/mimetreeparserng-version.h
-    @ONLY
-)
-
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
