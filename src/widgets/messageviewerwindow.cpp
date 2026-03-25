@@ -6,16 +6,11 @@
 
 #include "messageviewerbase_p.h"
 
-#include <KColorScheme>
 #include <KLocalizedString>
 
-#include <Libkleo/Compliance>
-
 #include <QDialog>
-#include <QLabel>
 #include <QMenuBar>
 #include <QPlainTextEdit>
-#include <QStatusBar>
 #include <QToolBar>
 #include <QVBoxLayout>
 
@@ -124,25 +119,7 @@ void MessageViewerWindow::initGUI()
     setWindowTitle(d->messageViewer->subject());
     setCentralWidget(d->messageViewer);
 
-    if (Kleo::DeVSCompliance::isActive()) {
-        auto statusBar = new QStatusBar(this);
-        auto statusLbl = std::make_unique<QLabel>(Kleo::DeVSCompliance::name());
-        {
-            auto statusPalette = qApp->palette();
-            KColorScheme::adjustForeground(statusPalette,
-                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::NormalText : KColorScheme::NegativeText,
-                                           statusLbl->foregroundRole(),
-                                           KColorScheme::View);
-            statusLbl->setAutoFillBackground(true);
-            KColorScheme::adjustBackground(statusPalette,
-                                           Kleo::DeVSCompliance::isCompliant() ? KColorScheme::PositiveBackground : KColorScheme::NegativeBackground,
-                                           QPalette::Window,
-                                           KColorScheme::View);
-            statusLbl->setPalette(statusPalette);
-        }
-        statusBar->addPermanentWidget(statusLbl.release());
-        setStatusBar(statusBar);
-    }
+    setStatusBar(d->statusBar);
 
     setMinimumSize(300, 300);
     resize(600, 600);
