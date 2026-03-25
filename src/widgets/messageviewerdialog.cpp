@@ -122,7 +122,13 @@ void MessageViewerDialog::initGUI()
     if (d->messages.isEmpty()) {
         auto errorMessage = new KMessageWidget(this);
         errorMessage->setMessageType(KMessageWidget::Error);
-        errorMessage->setText(i18nc("@info", "Unable to read file"));
+        if (d->fileName.isEmpty()) {
+            errorMessage->setText(xi18nc("@info", "No messages to display."));
+        } else {
+            errorMessage->setText(xi18nc("@info", "Unable to read the file <filename>%1</filename>, or the file doesn't contain any messages.", d->fileName));
+        }
+        errorMessage->setWordWrap(true);
+        errorMessage->setCloseButtonVisible(false);
         layout->addWidget(errorMessage);
         layout->addStretch();
     } else {
