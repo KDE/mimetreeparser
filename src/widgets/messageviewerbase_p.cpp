@@ -28,6 +28,10 @@ void MessageViewerBasePrivate::setCurrentIndex(int index)
     Q_ASSERT(index >= 0);
     Q_ASSERT(index < messages.count());
 
+    if (index < 0 || index >= messages.size()) {
+        return;
+    }
+
     currentIndex = index;
     messageViewer->setMessage(messages[currentIndex]);
 
