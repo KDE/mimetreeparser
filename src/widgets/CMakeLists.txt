@@ -21,6 +21,8 @@ target_sources(
         messagecontainerwidget.cpp
         messageviewer.h
         messageviewer.cpp
+        messageviewerbase_p.h
+        messageviewerbase_p.cpp
         messageviewerdialog.h
         messageviewerdialog.cpp
         messageviewerwindow.h

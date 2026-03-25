@@ -4,31 +4,22 @@
 
 #include "messageviewerdialog.h"
 
-#include "messageviewer.h"
-#include "messageviewerutils_p.h"
-#include <MimeTreeParserCore/CryptoHelper>
+#include "messageviewerbase_p.h"
+
 #include <MimeTreeParserCore/FileOpener>
 
 #include <KColorScheme>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KMessageWidget>
 #include <KSeparator>
+
 #include <Libkleo/Compliance>
 
 #include <QApplication>
 #include <QDialogButtonBox>
-#include <QFileDialog>
 #include <QLabel>
 #include <QMenuBar>
-#include <QPainter>
-#include <QPrintDialog>
-#include <QPrintPreviewDialog>
-#include <QPrinter>
 #include <QPushButton>
-#include <QRegularExpression>
-#include <QSaveFile>
-#include <QStandardPaths>
 #include <QStatusBar>
 #include <QStyle>
 #include <QToolBar>
@@ -37,32 +28,16 @@
 using namespace MimeTreeParser::Widgets;
 using namespace Qt::Literals::StringLiterals;
 
-class MessageViewerDialog::Private
+class MessageViewerDialog::Private : public MessageViewerBasePrivate
 {
 public:
     explicit Private(MessageViewerDialog *dialog)
-        : q(dialog)
+        : MessageViewerBasePrivate{dialog}
     {
     }
 
-    MessageViewerDialog *const q;
-    int currentIndex = 0;
-    QList<std::shared_ptr<KMime::Message>> messages;
-    QString fileName;
-    MimeTreeParser::Widgets::MessageViewer *messageViewer = nullptr;
-    QAction *nextAction = nullptr;
-    QAction *previousAction = nullptr;
-    QToolBar *toolBar = nullptr;
-
     void setCurrentIndex(int currentIndex);
     QMenuBar *createMenuBar(QWidget *parent);
-
-private:
-    void save(QWidget *parent);
-    void saveDecrypted(QWidget *parent);
-    void print(QWidget *parent);
-    void printPreview(QWidget *parent);
-    void printInternal(QPrinter *printer);
 };
 
 void MessageViewerDialog::Private::setCurrentIndex(int index)
@@ -120,105 +95,6 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
     navigationMenu->addAction(nextAction);
 
     return menuBar;
-}
-
-void MessageViewerDialog::Private::save(QWidget *parent)
-{
-    QString extension;
-    QString alternatives;
-    auto message = messages[currentIndex];
-    bool wasEncrypted = false;
-    GpgME::Protocol protocol;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
-    Q_UNUSED(decryptedMessage); // we save the message without modifying it
-
-    if (wasEncrypted) {
-        extension = u".mime"_s;
-        if (protocol == GpgME::OpenPGP) {
-            alternatives = i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
-        } else {
-            alternatives = i18nc("File dialog accepted files", "Encrypted S/MIME files (*.p7m)");
-        }
-    } else {
-        extension = u".eml"_s;
-        alternatives = i18nc("Accepted files in a file dialog. You only need to translate 'file'", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
-    }
-
-    const QString location =
-        QFileDialog::getSaveFileName(parent,
-                                     i18nc("@title:window", "Save File"),
-                                     MesageViewerUtils::changeExtension(MesageViewerUtils::changeFileName(fileName, messageViewer->subject()), extension),
-                                     alternatives);
-
-    QSaveFile file(location);
-    if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18n("File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
-        return;
-    }
-    file.write(messages[currentIndex]->encodedContent());
-    file.commit();
-}
-
-void MessageViewerDialog::Private::saveDecrypted(QWidget *parent)
-{
-    const QString location =
-        QFileDialog::getSaveFileName(parent,
-                                     i18nc("@title:window", "Save Decrypted File"),
-                                     MesageViewerUtils::changeExtension(MesageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
-                                     i18nc("File dialog accepted files", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"));
-
-    QSaveFile file(location);
-    if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
-        return;
-    }
-    auto message = messages[currentIndex];
-    bool wasEncrypted = false;
-    GpgME::Protocol protocol;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
-    if (!wasEncrypted) {
-        decryptedMessage = message;
-    }
-    file.write(decryptedMessage->encodedContent());
-
-    file.commit();
-}
-
-void MessageViewerDialog::Private::print(QWidget *parent)
-{
-    QPrinter printer;
-    QPrintDialog dialog(&printer, parent);
-    dialog.setWindowTitle(i18nc("@title:window", "Print"));
-    if (dialog.exec() != QDialog::Accepted)
-        return;
-
-    printInternal(&printer);
-}
-
-void MessageViewerDialog::Private::printPreview(QWidget *parent)
-{
-    auto dialog = new QPrintPreviewDialog(parent);
-    dialog->setAttribute(Qt::WA_DeleteOnClose);
-    dialog->resize(800, 750);
-    dialog->setWindowTitle(i18nc("@title:window", "Print Preview"));
-    QObject::connect(dialog, &QPrintPreviewDialog::paintRequested, parent, [this](QPrinter *printer) {
-        printInternal(printer);
-    });
-    dialog->open();
-}
-
-void MessageViewerDialog::Private::printInternal(QPrinter *printer)
-{
-    QPainter painter;
-    painter.begin(printer);
-    const auto pageLayout = printer->pageLayout();
-    const auto pageRect = pageLayout.paintRectPixels(printer->resolution());
-    const double xscale = pageRect.width() / double(messageViewer->width());
-    const double yscale = pageRect.height() / double(messageViewer->height());
-    const double scale = qMin(qMin(xscale, yscale), 1.);
-    painter.translate(pageRect.x(), pageRect.y());
-    painter.scale(scale, scale);
-    messageViewer->print(&painter, pageRect.width());
 }
 
 MessageViewerDialog::MessageViewerDialog(const QList<std::shared_ptr<KMime::Message>> &messages, QWidget *parent)
