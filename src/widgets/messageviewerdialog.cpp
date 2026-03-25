@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "messageviewerdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer.h"
 #include "messageviewerutils_p.h"
@@ -36,6 +35,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 using namespace MimeTreeParser::Widgets;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageViewerDialog::Private
 {
