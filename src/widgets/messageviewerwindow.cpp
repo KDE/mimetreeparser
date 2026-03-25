@@ -138,29 +138,7 @@ void MessageViewerWindow::initGUI()
     const auto menuBar = d->createMenuBar(this);
     setMenuBar(menuBar);
 
-    d->toolBar = new QToolBar(this);
-
-#ifdef Q_OS_UNIX
-    d->toolBar->setToolButtonStyle(Qt::ToolButtonFollowStyle);
-#else
-    // on other platforms the default is IconOnly which is bad for
-    // accessibility and can't be changed by the user.
-    d->toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-#endif
-
-    d->toolBar->addAction(d->previousAction);
-    connect(d->previousAction, &QAction::triggered, this, [this] {
-        d->setCurrentIndex(d->currentIndex - 1);
-    });
-
-    const auto spacer = new QWidget(this);
-    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->toolBar->addWidget(spacer);
-
-    d->toolBar->addAction(d->nextAction);
-    connect(d->nextAction, &QAction::triggered, this, [this] {
-        d->setCurrentIndex(d->currentIndex + 1);
-    });
+    d->createToolBar(this);
 
     d->toolBar->hide();
     addToolBar(Qt::TopToolBarArea, d->toolBar);

@@ -119,35 +119,9 @@ void MessageViewerDialog::initGUI()
         return;
     }
 
-    const bool multipleMessages = d->messages.length() > 1;
-    d->toolBar = new QToolBar(this);
-
-    if (multipleMessages) {
-#ifdef Q_OS_UNIX
-        d->toolBar->setToolButtonStyle(Qt::ToolButtonFollowStyle);
-#else
-        // on other platforms the default is IconOnly which is bad for
-        // accessibility and can't be changed by the user.
-        d->toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-#endif
-
-        d->toolBar->addAction(d->previousAction);
-        connect(d->previousAction, &QAction::triggered, this, [this] {
-            d->setCurrentIndex(d->currentIndex - 1);
-        });
-
-        const auto spacer = new QWidget(this);
-        spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        d->toolBar->addWidget(spacer);
-
-        d->toolBar->addAction(d->nextAction);
-        connect(d->nextAction, &QAction::triggered, this, [this] {
-            d->setCurrentIndex(d->currentIndex + 1);
-        });
-
-        mainLayout->addWidget(d->toolBar);
-    } else {
-        mainLayout->addWidget(d->toolBar);
+    d->createToolBar(this);
+    mainLayout->addWidget(d->toolBar);
+    if (d->messages.size() == 1) {
         d->toolBar->hide();
     }
 

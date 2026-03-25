@@ -17,6 +17,7 @@
 #include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QSaveFile>
+#include <QToolBar>
 
 #include <gpgme++/global.h>
 
@@ -40,6 +41,33 @@ void MessageViewerBasePrivate::setCurrentIndex(int index)
 
     const QString subject = messageViewer->subject();
     q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
+}
+
+void MessageViewerBasePrivate::createToolBar(QWidget *parent)
+{
+    toolBar = new QToolBar(parent);
+
+#ifdef Q_OS_UNIX
+    toolBar->setToolButtonStyle(Qt::ToolButtonFollowStyle);
+#else
+    // on other platforms the default is IconOnly which is bad for
+    // accessibility and can't be changed by the user.
+    toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+#endif
+
+    toolBar->addAction(previousAction);
+    QObject::connect(previousAction, &QAction::triggered, parent, [this] {
+        setCurrentIndex(currentIndex - 1);
+    });
+
+    const auto spacer = new QWidget(parent);
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    toolBar->addWidget(spacer);
+
+    toolBar->addAction(nextAction);
+    QObject::connect(nextAction, &QAction::triggered, parent, [this] {
+        setCurrentIndex(currentIndex + 1);
+    });
 }
 
 void MessageViewerBasePrivate::save(QWidget *parent)
