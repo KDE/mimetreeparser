@@ -115,13 +115,11 @@ void MessageViewerWindow::Private::updateUI()
     nextAction->setVisible(multipleMessages);
     previousAction->setEnabled(multipleMessages);
     previousAction->setVisible(multipleMessages);
-    currentIndex = 0;
 
-    if (messages.length() > 0) {
-        messageViewer->setMessage(messages[0]);
-
-        auto subject = messages[currentIndex]->subject()->asUnicodeString();
-        q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
+    if (!messages.isEmpty()) {
+        setCurrentIndex(0);
+    } else {
+        currentIndex = 0;
     }
 }
 
