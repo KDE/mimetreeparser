@@ -144,7 +144,6 @@ void MessageViewerDialog::initGUI()
         connect(d->nextAction, &QAction::triggered, this, [this] {
             d->setCurrentIndex(d->currentIndex + 1);
         });
-        d->nextAction->setEnabled(true);
 
         mainLayout->addWidget(d->toolBar);
     } else {
@@ -155,8 +154,6 @@ void MessageViewerDialog::initGUI()
     mainLayout->addLayout(layout);
 
     d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
-    d->messageViewer->setMessage(d->messages[0]);
-    setWindowTitle(d->messageViewer->subject());
     layout->addWidget(d->messageViewer);
 
     auto buttonBox = new QDialogButtonBox(this);
@@ -193,6 +190,8 @@ void MessageViewerDialog::initGUI()
 
     setMinimumSize(300, 300);
     resize(600, 600);
+
+    d->setCurrentIndex(0);
 }
 
 MessageViewerDialog::~MessageViewerDialog() = default;
