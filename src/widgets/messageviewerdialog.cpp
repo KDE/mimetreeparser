@@ -111,24 +111,24 @@ void MessageViewerDialog::initGUI()
     const auto menuBar = d->createMenuBar(this);
     mainLayout->setMenuBar(menuBar);
 
-    if (d->messages.isEmpty()) {
-        auto errorMessage = new KMessageWidget(this);
-        errorMessage->setMessageType(KMessageWidget::Error);
-        errorMessage->setText(i18nc("@info", "Unable to read file"));
-        layout->addWidget(errorMessage);
-        return;
-    }
-
     d->createToolBar(this);
     mainLayout->addWidget(d->toolBar);
-    if (d->messages.size() == 1) {
+    if (d->messages.size() <= 1) {
         d->toolBar->hide();
     }
 
     mainLayout->addLayout(layout);
 
-    d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
-    layout->addWidget(d->messageViewer);
+    if (d->messages.isEmpty()) {
+        auto errorMessage = new KMessageWidget(this);
+        errorMessage->setMessageType(KMessageWidget::Error);
+        errorMessage->setText(i18nc("@info", "Unable to read file"));
+        layout->addWidget(errorMessage);
+        layout->addStretch();
+    } else {
+        d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
+        layout->addWidget(d->messageViewer);
+    }
 
     auto buttonBox = new QDialogButtonBox(this);
     buttonBox->setContentsMargins(style()->pixelMetric(QStyle::PM_LayoutLeftMargin, nullptr, this),
@@ -165,7 +165,9 @@ void MessageViewerDialog::initGUI()
     setMinimumSize(300, 300);
     resize(600, 600);
 
-    d->setCurrentIndex(0);
+    if (!d->messages.isEmpty()) {
+        d->setCurrentIndex(0);
+    }
 }
 
 MessageViewerDialog::~MessageViewerDialog() = default;
