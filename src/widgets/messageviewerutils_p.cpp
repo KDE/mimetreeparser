@@ -2,9 +2,10 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "messageviewerutils_p.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QRegularExpression>
+
+using namespace Qt::Literals::StringLiterals;
 
 QString MesageViewerUtils::changeExtension(const QString &fileName, const QString &extension)
 {

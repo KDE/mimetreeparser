@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "../core/utils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecontainerwidget_p.h"
 #include "partmodel.h"
@@ -21,6 +20,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 #include <gpgme++/verificationresult.h>
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
