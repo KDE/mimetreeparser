@@ -67,7 +67,7 @@ void MessageViewerBasePrivate::save(QWidget *parent)
     const QString location =
         QFileDialog::getSaveFileName(parent,
                                      i18nc("@title:window", "Save File"),
-                                     MesageViewerUtils::changeExtension(MesageViewerUtils::changeFileName(fileName, messageViewer->subject()), extension),
+                                     MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), extension),
                                      alternatives);
 
     QSaveFile file(location);
@@ -84,7 +84,7 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
     const QString location =
         QFileDialog::getSaveFileName(parent,
                                      i18nc("@title:window", "Save Decrypted File"),
-                                     MesageViewerUtils::changeExtension(MesageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
+                                     MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
                                      i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"));
 
     QSaveFile file(location);
