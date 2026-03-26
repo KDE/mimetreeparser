@@ -9,7 +9,6 @@
 #include <MimeTreeParserCore/FileOpener>
 
 #include <KLocalizedString>
-#include <KMessageWidget>
 #include <KSeparator>
 
 #include <QDialogButtonBox>
@@ -58,17 +57,17 @@ MessageViewerDialog::MessageViewerDialog(const QList<std::shared_ptr<KMime::Mess
     : QDialog(parent)
     , d(std::make_unique<Private>(this))
 {
-    d->messages += messages;
     initGUI();
+    d->setMessages(messages);
 }
 
 MessageViewerDialog::MessageViewerDialog(const QString &fileName, QWidget *parent)
     : QDialog(parent)
     , d(std::make_unique<Private>(this))
 {
-    d->fileName = fileName;
-    d->messages += MimeTreeParser::Core::FileOpener::openFile(fileName);
     initGUI();
+    d->fileName = fileName;
+    d->setMessages(MimeTreeParser::Core::FileOpener::openFile(fileName));
 }
 
 void MessageViewerDialog::initGUI()
@@ -81,21 +80,8 @@ void MessageViewerDialog::initGUI()
     mainLayout->setMenuBar(menuBar);
 
     mainLayout->addWidget(d->toolBar);
-    if (d->messages.size() > 1) {
-        d->toolBar->show();
-    }
 
     mainLayout->addWidget(d->centralWidget);
-
-    if (d->messages.isEmpty()) {
-        if (d->fileName.isEmpty()) {
-            d->errorMessage->setText(xi18nc("@info", "No messages to display."));
-        } else {
-            d->errorMessage->setText(
-                xi18nc("@info", "Unable to read the file <filename>%1</filename>, or the file doesn't contain any messages.", d->fileName));
-        }
-        d->centralWidget->setCurrentIndex(1);
-    }
 
     auto buttonBox = new QDialogButtonBox(this);
     buttonBox->setContentsMargins(style()->pixelMetric(QStyle::PM_LayoutLeftMargin, nullptr, this),
@@ -114,10 +100,6 @@ void MessageViewerDialog::initGUI()
 
     setMinimumSize(300, 300);
     resize(600, 600);
-
-    if (!d->messages.isEmpty()) {
-        d->setCurrentIndex(0);
-    }
 }
 
 MessageViewerDialog::~MessageViewerDialog() = default;
@@ -129,7 +111,7 @@ QToolBar *MessageViewerDialog::toolBar() const
 
 QList<std::shared_ptr<KMime::Message>> MessageViewerDialog::messages() const
 {
-    return d->messages;
+    return d->getMessages();
 }
 
 #include "moc_messageviewerdialog.cpp"
