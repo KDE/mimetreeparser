@@ -116,7 +116,6 @@ void MessageViewerWindow::initGUI()
     d->toolBar->setMovable(false);
 
     d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
-    setWindowTitle(d->messageViewer->subject());
     setCentralWidget(d->messageViewer);
 
     setStatusBar(d->statusBar);
