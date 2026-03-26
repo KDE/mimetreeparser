@@ -26,6 +26,7 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QMenu>
+#include <QPointer>
 #include <QScrollArea>
 #include <QStandardPaths>
 #include <QVBoxLayout>
@@ -51,7 +52,7 @@ public:
 
     QVBoxLayout *layout = nullptr;
     std::shared_ptr<KMime::Message> message;
-    MessageParser parser;
+    QPointer<MessageParser> parser = nullptr;
     QScrollArea *scrollArea = nullptr;
     QFormLayout *formLayout = nullptr;
     AttachmentView *attachmentView = nullptr;
@@ -82,6 +83,25 @@ public:
         });
     }
 
+    void ensureParserExists()
+    {
+        if (parser) {
+            return;
+        }
+        parser = new MessageParser{q};
+        connect(parser->attachments(), &AttachmentModel::info, q, [this](const QString &message) {
+            messageWidget->setMessageType(KMessageWidget::Information);
+            messageWidget->setText(message);
+            messageWidget->animatedShow();
+        });
+
+        connect(parser->attachments(), &AttachmentModel::errorOccurred, q, [this](const QString &message) {
+            messageWidget->setMessageType(KMessageWidget::Error);
+            messageWidget->setText(message);
+            messageWidget->animatedShow();
+        });
+    }
+
     void openSelectedAttachments();
     void saveSelectedAttachments();
     void selectionChanged();
@@ -92,14 +112,16 @@ public:
 
 void MessageViewer::Private::openSelectedAttachments()
 {
+    Q_ASSERT(parser);
     Q_ASSERT(selectedParts.count() >= 1);
     for (const auto &part : std::as_const(selectedParts)) {
-        parser.attachments()->openAttachment(part);
+        parser->attachments()->openAttachment(part);
     }
 }
 
 void MessageViewer::Private::saveSelectedAttachments()
 {
+    Q_ASSERT(parser);
     Q_ASSERT(selectedParts.count() >= 1);
 
     for (const auto &part : std::as_const(selectedParts)) {
@@ -109,14 +131,15 @@ void MessageViewer::Private::saveSelectedAttachments()
         }
 
         const QString path = QFileDialog::getSaveFileName(q, i18n("Save Attachment As"), pname);
-        parser.attachments()->saveAttachmentToPath(part, path);
+        parser->attachments()->saveAttachmentToPath(part, path);
     }
 }
 
 void MessageViewer::Private::importPublicKey()
 {
+    Q_ASSERT(parser);
     Q_ASSERT(selectedParts.count() == 1);
-    parser.attachments()->importPublicKey(selectedParts[0]);
+    parser->attachments()->importPublicKey(selectedParts[0]);
 }
 
 void MessageViewer::Private::showContextMenu()
@@ -194,18 +217,6 @@ MessageViewer::MessageViewer(QWidget *parent)
         d->showContextMenu();
     });
 
-    connect(d->parser.attachments(), &AttachmentModel::info, this, [this](const QString &message) {
-        d->messageWidget->setMessageType(KMessageWidget::Information);
-        d->messageWidget->setText(message);
-        d->messageWidget->animatedShow();
-    });
-
-    connect(d->parser.attachments(), &AttachmentModel::errorOccurred, this, [this](const QString &message) {
-        d->messageWidget->setMessageType(KMessageWidget::Error);
-        d->messageWidget->setText(message);
-        d->messageWidget->animatedShow();
-    });
-
     connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
         d->selectionChanged();
     });
@@ -228,12 +239,12 @@ MessageViewer::~MessageViewer()
 
 QString MessageViewer::subject() const
 {
-    return d->parser.subject();
+    return d->parser ? d->parser->subject() : QString{};
 }
 
 std::shared_ptr<KMime::Message> MessageViewer::message() const
 {
-    return d->parser.message();
+    return d->parser ? d->parser->message() : std::shared_ptr<KMime::Message>{};
 }
 
 void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout *lay, const QModelIndex &parent)
@@ -390,36 +401,41 @@ public:
 void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
 {
     setUpdatesEnabled(false);
-    d->parser.setMessage(message);
+    if (message) {
+        d->ensureParserExists();
+        d->parser->setMessage(message);
+    } else {
+        delete d->parser;
+    }
 
     for (int i = d->formLayout->rowCount() - 1; i >= 0; i--) {
         d->formLayout->removeRow(i);
     }
-    if (!d->parser.subject().isEmpty()) {
-        const auto label = new QLabel(d->parser.subject());
-        label->setTextFormat(Qt::PlainText);
-        d->formLayout->addRow(i18n("&Subject:"), label);
+    if (d->parser) {
+        if (!d->parser->subject().isEmpty()) {
+            const auto label = new QLabel(d->parser->subject());
+            label->setTextFormat(Qt::PlainText);
+            d->formLayout->addRow(i18n("&Subject:"), label);
+        }
+        if (!d->parser->from().isEmpty()) {
+            d->formLayout->addRow(i18n("&From:"), new HeaderLabel(d->parser->from()));
+        }
+        if (!d->parser->sender().isEmpty() && d->parser->from() != d->parser->sender()) {
+            d->formLayout->addRow(i18n("&Sender:"), new HeaderLabel(d->parser->sender()));
+        }
+        if (!d->parser->to().isEmpty()) {
+            d->formLayout->addRow(i18n("&To:"), new HeaderLabel(d->parser->to()));
+        }
+        if (!d->parser->cc().isEmpty()) {
+            d->formLayout->addRow(i18n("&CC:"), new HeaderLabel(d->parser->cc()));
+        }
+        if (!d->parser->bcc().isEmpty()) {
+            d->formLayout->addRow(i18n("&BCC:"), new HeaderLabel(d->parser->bcc()));
+        }
+        if (!d->parser->date().isNull()) {
+            d->formLayout->addRow(i18n("&Date:"), new HeaderLabel(QLocale::system().toString(d->parser->date().toLocalTime(), QLocale::ShortFormat)));
+        }
     }
-    if (!d->parser.from().isEmpty()) {
-        d->formLayout->addRow(i18n("&From:"), new HeaderLabel(d->parser.from()));
-    }
-    if (!d->parser.sender().isEmpty() && d->parser.from() != d->parser.sender()) {
-        d->formLayout->addRow(i18n("&Sender:"), new HeaderLabel(d->parser.sender()));
-    }
-    if (!d->parser.to().isEmpty()) {
-        d->formLayout->addRow(i18n("&To:"), new HeaderLabel(d->parser.to()));
-    }
-    if (!d->parser.cc().isEmpty()) {
-        d->formLayout->addRow(i18n("&CC:"), new HeaderLabel(d->parser.cc()));
-    }
-    if (!d->parser.bcc().isEmpty()) {
-        d->formLayout->addRow(i18n("&BCC:"), new HeaderLabel(d->parser.bcc()));
-    }
-    if (!d->parser.date().isNull()) {
-        d->formLayout->addRow(i18n("&Date:"), new HeaderLabel(QLocale::system().toString(d->parser.date().toLocalTime(), QLocale::ShortFormat)));
-    }
-
-    const auto parts = d->parser.parts();
 
     QLayoutItem *child;
     while ((child = d->layout->takeAt(0)) != nullptr) {
@@ -427,11 +443,14 @@ void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
         delete child;
     }
 
-    d->recursiveBuildViewer(parts, d->layout, {});
+    if (d->parser) {
+        const auto parts = d->parser->parts();
+        d->recursiveBuildViewer(parts, d->layout, {});
+    }
     d->layout->addStretch();
 
-    d->attachmentView->setModel(d->parser.attachments());
-    d->attachmentView->setVisible(d->parser.attachments()->rowCount() > 0);
+    d->attachmentView->setModel(d->parser ? d->parser->attachments() : nullptr);
+    d->attachmentView->setVisible(d->parser && (d->parser->attachments()->rowCount() > 0));
 
     setUpdatesEnabled(true);
 }
