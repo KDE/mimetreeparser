@@ -80,10 +80,9 @@ void MessageViewerDialog::initGUI()
     const auto menuBar = d->createMenuBar(this);
     mainLayout->setMenuBar(menuBar);
 
-    d->createToolBar(this);
     mainLayout->addWidget(d->toolBar);
-    if (d->messages.size() <= 1) {
-        d->toolBar->hide();
+    if (d->messages.size() > 1) {
+        d->toolBar->show();
     }
 
     mainLayout->addWidget(d->centralWidget);

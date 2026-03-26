@@ -38,6 +38,7 @@ MessageViewerBasePrivate::MessageViewerBasePrivate(QWidget *qq)
     : q(qq)
 {
     createActions(q);
+    createToolBar(q);
     createStatusBar(q);
     centralWidget = new QStackedWidget(q);
     messageViewer = new MimeTreeParser::Widgets::MessageViewer(q);
@@ -149,6 +150,7 @@ void MessageViewerBasePrivate::createToolBar(QWidget *parent)
     toolBar->addWidget(spacer);
 
     toolBar->addAction(nextAction);
+    toolBar->hide();
 }
 
 void MessageViewerBasePrivate::save(QWidget *parent)

@@ -114,9 +114,6 @@ void MessageViewerWindow::initGUI()
     const auto menuBar = d->createMenuBar(this);
     setMenuBar(menuBar);
 
-    d->createToolBar(this);
-
-    d->toolBar->hide();
     addToolBar(Qt::TopToolBarArea, d->toolBar);
     d->toolBar->setFloatable(false);
     d->toolBar->setMovable(false);
