@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-26 00:45+0000\n"
 "PO-Revision-Date: 2026-02-20 13:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -294,7 +294,7 @@ msgid "sent by %1 on %2"
 msgstr "enviat per %1 a %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:145
+#: widgets/messagecontainerwidget.cpp:146
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
@@ -305,7 +305,7 @@ msgstr ""
 msgid "This message is encrypted for: %1"
 msgstr "Este missatge està encriptat amb: %1"
 
-#: widgets/messagecontainerwidget.cpp:143
+#: widgets/messagecontainerwidget.cpp:144
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -314,17 +314,17 @@ msgstr ""
 "Este missatge està encriptat conforme amb VS-NfD, però no teniu cap clau "
 "secreta que coincidisca."
 
-#: widgets/messagecontainerwidget.cpp:150
+#: widgets/messagecontainerwidget.cpp:151
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Este missatge està encriptat conforme amb VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:152
+#: widgets/messagecontainerwidget.cpp:153
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Este missatge està encriptat."
 
-#: widgets/messagecontainerwidget.cpp:161
+#: widgets/messagecontainerwidget.cpp:162
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "El missatge està encriptat per als destinataris següents:"
@@ -442,146 +442,155 @@ msgstr "&BCC:"
 msgid "&Date:"
 msgstr "&Data:"
 
-#: widgets/messageviewerdialog.cpp:86 widgets/messageviewerwindow.cpp:90
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "Fi&txer"
-
-#: widgets/messageviewerdialog.cpp:88 widgets/messageviewerwindow.cpp:92
+#: widgets/messageviewerbase_p.cpp:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "Guar&da"
 
-#: widgets/messageviewerdialog.cpp:94 widgets/messageviewerwindow.cpp:98
+#: widgets/messageviewerbase_p.cpp:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Guarda desencriptat"
 
-#: widgets/messageviewerdialog.cpp:100 widgets/messageviewerwindow.cpp:104
+#: widgets/messageviewerbase_p.cpp:52
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Vista prèvia d'impressió"
 
-#: widgets/messageviewerdialog.cpp:106 widgets/messageviewerwindow.cpp:110
+#: widgets/messageviewerbase_p.cpp:57
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Im&primix"
 
-#: widgets/messageviewerdialog.cpp:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "&Navegueu"
-
-#: widgets/messageviewerdialog.cpp:114 widgets/messageviewerwindow.cpp:147
+#: widgets/messageviewerbase_p.cpp:62
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Missatge anterior"
 
-#: widgets/messageviewerdialog.cpp:118 widgets/messageviewerwindow.cpp:151
+#: widgets/messageviewerbase_p.cpp:68
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Missatge següent"
 
-#: widgets/messageviewerdialog.cpp:138 widgets/messageviewerdialog.cpp:168
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
-
-#: widgets/messageviewerdialog.cpp:140 widgets/messageviewerwindow.cpp:191
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "Fitxers S/MIME encriptats (*.p7m)"
-
-#: widgets/messageviewerdialog.cpp:144 widgets/messageviewerwindow.cpp:195
-#, kde-format
-msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
-
-#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerwindow.cpp:200
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "Guarda el fitxer"
-
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerwindow.cpp:206
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "No s'ha pogut crear el fitxer %1."
-
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerdialog.cpp:172
-#: widgets/messageviewerwindow.cpp:206 widgets/messageviewerwindow.cpp:223
-#, kde-format
-msgctxt "@title:window"
-msgid "Error saving message"
-msgstr "S'ha produït un error mentre es guardava el missatge"
-
-#: widgets/messageviewerdialog.cpp:166 widgets/messageviewerwindow.cpp:217
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "Guardeu un fitxer desencriptat"
-
-#: widgets/messageviewerdialog.cpp:172 widgets/messageviewerwindow.cpp:223
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "No s'ha pogut crear el fitxer %1."
-
-#: widgets/messageviewerdialog.cpp:191 widgets/messageviewerwindow.cpp:242
-#, kde-format
-msgctxt "@title:window"
-msgid "Print"
-msgstr "Imprimix"
-
-#: widgets/messageviewerdialog.cpp:203 widgets/messageviewerwindow.cpp:254
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Preview"
-msgstr "Vista prèvia d'impressió"
-
-#: widgets/messageviewerdialog.cpp:255
-#, kde-format
-msgctxt "@info"
-msgid "Unable to read file"
-msgstr "No s'ha pogut llegir el fitxer"
-
-#: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
+#: widgets/messageviewerbase_p.cpp:113
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(Sense assumpte)"
 
-#: widgets/messageviewerwindow.cpp:117
+#: widgets/messageviewerbase_p.cpp:150 widgets/messageviewerbase_p.cpp:180
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "Fitxers de correu electrònic (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerbase_p.cpp:152
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "Fitxers S/MIME encriptats (*.p7m)"
+
+#: widgets/messageviewerbase_p.cpp:156
+#, kde-format
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
+
+#: widgets/messageviewerbase_p.cpp:161
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Guarda el fitxer"
+
+#: widgets/messageviewerbase_p.cpp:167
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "No s'ha pogut crear el fitxer %1."
+
+#: widgets/messageviewerbase_p.cpp:167 widgets/messageviewerbase_p.cpp:184
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "S'ha produït un error mentre es guardava el missatge"
+
+#: widgets/messageviewerbase_p.cpp:178
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "Guardeu un fitxer desencriptat"
+
+#: widgets/messageviewerbase_p.cpp:184
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "No s'ha pogut crear el fitxer %1."
+
+#: widgets/messageviewerbase_p.cpp:203
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "Imprimix"
+
+#: widgets/messageviewerbase_p.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "Vista prèvia d'impressió"
+
+#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:37
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "Fi&txer"
+
+#: widgets/messageviewerdialog.cpp:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&Navegueu"
+
+#: widgets/messageviewerdialog.cpp:96
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No messages to display."
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:98
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Unable to read the file <filename>%1</filename>, or the file doesn't contain "
+"any messages."
+msgstr ""
+
+#: widgets/messageviewerwindow.cpp:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Missatge"
 
-#: widgets/messageviewerwindow.cpp:120
+#: widgets/messageviewerwindow.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Mostra el codi font"
 
-#: widgets/messageviewerwindow.cpp:140
+#: widgets/messageviewerwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Utilitza una lletra d'amplària fixa"
 
-#: widgets/messageviewerwindow.cpp:189 widgets/messageviewerwindow.cpp:219
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Fitxers de correu electrònic (*.eml *.mbox *.mime)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#~ msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to read file"
+#~ msgstr "No s'ha pogut llegir el fitxer"

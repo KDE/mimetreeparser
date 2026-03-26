@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-26 00:45+0000\n"
 "PO-Revision-Date: 2025-07-20 01:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -290,7 +290,7 @@ msgid "sent by %1 on %2"
 msgstr "%1 님이 %2에 보냄"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:145
+#: widgets/messagecontainerwidget.cpp:146
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "메시지가 암호화되어 있지만 일치하는 비밀 키가 없습니다."
@@ -300,7 +300,7 @@ msgstr "메시지가 암호화되어 있지만 일치하는 비밀 키가 없습
 msgid "This message is encrypted for: %1"
 msgstr "이 메시지는 다음 수신자에게 암호화되어 있습니다: %1"
 
-#: widgets/messagecontainerwidget.cpp:143
+#: widgets/messagecontainerwidget.cpp:144
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -309,17 +309,17 @@ msgstr ""
 "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 일치하는 비밀 키가 없습"
 "니다."
 
-#: widgets/messagecontainerwidget.cpp:150
+#: widgets/messagecontainerwidget.cpp:151
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었습니다."
 
-#: widgets/messagecontainerwidget.cpp:152
+#: widgets/messagecontainerwidget.cpp:153
 #, kde-format
 msgid "This message is encrypted."
 msgstr "이 메시지는 암호화되어 있습니다."
 
-#: widgets/messagecontainerwidget.cpp:161
+#: widgets/messagecontainerwidget.cpp:162
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "이 메시지는 다음 수신자로 암호화되어 있습니다:"
@@ -437,149 +437,158 @@ msgstr "숨은 참조(&B):"
 msgid "&Date:"
 msgstr "날짜(&D):"
 
-#: widgets/messageviewerdialog.cpp:86 widgets/messageviewerwindow.cpp:90
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "파일(&F)"
-
-#: widgets/messageviewerdialog.cpp:88 widgets/messageviewerwindow.cpp:92
+#: widgets/messageviewerbase_p.cpp:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "저장(&S)"
 
-#: widgets/messageviewerdialog.cpp:94 widgets/messageviewerwindow.cpp:98
+#: widgets/messageviewerbase_p.cpp:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "복호화된 항목 저장"
 
-#: widgets/messageviewerdialog.cpp:100 widgets/messageviewerwindow.cpp:104
+#: widgets/messageviewerbase_p.cpp:52
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "인쇄 미리 보기"
 
-#: widgets/messageviewerdialog.cpp:106 widgets/messageviewerwindow.cpp:110
+#: widgets/messageviewerbase_p.cpp:57
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "인쇄(&P)"
 
-#: widgets/messageviewerdialog.cpp:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "탐색(&N)"
-
-#: widgets/messageviewerdialog.cpp:114 widgets/messageviewerwindow.cpp:147
+#: widgets/messageviewerbase_p.cpp:62
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "이전 메시지"
 
-#: widgets/messageviewerdialog.cpp:118 widgets/messageviewerwindow.cpp:151
+#: widgets/messageviewerbase_p.cpp:68
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "다음 메시지"
 
-#: widgets/messageviewerdialog.cpp:138 widgets/messageviewerdialog.cpp:168
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "EML 파일 (*.eml);;MBOX 파일 (*.mbox);;MIME 파일 (*.mime)"
-
-#: widgets/messageviewerdialog.cpp:140 widgets/messageviewerwindow.cpp:191
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "암호화된 S/MIME 파일 (*.p7m)"
-
-#: widgets/messageviewerdialog.cpp:144 widgets/messageviewerwindow.cpp:195
-#, kde-format
-msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "EML 파일 (*.eml);;MBOX 파일 (*.mbox);;MIME 파일 (*.mime)"
-
-#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerwindow.cpp:200
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "파일 저장"
-
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerwindow.cpp:206
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "파일 %1을(를) 만들 수 없습니다."
-
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerdialog.cpp:172
-#: widgets/messageviewerwindow.cpp:206 widgets/messageviewerwindow.cpp:223
-#, kde-format
-msgctxt "@title:window"
-msgid "Error saving message"
-msgstr "메시지 저장 오류"
-
-#: widgets/messageviewerdialog.cpp:166 widgets/messageviewerwindow.cpp:217
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "복호화된 파일 저장"
-
-#: widgets/messageviewerdialog.cpp:172 widgets/messageviewerwindow.cpp:223
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "파일 %1을(를) 만들 수 없습니다."
-
-#: widgets/messageviewerdialog.cpp:191 widgets/messageviewerwindow.cpp:242
-#, kde-format
-msgctxt "@title:window"
-msgid "Print"
-msgstr "인쇄"
-
-#: widgets/messageviewerdialog.cpp:203 widgets/messageviewerwindow.cpp:254
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Preview"
-msgstr "인쇄 미리 보기"
-
-#: widgets/messageviewerdialog.cpp:255
-#, kde-format
-msgctxt "@info"
-msgid "Unable to read file"
-msgstr "파일을 읽을 수 없음"
-
-#: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
+#: widgets/messageviewerbase_p.cpp:113
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(제목 없음)"
 
-#: widgets/messageviewerwindow.cpp:117
+#: widgets/messageviewerbase_p.cpp:150 widgets/messageviewerbase_p.cpp:180
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "이메일 파일 (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerbase_p.cpp:152
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "암호화된 S/MIME 파일 (*.p7m)"
+
+#: widgets/messageviewerbase_p.cpp:156
+#, kde-format
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgstr "EML 파일 (*.eml);;MBOX 파일 (*.mbox);;MIME 파일 (*.mime)"
+
+#: widgets/messageviewerbase_p.cpp:161
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "파일 저장"
+
+#: widgets/messageviewerbase_p.cpp:167
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "파일 %1을(를) 만들 수 없습니다."
+
+#: widgets/messageviewerbase_p.cpp:167 widgets/messageviewerbase_p.cpp:184
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "메시지 저장 오류"
+
+#: widgets/messageviewerbase_p.cpp:178
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "복호화된 파일 저장"
+
+#: widgets/messageviewerbase_p.cpp:184
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "파일 %1을(를) 만들 수 없습니다."
+
+#: widgets/messageviewerbase_p.cpp:203
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "인쇄"
+
+#: widgets/messageviewerbase_p.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "인쇄 미리 보기"
+
+#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:37
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "파일(&F)"
+
+#: widgets/messageviewerdialog.cpp:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "탐색(&N)"
+
+#: widgets/messageviewerdialog.cpp:96
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No messages to display."
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:98
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Unable to read the file <filename>%1</filename>, or the file doesn't contain "
+"any messages."
+msgstr ""
+
+#: widgets/messageviewerwindow.cpp:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "메시지(&M)"
 
-#: widgets/messageviewerwindow.cpp:120
+#: widgets/messageviewerwindow.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "소스 보기"
 
-#: widgets/messageviewerwindow.cpp:140
+#: widgets/messageviewerwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "고정폭 글꼴 사용"
 
-#: widgets/messageviewerwindow.cpp:189 widgets/messageviewerwindow.cpp:219
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "이메일 파일 (*.eml *.mbox *.mime)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#~ msgstr "EML 파일 (*.eml);;MBOX 파일 (*.mbox);;MIME 파일 (*.mime)"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to read file"
+#~ msgstr "파일을 읽을 수 없음"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-26 00:45+0000\n"
 "PO-Revision-Date: 2026-02-21 08:47+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -294,7 +294,7 @@ msgid "sent by %1 on %2"
 msgstr "envoyé par %1 vers %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:145
+#: widgets/messagecontainerwidget.cpp:146
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
@@ -306,7 +306,7 @@ msgstr ""
 msgid "This message is encrypted for: %1"
 msgstr "Ce message est chiffré pour : %1"
 
-#: widgets/messagecontainerwidget.cpp:143
+#: widgets/messagecontainerwidget.cpp:144
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -315,17 +315,17 @@ msgstr ""
 "Ce message a été chiffré conformément au mode « VS-NFD » mais vous ne "
 "possédez pas la secrète correspondante."
 
-#: widgets/messagecontainerwidget.cpp:150
+#: widgets/messagecontainerwidget.cpp:151
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Ce message est chiffré selon le mode « VS-NFD »."
 
-#: widgets/messagecontainerwidget.cpp:152
+#: widgets/messagecontainerwidget.cpp:153
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Ce message est chiffré."
 
-#: widgets/messagecontainerwidget.cpp:161
+#: widgets/messagecontainerwidget.cpp:162
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Le message est chiffré pour les destinataires suivants :"
@@ -443,151 +443,160 @@ msgstr "&BCC :"
 msgid "&Date:"
 msgstr "&Date :"
 
-#: widgets/messageviewerdialog.cpp:86 widgets/messageviewerwindow.cpp:90
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "&Fichier"
-
-#: widgets/messageviewerdialog.cpp:88 widgets/messageviewerwindow.cpp:92
+#: widgets/messageviewerbase_p.cpp:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "Enregi&strer"
 
-#: widgets/messageviewerdialog.cpp:94 widgets/messageviewerwindow.cpp:98
+#: widgets/messageviewerbase_p.cpp:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Enregistrer la version déchiffrée"
 
-#: widgets/messageviewerdialog.cpp:100 widgets/messageviewerwindow.cpp:104
+#: widgets/messageviewerbase_p.cpp:52
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Aperçu avant impression"
 
-#: widgets/messageviewerdialog.cpp:106 widgets/messageviewerwindow.cpp:110
+#: widgets/messageviewerbase_p.cpp:57
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Im&primer"
 
-#: widgets/messageviewerdialog.cpp:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "&Navigation"
-
-#: widgets/messageviewerdialog.cpp:114 widgets/messageviewerwindow.cpp:147
+#: widgets/messageviewerbase_p.cpp:62
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Message précédent"
 
-#: widgets/messageviewerdialog.cpp:118 widgets/messageviewerwindow.cpp:151
+#: widgets/messageviewerbase_p.cpp:68
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Message suivant"
 
-#: widgets/messageviewerdialog.cpp:138 widgets/messageviewerdialog.cpp:168
+#: widgets/messageviewerbase_p.cpp:113
+#, kde-format
+msgctxt "window title if email subject is empty"
+msgid "(No Subject)"
+msgstr "(Aucun objet)"
+
+#: widgets/messageviewerbase_p.cpp:150 widgets/messageviewerbase_p.cpp:180
 #, kde-format
 msgctxt "File dialog accepted files"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr ""
-"Fichier EML (*.eml) ; ; fichier MBOX (*.mbox) ; ; fichier MIME (*.mime)"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "Fichiers de courriels (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerdialog.cpp:140 widgets/messageviewerwindow.cpp:191
+#: widgets/messageviewerbase_p.cpp:152
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
 msgstr "Fichiers chiffrés « S / MIME » (*.p7m)"
 
-#: widgets/messageviewerdialog.cpp:144 widgets/messageviewerwindow.cpp:195
+#: widgets/messageviewerbase_p.cpp:156
 #, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr ""
 "Fichier EML (*.eml) ; ; fichier MBOX (*.mbox) ; ; fichier MIME (*.mime)"
 
-#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerwindow.cpp:200
+#: widgets/messageviewerbase_p.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Enregistrer un fichier"
 
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerwindow.cpp:206
+#: widgets/messageviewerbase_p.cpp:167
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Il a été impossible de créer le fichier %1."
 
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerdialog.cpp:172
-#: widgets/messageviewerwindow.cpp:206 widgets/messageviewerwindow.cpp:223
+#: widgets/messageviewerbase_p.cpp:167 widgets/messageviewerbase_p.cpp:184
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Message d'erreur d'enregistrement"
 
-#: widgets/messageviewerdialog.cpp:166 widgets/messageviewerwindow.cpp:217
+#: widgets/messageviewerbase_p.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted File"
 msgstr "Enregistrer le fichier déchiffré"
 
-#: widgets/messageviewerdialog.cpp:172 widgets/messageviewerwindow.cpp:223
+#: widgets/messageviewerbase_p.cpp:184
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
 msgstr "Il a été impossible de créer le fichier %1."
 
-#: widgets/messageviewerdialog.cpp:191 widgets/messageviewerwindow.cpp:242
+#: widgets/messageviewerbase_p.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Imprimer"
 
-#: widgets/messageviewerdialog.cpp:203 widgets/messageviewerwindow.cpp:254
+#: widgets/messageviewerbase_p.cpp:215
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Aperçu avant impression"
 
-#: widgets/messageviewerdialog.cpp:255
+#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:37
 #, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&Fichier"
+
+#: widgets/messageviewerdialog.cpp:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&Navigation"
+
+#: widgets/messageviewerdialog.cpp:96
+#, kde-kuit-format
 msgctxt "@info"
-msgid "Unable to read file"
-msgstr "Impossible de lire le fichier"
+msgid "No messages to display."
+msgstr ""
 
-#: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
-#, kde-format
-msgctxt "window title if email subject is empty"
-msgid "(No Subject)"
-msgstr "(Aucun objet)"
+#: widgets/messageviewerdialog.cpp:98
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Unable to read the file <filename>%1</filename>, or the file doesn't contain "
+"any messages."
+msgstr ""
 
-#: widgets/messageviewerwindow.cpp:117
+#: widgets/messageviewerwindow.cpp:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Message"
 
-#: widgets/messageviewerwindow.cpp:120
+#: widgets/messageviewerwindow.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Afficher la source"
 
-#: widgets/messageviewerwindow.cpp:140
+#: widgets/messageviewerwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Utiliser une police à chasse fixe"
 
-#: widgets/messageviewerwindow.cpp:189 widgets/messageviewerwindow.cpp:219
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Fichiers de courriels (*.eml *.mbox *.mime)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#~ msgstr ""
+#~ "Fichier EML (*.eml) ; ; fichier MBOX (*.mbox) ; ; fichier MIME (*.mime)"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to read file"
+#~ msgstr "Impossible de lire le fichier"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."

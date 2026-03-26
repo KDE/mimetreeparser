@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-26 00:45+0000\n"
 "PO-Revision-Date: 2025-07-28 18:32+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -293,7 +293,7 @@ msgid "sent by %1 on %2"
 msgstr "skickat av %1 %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:145
+#: widgets/messagecontainerwidget.cpp:146
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Brevet är krypterat men du har inte en motsvarande hemlig nyckel."
@@ -303,7 +303,7 @@ msgstr "Brevet är krypterat men du har inte en motsvarande hemlig nyckel."
 msgid "This message is encrypted for: %1"
 msgstr "Brevet är krypterat för: %1"
 
-#: widgets/messagecontainerwidget.cpp:143
+#: widgets/messagecontainerwidget.cpp:144
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -312,17 +312,17 @@ msgstr ""
 "Brevet är krypterat VS-NfD kompatibelt men du har inte en motsvarande hemlig "
 "nyckel."
 
-#: widgets/messagecontainerwidget.cpp:150
+#: widgets/messagecontainerwidget.cpp:151
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Brevet är krypterat VS-NfD kompatibelt."
 
-#: widgets/messagecontainerwidget.cpp:152
+#: widgets/messagecontainerwidget.cpp:153
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Brevet är krypterat."
 
-#: widgets/messagecontainerwidget.cpp:161
+#: widgets/messagecontainerwidget.cpp:162
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Brevet är krypterat för följande mottagare:"
@@ -440,149 +440,158 @@ msgstr "&Dold kopia:"
 msgid "&Date:"
 msgstr "&Datum:"
 
-#: widgets/messageviewerdialog.cpp:86 widgets/messageviewerwindow.cpp:90
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "&Arkiv"
-
-#: widgets/messageviewerdialog.cpp:88 widgets/messageviewerwindow.cpp:92
+#: widgets/messageviewerbase_p.cpp:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Spara"
 
-#: widgets/messageviewerdialog.cpp:94 widgets/messageviewerwindow.cpp:98
+#: widgets/messageviewerbase_p.cpp:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Spara avkrypterad"
 
-#: widgets/messageviewerdialog.cpp:100 widgets/messageviewerwindow.cpp:104
+#: widgets/messageviewerbase_p.cpp:52
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Förhandsgranskning av utskrift"
 
-#: widgets/messageviewerdialog.cpp:106 widgets/messageviewerwindow.cpp:110
+#: widgets/messageviewerbase_p.cpp:57
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Skriv &ut"
 
-#: widgets/messageviewerdialog.cpp:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "&Navigering"
-
-#: widgets/messageviewerdialog.cpp:114 widgets/messageviewerwindow.cpp:147
+#: widgets/messageviewerbase_p.cpp:62
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Föregående brev"
 
-#: widgets/messageviewerdialog.cpp:118 widgets/messageviewerwindow.cpp:151
+#: widgets/messageviewerbase_p.cpp:68
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Nästa brev"
 
-#: widgets/messageviewerdialog.cpp:138 widgets/messageviewerdialog.cpp:168
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "EML-fil (*.eml);;MBOX-fil (*.mbox);;MIME-fil (*.mime)"
-
-#: widgets/messageviewerdialog.cpp:140 widgets/messageviewerwindow.cpp:191
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "Krypterade S/MIME-filer (*.p7m)"
-
-#: widgets/messageviewerdialog.cpp:144 widgets/messageviewerwindow.cpp:195
-#, kde-format
-msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "EML-fil (*.eml);;MBOX-fil (*.mbox);;MIME-fil (*.mime)"
-
-#: widgets/messageviewerdialog.cpp:149 widgets/messageviewerwindow.cpp:200
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "Spara fil"
-
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerwindow.cpp:206
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "Filen %1 kunde inte skapas."
-
-#: widgets/messageviewerdialog.cpp:155 widgets/messageviewerdialog.cpp:172
-#: widgets/messageviewerwindow.cpp:206 widgets/messageviewerwindow.cpp:223
-#, kde-format
-msgctxt "@title:window"
-msgid "Error saving message"
-msgstr "Fel när brev skulle sparas"
-
-#: widgets/messageviewerdialog.cpp:166 widgets/messageviewerwindow.cpp:217
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "Spara avkrypterad fil"
-
-#: widgets/messageviewerdialog.cpp:172 widgets/messageviewerwindow.cpp:223
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "Filen %1 kunde inte skapas."
-
-#: widgets/messageviewerdialog.cpp:191 widgets/messageviewerwindow.cpp:242
-#, kde-format
-msgctxt "@title:window"
-msgid "Print"
-msgstr "Skriv ut"
-
-#: widgets/messageviewerdialog.cpp:203 widgets/messageviewerwindow.cpp:254
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Preview"
-msgstr "Förhandsgranska utskrift"
-
-#: widgets/messageviewerdialog.cpp:255
-#, kde-format
-msgctxt "@info"
-msgid "Unable to read file"
-msgstr "Kan inte läsa filen"
-
-#: widgets/messageviewerwindow.cpp:82 widgets/messageviewerwindow.cpp:172
+#: widgets/messageviewerbase_p.cpp:113
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(Ingen rubrik)"
 
-#: widgets/messageviewerwindow.cpp:117
+#: widgets/messageviewerbase_p.cpp:150 widgets/messageviewerbase_p.cpp:180
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "E-postfiler (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerbase_p.cpp:152
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "Krypterade S/MIME-filer (*.p7m)"
+
+#: widgets/messageviewerbase_p.cpp:156
+#, kde-format
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgstr "EML-fil (*.eml);;MBOX-fil (*.mbox);;MIME-fil (*.mime)"
+
+#: widgets/messageviewerbase_p.cpp:161
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Spara fil"
+
+#: widgets/messageviewerbase_p.cpp:167
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Filen %1 kunde inte skapas."
+
+#: widgets/messageviewerbase_p.cpp:167 widgets/messageviewerbase_p.cpp:184
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "Fel när brev skulle sparas"
+
+#: widgets/messageviewerbase_p.cpp:178
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted File"
+msgstr "Spara avkrypterad fil"
+
+#: widgets/messageviewerbase_p.cpp:184
+#, kde-format
+msgctxt "Error message"
+msgid "File %1 could not be created."
+msgstr "Filen %1 kunde inte skapas."
+
+#: widgets/messageviewerbase_p.cpp:203
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "Skriv ut"
+
+#: widgets/messageviewerbase_p.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "Förhandsgranska utskrift"
+
+#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:37
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&Arkiv"
+
+#: widgets/messageviewerdialog.cpp:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&Navigering"
+
+#: widgets/messageviewerdialog.cpp:96
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No messages to display."
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:98
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Unable to read the file <filename>%1</filename>, or the file doesn't contain "
+"any messages."
+msgstr ""
+
+#: widgets/messageviewerwindow.cpp:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Brev"
 
-#: widgets/messageviewerwindow.cpp:120
+#: widgets/messageviewerwindow.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Visa källa"
 
-#: widgets/messageviewerwindow.cpp:140
+#: widgets/messageviewerwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Använd teckensnitt med fast &breddsteg"
 
-#: widgets/messageviewerwindow.cpp:189 widgets/messageviewerwindow.cpp:219
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "E-postfiler (*.eml *.mbox *.mime)"
+#~ msgctxt "File dialog accepted files"
+#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#~ msgstr "EML-fil (*.eml);;MBOX-fil (*.mbox);;MIME-fil (*.mime)"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to read file"
+#~ msgstr "Kan inte läsa filen"
 
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."
