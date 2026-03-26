@@ -63,21 +63,25 @@ void MessageViewerBasePrivate::createActions(QWidget *parent)
     QObject::connect(saveAction, &QAction::triggered, parent, [parent, this] {
         save(parent);
     });
+    saveAction->setEnabled(false);
 
     saveDecryptedAction = new QAction(QIcon::fromTheme(u"document-save"_s), i18nc("@action:inmenu", "Save Decrypted"), parent);
     QObject::connect(saveDecryptedAction, &QAction::triggered, parent, [parent, this] {
         saveDecrypted(parent);
     });
+    saveDecryptedAction->setEnabled(false);
 
     printPreviewAction = new QAction(QIcon::fromTheme(u"document-print-preview"_s), i18nc("@action:inmenu", "Print Preview"), parent);
     QObject::connect(printPreviewAction, &QAction::triggered, parent, [parent, this] {
         printPreview(parent);
     });
+    printPreviewAction->setEnabled(false);
 
     printAction = new QAction(QIcon::fromTheme(u"document-print"_s), i18nc("@action:inmenu", "&Print"), parent);
     QObject::connect(printAction, &QAction::triggered, parent, [parent, this] {
         print(parent);
     });
+    printAction->setEnabled(false);
 
     previousAction = new QAction(QIcon::fromTheme(u"go-previous"_s), i18nc("@action:button Previous email", "Previous Message"), parent);
     QObject::connect(previousAction, &QAction::triggered, parent, [this] {
@@ -155,6 +159,11 @@ void MessageViewerBasePrivate::updateUI()
         }
         centralWidget->setCurrentIndex(1);
     }
+
+    saveAction->setEnabled(hasMessages);
+    saveDecryptedAction->setEnabled(hasMessages);
+    printPreviewAction->setEnabled(hasMessages);
+    printAction->setEnabled(hasMessages);
 
     toolBar->setVisible(hasMultipleMessages);
     nextAction->setVisible(hasMultipleMessages);
