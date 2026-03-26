@@ -3,7 +3,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../testdata")
-include(${CMAKE_SOURCE_DIR}/cmake/modules/add_gpg_crypto_test.cmake)
+set(GNUPGHOME ${CMAKE_BINARY_DIR}/autotests/gnupg_home)
+add_definitions(-DGNUPGHOME="${GNUPGHOME}")
+include(${LIBKLEO_TEST_MODULE_PATH}/KleoAddGpgCryptoTest.cmake)
 
 ecm_add_test(messageviewerdialogtest.cpp
     LINK_LIBRARIES KPim6MimeTreeParserWidgets Qt::Test
