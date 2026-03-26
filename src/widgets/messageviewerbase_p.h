@@ -59,6 +59,8 @@ public:
     QAction *printAction = nullptr;
     QAction *nextAction = nullptr;
     QAction *previousAction = nullptr;
+    QAction *viewSourceAction = nullptr;
+    QAction *useFixedFontAction = nullptr;
     // the tool bar is created by the constructor
     QToolBar *toolBar = nullptr;
     // the status bar is created by the constructor only if needed, i.e. it can be nullptr
@@ -79,6 +81,7 @@ private:
     void print(QWidget *parent);
     void printPreview(QWidget *parent);
     void printInternal(QPrinter *printer);
+    void viewSource(QWidget *parent);
 
 private:
     int currentIndex = CURRENT_INDEX_NOT_INITIALIZED;

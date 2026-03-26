@@ -45,6 +45,11 @@ QMenuBar *MessageViewerDialog::Private::createMenuBar(QWidget *parent)
     fileMenu->addAction(printPreviewAction);
     fileMenu->addAction(printAction);
 
+    // View menu
+    const auto viewMenu = menuBar->addMenu(i18nc("@action:inmenu", "&View"));
+    viewMenu->addAction(viewSourceAction);
+    viewMenu->addAction(useFixedFontAction);
+
     // Navigation menu
     const auto navigationMenu = menuBar->addMenu(i18nc("@action:inmenu", "&Navigation"));
     navigationMenu->addAction(previousAction);
