@@ -103,7 +103,7 @@ void MessageViewerDialog::initGUI()
                                   style()->pixelMetric(QStyle::PM_LayoutRightMargin, nullptr, this),
                                   style()->pixelMetric(QStyle::PM_LayoutBottomMargin, nullptr, this));
     auto closeButton = buttonBox->addButton(QDialogButtonBox::Close);
-    connect(closeButton, &QPushButton::pressed, this, &QDialog::accept);
+    connect(closeButton, &QPushButton::clicked, this, &QDialog::accept);
     mainLayout->addWidget(buttonBox);
 
     if (d->statusBar) {
