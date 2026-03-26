@@ -387,7 +387,7 @@ public:
     }
 };
 
-void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> message)
+void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
 {
     setUpdatesEnabled(false);
     d->parser.setMessage(message);
