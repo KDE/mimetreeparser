@@ -4,13 +4,16 @@
 
 #include "messageviewerwindow.h"
 
+#include "messageviewer.h"
 #include "messageviewerbase_p.h"
 
 #include <KLocalizedString>
+#include <KMessageWidget>
 
 #include <QDialog>
 #include <QMenuBar>
 #include <QPlainTextEdit>
+#include <QStackedWidget>
 #include <QToolBar>
 #include <QVBoxLayout>
 
@@ -88,8 +91,11 @@ void MessageViewerWindow::Private::updateUI()
 
     if (!messages.isEmpty()) {
         setCurrentIndex(0);
+        centralWidget->setCurrentIndex(0);
     } else {
         currentIndex = 0;
+        errorMessage->setText(xi18nc("@info", "No messages to display."));
+        centralWidget->setCurrentIndex(1);
     }
 }
 
@@ -115,8 +121,7 @@ void MessageViewerWindow::initGUI()
     d->toolBar->setFloatable(false);
     d->toolBar->setMovable(false);
 
-    d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
-    setCentralWidget(d->messageViewer);
+    setCentralWidget(d->centralWidget);
 
     setStatusBar(d->statusBar);
 

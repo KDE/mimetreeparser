@@ -4,6 +4,7 @@
 
 #include "messageviewerbase_p.h"
 
+#include "messageviewer.h"
 #include "messageviewerutils_p.h"
 
 #include <MimeTreeParserCore/CryptoHelper>
@@ -13,6 +14,7 @@
 #include <KColorScheme>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KMessageWidget>
 
 #include <QApplication>
 #include <QFileDialog>
@@ -22,8 +24,10 @@
 #include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QSaveFile>
+#include <QStackedWidget>
 #include <QStatusBar>
 #include <QToolBar>
+#include <QVBoxLayout>
 
 #include <gpgme++/global.h>
 
@@ -35,6 +39,19 @@ MessageViewerBasePrivate::MessageViewerBasePrivate(QWidget *qq)
 {
     createActions(q);
     createStatusBar(q);
+    centralWidget = new QStackedWidget(q);
+    messageViewer = new MimeTreeParser::Widgets::MessageViewer(q);
+    centralWidget->addWidget(messageViewer);
+    auto errorPage = new QWidget(q);
+    auto errorLayout = new QVBoxLayout(errorPage);
+    errorLayout->addStretch();
+    errorMessage = new KMessageWidget(q);
+    errorMessage->setMessageType(KMessageWidget::Error);
+    errorMessage->setCloseButtonVisible(false);
+    errorMessage->setWordWrap(true);
+    errorLayout->addWidget(errorMessage);
+    errorLayout->addStretch();
+    centralWidget->addWidget(errorPage);
 }
 
 void MessageViewerBasePrivate::createActions(QWidget *parent)

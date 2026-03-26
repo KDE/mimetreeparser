@@ -15,6 +15,7 @@
 #include <QDialogButtonBox>
 #include <QMenuBar>
 #include <QPushButton>
+#include <QStackedWidget>
 #include <QStatusBar>
 #include <QStyle>
 #include <QToolBar>
@@ -76,8 +77,6 @@ void MessageViewerDialog::initGUI()
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
-    const auto layout = new QVBoxLayout;
-
     const auto menuBar = d->createMenuBar(this);
     mainLayout->setMenuBar(menuBar);
 
@@ -87,23 +86,16 @@ void MessageViewerDialog::initGUI()
         d->toolBar->hide();
     }
 
-    mainLayout->addLayout(layout);
+    mainLayout->addWidget(d->centralWidget);
 
     if (d->messages.isEmpty()) {
-        auto errorMessage = new KMessageWidget(this);
-        errorMessage->setMessageType(KMessageWidget::Error);
         if (d->fileName.isEmpty()) {
-            errorMessage->setText(xi18nc("@info", "No messages to display."));
+            d->errorMessage->setText(xi18nc("@info", "No messages to display."));
         } else {
-            errorMessage->setText(xi18nc("@info", "Unable to read the file <filename>%1</filename>, or the file doesn't contain any messages.", d->fileName));
+            d->errorMessage->setText(
+                xi18nc("@info", "Unable to read the file <filename>%1</filename>, or the file doesn't contain any messages.", d->fileName));
         }
-        errorMessage->setWordWrap(true);
-        errorMessage->setCloseButtonVisible(false);
-        layout->addWidget(errorMessage);
-        layout->addStretch();
-    } else {
-        d->messageViewer = new MimeTreeParser::Widgets::MessageViewer(this);
-        layout->addWidget(d->messageViewer);
+        d->centralWidget->setCurrentIndex(1);
     }
 
     auto buttonBox = new QDialogButtonBox(this);
@@ -113,12 +105,12 @@ void MessageViewerDialog::initGUI()
                                   style()->pixelMetric(QStyle::PM_LayoutBottomMargin, nullptr, this));
     auto closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     connect(closeButton, &QPushButton::pressed, this, &QDialog::accept);
-    layout->addWidget(buttonBox);
+    mainLayout->addWidget(buttonBox);
 
     if (d->statusBar) {
         auto separator = new KSeparator(Qt::Horizontal, this);
-        layout->addWidget(separator);
-        layout->addWidget(d->statusBar);
+        mainLayout->addWidget(separator);
+        mainLayout->addWidget(d->statusBar);
     }
 
     setMinimumSize(300, 300);
