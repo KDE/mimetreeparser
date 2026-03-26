@@ -4,16 +4,28 @@
 
 #pragma once
 
-#include "messageviewer.h"
-
 #include <QList>
 
+#include <memory>
+
+class KMessageWidget;
 class QAction;
 class QMenuBar;
 class QPrinter;
+class QStackedWidget;
 class QStatusBar;
 class QToolBar;
 class QWidget;
+
+namespace KMime
+{
+class Message;
+}
+
+namespace MimeTreeParser::Widgets
+{
+class MessageViewer;
+}
 
 class MessageViewerBasePrivate
 {
@@ -24,7 +36,9 @@ public:
     int currentIndex = 0;
     QList<std::shared_ptr<KMime::Message>> messages;
     QString fileName;
+    QStackedWidget *centralWidget = nullptr;
     MimeTreeParser::Widgets::MessageViewer *messageViewer = nullptr;
+    KMessageWidget *errorMessage = nullptr;
     QAction *saveAction = nullptr;
     QAction *saveDecryptedAction = nullptr;
     QAction *printPreviewAction = nullptr;
