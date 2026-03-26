@@ -48,7 +48,7 @@ public:
      * \brief Sets the message to display
      * \param message The message to display
      */
-    void setMessage(const std::shared_ptr<KMime::Message> message);
+    void setMessage(const std::shared_ptr<KMime::Message> &message);
 
     /*!
      * \brief Returns whether a fixed width font is used
