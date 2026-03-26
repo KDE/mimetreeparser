@@ -153,6 +153,7 @@ void MessageViewerBasePrivate::setCurrentIndex(int index)
         q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
     } else if (index == CURRENT_INDEX_NO_MESSAGES) {
         currentIndex = index;
+        messageViewer->setMessage({});
 
         previousAction->setEnabled(false);
         nextAction->setEnabled(false);
