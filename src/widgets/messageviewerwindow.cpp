@@ -49,6 +49,9 @@ QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
     auto viewRawAction = new QAction(QIcon::fromTheme(u"format-text-code-symbolic"_s), i18nc("@action:button", "View Source"));
     QObject::connect(viewRawAction, &QAction::triggered, parent, [this, parent]() {
         const auto message = messageViewer->message();
+        if (!message) {
+            return;
+        }
         const auto content = message->encodedContent();
 
         auto dialog = new QDialog(parent);

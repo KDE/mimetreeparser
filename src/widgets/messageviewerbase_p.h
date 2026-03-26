@@ -65,6 +65,8 @@ public:
     QStatusBar *statusBar = nullptr;
 
 private:
+    std::shared_ptr<KMime::Message> currentMessage() const;
+
     void setCurrentIndex(int currentIndex);
     void updateUI();
 
