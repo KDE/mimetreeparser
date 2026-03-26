@@ -20,6 +20,7 @@
 #include <QFileDialog>
 #include <QLabel>
 #include <QPainter>
+#include <QPlainTextEdit>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QPrinter>
@@ -94,6 +95,19 @@ void MessageViewerBasePrivate::createActions(QWidget *parent)
         setCurrentIndex(currentIndex + 1);
     });
     nextAction->setEnabled(false);
+
+    viewSourceAction = new QAction(QIcon::fromTheme(u"format-text-code-symbolic"_s), i18nc("@action:button", "View Source"));
+    QObject::connect(viewSourceAction, &QAction::triggered, parent, [parent, this]() {
+        viewSource(parent);
+    });
+    viewSourceAction->setEnabled(false);
+
+    useFixedFontAction = new QAction(i18nc("@action:button", "Use Fixed Font"), parent);
+    useFixedFontAction->setCheckable(true);
+    QObject::connect(useFixedFontAction, &QAction::toggled, parent, [this](bool checked) {
+        messageViewer->setFixedFont(checked);
+    });
+    useFixedFontAction->setEnabled(false);
 }
 
 void MessageViewerBasePrivate::createStatusBar(QWidget *parent)
@@ -169,6 +183,8 @@ void MessageViewerBasePrivate::updateUI()
     saveDecryptedAction->setEnabled(hasMessages);
     printPreviewAction->setEnabled(hasMessages);
     printAction->setEnabled(hasMessages);
+    viewSourceAction->setEnabled(hasMessages);
+    useFixedFontAction->setEnabled(hasMessages);
 
     toolBar->setVisible(hasMultipleMessages);
     nextAction->setVisible(hasMultipleMessages);
@@ -294,8 +310,9 @@ void MessageViewerBasePrivate::print(QWidget *parent)
     QPrinter printer;
     QPrintDialog dialog(&printer, parent);
     dialog.setWindowTitle(i18nc("@title:window", "Print"));
-    if (dialog.exec() != QDialog::Accepted)
+    if (dialog.exec() != QDialog::Accepted) {
         return;
+    }
 
     printInternal(&printer);
 }
@@ -328,4 +345,25 @@ void MessageViewerBasePrivate::printInternal(QPrinter *printer)
     painter.translate(pageRect.x(), pageRect.y());
     painter.scale(scale, scale);
     messageViewer->print(&painter, pageRect.width());
+}
+
+void MessageViewerBasePrivate::viewSource(QWidget *parent)
+{
+    const auto message = messageViewer->message();
+    if (!message) {
+        return;
+    }
+
+    auto dialog = new QDialog(parent);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    auto layout = new QVBoxLayout(dialog);
+    layout->setContentsMargins({});
+    auto plainTextEdit = new QPlainTextEdit;
+    plainTextEdit->setReadOnly(true);
+    plainTextEdit->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+    plainTextEdit->appendPlainText(QString::fromUtf8(message->encodedContent()));
+    layout->addWidget(plainTextEdit);
+    const QFontMetrics metrics(plainTextEdit->font());
+    dialog->setMinimumSize(80 * metrics.averageCharWidth() + 20, 500);
+    dialog->show();
 }

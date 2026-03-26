@@ -4,18 +4,14 @@
 
 #include "messageviewerwindow.h"
 
-#include "messageviewer.h"
 #include "messageviewerbase_p.h"
 
 #include <KLocalizedString>
 #include <KMessageWidget>
 
-#include <QDialog>
 #include <QMenuBar>
-#include <QPlainTextEdit>
 #include <QStackedWidget>
 #include <QToolBar>
-#include <QVBoxLayout>
 
 using namespace MimeTreeParser::Widgets;
 using namespace Qt::StringLiterals;
@@ -45,37 +41,8 @@ QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
     // Message menu
     const auto messageMenu = menuBar->addMenu(i18nc("@action:inmenu", "&Message"));
     messageMenu->setObjectName("messageMenu"); // gpgol.js relies on this. Don't remove!
-
-    auto viewRawAction = new QAction(QIcon::fromTheme(u"format-text-code-symbolic"_s), i18nc("@action:button", "View Source"));
-    QObject::connect(viewRawAction, &QAction::triggered, parent, [this, parent]() {
-        const auto message = messageViewer->message();
-        if (!message) {
-            return;
-        }
-        const auto content = message->encodedContent();
-
-        auto dialog = new QDialog(parent);
-        auto layout = new QVBoxLayout(dialog);
-        layout->setContentsMargins({});
-        auto plainTextEdit = new QPlainTextEdit;
-        plainTextEdit->setReadOnly(true);
-        plainTextEdit->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
-        plainTextEdit->appendPlainText(QString::fromUtf8(content));
-        layout->addWidget(plainTextEdit);
-        dialog->setAttribute(Qt::WA_DeleteOnClose);
-        QFontMetrics metrics(plainTextEdit->font());
-        dialog->setMinimumSize(80 * metrics.averageCharWidth() + 20, 500);
-        dialog->show();
-    });
-    messageMenu->addAction(viewRawAction);
-
-    auto fixedFontAction = new QAction(i18nc("@action:button", "Use Fixed Font"), parent);
-    fixedFontAction->setCheckable(true);
-    QObject::connect(fixedFontAction, &QAction::toggled, parent, [this](bool checked) {
-        messageViewer->setFixedFont(checked);
-    });
-    messageMenu->addAction(fixedFontAction);
-
+    messageMenu->addAction(viewSourceAction);
+    messageMenu->addAction(useFixedFontAction);
     messageMenu->addAction(previousAction);
     messageMenu->addAction(nextAction);
 
