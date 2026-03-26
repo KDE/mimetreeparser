@@ -31,6 +31,8 @@
 
 #include <gpgme++/global.h>
 
+#include <mimetreeparser_widgets_debug.h>
+
 using namespace MimeTreeParser;
 using namespace Qt::Literals::StringLiterals;
 
@@ -114,21 +116,67 @@ void MessageViewerBasePrivate::createStatusBar(QWidget *parent)
 
 void MessageViewerBasePrivate::setCurrentIndex(int index)
 {
-    Q_ASSERT(index >= 0);
-    Q_ASSERT(index < messages.count());
+    Q_ASSERT(index >= 0 || index == CURRENT_INDEX_NO_MESSAGES);
+    Q_ASSERT(index < messages.size());
 
-    if (index < 0 || index >= messages.size()) {
-        return;
+    if (index >= 0 && index < messages.size()) {
+        currentIndex = index;
+        messageViewer->setMessage(messages[currentIndex]);
+
+        previousAction->setEnabled(currentIndex != 0);
+        nextAction->setEnabled(currentIndex != messages.size() - 1);
+
+        const QString subject = messageViewer->subject();
+        q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
+    } else if (index == CURRENT_INDEX_NO_MESSAGES) {
+        currentIndex = index;
+
+        previousAction->setEnabled(false);
+        nextAction->setEnabled(false);
+
+        q->setWindowTitle(i18nc("@title:window if there's no email to display", "(No Message)"));
+    } else {
+        qCWarning(MIMETREEPARSER_WIDGET_LOG) << __func__ << "called with invalid index" << index;
+    }
+}
+
+void MessageViewerBasePrivate::updateUI()
+{
+    const bool hasMessages = !messages.empty();
+    const bool hasMultipleMessages = messages.size() > 1;
+
+    if (hasMessages) {
+        centralWidget->setCurrentIndex(0);
+    } else {
+        if (fileName.isEmpty()) {
+            errorMessage->setText(xi18nc("@info", "No messages to display."));
+        } else {
+            errorMessage->setText(xi18nc("@info", "Unable to read the file <filename>%1</filename>, or the file doesn't contain any messages.", fileName));
+        }
+        centralWidget->setCurrentIndex(1);
     }
 
-    currentIndex = index;
-    messageViewer->setMessage(messages[currentIndex]);
+    toolBar->setVisible(hasMultipleMessages);
+    nextAction->setVisible(hasMultipleMessages);
+    previousAction->setVisible(hasMultipleMessages);
+}
 
-    previousAction->setEnabled(currentIndex != 0);
-    nextAction->setEnabled(currentIndex != messages.count() - 1);
+bool MessageViewerBasePrivate::setMessages(const QList<std::shared_ptr<KMime::Message>> &newMessages)
+{
+    if ((messages == newMessages) && currentIndex != CURRENT_INDEX_NOT_INITIALIZED) {
+        return false;
+    }
+    messages = newMessages;
 
-    const QString subject = messageViewer->subject();
-    q->setWindowTitle(subject.isEmpty() ? i18nc("window title if email subject is empty", "(No Subject)") : subject);
+    updateUI();
+
+    if (!messages.isEmpty()) {
+        setCurrentIndex(0);
+    } else {
+        setCurrentIndex(CURRENT_INDEX_NO_MESSAGES);
+    }
+
+    return true;
 }
 
 void MessageViewerBasePrivate::createToolBar(QWidget *parent)

@@ -29,7 +29,6 @@ public:
     }
 
     QMenuBar *createMenuBar(QWidget *parent);
-    void updateUI();
 };
 
 QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
@@ -80,33 +79,11 @@ QMenuBar *MessageViewerWindow::Private::createMenuBar(QWidget *parent)
     return menuBar;
 }
 
-void MessageViewerWindow::Private::updateUI()
-{
-    const bool multipleMessages = messages.length() > 1;
-    toolBar->setVisible(multipleMessages);
-    nextAction->setEnabled(multipleMessages);
-    nextAction->setVisible(multipleMessages);
-    previousAction->setEnabled(multipleMessages);
-    previousAction->setVisible(multipleMessages);
-
-    if (!messages.isEmpty()) {
-        setCurrentIndex(0);
-        centralWidget->setCurrentIndex(0);
-    } else {
-        currentIndex = 0;
-        errorMessage->setText(xi18nc("@info", "No messages to display."));
-        centralWidget->setCurrentIndex(1);
-    }
-}
-
 MessageViewerWindow::MessageViewerWindow(QWidget *parent)
     : QMainWindow(parent)
     , d(std::make_unique<Private>(this))
 {
     initGUI();
-    connect(this, &MessageViewerWindow::messagesChanged, this, [this]() {
-        d->updateUI();
-    });
 }
 
 void MessageViewerWindow::initGUI()
@@ -135,16 +112,14 @@ QToolBar *MessageViewerWindow::toolBar() const
 
 QList<std::shared_ptr<KMime::Message>> MessageViewerWindow::messages() const
 {
-    return d->messages;
+    return d->getMessages();
 }
 
 void MessageViewerWindow::setMessages(const QList<std::shared_ptr<KMime::Message>> &messages)
 {
-    if (d->messages == messages) {
-        return;
+    if (d->setMessages(messages)) {
+        Q_EMIT messagesChanged();
     }
-    d->messages = messages;
-    Q_EMIT messagesChanged();
 }
 
 #include "moc_messageviewerwindow.cpp"
