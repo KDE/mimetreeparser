@@ -118,6 +118,11 @@ void MessageViewerBasePrivate::createStatusBar(QWidget *parent)
     }
 }
 
+std::shared_ptr<KMime::Message> MessageViewerBasePrivate::currentMessage() const
+{
+    return messages.empty() ? std::shared_ptr<KMime::Message>{} : messageViewer->message();
+}
+
 void MessageViewerBasePrivate::setCurrentIndex(int index)
 {
     Q_ASSERT(index >= 0 || index == CURRENT_INDEX_NO_MESSAGES);
@@ -212,9 +217,13 @@ void MessageViewerBasePrivate::createToolBar(QWidget *parent)
 
 void MessageViewerBasePrivate::save(QWidget *parent)
 {
+    auto message = currentMessage();
+    if (!message) {
+        return;
+    }
+
     QString extension;
     QString alternatives;
-    auto message = messages[currentIndex];
     bool wasEncrypted = false;
     GpgME::Protocol protocol;
     auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
@@ -243,12 +252,17 @@ void MessageViewerBasePrivate::save(QWidget *parent)
         KMessageBox::error(parent, i18n("File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
         return;
     }
-    file.write(messages[currentIndex]->encodedContent());
+    file.write(message->encodedContent());
     file.commit();
 }
 
 void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
 {
+    auto message = currentMessage();
+    if (!message) {
+        return;
+    }
+
     const QString location =
         QFileDialog::getSaveFileName(parent,
                                      i18nc("@title:window", "Save Decrypted File"),
@@ -260,7 +274,6 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
         KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
         return;
     }
-    auto message = messages[currentIndex];
     bool wasEncrypted = false;
     GpgME::Protocol protocol;
     auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
@@ -274,6 +287,10 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
 
 void MessageViewerBasePrivate::print(QWidget *parent)
 {
+    if (!currentMessage()) {
+        return;
+    }
+
     QPrinter printer;
     QPrintDialog dialog(&printer, parent);
     dialog.setWindowTitle(i18nc("@title:window", "Print"));
@@ -285,6 +302,10 @@ void MessageViewerBasePrivate::print(QWidget *parent)
 
 void MessageViewerBasePrivate::printPreview(QWidget *parent)
 {
+    if (!currentMessage()) {
+        return;
+    }
+
     auto dialog = new QPrintPreviewDialog(parent);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->resize(800, 750);
