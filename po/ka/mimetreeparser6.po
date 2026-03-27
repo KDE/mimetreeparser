@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 00:45+0000\n"
-"PO-Revision-Date: 2026-02-20 06:09+0100\n"
+"PO-Revision-Date: 2026-03-26 07:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -556,7 +556,7 @@ msgstr "&ნავიგაცია"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "საჩვენებელი შეტყობინებების გარეშე."
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-kuit-format
@@ -565,6 +565,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"ფაილის <filename>%1</filename> წაკითხვა შეუძლებელია, ან ის შეტყობინებებს არ "
+"შეიცავს."
 
 #: widgets/messageviewerwindow.cpp:44
 #, kde-format

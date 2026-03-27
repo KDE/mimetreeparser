@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 00:45+0000\n"
-"PO-Revision-Date: 2026-02-20 12:37+0100\n"
+"PO-Revision-Date: 2026-03-26 06:38+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -563,7 +563,7 @@ msgstr "&Navigacija"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Ni sporočil za prikaz."
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-kuit-format
@@ -572,6 +572,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Ni mogoče prebrati datoteke <filename>%1</filename> ali pa datoteka ne "
+"vsebuje nobenih sporočil."
 
 #: widgets/messageviewerwindow.cpp:44
 #, kde-format

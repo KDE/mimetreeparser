@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 00:45+0000\n"
-"PO-Revision-Date: 2026-02-20 13:15+0100\n"
+"PO-Revision-Date: 2026-03-26 11:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -559,7 +559,7 @@ msgstr "&Navegueu"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "No hi ha cap missatge que s'haja de mostrar."
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-kuit-format
@@ -568,6 +568,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"No s'ha pogut llegir el fitxer <filename>%1</filename>, o el fitxer no conté "
+"cap missatge."
 
 #: widgets/messageviewerwindow.cpp:44
 #, kde-format
@@ -586,11 +588,3 @@ msgstr "Mostra el codi font"
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Utilitza una lletra d'amplària fixa"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "No s'ha pogut llegir el fitxer"

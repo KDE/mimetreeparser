@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 00:45+0000\n"
-"PO-Revision-Date: 2026-02-21 00:44+0100\n"
+"PO-Revision-Date: 2026-03-26 11:54+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -560,7 +560,7 @@ msgstr "&Navegación"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "No hay mensajes para mostrar."
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-kuit-format
@@ -569,6 +569,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"No se ha podido leer el archivo <filename>%1</filename> o el archivo no "
+"contiene mensajes."
 
 #: widgets/messageviewerwindow.cpp:44
 #, kde-format
@@ -587,11 +589,3 @@ msgstr "Ver fuente"
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Usar tipo de letra de ancho fijo"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "No se ha podido leer el archivo"

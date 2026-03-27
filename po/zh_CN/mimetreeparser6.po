@@ -577,7 +577,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr ""
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "无法读取文件"
