@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 00:45+0000\n"
-"PO-Revision-Date: 2026-02-20 13:46+0100\n"
+"PO-Revision-Date: 2026-03-26 13:36+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -557,7 +557,7 @@ msgstr "&Navigatie"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Geen berichten te tonen."
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-kuit-format
@@ -566,6 +566,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Het bestand <filename>%1</filename> kan niet worden gelezen of het bestand "
+"bevat geen berichten."
 
 #: widgets/messageviewerwindow.cpp:44
 #, kde-format

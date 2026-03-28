@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 00:45+0000\n"
-"PO-Revision-Date: 2026-03-07 23:44+0200\n"
+"PO-Revision-Date: 2026-03-27 19:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -565,7 +565,7 @@ msgstr "&Naršymas"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Nėra laiškų, kuriuos rodyti."
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-kuit-format
@@ -574,6 +574,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Nepavyko perskaityti failo <filename>%1</filename> arba faile nėra jokių "
+"laiškų."
 
 #: widgets/messageviewerwindow.cpp:44
 #, kde-format
