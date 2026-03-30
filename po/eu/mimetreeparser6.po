@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 00:45+0000\n"
-"PO-Revision-Date: 2026-03-20 09:29+0100\n"
+"PO-Revision-Date: 2026-03-29 21:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -561,7 +561,7 @@ msgstr "&Nabigatzea"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Ez dago erakusteko mezurik."
 
 #: widgets/messageviewerdialog.cpp:98
 #, kde-kuit-format
@@ -570,6 +570,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Ezin du <filename>%1</filename> fitxategia irakurri, edo fitxategiak ez du "
+"mezurik."
 
 #: widgets/messageviewerwindow.cpp:44
 #, kde-format
