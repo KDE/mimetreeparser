@@ -13,6 +13,7 @@
 #include <Libkleo/Compliance>
 #include <Libkleo/Formatting>
 #include <Libkleo/KeyCache>
+#include <Libkleo/KeyHelpers>
 
 #include <QDebug>
 #include <QGpgME/Protocol>
@@ -377,6 +378,21 @@ const T *findHeader(const KMime::Content *content)
     return findHeader<T>(content->parent());
 }
 
+static GpgME::UserID bestUserIDByFrom(const GpgME::Key &key, MimeTreeParser::MessagePart *messagePart)
+{
+    QStringList emails;
+    auto from = findHeader<KMime::Headers::From>(messagePart->node());
+    if (from) {
+        const auto mailboxes = from->mailboxes();
+        for (const auto &mailBox : mailboxes) {
+            if (mailBox.hasAddress()) {
+                emails.append(QString::fromUtf8(mailBox.address()));
+            }
+        }
+    }
+    return Kleo::mostValidUserID(Kleo::findUserIDsByMailbox(key, emails));
+}
+
 PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::MessagePart *messagePart)
 {
     auto signature = signatureFromMessagePart(messagePart);
@@ -389,10 +405,10 @@ PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::Messa
     if (summary & GpgME::Signature::Summary::Red) {
         return SecurityLevel::Bad;
     }
-    if (summary & GpgME::Signature::Summary::Valid) {
+    if ((summary & GpgME::Signature::Summary::Valid)
+        && (bestUserIDByFrom(Kleo::KeyCache::instance()->findSigner(*signature), messagePart).validity() >= GpgME::UserID::Validity::Full)) {
         return SecurityLevel::Good;
     }
-
     return SecurityLevel::NotSoGood;
 }
 
@@ -403,18 +419,15 @@ QString PartModel::signatureDetails(MimeTreeParser::MessagePart *messagePart)
         return QString{};
     }
 
-    // guess sender from mime node or parent node
-    auto from = findHeader<KMime::Headers::From>(messagePart->node());
-    if (from) {
-        const auto mailboxes = from->mailboxes();
-        if (!mailboxes.isEmpty()) {
-            auto mailBox = mailboxes.front();
-            if (mailBox.hasAddress()) {
-                return Kleo::Formatting::prettySignature(*signature, QString::fromUtf8(mailboxes.front().address()));
-            }
-        }
+    const auto key = Kleo::KeyCache::instance()->findSigner(*signature);
+    const auto senderID = bestUserIDByFrom(key, messagePart);
+    if (senderID.validity() != Kleo::mostValidUserID(key.userIDs()).validity()) {
+        return i18n(
+                   "<strong>Note:</strong> Showing signature validity based on the trust that the signing key actually belongs to the sender of this email. "
+                   "However, some user IDs associated with the signing key have higher trust.<br>")
+            + Kleo::Formatting::prettySignatureByUserID(*signature, senderID);
     }
-    return Kleo::Formatting::prettySignature(*signature, {});
+    return Kleo::Formatting::prettySignatureByUserID(*signature, senderID);
 }
 
 QVariant PartModel::data(const QModelIndex &index, int role) const
