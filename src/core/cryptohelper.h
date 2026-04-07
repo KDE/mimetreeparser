@@ -77,6 +77,9 @@ public:
 namespace CryptoUtils
 {
 [[nodiscard]] MIMETREEPARSER_CORE_EXPORT std::shared_ptr<KMime::Message>
+decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, GpgME::Protocol &protoName, GpgME::Error &error);
+
+[[nodiscard]] MIMETREEPARSER_CORE_EXPORT std::shared_ptr<KMime::Message>
 decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, GpgME::Protocol &protoName);
 }
 

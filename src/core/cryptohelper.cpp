@@ -228,7 +228,8 @@ void copyHeader(const KMime::Headers::Base *header, std::shared_ptr<KMime::Messa
 }
 }
 
-std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_ptr<KMime::Message> &msg, bool &wasEncrypted, GpgME::Protocol &protoName)
+std::shared_ptr<KMime::Message>
+CryptoUtils::decryptMessage(const std::shared_ptr<KMime::Message> &msg, bool &wasEncrypted, GpgME::Protocol &protoName, GpgME::Error &error)
 {
     protoName = GpgME::UnknownProtocol;
     bool multipart = false;
@@ -263,9 +264,11 @@ std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_pt
                     if (decryptResult.error()) {
                         // unknown key, invalid algo, or general error
                         qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << Kleo::Formatting::errorAsString(decryptResult.error());
+                        error = decryptResult.error();
                         return {};
                     } else if (verifyResult.error()) {
                         qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to verify:" << Kleo::Formatting::errorAsString(verifyResult.error());
+                        error = verifyResult.error();
                         return {};
                     }
 
@@ -287,6 +290,7 @@ std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_pt
     if (protoName == GpgME::UnknownProtocol) {
         wasEncrypted = false;
         qCWarning(MIMETREEPARSER_CORE_LOG) << "Not encrypted, or we don't recognize the encryption";
+        error = GpgME::Error::fromCode(GPG_ERR_NOT_ENCRYPTED);
         return {};
     }
 
@@ -300,6 +304,7 @@ std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_pt
     if (result.error()) {
         // unknown key, invalid algo, or general error
         qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << Kleo::Formatting::errorAsString(result.error());
+        error = result.error();
         return {};
     }
 
@@ -309,4 +314,10 @@ std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_pt
     decCt.assemble();
 
     return assembleMessage(msg, &decCt);
+}
+
+std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_ptr<KMime::Message> &msg, bool &wasEncrypted, GpgME::Protocol &protoName)
+{
+    GpgME::Error error;
+    return CryptoUtils::decryptMessage(msg, wasEncrypted, protoName, error);
 }
