@@ -198,10 +198,6 @@ MessageViewer::MessageViewer(QWidget *parent)
         d->showContextMenu();
     });
 
-    connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
-        d->selectionChanged();
-    });
-
     connect(d->attachmentView, &QAbstractItemView::doubleClicked, this, [this](const QModelIndex &) {
         // Since this is only emitted if a valid index is double clicked we can assume
         // that the first click of the double click set the selection accordingly.
@@ -445,6 +441,9 @@ void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
     d->layout->addStretch();
 
     d->attachmentView->setModel(d->parser ? d->parser->attachments() : nullptr);
+    connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
+        d->selectionChanged();
+    });
     d->attachmentView->setVisible(d->parser && (d->parser->attachments()->rowCount() > 0));
 
     setUpdatesEnabled(true);
