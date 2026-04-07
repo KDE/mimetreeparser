@@ -234,6 +234,28 @@ void MessageViewerBasePrivate::createToolBar(QWidget *parent)
     toolBar->hide();
 }
 
+static void saveMessage(QWidget *parent, const QString &title, const QString &fileName, const QString &filter, const QByteArray &data)
+{
+    while (true) {
+        const QString location = QFileDialog::getSaveFileName(parent, title, fileName, filter);
+        if (location.isEmpty()) {
+            break;
+        }
+
+        QSaveFile file(location);
+        if (!file.open(QIODevice::WriteOnly)) {
+            KMessageBox::error(parent, i18nc("@info", "File %1 could not be created.", location), i18nc("@title:window", "Error Saving Message"));
+            // ask user for another location
+            continue;
+        }
+        file.write(data);
+        if (!file.commit()) {
+            KMessageBox::error(parent, i18nc("@info", "File %1 could not be written.", location), i18nc("@title:window", "Error Saving Message"));
+        }
+        break;
+    }
+}
+
 void MessageViewerBasePrivate::save(QWidget *parent)
 {
     auto message = currentMessage();
@@ -260,19 +282,11 @@ void MessageViewerBasePrivate::save(QWidget *parent)
         alternatives = i18nc("Accepted files in a file dialog. You only need to translate 'file'", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
     }
 
-    const QString location =
-        QFileDialog::getSaveFileName(parent,
-                                     i18nc("@title:window", "Save File"),
-                                     MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), extension),
-                                     alternatives);
-
-    QSaveFile file(location);
-    if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18n("File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
-        return;
-    }
-    file.write(message->encodedContent());
-    file.commit();
+    saveMessage(parent,
+                i18nc("@title:window", "Save Message"),
+                MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), extension),
+                alternatives,
+                message->encodedContent());
 }
 
 void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
@@ -301,20 +315,12 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
         wasEncrypted = false;
         decryptedMessage = message;
     }
-    const QString title = wasEncrypted ? i18nc("@title:window", "Save Decrypted Message") : i18nc("@title:window", "Save Message");
-    const QString location =
-        QFileDialog::getSaveFileName(parent,
-                                     title,
-                                     MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
-                                     i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"));
 
-    QSaveFile file(location);
-    if (!file.open(QIODevice::WriteOnly)) {
-        KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
-        return;
-    }
-    file.write(decryptedMessage->encodedContent());
-    file.commit();
+    saveMessage(parent,
+                wasEncrypted ? i18nc("@title:window", "Save Decrypted Message") : i18nc("@title:window", "Save Message"),
+                MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
+                i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"),
+                decryptedMessage->encodedContent());
 }
 
 void MessageViewerBasePrivate::print(QWidget *parent)
