@@ -10,6 +10,7 @@
 #include <MimeTreeParserCore/CryptoHelper>
 
 #include <Libkleo/Compliance>
+#include <Libkleo/Formatting>
 
 #include <KColorScheme>
 #include <KLocalizedString>
@@ -30,6 +31,7 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 
+#include <gpgme++/error.h>
 #include <gpgme++/global.h>
 
 #include <mimetreeparser_widgets_debug.h>
@@ -280,9 +282,29 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
         return;
     }
 
+    bool wasEncrypted = false;
+    GpgME::Protocol protocol;
+    GpgME::Error error;
+    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol, error);
+    if (error.isCanceled()) {
+        return;
+    }
+    if (!wasEncrypted) {
+        KMessageBox::information(parent, i18nc("@info", "The message doesn't seem to be encrypted. Saving the original message."));
+        decryptedMessage = message;
+    } else if (error) {
+        KMessageBox::error(parent, i18nc("@info", "Failed to decrypt the message: %1", Kleo::Formatting::errorAsString(error)));
+        return;
+    } else if (!decryptedMessage) {
+        // shouldn't happen, but better safe than crash
+        KMessageBox::information(parent, i18nc("@info", "Failed to decrypt the message. Saving the original (encrypted?) message."));
+        wasEncrypted = false;
+        decryptedMessage = message;
+    }
+    const QString title = wasEncrypted ? i18nc("@title:window", "Save Decrypted Message") : i18nc("@title:window", "Save Message");
     const QString location =
         QFileDialog::getSaveFileName(parent,
-                                     i18nc("@title:window", "Save Decrypted File"),
+                                     title,
                                      MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
                                      i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"));
 
@@ -291,14 +313,7 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
         KMessageBox::error(parent, i18nc("Error message", "File %1 could not be created.", location), i18nc("@title:window", "Error saving message"));
         return;
     }
-    bool wasEncrypted = false;
-    GpgME::Protocol protocol;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
-    if (!wasEncrypted) {
-        decryptedMessage = message;
-    }
     file.write(decryptedMessage->encodedContent());
-
     file.commit();
 }
 
