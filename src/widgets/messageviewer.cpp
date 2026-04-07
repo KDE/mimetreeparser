@@ -83,25 +83,6 @@ public:
         });
     }
 
-    void ensureParserExists()
-    {
-        if (parser) {
-            return;
-        }
-        parser = new MessageParser{q};
-        connect(parser->attachments(), &AttachmentModel::info, q, [this](const QString &message) {
-            messageWidget->setMessageType(KMessageWidget::Information);
-            messageWidget->setText(message);
-            messageWidget->animatedShow();
-        });
-
-        connect(parser->attachments(), &AttachmentModel::errorOccurred, q, [this](const QString &message) {
-            messageWidget->setMessageType(KMessageWidget::Error);
-            messageWidget->setText(message);
-            messageWidget->animatedShow();
-        });
-    }
-
     void openSelectedAttachments();
     void saveSelectedAttachments();
     void selectionChanged();
@@ -402,8 +383,22 @@ void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
 {
     setUpdatesEnabled(false);
     if (message) {
-        d->ensureParserExists();
-        d->parser->setMessage(message);
+        if (!d->parser) {
+            d->parser = new MessageParser{this};
+        }
+        if (message != d->parser->message()) {
+            d->parser->setMessage(message);
+            connect(d->parser->attachments(), &AttachmentModel::info, this, [this](const QString &message) {
+                d->messageWidget->setMessageType(KMessageWidget::Information);
+                d->messageWidget->setText(message);
+                d->messageWidget->animatedShow();
+            });
+            connect(d->parser->attachments(), &AttachmentModel::errorOccurred, this, [this](const QString &message) {
+                d->messageWidget->setMessageType(KMessageWidget::Error);
+                d->messageWidget->setText(message);
+                d->messageWidget->animatedShow();
+            });
+        }
     } else {
         delete d->parser;
     }
