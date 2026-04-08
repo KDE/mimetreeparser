@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:45+0000\n"
+"POT-Creation-Date: 2026-04-08 00:47+0000\n"
 "PO-Revision-Date: 2026-03-28 18:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -336,239 +336,188 @@ msgstr "هذه الرّسالة معمّاة."
 msgid "The message is encrypted for the following recipients:"
 msgstr "الرسالة معماة للمستلمين التاليين:"
 
-#: widgets/messageviewer.cpp:69
+#: widgets/messageviewer.cpp:70
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "ا&حفظ المرفق ك‍…"
 
-#: widgets/messageviewer.cpp:74
+#: widgets/messageviewer.cpp:75
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "افتح"
 
-#: widgets/messageviewer.cpp:79
+#: widgets/messageviewer.cpp:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "استورد مفتاح عام"
 
-#: widgets/messageviewer.cpp:108
+#: widgets/messageviewer.cpp:111
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "غير مسمًّى"
 
-#: widgets/messageviewer.cpp:111
+#: widgets/messageviewer.cpp:114
 #, kde-format
 msgid "Save Attachment As"
 msgstr "احفظ المرفق ك‍"
 
-#: widgets/messageviewer.cpp:294
+#: widgets/messageviewer.cpp:282
 #, kde-format
 msgid "Invitation"
 msgstr "الدعوة"
 
-#: widgets/messageviewer.cpp:297
+#: widgets/messageviewer.cpp:285
 #, kde-format
 msgid "&Summary:"
 msgstr "الملخّ&ص:"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:286
 #, kde-format
 msgid "&Organizer:"
 msgstr "المن&ظّم:"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:288
 #, kde-format
 msgid "&Location:"
 msgstr "الم&كان:"
 
-#: widgets/messageviewer.cpp:302
+#: widgets/messageviewer.cpp:290
 #, kde-format
 msgid "&Start date:"
 msgstr "تاريخ الب&دء:"
 
-#: widgets/messageviewer.cpp:304
+#: widgets/messageviewer.cpp:292
 #, kde-format
 msgid "&End date:"
 msgstr "تاريخ الا&نتهاء:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:295
 #, kde-format
 msgid "&Details:"
 msgstr "ال&تفاصيل:"
 
-#: widgets/messageviewer.cpp:327
+#: widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Encapsulated email"
 msgstr "بريد مغلّفة"
 
-#: widgets/messageviewer.cpp:335
+#: widgets/messageviewer.cpp:323
 #, kde-format
 msgid "From:"
 msgstr "من:"
 
-#: widgets/messageviewer.cpp:336
+#: widgets/messageviewer.cpp:324
 #, kde-format
 msgid "Date:"
 msgstr "التاريخ:"
 
-#: widgets/messageviewer.cpp:401
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&Subject:"
 msgstr "المو&ضوع:"
 
-#: widgets/messageviewer.cpp:404
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&From:"
 msgstr "&من:"
 
-#: widgets/messageviewer.cpp:407
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Sender:"
 msgstr "المر&سل:"
 
-#: widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&To:"
 msgstr "إل&ى:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:421
 #, kde-format
 msgid "&CC:"
 msgstr "&ن‌ك:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:424
 #, kde-format
 msgid "&BCC:"
 msgstr "ن‌&ك‌ع:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:427
 #, kde-format
 msgid "&Date:"
 msgstr "ال&تاريخ:"
 
-#: widgets/messageviewerbase_p.cpp:42
+#: widgets/messageviewerbase_p.cpp:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "ا&حفظ"
 
-#: widgets/messageviewerbase_p.cpp:47
+#: widgets/messageviewerbase_p.cpp:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "احفظ الملف المفكك"
 
-#: widgets/messageviewerbase_p.cpp:52
+#: widgets/messageviewerbase_p.cpp:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "معاينة الطّباعة"
 
-#: widgets/messageviewerbase_p.cpp:57
+#: widgets/messageviewerbase_p.cpp:83
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&اطبع"
 
-#: widgets/messageviewerbase_p.cpp:62
+#: widgets/messageviewerbase_p.cpp:89
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "الرّسالة السّابقة"
 
-#: widgets/messageviewerbase_p.cpp:68
+#: widgets/messageviewerbase_p.cpp:95
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "الرّسالة التّالية"
 
-#: widgets/messageviewerbase_p.cpp:113
+#: widgets/messageviewerbase_p.cpp:101
+#, kde-format
+msgctxt "@action:button"
+msgid "View Source"
+msgstr "اعرض المصدر"
+
+#: widgets/messageviewerbase_p.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Use Fixed Font"
+msgstr "استخدم خطًّا ثابتًا"
+
+#: widgets/messageviewerbase_p.cpp:155
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(دون موضوع)"
 
-#: widgets/messageviewerbase_p.cpp:150 widgets/messageviewerbase_p.cpp:180
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "ملفات البريد الإلكتروني (*.eml *.mbox *.mime)"
-
-#: widgets/messageviewerbase_p.cpp:152
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "ملفات S/MIME المعماة (*.p7m)"
-
-#: widgets/messageviewerbase_p.cpp:156
-#, kde-format
-msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "ملف EML (*.eml); ملف MBOX (*.mbox); ملف MIME (*.mime)"
-
-#: widgets/messageviewerbase_p.cpp:161
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "احفظ الملفّ"
-
-#: widgets/messageviewerbase_p.cpp:167
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "تعذّر إنشاء الملف %1."
-
-#: widgets/messageviewerbase_p.cpp:167 widgets/messageviewerbase_p.cpp:184
-#, kde-format
-msgctxt "@title:window"
-msgid "Error saving message"
-msgstr "خطأ في حفظ الرّسالة"
+#: widgets/messageviewerbase_p.cpp:163
+#, fuzzy, kde-format
+#| msgctxt "@action:button Next email"
+#| msgid "Next Message"
+msgctxt "@title:window if there's no email to display"
+msgid "(No Message)"
+msgstr "الرّسالة التّالية"
 
 #: widgets/messageviewerbase_p.cpp:178
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "حفظ الملف المفكك"
-
-#: widgets/messageviewerbase_p.cpp:184
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "تعذّر إنشاء الملف %1."
-
-#: widgets/messageviewerbase_p.cpp:203
-#, kde-format
-msgctxt "@title:window"
-msgid "Print"
-msgstr "اطبع"
-
-#: widgets/messageviewerbase_p.cpp:215
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Preview"
-msgstr "معاينة الطّباعة"
-
-#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:37
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "&ملف"
-
-#: widgets/messageviewerdialog.cpp:49
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "&تنقّل"
-
-#: widgets/messageviewerdialog.cpp:96
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr "لا يوجد رسائل لعرضها."
 
-#: widgets/messageviewerdialog.cpp:98
+#: widgets/messageviewerbase_p.cpp:180
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -577,23 +526,126 @@ msgid ""
 msgstr ""
 "تعذر قراءة الملف <filename>%1</filename>، أو أن الملف لا يحتوي على أي رسائل."
 
-#: widgets/messageviewerwindow.cpp:44
+#: widgets/messageviewerbase_p.cpp:247
+#, fuzzy, kde-format
+#| msgid "File %1 could not be created."
+msgctxt "@info"
+msgid "File %1 could not be created."
+msgstr "تعذّر إنشاء الملف %1."
+
+#: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Error saving message"
+msgctxt "@title:window"
+msgid "Error Saving Message"
+msgstr "خطأ في حفظ الرّسالة"
+
+#: widgets/messageviewerbase_p.cpp:253
+#, fuzzy, kde-format
+#| msgid "File %1 could not be created."
+msgctxt "@info"
+msgid "File %1 could not be written."
+msgstr "تعذّر إنشاء الملف %1."
+
+#: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "ملفات البريد الإلكتروني (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerbase_p.cpp:278
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "ملفات S/MIME المعماة (*.p7m)"
+
+#: widgets/messageviewerbase_p.cpp:282
+#, kde-format
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgstr "ملف EML (*.eml); ملف MBOX (*.mbox); ملف MIME (*.mime)"
+
+#: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@action:button Next email"
+#| msgid "Next Message"
+msgctxt "@title:window"
+msgid "Save Message"
+msgstr "الرّسالة التّالية"
+
+#: widgets/messageviewerbase_p.cpp:307
+#, kde-format
+msgctxt "@info"
+msgid "The message doesn't seem to be encrypted. Saving the original message."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:310
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "You cannot decrypt this message."
+msgctxt "@info"
+msgid "Failed to decrypt the message: %1"
+msgstr "فشلت في فكّ تعمية هذه الرّسالة."
+
+#: widgets/messageviewerbase_p.cpp:314
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Failed to decrypt the message. Saving the original (encrypted?) message."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save Decrypted File"
+msgctxt "@title:window"
+msgid "Save Decrypted Message"
+msgstr "حفظ الملف المفكك"
+
+#: widgets/messageviewerbase_p.cpp:334
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "اطبع"
+
+#: widgets/messageviewerbase_p.cpp:351
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "معاينة الطّباعة"
+
+#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:35
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&ملف"
+
+#: widgets/messageviewerdialog.cpp:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&View"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:54
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&تنقّل"
+
+#: widgets/messageviewerwindow.cpp:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "ر&سالة"
 
-#: widgets/messageviewerwindow.cpp:47
-#, kde-format
-msgctxt "@action:button"
-msgid "View Source"
-msgstr "اعرض المصدر"
+#~ msgctxt "@title:window"
+#~ msgid "Save File"
+#~ msgstr "احفظ الملفّ"
 
-#: widgets/messageviewerwindow.cpp:67
-#, kde-format
-msgctxt "@action:button"
-msgid "Use Fixed Font"
-msgstr "استخدم خطًّا ثابتًا"
+#~ msgctxt "Error message"
+#~ msgid "File %1 could not be created."
+#~ msgstr "تعذّر إنشاء الملف %1."
 
 #~ msgctxt "File dialog accepted files"
 #~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"

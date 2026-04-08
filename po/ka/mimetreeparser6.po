@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:45+0000\n"
+"POT-Creation-Date: 2026-04-08 00:47+0000\n"
 "PO-Revision-Date: 2026-03-26 07:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -326,239 +326,188 @@ msgstr "ეს შეტყობინება დაშიფრულია.
 msgid "The message is encrypted for the following recipients:"
 msgstr "შეტყობინება დაშიფრულია შემდეგი მიმღებებისთვის:"
 
-#: widgets/messageviewer.cpp:69
+#: widgets/messageviewer.cpp:70
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "მიმაგრებული ფაილის შენახვა, როგორც…"
 
-#: widgets/messageviewer.cpp:74
+#: widgets/messageviewer.cpp:75
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "გახსნა"
 
-#: widgets/messageviewer.cpp:79
+#: widgets/messageviewer.cpp:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "საჯარო გასაღების შემოტანა"
 
-#: widgets/messageviewer.cpp:108
+#: widgets/messageviewer.cpp:111
 #, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "უსახელო"
 
-#: widgets/messageviewer.cpp:111
+#: widgets/messageviewer.cpp:114
 #, kde-format
 msgid "Save Attachment As"
 msgstr "მიმაგრებული ფაილის შენახვა, როგორც"
 
-#: widgets/messageviewer.cpp:294
+#: widgets/messageviewer.cpp:282
 #, kde-format
 msgid "Invitation"
 msgstr "მოწვევა"
 
-#: widgets/messageviewer.cpp:297
+#: widgets/messageviewer.cpp:285
 #, kde-format
 msgid "&Summary:"
 msgstr "&შეჯამება:"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:286
 #, kde-format
 msgid "&Organizer:"
 msgstr "&ორგანიზატორი:"
 
-#: widgets/messageviewer.cpp:300
+#: widgets/messageviewer.cpp:288
 #, kde-format
 msgid "&Location:"
 msgstr "&მდებარეობა:"
 
-#: widgets/messageviewer.cpp:302
+#: widgets/messageviewer.cpp:290
 #, kde-format
 msgid "&Start date:"
 msgstr "&დაწყების თარიღი:"
 
-#: widgets/messageviewer.cpp:304
+#: widgets/messageviewer.cpp:292
 #, kde-format
 msgid "&End date:"
 msgstr "&დასრულების დრო:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:295
 #, kde-format
 msgid "&Details:"
 msgstr "&დეტალები:"
 
-#: widgets/messageviewer.cpp:327
+#: widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Encapsulated email"
 msgstr "ჩასმული შეტყობინება"
 
-#: widgets/messageviewer.cpp:335
+#: widgets/messageviewer.cpp:323
 #, kde-format
 msgid "From:"
 msgstr "ვისგან:"
 
-#: widgets/messageviewer.cpp:336
+#: widgets/messageviewer.cpp:324
 #, kde-format
 msgid "Date:"
 msgstr "თარიღი:"
 
-#: widgets/messageviewer.cpp:401
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&Subject:"
 msgstr "&სათაური:"
 
-#: widgets/messageviewer.cpp:404
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&From:"
 msgstr "&ვისგან:"
 
-#: widgets/messageviewer.cpp:407
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Sender:"
 msgstr "&გამომგზავნი:"
 
-#: widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&To:"
 msgstr "&ვის:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:421
 #, kde-format
 msgid "&CC:"
 msgstr "&ასლი:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:424
 #, kde-format
 msgid "&BCC:"
 msgstr "&ფარულიასლი:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:427
 #, kde-format
 msgid "&Date:"
 msgstr "თ&არიღი:"
 
-#: widgets/messageviewerbase_p.cpp:42
+#: widgets/messageviewerbase_p.cpp:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&შენახვა"
 
-#: widgets/messageviewerbase_p.cpp:47
+#: widgets/messageviewerbase_p.cpp:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "გაშიფრულის შენახვა"
 
-#: widgets/messageviewerbase_p.cpp:52
+#: widgets/messageviewerbase_p.cpp:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "დასაბეჭდის გადახედვა"
 
-#: widgets/messageviewerbase_p.cpp:57
+#: widgets/messageviewerbase_p.cpp:83
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&ბეჭდვა"
 
-#: widgets/messageviewerbase_p.cpp:62
+#: widgets/messageviewerbase_p.cpp:89
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "წინა შეტყობინება"
 
-#: widgets/messageviewerbase_p.cpp:68
+#: widgets/messageviewerbase_p.cpp:95
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "შემდეგი შეტყობინება"
 
-#: widgets/messageviewerbase_p.cpp:113
+#: widgets/messageviewerbase_p.cpp:101
+#, kde-format
+msgctxt "@action:button"
+msgid "View Source"
+msgstr "წყაროს ნახვა"
+
+#: widgets/messageviewerbase_p.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Use Fixed Font"
+msgstr "დაფიქსირებული ფონტის გამოყენება"
+
+#: widgets/messageviewerbase_p.cpp:155
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(თემის გარეშე)"
 
-#: widgets/messageviewerbase_p.cpp:150 widgets/messageviewerbase_p.cpp:180
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "ელფოსტის ფაილები (*.eml *.mbox *.mime)"
-
-#: widgets/messageviewerbase_p.cpp:152
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "დაშიფრული S/MIME ფაილები (*.p7m)"
-
-#: widgets/messageviewerbase_p.cpp:156
-#, kde-format
-msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "EML ფაილი (*.eml);;MBOX ფაილი (*.mbox);;MIME ფაილი (*.mime)"
-
-#: widgets/messageviewerbase_p.cpp:161
-#, kde-format
-msgctxt "@title:window"
-msgid "Save File"
-msgstr "ფაილის შენახვა"
-
-#: widgets/messageviewerbase_p.cpp:167
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "%1: ფაილის შექმნის შეცდომა."
-
-#: widgets/messageviewerbase_p.cpp:167 widgets/messageviewerbase_p.cpp:184
-#, kde-format
-msgctxt "@title:window"
-msgid "Error saving message"
-msgstr "შეტყობინების შენახვის შეცდომა"
+#: widgets/messageviewerbase_p.cpp:163
+#, fuzzy, kde-format
+#| msgctxt "@action:button Next email"
+#| msgid "Next Message"
+msgctxt "@title:window if there's no email to display"
+msgid "(No Message)"
+msgstr "შემდეგი შეტყობინება"
 
 #: widgets/messageviewerbase_p.cpp:178
-#, kde-format
-msgctxt "@title:window"
-msgid "Save Decrypted File"
-msgstr "გაშიფრული ფაილის შენახვა"
-
-#: widgets/messageviewerbase_p.cpp:184
-#, kde-format
-msgctxt "Error message"
-msgid "File %1 could not be created."
-msgstr "%1: ფაილის შექმნის შეცდომა."
-
-#: widgets/messageviewerbase_p.cpp:203
-#, kde-format
-msgctxt "@title:window"
-msgid "Print"
-msgstr "ბეჭდვა"
-
-#: widgets/messageviewerbase_p.cpp:215
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Preview"
-msgstr "ბეჭდვის მინიატურა"
-
-#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:37
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&File"
-msgstr "&ფაილი"
-
-#: widgets/messageviewerdialog.cpp:49
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Navigation"
-msgstr "&ნავიგაცია"
-
-#: widgets/messageviewerdialog.cpp:96
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr "საჩვენებელი შეტყობინებების გარეშე."
 
-#: widgets/messageviewerdialog.cpp:98
+#: widgets/messageviewerbase_p.cpp:180
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -568,23 +517,126 @@ msgstr ""
 "ფაილის <filename>%1</filename> წაკითხვა შეუძლებელია, ან ის შეტყობინებებს არ "
 "შეიცავს."
 
-#: widgets/messageviewerwindow.cpp:44
+#: widgets/messageviewerbase_p.cpp:247
+#, fuzzy, kde-format
+#| msgid "File %1 could not be created."
+msgctxt "@info"
+msgid "File %1 could not be created."
+msgstr "%1: ფაილის შექმნის შეცდომა."
+
+#: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Error saving message"
+msgctxt "@title:window"
+msgid "Error Saving Message"
+msgstr "შეტყობინების შენახვის შეცდომა"
+
+#: widgets/messageviewerbase_p.cpp:253
+#, fuzzy, kde-format
+#| msgid "File %1 could not be created."
+msgctxt "@info"
+msgid "File %1 could not be written."
+msgstr "%1: ფაილის შექმნის შეცდომა."
+
+#: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "ელფოსტის ფაილები (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerbase_p.cpp:278
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr "დაშიფრული S/MIME ფაილები (*.p7m)"
+
+#: widgets/messageviewerbase_p.cpp:282
+#, kde-format
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgstr "EML ფაილი (*.eml);;MBOX ფაილი (*.mbox);;MIME ფაილი (*.mime)"
+
+#: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@action:button Next email"
+#| msgid "Next Message"
+msgctxt "@title:window"
+msgid "Save Message"
+msgstr "შემდეგი შეტყობინება"
+
+#: widgets/messageviewerbase_p.cpp:307
+#, kde-format
+msgctxt "@info"
+msgid "The message doesn't seem to be encrypted. Saving the original message."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:310
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "No secret key found to decrypt the message."
+msgctxt "@info"
+msgid "Failed to decrypt the message: %1"
+msgstr "შეტყობინების გასაშიფრი საიდუმლო გასაღები ვერ ვიპოვე."
+
+#: widgets/messageviewerbase_p.cpp:314
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Failed to decrypt the message. Saving the original (encrypted?) message."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save Decrypted File"
+msgctxt "@title:window"
+msgid "Save Decrypted Message"
+msgstr "გაშიფრული ფაილის შენახვა"
+
+#: widgets/messageviewerbase_p.cpp:334
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "ბეჭდვა"
+
+#: widgets/messageviewerbase_p.cpp:351
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "ბეჭდვის მინიატურა"
+
+#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:35
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "&ფაილი"
+
+#: widgets/messageviewerdialog.cpp:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&View"
+msgstr ""
+
+#: widgets/messageviewerdialog.cpp:54
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "&ნავიგაცია"
+
+#: widgets/messageviewerwindow.cpp:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&შეტყობინება"
 
-#: widgets/messageviewerwindow.cpp:47
-#, kde-format
-msgctxt "@action:button"
-msgid "View Source"
-msgstr "წყაროს ნახვა"
+#~ msgctxt "@title:window"
+#~ msgid "Save File"
+#~ msgstr "ფაილის შენახვა"
 
-#: widgets/messageviewerwindow.cpp:67
-#, kde-format
-msgctxt "@action:button"
-msgid "Use Fixed Font"
-msgstr "დაფიქსირებული ფონტის გამოყენება"
+#~ msgctxt "Error message"
+#~ msgid "File %1 could not be created."
+#~ msgstr "%1: ფაილის შექმნის შეცდომა."
 
 #~ msgctxt "File dialog accepted files"
 #~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
@@ -739,10 +791,6 @@ msgstr "დაფიქსირებული ფონტის გამო�
 #~ msgctxt "@action:button"
 #~ msgid "Import key"
 #~ msgstr "გასაღების შემოტანა"
-
-#~ msgctxt "@info:status"
-#~ msgid "No secret key found to decrypt the message."
-#~ msgstr "შეტყობინების გასაშიფრი საიდუმლო გასაღები ვერ ვიპოვე."
 
 #~ msgid "Unknown key"
 #~ msgstr "უცნობი გასაღები"
