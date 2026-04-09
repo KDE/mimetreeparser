@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-02-21 08:38+0100\n"
+"PO-Revision-Date: 2026-04-08 18:35+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -496,18 +496,16 @@ msgid "(No Subject)"
 msgstr "(Senza oggetto)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Messaggio successivo"
+msgstr "(Nessun messaggio)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Nessun messaggio da visualizzare."
 
 #: widgets/messageviewerbase_p.cpp:180
 #, kde-kuit-format
@@ -516,28 +514,26 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Impossibile leggere il file <filename>%1</filename> oppure il file non "
+"contiene messaggi."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Impossibile creare il file %1."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Errore durante il salvataggio del messaggio"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Impossibile creare il file %1."
+msgstr "Impossibile scrivere sul file %1."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -558,26 +554,22 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "File EML (*.eml);;File MBOX (*.mbox);;File MIME (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Messaggio successivo"
+msgstr "Salva il messaggio"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "Il messaggio non sembra essere cifrato. Salvo il messaggio originale."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No secret key found to decrypt the message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "Non è stata trovata alcuna chiave segreta per decifrare il messaggio."
+msgstr "Impossibile decifrare il messaggio: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -585,14 +577,14 @@ msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
 msgstr ""
+"Impossibile decifrare il messaggio. Salvataggio del messaggio originale "
+"(cifrato?)."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Salva il file decifrato"
+msgstr "Salva il messaggio decifrato"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -616,7 +608,7 @@ msgstr "&File"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Visualizza"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format

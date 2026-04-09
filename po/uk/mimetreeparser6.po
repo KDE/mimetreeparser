@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-03-26 12:56+0200\n"
+"PO-Revision-Date: 2026-04-08 08:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -503,12 +503,10 @@ msgid "(No Subject)"
 msgstr "(Немає теми)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Наступне повідомлення"
+msgstr "(Немає повідомлень)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -527,26 +525,22 @@ msgstr ""
 "жодного повідомлення."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Не вдалося створити файл %1."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Помилка під час спроби збереження повідомлення"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Не вдалося створити файл %1."
+msgstr "Не вдалося виконати запис до файла %1."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -567,26 +561,23 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "файл EML (*.eml);;файл MBOX (*.mbox);;файл MIME (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Наступне повідомлення"
+msgstr "Зберегти повідомлення"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
+"Здається, повідомлення не зашифровано. Зберігаємо початкове повідомлення."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No secret key found to decrypt the message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "Не знайдено закритого ключа для розшифровування повідомлення."
+msgstr "Не вдалося розшифрувати повідомлення: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -594,14 +585,14 @@ msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
 msgstr ""
+"Не вдалося розшифрувати повідомлення. Зберігаємо початкове (незашифроване?) "
+"повідомлення."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Збереження розшифрованого файла"
+msgstr "Збереження розшифрованого повідомлення"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -625,7 +616,7 @@ msgstr "&Файл"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "П&ерегляд"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format

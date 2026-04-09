@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-03-27 00:54+0300\n"
+"PO-Revision-Date: 2026-04-08 12:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -491,15 +491,13 @@ msgstr "Eş Aralıklı Yazıtipi Kullan"
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
-msgstr "(Konu yok)"
+msgstr "(Konu Yok)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Sonraki İleti"
+msgstr "(İleti Yok)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -518,26 +516,22 @@ msgstr ""
 "yok."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "%1 dosyası oluşturulamadı."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "İleti Kaydedilirken Hata"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "%1 dosyası oluşturulamadı."
+msgstr "%1 dosyası yazılamadı."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -558,41 +552,35 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML dosyası (*.eml);;MBOX dosyası (*.mbox);;MIME dosyası (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Sonraki İleti"
+msgstr "İletiyi Kaydet"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "İleti şifrelenmiş gibi görünmüyor. Özgün ileti kaydediliyor."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No secret key found to decrypt the message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "İletinin şifresini çözmek için bir gizli anahtar bulunamadı."
+msgstr "İletinin şifresi çözülemedi: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
-msgstr ""
+msgstr "İletinin şifresi çözülemedi. Özgün (şifrelenmiş?) ileti kaydediliyor."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Şifresi Çözülmüş Dosya Kaydet"
+msgstr "Şifresi Çözülmüş İletiyi Kaydet"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -616,7 +604,7 @@ msgstr "&Dosya"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Görünüm"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format

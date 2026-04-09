@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-03-26 11:25+0100\n"
+"PO-Revision-Date: 2026-04-08 09:02+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -499,12 +499,10 @@ msgid "(No Subject)"
 msgstr "(Sense assumpte)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Missatge següent"
+msgstr "(Cap missatge)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -523,26 +521,22 @@ msgstr ""
 "cap missatge."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Error en desar el missatge"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "No s'ha pogut crear el fitxer %1."
+msgstr "No s'ha pogut escriure al fitxer %1."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -563,26 +557,23 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Missatge següent"
+msgstr "Desa el missatge"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
+"El missatge no sembla quer estigui encriptat. Es desa el missatge original."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "You cannot decrypt this message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "No es pot desencriptar aquest missatge."
+msgstr "Ha fallat en desencriptar el missatge: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -590,14 +581,14 @@ msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
 msgstr ""
+"Ha fallat en desencriptar el missatge. Es desa el missatge original "
+"(encriptat?)."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Desament de fitxer desencriptat"
+msgstr "Desament de missatge desencriptat"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -621,7 +612,7 @@ msgstr "&Fitxer"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Visualitza"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
@@ -634,19 +625,3 @@ msgstr "&Navegació"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Missatge"
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Desa el fitxer"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "No s'ha pogut crear el fitxer %1."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "No s'ha pogut llegir el fitxer"

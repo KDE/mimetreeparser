@@ -488,12 +488,10 @@ msgid "(No Subject)"
 msgstr " (无主题) "
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "下一条消息"
+msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -510,26 +508,22 @@ msgid ""
 msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
-msgstr "无法创建文件 %1。"
+msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
-msgstr "保存消息时出错"
+msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "无法创建文件 %1。"
+msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -550,12 +544,10 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "下一条消息"
+msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
@@ -564,12 +556,10 @@ msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "You cannot decrypt this message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "您无法解密该消息。"
+msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -579,12 +569,10 @@ msgid ""
 msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "保存解密文件"
+msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -621,11 +609,3 @@ msgstr "&导航"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr ""
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "保存文件"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "无法创建文件%1。"

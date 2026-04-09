@@ -12,14 +12,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr ""
+msgstr "Názov"
 
 #: core/attachmentmodel.cpp:205
 #, kde-format
@@ -43,7 +43,7 @@ msgstr "Podpísané"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
-msgstr ""
+msgstr "Nepodarilo sa save attachment."
 
 #: core/attachmentmodel.cpp:325
 #, kde-format
@@ -54,42 +54,40 @@ msgstr "príloha"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr ""
+msgstr "Nepodarilo sa write attachment for opening."
 
 #: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
-msgstr ""
+msgstr "Nepodarilo sa open attachment."
 
 #: core/attachmentmodel.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "No keys were found in this attachment"
+#, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "V tejto prílohe neboli nájdené žiadne kľúče"
 
 #: core/attachmentmodel.cpp:385
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
-msgstr[0] "jeden kľúč importovaný"
-msgstr[1] "%1 kľúčov importovaných"
-msgstr[2] "%1 kľúčov importovaných"
+msgstr[0] "one certificate imported"
+msgstr[1] "%1 certificates imported"
+msgstr[2] "%1 certificates imported"
 
 #: core/attachmentmodel.cpp:390
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "jeden kľúč už bol importovaný"
-msgstr[1] "%1 kľúčov už bolo importovaných"
-msgstr[2] "%1 kľúčov už bolo importovaných"
+msgstr[0] "one certificate was already imported"
+msgstr[1] "%1 certificates were already imported"
+msgstr[2] "%1 certificates were already imported"
 
 #: core/messageparser.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "neznámy kľúč"
@@ -98,10 +96,10 @@ msgstr "neznámy kľúč"
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Chybný šifrovací modul."
@@ -122,20 +120,18 @@ msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifrovací modul %1 nemohol odšifrovať údaje."
 
 #: core/messagepart.cpp:871
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
 
 #: core/partmodel.cpp:579 core/partmodel.cpp:581
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
-msgstr "Šifrovací modul \"%1\" nemôže dešifrovať správy."
+msgstr "Môžetenot decrypt this message."
 
 #: core/partmodel.cpp:587
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
@@ -155,7 +151,7 @@ msgid "Could not start certificate manager. Please check your installation."
 msgstr "Nemôžem spustiť manažéra certifikátov. Prosím overte si inštaláciu."
 
 #: core/utils.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "neznámy kľúč"
@@ -168,9 +164,7 @@ msgstr " - "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
+#, kde-format
 msgctxt "@action"
 msgid "Open Menu"
 msgstr "Otvoriť"
@@ -179,41 +173,41 @@ msgstr "Otvoriť"
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr ""
+msgstr "Departure from %1"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:110
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
-msgstr ""
+msgstr "Arrival at %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:65
 #, kde-format
 msgid "Check-in time: %1"
-msgstr ""
+msgstr "Check-in time: %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:69
 #, kde-format
 msgid "Check-out time: %1"
-msgstr ""
+msgstr "Check-out time: %1"
 
 #: quick/qml/itinerary/TrainReservationComponent.qml:157
 #: quick/qml/itinerary/TrainReservationComponent.qml:224
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
+msgstr "Pl. %1"
 
 #: quick/qml/itinerary/TripMenu.qml:18
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr ""
+msgstr "Send to KDE Itinerary"
 
 #: quick/qml/itinerary/TripMenu.qml:33
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
-msgstr ""
+msgstr "Send to %1"
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -228,7 +222,7 @@ msgid "Subject:"
 msgstr "Predmet:"
 
 #: quick/qml/MailViewer.qml:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Od:"
@@ -240,7 +234,7 @@ msgid "Sender:"
 msgstr "Odosielateľ:"
 
 #: quick/qml/MailViewer.qml:130
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Pre"
@@ -273,10 +267,10 @@ msgstr "Uložiť prílohu ako"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
-msgstr ""
+msgstr "Import certificate"
 
 #: quick/qml/private/Banner.qml:188
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Zavrieť"
@@ -299,20 +293,17 @@ msgstr "odoslané %1 na %2"
 
 #: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:146
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Táto správa je zašifrovaná, ale nemáme k nej kľúč."
 
 #: quick/qml/private/MailPartModel.qml:97
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgid "This message is encrypted for: %1"
-msgstr "Táto správa je šifrovaná."
+msgstr "This message is encrypted for: %1"
 
 #: widgets/messagecontainerwidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but we don't have the key for it."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
@@ -321,7 +312,7 @@ msgstr "Táto správa je zašifrovaná, ale nemáme k nej kľúč."
 #: widgets/messagecontainerwidget.cpp:151
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
-msgstr ""
+msgstr "This message is VS-NfD compliant encrypted."
 
 #: widgets/messagecontainerwidget.cpp:153
 #, kde-format
@@ -329,14 +320,12 @@ msgid "This message is encrypted."
 msgstr "Táto správa je šifrovaná."
 
 #: widgets/messagecontainerwidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Správa je šifrovaná pre nasledujúce kľúče:"
 
 #: widgets/messageviewer.cpp:70
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "&Save Attachment As…"
 msgstr "Uložiť prílohu ako"
 
@@ -350,10 +339,10 @@ msgstr "Otvoriť"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
-msgstr ""
+msgstr "Import public key"
 
 #: widgets/messageviewer.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Fallback when file has no name"
 msgid "unnamed"
 msgstr "bez mena"
@@ -401,10 +390,10 @@ msgstr "Podrobnosti:"
 #: widgets/messageviewer.cpp:315
 #, kde-format
 msgid "Encapsulated email"
-msgstr ""
+msgstr "Encapsulated email"
 
 #: widgets/messageviewer.cpp:323
-#, fuzzy, kde-format
+#, kde-format
 msgid "From:"
 msgstr "Od:"
 
@@ -429,9 +418,9 @@ msgid "&Sender:"
 msgstr "Odosielateľ:"
 
 #: widgets/messageviewer.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgid "&To:"
-msgstr "Pre"
+msgstr "&Do:"
 
 #: widgets/messageviewer.cpp:421
 #, kde-format
@@ -444,13 +433,12 @@ msgid "&BCC:"
 msgstr "Skrytá kópia:"
 
 #: widgets/messageviewer.cpp:427
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "&Date:"
 msgstr "Dátum:"
 
 #: widgets/messageviewerbase_p.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Uložiť"
@@ -459,7 +447,7 @@ msgstr "&Uložiť"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
-msgstr ""
+msgstr "Save Decrypted"
 
 #: widgets/messageviewerbase_p.cpp:77
 #, kde-format
@@ -468,7 +456,7 @@ msgid "Print Preview"
 msgstr "Náhľad tlače"
 
 #: widgets/messageviewerbase_p.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&Tlačiť"
@@ -489,26 +477,22 @@ msgstr "Nasledujúca správa"
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
-msgstr ""
+msgstr "View Source"
 
 #: widgets/messageviewerbase_p.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
-msgstr ""
+msgstr "Use Fixed Font"
 
 #: widgets/messageviewerbase_p.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "Predmet:"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
 msgstr "Nasledujúca správa"
@@ -526,24 +510,23 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Nie je možné read the file <filename>%1</filename>, or the file doesn't "
+"contain any messages."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Súbor %1 nie je možné vytvoriť."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Chyba pri ukladaní správy"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "Súbor %1 nie je možné vytvoriť."
@@ -552,24 +535,22 @@ msgstr "Súbor %1 nie je možné vytvoriť."
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr ""
+msgstr "Email files (*.eml *.mbox *.mime)"
 
 #: widgets/messageviewerbase_p.cpp:278
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Encrypted S/MIME files (*.p7m)"
-msgstr ""
+msgstr "Encrypted S/MIME files (*.p7m)"
 
 #: widgets/messageviewerbase_p.cpp:282
 #, kde-format
 msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
 msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr ""
+msgstr "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
 msgstr "Nasledujúca správa"
@@ -581,8 +562,7 @@ msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
 msgstr "Šifrovací modul \"%1\" nemôže dešifrovať správy."
@@ -593,29 +573,28 @@ msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
 msgstr ""
+"Nepodarilo sa decrypt the message. Saving the original (encrypted?) message."
 
 #: widgets/messageviewerbase_p.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr ""
+msgstr "Save Decrypted Message"
 
 #: widgets/messageviewerbase_p.cpp:334
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Print"
-msgstr "&Tlačiť"
+msgstr "Tlačiť"
 
 #: widgets/messageviewerbase_p.cpp:351
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Print Preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Náhľad tlače"
 
 #: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:35
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&Súbor"
@@ -624,18 +603,16 @@ msgstr "&Súbor"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "Zobrazenie"
 
 #: widgets/messageviewerdialog.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&Ovládanie"
 
 #: widgets/messageviewerwindow.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "Nasledujúca správa"
@@ -649,43 +626,31 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Súbor %1 nie je možné vytvoriť."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key %1."
 #~ msgctxt "@info"
 #~ msgid "This message was signed with certificate %1."
 #~ msgstr "Táto správa bola podpísaná pomocou kľúča %1."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The key details are not available."
 #~ msgctxt "@info"
 #~ msgid "The certificate details are not available."
 #~ msgstr "Podrobnosti o kľúči nie sú k dispozícii."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key %1."
 #~ msgctxt "@info"
 #~ msgid "This message was signed by %1 with certificate %2."
 #~ msgstr "Táto správa bola podpísaná pomocou kľúča %1."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The key was revoked."
 #~ msgctxt "@info"
 #~ msgid "The certificate was revoked."
 #~ msgstr "Platnosť kľúča bola zrušená."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The key has expired."
 #~ msgctxt "@info"
 #~ msgid "The certificate has expired."
 #~ msgstr "Platnosť kľúča vypršala."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The key has expired."
 #~ msgctxt "@info"
 #~ msgid "The certificate is certified."
 #~ msgstr "Platnosť kľúča vypršala."
@@ -696,8 +661,6 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Podpis nie je platný."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "This message has been signed VS-NfD compliant using the certificate <a "
@@ -705,46 +668,32 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Táto správa bola podpísaná pomocou kľúča <a href=\"%1\">%2</a>."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key <a href=\"%1\">%2</a>."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
 #~ msgstr "Táto správa bola podpísaná pomocou kľúča <a href=\"%1\">%2</a>."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key %1."
 #~ msgctxt "@info"
 #~ msgid "This message has been signed VS-NfD compliant by %1."
 #~ msgstr "Táto správa bola podpísaná pomocou kľúča %1."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key %1."
 #~ msgctxt "@info"
 #~ msgid "This message has been signed by %1."
 #~ msgstr "Táto správa bola podpísaná pomocou kľúča %1."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The <a href=\"%1\">key</a> was revoked."
 #~ msgctxt "@info"
 #~ msgid "The <a href=\"%1\">certificate</a> was revoked."
 #~ msgstr "Platnosť <a href=\"%1\">kľúča</a> bola zrušená."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The <a href=\"%1\">key</a> was revoked."
 #~ msgctxt "@info"
 #~ msgid "The <a href=\"%1\">certificate</a> is expired."
 #~ msgstr "Platnosť <a href=\"%1\">kľúča</a> bola zrušená."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid, but the <a href=\"%1\">key</a>'s validity is "
-#~| "unknown."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
@@ -753,10 +702,6 @@ msgstr "Nasledujúca správa"
 #~ "Podpis je platný, ale bezpečnosť <a href=\"%1\">kľúča</a> nie je známa."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid and the <a href=\"%1\">key</a> is marginally "
-#~| "trusted."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
@@ -764,9 +709,6 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Podpis je platný a <a href=\"%1\">kľúč</a> je čiastočne bezpečný."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid and the <a href=\"%1\">key</a> is fully trusted."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
@@ -774,10 +716,6 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Podpis je platný a <a href=\"%1\">kľúč</a> je plne bezpečný."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid and the <a href=\"%1\">key</a> is ultimately "
-#~| "trusted."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
@@ -785,9 +723,6 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Podpis je platný a <a href=\"%1\">kľúč</a> je nekonečne bezpečný."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid, but the <a href=\"%1\">key</a> is untrusted."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
@@ -802,8 +737,6 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Chybová správa KMail"
 
 #, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "The message is encrypted for the following keys:"
 #~ msgctxt "@info:status"
 #~ msgid "The message is encrypted for the following certificate:"
 #~ msgid_plural "The message is encrypted for the following certificates:"
@@ -812,27 +745,20 @@ msgstr "Nasledujúca správa"
 #~ msgstr[2] "Správa je šifrovaná pre nasledujúce kľúče:"
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key %1 by %2."
 #~ msgctxt "@label"
 #~ msgid "This message has been signed using the certificate %1 by %2."
 #~ msgstr "Táto správa bola podpísaná pomocou kľúča %1 od %2."
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "You are trusting this key."
 #~ msgctxt "@label"
 #~ msgid "You are trusting this certificate."
 #~ msgstr "Tomuto kľúču dôverujete."
 
 #, fuzzy
-#~| msgid "This message is encrypted to the key: %1"
 #~ msgid "This message is encrypted to the certificate: %1"
 #~ msgstr "Táto správa je zašifrovaná kľúčom: %1"
 
 #, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "The message is encrypted for the following keys:"
 #~ msgid "The message is encrypted for the following certificates:"
 #~ msgstr "Správa je šifrovaná pre nasledujúce kľúče:"
 

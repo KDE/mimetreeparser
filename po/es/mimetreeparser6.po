@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-03-26 11:54+0100\n"
+"PO-Revision-Date: 2026-04-09 01:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -498,12 +498,10 @@ msgid "(No Subject)"
 msgstr "(Sin asunto)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Mensaje siguiente"
+msgstr "(No hay mensajes)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -522,26 +520,22 @@ msgstr ""
 "contiene mensajes."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "No se puede crear el archivo %1."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Error al guardar mensaje"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "No se puede crear el archivo %1."
+msgstr "No se puede escribir en el archivo %1."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -562,26 +556,22 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Mensaje siguiente"
+msgstr "Guardar mensaje"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "Parece que el mensaje no está cifrado. Se guarda el mensaje original."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "You cannot decrypt this message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "No puede descifrar este mensaje."
+msgstr "No se ha podido descifrar el mensaje: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -589,14 +579,14 @@ msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
 msgstr ""
+"No se ha podido descifrar el mensaje. Se guarda el mensaje original "
+"(¿cifrado?)."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Guardar archivo sin cifrar"
+msgstr "Guardar mensaje sin cifrar"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -620,7 +610,7 @@ msgstr "&Archivo"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Ver"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
@@ -633,11 +623,3 @@ msgstr "&Navegación"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mensaje"
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Guardar archivo"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "No se ha podido crear el archivo %1."
