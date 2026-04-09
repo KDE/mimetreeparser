@@ -508,7 +508,7 @@ msgstr "保存文件"
 #: widgets/messageviewerdialog.cpp:155 widgets/messageviewerwindow.cpp:206
 #, kde-format
 msgid "File %1 could not be created."
-msgstr "无法创建文件 %1。"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:155 widgets/messageviewerdialog.cpp:172
 #: widgets/messageviewerwindow.cpp:206 widgets/messageviewerwindow.cpp:223
@@ -527,7 +527,7 @@ msgstr "保存解密文件"
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr "无法创建文件%1。"
+msgstr ""
 
 #: widgets/messageviewerdialog.cpp:191 widgets/messageviewerwindow.cpp:242
 #, kde-format
