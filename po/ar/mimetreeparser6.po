@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-03-28 18:07+0400\n"
+"PO-Revision-Date: 2026-04-09 11:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -504,12 +504,10 @@ msgid "(No Subject)"
 msgstr "(دون موضوع)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "الرّسالة التّالية"
+msgstr "(لا يوجد رسائل)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -527,26 +525,22 @@ msgstr ""
 "تعذر قراءة الملف <filename>%1</filename>، أو أن الملف لا يحتوي على أي رسائل."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "تعذّر إنشاء الملف %1."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "خطأ في حفظ الرّسالة"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "تعذّر إنشاء الملف %1."
+msgstr "تعذّر كتابة الملف %1."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -567,41 +561,35 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "ملف EML (*.eml); ملف MBOX (*.mbox); ملف MIME (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "الرّسالة التّالية"
+msgstr "احفظ الرّسالة"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "يبدو أن الرسالة غير معماة. يحفظ الرسالة الأصلية."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "You cannot decrypt this message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "فشلت في فكّ تعمية هذه الرّسالة."
+msgstr "فشلت في فكّ تعمية الرّسالة: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
-msgstr ""
+msgstr "فشل فك تعمية الرسالة. يحفظ الرسالة الأصلية (معماة؟)."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "حفظ الملف المفكك"
+msgstr "حفظ الرسالة مفكوكة التعمية"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -625,7 +613,7 @@ msgstr "&ملف"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&عرض"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format

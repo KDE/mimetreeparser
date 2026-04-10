@@ -501,7 +501,7 @@ msgstr "Nasledujúca správa"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Žiadne správy na zobrazenie."
 
 #: widgets/messageviewerbase_p.cpp:180
 #, kde-kuit-format
@@ -559,7 +559,7 @@ msgstr "Nasledujúca správa"
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "Správa sa nezdá byť šifrovaná. Ukladanie pôvodnej správy."
 
 #: widgets/messageviewerbase_p.cpp:310
 #, kde-format

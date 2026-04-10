@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-03-26 13:36+0100\n"
+"PO-Revision-Date: 2026-04-09 14:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -495,12 +495,10 @@ msgid "(No Subject)"
 msgstr "(Geen onderwerp)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Volgend bericht"
+msgstr "(Geen bericht)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -519,26 +517,22 @@ msgstr ""
 "bevat geen berichten."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Bestand %1 kan niet worden aangemaakt."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Fout bij opslaan van bericht"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Bestand %1 kan niet worden aangemaakt."
+msgstr "Bestand %1 kan niet worden geschreven."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -559,26 +553,24 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML-bestand (*.eml);;MBOX-bestand (*.mbox);;MIME-bestand (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Volgend bericht"
+msgstr "Bericht opslaan"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
+"Het bericht lijkt niet versleuteld te zijn. Het originele bericht wordt "
+"opgeslagen."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No secret key found to decrypt the message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "Geen geheime sleutel gevonden om het bericht te ontcijferen."
+msgstr "Het bericht decoderen is mislukt: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -586,14 +578,14 @@ msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
 msgstr ""
+"Het is niet gelukt het bericht te decoderen. Het originele (versleutelde?) "
+"bericht wordt opgeslagen."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Gedecodeerd bestand opslaan"
+msgstr "Gedecodeerd bericht opslaan"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -617,7 +609,7 @@ msgstr "&Bestand"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "Beel&d"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
