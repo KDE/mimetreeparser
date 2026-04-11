@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-08 00:47+0000\n"
-"PO-Revision-Date: 2026-03-26 09:32+0200\n"
+"PO-Revision-Date: 2026-04-09 08:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -498,12 +498,10 @@ msgid "(No Subject)"
 msgstr "(אין נושא)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "ההודעה הבאה"
+msgstr "(אין הודעה)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -521,23 +519,19 @@ msgstr ""
 "לא ניתן לקרוא את הקובץ <filename>%1</filename>, או שהקובץ לא מכיל הודעות כלל."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "לא ניתן ליצור את הקובץ %1."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "שגיאה בשמירת הודעה"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "לא ניתן ליצור את הקובץ %1."
@@ -561,41 +555,35 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "קובץ EML ‏(‎*.eml);;קובץ MBOX‏ (‎*.mbox);;קובץ סוג תוכן MIME‏ (‎*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "ההודעה הבאה"
+msgstr "שמירת הודעה"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "ההודעה לא נראית מוצפנת. ההודעה המקורית נשמרת."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "You cannot decrypt this message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "אי אפשר לפענח את ההודעה הזאת."
+msgstr "פיענוח ההודעה נכשל: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
-msgstr ""
+msgstr "פיענוח ההודעה נכשל. ההודעה המקורית (המוצפנת?) נשמרת."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "שמירת קובץ מפוענח"
+msgstr "שמירת הודעה מפוענחת"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -619,7 +607,7 @@ msgstr "&קובץ"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "ת&צוגה"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
