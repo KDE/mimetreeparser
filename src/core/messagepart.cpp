@@ -647,6 +647,26 @@ void SignedMessagePart::startVerification()
 
     auto codec = QStringDecoder(mOtp->codecNameFor(mSignedData).constData());
 
+    // find the apparent sender of this part, which may not be the same as the toplevel
+    // from, because:
+    // a) Mailing lists might have mangled the From:
+    // b) It may be an attached encapsulated message
+    // c) Mail may have been "sent on behalf"
+    // For a) and b) a good solution is to simple take the innermost header. We do not
+    // actually deal with c), yet.
+    QString partSender;
+    const MessagePart *part = this;
+    while (part) {
+        if (part->node()) {
+            const auto headerFrom = part->node()->header<KMime::Headers::From>(KMime::DontCreate);
+            if (headerFrom) {
+                partSender = headerFrom->mailboxes().value(0).addrSpec().asString();
+                break;
+            }
+        }
+        part = part->parentPart();
+    }
+
     // If we have a mNode, this is a detached signature
     if (mNode) {
         const auto signature = mNode->decodedBody();
@@ -655,12 +675,16 @@ void SignedMessagePart::startVerification()
         const QByteArray signedData = KMime::LFtoCRLF(mSignedData->encodedContent());
 
         const auto job = mCryptoProto->verifyDetachedJob();
+        auto ctx = QGpgME::Job::context(job);
+        ctx->setSender(partSender.toUtf8().data());
         setVerificationResult(job->exec(signature, signedData), signedData);
         job->deleteLater();
         setText(codec.decode(KMime::CRLFtoLF(signedData)));
     } else {
         QByteArray outdata;
         const auto job = mCryptoProto->verifyOpaqueJob();
+        auto ctx = QGpgME::Job::context(job);
+        ctx->setSender(partSender.toUtf8().data());
         setVerificationResult(job->exec(mSignedData->decodedBody(), outdata), outdata);
         job->deleteLater();
         setText(codec.decode(KMime::CRLFtoLF(outdata)));
