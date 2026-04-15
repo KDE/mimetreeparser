@@ -374,6 +374,20 @@ private Q_SLOTS:
                  "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."_L1);
     }
 
+    void testSignedSenderMismatch()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("openpgp-signed-sender-mismatch.mbox"_L1));
+        otp.print();
+        otp.decryptAndVerify();
+        otp.print();
+        QVERIFY(otp.hasSignedParts());
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 1);
+        auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
+        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::NotSoGood);
+    }
+
     void testEncryptedAndSigned()
     {
         MimeTreeParser::ObjectTreeParser otp;

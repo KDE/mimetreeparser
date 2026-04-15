@@ -1,0 +1,41 @@
+From: kde testing <bcc@bcc.org>
+To: someone <someone@example.net>
+Subject: Test with fishy signature
+Date: Mon, 30 Mar 2026 12:40:58 +0000
+Message-ID: <7002764.lOV4Wx5bFT@allen>
+Content-Type: multipart/signed; boundary="nextPart5838807.31r3eYUQgx";
+	micalg=pgp-sha256; protocol="application/pgp-signature"
+MIME-Version: 1.0
+
+--nextPart5838807.31r3eYUQgx
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
+From: kde testing <bcc@bcc.org>
+To: someone <someone@example.net>
+Subject: Test with fishy signature
+Date: Mon, 30 Mar 2026 14:40:58 +0200
+Message-ID: <7002764.lOV4Wx5bFT@allen>
+MIME-Version: 1.0
+
+This email was signed with the known and trusted you@you.com key, but claims to be from
+(and is sent by) bcc@bcc.org. The viewer should indicate the mismatch, and not
+show the signature as green.
+--nextPart5838807.31r3eYUQgx
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFPBAABCAA5FiEEG6Mjkys/qoJhMseejZhgxY8kbeYFAmnfMMgbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMiwyAAoJEI2YYMWPJG3mkf8H/3gHA6rVcPvXT4ibrzxN
+3hEhbZO3FGwlzpT1UyyCCPg31oS/tGf22SBPeRDs6o8aIZNI7kahihfucqtz2ZP+
+PD/BxCPAzAfJ2WfZWPMof1tzKBh8jzVSlwTRf9fn7H1Mtg5nxfNMS61yS9t8lhGL
+VpYbCt6Umf1zKkGq1G5lOp+EBGxUOXpJbOBGfVOPfz3ps2dl7ddCbzGCxCqzPw6P
+8VdDPCm1JLCynwhor6mD4lFRzHlQXGAXYrMs0xTtyaDI8iIPUzCf1XigB7ynqSEF
+sgqbX3o1sPeDPcG1HXR6aPQ0vl9cnSGnLN2HjLjcGYKW9I+IWVJyejAD35TKNXaR
+CtY=
+=9grJ
+-----END PGP SIGNATURE-----
+
+--nextPart5838807.31r3eYUQgx--
