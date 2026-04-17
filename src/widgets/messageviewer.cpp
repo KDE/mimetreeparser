@@ -214,6 +214,27 @@ MessageViewer::~MessageViewer()
     }
 }
 
+class HeaderLabel : public QLabel
+{
+public:
+    explicit HeaderLabel(const QString &content)
+        : QLabel(content)
+    {
+        setWordWrap(true);
+        setTextFormat(Qt::PlainText);
+        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
+    }
+
+    void resizeEvent(QResizeEvent *event) override
+    {
+        int height = heightForWidth(width());
+        setMaximumHeight(height);
+        setMinimumHeight(height);
+
+        QLabel::resizeEvent(event);
+    }
+};
+
 QString MessageViewer::subject() const
 {
     return d->parser ? d->parser->subject() : QString{};
@@ -320,7 +341,11 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             auto headerLayout = new QFormLayout(header);
             const auto from = parts->data(parts->index(i, 0, parent), PartModel::SenderRole).toString();
             const auto date = parts->data(parts->index(i, 0, parent), PartModel::DateRole).toDateTime();
-            headerLayout->addRow(i18n("From:"), new QLabel(from));
+            if (from.isEmpty()) {
+                headerLayout->addRow(i18n("From:"), new QLabel(i18nc("@status missing from:, an unknown author", "<i>Unknown</i>")));
+            } else {
+                headerLayout->addRow(i18n("From:"), new HeaderLabel(from));
+            }
             headerLayout->addRow(i18n("Date:"), new QLabel(date.toLocalTime().toString()));
 
             encapsulatedLayout->addWidget(header);
@@ -353,27 +378,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         }
     }
 }
-
-class HeaderLabel : public QLabel
-{
-public:
-    explicit HeaderLabel(const QString &content)
-        : QLabel(content)
-    {
-        setWordWrap(true);
-        setTextFormat(Qt::PlainText);
-        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
-    }
-
-    void resizeEvent(QResizeEvent *event) override
-    {
-        int height = heightForWidth(width());
-        setMaximumHeight(height);
-        setMinimumHeight(height);
-
-        QLabel::resizeEvent(event);
-    }
-};
 
 void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
 {
