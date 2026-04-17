@@ -410,6 +410,8 @@ void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
         }
         if (!d->parser->from().isEmpty()) {
             d->formLayout->addRow(i18n("&From:"), new HeaderLabel(d->parser->from()));
+        } else {
+            d->formLayout->addRow(i18n("&From:"), new QLabel(i18nc("@status missing from:, an unknown author", "<i>Unknown</i>")));
         }
         if (!d->parser->sender().isEmpty() && d->parser->from() != d->parser->sender()) {
             d->formLayout->addRow(i18n("&Sender:"), new HeaderLabel(d->parser->sender()));
