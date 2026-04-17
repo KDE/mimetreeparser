@@ -388,6 +388,24 @@ private Q_SLOTS:
         QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::NotSoGood);
     }
 
+    void testEncapsulatedMessageWithoutFrom()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("forward-openpgp-signed-encrypted-no-from.mbox"_L1));
+        otp.print();
+        otp.decryptAndVerify();
+        otp.print();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 2);
+        auto part = partList[1].dynamicCast<MimeTreeParser::MessagePart>();
+        QVERIFY(bool(part));
+
+        auto encapsulated = part->subParts().at(0)->subParts().at(0);
+        QVERIFY(bool(encapsulated));
+        QCOMPARE(encapsulated->signatures().size(), 1);
+        QCOMPARE(PartModel::signatureSecurityLevel(encapsulated.get()), PartModel::Good);
+    }
+
     void testEncryptedAndSigned()
     {
         MimeTreeParser::ObjectTreeParser otp;

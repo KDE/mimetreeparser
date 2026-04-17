@@ -664,6 +664,11 @@ void SignedMessagePart::startVerification()
                 break;
             }
         }
+        if (qobject_cast<const EncapsulatedRfc822MessagePart *>(part)) {
+            // well-formed encapsulated messages will have a from-header, but in case they
+            // do not, we don't want to assume anything about the sender
+            break;
+        }
         part = part->parentPart();
     }
 

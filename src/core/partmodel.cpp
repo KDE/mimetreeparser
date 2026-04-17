@@ -432,7 +432,8 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return u"Content%1"_s;
         case SenderRole: {
             if (auto e = dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(messagePart)) {
-                return e->from();
+                const auto ret = e->from();
+                return ret.isEmpty() ? i18nc("@status missing from:, an unknown author", "<i>Unknown</i>") : ret;
             }
             return {};
         }
