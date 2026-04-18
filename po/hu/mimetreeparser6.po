@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-08 00:47+0000\n"
+"POT-Creation-Date: 2026-04-18 00:46+0000\n"
 "PO-Revision-Date: 2025-07-10 21:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -98,28 +98,28 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:745
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Hibás titkosítási bővítmény."
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:895
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nem található megfelelő titkosítási bővítmény."
 
-#: core/messagepart.cpp:868
+#: core/messagepart.cpp:897
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "A(z) „%1” titkosítási bővítmény nem tudja visszafejteni az üzeneteket."
 
-#: core/messagepart.cpp:870
+#: core/messagepart.cpp:899
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "A(z) „%1” titkosítási bővítmény nem tudta visszafejteni az adatokat."
 
-#: core/messagepart.cpp:871
+#: core/messagepart.cpp:900
 #, kde-format
 msgid "Error: %1"
 msgstr "Hiba: %1"
@@ -357,87 +357,95 @@ msgstr "névtelen"
 msgid "Save Attachment As"
 msgstr "Melléklet mentése másként"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Invitation"
 msgstr "Meghívó"
 
-#: widgets/messageviewer.cpp:285
+#: widgets/messageviewer.cpp:306
 #, kde-format
 msgid "&Summary:"
 msgstr "Ö&sszegzés:"
 
-#: widgets/messageviewer.cpp:286
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "&Organizer:"
 msgstr "S&zervező:"
 
-#: widgets/messageviewer.cpp:288
+#: widgets/messageviewer.cpp:309
 #, kde-format
 msgid "&Location:"
 msgstr "&Hely:"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgid "&Start date:"
 msgstr "&Kezdődátum:"
 
-#: widgets/messageviewer.cpp:292
+#: widgets/messageviewer.cpp:313
 #, kde-format
 msgid "&End date:"
 msgstr "Zá&ró dátum:"
 
-#: widgets/messageviewer.cpp:295
+#: widgets/messageviewer.cpp:316
 #, kde-format
 msgid "&Details:"
 msgstr "Rész&letek:"
 
-#: widgets/messageviewer.cpp:315
+#: widgets/messageviewer.cpp:336
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Beágyazott e-mail"
 
-#: widgets/messageviewer.cpp:323
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:347
 #, kde-format
 msgid "From:"
 msgstr "Feladó:"
 
-#: widgets/messageviewer.cpp:324
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@status missing from:, an unknown author"
+msgid "<i>Unknown</i>"
+msgstr "Ismeretlen"
+
+#: widgets/messageviewer.cpp:349
 #, kde-format
 msgid "Date:"
 msgstr "Dátum:"
 
-#: widgets/messageviewer.cpp:409
+#: widgets/messageviewer.cpp:413
 #, kde-format
 msgid "&Subject:"
 msgstr "Tá&rgy:"
 
-#: widgets/messageviewer.cpp:412
+#: widgets/messageviewer.cpp:416 widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&From:"
 msgstr "F&eladó:"
 
-#: widgets/messageviewer.cpp:415
+#: widgets/messageviewer.cpp:421
 #, kde-format
 msgid "&Sender:"
 msgstr "&Küldő:"
 
-#: widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:424
 #, kde-format
 msgid "&To:"
 msgstr "&Címzett:"
 
-#: widgets/messageviewer.cpp:421
+#: widgets/messageviewer.cpp:427
 #, kde-format
 msgid "&CC:"
 msgstr "Más&olat:"
 
-#: widgets/messageviewer.cpp:424
+#: widgets/messageviewer.cpp:430
 #, kde-format
 msgid "&BCC:"
 msgstr "&Titkos másolat:"
 
-#: widgets/messageviewer.cpp:427
+#: widgets/messageviewer.cpp:433
 #, kde-format
 msgid "&Date:"
 msgstr "&Dátum:"

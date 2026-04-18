@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-08 00:47+0000\n"
+"POT-Creation-Date: 2026-04-18 00:46+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -98,28 +98,28 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:745
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Chybný šifrovací modul."
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:895
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nenájdený vhodný šifrovací modul."
 
-#: core/messagepart.cpp:868
+#: core/messagepart.cpp:897
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Šifrovací modul \"%1\" nemôže dešifrovať správy."
 
-#: core/messagepart.cpp:870
+#: core/messagepart.cpp:899
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifrovací modul %1 nemohol odšifrovať údaje."
 
-#: core/messagepart.cpp:871
+#: core/messagepart.cpp:900
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -352,87 +352,95 @@ msgstr "bez mena"
 msgid "Save Attachment As"
 msgstr "Uložiť prílohu ako"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Invitation"
 msgstr "Pozvánka"
 
-#: widgets/messageviewer.cpp:285
+#: widgets/messageviewer.cpp:306
 #, kde-format
 msgid "&Summary:"
 msgstr "Súhrn:"
 
-#: widgets/messageviewer.cpp:286
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "&Organizer:"
 msgstr "Organizátor:"
 
-#: widgets/messageviewer.cpp:288
+#: widgets/messageviewer.cpp:309
 #, kde-format
 msgid "&Location:"
 msgstr "U&miestnenie:"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgid "&Start date:"
 msgstr "Dátum z&ačiatku:"
 
-#: widgets/messageviewer.cpp:292
+#: widgets/messageviewer.cpp:313
 #, kde-format
 msgid "&End date:"
 msgstr "Dátum &konca:"
 
-#: widgets/messageviewer.cpp:295
+#: widgets/messageviewer.cpp:316
 #, kde-format
 msgid "&Details:"
 msgstr "Podrobnosti:"
 
-#: widgets/messageviewer.cpp:315
+#: widgets/messageviewer.cpp:336
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Encapsulated email"
 
-#: widgets/messageviewer.cpp:323
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:347
 #, kde-format
 msgid "From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:324
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@status missing from:, an unknown author"
+msgid "<i>Unknown</i>"
+msgstr "neznámy kľúč"
+
+#: widgets/messageviewer.cpp:349
 #, kde-format
 msgid "Date:"
 msgstr "Dátum:"
 
-#: widgets/messageviewer.cpp:409
+#: widgets/messageviewer.cpp:413
 #, kde-format
 msgid "&Subject:"
 msgstr "Predmet:"
 
-#: widgets/messageviewer.cpp:412
+#: widgets/messageviewer.cpp:416 widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&From:"
 msgstr "&Odosielateľ:"
 
-#: widgets/messageviewer.cpp:415
+#: widgets/messageviewer.cpp:421
 #, kde-format
 msgid "&Sender:"
 msgstr "Odosielateľ:"
 
-#: widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:424
 #, kde-format
 msgid "&To:"
 msgstr "&Do:"
 
-#: widgets/messageviewer.cpp:421
+#: widgets/messageviewer.cpp:427
 #, kde-format
 msgid "&CC:"
 msgstr "Kópia:"
 
-#: widgets/messageviewer.cpp:424
+#: widgets/messageviewer.cpp:430
 #, kde-format
 msgid "&BCC:"
 msgstr "Skrytá kópia:"
 
-#: widgets/messageviewer.cpp:427
+#: widgets/messageviewer.cpp:433
 #, kde-format
 msgid "&Date:"
 msgstr "Dátum:"

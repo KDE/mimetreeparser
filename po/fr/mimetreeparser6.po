@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-08 00:47+0000\n"
+"POT-Creation-Date: 2026-04-18 00:46+0000\n"
 "PO-Revision-Date: 2026-04-09 12:10+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -95,32 +95,32 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:716
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:745
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Module additionnel de chiffrement incorrect."
 
-#: core/messagepart.cpp:866
+#: core/messagepart.cpp:895
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Aucun module additionnel de chiffrement approprié n'a été trouvé."
 
-#: core/messagepart.cpp:868
+#: core/messagepart.cpp:897
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 "Il est impossible au module additionnel de chiffrement « %1 » de déchiffrer "
 "les messages."
 
-#: core/messagepart.cpp:870
+#: core/messagepart.cpp:899
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr ""
 "Il est impossible au module additionnel de chiffrement « %1 » de déchiffrer "
 "les données."
 
-#: core/messagepart.cpp:871
+#: core/messagepart.cpp:900
 #, kde-format
 msgid "Error: %1"
 msgstr "Erreur : %1"
@@ -358,87 +358,95 @@ msgstr "non nommé"
 msgid "Save Attachment As"
 msgstr "Enregistrer une pièce jointe comme"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Invitation"
 msgstr "Invitation"
 
-#: widgets/messageviewer.cpp:285
+#: widgets/messageviewer.cpp:306
 #, kde-format
 msgid "&Summary:"
 msgstr "&Résumé :"
 
-#: widgets/messageviewer.cpp:286
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organisateur :"
 
-#: widgets/messageviewer.cpp:288
+#: widgets/messageviewer.cpp:309
 #, kde-format
 msgid "&Location:"
 msgstr "&Emplacement :"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgid "&Start date:"
 msgstr "&Date de début :"
 
-#: widgets/messageviewer.cpp:292
+#: widgets/messageviewer.cpp:313
 #, kde-format
 msgid "&End date:"
 msgstr "&Date de fin :"
 
-#: widgets/messageviewer.cpp:295
+#: widgets/messageviewer.cpp:316
 #, kde-format
 msgid "&Details:"
 msgstr "&Détails :"
 
-#: widgets/messageviewer.cpp:315
+#: widgets/messageviewer.cpp:336
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Courriel encapsulé"
 
-#: widgets/messageviewer.cpp:323
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:347
 #, kde-format
 msgid "From:"
 msgstr "De :"
 
-#: widgets/messageviewer.cpp:324
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@status missing from:, an unknown author"
+msgid "<i>Unknown</i>"
+msgstr "Inconnu"
+
+#: widgets/messageviewer.cpp:349
 #, kde-format
 msgid "Date:"
 msgstr "Date :"
 
-#: widgets/messageviewer.cpp:409
+#: widgets/messageviewer.cpp:413
 #, kde-format
 msgid "&Subject:"
 msgstr "&Objet :"
 
-#: widgets/messageviewer.cpp:412
+#: widgets/messageviewer.cpp:416 widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&From:"
 msgstr "&De :"
 
-#: widgets/messageviewer.cpp:415
+#: widgets/messageviewer.cpp:421
 #, kde-format
 msgid "&Sender:"
 msgstr "É&metteur : "
 
-#: widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:424
 #, kde-format
 msgid "&To:"
 msgstr "&À :"
 
-#: widgets/messageviewer.cpp:421
+#: widgets/messageviewer.cpp:427
 #, kde-format
 msgid "&CC:"
 msgstr "&CC :"
 
-#: widgets/messageviewer.cpp:424
+#: widgets/messageviewer.cpp:430
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC :"
 
-#: widgets/messageviewer.cpp:427
+#: widgets/messageviewer.cpp:433
 #, kde-format
 msgid "&Date:"
 msgstr "&Date :"
