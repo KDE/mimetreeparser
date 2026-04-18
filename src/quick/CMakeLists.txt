@@ -1,8 +1,6 @@
 # SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
 # SPDX-License-Identifier: BSD-3-Clause
 
-find_package(KF6KIO ${KF_MIN_VERSION} CONFIG)
-
 ecm_add_qml_module(mimetreeparser_plugin
     URI "org.kde.pim.mimetreeparser"
     VERSION 1.0
@@ -21,7 +19,7 @@ target_sources(mimetreeparser_plugin PRIVATE
 target_link_libraries(mimetreeparser_plugin PRIVATE
     Qt::Qml
     KPim6::MimeTreeParserCore
-    KF6::KIOWidgets
+    KF6::KIOGui
 )
 
 ecm_target_qml_sources(mimetreeparser_plugin

@@ -80,6 +80,23 @@ find_package(Gpgmepp ${GPGME_REQUIRED_VERSION} CONFIG REQUIRED)
 find_package(Qt6Quick ${QT_REQUIRED_VERSION} CONFIG)
 find_package(Qt6Widgets ${QT_REQUIRED_VERSION} CONFIG)
 
+if(Qt6Quick_FOUND)
+    find_package(Qt6DBus ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
+    find_package(KF6KIO ${KF_MIN_VERSION} CONFIG REQUIRED)
+    find_package(KF6Service ${KF_MIN_VERSION} CONFIG REQUIRED)
+
+    find_package(KF6Kirigami ${KF_MIN_VERSION} CONFIG)
+    set_package_properties(KF6Kirigami PROPERTIES
+        TYPE RUNTIME
+        PURPOSE "Itinerary integration plugin"
+    )
+    find_package(KF6KirigamiAddons CONFIG)
+    set_package_properties(KF6KirigamiAddons PROPERTIES
+        TYPE RUNTIME
+        PURPOSE "Itinerary integration plugin"
+)
+endif()
+
 if(BUILD_TESTING)
     find_package(Qt6Test ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
 endif()
