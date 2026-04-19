@@ -394,12 +394,10 @@ msgid "From:"
 msgstr "发件人："
 
 #: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
-msgstr "未知"
+msgstr ""
 
 #: widgets/messageviewer.cpp:349
 #, kde-format

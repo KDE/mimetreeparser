@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-18 00:46+0000\n"
-"PO-Revision-Date: 2026-04-09 01:31+0100\n"
+"PO-Revision-Date: 2026-04-18 08:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -404,12 +404,10 @@ msgid "From:"
 msgstr "De:"
 
 #: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
-msgstr "Desconocida"
+msgstr "<i>Desconocido</i>"
 
 #: widgets/messageviewer.cpp:349
 #, kde-format
