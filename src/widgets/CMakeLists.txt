@@ -55,7 +55,7 @@ target_include_directories(
 
 target_link_libraries(
     KPim6MimeTreeParserWidgets
-    PUBLIC Qt::Widgets KPim6::Mime
+    PUBLIC Qt::Widgets KF6::Mime
     PRIVATE
         KPim6::MimeTreeParserCore
         Qt::PrintSupport
