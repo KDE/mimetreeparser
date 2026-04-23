@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-18 00:46+0000\n"
-"PO-Revision-Date: 2026-03-30 15:03+0200\n"
+"PO-Revision-Date: 2026-04-21 15:38+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
 "Language: de\n"
@@ -407,12 +407,10 @@ msgid "From:"
 msgstr "Von:"
 
 #: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
-msgstr "Unbekannt"
+msgstr "<i>Unbekannt</i>"
 
 #: widgets/messageviewer.cpp:349
 #, kde-format
@@ -509,12 +507,10 @@ msgid "(No Subject)"
 msgstr "(Kein Betreff)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Nächste Nachricht"
+msgstr "(Keine Nachricht)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -533,26 +529,22 @@ msgstr ""
 "keine Nachrichten."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Datei %1 konnte nicht erstellt werden."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
-msgstr "Fehler beim Abspeichern der Datei"
+msgstr "Fehler beim Speichern der Nachricht"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Datei %1 konnte nicht erstellt werden."
+msgstr "Datei %1 konnte nicht geschrieben werden."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -573,25 +565,24 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML Datei (*.eml);;MBOX Datei (*.mbox);;MIME Datei (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Nächste Nachricht"
+msgstr "Nachricht speichern"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
+"Die Nachricht scheint nicht verschlüsselt zu sein. Es wird die "
+"Originalnachricht gespeichert."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgid "The message is encrypted for the following keys:"
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "Diese Nachricht ist für die folgendem Schlüssel verschlüsselt:"
+msgstr "Fehler beim Entschlüsseln der Nachricht: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -599,14 +590,14 @@ msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
 msgstr ""
+"Die Entschlüsselung der Nachricht ist fehlgeschlagen. Es wird die "
+"ursprüngliche (verschlüsselte?) Nachricht gespeichert."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Entschlüsselte Datei abspeichern"
+msgstr "Entschlüsselte Nachricht speichern"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -624,13 +615,13 @@ msgstr "Vorschau drucken"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
-msgstr "Datei"
+msgstr "&Datei"
 
 #: widgets/messageviewerdialog.cpp:49
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Ansicht"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
