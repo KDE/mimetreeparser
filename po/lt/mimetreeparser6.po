@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-18 00:46+0000\n"
-"PO-Revision-Date: 2026-03-27 19:52+0200\n"
+"PO-Revision-Date: 2026-04-25 23:44+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -409,12 +409,10 @@ msgid "From:"
 msgstr "Nuo:"
 
 #: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
-msgstr "Nežinoma"
+msgstr "<i>Nežinomas</i>"
 
 #: widgets/messageviewer.cpp:349
 #, kde-format
@@ -511,12 +509,10 @@ msgid "(No Subject)"
 msgstr "(Be temos)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Kitas laiškas"
+msgstr "(Nėra laiško)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
@@ -535,26 +531,22 @@ msgstr ""
 "laiškų."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Nepavyko sukurti failo %1."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Klaida įrašant laišką"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Nepavyko sukurti failo %1."
+msgstr "Nepavyko įrašyti failo %1."
 
 #: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
 #, kde-format
@@ -575,41 +567,35 @@ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
 msgstr "EML failas (*.eml);;MBOX failas (*.mbox);;MIME failas (*.mime)"
 
 #: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Kitas laiškas"
+msgstr "Įrašyti laišką"
 
 #: widgets/messageviewerbase_p.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "Atrodo, kad laiškas nėra šifruotas. Įrašomas pradinis laiškas."
 
 #: widgets/messageviewerbase_p.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "You cannot decrypt this message."
+#, kde-format
 msgctxt "@info"
 msgid "Failed to decrypt the message: %1"
-msgstr "Jūs negalite iššifruoti šio laiško."
+msgstr "Nepavyko iššifruoti laiško: %1"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to decrypt the message. Saving the original (encrypted?) message."
-msgstr ""
+msgstr "Nepavyko iššifruoti laiško. Įrašomas pradinis (nešifruotas?) laiškas."
 
 #: widgets/messageviewerbase_p.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Įrašyti iššifruotą failą"
+msgstr "Įrašyti iššifruotą laišką"
 
 #: widgets/messageviewerbase_p.cpp:334
 #, kde-format
@@ -633,7 +619,7 @@ msgstr "&Failas"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Rodinys"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
