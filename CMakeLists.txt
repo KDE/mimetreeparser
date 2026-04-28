@@ -14,7 +14,7 @@ set(CMAKE_MODULE_PATH
     ${ECM_MODULE_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules
 )
-set(QT_REQUIRED_VERSION "6.7.0")
+set(QT_REQUIRED_VERSION "6.7.1")
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -57,9 +57,9 @@ file(
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
-set(KPIM_MIME_VERSION "6.7.0")
-set(KPIM_LIBKLEO_VERSION "6.7.0")
-set(KPIM_MBOX_VERSION "6.7.0")
+set(KPIM_MIME_VERSION "6.7.1")
+set(KPIM_LIBKLEO_VERSION "6.7.1")
+set(KPIM_MBOX_VERSION "6.7.1")
 set(GPGME_REQUIRED_VERSION "1.23.2")
 
 ecm_setup_version(PROJECT
