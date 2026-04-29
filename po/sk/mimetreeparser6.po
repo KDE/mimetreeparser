@@ -516,8 +516,8 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
-"Nie je možné read the file <filename>%1</filename>, or the file doesn't "
-"contain any messages."
+"Nie je možné prečítať súbor <filename>%1</filename>, alebo súbor neobsahuje "
+"žiadne správy."
 
 #: widgets/messageviewerbase_p.cpp:247
 #, kde-format
