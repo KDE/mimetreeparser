@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-18 00:46+0000\n"
-"PO-Revision-Date: 2026-04-18 20:31+0300\n"
+"PO-Revision-Date: 2026-05-02 18:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -84,8 +84,8 @@ msgstr[1] "%1 sertifika içe aktarıldı"
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
-msgstr[0] "1 sertifika halihazırda içe aktarılmıştı"
-msgstr[1] "%1 sertifika halihazırda içe aktarılmıştı"
+msgstr[0] "1 sertifika hâlihazırda içe aktarılmıştı"
+msgstr[1] "%1 sertifika hâlihazırda içe aktarılmıştı"
 
 #: core/messageparser.cpp:48
 #, kde-format
