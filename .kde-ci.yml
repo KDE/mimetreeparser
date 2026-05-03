@@ -9,7 +9,7 @@ Dependencies:
     'frameworks/kwidgetsaddons': '@latest-kf6'
     'frameworks/kirigami': '@latest-kf6'
     'frameworks/kio': '@latest-kf6'
-    'frameworks/kmime': '@same'
+    'frameworks/kmime': '@latest-kf6'
     'pim/kmbox': '@same'
     'pim/libkleo': '@same'
 
