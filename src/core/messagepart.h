@@ -33,6 +33,7 @@ namespace MimeTreeParser
 class ObjectTreeParser;
 class MultiPartAlternativeBodyPartFormatter;
 
+class AlternativeMessagePart;
 class SignedMessagePart;
 class EncryptedMessagePart;
 /*!
@@ -104,6 +105,7 @@ public:
      * \return A pointer to the parent part, or nullptr if this is the root
      */
     [[nodiscard]] MessagePart *parentPart() const;
+    [[nodiscard]] AlternativeMessagePart *parentAlternativePart() const;
 
     /*!
      * \brief Returns the plaintext content of this part

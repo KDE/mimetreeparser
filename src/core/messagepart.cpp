@@ -181,6 +181,16 @@ MessagePart *MessagePart::parentPart() const
     return mParentPart;
 }
 
+AlternativeMessagePart *MessagePart::parentAlternativePart() const
+{
+    if (auto alt = dynamic_cast<AlternativeMessagePart *>(mParentPart)) {
+        return alt;
+    } else if (mParentPart && mParentPart->subParts().size() == 1) {
+        return mParentPart->parentAlternativePart();
+    }
+    return nullptr;
+}
+
 void MessagePart::setParentPart(MessagePart *parentPart)
 {
     mParentPart = parentPart;
@@ -514,7 +524,10 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
     }
 
     if (auto dataText = findTypeInDirectChildren(mNode, "text/plain")) {
-        mChildParts[MultipartPlain] = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataText, true));
+        // text/plain may contain inline encrypted/signed sections, so recurse
+        auto sub = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataText, true));
+        mChildParts[MultipartPlain] = sub;
+        appendSubPart(sub);
     }
 
     if (auto dataHtml = findTypeInDirectChildren(mNode, "text/html")) {
