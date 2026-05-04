@@ -53,7 +53,7 @@ private Q_SLOTS:
         otp.parseObjectTree(readMailFromFile("alternative.mbox"_L1));
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
+        auto part = partList[0]->parentAlternativePart();
         QVERIFY(bool(part));
         QCOMPARE(part->plaintextContent(),
                  u"If you can see this text it means that your email client couldn't display our newsletter properly.\nPlease visit this link to "
@@ -155,6 +155,25 @@ private Q_SLOTS:
         QCOMPARE(part->encryptions().size(), 1);
         QCOMPARE(part->signatures().size(), 1);
         QCOMPARE(otp.collectAttachmentParts().size(), 0);
+    }
+
+    void testMultipartAlternativeOpenPGPInline()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("multipart-mixed-alternative-inline-pgp.mbox"_L1));
+        otp.print();
+        otp.decryptAndVerify();
+        otp.print();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 1);
+        auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
+        QVERIFY(bool(part));
+        QVERIFY(part->text().contains(u"Some text before PGP block"));
+        QVERIFY(part->text().contains(u"encrypted message text"));
+        QVERIFY(part->text().contains(u"Some text after PGP block"));
+        QCOMPARE(part->subParts().size(), 3);
+        auto enc = part->subParts()[1];
+        QCOMPARE(enc->encryptions().size(), 1);
     }
 
     void testOpenPPGInlineWithNonEncText()
@@ -292,7 +311,7 @@ private Q_SLOTS:
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
+        auto part = partList[0]->parentAlternativePart();
         QVERIFY(bool(part));
         auto resolvedContent = otp.resolveCidLinks(part->htmlContent());
         QVERIFY(!resolvedContent.contains("cid:"_L1));
@@ -305,7 +324,7 @@ private Q_SLOTS:
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
+        auto part = partList[0]->parentAlternativePart();
         QVERIFY(bool(part));
         auto resolvedContent = otp.resolveCidLinks(part->htmlContent());
         QVERIFY(!resolvedContent.contains("cid:"_L1));
@@ -512,7 +531,7 @@ private Q_SLOTS:
         otp.decryptAndVerify();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
+        auto part = partList[0]->parentAlternativePart();
         QVERIFY(part);
         QCOMPARE(part->encryptions().size(), 0);
         QCOMPARE(part->signatures().size(), 0);
@@ -540,7 +559,7 @@ private Q_SLOTS:
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
+        auto part = partList[0]->parentAlternativePart();
         QVERIFY(part);
         QCOMPARE(part->encryptions().size(), 0);
         QCOMPARE(part->signatures().size(), 0);
@@ -566,7 +585,7 @@ private Q_SLOTS:
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
+        auto part = partList[0]->parentAlternativePart();
         QVERIFY(part);
         QCOMPARE(part->encryptions().size(), 0);
         QCOMPARE(part->signatures().size(), 0);
@@ -585,7 +604,7 @@ private Q_SLOTS:
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
+        auto part = partList[0]->parentAlternativePart();
         QVERIFY(part);
         QCOMPARE(part->encryptions().size(), 0);
         qWarning() << part;
@@ -665,8 +684,8 @@ private Q_SLOTS:
         QCOMPARE(partList.size(), 2);
         // The actual content
         {
-            auto part = partList[0].dynamicCast<MimeTreeParser::AlternativeMessagePart>();
-            QVERIFY(bool(part));
+            QVERIFY(partList[0]->text().contains(u"test93-18"_s));
+            QVERIFY(partList[0]->parentAlternativePart());
         }
 
         // The signature
