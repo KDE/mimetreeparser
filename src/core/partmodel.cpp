@@ -312,7 +312,6 @@ QHash<int, QByteArray> PartModel::roleNames() const
         {ContentRole, "content"_ba},
         {IsEmbeddedRole, "isEmbedded"_ba},
         {SidebarSecurityLevelRole, "sidebarSecurityLevel"_ba},
-        {EncryptionSecurityLevelRole, "encryptionSecurityLevel"_ba},
         {SignatureSecurityLevelRole, "signatureSecurityLevel"_ba},
         {EncryptionSecurityLevelRole, "encryptionSecurityLevel"_ba},
         {ErrorType, "errorType"_ba},
