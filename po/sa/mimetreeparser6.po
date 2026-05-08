@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-18 00:46+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -126,13 +126,13 @@ msgstr "क्रिप्टो प्लग-इन् \"%1\" दत्ता�
 msgid "Error: %1"
 msgstr "त्रुटिः %1"
 
-#: core/partmodel.cpp:579 core/partmodel.cpp:581
+#: core/partmodel.cpp:577 core/partmodel.cpp:579
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "भवन्तः एतत् सन्देशं विगुप्तीकरणं कर्तुं न शक्नुवन्ति ।"
 
-#: core/partmodel.cpp:587
+#: core/partmodel.cpp:585
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -140,7 +140,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "सन्देशः निम्नलिखितग्राहकस्य कृते एन्क्रिप्टेड् भवति ।"
 msgstr[1] "सन्देशः निम्नलिखितग्राहिणां कृते एन्क्रिप्टेड् भवति ।"
 
-#: core/partmodel.cpp:601
+#: core/partmodel.cpp:599
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

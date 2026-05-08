@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-18 00:46+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2026-04-18 14:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -129,13 +129,13 @@ msgstr "תוסף ההצפנה „%1” לא יכול לפענח את הנתונ�
 msgid "Error: %1"
 msgstr "שגיאה: %1"
 
-#: core/partmodel.cpp:579 core/partmodel.cpp:581
+#: core/partmodel.cpp:577 core/partmodel.cpp:579
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "אי אפשר לפענח את ההודעה הזאת."
 
-#: core/partmodel.cpp:587
+#: core/partmodel.cpp:585
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -145,7 +145,7 @@ msgstr[1] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[2] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[3] "ההודעה מוצפנת לנמענים הבאים:"
 
-#: core/partmodel.cpp:601
+#: core/partmodel.cpp:599
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

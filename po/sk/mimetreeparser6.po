@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-18 00:46+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -124,13 +124,13 @@ msgstr "Šifrovací modul %1 nemohol odšifrovať údaje."
 msgid "Error: %1"
 msgstr "Chyba: %1"
 
-#: core/partmodel.cpp:579 core/partmodel.cpp:581
+#: core/partmodel.cpp:577 core/partmodel.cpp:579
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Môžetenot decrypt this message."
 
-#: core/partmodel.cpp:587
+#: core/partmodel.cpp:585
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -139,7 +139,7 @@ msgstr[0] "Správa je šifrovaná pre nasledujúce kľúče:"
 msgstr[1] "Správa je šifrovaná pre nasledujúce kľúče:"
 msgstr[2] "Správa je šifrovaná pre nasledujúce kľúče:"
 
-#: core/partmodel.cpp:601
+#: core/partmodel.cpp:599
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

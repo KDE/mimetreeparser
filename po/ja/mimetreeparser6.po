@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-18 00:46+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -119,20 +119,20 @@ msgstr "暗号プラグイン\"%1\"はメッセージを復号できませんで
 msgid "Error: %1"
 msgstr "エラー: %1"
 
-#: core/partmodel.cpp:579 core/partmodel.cpp:581
+#: core/partmodel.cpp:577 core/partmodel.cpp:579
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "あなたはこのメッセージを復号できません。"
 
-#: core/partmodel.cpp:587
+#: core/partmodel.cpp:585
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "このメッセージは以下の受け取り手のために暗号化されています:"
 
-#: core/partmodel.cpp:601
+#: core/partmodel.cpp:599
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

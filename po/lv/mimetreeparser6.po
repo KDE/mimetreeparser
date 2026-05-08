@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-18 00:46+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2025-08-21 13:13+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -127,13 +127,13 @@ msgstr "Šifrēšanas spraudnim „%1“ neizdevās atšifrēt datus."
 msgid "Error: %1"
 msgstr "Kļūda: %1"
 
-#: core/partmodel.cpp:579 core/partmodel.cpp:581
+#: core/partmodel.cpp:577 core/partmodel.cpp:579
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Nevarat atšifrēt šo vēstuli."
 
-#: core/partmodel.cpp:587
+#: core/partmodel.cpp:585
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -142,7 +142,7 @@ msgstr[0] "Vēstule ir šifrēta šim saņēmējam:"
 msgstr[1] "Vēstule ir šifrēta šiem saņēmējiem:"
 msgstr[2] "Vēstule ir šifrēta šiem saņēmējiem:"
 
-#: core/partmodel.cpp:601
+#: core/partmodel.cpp:599
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
