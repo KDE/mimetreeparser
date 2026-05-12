@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.27)
 
-set(PIM_VERSION "6.7.1")
+set(PIM_VERSION "6.7.2")
 project(MimeTreeParserNG VERSION ${PIM_VERSION})
 
 # ECM setup
