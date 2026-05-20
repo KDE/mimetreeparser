@@ -140,6 +140,7 @@ private:
     friend class EncapsulatedRfc822MessagePart;
     friend class TextMessagePart;
     friend class HtmlMessagePart;
+    friend class AnyTypeBodyPartFormatter;
     friend class TextPlainBodyPartFormatter;
     friend class MultiPartSignedBodyPartFormatter;
     friend class ApplicationPkcs7MimeBodyPartFormatter;

@@ -22,6 +22,21 @@ namespace MimeTreeParser
 {
 class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
+    QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
+    {
+        // This encapsulation is used by GpgOL to protect multipart/(encrypted|signed) payload from getting mangled by
+        // certain MTAs (some versions of MS Exchange). Unpack and parse.
+        if (node->contentType()->mimeType() == "application/octet-stream"_ba) {
+            const auto decoded = KMime::CRLFtoLF(node->decodedBody());
+            if (decoded.startsWith("MIME-Version:"_ba) && decoded.mid(decoded.indexOf("\n") + 1).startsWith("Content-Type: multipart/")) {
+                node->contentDisposition()->setDisposition(KMime::Headers::CDinline);
+                node->setContent(KMime::CRLFtoLF(decoded));
+                node->parse();
+                return objectTreeParser->parseObjectTreeInternal(node, false);
+            }
+        }
+        return BodyPartFormatter::process(objectTreeParser, node);
+    }
 };
 
 class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
