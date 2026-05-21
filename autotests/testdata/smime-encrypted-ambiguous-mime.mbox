@@ -1,0 +1,46 @@
+From: firstname.lastname@example.com
+To: test@kolab.org
+Subject: S/MIME encrypted ambigious format
+Date: Sun, 30 Aug 2015 12:05:17 +0200
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="nextPart3335835.KxmPgziKxd"
+
+--nextPart3335835.KxmPgziKxd
+Content-Type: text/plain
+Content-Transfer-Encoding: 7Bit
+
+First message part.
+This mail looks like it was originally multipart/encrypted, and
+mangled by some MTA. We cannot really be sure, however. This
+text should therefore be shown - but also the attached encrypted
+signed message should be shown inline.
+--nextPart3335835.KxmPgziKxd
+Content-Type: application/pkcs7-mime; name="smime.p7m"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7m"
+
+MIAGCSqGSIb3DQEHA6CAMIACAQAxgfwwgfkCAQAwYjBVMQswCQYDVQQGEwJVUzENMAsGA1UECgwE
+S0RBQjEWMBQGA1UEAwwNdW5pdHRlc3QgY2VydDEfMB0GCSqGSIb3DQEJARYQdGVzdEBleGFtcGxl
+LmNvbQIJANNFIDoYY4XJMA0GCSqGSIb3DQEBAQUABIGAkttyRl8OyZkRGfs3CMfzYchrG4rRMfbE
+WIkAFIXf64yAzPZfo6cCn0Il/6q4793FeKUrsJUvzP21KBLp4u1t5qLL5iPAmAzBdLg0teoEzLZe
+CEZHinM+WSMdz2wEV8lgAt8x/3yhXmDMB09FEapUaBCK5NhbLAFkpI2mFg66zxcwgAYJKoZIhvcN
+AQcBMB0GCWCGSAFlAwQBAgQQ6DSjjkXJNm5cXQNek9eozqCABIIDsI7lufqw58g/uVM2gymkldmb
+BOgdimxshJkYznbbG5sfQPNM9ROhXKRUOc8hfzgmZ9dOZvtAyzepROMHrcL1mFFx7c1vgyT85fai
+PLEqRs8FRoztXJ0I3q57r+sPW4BtYJp9WCBSerdLSrBFK1zvKpVQtSCYbbDCc3462KnSsBrE4XTf
+BiiLWkpok4fNIdqYG1aWPLgRbp7wwLiXcq5RxYCail1tlyAty6dWBrYE1+ABZoqnKUqNqbghxJUd
+X9t3EziUnzw7c0Hq03sJEShzbXI9BxOTs8ZZ+1Ktx3rdh6RhZZ7XfJ7XIuN0yYhusBeOgC8AuILN
+lYojgmXMin52VPFmz9siI8jnKaqsr1uUqVfMLNc+mLhZEjuOu99eAHwdJUS95BKWm9J8DBe/lpz3
+s09Oz2oOoiQx0WxKmQZ4GXW/UI9OwykfNLqWfmDrbMbGW4Mvq615ucHZixFdp2vf3kU72wfk8hFK
+EIU/1Ov85glDj96ELdXErXn02BNvVBQIsRx3DbBGEgj9tz+WHbCR6RjEK4eV5lhInZplFGmYr4Uu
+9ALS+MRGTYZnALNPrWu6b1aWprnlJCyKZeeyqUzpQVPoWOh7CfdvBxvQoil4Z9Neb9O0AGCZ0axc
+zZ4yYcS/LpHkLgYPC5BphNtpyciQh6ZFeexi8rsZuHRu+YUKnuM+DQyUxtUvDYhiX7CT49MMXIwt
+bdyA0IAbIXXb/Us9GGX11gAfz2EFI3QBDHtsyciEgCIlA32OiiJF0T5CnQsku2yu6c3TWC4k+feL
+jjTEhm/KPUL6SkksarFeEncJlVt7impW9FlHyBpISwlQF4RAxDYTRX475VTNu7wn3PQx376m8iBN
+K20MjdfIM162jcQh9IWnqTZ0nH/gT2kQPYe7GqjFi6XmU3bwdzW9SXR0G9A8juIXaaNR7aXcsB53
+/W4WHPcdJBwRELa0dT1/bPg8z3EV2vM7Flc/Q5ugTWHxk8GHNEPpotArpLq1sEAZu78mSCqzzEDA
+TwzEpj9LZYIv4rDYYLCAxUR9YGhiJ5Qm21YnklkE++4zfpsl/KJcwtNsp7SWdzeVuPoUYBNhsgp/
+PZgudzQoOhxcF4ChHMVSNk1f1tlvXZppeXwv9OwpSszz0zZUr46ievpkQwL0Sa1XAfKwAt7bFJwp
+i95ae7p58ZdizJVsz0QUhFDxIDL76qiPEYXC7nIf4ZPQ36dzLAfZ6OwWGffluxHpE6oqUoM3l320
+7yQT66xfRKLGl5Cr1Q8UBBABC6aR2dt6RVbsxbR3mB0PAAAAAAAAAAAAAA==
+
+--nextPart3335835.KxmPgziKxd--
