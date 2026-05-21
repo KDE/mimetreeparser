@@ -67,6 +67,27 @@ public:
     }
 };
 
+static QSharedPointer<EncryptedMessagePart>
+contentsAsEncryptedMessagePart(ObjectTreeParser *objectTreeParser, KMime::Content *parent, const QList<KMime::Content *> &contents)
+{
+    if (contents.count() == 1 && contents[0]->contentType()->mimeType() == "application/pkcs7-mime"_ba) {
+        auto data = contents[0];
+        auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), parent, data));
+        mp->setIsEncrypted(true);
+        return mp;
+    }
+
+    if (contents.count() == 2 && contents[0]->contentType()->mimeType() == "application/pgp-encrypted"_ba
+        && contents[1]->contentType()->mimeType() == "application/octet-stream"_ba) {
+        KMime::Content *data = contents[1];
+        auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), parent, data));
+        mp->setIsEncrypted(true);
+        return mp;
+    }
+
+    return {};
+}
+
 class MultiPartMixedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
 public:
@@ -77,35 +98,37 @@ public:
             return {};
         }
 
-        bool isActuallyMixedEncrypted = false;
+        // Certain MTAs (Outlook/Exchange) may mangle multipart/encrypted to multipart/mixed. This may include
+        // the following additional modifications:
+        //   - a text/plain inserted as the first part
+        //   - disposition changed to attachment
+        //   - filename headers added
+        // The order and mimetypes of the subparts appear to remain untouched, however, so we can try to detect
+        // whether this has happened, and reverse it.
+        bool mayBeMangledMultipartEncrypted = false;
         for (const auto &content : std::as_const(contents)) {
             if (content->contentType()->mimeType() == "application/pgp-encrypted"_ba || content->contentType()->mimeType() == "application/pkcs7-mime"_ba) {
-                isActuallyMixedEncrypted = true;
+                mayBeMangledMultipartEncrypted = true;
             }
         }
 
-        if (isActuallyMixedEncrypted) {
-            // Remove explaination
-            contents.erase(std::remove_if(contents.begin(),
-                                          contents.end(),
-                                          [](const auto content) {
-                                              return content->contentType()->mimeType() == "text/plain";
-                                          }),
-                           contents.end());
-
-            if (contents.count() == 1 && contents[0]->contentType()->mimeType() == "application/pkcs7-mime"_ba) {
-                auto data = findTypeInDirectChildren(node, "application/pkcs7-mime"_ba);
-                auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), node, data));
-                mp->setIsEncrypted(true);
-                return mp;
+        if (mayBeMangledMultipartEncrypted) {
+            // NOTE: Previous code would strip such a first node, assuming it is something like "please use a compatible client",
+            //       but that looks rather dangerous. E.g. we may also be dealing with be a genuine multipart/mixed message with
+            //       a text/plain body, and an attached .p7m file. We certainly don't want to drop the text part in that case.
+            //       However, if everything following this part looks like it may be a mangled encrpyted message, we do want to
+            //       try decrypting it.
+            bool firstIsTextPlain = contents.count() >= 1 && contents[0]->contentType()->mimeType() == "text/plain";
+            auto mp = contentsAsEncryptedMessagePart(objectTreeParser, node, firstIsTextPlain ? contents.mid(1) : contents);
+            if (mp) {
+                auto part = QSharedPointer<MessagePart>(new MessagePart(objectTreeParser, {}, node));
+                if (firstIsTextPlain) {
+                    part->appendSubPart(QSharedPointer<TextMessagePart>(new TextMessagePart(objectTreeParser, contents.at(0))));
+                }
+                part->appendSubPart(mp);
+                return part;
             }
-
-            if (contents.count() == 2 && contents[1]->contentType()->mimeType() == "application/octet-stream"_ba) {
-                KMime::Content *data = findTypeInDirectChildren(node, "application/octet-stream"_ba);
-                auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
-                mp->setIsEncrypted(true);
-                return mp;
-            }
+            // fallthrough to regular multipart/mixed processing
         }
 
         // we need the intermediate part to preserve the headers (necessary for with protected headers using multipart mixed)
@@ -157,6 +180,11 @@ public:
 
         bool isSigned = (smimeType == QLatin1StringView("signed-data"));
         bool isEncrypted = (smimeType == QLatin1StringView("enveloped-data"));
+        if (!isSigned && !isEncrypted && node->contentDisposition()->disposition() == KMime::Headers::CDattachment && node->parent()
+            && node->parent()->contents().size() > 1) {
+            // Probably really an attachment
+            return QSharedPointer<MessagePart>();
+        }
 
         // Analyze "signTestNode" node to find/verify a signature.
         // If zero part.objectTreeParser verification was successfully done after
