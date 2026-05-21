@@ -466,6 +466,24 @@ private Q_SLOTS:
                  "the certificate on a keyserver or import it from a file."_L1);
     }
 
+    void testOpenpgpMaybeMangled()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("openpgp-encrypted-ambiguous-mime.mbox"_L1));
+        otp.decryptAndVerify();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 2); // initial text/plain, followed by encrypted message parrt
+        auto part = partList[1].dynamicCast<MimeTreeParser::MessagePart>();
+        QCOMPARE(part->encryptions().size(), 1);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
+        QVERIFY(otp.plainTextContent().contains(u"First message part"_s));
+        QVERIFY(otp.plainTextContent().contains(u"this is the main body part"_s));
+
+        // two attachments from the encrypted mail
+        auto attachments = otp.collectAttachmentParts();
+        QCOMPARE(attachments.size(), 2);
+    }
+
     void testAppleHtmlWithAttachments()
     {
         MimeTreeParser::ObjectTreeParser otp;
@@ -822,6 +840,37 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
         QVERIFY(bool(part));
         QCOMPARE(part->text(), "Encrypted and signed mail."_L1);
+    }
+
+    void testSmimeMaybeMangled()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("smime-encrypted-ambiguous-mime.mbox"_L1));
+        otp.decryptAndVerify();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 2); // initial text/plain, followed by encrypted message part
+        auto part = partList[1].dynamicCast<MimeTreeParser::MessagePart>();
+        QCOMPARE(part->encryptions().size(), 1);
+        QCOMPARE(part->signatures().size(), 1);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
+        QVERIFY(otp.plainTextContent().contains(u"First message part"_s));
+        QVERIFY(otp.plainTextContent().contains(u"Encrypted and signed mail."_s));
+    }
+
+    void testSmimeMaybeMangled2()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("smime-encrypted-not-so-ambiguous-mime.mbox"_L1));
+        otp.decryptAndVerify();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 1); // only text/plain, encrypted part seen as attached
+        QVERIFY(otp.plainTextContent().contains(u"First message part"_s));
+        QVERIFY(!otp.plainTextContent().contains(u"Encrypted and signed mail."_s));
+
+        // The encrypted message and a readme.txt
+        auto contentAttachmentList = otp.collectAttachmentParts();
+        QCOMPARE(contentAttachmentList.size(), 2);
     }
 };
 
