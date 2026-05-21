@@ -343,6 +343,27 @@ private Q_SLOTS:
         QVERIFY(bool(subPart));
     }
 
+    void testGpgOLencapsulatedMime()
+    {
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("internal-pgpencrypted-mime.mbox"_L1));
+        otp.decryptAndVerify();
+
+        QVERIFY(otp.plainTextContent().contains(u"test text"_s));
+
+        auto partList = otp.collectContentParts();
+        // NOTE: The test message contains an initial empty text/plain part. In this test
+        //       we don't want to assume whether or not that gets stripped.
+        auto part = partList.last().dynamicCast<MimeTreeParser::MessagePart>();
+        QVERIFY(bool(part));
+        QCOMPARE(part->encryptions().size(), 1);
+        QCOMPARE(part->signatures().size(), 1);
+
+        const auto attachments = otp.collectAttachmentParts();
+        QCOMPARE(attachments.size(), 1);
+        QCOMPARE(attachments[0]->filename(), u"file.txt"_s);
+    }
+
     void test8bitEncodedInPlaintext()
     {
         MimeTreeParser::ObjectTreeParser otp;
