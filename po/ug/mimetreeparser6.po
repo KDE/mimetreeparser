@@ -1,0 +1,618 @@
+# Uyghur translation for mimetreeparser6.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the mimetreeparser package.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mimetreeparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
+"PO-Revision-Date: 2026-06-01 16:22-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
+
+#: core/attachmentmodel.cpp:203
+#, kde-format
+msgctxt "@title:column"
+msgid "Name"
+msgstr "ئاتى"
+
+#: core/attachmentmodel.cpp:205
+#, kde-format
+msgctxt "@title:column"
+msgid "Size"
+msgstr "چوڭلۇقى"
+
+#: core/attachmentmodel.cpp:207
+#, kde-format
+msgctxt "@title:column"
+msgid "Encrypted"
+msgstr "شىفىرلانغان"
+
+#: core/attachmentmodel.cpp:209
+#, kde-format
+msgctxt "@title:column"
+msgid "Signed"
+msgstr ""
+
+#: core/attachmentmodel.cpp:302
+#, kde-format
+msgctxt "@info"
+msgid "Failed to save attachment."
+msgstr ""
+
+#: core/attachmentmodel.cpp:325
+#, kde-format
+msgid "attachment"
+msgstr ""
+
+#: core/attachmentmodel.cpp:332
+#, kde-format
+msgctxt "@info"
+msgid "Failed to write attachment for opening."
+msgstr ""
+
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
+#, kde-format
+msgctxt "@info"
+msgid "Failed to open attachment."
+msgstr ""
+
+#: core/attachmentmodel.cpp:382
+#, kde-format
+msgctxt "@info"
+msgid "No certificates were found in this attachment"
+msgstr ""
+
+#: core/attachmentmodel.cpp:385
+#, kde-format
+msgctxt "@info"
+msgid "one certificate imported"
+msgid_plural "%1 certificates imported"
+msgstr[0] ""
+
+#: core/attachmentmodel.cpp:390
+#, kde-format
+msgctxt "@info"
+msgid "one certificate was already imported"
+msgid_plural "%1 certificates were already imported"
+msgstr[0] ""
+
+#: core/messageparser.cpp:48
+#, kde-format
+msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+msgid "Unknown"
+msgstr "يوچۇن"
+
+#: core/messageparser.cpp:53
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr "، "
+
+#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:745
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong Crypto Plug-In."
+msgstr ""
+
+#: core/messagepart.cpp:895
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr ""
+
+#: core/messagepart.cpp:897
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: core/messagepart.cpp:899
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr ""
+
+#: core/messagepart.cpp:900
+#, kde-format
+msgid "Error: %1"
+msgstr "خاتالىق: %1"
+
+#: core/partmodel.cpp:577 core/partmodel.cpp:579
+#, kde-format
+msgctxt "@info:status"
+msgid "You cannot decrypt this message."
+msgstr ""
+
+#: core/partmodel.cpp:585
+#, kde-format
+msgctxt "@info:status"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] ""
+
+#: core/partmodel.cpp:599
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase."
+msgstr ""
+
+#: core/urlhandler.cpp:51
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr "Could not start certificate manager. ئورناتمىڭىزنى تەكشۈرۈڭ."
+
+#: core/utils.cpp:49
+#, kde-format
+msgctxt "@info"
+msgid "Unknown Key"
+msgstr ""
+
+#: core/utils.cpp:63
+#, kde-format
+msgctxt "Separator"
+msgid " - "
+msgstr " - "
+
+#: quick/qml/itinerary/FlightReservationComponent.qml:77
+#: quick/qml/itinerary/TrainReservationComponent.qml:91
+#, kde-format
+msgctxt "@action"
+msgid "Open Menu"
+msgstr "تىزىملىك ئاچ"
+
+#: quick/qml/itinerary/FlightReservationComponent.qml:93
+#, kde-format
+msgctxt "flight departure, %1 is airport, %2 is time"
+msgid "Departure from %1"
+msgstr ""
+
+#: quick/qml/itinerary/FlightReservationComponent.qml:110
+#, kde-format
+msgctxt "flight arrival, %1 is airport, %2 is time"
+msgid "Arrival at %1"
+msgstr ""
+
+#: quick/qml/itinerary/HotelReservationComponent.qml:65
+#, kde-format
+msgid "Check-in time: %1"
+msgstr ""
+
+#: quick/qml/itinerary/HotelReservationComponent.qml:69
+#, kde-format
+msgid "Check-out time: %1"
+msgstr ""
+
+#: quick/qml/itinerary/TrainReservationComponent.qml:157
+#: quick/qml/itinerary/TrainReservationComponent.qml:224
+#, kde-format
+msgid "Pl. %1"
+msgstr ""
+
+#: quick/qml/itinerary/TripMenu.qml:18
+#, kde-format
+msgctxt "@action"
+msgid "Send to KDE Itinerary"
+msgstr ""
+
+#: quick/qml/itinerary/TripMenu.qml:33
+#, kde-format
+msgctxt "@action"
+msgid "Send to %1"
+msgstr "%1 غا ئەۋەت"
+
+#: quick/qml/MailViewer.qml:40
+#, kde-format
+msgctxt "@title:window"
+msgid "Message viewer"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:77
+#, kde-format
+msgctxt "@label"
+msgid "Subject:"
+msgstr "تېما:"
+
+#: quick/qml/MailViewer.qml:98
+#, kde-format
+msgctxt "@label"
+msgid "From:"
+msgstr "كىمدىن:"
+
+#: quick/qml/MailViewer.qml:114
+#, kde-format
+msgctxt "@label"
+msgid "Sender:"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:130
+#, kde-format
+msgctxt "@label"
+msgid "To:"
+msgstr "كىمگە:"
+
+#: quick/qml/MailViewer.qml:146
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "كۆچۈرۈپ يوللا:"
+
+#: quick/qml/MailViewer.qml:162
+#, kde-format
+msgctxt "@label"
+msgid "BCC:"
+msgstr "مەخپىي كۆچۈرۈپ يوللا:"
+
+#: quick/qml/MailViewer.qml:212
+#, kde-format
+msgctxt "@action:button"
+msgid "Save attachment"
+msgstr ""
+
+#: quick/qml/MailViewer.qml:235
+#, kde-format
+msgctxt "@window:title"
+msgid "Save Attachment As"
+msgstr ""
+
+#: quick/qml/private/AttachmentDelegate.qml:56
+#, kde-format
+msgctxt "@action:button"
+msgid "Import certificate"
+msgstr ""
+
+#: quick/qml/private/Banner.qml:188
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "ياپ"
+
+#: quick/qml/private/ErrorPart.qml:27
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "خاتالىق كۆرۈلدى: %1"
+
+#: quick/qml/private/ICalPart.qml:27
+#, kde-format
+msgid "This mail contains an invitation"
+msgstr ""
+
+#: quick/qml/private/MailPart.qml:42
+#, kde-format
+msgctxt "@info"
+msgid "sent by %1 on %2"
+msgstr ""
+
+#: quick/qml/private/MailPartModel.qml:97
+#: widgets/messagecontainerwidget.cpp:146
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr ""
+
+#: quick/qml/private/MailPartModel.qml:97
+#, kde-format
+msgid "This message is encrypted for: %1"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:144
+#, kde-format
+msgid ""
+"This message is VS-NfD compliant encrypted but you don't have a matching "
+"secret key."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:151
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:153
+#, kde-format
+msgid "This message is encrypted."
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:162
+#, kde-format
+msgid "The message is encrypted for the following recipients:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:70
+#, kde-format
+msgid "&Save Attachment As…"
+msgstr ""
+
+#: widgets/messageviewer.cpp:75
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "ئاچ"
+
+#: widgets/messageviewer.cpp:80
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Import public key"
+msgstr ""
+
+#: widgets/messageviewer.cpp:111
+#, kde-format
+msgctxt "Fallback when file has no name"
+msgid "unnamed"
+msgstr "ئاتسىز"
+
+#: widgets/messageviewer.cpp:114
+#, kde-format
+msgid "Save Attachment As"
+msgstr ""
+
+#: widgets/messageviewer.cpp:303
+#, kde-format
+msgid "Invitation"
+msgstr ""
+
+#: widgets/messageviewer.cpp:306
+#, kde-format
+msgid "&Summary:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:307
+#, kde-format
+msgid "&Organizer:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:309
+#, kde-format
+msgid "&Location:"
+msgstr "ئورنى(&L):"
+
+#: widgets/messageviewer.cpp:311
+#, kde-format
+msgid "&Start date:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:313
+#, kde-format
+msgid "&End date:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:316
+#, kde-format
+msgid "&Details:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:336
+#, kde-format
+msgid "Encapsulated email"
+msgstr ""
+
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:347
+#, kde-format
+msgid "From:"
+msgstr "كىمدىن:"
+
+#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
+#, kde-format
+msgctxt "@status missing from:, an unknown author"
+msgid "<i>Unknown</i>"
+msgstr ""
+
+#: widgets/messageviewer.cpp:349
+#, kde-format
+msgid "Date:"
+msgstr "چېسلا:"
+
+#: widgets/messageviewer.cpp:413
+#, kde-format
+msgid "&Subject:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:416 widgets/messageviewer.cpp:418
+#, kde-format
+msgid "&From:"
+msgstr "ئورنى(&F):"
+
+#: widgets/messageviewer.cpp:421
+#, kde-format
+msgid "&Sender:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:424
+#, kde-format
+msgid "&To:"
+msgstr "نىشان(&T):"
+
+#: widgets/messageviewer.cpp:427
+#, kde-format
+msgid "&CC:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:430
+#, kde-format
+msgid "&BCC:"
+msgstr ""
+
+#: widgets/messageviewer.cpp:433
+#, kde-format
+msgid "&Date:"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:65
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Save"
+msgstr "ساقلا(&S)"
+
+#: widgets/messageviewerbase_p.cpp:71
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Save Decrypted"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:77
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Print Preview"
+msgstr "بېسىشنى ئالدىن كۆزەت"
+
+#: widgets/messageviewerbase_p.cpp:83
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Print"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:89
+#, kde-format
+msgctxt "@action:button Previous email"
+msgid "Previous Message"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:95
+#, kde-format
+msgctxt "@action:button Next email"
+msgid "Next Message"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:101
+#, kde-format
+msgctxt "@action:button"
+msgid "View Source"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Use Fixed Font"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:155
+#, kde-format
+msgctxt "window title if email subject is empty"
+msgid "(No Subject)"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:163
+#, kde-format
+msgctxt "@title:window if there's no email to display"
+msgid "(No Message)"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:178
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No messages to display."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:180
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Unable to read the file <filename>%1</filename>, or the file doesn't contain "
+"any messages."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:247
+#, kde-format
+msgctxt "@info"
+msgid "File %1 could not be created."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
+#, kde-format
+msgctxt "@title:window"
+msgid "Error Saving Message"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:253
+#, kde-format
+msgctxt "@info"
+msgid "File %1 could not be written."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:278
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Encrypted S/MIME files (*.p7m)"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:282
+#, kde-format
+msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Message"
+msgstr "ئۇچۇر ساقلا"
+
+#: widgets/messageviewerbase_p.cpp:307
+#, kde-format
+msgctxt "@info"
+msgid "The message doesn't seem to be encrypted. Saving the original message."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:310
+#, kde-format
+msgctxt "@info"
+msgid "Failed to decrypt the message: %1"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:314
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Failed to decrypt the message. Saving the original (encrypted?) message."
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:320
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Decrypted Message"
+msgstr ""
+
+#: widgets/messageviewerbase_p.cpp:334
+#, kde-format
+msgctxt "@title:window"
+msgid "Print"
+msgstr "باس"
+
+#: widgets/messageviewerbase_p.cpp:351
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Preview"
+msgstr "بېسىشنى ئالدىن كۆزەت"
+
+#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:35
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&File"
+msgstr "ھۆججەت(&F)"
+
+#: widgets/messageviewerdialog.cpp:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&View"
+msgstr "كۆرۈنۈش(&V)"
+
+#: widgets/messageviewerdialog.cpp:54
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Navigation"
+msgstr "يولباشچى(&N)"
+
+#: widgets/messageviewerwindow.cpp:42
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Message"
+msgstr ""
