@@ -56,7 +56,12 @@ target_sources(
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6MimeTreeParserCore PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6MimeTreeParserCore
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KPim6MimeTreeParserCore BASE_NAME mimetreeparser_core)
 
@@ -68,16 +73,25 @@ target_include_directories(
 
 target_link_libraries(
     KPim6MimeTreeParserCore
-    PUBLIC KF6::Mime KPim6::Libkleo Gpgmepp Qt::Gui
-    PRIVATE KPim6::Mbox KF6::I18n
+    PUBLIC
+        KF6::Mime
+        KPim6::Libkleo
+        Gpgmepp
+        Qt::Gui
+    PRIVATE
+        KPim6::Mbox
+        KF6::I18n
 )
 
 set_target_properties(
     KPim6MimeTreeParserCore
     PROPERTIES
-        VERSION ${MIMETREEPARSERNG_VERSION}
-        SOVERSION ${MIMETREEPARSERNG_SOVERSION}
-        EXPORT_NAME MimeTreeParserCore
+        VERSION
+            ${MIMETREEPARSERNG_VERSION}
+        SOVERSION
+            ${MIMETREEPARSERNG_SOVERSION}
+        EXPORT_NAME
+            MimeTreeParserCore
 )
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParserCore
@@ -88,11 +102,7 @@ ecm_generate_pri_file(BASE_NAME MimeTreeParserCore
 
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-install(
-    TARGETS KPim6MimeTreeParserCore
-    EXPORT KPim6MimeTreeParserCoreTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6MimeTreeParserCore EXPORT KPim6MimeTreeParserCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
     HEADER_NAMES
@@ -112,24 +122,21 @@ ecm_generate_headers(MimeTreeParserCore_CamelCase_HEADERS
 )
 
 install(
-    FILES ${MimeTreeParserCore_CamelCase_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore/MimeTreeParserCore
+    FILES
+        ${MimeTreeParserCore_CamelCase_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore/MimeTreeParserCore
     COMPONENT Devel
 )
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_core_export.h
         ${MimeTreeParserCore_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore/mimetreeparsercore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore/mimetreeparsercore
     COMPONENT Devel
 )
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserCore"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserCore")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMimeTreeParserCoreConfig.cmake.in"

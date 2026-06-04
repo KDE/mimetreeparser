@@ -8,18 +8,22 @@ ecm_add_qml_module(mimetreeparser_plugin
     DEPENDENCIES QtQuick
 )
 
-target_sources(mimetreeparser_plugin PRIVATE
-    itinerarykdeconnecthandler.h
-    itinerarykdeconnecthandler.cpp
-    itinerarymodel.cpp
-    itinerarymodel.h
-    types.h
+target_sources(
+    mimetreeparser_plugin
+    PRIVATE
+        itinerarykdeconnecthandler.h
+        itinerarykdeconnecthandler.cpp
+        itinerarymodel.cpp
+        itinerarymodel.h
+        types.h
 )
 
-target_link_libraries(mimetreeparser_plugin PRIVATE
-    Qt::Qml
-    KPim6::MimeTreeParserCore
-    KF6::KIOGui
+target_link_libraries(
+    mimetreeparser_plugin
+    PRIVATE
+        Qt::Qml
+        KPim6::MimeTreeParserCore
+        KF6::KIOGui
 )
 
 ecm_target_qml_sources(mimetreeparser_plugin

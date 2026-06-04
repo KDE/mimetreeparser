@@ -12,7 +12,11 @@ ecm_add_test(messageviewerdialogtest.cpp
     NAME_PREFIX "widgets-"
 )
 
-add_executable(messageviewertest messageviewertest.cpp ../setupenv.cpp)
+add_executable(
+    messageviewertest
+    messageviewertest.cpp
+    ../setupenv.cpp
+)
 add_gpg_crypto_test(messageviewertest widgets-messageviewertest)
 target_link_libraries(
     messageviewertest

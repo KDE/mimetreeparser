@@ -40,12 +40,14 @@ ecm_qt_declare_logging_category(KPim6MimeTreeParserWidgets
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6MimeTreeParserWidgets PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6MimeTreeParserWidgets
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
-generate_export_header(
-    KPim6MimeTreeParserWidgets
-    BASE_NAME mimetreeparser_widgets
-)
+generate_export_header(KPim6MimeTreeParserWidgets BASE_NAME mimetreeparser_widgets)
 
 target_include_directories(
     KPim6MimeTreeParserWidgets
@@ -55,7 +57,9 @@ target_include_directories(
 
 target_link_libraries(
     KPim6MimeTreeParserWidgets
-    PUBLIC Qt::Widgets KF6::Mime
+    PUBLIC
+        Qt::Widgets
+        KF6::Mime
     PRIVATE
         KPim6::MimeTreeParserCore
         Qt::PrintSupport
@@ -70,9 +74,12 @@ target_link_libraries(
 set_target_properties(
     KPim6MimeTreeParserWidgets
     PROPERTIES
-        VERSION ${MIMETREEPARSER_WIDGETS_VERSION}
-        SOVERSION ${MIMETREEPARSER_WIDGETS_SOVERSION}
-        EXPORT_NAME MimeTreeParserWidgets
+        VERSION
+            ${MIMETREEPARSER_WIDGETS_VERSION}
+        SOVERSION
+            ${MIMETREEPARSER_WIDGETS_SOVERSION}
+        EXPORT_NAME
+            MimeTreeParserWidgets
 )
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParserWidgets
@@ -83,11 +90,7 @@ ecm_generate_pri_file(BASE_NAME MimeTreeParserWidgets
 
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-install(
-    TARGETS KPim6MimeTreeParserWidgets
-    EXPORT KPim6MimeTreeParserWidgetsTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6MimeTreeParserWidgets EXPORT KPim6MimeTreeParserWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(MimeTreeParserWidgets_CamelCase_HEADERS
     HEADER_NAMES
@@ -99,24 +102,21 @@ ecm_generate_headers(MimeTreeParserWidgets_CamelCase_HEADERS
 )
 
 install(
-    FILES ${MimeTreeParserWidgets_CamelCase_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets/MimeTreeParserWidgets
+    FILES
+        ${MimeTreeParserWidgets_CamelCase_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets/MimeTreeParserWidgets
     COMPONENT Devel
 )
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_export.h
         ${MimeTreeParserWidgets_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets/mimetreeparserwidgets
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets/mimetreeparserwidgets
     COMPONENT Devel
 )
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserWidgets"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParserWidgets")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMimeTreeParserWidgetsConfig.cmake.in"
@@ -140,7 +140,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets
     COMPONENT Devel
 )
