@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:45+0000\n"
-"PO-Revision-Date: 2025-07-20 01:39+0200\n"
+"PO-Revision-Date: 2026-05-26 21:57+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -160,52 +160,50 @@ msgstr " - "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
+#, kde-format
 msgctxt "@action"
 msgid "Open Menu"
-msgstr "열기"
+msgstr "메뉴 열기"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:93
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr ""
+msgstr "%1 출발"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:110
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
-msgstr ""
+msgstr "%1 도착"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:65
 #, kde-format
 msgid "Check-in time: %1"
-msgstr ""
+msgstr "체크인 시간: %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:69
 #, kde-format
 msgid "Check-out time: %1"
-msgstr ""
+msgstr "체크아웃 시간: %1"
 
 #: quick/qml/itinerary/TrainReservationComponent.qml:157
 #: quick/qml/itinerary/TrainReservationComponent.qml:224
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
+msgstr "%1번"
 
 #: quick/qml/itinerary/TripMenu.qml:18
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr ""
+msgstr "KDE 여행 정보로 전송"
 
 #: quick/qml/itinerary/TripMenu.qml:33
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
-msgstr ""
+msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -512,7 +510,7 @@ msgstr "파일 저장"
 #: widgets/messageviewerdialog.cpp:155 widgets/messageviewerwindow.cpp:206
 #, kde-format
 msgid "File %1 could not be created."
-msgstr "파일 %1을(를) 만들 수 없습니다."
+msgstr "%1 파일을 만들 수 없습니다."
 
 #: widgets/messageviewerdialog.cpp:155 widgets/messageviewerdialog.cpp:172
 #: widgets/messageviewerwindow.cpp:206 widgets/messageviewerwindow.cpp:223
@@ -531,7 +529,7 @@ msgstr "복호화된 파일 저장"
 #, kde-format
 msgctxt "Error message"
 msgid "File %1 could not be created."
-msgstr "파일 %1을(를) 만들 수 없습니다."
+msgstr "%1 파일을 만들 수 없습니다."
 
 #: widgets/messageviewerdialog.cpp:191 widgets/messageviewerwindow.cpp:242
 #, kde-format
