@@ -138,6 +138,8 @@ public:
     std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
     QList<QSharedPointer<MimeTreeParser::MessagePart>> mAttachments;
 
+    QString displayedFilename(const QSharedPointer<MimeTreeParser::MessagePart> &message);
+
 #ifdef Q_OS_WIN
     std::vector<WindowFile> mOpenFiles;
 #endif
@@ -148,6 +150,18 @@ AttachmentModelPrivate::AttachmentModelPrivate(AttachmentModel *q_ptr, const std
     , mParser(parser)
 {
     mAttachments = mParser->collectAttachmentParts();
+}
+
+QString AttachmentModelPrivate::displayedFilename(const QSharedPointer<MimeTreeParser::MessagePart> &message)
+{
+    if (!message->filename().isEmpty()) {
+        return message->filename();
+    }
+    const auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(message->mimeType()));
+    return i18nc("template for unnamed file. %1 is an index, %2 is an extension",
+                 "unnamed_%1.%2",
+                 mAttachments.indexOf(message) + 1,
+                 mimetype.preferredSuffix());
 }
 
 AttachmentModel::AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser)
@@ -234,7 +248,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
             return mimetype.name();
         case Qt::DisplayRole:
         case NameRole:
-            return part->filename();
+            return d->displayedFilename(part);
         case IconRole:
             return mimetype.iconName();
         case Qt::DecorationRole:
@@ -319,11 +333,11 @@ bool AttachmentModel::openAttachment(const int row)
 
 bool AttachmentModel::openAttachment(const QSharedPointer<MimeTreeParser::MessagePart> &message)
 {
-    QString fileName = message->filename();
+    QString fileName = d->displayedFilename(message);
     QTemporaryDir tempDir(QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName() + u".XXXXXX"_s);
     // TODO: We need some cleanup here. Otherwise the files will stay forever on Windows.
     tempDir.setAutoRemove(false);
-    if (message->filename().isEmpty() || !validateFileName(fileName, false)) {
+    if (!validateFileName(fileName, false)) {
         const auto mimetype = d->mimeDb.mimeTypeForName(QString::fromLatin1(message->mimeType()));
         fileName = tempDir.filePath(i18n("attachment") + QLatin1Char('.') + mimetype.preferredSuffix());
     } else {
