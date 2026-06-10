@@ -344,10 +344,17 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             auto header = new QWidget(groupBox);
             auto headerLayout = new QFormLayout(header);
+            const auto part = parts->part<const EncapsulatedRfc822MessagePart>(idx);
+            Q_ASSERT(part);
+            if (const auto subject = part->subject(); subject.isEmpty()) {
+                headerLayout->addRow(i18n("Subject:"), new QLabel(u"<i>"_s + i18nc("Email has no subject", "No subject") + u"</i>"_s));
+            } else {
+                headerLayout->addRow(i18n("Subject:"), new HeaderLabel(subject));
+            }
             const auto from = parts->data(parts->index(i, 0, parent), PartModel::SenderRole).toString();
             const auto date = parts->data(parts->index(i, 0, parent), PartModel::DateRole).toDateTime();
             if (from.isEmpty()) {
-                headerLayout->addRow(i18n("From:"), new QLabel(i18nc("@status missing from:, an unknown author", "<i>Unknown</i>")));
+                headerLayout->addRow(i18n("From:"), new QLabel(u"<i>"_s + i18nc("@status missing from:, an unknown author", "Unknown") + u"</i>"_s));
             } else {
                 headerLayout->addRow(i18n("From:"), new HeaderLabel(from));
             }
