@@ -155,6 +155,7 @@ public:
         PassphraseError,
         NoKeyError,
         UnknownError,
+        UserCancelled,
     };
 
     /*!

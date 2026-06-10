@@ -831,7 +831,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
     mDecryptRecipients.clear();
     bool cannotDecrypt = false;
-    bool bDecryptionOk = !decryptResult.error();
+    bool bDecryptionOk = decryptResult.error().isSuccess(); // Note: isSucess() != !isError()
 
     for (const auto &recipient : decryptResult.recipients()) {
         if (!recipient.status()) {
@@ -857,7 +857,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
         bDecryptionOk = true;
         mDecryptedData = plainText;
     } else {
-        mPassphraseError = decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_BAD_PASSPHRASE;
+        mPassphraseError = decryptResult.error().code() == GPG_ERR_BAD_PASSPHRASE;
         mMetaData.isEncrypted = bDecryptionOk || decryptResult.error().code() != GPG_ERR_NO_DATA;
 
         if (decryptResult.error().isCanceled()) {
@@ -877,30 +877,28 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
         if (bDecryptionOk) {
             mDecryptedData = plainText;
-        } else {
+        } else if (!mPassphraseError) {
             mNoSecKey = true;
             const auto decryRecipients = decryptResult.recipients();
             for (const GpgME::DecryptionResult::Recipient &recipient : decryRecipients) {
                 mNoSecKey &= (recipient.status().code() == GPG_ERR_NO_SECKEY);
-            }
-            if (!mPassphraseError && !mNoSecKey) { // GpgME do not detect passphrase error correctly
-                mPassphraseError = true;
             }
         }
     }
 
     if (!bDecryptionOk) {
         QString cryptPlugLibName;
-        mError = UnknownError;
         if (mCryptoProto) {
             cryptPlugLibName = mCryptoProto->name();
         }
 
-        if (mNoSecKey) {
+        if (decryptResult.error().isCanceled()) {
+            mError = UserCancelled;
+        } else if (mNoSecKey) {
             mError = NoKeyError;
-        }
-
-        if (mPassphraseError) {
+        } else {
+            // According to earlier comments, GpgME does not detect passphrase error correctly
+            mPassphraseError = true;
             mError = PassphraseError;
         }
 
