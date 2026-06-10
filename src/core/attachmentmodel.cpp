@@ -289,8 +289,11 @@ QString AttachmentModel::saveAttachmentToPath(const QSharedPointer<MimeTreeParse
     auto data = node->decodedBody();
     // This is necessary to store messages embedded messages (EncapsulatedRfc822MessagePart)
     if (data.isEmpty()) {
-        data = node->encodedContent();
+        if (const auto encapsulated = node->bodyAsMessage()) {
+            data = encapsulated->encodedContent();
+        }
     }
+
     if (part->isText()) {
         // convert CRLF to LF before writing text attachments to disk
         data = KMime::CRLFtoLF(data);
