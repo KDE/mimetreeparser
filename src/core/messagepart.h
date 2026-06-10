@@ -530,6 +530,11 @@ public:
      */
     [[nodiscard]] QString from() const;
     /*!
+     * \brief Returns the Subject header of the encapsulated message
+     * \return The Subject line
+     */
+    [[nodiscard]] QString subject() const;
+    /*!
      * \brief Returns the date of the encapsulated message
      * \return The message date
      */

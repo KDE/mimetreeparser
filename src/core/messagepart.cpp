@@ -1008,6 +1008,14 @@ QDateTime EncapsulatedRfc822MessagePart::date() const
     return {};
 }
 
+QString EncapsulatedRfc822MessagePart::subject() const
+{
+    if (const auto subject = mMessage->subject(KMime::DontCreate)) {
+        return subject->asUnicodeString();
+    }
+    return {};
+}
+
 HeadersPart::HeadersPart(ObjectTreeParser *otp, KMime::Content *node)
     : MessagePart(otp, QString(), node)
 {

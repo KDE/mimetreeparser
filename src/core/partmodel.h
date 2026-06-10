@@ -98,6 +98,11 @@ public:
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
+    template<typename T = MimeTreeParser::MessagePart>
+    [[nodiscard]] QSharedPointer<T> part(const QModelIndex &index) const
+    {
+        return messagePart(index).dynamicCast<T>();
+    }
     /*!
      * \brief Sets whether to display HTML content
      * \param html True to display HTML, false for plaintext
@@ -159,6 +164,7 @@ Q_SIGNALS:
 
 private:
     std::unique_ptr<PartModelPrivate> d;
+    QSharedPointer<MimeTreeParser::MessagePart> messagePart(const QModelIndex &index) const;
 };
 
 /*!

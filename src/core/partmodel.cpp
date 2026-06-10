@@ -656,4 +656,27 @@ int PartModel::columnCount(const QModelIndex &) const
     return 1;
 }
 
+QSharedPointer<MimeTreeParser::MessagePart> PartModel::messagePart(const QModelIndex &index) const
+{
+    if (index.isValid()) {
+        auto nakedPointer = static_cast<MimeTreeParser::MessagePart *>(index.internalPointer());
+        for (const auto &sharedPointer : std::as_const(d->mParts)) {
+            if (sharedPointer.data() == nakedPointer) {
+                return sharedPointer;
+            }
+        }
+
+        // children of encapsulated parts are not in mParts; see parent()
+        const auto parentPart = d->mParents[nakedPointer];
+        Q_ASSERT(parentPart);
+        const auto parts = d->mEncapsulatedParts[parentPart];
+        for (const auto &part : parts) {
+            if (part.data() == nakedPointer) {
+                return part;
+            }
+        }
+    }
+    return {};
+}
+
 #include "moc_partmodel.cpp"
