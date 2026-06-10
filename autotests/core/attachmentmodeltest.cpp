@@ -105,6 +105,26 @@ private Q_SLOTS:
         QCOMPARE(arguments.at(0).userType(), QMetaType::QString);
         QCOMPARE(arguments.at(0).toString(), "Failed to save attachment."_L1);
     }
+
+    void encapsultedMailAttachmentTest()
+    {
+        MessageParser messageParser;
+        messageParser.setMessage(readMailFromFile(QLatin1StringView("signed-forward-openpgp-signed-encrypted.mbox")));
+
+        auto attachmentModel = messageParser.attachments();
+        QSignalSpy spy(attachmentModel, &AttachmentModel::errorOccurred);
+        QVERIFY(spy.isValid());
+
+        QTemporaryFile file;
+        QVERIFY(file.open());
+        const auto fileName = attachmentModel->saveAttachmentToPath(0, file.fileName());
+        QFile file2(fileName);
+        QVERIFY(file2.open(QIODevice::ReadOnly | QIODevice::Text));
+        const auto content = file2.readAll();
+        QVERIFY(!content.isEmpty());
+        // no extra headers, please:
+        QVERIFY(content.startsWith(QByteArray("From: OpenPGP Test <test@kolab.org>")));
+    }
 };
 
 QTEST_MAIN(AttachmentModelTest)
