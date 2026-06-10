@@ -455,12 +455,14 @@ QSharedPointer<MessagePart> ObjectTreeParser::parseObjectTreeInternal(KMime::Con
 
 QList<QSharedPointer<MessagePart>> ObjectTreeParser::defaultHandling(KMime::Content *node)
 {
-    if (node->contentType()->mimeType() == "application/octet-stream"_ba
-        && (node->contentType()->name().endsWith(QLatin1StringView("p7m")) || node->contentType()->name().endsWith(QLatin1StringView("p7s"))
-            || node->contentType()->name().endsWith(QLatin1StringView("p7c")))) {
-        auto list = processType(node, "application", "pkcs7-mime");
-        if (!list.isEmpty()) {
-            return list;
+    if (node->isTopLevel() || !KMime::isAttachment(node)) {
+        if (node->contentType()->mimeType() == "application/octet-stream"_ba
+            && (node->contentType()->name().endsWith(QLatin1StringView("p7m")) || node->contentType()->name().endsWith(QLatin1StringView("p7s"))
+                || node->contentType()->name().endsWith(QLatin1StringView("p7c")))) {
+            auto list = processType(node, "application", "pkcs7-mime");
+            if (!list.isEmpty()) {
+                return list;
+            }
         }
     }
 
