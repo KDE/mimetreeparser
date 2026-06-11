@@ -42,8 +42,6 @@ public:
         : q{q_ptr}
         , messageWidget(new KMessageWidget(q_ptr))
     {
-        createActions();
-
         messageWidget->setCloseButtonVisible(true);
         messageWidget->hide();
     }
@@ -56,42 +54,21 @@ public:
     QScrollArea *scrollArea = nullptr;
     QFormLayout *formLayout = nullptr;
     AttachmentView *attachmentView = nullptr;
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> selectedParts;
     UrlHandler *urlHandler = nullptr;
     KMessageWidget *const messageWidget = nullptr;
 
-    QAction *saveAttachmentAction = nullptr;
-    QAction *openAttachmentAction = nullptr;
-    QAction *importPublicKeyAction = nullptr;
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> partsForActions;
     bool fixedFont = false;
 
-    void createActions()
-    {
-        saveAttachmentAction = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18n("&Save Attachment As…"), q);
-        connect(saveAttachmentAction, &QAction::triggered, q, [this]() {
-            saveSelectedAttachments();
-        });
-
-        openAttachmentAction = new QAction(QIcon::fromTheme(u"document-open-symbolic"_s), i18nc("to open", "Open"), q);
-        connect(openAttachmentAction, &QAction::triggered, q, [this]() {
-            openSelectedAttachments();
-        });
-
-        importPublicKeyAction = new QAction(QIcon::fromTheme(u"document-import-key-symbolic"_s), i18nc("@action:inmenu", "Import public key"), q);
-        connect(importPublicKeyAction, &QAction::triggered, q, [this]() {
-            importPublicKey();
-        });
-    }
-
-    void openSelectedAttachments();
-    void saveSelectedAttachments();
-    void selectionChanged();
-    void showContextMenu();
-    void importPublicKey();
+    void openSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts);
+    void saveSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts);
+    void showContextMenu(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &parts);
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> partsSelectedInView() const;
+    void importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &part);
     void recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent);
 };
 
-void MessageViewer::Private::openSelectedAttachments()
+void MessageViewer::Private::openSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts)
 {
     Q_ASSERT(parser);
     Q_ASSERT(selectedParts.count() >= 1);
@@ -100,47 +77,57 @@ void MessageViewer::Private::openSelectedAttachments()
     }
 }
 
-void MessageViewer::Private::saveSelectedAttachments()
+void MessageViewer::Private::saveSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts)
 {
     Q_ASSERT(parser);
     Q_ASSERT(selectedParts.count() >= 1);
 
     for (const auto &part : std::as_const(selectedParts)) {
-        QString pname = part->filename();
-        if (pname.isEmpty()) {
-            pname = i18nc("Fallback when file has no name", "unnamed");
-        }
-
+        QString pname = part->filename(MessagePart::FallbackToNameOrPlaceholder);
         const QString path = QFileDialog::getSaveFileName(q, i18n("Save Attachment As"), pname);
-        parser->attachments()->saveAttachmentToPath(part, path);
+        if (!path.isEmpty()) {
+            parser->attachments()->saveAttachmentToPath(part, path);
+        }
     }
 }
 
-void MessageViewer::Private::importPublicKey()
+void MessageViewer::Private::importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &part)
 {
     Q_ASSERT(parser);
-    Q_ASSERT(selectedParts.count() == 1);
-    parser->attachments()->importPublicKey(selectedParts[0]);
+    parser->attachments()->importPublicKey(part);
 }
 
-void MessageViewer::Private::showContextMenu()
+void MessageViewer::Private::showContextMenu(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts)
 {
     const int numberOfParts(selectedParts.count());
     QMenu menu;
     if (numberOfParts == 1) {
         const QString mimetype = QString::fromLatin1(selectedParts.first()->mimeType());
         if (mimetype == QLatin1StringView("application/pgp-keys")) {
+            auto importPublicKeyAction = new QAction(QIcon::fromTheme(u"document-import-key-symbolic"_s), i18nc("@action:inmenu", "Import public key"), q);
+            connect(importPublicKeyAction, &QAction::triggered, q, [this, selectedParts]() {
+                importPublicKey(selectedParts.first());
+            });
             menu.addAction(importPublicKeyAction);
         }
     }
 
+    auto openAttachmentAction = new QAction(QIcon::fromTheme(u"document-open-symbolic"_s), i18nc("to open", "Open"), q);
+    connect(openAttachmentAction, &QAction::triggered, q, [this, selectedParts]() {
+        openSelectedAttachments(selectedParts);
+    });
     menu.addAction(openAttachmentAction);
+
+    auto saveAttachmentAction = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18n("&Save Attachment As…"), q);
+    connect(saveAttachmentAction, &QAction::triggered, q, [this, selectedParts]() {
+        saveSelectedAttachments(selectedParts);
+    });
     menu.addAction(saveAttachmentAction);
 
     menu.exec(QCursor::pos());
 }
 
-void MessageViewer::Private::selectionChanged()
+QList<QSharedPointer<MimeTreeParser::MessagePart>> MessageViewer::Private::partsSelectedInView() const
 {
     const QModelIndexList selectedRows = attachmentView->selectionModel()->selectedRows();
     QList<QSharedPointer<MimeTreeParser::MessagePart>> selectedMessageParts;
@@ -149,7 +136,7 @@ void MessageViewer::Private::selectionChanged()
         auto part = attachmentView->model()->data(index, AttachmentModel::AttachmentPartRole).value<QSharedPointer<MimeTreeParser::MessagePart>>();
         selectedMessageParts.append(part);
     }
-    this->selectedParts = selectedMessageParts;
+    return selectedMessageParts;
 }
 
 MessageViewer::MessageViewer(QWidget *parent)
@@ -194,14 +181,13 @@ MessageViewer::MessageViewer(QWidget *parent)
     addWidget(d->attachmentView);
 
     connect(d->attachmentView, &AttachmentView::contextMenuRequested, this, [this] {
-        d->selectionChanged();
-        d->showContextMenu();
+        d->showContextMenu(d->partsSelectedInView());
     });
 
     connect(d->attachmentView, &QAbstractItemView::doubleClicked, this, [this](const QModelIndex &) {
         // Since this is only emitted if a valid index is double clicked we can assume
         // that the first click of the double click set the selection accordingly.
-        d->openSelectedAttachments();
+        d->openSelectedAttachments(d->partsSelectedInView());
     });
 }
 
@@ -257,29 +243,9 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
         const auto type = idx.data(PartModel::TypeRole).value<PartModel::Types>();
         const auto content = idx.data(PartModel::ContentRole).toString();
 
-        // signature
-        const auto signatureSecurityLevel = idx.data(PartModel::SignatureSecurityLevelRole).value<PartModel::SecurityLevel>();
-        const auto signatureInfo = idx.data(PartModel::SignatureDetailsRole).toString();
-        const auto signatureIconName = idx.data(PartModel::SignatureIconNameRole).toString();
-
-        // encryption
-        const auto encryptionSecurityLevel = idx.data(PartModel::EncryptionSecurityLevelRole).value<PartModel::SecurityLevel>();
-        const auto encryptionInfo = idx.data(PartModel::EncryptionDetails).value<SignatureInfo>();
-        const auto encryptionIconName = idx.data(PartModel::EncryptionIconNameRole).toString();
-
-        // sidebar
-        const auto sidebarSecurityLevel = idx.data(PartModel::SidebarSecurityLevelRole).value<PartModel::SecurityLevel>();
-
         switch (type) {
         case PartModel::Types::Plain: {
-            auto container = new MessageWidgetContainer(signatureInfo,
-                                                        signatureIconName,
-                                                        signatureSecurityLevel,
-                                                        encryptionInfo,
-                                                        encryptionIconName,
-                                                        encryptionSecurityLevel,
-                                                        sidebarSecurityLevel,
-                                                        urlHandler);
+            auto container = new MessageWidgetContainer(idx, urlHandler);
             auto label = new QLabel(content);
             label->setTextInteractionFlags(Qt::TextBrowserInteraction);
             label->setOpenExternalLinks(true);
@@ -287,19 +253,17 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             if (fixedFont) {
                 label->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
             }
-            container->layout()->addWidget(label);
+            container->innerLayout()->addWidget(label);
             lay->addWidget(container);
+
+            connect(container, &MessageWidgetContainer::attachmentContextMenu, q, [this](const QSharedPointer<MimeTreeParser::MessagePart> part) {
+                showContextMenu({part});
+            });
+
             break;
         }
         case PartModel::Types::Ical: {
-            auto container = new MessageWidgetContainer(signatureInfo,
-                                                        signatureIconName,
-                                                        signatureSecurityLevel,
-                                                        encryptionInfo,
-                                                        encryptionIconName,
-                                                        encryptionSecurityLevel,
-                                                        sidebarSecurityLevel,
-                                                        urlHandler);
+            auto container = new MessageWidgetContainer(idx, urlHandler);
 
             KCalendarCore::ICalFormat format;
             auto incidence = format.fromString(content);
@@ -321,20 +285,13 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                 incidenceLayout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
             }
 
-            container->layout()->addWidget(widget);
+            container->innerLayout()->addWidget(widget);
 
             lay->addWidget(container);
             break;
         }
         case PartModel::Types::Encapsulated: {
-            auto container = new MessageWidgetContainer(signatureInfo,
-                                                        signatureIconName,
-                                                        signatureSecurityLevel,
-                                                        encryptionInfo,
-                                                        encryptionIconName,
-                                                        encryptionSecurityLevel,
-                                                        sidebarSecurityLevel,
-                                                        urlHandler);
+            auto container = new MessageWidgetContainer(idx, urlHandler);
 
             auto groupBox = new QGroupBox(container);
             groupBox->setSizePolicy(QSizePolicy::MinimumExpanding, q->sizePolicy().verticalPolicy());
@@ -364,7 +321,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             recursiveBuildViewer(parts, encapsulatedLayout, parts->index(i, 0, parent));
 
-            container->layout()->addWidget(groupBox);
+            container->innerLayout()->addWidget(groupBox);
 
             lay->addWidget(container);
             break;
@@ -459,9 +416,6 @@ void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
     d->layout->addStretch();
 
     d->attachmentView->setModel(d->parser ? d->parser->attachments() : nullptr);
-    connect(d->attachmentView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this] {
-        d->selectionChanged();
-    });
     d->attachmentView->setVisible(d->parser && (d->parser->attachments()->rowCount() > 0));
 
     setUpdatesEnabled(true);

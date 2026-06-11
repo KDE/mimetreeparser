@@ -134,11 +134,18 @@ public:
      * \return The charset name
      */
     [[nodiscard]] QByteArray charset() const;
+
+    enum FilenameFallback {
+        NoFallback,
+        FallbackToNameOrPlaceholder,
+    };
     /*!
      * \brief Returns the filename of this attachment
-     * \return The filename, or empty string if not an attachment
+     * \param mode Wether to fall back to other headers or a default filename,
+     *             in case no filename is specified in the source
+     * \return The filename
      */
-    [[nodiscard]] QString filename() const;
+    [[nodiscard]] QString filename(FilenameFallback mode = FallbackToNameOrPlaceholder) const;
     /*!
      * \brief Returns the disposition of this part
      * \return The disposition (Inline, Attachment, or Invalid)

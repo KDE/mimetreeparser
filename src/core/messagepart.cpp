@@ -21,6 +21,7 @@
 #include <QGpgME/VerifyDetachedJob>
 #include <QGpgME/VerifyOpaqueJob>
 
+#include <QMimeDatabase>
 #include <QStringDecoder>
 
 #include <gpgme++/key.h>
@@ -67,7 +68,7 @@ MessagePart::Disposition MessagePart::disposition() const
     }
 }
 
-QString MessagePart::filename() const
+QString MessagePart::filename(FilenameFallback mode) const
 {
     if (!mNode) {
         return {};
@@ -75,16 +76,27 @@ QString MessagePart::filename() const
 
     if (const auto cd = mNode->contentDisposition(KMime::DontCreate)) {
         const auto name = cd->filename();
-        // Allow for a fallback for mails that have a ContentDisposition header, but don't set the filename anyways.
-        // Not the recommended way, but exists.
         if (!name.isEmpty()) {
             return name;
         }
     }
-    if (const auto ct = mNode->contentType(KMime::DontCreate)) {
-        return ct->name();
+
+    if (mode == NoFallback) {
+        return {};
     }
-    return {};
+
+    if (const auto ct = mNode->contentType(KMime::DontCreate)) {
+        const auto name = ct->name();
+        if (!name.isEmpty()) {
+            return name;
+        }
+    }
+
+    const auto mimetype = QMimeDatabase().mimeTypeForName(QString::fromLatin1(mimeType()));
+    return i18nc("template for an unknown filename. %1 is an index, %2 is an extension",
+                 "unnamed_%1.%2",
+                 parentPart() ? parentPart()->subParts().indexOf(this) : 0,
+                 mimetype.preferredSuffix());
 }
 
 static KMime::Headers::ContentType *contentType(KMime::Content *node)

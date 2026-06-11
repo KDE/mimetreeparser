@@ -21,29 +21,19 @@ class MIMETREEPARSER_WIDGETS_EXPORT MessageWidgetContainer : public QFrame
 public:
     /*!
      * \brief Constructs a MessageWidgetContainer
-     * \param signatureInfo The signature information text
-     * \param signatureIconName The icon name for signature
-     * \param signatureSecurityLevel The security level of the signature
-     * \param encryptionInfo The encryption information
-     * \param encryptionIconName The icon name for encryption
-     * \param encryptionSecurityLevel The security level of the encryption
-     * \param sidebarSecurityLevel The overall sidebar security level
+     * \param part The containing part
      * \param urlHandler The URL handler for handling links
      * \param parent The parent widget
      */
-    explicit MessageWidgetContainer(const QString &signatureInfo,
-                                    const QString &signatureIconName,
-                                    PartModel::SecurityLevel signatureSecurityLevel,
-                                    const SignatureInfo &encryptionInfo,
-                                    const QString &encryptionIconName,
-                                    PartModel::SecurityLevel encryptionSecurityLevel,
-                                    PartModel::SecurityLevel sidebarSecurityLevel,
-                                    UrlHandler *urlHandler,
-                                    QWidget *parent = nullptr);
+    explicit MessageWidgetContainer(const QModelIndex &idx, UrlHandler *urlHandler, QWidget *parent = nullptr);
     /*!
      * \brief Destroys the MessageWidgetContainer
      */
     ~MessageWidgetContainer() override;
+    MIMETREEPARSER_WIDGETS_NO_EXPORT QLayout *innerLayout() const;
+
+Q_SIGNALS:
+    MIMETREEPARSER_WIDGETS_NO_EXPORT void attachmentContextMenu(const QSharedPointer<MimeTreeParser::MessagePart> part, const QPoint &pos);
 
 protected:
     /*!
@@ -51,15 +41,9 @@ protected:
      * \param event The paint event
      */
     void paintEvent(QPaintEvent *event) override;
-    /*!
-     * \brief Handles generic events for the container
-     * \param event The event to handle
-     * \return True if the event was handled
-     */
-    [[nodiscard]] bool event(QEvent *event) override;
 
 private:
-    MIMETREEPARSER_WIDGETS_NO_EXPORT void createLayout();
+    MIMETREEPARSER_WIDGETS_NO_EXPORT void createLayout(const QModelIndex &idx);
 
     QString const m_signatureInfo;
     PartModel::SecurityLevel m_signatureSecurityLevel;
@@ -74,4 +58,5 @@ private:
     PartModel::SecurityLevel m_sidebarSecurityLevel;
 
     UrlHandler *const m_urlHandler;
+    QLayout *m_innerLayout;
 };
