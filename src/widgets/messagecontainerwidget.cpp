@@ -10,13 +10,16 @@
 
 #include <KLocalizedString>
 #include <KMessageWidget>
+#include <KSqueezedTextLabel>
 #include <Libkleo/Compliance>
 #include <Libkleo/Formatting>
 #include <QGpgME/Protocol>
 
 #include <QLabel>
+#include <QMimeDatabase>
 #include <QPaintEvent>
 #include <QPainter>
+#include <QStyleOption>
 #include <QVBoxLayout>
 
 #include <gpgme++/verificationresult.h>
@@ -49,30 +52,100 @@ KMessageWidget::MessageType getType(PartModel::SecurityLevel securityLevel)
 
     return messageTypes.value(securityLevel, KMessageWidget::MessageType::Information);
 }
+
+class AttachmentBox : public QFrame
+{
+public:
+    AttachmentBox(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &attachments, MessageWidgetContainer *parent)
+        : QFrame(parent)
+        , maxWidgetWidth(50)
+        , oldWidth(width())
+        , grid(nullptr)
+    {
+        setObjectName("AttachmentBox"); // for autotests
+        setFrameStyle(QFrame::Box);
+
+        QList<QWidget *> attachmentWidgets;
+        for (const auto &attachment : attachments) {
+            auto widget = new QWidget(this);
+            auto innerLayout = new QHBoxLayout(widget);
+            innerLayout->setContentsMargins({});
+
+            const auto mimetype = QMimeDatabase().mimeTypeForName(QString::fromLatin1(attachment->mimeType()));
+            auto icon = QIcon::fromTheme(mimetype.iconName());
+            if (icon.isNull()) {
+                icon = QIcon::fromTheme(u"unknown"_s);
+            }
+            auto pic = new QLabel();
+            QStyleOption option;
+            option.initFrom(this);
+            pic->setPixmap(icon.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize, &option, this)));
+            innerLayout->addWidget(pic);
+            innerLayout->addWidget(new KSqueezedTextLabel(attachment->filename(MimeTreeParser::MessagePart::FallbackToNameOrPlaceholder)));
+            innerLayout->setStretch(1, 1);
+
+            widget->setContextMenuPolicy(Qt::CustomContextMenu);
+            connect(widget, &QWidget::customContextMenuRequested, this, [parent, attachment](const QPoint &pos) {
+                Q_EMIT parent->attachmentContextMenu(attachment, pos);
+            });
+            widgets.append(widget);
+            maxWidgetWidth = qMax(maxWidgetWidth, widget->sizeHint().width());
+        }
+    }
+    void resizeEvent(QResizeEvent *event) override
+    {
+        if (qAbs(width() - oldWidth) > 20) {
+            doLayout();
+        }
+        QFrame::resizeEvent(event);
+    }
+    void showEvent(QShowEvent *event) override
+    {
+        doLayout();
+        QFrame::showEvent(event);
+    }
+    void doLayout()
+    {
+        int columns = qMin(qMax(1, width() / (maxWidgetWidth + fontMetrics().horizontalAdvance(u"xx"_s))), widgets.size());
+        if (grid && grid->columnCount() == columns) {
+            return;
+        }
+        oldWidth = width();
+        delete grid;
+        grid = new QGridLayout(this);
+
+        for (int i = 0; i < widgets.size(); ++i) {
+            grid->addWidget(widgets[i], i / columns, i % columns);
+        }
+        setMinimumHeight(grid->sizeHint().height());
+    }
+
+private:
+    QList<QWidget *> widgets;
+    int maxWidgetWidth;
+    int oldWidth;
+    QGridLayout *grid;
+};
 }
 
-MessageWidgetContainer::MessageWidgetContainer(const QString &signatureInfo,
-                                               const QString &signatureIconName,
-                                               PartModel::SecurityLevel signatureSecurityLevel,
-                                               const SignatureInfo &encryptionInfo,
-                                               const QString &encryptionIconName,
-                                               PartModel::SecurityLevel encryptionSecurityLevel,
-                                               PartModel::SecurityLevel sidebarSecurityLevel,
-                                               UrlHandler *urlHandler,
-                                               QWidget *parent)
+MessageWidgetContainer::MessageWidgetContainer(const QModelIndex &idx, UrlHandler *urlHandler, QWidget *parent)
     : QFrame(parent)
-    , m_signatureInfo(signatureInfo)
-    , m_signatureSecurityLevel(signatureSecurityLevel)
-    , m_displaySignatureInfo(signatureSecurityLevel != PartModel::Unknow)
-    , m_signatureIconName(signatureIconName)
-    , m_encryptionInfo(encryptionInfo)
-    , m_encryptionSecurityLevel(encryptionSecurityLevel)
-    , m_displayEncryptionInfo(encryptionSecurityLevel != PartModel::Unknow)
-    , m_encryptionIconName(encryptionIconName)
-    , m_sidebarSecurityLevel(sidebarSecurityLevel)
+    // signature
+    , m_signatureInfo(idx.data(PartModel::SignatureDetailsRole).toString())
+    , m_signatureSecurityLevel(idx.data(PartModel::SignatureSecurityLevelRole).value<PartModel::SecurityLevel>())
+    , m_displaySignatureInfo(m_signatureSecurityLevel != PartModel::Unknow)
+    , m_signatureIconName(idx.data(PartModel::SignatureIconNameRole).toString())
+    // encryption
+    , m_encryptionInfo(idx.data(PartModel::EncryptionDetails).value<SignatureInfo>())
+    , m_encryptionSecurityLevel(idx.data(PartModel::EncryptionSecurityLevelRole).value<PartModel::SecurityLevel>())
+    , m_displayEncryptionInfo(m_encryptionSecurityLevel != PartModel::Unknow)
+    , m_encryptionIconName(idx.data(PartModel::EncryptionIconNameRole).toString())
+    // sidebar
+    , m_sidebarSecurityLevel(idx.data(PartModel::SidebarSecurityLevelRole).value<PartModel::SecurityLevel>())
     , m_urlHandler(urlHandler)
+    , m_innerLayout(nullptr)
 {
-    createLayout();
+    createLayout(idx);
 }
 
 MessageWidgetContainer::~MessageWidgetContainer() = default;
@@ -106,29 +179,23 @@ void MessageWidgetContainer::paintEvent(QPaintEvent *event)
     }
 }
 
-bool MessageWidgetContainer::event(QEvent *event)
+QLayout *MessageWidgetContainer::innerLayout() const
 {
-    if (event->type() == QEvent::Polish && !layout()) {
-        createLayout();
-    }
-
-    return QFrame::event(event);
+    return m_innerLayout;
 }
 
-void MessageWidgetContainer::createLayout()
+void MessageWidgetContainer::createLayout(const QModelIndex &idx)
 {
-    delete layout();
-
     auto vLayout = new QVBoxLayout(this);
 
-    if (m_sidebarSecurityLevel == PartModel::Unknow) {
-        return;
-    }
-
-    if (layoutDirection() == Qt::RightToLeft) {
-        layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
+    if (m_displayEncryptionInfo || m_displaySignatureInfo) {
+        if (layoutDirection() == Qt::RightToLeft) {
+            layout()->setContentsMargins(0, 0, borderWidth * 2, 0);
+        } else {
+            layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
+        }
     } else {
-        layout()->setContentsMargins(borderWidth * 2, 0, 0, 0);
+        layout()->setContentsMargins({});
     }
 
     if (m_displayEncryptionInfo) {
@@ -188,6 +255,16 @@ void MessageWidgetContainer::createLayout()
         signatureMessage->setIcon(QIcon::fromTheme(m_signatureIconName));
 
         vLayout->addWidget(signatureMessage);
+    }
+
+    // Mail contents to be inserted, here...
+    m_innerLayout = new QVBoxLayout;
+    m_innerLayout->setContentsMargins({});
+    vLayout->addLayout(m_innerLayout);
+
+    const auto attachments = idx.data(PartModel::OwnedAttachmentsRole).value<QList<QSharedPointer<MimeTreeParser::MessagePart>>>();
+    if (!attachments.isEmpty()) {
+        vLayout->addWidget(new AttachmentBox(attachments, this));
     }
 }
 

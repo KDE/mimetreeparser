@@ -271,7 +271,7 @@ QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(QShared
 
 QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectAttachmentParts()
 {
-    QList<QSharedPointer<MessagePart>> contentParts = ::collect(
+    QList<QSharedPointer<MessagePart>> attachmentParts = ::collect(
         mParsedPart,
         [](const QSharedPointer<MessagePart> &) {
             return true;
@@ -279,7 +279,7 @@ QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectAttachmentParts()
         [](const QSharedPointer<MessagePart> &part) {
             return part->isAttachment();
         });
-    return contentParts;
+    return attachmentParts;
 }
 
 /*

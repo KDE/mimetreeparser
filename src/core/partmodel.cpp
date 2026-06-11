@@ -415,6 +415,46 @@ QString PartModel::signatureDetails(MimeTreeParser::MessagePart *messagePart)
     return Kleo::Formatting::prettySignature(*signature, {});
 }
 
+static bool isEncapsulatingPart(MimeTreeParser::MessagePart *part)
+{
+    return qobject_cast<MimeTreeParser::SignedMessagePart *>(part) || qobject_cast<MimeTreeParser::EncryptedMessagePart *>(part)
+        || qobject_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(part);
+}
+
+static QList<QSharedPointer<MimeTreeParser::MessagePart>> getAttachmentChildParts(MimeTreeParser::MessagePart *parentPart)
+{
+    QList<QSharedPointer<MimeTreeParser::MessagePart>> ret;
+    for (auto sub : parentPart->subParts()) {
+        if (sub->isAttachment()) {
+            ret.append(sub);
+        } else if (!isEncapsulatingPart(sub.get())) {
+            ret += getAttachmentChildParts(sub.get());
+        }
+    }
+    return ret;
+}
+
+static MimeTreeParser::MessagePart *encapsulatingPart(MimeTreeParser::MessagePart *part)
+{
+    auto parent = part;
+    while (parent->parentPart() && !isEncapsulatingPart(parent)) {
+        parent = parent->parentPart();
+    }
+    return parent;
+}
+
+static bool siblingContentPartsFollow(MimeTreeParser::MessagePart *part)
+{
+    const auto candidates = part->parentPart()->subParts();
+    auto it = std::ranges::find_if(candidates, [part](const auto &sub) {
+        return sub.get() == part;
+    });
+    Q_ASSERT(it != candidates.end());
+    return std::any_of(std::next(it), candidates.end(), [](const auto &sub) {
+        return !sub->isAttachment();
+    });
+}
+
 QVariant PartModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
@@ -504,6 +544,16 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return messagePart->error();
         case ContentRole:
             return d->contentForPart(messagePart);
+        case OwnedAttachmentsRole: {
+            // show attachments after the last content part in a given mime parent
+            if (siblingContentPartsFollow(messagePart)) {
+                return QVariant();
+            }
+            // we want the parent in terms of encryption/signature, here, which is not (neccessarily) the same as
+            // messagePart->parentPart()
+            auto parentPart = encapsulatingPart(messagePart);
+            return QVariant::fromValue(getAttachmentChildParts(parentPart));
+        }
         case SidebarSecurityLevelRole: {
             const auto signature = index.data(SignatureSecurityLevelRole).value<SecurityLevel>();
             const auto encryption = index.data(EncryptionSecurityLevelRole).value<SecurityLevel>();

@@ -77,6 +77,7 @@ public:
         ErrorString,
         SenderRole,
         DateRole,
+        OwnedAttachmentsRole, // Attachments that "belong" to this content part; QList<QSharedPointer<MessagePart>>
     };
 
     /// This enum maps directly to color displayed in the UI for the following elements:
