@@ -32,8 +32,11 @@ int main(int argc, char *argv[])
 
     parser.process(app);
     const QStringList args = parser.positionalArguments();
+    if (args.count() != 1) {
+        parser.showHelp(1);
+    }
 
-    const auto file = QUrl::fromUserInput(args.at(args.count() - 1), QDir::currentPath());
+    const auto file = QUrl::fromUserInput(args.value(0), QDir::currentPath());
     const auto messageViewer = new MimeTreeParser::Widgets::MessageViewerDialog(file.toLocalFile(), nullptr);
 
     messageViewer->show();
