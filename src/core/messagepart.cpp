@@ -830,7 +830,6 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
     }
 
     mDecryptRecipients.clear();
-    bool cannotDecrypt = false;
     bool bDecryptionOk = decryptResult.error().isSuccess(); // Note: isSucess() != !isError()
 
     for (const auto &recipient : decryptResult.recipients()) {
@@ -904,8 +903,6 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
         if (!mCryptoProto) {
             partMetaData()->errorText = i18n("No appropriate crypto plug-in was found.");
-        } else if (cannotDecrypt) {
-            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.", cryptPlugLibName);
         } else if (!passphraseError()) {
             partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1StringView("<br />")
                 + i18n("Error: %1", partMetaData()->errorText);
