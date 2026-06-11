@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-08 00:45+0000\n"
+"POT-Creation-Date: 2026-06-11 00:45+0000\n"
 "PO-Revision-Date: 2026-05-26 21:57+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -96,28 +96,28 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:628 core/messagepart.cpp:644 core/messagepart.cpp:745
+#: core/messagepart.cpp:641 core/messagepart.cpp:657 core/messagepart.cpp:758
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "잘못된 암호화 플러그인입니다."
 
-#: core/messagepart.cpp:895
+#: core/messagepart.cpp:908
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "적절한 암호화 플러그인을 찾을 수 없습니다."
 
-#: core/messagepart.cpp:897
+#: core/messagepart.cpp:910
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습니다."
 
-#: core/messagepart.cpp:899
+#: core/messagepart.cpp:912
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
 
-#: core/messagepart.cpp:900
+#: core/messagepart.cpp:913
 #, kde-format
 msgid "Error: %1"
 msgstr "오류: %1"
