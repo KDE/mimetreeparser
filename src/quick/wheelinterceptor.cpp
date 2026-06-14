@@ -30,6 +30,7 @@ void WheelInterceptor::setSource(QQuickItem *source)
     if (m_source) {
         QCoreApplication::instance()->installEventFilter(this);
     }
+    updateScrollTarget();
     Q_EMIT sourceChanged();
 }
 
@@ -47,41 +48,48 @@ void WheelInterceptor::setTarget(QQuickItem *target)
     Q_EMIT targetChanged();
 }
 
-static QQuickItem *findTopmostFlickable(QQuickItem *item)
+void WheelInterceptor::updateScrollTarget()
 {
-    QQuickItem *topmost = nullptr;
-    auto current = item;
+    m_scrollTarget = nullptr;
+    if (!m_source) {
+        return;
+    }
+
+    auto current = m_source;
     while (current) {
         if (current->inherits("QQuickFlickable")) {
-            topmost = current;
+            m_scrollTarget = current;
         }
         current = current->parentItem();
     }
-    return topmost;
+
+    if (!m_scrollTarget && m_target) {
+        current = m_target;
+        while (current) {
+            if (current->inherits("QQuickFlickable")) {
+                m_scrollTarget = current;
+            }
+            current = current->parentItem();
+        }
+    }
 }
 
 bool WheelInterceptor::eventFilter(QObject *obj, QEvent *event)
 {
     Q_UNUSED(obj);
-    if (event->type() == QEvent::Wheel && m_source && m_target) {
+    if (event->type() == QEvent::Wheel && m_source && m_scrollTarget) {
         auto wheelEvent = static_cast<QWheelEvent *>(event);
         const auto localPos = m_source->mapFromGlobal(wheelEvent->globalPosition().toPoint());
         if (m_source->contains(localPos)) {
-            auto flickable = findTopmostFlickable(m_source);
-            if (!flickable) {
-                flickable = findTopmostFlickable(m_target);
-            }
-            if (flickable) {
-                const auto viewH = flickable->height();
-                const auto contentH = flickable->property("contentHeight").toReal();
-                const auto currentY = flickable->property("contentY").toReal();
-                const auto maxScroll = qMax(0.0, contentH - viewH);
-                const auto delta = wheelEvent->angleDelta().y();
-                const auto scrollLines = QGuiApplication::styleHints()->wheelScrollLines();
-                const auto pixels = -(delta / 120.0) * scrollLines * 20.0;
-                flickable->setProperty("contentY", qBound(0.0, currentY + pixels, maxScroll));
-                return true;
-            }
+            const auto viewH = m_scrollTarget->height();
+            const auto contentH = m_scrollTarget->property("contentHeight").toReal();
+            const auto currentY = m_scrollTarget->property("contentY").toReal();
+            const auto maxScroll = qMax(0.0, contentH - viewH);
+            const auto delta = wheelEvent->angleDelta().y();
+            const auto scrollLines = QGuiApplication::styleHints()->wheelScrollLines();
+            const auto pixels = -(delta / 120.0) * scrollLines * 20.0;
+            m_scrollTarget->setProperty("contentY", qBound(0.0, currentY + pixels, maxScroll));
+            return true;
         }
     }
     return false;
