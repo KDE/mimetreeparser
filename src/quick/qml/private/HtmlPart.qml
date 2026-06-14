@@ -100,4 +100,9 @@ Item {
             }
         }
     }
+
+    WheelInterceptor {
+        source: htmlView
+        target: flickable
+    }
 }
