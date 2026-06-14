@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QObject>
+#include <QPointer>
 #include <QQuickItem>
 
 class WheelInterceptor : public QObject
@@ -31,7 +32,7 @@ Q_SIGNALS:
 
 private:
     void updateScrollTarget();
-    QQuickItem *m_source = nullptr;
-    QQuickItem *m_target = nullptr;
-    QQuickItem *m_scrollTarget = nullptr;
+    QPointer<QQuickItem> m_source;
+    QPointer<QQuickItem> m_target;
+    QPointer<QQuickItem> m_scrollTarget;
 };
