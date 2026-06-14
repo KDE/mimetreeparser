@@ -29,16 +29,21 @@ Item {
 
     QQC2.ScrollView {
         anchors.fill: parent
+        QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
+
         Flickable {
             id: flickable
 
             clip: true
             boundsBehavior: Flickable.StopAtBounds
+            contentWidth: root.contentWidth
+            contentHeight: root.contentHeight
 
             WebEngineView {
                 id: htmlView
                 objectName: "htmlView"
-                anchors.fill: parent
+                width: root.contentWidth
+                height: root.contentHeight
 
                 Component.onCompleted: loadHtml(content, "file:///")
                 onLoadingChanged: loadingInfo => {
@@ -46,8 +51,7 @@ Item {
                         console.warn("Failed to load html content.")
                         console.warn("Error is ", loadingInfo.errorString)
                     }
-                    root.contentWidth = Math.max(contentsSize.width, flickable.minimumSize)
-
+                    root.contentWidth = Math.max(contentsSize.width, root.minimumSize)
                     if (loadingInfo.status === WebEngineView.LoadSucceededStatus) {
                         runJavaScript("[document.body.scrollHeight, document.body.scrollWidth, document.documentElement.scrollHeight]", function(result) {
                             root.contentHeight = Math.min(Math.max(result[0], result[2]), 4000);

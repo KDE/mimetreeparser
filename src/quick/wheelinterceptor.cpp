@@ -5,6 +5,7 @@
 
 #include <QCoreApplication>
 #include <QGuiApplication>
+#include <QMetaObject>
 #include <QStyleHints>
 #include <QWheelEvent>
 
@@ -62,35 +63,49 @@ void WheelInterceptor::updateScrollTarget()
         }
         current = current->parentItem();
     }
+}
 
-    if (!m_scrollTarget && m_target) {
-        current = m_target;
-        while (current) {
-            if (current->inherits("QQuickFlickable")) {
-                m_scrollTarget = current;
-            }
-            current = current->parentItem();
-        }
-    }
+static void applyScroll(QQuickItem *target, qreal pixelDelta)
+{
+    const auto viewH = target->height();
+    const auto contentH = target->property("contentHeight").toReal();
+    const auto currentY = target->property("contentY").toReal();
+    const auto maxScrollY = qMax(0.0, contentH - viewH);
+    target->setProperty("contentY", qBound(0.0, currentY + pixelDelta, maxScrollY));
+}
+
+static void applyHScroll(QQuickItem *target, qreal pixelDelta)
+{
+    const auto viewW = target->width();
+    const auto contentW = target->property("contentWidth").toReal();
+    const auto currentX = target->property("contentX").toReal();
+    const auto maxScrollX = qMax(0.0, contentW - viewW);
+    target->setProperty("contentX", qBound(0.0, currentX + pixelDelta, maxScrollX));
 }
 
 bool WheelInterceptor::eventFilter(QObject *obj, QEvent *event)
 {
     Q_UNUSED(obj);
-    if (event->type() == QEvent::Wheel && m_source && m_scrollTarget) {
-        auto wheelEvent = static_cast<QWheelEvent *>(event);
-        const auto localPos = m_source->mapFromGlobal(wheelEvent->globalPosition().toPoint());
-        if (m_source->contains(localPos)) {
-            const auto viewH = m_scrollTarget->height();
-            const auto contentH = m_scrollTarget->property("contentHeight").toReal();
-            const auto currentY = m_scrollTarget->property("contentY").toReal();
-            const auto maxScroll = qMax(0.0, contentH - viewH);
-            const auto delta = wheelEvent->angleDelta().y();
-            const auto scrollLines = QGuiApplication::styleHints()->wheelScrollLines();
-            const auto pixels = -(delta / 120.0) * scrollLines * 20.0;
-            m_scrollTarget->setProperty("contentY", qBound(0.0, currentY + pixels, maxScroll));
-            return true;
-        }
+    if (event->type() != QEvent::Wheel || !m_source) {
+        return false;
     }
-    return false;
+    auto wheelEvent = static_cast<QWheelEvent *>(event);
+    const auto localPos = m_source->mapFromGlobal(wheelEvent->globalPosition().toPoint());
+    if (!m_source->contains(localPos)) {
+        return false;
+    }
+
+    const auto scrollLines = QGuiApplication::styleHints()->wheelScrollLines();
+    const auto factor = scrollLines * 20.0 / 120.0;
+    const auto deltaY = -wheelEvent->angleDelta().y() * factor;
+    const auto deltaX = -wheelEvent->angleDelta().x() * factor;
+
+    if (m_target) {
+        applyScroll(m_target, deltaY);
+        applyHScroll(m_target, deltaX);
+    }
+    if (m_scrollTarget) {
+        applyScroll(m_scrollTarget, deltaY);
+    }
+    return true;
 }
