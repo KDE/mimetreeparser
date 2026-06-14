@@ -16,12 +16,16 @@ target_sources(
         itinerarymodel.cpp
         itinerarymodel.h
         types.h
+        wheelinterceptor.h
+        wheelinterceptor.cpp
 )
 
 target_link_libraries(
     mimetreeparser_plugin
     PRIVATE
         Qt::Qml
+        Qt::Quick
+        Qt::Gui
         KPim6::MimeTreeParserCore
         KF6::KIOGui
 )
