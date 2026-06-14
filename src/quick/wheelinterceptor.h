@@ -30,6 +30,8 @@ Q_SIGNALS:
     void targetChanged();
 
 private:
+    void updateScrollTarget();
     QQuickItem *m_source = nullptr;
     QQuickItem *m_target = nullptr;
+    QQuickItem *m_scrollTarget = nullptr;
 };
