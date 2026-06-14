@@ -39,7 +39,6 @@ QQuickItem *WheelInterceptor::target() const
 {
     return m_target;
 }
-
 void WheelInterceptor::setTarget(QQuickItem *target)
 {
     if (m_target == target) {
@@ -48,6 +47,12 @@ void WheelInterceptor::setTarget(QQuickItem *target)
     m_target = target;
     Q_EMIT targetChanged();
 }
+
+QQuickItem *WheelInterceptor::scrollTarget() const
+{
+    return m_scrollTarget;
+}
+
 
 void WheelInterceptor::updateScrollTarget()
 {
@@ -63,6 +68,8 @@ void WheelInterceptor::updateScrollTarget()
         }
         current = current->parentItem();
     }
+
+    Q_EMIT scrollTargetChanged();
 }
 
 static void applyScroll(QQuickItem *target, qreal pixelDelta)
@@ -103,6 +110,9 @@ bool WheelInterceptor::eventFilter(QObject *obj, QEvent *event)
     if (m_target) {
         applyScroll(m_target, deltaY);
         applyHScroll(m_target, deltaX);
+    } else if (deltaX != 0.0) {
+        const auto js = QStringLiteral("window.scrollBy(%1, 0)").arg(deltaX);
+        QMetaObject::invokeMethod(m_source, "runJavaScript", Q_ARG(QString, js));
     }
     if (m_scrollTarget) {
         applyScroll(m_scrollTarget, deltaY);

@@ -13,6 +13,7 @@ class WheelInterceptor : public QObject
     QML_ELEMENT
     Q_PROPERTY(QQuickItem *source READ source WRITE setSource NOTIFY sourceChanged)
     Q_PROPERTY(QQuickItem *target READ target WRITE setTarget NOTIFY targetChanged)
+    Q_PROPERTY(QQuickItem *scrollTarget READ scrollTarget NOTIFY scrollTargetChanged)
 
 public:
     explicit WheelInterceptor(QObject *parent = nullptr);
@@ -23,12 +24,15 @@ public:
     QQuickItem *target() const;
     void setTarget(QQuickItem *target);
 
+    QQuickItem *scrollTarget() const;
+
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;
 
 Q_SIGNALS:
     void sourceChanged();
     void targetChanged();
+    void scrollTargetChanged();
 
 private:
     void updateScrollTarget();

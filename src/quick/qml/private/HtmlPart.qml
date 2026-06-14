@@ -27,86 +27,95 @@ Item {
         htmlView.loadHtml(content, "file:///");
     }
 
-    QQC2.ScrollView {
+    Flickable {
+        id: flickable
         anchors.fill: parent
-        QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
+        clip: true
+        boundsBehavior: Flickable.StopAtBounds
+        contentWidth: root.contentWidth
 
-        Flickable {
-            id: flickable
+        WebEngineView {
+            id: htmlView
+            objectName: "htmlView"
+            anchors.fill: parent
 
-            clip: true
-            boundsBehavior: Flickable.StopAtBounds
-            contentWidth: root.contentWidth
-            contentHeight: root.contentHeight
-
-            WebEngineView {
-                id: htmlView
-                objectName: "htmlView"
-                width: root.contentWidth
-                height: root.contentHeight
-
-                Component.onCompleted: loadHtml(content, "file:///")
-                onLoadingChanged: loadingInfo => {
-                    if (loadingInfo.status === WebEngineView.LoadFailedStatus) {
-                        console.warn("Failed to load html content.")
-                        console.warn("Error is ", loadingInfo.errorString)
-                    }
-                    root.contentWidth = Math.max(contentsSize.width, root.minimumSize)
-                    if (loadingInfo.status === WebEngineView.LoadSucceededStatus) {
-                        runJavaScript("[document.body.scrollHeight, document.body.scrollWidth, document.documentElement.scrollHeight]", function(result) {
-                            root.contentHeight = Math.min(Math.max(result[0], result[2]), 4000);
-                            root.contentWidth = Math.min(Math.max(result[1], flickable.width), 2000)
-                        });
-                    }
+            Component.onCompleted: loadHtml(content, "file:///")
+            onLoadingChanged: loadingInfo => {
+                if (loadingInfo.status === WebEngineView.LoadFailedStatus) {
+                    console.warn("Failed to load html content.")
+                    console.warn("Error is ", loadingInfo.errorString)
                 }
-                onLinkHovered: hoveredUrl => {
-                    // Qt 6.6.1 needs to toString otherwise we get a compile error
-                    // https://bugreports.qt.io/browse/QTBUG-119165
-                    console.debug("Link hovered ", hoveredUrl.toString())
+                root.contentWidth = Math.max(contentsSize.width, root.minimumSize)
+                if (loadingInfo.status === WebEngineView.LoadSucceededStatus) {
+                    runJavaScript("[document.body.scrollHeight, document.body.scrollWidth, document.documentElement.scrollHeight]", function(result) {
+                        root.contentHeight = Math.min(Math.max(result[0], result[2]), 4000);
+                        root.contentWidth = Math.min(Math.max(result[1], root.width), 2000)
+                    });
                 }
-                onNavigationRequested: request => {
-                    if (request.navigationType === WebEngineNavigationRequest.LinkClickedNavigation) {
-                        Qt.openUrlExternally(request.url)
-                        request.action = WebEngineNavigationRequest.IgnoreRequest
-                    }
+            }
+            onLinkHovered: hoveredUrl => {
+                // Qt 6.6.1 needs to toString otherwise we get a compile error
+                // https://bugreports.qt.io/browse/QTBUG-119165
+                console.debug("Link hovered ", hoveredUrl.toString())
+            }
+            onNavigationRequested: request => {
+                if (request.navigationType === WebEngineNavigationRequest.LinkClickedNavigation) {
+                    Qt.openUrlExternally(request.url)
+                    request.action = WebEngineNavigationRequest.IgnoreRequest
                 }
-                settings {
-                    webGLEnabled: false
-                    touchIconsEnabled: false
-                    spatialNavigationEnabled: false
-                    screenCaptureEnabled: false
-                    pluginsEnabled: false
-                    localStorageEnabled: false
-                    localContentCanAccessRemoteUrls: false
-                    localContentCanAccessFileUrls: false
-                    linksIncludedInFocusChain: false
-                    javascriptEnabled: true
-                    javascriptCanOpenWindows: false
-                    javascriptCanAccessClipboard: false
-                    hyperlinkAuditingEnabled: false
-                    fullScreenSupportEnabled: false
-                    errorPageEnabled: false
-                    //defaultTextEncoding: ???
-                    autoLoadImages: root.autoLoadImages
-                    autoLoadIconsForPage: false
-                    accelerated2dCanvasEnabled: false
-                    //The webview should not steal focus
-                    focusOnNavigationEnabled: false
-                }
-                profile {
-                    offTheRecord: true
-                    httpCacheType: WebEngineProfile.NoCache
-                    persistentCookiesPolicy: WebEngineProfile.NoPersistentCookies
-                }
-                onContextMenuRequested: request => {
-                    request.accepted = true
-                }
+            }
+            settings {
+                webGLEnabled: false
+                touchIconsEnabled: false
+                spatialNavigationEnabled: false
+                screenCaptureEnabled: false
+                pluginsEnabled: false
+                localStorageEnabled: false
+                localContentCanAccessRemoteUrls: false
+                localContentCanAccessFileUrls: false
+                linksIncludedInFocusChain: false
+                javascriptEnabled: true
+                javascriptCanOpenWindows: false
+                javascriptCanAccessClipboard: false
+                hyperlinkAuditingEnabled: false
+                fullScreenSupportEnabled: false
+                errorPageEnabled: false
+                //defaultTextEncoding: ???
+                autoLoadImages: root.autoLoadImages
+                autoLoadIconsForPage: false
+                accelerated2dCanvasEnabled: false
+                //The webview should not steal focus
+                focusOnNavigationEnabled: false
+            }
+            profile {
+                offTheRecord: true
+                httpCacheType: WebEngineProfile.NoCache
+                persistentCookiesPolicy: WebEngineProfile.NoPersistentCookies
+            }
+            onContextMenuRequested: request => {
+                request.accepted = true
             }
         }
     }
 
     WheelInterceptor {
+        id: wheelInterceptor
         source: htmlView
         target: flickable
     }
+
+    QQC2.ScrollBar {
+        id: hScrollBar
+        orientation: Qt.Horizontal
+        parent: wheelInterceptor.scrollTarget ? wheelInterceptor.scrollTarget : root
+        anchors.left: parent ? parent.left : undefined
+        anchors.right: parent ? parent.right : undefined
+        anchors.bottom: parent ? parent.bottom : undefined
+        visible: root.contentWidth > root.width
+        size: root.width / Math.max(1, root.contentWidth)
+        position: flickable.contentX / Math.max(1, root.contentWidth - root.width)
+        onPositionChanged: flickable.contentX = position * (root.contentWidth - root.width)
+    }
+
+    Component.onCompleted: wheelInterceptor.hScrollBar = hScrollBar
 }
