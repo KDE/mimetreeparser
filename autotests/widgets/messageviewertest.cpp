@@ -30,7 +30,7 @@ private Q_SLOTS:
         QVERIFY(layout);
 
         QCOMPARE(layout->count(), 2);
-        auto container = qobject_cast<MessageWidgetContainer *>(layout->itemAt(0)->widget());
+        auto container = qobject_cast<QWidget *>(layout->itemAt(0)->widget());
         QVERIFY(container);
 
         auto encryptionMessage = container->findChild<KMessageWidget *>(QStringLiteral("EncryptionMessage"));

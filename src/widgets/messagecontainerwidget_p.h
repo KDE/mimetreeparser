@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include "mimetreeparser_widgets_export.h"
-
 #include <MimeTreeParserCore/PartModel>
 #include <QFrame>
 
@@ -14,7 +12,7 @@ class QPaintEvent;
 class UrlHandler;
 
 /// \internal
-class MIMETREEPARSER_WIDGETS_EXPORT MessageWidgetContainer : public QFrame
+class MessageWidgetContainer : public QFrame
 {
     Q_OBJECT
 
@@ -30,10 +28,10 @@ public:
      * \brief Destroys the MessageWidgetContainer
      */
     ~MessageWidgetContainer() override;
-    MIMETREEPARSER_WIDGETS_NO_EXPORT QLayout *innerLayout() const;
+    QLayout *innerLayout() const;
 
 Q_SIGNALS:
-    MIMETREEPARSER_WIDGETS_NO_EXPORT void attachmentContextMenu(const QSharedPointer<MimeTreeParser::MessagePart> part, const QPoint &pos);
+    void attachmentContextMenu(const QSharedPointer<MimeTreeParser::MessagePart> part, const QPoint &pos);
 
 protected:
     /*!
@@ -43,7 +41,7 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    MIMETREEPARSER_WIDGETS_NO_EXPORT void createLayout(const QModelIndex &idx);
+    void createLayout(const QModelIndex &idx);
 
     QString const m_signatureInfo;
     PartModel::SecurityLevel m_signatureSecurityLevel;
