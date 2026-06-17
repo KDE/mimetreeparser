@@ -1,0 +1,72 @@
+Return-Path: <sender@example.org>
+Sender: sender@example.org
+From: Quonk <sender@example.org>
+Subject: Test signed and unsigned attachments
+Date: Mon, 16 Jan 2017 15:14:51 +0100
+To: Konqi <konqui@example.org>
+Mime-Version: 1.0
+Content-Type: multipart/mixed;
+    boundary="level0-boundary"
+
+--level0-boundary
+Content-Type: multipart/signed; boundary="level1-boundary"; micalg="pgp-sha1"; protocol="application/pgp-signature"
+
+--level1-boundary
+Content-Type: multipart/mixed;
+    boundary="level2-boundary"
+
+--level2-boundary
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+
+This is some inline text.
+
+--level2-boundary
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+
+This is an additional inline text part. Unusual but legal.
+
+--level2-boundary
+Content-Disposition: attachment; filename="attachment.txt"
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; name="attachment.txt"
+
+This shall be shown as an attachment
+
+--level2-boundary--
+
+--level1-boundary
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQEVAwUAVeLU0I2YYMWPJG3mAQL/fgf+LXmO7bKafdd4g5OOVHHyXRprVmX/6hBq
+mZoor29KLIHkvAH9OJi4qBy/ZKwqqKLfttLzHb2UaAfl5kn4f0ckmnwUhU7u32Sm
+JZ0Q50SxrRVFRyvTvPG22ho9IwQUO1YSZrL4wO9v8ZBQ3vkfpmAiUQVxPQMINc8L
+i68xQEm4y1Dtoc+DTUkoIMeOOPnEl6PTMPrwn906K0r30hI4788fEGRn6uOXb+vD
+G/ISlXu+JHIxxf/J5/jVjKNbra+trrfSPzB3piJIjBLEPO5FvLx8SgQFJcJHt/kw
+ps8D5YULj/MVMLlsPtXDdZmbOi/G9pN0tr05MKcXsO5Ywe7n2BhASw==
+=2Nzb
+-----END PGP SIGNATURE-----
+
+--level1-boundary--
+
+--level0-boundary
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+
+This is an inline part outside the signed message
+
+--level0-boundary
+Content-Disposition: attachment; filename="attachment_unsigned.txt"
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; name="attachment_unsigned.txt"
+
+This attachment is not signed
+
+--level0-boundary--

@@ -10,6 +10,7 @@
 #include <QVBoxLayout>
 
 using namespace MimeTreeParser::Widgets;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageViewerTest : public QObject
 {
@@ -44,6 +45,34 @@ private Q_SLOTS:
 
         auto signatureMessage = container->findChild<KMessageWidget *>(QStringLiteral("SignatureMessage"));
         QVERIFY(!signatureMessage);
+    }
+
+    void testMixedSignedAndUnsignedParts()
+    {
+        // The test mail here is clearly unusual, but legal, and could be fabricated by
+        // some malicious or non-malicious party. We must not show misleading info esp. on what
+        // is covered by signatures and what is not.
+        auto messages = MimeTreeParser::Core::FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/')
+                                                                   + "openpgp-signed-and-unsigned-attachments-and-parts.mbox"_L1);
+        QCOMPARE(messages.count(), 1);
+        MessageViewer viewer;
+        viewer.setMessage(messages[0]);
+
+        auto signatureBoxes = viewer.findChildren<QWidget *>("SignatureMessage");
+        QVERIFY(signatureBoxes.size() >= 1);
+        // Logically, there is only one signature, but since it has two inline children, we currently show two signature headers.
+        // That is something to change, sooner or later, but not the main point of this test.
+        // QCOMPARE(signatureBoxes.size(), 1);
+
+        auto attachmentBoxes = viewer.findChildren<QWidget *>("AttachmentBox");
+        // exactly one inside, and one outside the signature
+        QCOMPARE(attachmentBoxes.size(), 2);
+        QVERIFY(attachmentBoxes.value(0)->parent() == signatureBoxes.last()->parent());
+        QVERIFY(attachmentBoxes.value(1)->parent() != signatureBoxes.last()->parent());
+
+        // each attachment box shall hold exactly one attachment
+        QCOMPARE(attachmentBoxes.value(0)->findChildren<QWidget *>(Qt::FindDirectChildrenOnly).size(), 1);
+        QCOMPARE(attachmentBoxes.value(1)->findChildren<QWidget *>(Qt::FindDirectChildrenOnly).size(), 1);
     }
 };
 
