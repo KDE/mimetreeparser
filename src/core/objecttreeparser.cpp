@@ -375,6 +375,11 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
     mParsedPart = parseObjectTreeInternal(node, false);
 }
 
+std::shared_ptr<KMime::Message> ObjectTreeParser::parsedMessage() const
+{
+    return mMsg;
+}
+
 QSharedPointer<MessagePart> ObjectTreeParser::parsedPart() const
 {
     return mParsedPart;
