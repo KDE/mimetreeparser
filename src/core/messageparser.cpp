@@ -124,6 +124,11 @@ void MessageParser::setMessage(const std::shared_ptr<KMime::Message> message)
     Q_EMIT htmlChanged();
 }
 
+std::shared_ptr<MimeTreeParser::ObjectTreeParser> MessageParser::parser() const
+{
+    return d->mParser;
+}
+
 bool MessageParser::loaded() const
 {
     return bool{d->mParser};
