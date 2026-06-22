@@ -84,6 +84,16 @@ public:
      */
     void parseObjectTree(const QByteArray &mimeMessage);
     /*!
+     * \brief Returns the KMime node parsed message
+     *
+     * This is essentially equivalent to calling
+     * \code parsedPart()->node() \endcode
+     * but returns a properly typed and shared pointer.
+     *
+     * \return Returns the root KMime node of the parsed message
+     */
+    std::shared_ptr<KMime::Message> parsedMessage() const;
+    /*!
      * \brief Returns the parsed message part
      * \return A shared pointer to the root message part
      */

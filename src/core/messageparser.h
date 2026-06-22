@@ -54,6 +54,14 @@ public:
      */
     void setMessage(const std::shared_ptr<KMime::Message> message);
     /*!
+     * \brief Returns a pointer to the parser
+     *
+     * Use this, if you need more info than available via parts().
+     *
+     * \return A shared pointer to the parser of the last message set via setMessage()
+     */
+    std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser() const;
+    /*!
      * \brief Returns the part model
      * \return A pointer to the parts model
      */

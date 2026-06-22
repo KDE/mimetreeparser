@@ -245,6 +245,11 @@ std::shared_ptr<KMime::Message> MessageViewer::message() const
     return d->parser ? d->parser->message() : std::shared_ptr<KMime::Message>{};
 }
 
+std::shared_ptr<MimeTreeParser::ObjectTreeParser> MessageViewer::parser() const
+{
+    return d->parser ? d->parser->parser() : nullptr;
+}
+
 void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout *lay, const QModelIndex &parent)
 {
     for (int i = 0, count = parts->rowCount(parent); i < count; i++) {

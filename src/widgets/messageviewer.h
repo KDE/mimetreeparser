@@ -16,6 +16,8 @@ class QPainter;
 
 namespace MimeTreeParser
 {
+class ObjectTreeParser;
+
 namespace Widgets
 {
 /*!
@@ -50,6 +52,16 @@ public:
      */
     void setMessage(const std::shared_ptr<KMime::Message> &message);
 
+    /*!
+     * \brief Returns a shared pointer to the parser
+     *
+     * The parser is constructed when a message is set, and is not
+     * currently reused. Thus this should always be called after
+     * setMessage().
+     *
+     * \return A shared pointer to the ObjectTreeParser
+     */
+    [[nodiscard]] std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser() const;
     /*!
      * \brief Returns whether a fixed width font is used
      * \return True if fixed font is enabled
