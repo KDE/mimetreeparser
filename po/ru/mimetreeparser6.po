@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-11 00:45+0000\n"
+"POT-Creation-Date: 2026-06-23 00:47+0000\n"
 "PO-Revision-Date: 2026-04-03 20:37+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -364,52 +364,52 @@ msgstr "без_имени"
 msgid "Save Attachment As"
 msgstr "Сохранить вложение как"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "Invitation"
 msgstr "Приглашение"
 
-#: widgets/messageviewer.cpp:306
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgid "&Summary:"
 msgstr "&Краткое описание:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:312
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Организатор:"
 
-#: widgets/messageviewer.cpp:309
+#: widgets/messageviewer.cpp:314
 #, kde-format
 msgid "&Location:"
 msgstr "&Местоположение:"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:316
 #, kde-format
 msgid "&Start date:"
 msgstr "&Дата начала:"
 
-#: widgets/messageviewer.cpp:313
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "&End date:"
 msgstr "Дата о&кончания:"
 
-#: widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "&Details:"
 msgstr "&Сведения:"
 
-#: widgets/messageviewer.cpp:336
+#: widgets/messageviewer.cpp:341
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Инкапсулированное письмо"
 
-#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
 #, kde-format
 msgid "From:"
 msgstr "От:"
 
-#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:423
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -417,42 +417,42 @@ msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "Неизвестно"
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "Date:"
 msgstr "Дата:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&Subject:"
 msgstr "&Тема:"
 
-#: widgets/messageviewer.cpp:416 widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:421 widgets/messageviewer.cpp:423
 #, kde-format
 msgid "&From:"
 msgstr "&От:"
 
-#: widgets/messageviewer.cpp:421
+#: widgets/messageviewer.cpp:426
 #, kde-format
 msgid "&Sender:"
 msgstr "&Отправитель:"
 
-#: widgets/messageviewer.cpp:424
+#: widgets/messageviewer.cpp:429
 #, kde-format
 msgid "&To:"
 msgstr "&Кому:"
 
-#: widgets/messageviewer.cpp:427
+#: widgets/messageviewer.cpp:432
 #, kde-format
 msgid "&CC:"
 msgstr "&Копия:"
 
-#: widgets/messageviewer.cpp:430
+#: widgets/messageviewer.cpp:435
 #, kde-format
 msgid "&BCC:"
 msgstr "&Скрытая копия:"
 
-#: widgets/messageviewer.cpp:433
+#: widgets/messageviewer.cpp:438
 #, kde-format
 msgid "&Date:"
 msgstr "&Дата:"

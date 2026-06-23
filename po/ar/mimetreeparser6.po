@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-11 00:45+0000\n"
+"POT-Creation-Date: 2026-06-23 00:47+0000\n"
 "PO-Revision-Date: 2026-04-23 10:40+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -364,93 +364,93 @@ msgstr "غير مسمًّى"
 msgid "Save Attachment As"
 msgstr "احفظ المرفق ك‍"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "Invitation"
 msgstr "الدعوة"
 
-#: widgets/messageviewer.cpp:306
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgid "&Summary:"
 msgstr "الملخّ&ص:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:312
 #, kde-format
 msgid "&Organizer:"
 msgstr "المن&ظّم:"
 
-#: widgets/messageviewer.cpp:309
+#: widgets/messageviewer.cpp:314
 #, kde-format
 msgid "&Location:"
 msgstr "الم&كان:"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:316
 #, kde-format
 msgid "&Start date:"
 msgstr "تاريخ الب&دء:"
 
-#: widgets/messageviewer.cpp:313
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "&End date:"
 msgstr "تاريخ الا&نتهاء:"
 
-#: widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "&Details:"
 msgstr "ال&تفاصيل:"
 
-#: widgets/messageviewer.cpp:336
+#: widgets/messageviewer.cpp:341
 #, kde-format
 msgid "Encapsulated email"
 msgstr "بريد مغلّفة"
 
-#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
 #, kde-format
 msgid "From:"
 msgstr "من:"
 
-#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:423
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>مجهول</i>"
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "Date:"
 msgstr "التاريخ:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&Subject:"
 msgstr "المو&ضوع:"
 
-#: widgets/messageviewer.cpp:416 widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:421 widgets/messageviewer.cpp:423
 #, kde-format
 msgid "&From:"
 msgstr "&من:"
 
-#: widgets/messageviewer.cpp:421
+#: widgets/messageviewer.cpp:426
 #, kde-format
 msgid "&Sender:"
 msgstr "المر&سل:"
 
-#: widgets/messageviewer.cpp:424
+#: widgets/messageviewer.cpp:429
 #, kde-format
 msgid "&To:"
 msgstr "إل&ى:"
 
-#: widgets/messageviewer.cpp:427
+#: widgets/messageviewer.cpp:432
 #, kde-format
 msgid "&CC:"
 msgstr "&ن‌ك:"
 
-#: widgets/messageviewer.cpp:430
+#: widgets/messageviewer.cpp:435
 #, kde-format
 msgid "&BCC:"
 msgstr "ن‌&ك‌ع:"
 
-#: widgets/messageviewer.cpp:433
+#: widgets/messageviewer.cpp:438
 #, kde-format
 msgid "&Date:"
 msgstr "ال&تاريخ:"

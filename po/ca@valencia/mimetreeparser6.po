@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-11 00:45+0000\n"
+"POT-Creation-Date: 2026-06-23 00:47+0000\n"
 "PO-Revision-Date: 2026-04-18 08:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -357,93 +357,93 @@ msgstr "sense nom"
 msgid "Save Attachment As"
 msgstr "Anomeneu i guardeu l'adjunt"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "Invitation"
 msgstr "Invitació"
 
-#: widgets/messageviewer.cpp:306
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgid "&Summary:"
 msgstr "&Resum:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:312
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organitzador:"
 
-#: widgets/messageviewer.cpp:309
+#: widgets/messageviewer.cpp:314
 #, kde-format
 msgid "&Location:"
 msgstr "&Emplaçament:"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:316
 #, kde-format
 msgid "&Start date:"
 msgstr "Data d'&inici:"
 
-#: widgets/messageviewer.cpp:313
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "&End date:"
 msgstr "Data &final:"
 
-#: widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "&Details:"
 msgstr "&Detalls:"
 
-#: widgets/messageviewer.cpp:336
+#: widgets/messageviewer.cpp:341
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Correu electrònic encapsulat"
 
-#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:347
+#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:345 widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:423
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Desconegut</i>"
 
-#: widgets/messageviewer.cpp:349
+#: widgets/messageviewer.cpp:354
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:418
 #, kde-format
 msgid "&Subject:"
 msgstr "A&ssumpte:"
 
-#: widgets/messageviewer.cpp:416 widgets/messageviewer.cpp:418
+#: widgets/messageviewer.cpp:421 widgets/messageviewer.cpp:423
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:421
+#: widgets/messageviewer.cpp:426
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remitent:"
 
-#: widgets/messageviewer.cpp:424
+#: widgets/messageviewer.cpp:429
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
 
-#: widgets/messageviewer.cpp:427
+#: widgets/messageviewer.cpp:432
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:430
+#: widgets/messageviewer.cpp:435
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:433
+#: widgets/messageviewer.cpp:438
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
