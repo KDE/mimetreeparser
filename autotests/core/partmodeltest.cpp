@@ -8,6 +8,7 @@
 #include <QTextDocument>
 
 #include "messageparser.h"
+#include "objecttreeparser.h"
 #include "partmodel.h"
 
 static std::shared_ptr<KMime::Message> readMailFromFile(const QString &mailFile)
@@ -72,6 +73,30 @@ private Q_SLOTS:
                            "\"http://www.w3.org/TR/html4/loose.dtd\">\n<html><head><title></title><style>\nbody {\n  overflow:hidden;\n  font-family: \"Noto "
                            "Sans\" ! important;\n  color: #31363b ! important;\n  background-color: #fcfcfc ! important\n}\nblockquote { \n  border-left: 2px "
                            "solid #bdc3c7 ! important;\n}\n</style></head>\n<body>\n<html><body><p><span>HTML</span> text</p></body></html></body></html>"));
+    }
+
+    void testIndexToPart()
+    {
+        MessageParser messageParser;
+        // a reasonably complex mail with nested parts
+        messageParser.setMessage(readMailFromFile(QLatin1StringView("forward-openpgp-signed-encrypted.mbox")));
+
+        auto partList = messageParser.parser()->collectContentParts();
+        QCOMPARE(partList.size(), 2); // ensure parse result is what we expect
+
+        auto partModel = messageParser.parts();
+        int rows = partModel->rowCount();
+        QCOMPARE(rows, partList.size());
+
+        for (int i = 0; i < rows; ++i) {
+            auto idx = partModel->index(i, 0);
+            QCOMPARE(partModel->part(idx), partList.value(i));
+        }
+
+        auto encapsulatedIndex = partModel->index(1, 0);
+        auto encapsulatedPart = partModel->part<MimeTreeParser::EncapsulatedRfc822MessagePart>(encapsulatedIndex);
+        QVERIFY(encapsulatedPart);
+        QCOMPARE(encapsulatedPart->subject(), QStringLiteral("OpenPGP signed and encrypted"));
     }
 };
 
