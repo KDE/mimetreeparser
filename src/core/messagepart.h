@@ -371,7 +371,7 @@ private:
     friend class ObjectTreeParser;
 };
 
-class MIMETREEPARSER_CORE_EXPORT AttachmentMessagePart : public TextMessagePart
+class MIMETREEPARSER_CORE_EXPORT AttachmentMessagePart : public MessagePart
 {
     Q_OBJECT
 public:

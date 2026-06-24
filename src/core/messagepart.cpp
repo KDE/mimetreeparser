@@ -405,45 +405,32 @@ void TextMessagePart::parseContent()
             if (!fullySignedOrEncryptedTmp) {
                 fullySignedOrEncrypted = false;
             }
-
-            if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
-                fullySignedOrEncryptedTmp = false;
-                appendSubPart(QSharedPointer<MessagePart>(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())))));
-            } else if (block.type() == PgpMessageBlock) {
-                auto content = new KMime::Content;
-                content->setBody(block.text());
-                content->parse();
-                content->contentType()->setCharset(charset());
-                QSharedPointer<EncryptedMessagePart> mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, content, content, false));
-                mp->bindLifetime(content);
-                mp->setIsEncrypted(true);
-                appendSubPart(mp);
-            } else if (block.type() == ClearsignedBlock) {
-                auto content = new KMime::Content;
-                content->setBody(block.text());
-                content->parse();
-                content->contentType()->setCharset(charset());
-                QSharedPointer<SignedMessagePart> mp(new SignedMessagePart(mOtp, cryptProto, nullptr, content, false));
-                mp->bindLifetime(content);
-                appendSubPart(mp);
-            } else {
+            if (block.text().trimmed().isEmpty()) {
                 continue;
             }
 
-            const auto mp = subParts().last().staticCast<MessagePart>();
-            const PartMetaData *messagePart(mp->partMetaData());
-
-            if (!messagePart->isEncrypted && !messagePart->isSigned() && !block.text().trimmed().isEmpty()) {
-                mp->setText(aCodec.decode(KMime::CRLFtoLF(block.text())));
-            }
-
-            if (messagePart->isEncrypted) {
+            QSharedPointer<MimeTreeParser::MessagePart> mp;
+            auto content = std::make_unique<KMime::Content>();
+            content->setBody(block.text());
+            content->parse();
+            content->contentType()->setCharset(charset());
+            if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
+                fullySignedOrEncryptedTmp = false;
+                mp.reset(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())), content.get()));
+            } else if (block.type() == PgpMessageBlock) {
+                auto enc = new EncryptedMessagePart(mOtp, QString(), cryptProto, content.get(), content.get(), false);
+                enc->setIsEncrypted(true);
+                mp.reset(enc);
                 mEncryptionState = KMMsgPartiallyEncrypted;
-            }
-
-            if (messagePart->isSigned()) {
+            } else if (block.type() == ClearsignedBlock) {
+                mp.reset(new SignedMessagePart(mOtp, cryptProto, nullptr, content.get(), false));
                 mSignatureState = KMMsgPartiallySigned;
+            } else {
+                // This effectively hides key blocks and multipart blocks. Do we want this?
+                continue;
             }
+            mp->bindLifetime(content.release());
+            appendSubPart(mp);
         }
 
         // Do we have an fully Signed/Encrypted Message?
@@ -477,7 +464,7 @@ KMMsgSignatureState TextMessagePart::signatureState() const
 //-----AttachmentMessageBlock----------------------
 
 AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node)
-    : TextMessagePart(otp, node)
+    : MessagePart(otp, QString(), node)
 {
 }
 
@@ -835,7 +822,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
     if (partMetaData()->isSigned()) {
         // We simply attach a signed message part to indicate that this content is also signed
         // We're forwarding mNode to not loose the encoding information
-        auto subPart = QSharedPointer<SignedMessagePart>(new SignedMessagePart(mOtp, mCryptoProto, mNode, nullptr));
+        auto subPart = QSharedPointer<SignedMessagePart>(new SignedMessagePart(mOtp, mCryptoProto, mNode, nullptr, mParseAfterDecryption));
         subPart->setText(decoded);
         subPart->setVerificationResult(verifyResult, plainText);
         appendSubPart(subPart);
@@ -928,7 +915,7 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
     mMetaData.isEncrypted = true;
     mMetaData.isDecryptable = decrypt(*data);
 
-    if (mParseAfterDecryption && !mMetaData.isSigned()) {
+    if (mParseAfterDecryption && !mMetaData.isSigned() && !mError) {
         parseInternal(mDecryptedData);
     } else {
         setText(QString::fromUtf8(mDecryptedData.constData()));

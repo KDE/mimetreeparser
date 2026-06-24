@@ -236,36 +236,17 @@ QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(QShared
         [start](const QSharedPointer<MessagePart> &part) {
             if (const auto attachment = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(part.data())) {
                 return attachment->mimeType() == "text/calendar"_ba;
-            } else if (const auto text = dynamic_cast<MimeTreeParser::TextMessagePart *>(part.data())) {
-                auto enc = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(text->parentPart());
-                if (enc && enc->error()) {
-                    return false;
-                }
-
-                return true;
             } else if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
                 return true;
-            } else if (dynamic_cast<MimeTreeParser::HtmlMessagePart *>(part.data())) {
-                // Don't if we have an alternative part as parent
-                return true;
+            } else if (dynamic_cast<MimeTreeParser::HeadersPart *>(part.data())) {
+                return false;
             } else if (dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(part.data())) {
                 if (start.data() == part.data()) {
                     return false;
                 }
                 return true;
-            } else if (const auto enc = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(part.data())) {
-                if (enc->error()) {
-                    return true;
-                }
-                // If we have a textpart with encrypted and unencrypted subparts we want to return the textpart
-                if (dynamic_cast<MimeTreeParser::TextMessagePart *>(enc->parentPart())) {
-                    return false;
-                }
-            } else if (const auto sig = dynamic_cast<MimeTreeParser::SignedMessagePart *>(part.data())) {
-                // Signatures without subparts already contain the text
-                return !sig->hasSubParts();
             }
-            return false;
+            return !part->hasSubParts();
         });
 }
 
