@@ -165,15 +165,20 @@ private Q_SLOTS:
         otp.decryptAndVerify();
         otp.print();
         auto partList = otp.collectContentParts();
-        QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
+        QCOMPARE(partList.size(), 3);
+        auto part = partList[0];
         QVERIFY(bool(part));
+        QCOMPARE(part->parentPart()->encryptionState(), MimeTreeParser::KMMsgPartiallyEncrypted);
         QVERIFY(part->text().contains(u"Some text before PGP block"));
+        QCOMPARE(part->encryptions().size(), 0);
+        part = partList[1];
+        QVERIFY(bool(part));
         QVERIFY(part->text().contains(u"encrypted message text"));
+        QCOMPARE(part->encryptions().size(), 1);
+        part = partList[2];
+        QVERIFY(bool(part));
         QVERIFY(part->text().contains(u"Some text after PGP block"));
-        QCOMPARE(part->subParts().size(), 3);
-        auto enc = part->subParts()[1];
-        QCOMPARE(enc->encryptions().size(), 1);
+        QCOMPARE(part->encryptions().size(), 0);
     }
 
     void testOpenPPGInlineWithNonEncText()
@@ -184,22 +189,37 @@ private Q_SLOTS:
         otp.decryptAndVerify();
         otp.print();
         auto partList = otp.collectContentParts();
-        QCOMPARE(partList.size(), 1);
-        auto part1 = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
-        QVERIFY(bool(part1));
-        QCOMPARE(part1->text(), u"Not encrypted not signed :(\n\nsome random text"_s);
-        // TODO test if we get the proper subparts with the appropriate encryptions
-        QCOMPARE(part1->charset(), u"us-ascii"_s.toLocal8Bit());
+        QCOMPARE(partList.size(), 5);
+        auto part = partList[0];
+        QVERIFY(bool(part));
+        QCOMPARE(part->text().trimmed(), u"Not encrypted not signed :("_s);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgNotSigned);
 
-        QCOMPARE(part1->encryptionState(), MimeTreeParser::KMMsgPartiallyEncrypted);
-        QCOMPARE(part1->signatureState(), MimeTreeParser::KMMsgNotSigned);
+        part = partList[1];
+        QVERIFY(bool(part));
+        QCOMPARE(part->text().trimmed(), u"some random text"_s);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgNotSigned);
 
-        // QCOMPARE(part1->text(), u"Not encrypted not signed :(\n\n"_s);
-        // QCOMPARE(part1->charset(), u"us-ascii"_s.toLocal8Bit());
-        // QCOMPARE(contentList[1]->content(), u"some random text"_s.toLocal8Bit());
-        // QCOMPARE(contentList[1]->charset(), u"us-ascii"_s.toLocal8Bit());
-        // QCOMPARE(contentList[1]->encryptions().size(), 1);
-        // QCOMPARE(contentList[1]->signatures().size(), 0);
+        part = partList[2];
+        QVERIFY(bool(part));
+        QCOMPARE(part->text().trimmed(), u"A signed part follows, but this text here is not signed, at all."_s);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgNotSigned);
+
+        part = partList[3];
+        QVERIFY(bool(part));
+        QCOMPARE(part->text().trimmed(), u"asdasd asd asd asdf sadf sdaf sadf öäü"_s);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
+
+        part = partList[4];
+        QVERIFY(bool(part));
+        QCOMPARE(part->text().trimmed(), u"Not signed."_s);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgNotSigned);
+
         QCOMPARE(otp.collectAttachmentParts().size(), 0);
     }
 
@@ -357,9 +377,8 @@ private Q_SLOTS:
         QCOMPARE(part->date().toString(), "Wed Aug 5 10:57:58 2009 GMT+0200"_L1);
         auto subPartList = otp.collectContentParts(part);
         QCOMPARE(subPartList.size(), 1);
-        qWarning() << subPartList[0]->metaObject()->className();
-        auto subPart = subPartList[0].dynamicCast<MimeTreeParser::TextMessagePart>();
-        QVERIFY(bool(subPart));
+        auto textPart = qobject_cast<MimeTreeParser::TextMessagePart *>(subPartList[0]->parentPart());
+        QVERIFY(bool(textPart));
     }
 
     void testGpgOLencapsulatedMime()
@@ -396,16 +415,21 @@ private Q_SLOTS:
         MimeTreeParser::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile("openpgp-inline-signed.mbox"_L1));
         otp.decryptAndVerify();
+        otp.print();
+        QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("ohno öäü"_L1)));
         auto partList = otp.collectContentParts();
-        QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
+        QCOMPARE(partList.size(), 2);
+        auto part = partList[0];
+        QCOMPARE(part->signatures().size(), 0);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgNotSigned);
+        QCOMPARE(part->text().trimmed(), u"Unsigned part"_s);
+
+        part = partList[1];
         QCOMPARE(part->signatures().size(), 1);
         QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
         QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
-        QCOMPARE(part->text(), QString::fromUtf8("ohno öäü\n"));
-
-        QVERIFY(otp.plainTextContent().contains(QString::fromUtf8("ohno öäü"_L1)));
-
+        QCOMPARE(part->text().trimmed(), u"ohno öäü"_s);
         const auto details = PartModel::signatureDetails(part.get());
         const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
         QCOMPARE(detailsWithoutTimestamp,
@@ -690,7 +714,7 @@ private Q_SLOTS:
 
         // The signature
         {
-            auto part = partList[1].dynamicCast<MimeTreeParser::TextMessagePart>();
+            auto part = partList[1];
             QVERIFY(bool(part));
             QVERIFY(part->text().contains("bugzilla mailing list"_L1));
         }

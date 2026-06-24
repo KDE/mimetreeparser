@@ -11,7 +11,7 @@ X-KMail-Templates: 9
 User-Agent: KMail/4.6 beta5 (Linux/2.6.34.7-0.7-desktop; KDE/4.6.41; x86_64; git-0269848; 2011-04-19)
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7Bit
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="iso-8859-1"
 
 Not encrypted not signed :(
 
@@ -29,3 +29,29 @@ Rw3pW6/BFfhPJLni29g9tw==
 =fRFW
 -----END PGP MESSAGE-----
 
+A signed part follows, but this text here is not signed, at all.
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2.0.22 (GNU/Linux)
+
+hIwDGJlthTT7oq0BBACbaRZudMigMTetPZNRgkfEXv4QQowR1jborw0dcgKKqMQ1
+6o67NkpxvmXKGJTfTVCLBX3nk6FKYo6NwlPCyU7X9X0DDk8hvaBdR9wGfrdm5YWX
+GKOzcqJY1EypiMsspXeZvjzEW7O8I956c3vBb/2pM3xqYEK1kh8+d9bVH+cjf4UB
+DAMMzkNap8zaOwEH/1rPShyYL8meJN+/GGgS8+Nf1BW5pSHdAPCg0dnX4QCLEx7u
+GkBU6N4JGYayaCBofibOLacQPhYZdnR5Xb/Pvrx03GrzyzyDp0WyeI9nGNfkani7
+sCRWbzlMPsEvGEvJVnMLNRSk4xhPIWumL4APkw+Mgi6mf+Br8z0RhfnGwyMA53Mr
+pG9VQKlq3v7/aaN40pMjAsxiytcHS515jXrb3Ko4pWbTlAr/eytOEfkLRJgSOpQT
+BY7lWs+UQJqiG8Yn65vS9LMDNJgX9EOGx77Z4u9wvv4ZieOxzgbHGg5kYCoae7ba
+hxZeNjYKscH+E6epbOxM/wlTdr4UTiiW9dMsH0zSwMUB891gToeXq+LDGEPTKVSX
+tsJm4HS/kISJBwrCI4EUqWZML6xQ427NkZGmF2z/sD3kmL66GjspIKnb4zHmXacp
+84n2KrI9s7p6AnKnQjsxvB/4/lpXPCIY5GH7KjySEJiMsHECzeN1dJSL6keykBsx
+DtmYDA+dhZ6UWbwzx/78+mjNREhyp/UiSAmLzlJh89OH/xelAPvKcIosYwz4cY9N
+wjralTmL+Y0aHKeZJOeqPLaXADcPFiZrCNPCH65Ey5GEtDpjLpEbjVbykPV9+YkK
+7JKW6bwMraOl5zmAoR77PWMo3IoYb9q4GuqDr1V2ZGlb7eMH1gj1nfgfVintKC1X
+3jFfy7aK6LIQDVKEwbi0SxVXTKStuliVUy5oX4woDOxmTEotJf1QlKZpn5oF20UP
+tumYrp0SPoP8Bo4EVRVaLupduI5cYce1q/kFj9Iho/wk56MoG9PxMMfsH7oKg3AA
+CqQ6/kM4oJNdN5xIf1EH5HeaNFkDy1jlLznnhwVAZKPo/9ffpg==
+=bPqu
+-----END PGP MESSAGE-----
+
+Not signed.

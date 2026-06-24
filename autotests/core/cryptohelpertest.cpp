@@ -172,14 +172,36 @@ void CryptoHelperTest::testDecryptInlineMessage()
     auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, error);
     QVERIFY(wasEncrypted);
     QVERIFY(decryptedMessage);
-    QCOMPARE(decryptedMessage->decodedBody(), QByteArray("Not encrypted not signed :(\n\nsome random text"));
-    QCOMPARE(
-        decryptedMessage->encodedContent(),
-        QByteArray("From test@kolab.org Wed, 25 May 2011 23: 49:40 +0100\nFrom: OpenPGP Test <test@kolab.org>\nTo: test@kolab.org\nSubject: "
-                   "inlinepgpencrypted + non enc text\nDate: Wed, 25 May 2011 23:49:40 +0100\nMessage-ID: "
-                   "<1786696.yKXrOjjflF@herrwackelpudding.localhost>\nX-KMail-Transport: GMX\nX-KMail-Fcc: 28\nX-KMail-Drafts: 7\nX-KMail-Templates: "
-                   "9\nUser-Agent: KMail/4.6 beta5 (Linux/2.6.34.7-0.7-desktop; KDE/4.6.41; x86_64;\n git-0269848; 2011-04-19)\nMIME-Version: "
-                   "1.0\nContent-Transfer-Encoding: 7Bit\nContent-Type: text/plain; charset=\"us-ascii\"\n\nNot encrypted not signed :(\n\nsome random text"));
+    QCOMPARE(decryptedMessage->decodedBody(),
+             QByteArray("Not encrypted not signed :(\n"
+                        "\n"
+                        "some random text\n"
+                        "A signed part follows, but this text here is not signed, at all.\n"
+                        "\n"
+                        "asdasd asd asd asdf sadf sdaf sadf \xF6\xE4\xFC\nNot signed.\n"));
+    QCOMPARE(decryptedMessage->encodedContent(),
+             QByteArray("From test@kolab.org Wed, 25 May 2011 23: 49:40 +0100\n"
+                        "From: OpenPGP Test <test@kolab.org>\n"
+                        "To: test@kolab.org\n"
+                        "Subject: inlinepgpencrypted + non enc text\n"
+                        "Date: Wed, 25 May 2011 23:49:40 +0100\n"
+                        "Message-ID: <1786696.yKXrOjjflF@herrwackelpudding.localhost>\n"
+                        "X-KMail-Transport: GMX\n"
+                        "X-KMail-Fcc: 28\n"
+                        "X-KMail-Drafts: 7\n"
+                        "X-KMail-Templates: 9\n"
+                        "User-Agent: KMail/4.6 beta5 (Linux/2.6.34.7-0.7-desktop; KDE/4.6.41; x86_64;\n"
+                        " git-0269848; 2011-04-19)\n"
+                        "MIME-Version: 1.0\n"
+                        "Content-Transfer-Encoding: 7Bit\n"
+                        "Content-Type: text/plain; charset=\"iso-8859-1\"\n"
+                        "\n"
+                        "Not encrypted not signed :(\n"
+                        "\n"
+                        "some random text\n"
+                        "A signed part follows, but this text here is not signed, at all.\n"
+                        "\n"
+                        "asdasd asd asd asdf sadf sdaf sadf \xF6\xE4\xFC\nNot signed.\n"));
 }
 
 static bool hasEncryptedContents(QSharedPointer<MimeTreeParser::MessagePart> part)
@@ -196,20 +218,22 @@ static bool hasEncryptedContents(QSharedPointer<MimeTreeParser::MessagePart> par
 void CryptoHelperTest::testSaveDecrypted_data()
 {
     QTest::addColumn<QString>("mailFile");
+    QTest::addColumn<bool>("hasInlinePGPBlocks");
     // These are just a random selection of encrypted files in various formats. We check that
     // the version as returned by CryptoUtils::decryptMessage() parses to the same contents
-    QTest::newRow("smime-encrypted") << "smime-encrypted.mbox";
-    QTest::newRow("openpgp-encrypted-attachment-and-non-encrypted-attachment") << "openpgp-encrypted-attachment-and-non-encrypted-attachment.mbox";
-    QTest::newRow("openpgp-encrypted-ambiguous-mime") << "openpgp-encrypted-ambiguous-mime.mbox";
-    QTest::newRow("openpgp-inline-charset-encrypted") << "openpgp-inline-charset-encrypted.mbox";
-    QTest::newRow("multipart-mixed-alternative-inline-pgp") << "multipart-mixed-alternative-inline-pgp.mbox";
-    QTest::newRow("openpgp-inline-encrypted+nonenc") << "openpgp-inline-encrypted+nonenc.mbox";
-    QTest::newRow("signed-forward-openpgp-signed-encrypted") << "signed-forward-openpgp-signed-encrypted.mbox";
+    QTest::newRow("smime-encrypted") << "smime-encrypted.mbox" << false;
+    QTest::newRow("openpgp-encrypted-attachment-and-non-encrypted-attachment") << "openpgp-encrypted-attachment-and-non-encrypted-attachment.mbox" << false;
+    QTest::newRow("openpgp-encrypted-ambiguous-mime") << "openpgp-encrypted-ambiguous-mime.mbox" << false;
+    QTest::newRow("openpgp-inline-charset-encrypted") << "openpgp-inline-charset-encrypted.mbox" << true;
+    QTest::newRow("multipart-mixed-alternative-inline-pgp") << "multipart-mixed-alternative-inline-pgp.mbox" << true;
+    QTest::newRow("openpgp-inline-encrypted+nonenc") << "openpgp-inline-encrypted+nonenc.mbox" << true;
+    QTest::newRow("signed-forward-openpgp-signed-encrypted") << "signed-forward-openpgp-signed-encrypted.mbox" << false;
 }
 
 void CryptoHelperTest::testSaveDecrypted()
 {
     QFETCH(QString, mailFile);
+    QFETCH(bool, hasInlinePGPBlocks);
     const auto originalMessage = MimeTreeParser::Core::FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile).value(0);
 
     MimeTreeParser::ObjectTreeParser originalOtp;
@@ -225,11 +249,16 @@ void CryptoHelperTest::testSaveDecrypted()
     decryptedOtp.parseObjectTree(decryptedMessage.get());
     decryptedOtp.decryptAndVerify(); // we still need to verify signatures
     QVERIFY(!hasEncryptedContents(decryptedOtp.parsedPart()));
-    const auto decryptedContents = decryptedOtp.collectContentParts();
-    QCOMPARE(originalContents.size(), decryptedContents.size());
     QCOMPARE(originalOtp.collectAttachmentParts().size(), decryptedOtp.collectAttachmentParts().size());
-    for (int i = 0; i < originalContents.size(); ++i) {
-        QCOMPARE(originalContents.value(i)->text(), decryptedContents.value(i)->text());
+    const auto decryptedContents = decryptedOtp.collectContentParts();
+    if (hasInlinePGPBlocks) {
+        QVERIFY(originalContents.size() >= decryptedContents.size());
+        QCOMPARE(originalOtp.plainTextContent(), decryptedOtp.plainTextContent());
+    } else {
+        QCOMPARE(originalContents.size(), decryptedContents.size());
+        for (int i = 0; i < originalContents.size(); ++i) {
+            QCOMPARE(originalContents.value(i)->text(), decryptedContents.value(i)->text());
+        }
     }
 }
 
