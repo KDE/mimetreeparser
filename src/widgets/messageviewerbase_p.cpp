@@ -4,10 +4,9 @@
 
 #include "messageviewerbase_p.h"
 
+#include "../core/cryptohelper.h"
 #include "messageviewer.h"
 #include "messageviewerutils_p.h"
-
-#include <MimeTreeParserCore/CryptoHelper>
 
 #include <Libkleo/Compliance>
 #include <Libkleo/Formatting>
@@ -263,29 +262,10 @@ void MessageViewerBasePrivate::save(QWidget *parent)
         return;
     }
 
-    QString extension;
-    QString alternatives;
-    bool wasEncrypted = false;
-    GpgME::Protocol protocol;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol);
-    Q_UNUSED(decryptedMessage); // we save the message without modifying it
-
-    if (wasEncrypted) {
-        extension = u".mime"_s;
-        if (protocol == GpgME::OpenPGP) {
-            alternatives = i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)");
-        } else {
-            alternatives = i18nc("File dialog accepted files", "Encrypted S/MIME files (*.p7m)");
-        }
-    } else {
-        extension = u".eml"_s;
-        alternatives = i18nc("Accepted files in a file dialog. You only need to translate 'file'", "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)");
-    }
-
     saveMessage(parent,
                 i18nc("@title:window", "Save Message"),
-                MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), extension),
-                alternatives,
+                MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
+                i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"),
                 message->encodedContent());
 }
 
@@ -297,30 +277,30 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
     }
 
     bool wasEncrypted = false;
-    GpgME::Protocol protocol;
-    GpgME::Error error;
-    auto decryptedMessage = CryptoUtils::decryptMessage(message, wasEncrypted, protocol, error);
-    if (error.isCanceled()) {
-        return;
-    }
+    MessagePart::Error error = MessagePart::NoError;
+    const auto decryptedCopy = CryptoUtils::decryptMessage(message, wasEncrypted, error);
+
     if (!wasEncrypted) {
         KMessageBox::information(parent, i18nc("@info", "The message doesn't seem to be encrypted. Saving the original message."));
-        decryptedMessage = message;
     } else if (error) {
-        KMessageBox::error(parent, i18nc("@info", "Failed to decrypt the message: %1", Kleo::Formatting::errorAsString(error)));
-        return;
-    } else if (!decryptedMessage) {
-        // shouldn't happen, but better safe than crash
-        KMessageBox::information(parent, i18nc("@info", "Failed to decrypt the message. Saving the original (encrypted?) message."));
-        wasEncrypted = false;
-        decryptedMessage = message;
+        if (error == MessagePart::UserCancelled) {
+            return;
+        }
+        if (KMessageBox::warningContinueCancel(parent,
+                                               i18nc("@info", "Some parts of the message could not be decrypted. Save partially decrypted message?"),
+                                               i18nc("@info", "Decryption failed"),
+                                               KStandardGuiItem::save(),
+                                               KStandardGuiItem::cancel())
+            != KMessageBox::Continue) {
+            return;
+        }
     }
 
     saveMessage(parent,
                 wasEncrypted ? i18nc("@title:window", "Save Decrypted Message") : i18nc("@title:window", "Save Message"),
                 MessageViewerUtils::changeExtension(MessageViewerUtils::changeFileName(fileName, messageViewer->subject()), u".eml"_s),
                 i18nc("File dialog accepted files", "Email files (*.eml *.mbox *.mime)"),
-                decryptedMessage->encodedContent());
+                wasEncrypted ? decryptedCopy->encodedContent() : message->encodedContent());
 }
 
 void MessageViewerBasePrivate::print(QWidget *parent)

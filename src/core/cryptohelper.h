@@ -7,6 +7,8 @@
 
 #include "mimetreeparser_core_export.h"
 
+#include <messagepart.h>
+
 #include <KMime/Message>
 #include <QByteArray>
 #include <QList>
@@ -77,10 +79,7 @@ public:
 namespace CryptoUtils
 {
 [[nodiscard]] MIMETREEPARSER_CORE_EXPORT std::shared_ptr<KMime::Message>
-decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, GpgME::Protocol &protoName, GpgME::Error &error);
-
-[[nodiscard]] MIMETREEPARSER_CORE_EXPORT std::shared_ptr<KMime::Message>
-decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, GpgME::Protocol &protoName);
+decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, MessagePart::Error &error);
 }
 
 } // namespace MimeTreeParser
