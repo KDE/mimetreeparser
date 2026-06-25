@@ -69,4 +69,5 @@ private Q_SLOTS:
 };
 
 QTEST_GUILESS_MAIN(FileOpenerTest)
+
 #include "fileopenertest.moc"

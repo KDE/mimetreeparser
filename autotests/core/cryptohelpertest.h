@@ -21,5 +21,7 @@ private Q_SLOTS:
     void testMultipleBlockMessage();
     void testDecryptMessage();
     void testDecryptInlineMessage();
+    void testSaveDecrypted_data();
+    void testSaveDecrypted();
 };
 }

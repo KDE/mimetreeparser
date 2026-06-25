@@ -6,6 +6,7 @@
 #include "cryptohelper.h"
 
 #include "mimetreeparser_core_debug.h"
+#include "objecttreeparser.h"
 
 #include <QGpgME/DecryptJob>
 #include <QGpgME/DecryptVerifyJob>
@@ -157,22 +158,7 @@ PGPBlockType Block::type() const
     return mType;
 }
 
-namespace
-{
-
-[[nodiscard]] bool isPGP(const KMime::Content *part, bool allowOctetStream = false)
-{
-    const auto ct = part->contentType();
-    return ct && (ct->isSubtype("pgp-encrypted") || ct->isSubtype("encrypted") || (allowOctetStream && ct->isMimeType("application/octet-stream")));
-}
-
-[[nodiscard]] bool isSMIME(const KMime::Content *part)
-{
-    const auto ct = part->contentType();
-    return ct && (ct->isSubtype("pkcs7-mime") || ct->isSubtype("x-pkcs7-mime"));
-}
-
-void copyHeader(const KMime::Headers::Base *header, std::shared_ptr<KMime::Message> msg)
+void copyHeader(const KMime::Headers::Base *header, KMime::Content *msg)
 {
     auto newHdr = KMime::Headers::createHeader(header->type());
     if (!newHdr) {
@@ -187,137 +173,123 @@ void copyHeader(const KMime::Headers::Base *header, std::shared_ptr<KMime::Messa
     return header->is("Content-Type") || header->is("Content-Transfer-Encoding") || header->is("Content-Disposition");
 }
 
-[[nodiscard]] std::shared_ptr<KMime::Message> assembleMessage(const std::shared_ptr<KMime::Message> &orig, const KMime::Content *newContent)
+////////////////// save decrpyted message - new implementation ////////////////////
+// We rely on the representation of the decrypted mail as given by ObjectTreeParser.
+// However to remain as close to the original message as possible, we save the underlying
+// KMime::Content. Before we can do that, we need to replace any encrypted nodes with their
+// decrypted representation. That is not entirely trivial due to (some) messages being
+// mangled by (some) MTAs, so there are instances, where we cannot just replace the entire
+// parent node of the encrypted data with the decrypted data. Here, we can detect such cases
+// (which have been handled during parsing), by checking, which KMime-nodes have a MessagePart-
+// representation. Those, we want to keep, the others we can strip.
+/////////////////////////////////////////////////////////////////////
+
+static QSet<KMime::Content *> representedNodes(MimeTreeParser::MessagePart *part)
 {
-    auto out = std::make_shared<KMime::Message>();
-    // Use the new content as message content
-    out->setBody(const_cast<KMime::Content *>(newContent)->encodedBody());
-    out->parse();
-
-    // remove default explicit content headers added by KMime::Content::parse()
-    QList<KMime::Headers::Base *> headers = out->headers();
-    for (const auto hdr : std::as_const(headers)) {
-        if (isContentHeader(hdr)) {
-            out->removeHeader(hdr->type());
-        }
+    QSet<KMime::Content *> ret;
+    ret.insert(part->node());
+    for (const auto &p : part->subParts()) {
+        ret.unite(representedNodes(p.get()));
     }
-
-    // Copy over headers from the original message, except for CT, CTE and CD
-    // headers, we want to preserve those from the new content
-    headers = orig->headers();
-    for (const auto hdr : std::as_const(headers)) {
-        if (isContentHeader(hdr)) {
-            continue;
-        }
-
-        copyHeader(hdr, out);
-    }
-
-    // Overwrite some headers by those provided by the new content;
-    const auto newContentHeaders = newContent->headers();
-    for (const auto hdr : newContentHeaders) {
-        if (isContentHeader(hdr)) {
-            copyHeader(hdr, out);
-        }
-    }
-
-    out->assemble();
-    out->parse();
-
-    return out;
-}
+    return ret;
 }
 
-std::shared_ptr<KMime::Message>
-CryptoUtils::decryptMessage(const std::shared_ptr<KMime::Message> &msg, bool &wasEncrypted, GpgME::Protocol &protoName, GpgME::Error &error)
+static void copyMissingHeaders(const KMime::Content *from, KMime::Content *to)
 {
-    protoName = GpgME::UnknownProtocol;
-    bool multipart = false;
-    if (msg->contentType(KMime::DontCreate) && msg->contentType(KMime::DontCreate)->isMimeType("multipart/encrypted")) {
-        multipart = true;
-        const auto subparts = msg->contents();
-        for (auto subpart : subparts) {
-            if (isPGP(subpart, true)) {
-                protoName = GpgME::OpenPGP;
-                break;
-            } else if (isSMIME(subpart)) {
-                protoName = GpgME::CMS;
-                break;
+    const auto headers = from->headers();
+    const auto newHeaders = to->headers();
+    for (const auto hdr : headers) {
+        if (!(isContentHeader(hdr) || to->hasHeader(hdr->type()))) {
+            copyHeader(hdr, to);
+        }
+    }
+
+    // this is not strictly necessary, but sort content type headers after
+    // headers such as From: and To:
+    for (const auto hdr : newHeaders) {
+        if (isContentHeader(hdr)) {
+            auto newHdr = KMime::Headers::createHeader(hdr->type());
+            newHdr->from7BitString(hdr->as7BitString());
+            to->removeHeader(hdr->type());
+            to->appendHeader(std::move(newHdr));
+        }
+    }
+}
+
+static void decryptNodes(MimeTreeParser::MessagePart *part, const QSet<KMime::Content *> &nonRemovableNodes, bool &wasEncrypted, MessagePart::Error &error)
+{
+    if (auto enc = qobject_cast<MimeTreeParser::EncryptedMessagePart *>(part)) {
+        wasEncrypted = true;
+        if (enc->error()) {
+            error = enc->error();
+            if (error == MessagePart::UserCancelled) {
+                // In other cases, a partial result may or may not be useful
+                return;
             }
-        }
-    } else {
-        if (isPGP(msg.get())) {
-            protoName = GpgME::OpenPGP;
-        } else if (isSMIME(msg.get())) {
-            protoName = GpgME::CMS;
         } else {
-            const auto blocks = prepareMessageForDecryption(msg->decodedBody());
-            QByteArray content;
-            for (const auto &block : blocks) {
-                if (block.type() == PgpMessageBlock) {
-                    const auto proto = QGpgME::openpgp();
-                    protoName = GpgME::OpenPGP;
-                    wasEncrypted = true;
-                    QByteArray outData;
-                    const auto decryptVerify = proto->decryptVerifyJob();
-                    const auto [decryptResult, verifyResult] = decryptVerify->exec(block.text(), outData);
-                    if (decryptResult.error()) {
-                        // unknown key, invalid algo, or general error
-                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << Kleo::Formatting::errorAsString(decryptResult.error());
-                        error = decryptResult.error();
-                        return {};
-                    } else if (verifyResult.error()) {
-                        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to verify:" << Kleo::Formatting::errorAsString(verifyResult.error());
-                        error = verifyResult.error();
-                        return {};
-                    }
-
-                    content += KMime::CRLFtoLF(outData);
-                } else if (block.type() == NoPgpBlock) {
-                    content += block.text();
+            auto node = part->node();
+            auto subnodes = node->contents();
+            QList<KMime::Content *> subnodesToKeep;
+            int gap = -1;
+            for (auto sub : subnodes) {
+                if (nonRemovableNodes.contains(sub)) {
+                    subnodesToKeep.append(sub);
+                } else {
+                    gap = subnodesToKeep.size();
                 }
             }
 
-            KMime::Content decCt;
-            decCt.setBody(content);
-            decCt.parse();
-            decCt.assemble();
-
-            return assembleMessage(msg, &decCt);
+            if (subnodesToKeep.isEmpty()) {
+                const auto oldnode = node->clone();
+                node->setContent(enc->mDecryptedData);
+                node->parse();
+                copyMissingHeaders(oldnode.get(), node);
+            } else {
+                auto decryptedNode = new KMime::Content();
+                decryptedNode->setContent(enc->mDecryptedData);
+                subnodesToKeep.insert(gap, decryptedNode);
+                for (auto subnode : subnodesToKeep) {
+                    node->appendContent(std::unique_ptr<KMime::Content>(subnode));
+                }
+                decryptedNode->parse(); // Do this _after_ the node has a parent, and thereby depth()
+            }
+        }
+    } else if (auto text = qobject_cast<MimeTreeParser::TextMessagePart *>(part)) {
+        if (text->encryptionState()) {
+            wasEncrypted = true;
+        }
+        if (!text->subParts().isEmpty()) {
+            // this is a text/plain part with one or more inline PGP blocks
+            // throw away the contents, and assemble from the subparts
+            auto node = text->node();
+            auto ct = node->contentType();
+            QStringEncoder codec(ct->charset().constData());
+            QByteArray encoded = codec.encode(text->text());
+            if (codec.hasError()) {
+                // original charset might no longer work after decryption
+                ct->setCharset(QByteArrayLiteral("UTF-8"));
+                encoded = text->text().toUtf8();
+            }
+            node->setBody(encoded);
+            return;
         }
     }
-
-    if (protoName == GpgME::UnknownProtocol) {
-        wasEncrypted = false;
-        qCWarning(MIMETREEPARSER_CORE_LOG) << "Not encrypted, or we don't recognize the encryption";
-        error = GpgME::Error::fromCode(GPG_ERR_NOT_ENCRYPTED);
-        return {};
+    for (const auto &p : part->subParts()) {
+        decryptNodes(p.get(), nonRemovableNodes, wasEncrypted, error);
     }
-
-    const auto proto = (protoName == GpgME::OpenPGP) ? QGpgME::openpgp() : QGpgME::smime();
-
-    wasEncrypted = true;
-    QByteArray outData;
-    auto inData = multipart ? msg->encodedContent() : msg->decodedBody(); // decodedContent in fact returns decoded body
-    auto decrypt = proto->decryptJob();
-    auto result = decrypt->exec(inData, outData);
-    if (result.error()) {
-        // unknown key, invalid algo, or general error
-        qCWarning(MIMETREEPARSER_CORE_LOG) << "Failed to decrypt:" << Kleo::Formatting::errorAsString(result.error());
-        error = result.error();
-        return {};
-    }
-
-    KMime::Content decCt;
-    decCt.setContent(KMime::CRLFtoLF(outData));
-    decCt.parse();
-    decCt.assemble();
-
-    return assembleMessage(msg, &decCt);
 }
 
-std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_ptr<KMime::Message> &msg, bool &wasEncrypted, GpgME::Protocol &protoName)
+std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_ptr<KMime::Message> &message, bool &wasEncrypted, MessagePart::Error &error)
 {
-    GpgME::Error error;
-    return CryptoUtils::decryptMessage(msg, wasEncrypted, protoName, error);
+    auto decryptedCopy = std::shared_ptr<KMime::Message>(static_cast<KMime::Message *>(message->clone().release()));
+
+    MimeTreeParser::ObjectTreeParser otp;
+    otp.parseObjectTree(decryptedCopy.get());
+    otp.decryptAndVerify();
+
+    auto nonRemovableNodes = representedNodes(otp.parsedPart().get());
+    decryptNodes(otp.parsedPart().get(), nonRemovableNodes, wasEncrypted, error);
+    decryptedCopy->assemble();
+
+    return decryptedCopy;
 }
