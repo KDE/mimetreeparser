@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-23 00:47+0000\n"
+"POT-Creation-Date: 2026-06-25 00:45+0000\n"
 "PO-Revision-Date: 2026-04-21 15:38+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
@@ -21,60 +21,68 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:162
+#, fuzzy, kde-format
+#| msgctxt "Fallback when file has no name"
+#| msgid "unnamed"
+msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
+msgid "unnamed_%1.%2"
+msgstr "unbenannt"
+
+#: core/attachmentmodel.cpp:217
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Name"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:219
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Größe"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:221
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Verschlüsselt"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp:223
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signiert"
 
-#: core/attachmentmodel.cpp:302
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Der Anhang konnte nicht gespeichert werden."
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:342
 #, kde-format
 msgid "attachment"
 msgstr "Anhang"
 
-#: core/attachmentmodel.cpp:332
+#: core/attachmentmodel.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Der Anhang konnte nicht gespeichert werden, um ihn zu öffnen."
 
-#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
+#: core/attachmentmodel.cpp:368 core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Der Anhang konnte nicht geöffnet werden."
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:399
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "In diesem Anhang wurden keine Zertifikate gefunden"
 
-#: core/attachmentmodel.cpp:385
+#: core/attachmentmodel.cpp:402
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -82,7 +90,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "Ein Zertifikat wurde importiert"
 msgstr[1] "%1 Zertifikate wurden importiert"
 
-#: core/attachmentmodel.cpp:390
+#: core/attachmentmodel.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -108,22 +116,17 @@ msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Falsches Kryptografie-Modul."
 
-#: core/messagepart.cpp:908
+#: core/messagepart.cpp:905
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Es wurde kein passendes Kryptografie-Modul gefunden."
 
-#: core/messagepart.cpp:910
-#, kde-format
-msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "Kryptografie-Modul \"%1\" kann keine Nachrichten entschlüsseln."
-
-#: core/messagepart.cpp:912
+#: core/messagepart.cpp:907
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kryptografie-Modul \"%1\" konnte die Daten nicht entschlüsseln."
 
-#: core/messagepart.cpp:913
+#: core/messagepart.cpp:908
 #, kde-format
 msgid "Error: %1"
 msgstr "Fehler: %1"
@@ -143,6 +146,12 @@ msgstr[0] "Diese Nachricht ist für den folgenden Empfänger verschlüsselt:"
 msgstr[1] "Diese Nachricht ist für die folgenden Empfänger verschlüsselt:"
 
 #: core/partmodel.cpp:599
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was cancelled."
+msgstr ""
+
+#: core/partmodel.cpp:601
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -402,52 +411,75 @@ msgid "Encapsulated email"
 msgstr "Eingebettete E-Mail"
 
 #: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Subject:"
+msgid "Subject:"
+msgstr "Betreff:"
+
+#: widgets/messageviewer.cpp:350
+#, fuzzy, kde-format
+#| msgctxt "window title if email subject is empty"
+#| msgid "(No Subject)"
+msgctxt "Email has no subject"
+msgid "No subject"
+msgstr "(Kein Betreff)"
+
+#: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
 #, kde-format
 msgid "From:"
 msgstr "Von:"
 
-#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:423
+#: widgets/messageviewer.cpp:357
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@status missing from:, an unknown author"
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: widgets/messageviewer.cpp:361
+#, kde-format
+msgid "Date:"
+msgstr "Datum:"
+
+#: widgets/messageviewer.cpp:425
+#, kde-format
+msgid "&Subject:"
+msgstr "Betreff:"
+
+#: widgets/messageviewer.cpp:428 widgets/messageviewer.cpp:430
+#, kde-format
+msgid "&From:"
+msgstr "Von:"
+
+#: widgets/messageviewer.cpp:430
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Unbekannt</i>"
 
-#: widgets/messageviewer.cpp:354
-#, kde-format
-msgid "Date:"
-msgstr "Datum:"
-
-#: widgets/messageviewer.cpp:418
-#, kde-format
-msgid "&Subject:"
-msgstr "Betreff:"
-
-#: widgets/messageviewer.cpp:421 widgets/messageviewer.cpp:423
-#, kde-format
-msgid "&From:"
-msgstr "Von:"
-
-#: widgets/messageviewer.cpp:426
+#: widgets/messageviewer.cpp:433
 #, kde-format
 msgid "&Sender:"
 msgstr "Absender:"
 
-#: widgets/messageviewer.cpp:429
+#: widgets/messageviewer.cpp:436
 #, kde-format
 msgid "&To:"
 msgstr "An:"
 
-#: widgets/messageviewer.cpp:432
+#: widgets/messageviewer.cpp:439
 #, kde-format
 msgid "&CC:"
 msgstr "CC:"
 
-#: widgets/messageviewer.cpp:435
+#: widgets/messageviewer.cpp:442
 #, kde-format
 msgid "&BCC:"
 msgstr "BCC:"
 
-#: widgets/messageviewer.cpp:438
+#: widgets/messageviewer.cpp:445
 #, kde-format
 msgid "&Date:"
 msgstr "Datum:"
@@ -634,6 +666,9 @@ msgstr "Navigation"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Nachricht"
+
+#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#~ msgstr "Kryptografie-Modul \"%1\" kann keine Nachrichten entschlüsseln."
 
 #~ msgctxt "@title:window"
 #~ msgid "Save File"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-23 00:47+0000\n"
+"POT-Creation-Date: 2026-06-25 00:45+0000\n"
 "PO-Revision-Date: 2026-04-25 23:44+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,60 +19,68 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:162
+#, fuzzy, kde-format
+#| msgctxt "Fallback when file has no name"
+#| msgid "unnamed"
+msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
+msgid "unnamed_%1.%2"
+msgstr "be pavadinimo"
+
+#: core/attachmentmodel.cpp:217
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:219
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Dydis"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:221
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Šifruotas"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp:223
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Pasirašytas"
 
-#: core/attachmentmodel.cpp:302
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Nepavyko įrašyti priedo."
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:342
 #, kde-format
 msgid "attachment"
 msgstr "priedas"
 
-#: core/attachmentmodel.cpp:332
+#: core/attachmentmodel.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Nepavyko rašyti priedo, kad būtų atvertas."
 
-#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
+#: core/attachmentmodel.cpp:368 core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Nepavyko atverti priedo."
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:399
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Šiame priede nerasta jokių liudijimų"
 
-#: core/attachmentmodel.cpp:385
+#: core/attachmentmodel.cpp:402
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -82,7 +90,7 @@ msgstr[1] "importuoti %1 liudijimai"
 msgstr[2] "importuota %1 liudijimų"
 msgstr[3] "importuotas %1 liudijimas"
 
-#: core/attachmentmodel.cpp:390
+#: core/attachmentmodel.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -110,22 +118,17 @@ msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Neteisingas šifravimo įskiepis."
 
-#: core/messagepart.cpp:908
+#: core/messagepart.cpp:905
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nerastas tinkamas šifravimo įskiepis."
 
-#: core/messagepart.cpp:910
-#, kde-format
-msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "Šifravimo įskiepis „%1“ negali iššifruoti laiškų."
-
-#: core/messagepart.cpp:912
+#: core/messagepart.cpp:907
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifravimo įskiepiui „%1“ nepavyko iššifruoti duomenų."
 
-#: core/messagepart.cpp:913
+#: core/messagepart.cpp:908
 #, kde-format
 msgid "Error: %1"
 msgstr "Klaida: %1"
@@ -147,6 +150,12 @@ msgstr[2] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[3] "Laiškas yra šifruotas šiems gavėjams:"
 
 #: core/partmodel.cpp:599
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was cancelled."
+msgstr ""
+
+#: core/partmodel.cpp:601
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -404,52 +413,75 @@ msgid "Encapsulated email"
 msgstr "Uždaras laiškas"
 
 #: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Subject:"
+msgid "Subject:"
+msgstr "Tema:"
+
+#: widgets/messageviewer.cpp:350
+#, fuzzy, kde-format
+#| msgctxt "window title if email subject is empty"
+#| msgid "(No Subject)"
+msgctxt "Email has no subject"
+msgid "No subject"
+msgstr "(Be temos)"
+
+#: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
 #, kde-format
 msgid "From:"
 msgstr "Nuo:"
 
-#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:423
+#: widgets/messageviewer.cpp:357
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@status missing from:, an unknown author"
+msgid "Unknown"
+msgstr "Nežinoma"
+
+#: widgets/messageviewer.cpp:361
+#, kde-format
+msgid "Date:"
+msgstr "Data:"
+
+#: widgets/messageviewer.cpp:425
+#, kde-format
+msgid "&Subject:"
+msgstr "&Tema:"
+
+#: widgets/messageviewer.cpp:428 widgets/messageviewer.cpp:430
+#, kde-format
+msgid "&From:"
+msgstr "&Nuo:"
+
+#: widgets/messageviewer.cpp:430
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Nežinomas</i>"
 
-#: widgets/messageviewer.cpp:354
-#, kde-format
-msgid "Date:"
-msgstr "Data:"
-
-#: widgets/messageviewer.cpp:418
-#, kde-format
-msgid "&Subject:"
-msgstr "&Tema:"
-
-#: widgets/messageviewer.cpp:421 widgets/messageviewer.cpp:423
-#, kde-format
-msgid "&From:"
-msgstr "&Nuo:"
-
-#: widgets/messageviewer.cpp:426
+#: widgets/messageviewer.cpp:433
 #, kde-format
 msgid "&Sender:"
 msgstr "&Siuntėjas:"
 
-#: widgets/messageviewer.cpp:429
+#: widgets/messageviewer.cpp:436
 #, kde-format
 msgid "&To:"
 msgstr "&Kam:"
 
-#: widgets/messageviewer.cpp:432
+#: widgets/messageviewer.cpp:439
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:435
+#: widgets/messageviewer.cpp:442
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:438
+#: widgets/messageviewer.cpp:445
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
@@ -632,6 +664,9 @@ msgstr "&Naršymas"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Laiškas"
+
+#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#~ msgstr "Šifravimo įskiepis „%1“ negali iššifruoti laiškų."
 
 #~ msgctxt "@title:window"
 #~ msgid "Save File"

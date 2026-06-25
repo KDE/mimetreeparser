@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-23 00:47+0000\n"
+"POT-Creation-Date: 2026-06-25 00:45+0000\n"
 "PO-Revision-Date: 2026-04-18 07:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,60 +18,68 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:162
+#, fuzzy, kde-format
+#| msgctxt "Fallback when file has no name"
+#| msgid "unnamed"
+msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
+msgid "unnamed_%1.%2"
+msgstr "neimenovana"
+
+#: core/attachmentmodel.cpp:217
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Ime"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:219
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Velikost"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:221
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Šifrirano"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp:223
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Podpisano"
 
-#: core/attachmentmodel.cpp:302
+#: core/attachmentmodel.cpp:319
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Shranjevanje priloge ni uspelo."
 
-#: core/attachmentmodel.cpp:325
+#: core/attachmentmodel.cpp:342
 #, kde-format
 msgid "attachment"
 msgstr "priloga"
 
-#: core/attachmentmodel.cpp:332
+#: core/attachmentmodel.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Priponke ni bilo mogoče zapisati za odpiranje."
 
-#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
+#: core/attachmentmodel.cpp:368 core/attachmentmodel.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Priponke ni bilo mogoče odpreti."
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:399
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "V tej prilogi ni bilo najdenih nobenih ključev"
 
-#: core/attachmentmodel.cpp:385
+#: core/attachmentmodel.cpp:402
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -81,7 +89,7 @@ msgstr[1] "%1 ključa uvožena"
 msgstr[2] "%1 ključi uvoženi"
 msgstr[3] "%1 ključev uvoženo"
 
-#: core/attachmentmodel.cpp:390
+#: core/attachmentmodel.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -109,22 +117,17 @@ msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Napačen kripto vtičnik."
 
-#: core/messagepart.cpp:908
+#: core/messagepart.cpp:905
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Ni najdenega ustreznega kripto-vtičnika."
 
-#: core/messagepart.cpp:910
-#, kde-format
-msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "Kripto-vtičnik \"%1\" ne more dešifrirati sporočil."
-
-#: core/messagepart.cpp:912
+#: core/messagepart.cpp:907
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripto-vtičnik \"%1\" ni mogel dešifrirati podatkov."
 
-#: core/messagepart.cpp:913
+#: core/messagepart.cpp:908
 #, kde-format
 msgid "Error: %1"
 msgstr "Napaka: %1"
@@ -146,6 +149,12 @@ msgstr[2] "Sporočilo je šifrirano za naslednje prejemnike:"
 msgstr[3] "Sporočilo je šifrirano za naslednje prejemnike:"
 
 #: core/partmodel.cpp:599
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was cancelled."
+msgstr ""
+
+#: core/partmodel.cpp:601
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -402,52 +411,75 @@ msgid "Encapsulated email"
 msgstr "Enkapsulirano e-poštno sporočilo"
 
 #: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Subject:"
+msgid "Subject:"
+msgstr "Zadeva:"
+
+#: widgets/messageviewer.cpp:350
+#, fuzzy, kde-format
+#| msgctxt "window title if email subject is empty"
+#| msgid "(No Subject)"
+msgctxt "Email has no subject"
+msgid "No subject"
+msgstr "(Ni zadeve)"
+
+#: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
 #, kde-format
 msgid "From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:423
+#: widgets/messageviewer.cpp:357
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@status missing from:, an unknown author"
+msgid "Unknown"
+msgstr "Neznan"
+
+#: widgets/messageviewer.cpp:361
+#, kde-format
+msgid "Date:"
+msgstr "Datum:"
+
+#: widgets/messageviewer.cpp:425
+#, kde-format
+msgid "&Subject:"
+msgstr "Predmet:"
+
+#: widgets/messageviewer.cpp:428 widgets/messageviewer.cpp:430
+#, kde-format
+msgid "&From:"
+msgstr "Od:"
+
+#: widgets/messageviewer.cpp:430
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Neznan</i>"
 
-#: widgets/messageviewer.cpp:354
-#, kde-format
-msgid "Date:"
-msgstr "Datum:"
-
-#: widgets/messageviewer.cpp:418
-#, kde-format
-msgid "&Subject:"
-msgstr "Predmet:"
-
-#: widgets/messageviewer.cpp:421 widgets/messageviewer.cpp:423
-#, kde-format
-msgid "&From:"
-msgstr "Od:"
-
-#: widgets/messageviewer.cpp:426
+#: widgets/messageviewer.cpp:433
 #, kde-format
 msgid "&Sender:"
 msgstr "Pošiljatelj:"
 
-#: widgets/messageviewer.cpp:429
+#: widgets/messageviewer.cpp:436
 #, kde-format
 msgid "&To:"
 msgstr "Za:"
 
-#: widgets/messageviewer.cpp:432
+#: widgets/messageviewer.cpp:439
 #, kde-format
 msgid "&CC:"
 msgstr "Kp:"
 
-#: widgets/messageviewer.cpp:435
+#: widgets/messageviewer.cpp:442
 #, kde-format
 msgid "&BCC:"
 msgstr "Skp:"
 
-#: widgets/messageviewer.cpp:438
+#: widgets/messageviewer.cpp:445
 #, kde-format
 msgid "&Date:"
 msgstr "&Datum:"
@@ -633,6 +665,9 @@ msgstr "&Navigacija"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "Sporočilo"
+
+#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#~ msgstr "Kripto-vtičnik \"%1\" ne more dešifrirati sporočil."
 
 #~ msgctxt "@title:window"
 #~ msgid "Save File"
