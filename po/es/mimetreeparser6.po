@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the mimetreeparser package.
 # Automatically generated, 2023.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2023-2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:45+0000\n"
-"PO-Revision-Date: 2026-04-18 08:34+0100\n"
+"POT-Creation-Date: 2026-06-26 00:46+0000\n"
+"PO-Revision-Date: 2026-06-25 12:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,15 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #: core/attachmentmodel.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "sin nombre"
+msgstr "sin_nombre_%1.%2"
 
 #: core/attachmentmodel.cpp:217
 #, kde-format
@@ -147,7 +145,7 @@ msgstr[1] "El mensaje está cifrado para los siguientes destinatarios:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "Se ha cancelado el descifrado."
 
 #: core/partmodel.cpp:601
 #, kde-format
@@ -408,19 +406,15 @@ msgid "Encapsulated email"
 msgstr "Mensaje encapsulado"
 
 #: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Asunto:"
 
 #: widgets/messageviewer.cpp:350
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(Sin asunto)"
+msgstr "Sin asunto"
 
 #: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
 #, kde-format
@@ -428,12 +422,10 @@ msgid "From:"
 msgstr "De:"
 
 #: widgets/messageviewer.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
-msgstr "Desconocida"
+msgstr "Desconocido"
 
 #: widgets/messageviewer.cpp:361
 #, kde-format
@@ -481,73 +473,73 @@ msgstr "Cc&o:"
 msgid "&Date:"
 msgstr "&Fecha:"
 
-#: widgets/messageviewerbase_p.cpp:65
+#: widgets/messageviewerbase_p.cpp:64
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Guardar"
 
-#: widgets/messageviewerbase_p.cpp:71
+#: widgets/messageviewerbase_p.cpp:70
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Guardar sin cifrar"
 
-#: widgets/messageviewerbase_p.cpp:77
+#: widgets/messageviewerbase_p.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Imprimir vista previa"
 
-#: widgets/messageviewerbase_p.cpp:83
+#: widgets/messageviewerbase_p.cpp:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&Imprimir"
 
-#: widgets/messageviewerbase_p.cpp:89
+#: widgets/messageviewerbase_p.cpp:88
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Mensaje anterior"
 
-#: widgets/messageviewerbase_p.cpp:95
+#: widgets/messageviewerbase_p.cpp:94
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Mensaje siguiente"
 
-#: widgets/messageviewerbase_p.cpp:101
+#: widgets/messageviewerbase_p.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Ver fuente"
 
-#: widgets/messageviewerbase_p.cpp:107
+#: widgets/messageviewerbase_p.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Usar tipo de letra de ancho fijo"
 
-#: widgets/messageviewerbase_p.cpp:155
+#: widgets/messageviewerbase_p.cpp:154
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(Sin asunto)"
 
-#: widgets/messageviewerbase_p.cpp:163
+#: widgets/messageviewerbase_p.cpp:162
 #, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
 msgstr "(No hay mensajes)"
 
-#: widgets/messageviewerbase_p.cpp:178
+#: widgets/messageviewerbase_p.cpp:177
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr "No hay mensajes para mostrar."
 
-#: widgets/messageviewerbase_p.cpp:180
+#: widgets/messageviewerbase_p.cpp:179
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -557,82 +549,71 @@ msgstr ""
 "No se ha podido leer el archivo <filename>%1</filename> o el archivo no "
 "contiene mensajes."
 
-#: widgets/messageviewerbase_p.cpp:247
+#: widgets/messageviewerbase_p.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "No se puede crear el archivo %1."
 
-#: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
+#: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Error al guardar mensaje"
 
-#: widgets/messageviewerbase_p.cpp:253
+#: widgets/messageviewerbase_p.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "No se puede escribir en el archivo %1."
 
-#: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Archivos de correo electrónico (*.eml *.mbox *.mime)"
-
-#: widgets/messageviewerbase_p.cpp:278
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "Archivos cifrados S/MIME (*.p7m)"
-
-#: widgets/messageviewerbase_p.cpp:282
-#, kde-format
-msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
-
-#: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
+#: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
 msgstr "Guardar mensaje"
 
-#: widgets/messageviewerbase_p.cpp:307
+#: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "Archivos de correo electrónico (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerbase_p.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr "Parece que el mensaje no está cifrado. Se guarda el mensaje original."
 
-#: widgets/messageviewerbase_p.cpp:310
-#, kde-format
-msgctxt "@info"
-msgid "Failed to decrypt the message: %1"
-msgstr "No se ha podido descifrar el mensaje: %1"
-
-#: widgets/messageviewerbase_p.cpp:314
+#: widgets/messageviewerbase_p.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Failed to decrypt the message. Saving the original (encrypted?) message."
+"Some parts of the message could not be decrypted. Save partially decrypted "
+"message?"
 msgstr ""
-"No se ha podido descifrar el mensaje. Se guarda el mensaje original "
-"(¿cifrado?)."
 
-#: widgets/messageviewerbase_p.cpp:320
+#: widgets/messageviewerbase_p.cpp:291
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Decryption was cancelled."
+msgctxt "@info"
+msgid "Decryption failed"
+msgstr "Se ha cancelado el descifrado."
+
+#: widgets/messageviewerbase_p.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
 msgstr "Guardar mensaje sin cifrar"
 
-#: widgets/messageviewerbase_p.cpp:334
+#: widgets/messageviewerbase_p.cpp:314
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Imprimir"
 
-#: widgets/messageviewerbase_p.cpp:351
+#: widgets/messageviewerbase_p.cpp:331
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
@@ -662,5 +643,21 @@ msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mensaje"
 
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "El complemento criptográfico «%1» no puede descifrar mensajes."
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Encrypted S/MIME files (*.p7m)"
+#~ msgstr "Archivos cifrados S/MIME (*.p7m)"
+
+#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#~ msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
+
+#~ msgctxt "@info"
+#~ msgid "Failed to decrypt the message: %1"
+#~ msgstr "No se ha podido descifrar el mensaje: %1"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
+#~ msgstr ""
+#~ "No se ha podido descifrar el mensaje. Se guarda el mensaje original "
+#~ "(¿cifrado?)."

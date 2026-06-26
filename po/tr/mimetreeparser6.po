@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2023-2026 Emir SARI <emir_sari@icloud.com>
 # Emir SARI <emir_sari@icloud.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:45+0000\n"
-"PO-Revision-Date: 2026-05-02 18:53+0300\n"
+"POT-Creation-Date: 2026-06-26 00:46+0000\n"
+"PO-Revision-Date: 2026-06-25 18:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,15 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/attachmentmodel.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "adsız"
+msgstr "adsız_%1.%2"
 
 #: core/attachmentmodel.cpp:217
 #, kde-format
@@ -146,7 +144,7 @@ msgstr[1] "İleti, şu alıcılar için şifrelendi:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "Şifreleme iptal edildi."
 
 #: core/partmodel.cpp:601
 #, kde-format
@@ -404,19 +402,15 @@ msgid "Encapsulated email"
 msgstr "Kapsüllenmiş E-posta"
 
 #: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Konu:"
 
 #: widgets/messageviewer.cpp:350
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(Konu Yok)"
+msgstr "Konu yok"
 
 #: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
 #, kde-format
@@ -424,9 +418,7 @@ msgid "From:"
 msgstr "Kimden:"
 
 #: widgets/messageviewer.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -477,73 +469,73 @@ msgstr "&Gizli kopya:"
 msgid "&Date:"
 msgstr "&Tarih:"
 
-#: widgets/messageviewerbase_p.cpp:65
+#: widgets/messageviewerbase_p.cpp:64
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Kaydet"
 
-#: widgets/messageviewerbase_p.cpp:71
+#: widgets/messageviewerbase_p.cpp:70
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Şifresi Çözülmüş Kaydet"
 
-#: widgets/messageviewerbase_p.cpp:77
+#: widgets/messageviewerbase_p.cpp:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Yazdırma Önizlemesi"
 
-#: widgets/messageviewerbase_p.cpp:83
+#: widgets/messageviewerbase_p.cpp:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Ya&zdır"
 
-#: widgets/messageviewerbase_p.cpp:89
+#: widgets/messageviewerbase_p.cpp:88
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Önceki İleti"
 
-#: widgets/messageviewerbase_p.cpp:95
+#: widgets/messageviewerbase_p.cpp:94
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Sonraki İleti"
 
-#: widgets/messageviewerbase_p.cpp:101
+#: widgets/messageviewerbase_p.cpp:100
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Kaynağı Görüntüle"
 
-#: widgets/messageviewerbase_p.cpp:107
+#: widgets/messageviewerbase_p.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Eş Aralıklı Yazıtipi Kullan"
 
-#: widgets/messageviewerbase_p.cpp:155
+#: widgets/messageviewerbase_p.cpp:154
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(Konu Yok)"
 
-#: widgets/messageviewerbase_p.cpp:163
+#: widgets/messageviewerbase_p.cpp:162
 #, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
 msgstr "(İleti Yok)"
 
-#: widgets/messageviewerbase_p.cpp:178
+#: widgets/messageviewerbase_p.cpp:177
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr "Görüntülenecek bilgi yok."
 
-#: widgets/messageviewerbase_p.cpp:180
+#: widgets/messageviewerbase_p.cpp:179
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -553,80 +545,71 @@ msgstr ""
 "<filename>%1</filename> dosyası okunamıyor veya dosyada herhangi bir ileti "
 "yok."
 
-#: widgets/messageviewerbase_p.cpp:247
+#: widgets/messageviewerbase_p.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "%1 dosyası oluşturulamadı."
 
-#: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
+#: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "İleti Kaydedilirken Hata"
 
-#: widgets/messageviewerbase_p.cpp:253
+#: widgets/messageviewerbase_p.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "%1 dosyası yazılamadı."
 
-#: widgets/messageviewerbase_p.cpp:276 widgets/messageviewerbase_p.cpp:322
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "E-posta dosyaları (*.eml *.mbox *.mime)"
-
-#: widgets/messageviewerbase_p.cpp:278
-#, kde-format
-msgctxt "File dialog accepted files"
-msgid "Encrypted S/MIME files (*.p7m)"
-msgstr "Şifreli S/MIME dosyaları (*.p7m)"
-
-#: widgets/messageviewerbase_p.cpp:282
-#, kde-format
-msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-msgstr "EML dosyası (*.eml);;MBOX dosyası (*.mbox);;MIME dosyası (*.mime)"
-
-#: widgets/messageviewerbase_p.cpp:286 widgets/messageviewerbase_p.cpp:320
+#: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
 msgstr "İletiyi Kaydet"
 
-#: widgets/messageviewerbase_p.cpp:307
+#: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
+#, kde-format
+msgctxt "File dialog accepted files"
+msgid "Email files (*.eml *.mbox *.mime)"
+msgstr "E-posta dosyaları (*.eml *.mbox *.mime)"
+
+#: widgets/messageviewerbase_p.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr "İleti şifrelenmiş gibi görünmüyor. Özgün ileti kaydediliyor."
 
-#: widgets/messageviewerbase_p.cpp:310
-#, kde-format
-msgctxt "@info"
-msgid "Failed to decrypt the message: %1"
-msgstr "İletinin şifresi çözülemedi: %1"
-
-#: widgets/messageviewerbase_p.cpp:314
+#: widgets/messageviewerbase_p.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Failed to decrypt the message. Saving the original (encrypted?) message."
-msgstr "İletinin şifresi çözülemedi. Özgün (şifrelenmiş?) ileti kaydediliyor."
+"Some parts of the message could not be decrypted. Save partially decrypted "
+"message?"
+msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:320
+#: widgets/messageviewerbase_p.cpp:291
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Decryption was cancelled."
+msgctxt "@info"
+msgid "Decryption failed"
+msgstr "Şifreleme iptal edildi."
+
+#: widgets/messageviewerbase_p.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
 msgstr "Şifresi Çözülmüş İletiyi Kaydet"
 
-#: widgets/messageviewerbase_p.cpp:334
+#: widgets/messageviewerbase_p.cpp:314
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Yazdır"
 
-#: widgets/messageviewerbase_p.cpp:351
+#: widgets/messageviewerbase_p.cpp:331
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
@@ -655,6 +638,24 @@ msgstr "&Dolaşım"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "İ&leti"
+
+#~ msgctxt "File dialog accepted files"
+#~ msgid "Encrypted S/MIME files (*.p7m)"
+#~ msgstr "Şifreli S/MIME dosyaları (*.p7m)"
+
+#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
+#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
+#~ msgstr "EML dosyası (*.eml);;MBOX dosyası (*.mbox);;MIME dosyası (*.mime)"
+
+#~ msgctxt "@info"
+#~ msgid "Failed to decrypt the message: %1"
+#~ msgstr "İletinin şifresi çözülemedi: %1"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
+#~ msgstr ""
+#~ "İletinin şifresi çözülemedi. Özgün (şifrelenmiş?) ileti kaydediliyor."
 
 #~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 #~ msgstr "Kripto eklentisi “%1”, iletilerin şifresini çözemez."
