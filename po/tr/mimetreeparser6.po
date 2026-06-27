@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:46+0000\n"
-"PO-Revision-Date: 2026-06-25 18:53+0300\n"
+"PO-Revision-Date: 2026-06-26 18:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -588,14 +588,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"İletinin bazı kısımlarının şifresi çözülemedi. İletinin şifresi çözülen "
+"kısımları kaydedilsin mi?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr "Şifreleme iptal edildi."
+msgstr "Şifre Çözümü Başarısız"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:46+0000\n"
-"PO-Revision-Date: 2026-06-25 05:47+0200\n"
+"PO-Revision-Date: 2026-06-26 05:23+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -590,14 +590,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"ამ შეტყობინების ზოგიერთი ნაწილის გაშიფვრა შეუძლებელია. გნებავთ ნაწილობრივ "
+"გაშიფრული შეტყობინების შენახვა?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr "გაშიფვრა გაუქმდა."
+msgstr "გაშიფვრის შეცდომა"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

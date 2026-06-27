@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:46+0000\n"
-"PO-Revision-Date: 2026-06-25 09:28+0300\n"
+"PO-Revision-Date: 2026-06-26 11:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -598,14 +598,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Деякі частини повідомлення не вдалося розшифрувати. Зберегти частково "
+"розшифроване повідомлення?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr "Розшифровування було скасовано."
+msgstr "Не вдалося розшифрувати"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:46+0000\n"
-"PO-Revision-Date: 2026-06-25 17:21+0200\n"
+"PO-Revision-Date: 2026-06-26 06:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -596,14 +596,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Nekaterih delov sporočila ni bilo mogoče dešifrirati. Želite shraniti delno "
+"dešifrirano sporočilo?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr "Dešifriranje je bilo preklicano."
+msgstr "Dešifriranje spodletelo"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

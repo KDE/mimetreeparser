@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:46+0000\n"
-"PO-Revision-Date: 2026-06-25 12:08+0100\n"
+"PO-Revision-Date: 2026-06-26 12:23+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/attachmentmodel.cpp:162
 #, kde-format
@@ -592,14 +592,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Algunas partes del mensaje no se pueden descifrar. ¿Guardar el mensaje "
+"parcialmente descifrado?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr "Se ha cancelado el descifrado."
+msgstr "El descifrado ha fallado"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format
@@ -642,22 +642,3 @@ msgstr "&Navegación"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mensaje"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Archivos cifrados S/MIME (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "Archivo EML (*.eml);;Archivo MBOX (*.mbox);;Archivo MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "No se ha podido descifrar el mensaje: %1"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
-#~ msgstr ""
-#~ "No se ha podido descifrar el mensaje. Se guarda el mensaje original "
-#~ "(¿cifrado?)."

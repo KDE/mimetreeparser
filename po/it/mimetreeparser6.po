@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:46+0000\n"
-"PO-Revision-Date: 2026-04-18 07:49+0200\n"
+"PO-Revision-Date: 2026-06-25 15:06+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,15 +15,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/attachmentmodel.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "senza nome"
+msgstr "senzanome_%1.%2"
 
 #: core/attachmentmodel.cpp:217
 #, kde-format
@@ -145,7 +143,7 @@ msgstr[1] "Il messaggio è cifrato per i seguenti destinatari:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "La decifratura è stata annullata."
 
 #: core/partmodel.cpp:601
 #, kde-format
@@ -406,19 +404,15 @@ msgid "Encapsulated email"
 msgstr "Messaggio incapsulato"
 
 #: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Oggetto:"
 
 #: widgets/messageviewer.cpp:350
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(Senza oggetto)"
+msgstr "Senza oggetto"
 
 #: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
 #, kde-format
@@ -426,9 +420,7 @@ msgid "From:"
 msgstr "Da:"
 
 #: widgets/messageviewer.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Sconosciuto"
