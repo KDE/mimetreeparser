@@ -18,12 +18,10 @@ msgstr ""
 "X-Crowdin-File-ID: 49072\n"
 
 #: core/attachmentmodel.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "未命名"
+msgstr ""
 
 #: core/attachmentmodel.cpp:217
 #, kde-format
@@ -398,19 +396,15 @@ msgid "Encapsulated email"
 msgstr "封装的信件"
 
 #: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
-msgstr "主题："
+msgstr ""
 
 #: widgets/messageviewer.cpp:350
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr " (无主题) "
+msgstr ""
 
 #: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
 #, kde-format
@@ -418,12 +412,10 @@ msgid "From:"
 msgstr "发件人："
 
 #: widgets/messageviewer.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: widgets/messageviewer.cpp:361
 #, kde-format
@@ -636,10 +628,3 @@ msgstr "&导航"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr ""
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "加密的S/MIME文件（*.p7m）"
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "加密算法插件“%1”无法解密任何信件。"
