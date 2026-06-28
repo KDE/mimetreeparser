@@ -162,7 +162,7 @@ msgstr "Clau desconeguda"
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr " - "
+msgstr " – "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
