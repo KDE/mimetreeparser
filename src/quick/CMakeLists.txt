@@ -22,6 +22,7 @@ target_link_libraries(
     mimetreeparser_plugin
     PRIVATE
         Qt::Qml
+        ${DBUS_LIB}
         KPim6::MimeTreeParserCore
         KF6::KIOGui
 )

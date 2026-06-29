@@ -6,7 +6,7 @@
 
 #include "itinerarykdeconnecthandler.h"
 
-#ifndef Q_OS_WIN
+#ifdef WITH_QTDBUS
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusMessage>
@@ -20,7 +20,7 @@
 ItineraryKDEConnectHandler::ItineraryKDEConnectHandler(QObject *parent)
     : QObject(parent)
 {
-#ifndef Q_OS_WIN
+#ifdef WITH_QTDBUS
     auto msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),
                                               QStringLiteral("/modules/kdeconnect"),
                                               QStringLiteral("org.kde.kdeconnect.daemon"),
@@ -58,7 +58,7 @@ QList<Device> ItineraryKDEConnectHandler::devices() const
 
 void ItineraryKDEConnectHandler::sendToDevice(const QString &fileName, const QString &deviceId)
 {
-#ifndef Q_OS_WIN
+#ifdef WITH_QTDBUS
     const QString method = QStringLiteral("openFile");
 
     QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),

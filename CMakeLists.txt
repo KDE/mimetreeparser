@@ -140,7 +140,11 @@ find_package(Qt6Quick ${QT_REQUIRED_VERSION} CONFIG)
 find_package(Qt6Widgets ${QT_REQUIRED_VERSION} CONFIG)
 
 if(Qt6Quick_FOUND)
-    find_package(Qt6DBus ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
+    find_package(Qt6DBus ${QT_REQUIRED_VERSION} CONFIG)
+    if (Qt6DBus_FOUND)
+        add_definitions(-DWITH_QTDBUS)
+        set(DBUS_LIB Qt6::DBus)
+    endif()
     find_package(KF6KIO ${KF_MIN_VERSION} CONFIG REQUIRED)
     find_package(KF6Service ${KF_MIN_VERSION} CONFIG REQUIRED)
 
