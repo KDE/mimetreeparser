@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:46+0000\n"
-"PO-Revision-Date: 2026-06-26 09:34+0200\n"
+"PO-Revision-Date: 2026-06-27 14:28+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -591,12 +591,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Il a été impossible de déchiffrer certaines parties du message. Voulez-vous "
+"enregistrer le message partiellement déchiffré ?"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "Le déchiffrement a été échoué."
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format
