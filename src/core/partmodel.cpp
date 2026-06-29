@@ -38,9 +38,10 @@ static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::
     const auto signaturePart = signatureParts.front(); // TODO add support for multiple signature
 
     const auto signatures = signaturePart->partMetaData()->verificationResult.signatures();
-    Q_ASSERT(!signatures.empty());
     if (signatures.empty()) {
-        return std::nullopt;
+        // This happens if a PGP inline signature block cannot be parsed by the backend
+        // (e.g. broken chars). Return a null signature to differentiate from unsigned.
+        return GpgME::Signature();
     }
     const auto signature = signatures.front(); // TODO add support for multiple signature
     return signature;
@@ -382,6 +383,9 @@ PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::Messa
     if (!signature) {
         return SecurityLevel::Unknow;
     }
+    if (signature->isNull()) {
+        return SecurityLevel::Bad;
+    }
 
     const auto summary = signature->summary();
 
@@ -400,6 +404,9 @@ QString PartModel::signatureDetails(MimeTreeParser::MessagePart *messagePart)
     auto signature = signatureFromMessagePart(messagePart);
     if (!signature) {
         return QString{};
+    }
+    if (signature->isNull()) {
+        return i18ndc("mimetreeparser", "@info:status", "Signature is broken");
     }
 
     // guess sender from mime node or parent node
@@ -598,7 +605,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             const auto summary = signature->summary();
             if (summary & GpgME::Signature::Valid) {
                 return u"mail-signed"_s;
-            } else if (summary & GpgME::Signature::Red) {
+            } else if (signature->isNull() || summary & GpgME::Signature::Red) {
                 return u"data-error"_s;
             } else {
                 return u"data-warning"_s;

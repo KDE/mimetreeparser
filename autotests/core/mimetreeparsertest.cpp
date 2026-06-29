@@ -438,6 +438,41 @@ private Q_SLOTS:
                  "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."_L1);
     }
 
+    void testInlineSignedBroken()
+    {
+        // cryptographically bad signature in wellformed inline PGP block
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("openpgp-inline-signed-broken.mbox"_L1));
+        otp.decryptAndVerify();
+        otp.print();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 1);
+        auto part = partList[0];
+        QCOMPARE(part->signatures().size(), 1);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
+        QCOMPARE(part->text().trimmed(), u"ohno break it öäü"_s);
+        const auto details = PartModel::signatureDetails(part.get());
+        QVERIFY(details.contains(u"Bad signature"_s));
+        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::SecurityLevel::Bad);
+    }
+
+    void testInlineSignedBroken2()
+    {
+        // cryptographically "valid" signature, in a non-parsable inline PGP block
+        MimeTreeParser::ObjectTreeParser otp;
+        otp.parseObjectTree(readMailFromFile("openpgp-inline-signed-broken2.mbox"_L1));
+        otp.decryptAndVerify();
+        otp.print();
+        auto partList = otp.collectContentParts();
+        QCOMPARE(partList.size(), 1);
+        auto part = partList[0];
+        QCOMPARE(part->signatures().size(), 1);
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
+        QCOMPARE(part->signatureState(), MimeTreeParser::KMMsgFullySigned);
+        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::SecurityLevel::Bad);
+    }
+
     void testSignedSenderMismatch()
     {
         MimeTreeParser::ObjectTreeParser otp;
