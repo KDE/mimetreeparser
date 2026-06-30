@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-26 00:46+0000\n"
+"POT-Creation-Date: 2026-06-30 00:44+0000\n"
 "PO-Revision-Date: 2026-06-27 15:55+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,66 +19,60 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 26.04.2\n"
 
-#: core/attachmentmodel.cpp:162
-#, kde-format
-msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
-msgid "unnamed_%1.%2"
-msgstr "без_имени_%1.%2"
-
-#: core/attachmentmodel.cpp:217
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Имя"
 
-#: core/attachmentmodel.cpp:219
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Размер"
 
-#: core/attachmentmodel.cpp:221
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Зашифровано"
 
-#: core/attachmentmodel.cpp:223
+#: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Подписано"
 
-#: core/attachmentmodel.cpp:319
+#: core/attachmentmodel.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Не удалось загрузить сохранить вложение."
 
-#: core/attachmentmodel.cpp:342
+#: core/attachmentmodel.cpp:328
 #, kde-format
 msgid "attachment"
 msgstr "вложение"
 
-#: core/attachmentmodel.cpp:349
+#: core/attachmentmodel.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Не удалось сохранить вложение для открытия."
 
-#: core/attachmentmodel.cpp:368 core/attachmentmodel.cpp:378
+#: core/attachmentmodel.cpp:354 core/attachmentmodel.cpp:364
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Не удалось открыть вложение."
 
-#: core/attachmentmodel.cpp:399
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "В этом вложении не найдены сертификаты"
 
-#: core/attachmentmodel.cpp:402
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -88,7 +82,7 @@ msgstr[1] "импортированы %1 сертификата"
 msgstr[2] "импортированы %1 сертификатов"
 msgstr[3] "импортирован один сертификат"
 
-#: core/attachmentmodel.cpp:407
+#: core/attachmentmodel.cpp:393
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -110,34 +104,42 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:641 core/messagepart.cpp:657 core/messagepart.cpp:758
+#: core/messagepart.cpp:97
+#, fuzzy, kde-format
+#| msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
+#| msgid "unnamed_%1.%2"
+msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
+msgid "unnamed_%1.%2"
+msgstr "без_имени_%1.%2"
+
+#: core/messagepart.cpp:653 core/messagepart.cpp:669 core/messagepart.cpp:770
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Неверный модуль шифрования."
 
-#: core/messagepart.cpp:905
+#: core/messagepart.cpp:917
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Не найдено соответствующего модуля шифрования."
 
-#: core/messagepart.cpp:907
+#: core/messagepart.cpp:919
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Модуль шифрования %1 не может расшифровать эти данные."
 
-#: core/messagepart.cpp:908
+#: core/messagepart.cpp:920
 #, kde-format
 msgid "Error: %1"
 msgstr "Ошибка: %1"
 
-#: core/partmodel.cpp:577 core/partmodel.cpp:579
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Это письмо нельзя расшифровать."
 
-#: core/partmodel.cpp:585
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -147,13 +149,13 @@ msgstr[1] "Это письмо зашифровано для следующих 
 msgstr[2] "Это письмо зашифровано для следующих получателей:"
 msgstr[3] "Это письмо зашифровано для следующего получателя:"
 
-#: core/partmodel.cpp:599
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "Расшифровка отменена."
 
-#: core/partmodel.cpp:601
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -308,7 +310,7 @@ msgid "sent by %1 on %2"
 msgstr "отправлено %1 %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:146
+#: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
@@ -319,7 +321,7 @@ msgstr ""
 msgid "This message is encrypted for: %1"
 msgstr "Это письмо зашифровано для: %1"
 
-#: widgets/messagecontainerwidget.cpp:144
+#: widgets/messagecontainerwidget.cpp:211
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -328,153 +330,147 @@ msgstr ""
 "Это письмо зашифровано с использованием стандарта VS-NfD, но у вас нет "
 "соответствующего секретного ключа."
 
-#: widgets/messagecontainerwidget.cpp:151
+#: widgets/messagecontainerwidget.cpp:218
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Это письмо зашифровано с использованием стандарта VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:153
+#: widgets/messagecontainerwidget.cpp:220
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Это письмо зашифровано."
 
-#: widgets/messagecontainerwidget.cpp:162
+#: widgets/messagecontainerwidget.cpp:229
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Это письмо зашифровано для следующих получателей:"
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:87
 #, kde-format
-msgid "&Save Attachment As…"
-msgstr "&Сохранить вложение как…"
+msgid "Save Attachment As"
+msgstr "Сохранить вложение как"
 
-#: widgets/messageviewer.cpp:75
-#, kde-format
-msgctxt "to open"
-msgid "Open"
-msgstr "Открыть"
-
-#: widgets/messageviewer.cpp:80
+#: widgets/messageviewer.cpp:107
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Импортировать открытый ключ"
 
-#: widgets/messageviewer.cpp:111
+#: widgets/messageviewer.cpp:115
 #, kde-format
-msgctxt "Fallback when file has no name"
-msgid "unnamed"
-msgstr "без_имени"
+msgctxt "to open"
+msgid "Open"
+msgstr "Открыть"
 
-#: widgets/messageviewer.cpp:114
+#: widgets/messageviewer.cpp:121
 #, kde-format
-msgid "Save Attachment As"
-msgstr "Сохранить вложение как"
+msgid "&Save Attachment As…"
+msgstr "&Сохранить вложение как…"
 
-#: widgets/messageviewer.cpp:308
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "Invitation"
 msgstr "Приглашение"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&Summary:"
 msgstr "&Краткое описание:"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:276
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Организатор:"
 
-#: widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp:278
 #, kde-format
 msgid "&Location:"
 msgstr "&Местоположение:"
 
-#: widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "&Start date:"
 msgstr "&Дата начала:"
 
-#: widgets/messageviewer.cpp:318
+#: widgets/messageviewer.cpp:282
 #, kde-format
 msgid "&End date:"
 msgstr "Дата о&кончания:"
 
-#: widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:285
 #, kde-format
 msgid "&Details:"
 msgstr "&Сведения:"
 
-#: widgets/messageviewer.cpp:341
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Инкапсулированное письмо"
 
-#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
+#: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
 #, kde-format
 msgid "Subject:"
 msgstr "Тема:"
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Нет темы"
 
-#: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
 #, kde-format
 msgid "From:"
 msgstr "От:"
 
-#: widgets/messageviewer.cpp:357
+#: widgets/messageviewer.cpp:314
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "Date:"
 msgstr "Дата:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:382
 #, kde-format
 msgid "&Subject:"
 msgstr "&Тема:"
 
-#: widgets/messageviewer.cpp:428 widgets/messageviewer.cpp:430
+#: widgets/messageviewer.cpp:385 widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&From:"
 msgstr "&От:"
 
-#: widgets/messageviewer.cpp:430
+#: widgets/messageviewer.cpp:387
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Неизвестно</i>"
 
-#: widgets/messageviewer.cpp:433
+#: widgets/messageviewer.cpp:390
 #, kde-format
 msgid "&Sender:"
 msgstr "&Отправитель:"
 
-#: widgets/messageviewer.cpp:436
+#: widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&To:"
 msgstr "&Кому:"
 
-#: widgets/messageviewer.cpp:439
+#: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&CC:"
 msgstr "&Копия:"
 
-#: widgets/messageviewer.cpp:442
+#: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&BCC:"
 msgstr "&Скрытая копия:"
 
-#: widgets/messageviewer.cpp:445
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&Date:"
 msgstr "&Дата:"
@@ -648,6 +644,10 @@ msgstr "&Навигация"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Письмо"
+
+#~ msgctxt "Fallback when file has no name"
+#~ msgid "unnamed"
+#~ msgstr "без_имени"
 
 #~ msgctxt "File dialog accepted files"
 #~ msgid "Encrypted S/MIME files (*.p7m)"

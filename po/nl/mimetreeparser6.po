@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-26 00:46+0000\n"
+"POT-Creation-Date: 2026-06-30 00:44+0000\n"
 "PO-Revision-Date: 2026-06-27 09:25+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,66 +17,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.04.2\n"
 
-#: core/attachmentmodel.cpp:162
-#, kde-format
-msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
-msgid "unnamed_%1.%2"
-msgstr "naamloos_%1.%2"
-
-#: core/attachmentmodel.cpp:217
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Naam"
 
-#: core/attachmentmodel.cpp:219
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Grootte"
 
-#: core/attachmentmodel.cpp:221
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Versleuteld"
 
-#: core/attachmentmodel.cpp:223
+#: core/attachmentmodel.cpp:209
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Gesigneerd"
 
-#: core/attachmentmodel.cpp:319
+#: core/attachmentmodel.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Bijlage opslaan is mislukt."
 
-#: core/attachmentmodel.cpp:342
+#: core/attachmentmodel.cpp:328
 #, kde-format
 msgid "attachment"
 msgstr "bijlage"
 
-#: core/attachmentmodel.cpp:349
+#: core/attachmentmodel.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Bijlage schrijven voor openen is mislukt."
 
-#: core/attachmentmodel.cpp:368 core/attachmentmodel.cpp:378
+#: core/attachmentmodel.cpp:354 core/attachmentmodel.cpp:364
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Bijlage openen is mislukt."
 
-#: core/attachmentmodel.cpp:399
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Er zijn geen certificaten in deze bijlage gevonden"
 
-#: core/attachmentmodel.cpp:402
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -84,7 +78,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "één certificaat geïmporteerd"
 msgstr[1] "%1 certificaten geïmporteerd:"
 
-#: core/attachmentmodel.cpp:407
+#: core/attachmentmodel.cpp:393
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -104,34 +98,42 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:641 core/messagepart.cpp:657 core/messagepart.cpp:758
+#: core/messagepart.cpp:97
+#, fuzzy, kde-format
+#| msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
+#| msgid "unnamed_%1.%2"
+msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
+msgid "unnamed_%1.%2"
+msgstr "naamloos_%1.%2"
+
+#: core/messagepart.cpp:653 core/messagepart.cpp:669 core/messagepart.cpp:770
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Onjuiste crypto-plug-in."
 
-#: core/messagepart.cpp:905
+#: core/messagepart.cpp:917
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Geen geschikte Crypto-plug-in gevonden."
 
-#: core/messagepart.cpp:907
+#: core/messagepart.cpp:919
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
 
-#: core/messagepart.cpp:908
+#: core/messagepart.cpp:920
 #, kde-format
 msgid "Error: %1"
 msgstr "Fout: %1"
 
-#: core/partmodel.cpp:577 core/partmodel.cpp:579
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "U kunt dit bericht niet ontcijferen."
 
-#: core/partmodel.cpp:585
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -139,13 +141,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Het bericht is versleuteld voor de volgende ontvanger:"
 msgstr[1] "Het bericht is versleuteld voor de volgende ontvangers:"
 
-#: core/partmodel.cpp:599
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "Ontcijfering was geannuleerd."
 
-#: core/partmodel.cpp:601
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -299,7 +301,7 @@ msgid "sent by %1 on %2"
 msgstr "verzonden door %1 op %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:146
+#: widgets/messagecontainerwidget.cpp:213
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr ""
@@ -310,7 +312,7 @@ msgstr ""
 msgid "This message is encrypted for: %1"
 msgstr "Dit bericht is versleuteld voor: %1"
 
-#: widgets/messagecontainerwidget.cpp:144
+#: widgets/messagecontainerwidget.cpp:211
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -319,153 +321,147 @@ msgstr ""
 "Dit bericht is overeenkomstig VS-NfD versleuteld maar u hebt geen "
 "bijbehorende geheime sleutel."
 
-#: widgets/messagecontainerwidget.cpp:151
+#: widgets/messagecontainerwidget.cpp:218
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Dit bericht is overeenkomstig VS-NfD versleuteld."
 
-#: widgets/messagecontainerwidget.cpp:153
+#: widgets/messagecontainerwidget.cpp:220
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Dit bericht is versleuteld."
 
-#: widgets/messagecontainerwidget.cpp:162
+#: widgets/messagecontainerwidget.cpp:229
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Het bericht is versleuteld voor de volgende ontvangers:"
 
-#: widgets/messageviewer.cpp:70
+#: widgets/messageviewer.cpp:87
 #, kde-format
-msgid "&Save Attachment As…"
-msgstr "Bijlage &opslaan als…"
+msgid "Save Attachment As"
+msgstr "Bijlage opslaan als"
 
-#: widgets/messageviewer.cpp:75
-#, kde-format
-msgctxt "to open"
-msgid "Open"
-msgstr "Openen"
-
-#: widgets/messageviewer.cpp:80
+#: widgets/messageviewer.cpp:107
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Publieke sleutel importeren"
 
-#: widgets/messageviewer.cpp:111
+#: widgets/messageviewer.cpp:115
 #, kde-format
-msgctxt "Fallback when file has no name"
-msgid "unnamed"
-msgstr "naamloos"
+msgctxt "to open"
+msgid "Open"
+msgstr "Openen"
 
-#: widgets/messageviewer.cpp:114
+#: widgets/messageviewer.cpp:121
 #, kde-format
-msgid "Save Attachment As"
-msgstr "Bijlage opslaan als"
+msgid "&Save Attachment As…"
+msgstr "Bijlage &opslaan als…"
 
-#: widgets/messageviewer.cpp:308
+#: widgets/messageviewer.cpp:272
 #, kde-format
 msgid "Invitation"
 msgstr "Uitnodiging"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:275
 #, kde-format
 msgid "&Summary:"
 msgstr "&Samenvatting:"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:276
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organisator:"
 
-#: widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp:278
 #, kde-format
 msgid "&Location:"
 msgstr "&Locatie:"
 
-#: widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "&Start date:"
 msgstr "&Begindatum:"
 
-#: widgets/messageviewer.cpp:318
+#: widgets/messageviewer.cpp:282
 #, kde-format
 msgid "&End date:"
 msgstr "&Einddatum:"
 
-#: widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:285
 #, kde-format
 msgid "&Details:"
 msgstr "&Details:"
 
-#: widgets/messageviewer.cpp:341
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Ingebed e-mailbericht"
 
-#: widgets/messageviewer.cpp:350 widgets/messageviewer.cpp:352
+#: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
 #, kde-format
 msgid "Subject:"
 msgstr "Onderwerp:"
 
-#: widgets/messageviewer.cpp:350
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Geen onderwerp"
 
-#: widgets/messageviewer.cpp:357 widgets/messageviewer.cpp:359
+#: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
 #, kde-format
 msgid "From:"
 msgstr "Van:"
 
-#: widgets/messageviewer.cpp:357
+#: widgets/messageviewer.cpp:314
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: widgets/messageviewer.cpp:361
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:382
 #, kde-format
 msgid "&Subject:"
 msgstr "&Onderwerp:"
 
-#: widgets/messageviewer.cpp:428 widgets/messageviewer.cpp:430
+#: widgets/messageviewer.cpp:385 widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&From:"
 msgstr "&Van:"
 
-#: widgets/messageviewer.cpp:430
+#: widgets/messageviewer.cpp:387
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Onbekend</i>"
 
-#: widgets/messageviewer.cpp:433
+#: widgets/messageviewer.cpp:390
 #, kde-format
 msgid "&Sender:"
 msgstr "Af&zender:"
 
-#: widgets/messageviewer.cpp:436
+#: widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&To:"
 msgstr "&Aan:"
 
-#: widgets/messageviewer.cpp:439
+#: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:442
+#: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:445
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&Date:"
 msgstr "&Datum:"
@@ -641,6 +637,10 @@ msgstr "&Navigatie"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "Beri&cht"
+
+#~ msgctxt "Fallback when file has no name"
+#~ msgid "unnamed"
+#~ msgstr "naamloos"
 
 #~ msgctxt "File dialog accepted files"
 #~ msgid "Encrypted S/MIME files (*.p7m)"
