@@ -233,9 +233,10 @@ static void decryptNodes(MimeTreeParser::MessagePart *part, const QSet<KMime::Co
             int gap = -1;
             for (auto sub : subnodes) {
                 if (nonRemovableNodes.contains(sub)) {
-                    subnodesToKeep.append(sub);
+                    subnodesToKeep.append(node->takeContent(sub).release());
                 } else {
                     gap = subnodesToKeep.size();
+                    node->takeContent(sub);
                 }
             }
 

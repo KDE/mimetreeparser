@@ -200,6 +200,7 @@ void CryptoHelperTest::testSaveDecrypted_data()
     // the version as returned by CryptoUtils::decryptMessage() parses to the same contents
     QTest::newRow("smime-encrypted") << "smime-encrypted.mbox";
     QTest::newRow("openpgp-encrypted-attachment-and-non-encrypted-attachment") << "openpgp-encrypted-attachment-and-non-encrypted-attachment.mbox";
+    QTest::newRow("openpgp-encrypted-ambiguous-mime") << "openpgp-encrypted-ambiguous-mime.mbox";
     QTest::newRow("openpgp-inline-charset-encrypted") << "openpgp-inline-charset-encrypted.mbox";
     QTest::newRow("multipart-mixed-alternative-inline-pgp") << "multipart-mixed-alternative-inline-pgp.mbox";
     QTest::newRow("openpgp-inline-encrypted+nonenc") << "openpgp-inline-encrypted+nonenc.mbox";
