@@ -19,8 +19,8 @@ enum UpdateMode {
 typedef enum {
     KMMsgEncryptionStateUnknown,
     KMMsgNotEncrypted,
-    KMMsgPartiallyEncrypted,
-    KMMsgFullyEncrypted,
+    // KMMsgPartiallyEncrypted,
+    KMMsgFullyEncrypted = 3,
     KMMsgEncryptionProblematic,
 } KMMsgEncryptionState;
 
@@ -28,8 +28,8 @@ typedef enum {
 typedef enum {
     KMMsgSignatureStateUnknown,
     KMMsgNotSigned,
-    KMMsgPartiallySigned,
-    KMMsgFullySigned,
+    // KMMsgPartiallySigned,
+    KMMsgFullySigned = 3,
     KMMsgSignatureProblematic,
 } KMMsgSignatureState;
 }

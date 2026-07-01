@@ -168,7 +168,6 @@ private Q_SLOTS:
         QCOMPARE(partList.size(), 3);
         auto part = partList[0];
         QVERIFY(bool(part));
-        QCOMPARE(part->parentPart()->encryptionState(), MimeTreeParser::KMMsgPartiallyEncrypted);
         QVERIFY(part->text().contains(u"Some text before PGP block"));
         QCOMPARE(part->encryptions().size(), 0);
         part = partList[1];
