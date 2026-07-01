@@ -444,18 +444,6 @@ static MimeTreeParser::MessagePart *encapsulatingPart(MimeTreeParser::MessagePar
     return parent;
 }
 
-static bool siblingContentPartsFollow(MimeTreeParser::MessagePart *part)
-{
-    const auto candidates = part->parentPart()->subParts();
-    auto it = std::ranges::find_if(candidates, [part](const auto &sub) {
-        return sub.get() == part;
-    });
-    Q_ASSERT(it != candidates.end());
-    return std::any_of(std::next(it), candidates.end(), [](const auto &sub) {
-        return !sub->isAttachment();
-    });
-}
-
 QVariant PartModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
@@ -546,13 +534,17 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         case ContentRole:
             return d->contentForPart(messagePart);
         case OwnedAttachmentsRole: {
-            // show attachments after the last content part in a given mime parent
-            if (siblingContentPartsFollow(messagePart)) {
-                return QVariant();
-            }
             // we want the parent in terms of encryption/signature, here, which is not (neccessarily) the same as
             // messagePart->parentPart()
             auto parentPart = encapsulatingPart(messagePart);
+            // only show attachments after the last content part in a given parent
+            if (index.row() < rowCount(parent(index)) - 1) {
+                auto nextPart = static_cast<MimeTreeParser::MessagePart *>(this->index(index.row() + 1, 0, parent(index)).internalPointer());
+                if (nextPart && encapsulatingPart(nextPart) == parentPart) {
+                    return QVariant();
+                }
+            }
+
             return QVariant::fromValue(getAttachmentChildParts(parentPart));
         }
         case SidebarSecurityLevelRole: {
