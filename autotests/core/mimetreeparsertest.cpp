@@ -168,16 +168,19 @@ private Q_SLOTS:
         QCOMPARE(partList.size(), 3);
         auto part = partList[0];
         QVERIFY(bool(part));
-        QCOMPARE(part->parentPart()->encryptionState(), MimeTreeParser::KMMsgPartiallyEncrypted);
+        QCOMPARE(part->parentPart()->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
         QVERIFY(part->text().contains(u"Some text before PGP block"));
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
         QCOMPARE(part->encryptions().size(), 0);
         part = partList[1];
         QVERIFY(bool(part));
         QVERIFY(part->text().contains(u"encrypted message text"));
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
         QCOMPARE(part->encryptions().size(), 1);
         part = partList[2];
         QVERIFY(bool(part));
         QVERIFY(part->text().contains(u"Some text after PGP block"));
+        QCOMPARE(part->encryptionState(), MimeTreeParser::KMMsgNotEncrypted);
         QCOMPARE(part->encryptions().size(), 0);
     }
 
