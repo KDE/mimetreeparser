@@ -7,7 +7,7 @@
 
 #include "mimetreeparser_core_export.h"
 
-#include <messagepart.h>
+#include "messagepart.h"
 
 #include <KMime/Message>
 #include <QByteArray>
