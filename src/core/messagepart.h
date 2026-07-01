@@ -208,12 +208,12 @@ public:
      * \brief Returns the signature state of this part
      * \return The signature state
      */
-    virtual KMMsgSignatureState signatureState() const;
+    KMMsgSignatureState signatureState() const;
     /*!
      * \brief Returns the encryption state of this part
      * \return The encryption state
      */
-    virtual KMMsgEncryptionState encryptionState() const;
+    KMMsgEncryptionState encryptionState() const;
 
     /*!
      * \brief Returns all signature parts of this message
@@ -351,24 +351,8 @@ public:
      */
     ~TextMessagePart() override = default;
 
-    /*!
-     * \brief Returns the signature state of the text content
-     * \return The signature state
-     */
-    [[nodiscard]] KMMsgSignatureState signatureState() const override;
-    /*!
-     * \brief Returns the encryption state of the text content
-     * \return The encryption state
-     */
-    [[nodiscard]] KMMsgEncryptionState encryptionState() const override;
-
 private:
     MIMETREEPARSER_CORE_NO_EXPORT void parseContent();
-
-    KMMsgSignatureState mSignatureState;
-    KMMsgEncryptionState mEncryptionState;
-
-    friend class ObjectTreeParser;
 };
 
 class MIMETREEPARSER_CORE_EXPORT AttachmentMessagePart : public MessagePart

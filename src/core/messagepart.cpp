@@ -370,8 +370,6 @@ QString MessagePartList::htmlContent() const
 
 TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node)
     : MessagePartList(otp, node)
-    , mSignatureState(KMMsgSignatureStateUnknown)
-    , mEncryptionState(KMMsgEncryptionStateUnknown)
 {
     if (!mNode) {
         qCWarning(MIMETREEPARSER_CORE_LOG) << "not a valid node";
@@ -383,28 +381,13 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node)
 
 void TextMessagePart::parseContent()
 {
-    mSignatureState = KMMsgNotSigned;
-    mEncryptionState = KMMsgNotEncrypted;
     const auto blocks = prepareMessageForDecryption(mNode->decodedBody());
     // We also get blocks for unencrypted messages
     if (!blocks.isEmpty()) {
         auto aCodec = QStringDecoder(mOtp->codecNameFor(mNode).constData());
         const auto cryptProto = QGpgME::openpgp();
 
-        /* The (overall) signature/encrypted status is broken
-         * if one unencrypted part is at the beginning or in the middle
-         * because mailmain adds an unencrypted part at the end this should not break the overall status
-         *
-         * That's why we first set the tmp status and if one crypted/signed block comes afterwards, than
-         * the status is set to unencryped
-         */
-        bool fullySignedOrEncrypted = true;
-        bool fullySignedOrEncryptedTmp = true;
-
         for (const auto &block : blocks) {
-            if (!fullySignedOrEncryptedTmp) {
-                fullySignedOrEncrypted = false;
-            }
             if (block.text().trimmed().isEmpty()) {
                 continue;
             }
@@ -415,16 +398,13 @@ void TextMessagePart::parseContent()
             content->parse();
             content->contentType()->setCharset(charset());
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
-                fullySignedOrEncryptedTmp = false;
                 mp.reset(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())), content.get()));
             } else if (block.type() == PgpMessageBlock) {
                 auto enc = new EncryptedMessagePart(mOtp, QString(), cryptProto, content.get(), content.get(), false);
                 enc->setIsEncrypted(true);
                 mp.reset(enc);
-                mEncryptionState = KMMsgPartiallyEncrypted;
             } else if (block.type() == ClearsignedBlock) {
                 mp.reset(new SignedMessagePart(mOtp, cryptProto, nullptr, content.get(), false));
-                mSignatureState = KMMsgPartiallySigned;
             } else {
                 // This effectively hides key blocks and multipart blocks. Do we want this?
                 continue;
@@ -432,33 +412,7 @@ void TextMessagePart::parseContent()
             mp->bindLifetime(content.release());
             appendSubPart(mp);
         }
-
-        // Do we have an fully Signed/Encrypted Message?
-        if (fullySignedOrEncrypted) {
-            if (mSignatureState == KMMsgPartiallySigned) {
-                mSignatureState = KMMsgFullySigned;
-            }
-            if (mEncryptionState == KMMsgPartiallyEncrypted) {
-                mEncryptionState = KMMsgFullyEncrypted;
-            }
-        }
     }
-}
-
-KMMsgEncryptionState TextMessagePart::encryptionState() const
-{
-    if (mEncryptionState == KMMsgNotEncrypted) {
-        return MessagePart::encryptionState();
-    }
-    return mEncryptionState;
-}
-
-KMMsgSignatureState TextMessagePart::signatureState() const
-{
-    if (mSignatureState == KMMsgNotSigned) {
-        return MessagePart::signatureState();
-    }
-    return mSignatureState;
 }
 
 //-----AttachmentMessageBlock----------------------

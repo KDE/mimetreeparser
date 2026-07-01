@@ -24,7 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::MessagePart *messagePart)
 {
     const auto signatureState = messagePart->signatureState();
-    const bool messageIsSigned = signatureState == MimeTreeParser::KMMsgPartiallySigned || signatureState == MimeTreeParser::KMMsgFullySigned;
+    const bool messageIsSigned = signatureState == MimeTreeParser::KMMsgFullySigned;
 
     if (!messageIsSigned) {
         return std::nullopt;
@@ -578,7 +578,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         case EncryptionSecurityLevelRole: {
             // Color displayed for the encryption info box
             const auto encryption = messagePart->encryptionState();
-            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
+            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgFullyEncrypted;
 
             if (messagePart->error()) {
                 return SecurityLevel::Bad;
@@ -588,7 +588,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         }
         case EncryptionIconNameRole: {
             const auto encryption = messagePart->encryptionState();
-            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgPartiallyEncrypted || encryption == MimeTreeParser::KMMsgFullyEncrypted;
+            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgFullyEncrypted;
 
             if (messagePart->error()) {
                 return u"data-error"_s;
