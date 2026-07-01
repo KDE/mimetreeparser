@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-30 00:44+0000\n"
-"PO-Revision-Date: 2026-04-23 10:40+0400\n"
+"PO-Revision-Date: 2026-06-30 20:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -108,12 +108,10 @@ msgid ", "
 msgstr "، "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "غير مسمًّى"
+msgstr "غير_مسمًّى_%1.%2"
 
 #: core/messagepart.cpp:653 core/messagepart.cpp:669 core/messagepart.cpp:770
 #, kde-format
@@ -158,7 +156,7 @@ msgstr[5] "الرسالة معماة للمستلمين التاليين:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "التعمية أُلغيت"
 
 #: core/partmodel.cpp:651
 #, kde-format
@@ -408,19 +406,15 @@ msgid "Encapsulated email"
 msgstr "بريد مغلّفة"
 
 #: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "الموضوع:"
 
 #: widgets/messageviewer.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(دون موضوع)"
+msgstr "دون موضوع"
 
 #: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
 #, kde-format
@@ -428,9 +422,7 @@ msgid "From:"
 msgstr "من:"
 
 #: widgets/messageviewer.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "مجهول"
@@ -599,12 +591,13 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"تعذر فك تعمية بعض أجزاء الرسالة. هل تريد حفظ الرسالة التي فُك تعميتها جزئيًا؟"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "فشلت عملية فك التعمية"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-30 00:44+0000\n"
-"PO-Revision-Date: 2026-06-26 11:59+0300\n"
+"PO-Revision-Date: 2026-06-30 20:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -104,9 +104,7 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
-#| msgid "unnamed_%1.%2"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "без_назви_%1.%2"

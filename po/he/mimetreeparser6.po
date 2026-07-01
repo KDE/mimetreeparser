@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-30 00:44+0000\n"
-"PO-Revision-Date: 2026-04-18 14:45+0300\n"
+"PO-Revision-Date: 2026-06-30 09:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -104,12 +104,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "ללא שם"
+msgstr "ללא_שם_%1.%2"
 
 #: core/messagepart.cpp:653 core/messagepart.cpp:669 core/messagepart.cpp:770
 #, kde-format
@@ -152,7 +150,7 @@ msgstr[3] "ההודעה מוצפנת לנמענים הבאים:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "הפיענוח בוטל."
 
 #: core/partmodel.cpp:651
 #, kde-format
@@ -402,19 +400,15 @@ msgid "Encapsulated email"
 msgstr "הודעת דוא״ל מכומסת"
 
 #: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "נושא:"
 
 #: widgets/messageviewer.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(אין נושא)"
+msgstr "אין נושא"
 
 #: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
 #, kde-format
@@ -422,9 +416,7 @@ msgid "From:"
 msgstr "מאת:"
 
 #: widgets/messageviewer.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -592,13 +584,13 @@ msgctxt "@info"
 msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
-msgstr ""
+msgstr "הפיענוח של חלקים מסוימים בהודעה לא הצליח. לשמור הודעה מפוענחת חלקית?"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "הפיענוח נכשל"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

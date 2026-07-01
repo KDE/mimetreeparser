@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-30 00:44+0000\n"
-"PO-Revision-Date: 2026-06-26 01:56-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"PO-Revision-Date: 2026-06-30 08:00-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -100,9 +100,7 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
-#| msgid "unnamed_%1.%2"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "semnome_%1.%2"
