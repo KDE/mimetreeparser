@@ -614,12 +614,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             case MimeTreeParser::MessagePart::NoKeyError: {
                 if (auto encryptedMessagePart = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(messagePart)) {
                     if (encryptedMessagePart->isNoSecKey()) {
-                        QString errorMessage;
-                        if (encryptedMessagePart->cryptoProto() == QGpgME::smime()) {
-                            errorMessage += i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
-                        } else {
-                            errorMessage += i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
-                        }
+                        QString errorMessage = i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
                         if (!encryptedMessagePart->decryptRecipients().empty()) {
                             errorMessage += QLatin1Char(' ')
                                 + i18ndcp("mimetreeparser",
