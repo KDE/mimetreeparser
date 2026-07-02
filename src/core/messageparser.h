@@ -65,7 +65,7 @@ public:
      * \brief Returns the part model
      * \return A pointer to the parts model
      */
-    [[nodiscard]] PartModel *parts() const;
+    [[nodiscard]] PartModel *parts();
     /*!
      * \brief Returns the attachment model
      * \return A pointer to the attachments model

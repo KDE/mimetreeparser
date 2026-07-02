@@ -256,8 +256,9 @@ public:
     bool isTrimmed{false};
 };
 
-PartModel::PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser)
-    : d(std::unique_ptr<PartModelPrivate>(new PartModelPrivate(this, parser)))
+PartModel::PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser, QObject *parent)
+    : QAbstractItemModel(parent)
+    , d(std::unique_ptr<PartModelPrivate>(new PartModelPrivate(this, parser)))
 {
 }
 

@@ -97,7 +97,7 @@ void MessageViewerBasePrivate::createActions(QWidget *parent)
     });
     nextAction->setEnabled(false);
 
-    viewSourceAction = new QAction(QIcon::fromTheme(u"format-text-code-symbolic"_s), i18nc("@action:button", "View Source"));
+    viewSourceAction = new QAction(QIcon::fromTheme(u"format-text-code-symbolic"_s), i18nc("@action:button", "View Source"), parent);
     QObject::connect(viewSourceAction, &QAction::triggered, parent, [parent, this]() {
         viewSource(parent);
     });
