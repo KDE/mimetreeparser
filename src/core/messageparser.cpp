@@ -142,12 +142,12 @@ QString MessageParser::structureAsString() const
     return d->mParser->structureAsString();
 }
 
-PartModel *MessageParser::parts() const
+PartModel *MessageParser::parts()
 {
     if (!d->mParser) {
         return nullptr;
     }
-    const auto model = new PartModel(d->mParser);
+    const auto model = new PartModel(d->mParser, this);
     return model;
 }
 

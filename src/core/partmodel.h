@@ -42,7 +42,7 @@ public:
      * \brief Constructs a PartModel
      * \param parser The object tree parser
      */
-    explicit PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
+    PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser, QObject *parent);
     /*!
      * \brief Destroys the PartModel
      */
