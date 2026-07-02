@@ -395,18 +395,18 @@ public:
 
 void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
-    auto any = new AnyTypeBodyPartFormatter;
-    auto textPlain = new TextPlainBodyPartFormatter;
-    auto pkcs7 = new ApplicationPkcs7MimeBodyPartFormatter;
-    auto pgp = new ApplicationPGPEncryptedBodyPartFormatter;
-    auto html = new TextHtmlBodyPartFormatter;
-    auto headers = new HeadersBodyPartFormatter;
-    auto multipartAlternative = new MultiPartAlternativeBodyPartFormatter;
-    auto multipartMixed = new MultiPartMixedBodyPartFormatter;
-    auto multipartSigned = new MultiPartSignedBodyPartFormatter;
-    auto multipartEncrypted = new MultiPartEncryptedBodyPartFormatter;
-    auto message = new MessageRfc822BodyPartFormatter;
-    auto multipartRelated = new MultiPartRelatedBodyPartFormatter;
+    auto any = std::make_shared<AnyTypeBodyPartFormatter>();
+    auto textPlain = std::make_shared<TextPlainBodyPartFormatter>();
+    auto pkcs7 = std::make_shared<ApplicationPkcs7MimeBodyPartFormatter>();
+    auto pgp = std::make_shared<ApplicationPGPEncryptedBodyPartFormatter>();
+    auto html = std::make_shared<TextHtmlBodyPartFormatter>();
+    auto headers = std::make_shared<HeadersBodyPartFormatter>();
+    auto multipartAlternative = std::make_shared<MultiPartAlternativeBodyPartFormatter>();
+    auto multipartMixed = std::make_shared<MultiPartMixedBodyPartFormatter>();
+    auto multipartSigned = std::make_shared<MultiPartSignedBodyPartFormatter>();
+    auto multipartEncrypted = std::make_shared<MultiPartEncryptedBodyPartFormatter>();
+    auto message = std::make_shared<MessageRfc822BodyPartFormatter>();
+    auto multipartRelated = std::make_shared<MultiPartRelatedBodyPartFormatter>();
 
     insert("application", "octet-stream", any);
     insert("application", "pgp", textPlain);

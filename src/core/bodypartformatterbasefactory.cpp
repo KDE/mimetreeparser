@@ -27,7 +27,7 @@ void BodyPartFormatterBaseFactoryPrivate::setup()
     }
 }
 
-void BodyPartFormatterBaseFactoryPrivate::insert(const char *type, const char *subtype, Interface::BodyPartFormatter *formatter)
+void BodyPartFormatterBaseFactoryPrivate::insert(const char *type, const char *subtype, std::shared_ptr<Interface::BodyPartFormatter> formatter)
 {
     if (!type || !*type || !subtype || !*subtype || !formatter || !all) {
         return;
@@ -51,7 +51,7 @@ BodyPartFormatterBaseFactory::BodyPartFormatterBaseFactory()
 
 BodyPartFormatterBaseFactory::~BodyPartFormatterBaseFactory() = default;
 
-void BodyPartFormatterBaseFactory::insert(const char *type, const char *subtype, Interface::BodyPartFormatter *formatter)
+void BodyPartFormatterBaseFactory::insert(const char *type, const char *subtype, std::shared_ptr<Interface::BodyPartFormatter> formatter)
 {
     d->insert(type, subtype, formatter);
 }
