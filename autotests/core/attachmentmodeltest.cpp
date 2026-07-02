@@ -39,7 +39,7 @@ private Q_SLOTS:
         messageParser.setMessage(readMailFromFile(QLatin1StringView("attachment.mbox")));
 
         auto attachmentModel = messageParser.attachments();
-        new QAbstractItemModelTester(attachmentModel);
+        QAbstractItemModelTester tester(attachmentModel);
 
         QCOMPARE(attachmentModel->rowCount(), 1);
         QCOMPARE(attachmentModel->data(attachmentModel->index(0, 0), AttachmentModel::TypeRole).toString(), QStringLiteral("image/jpeg"));
