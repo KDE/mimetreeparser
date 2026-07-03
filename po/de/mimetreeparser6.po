@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
 "PO-Revision-Date: 2026-04-21 15:38+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
@@ -131,13 +131,19 @@ msgstr "Kryptografie-Modul \"%1\" konnte die Daten nicht entschlüsseln."
 msgid "Error: %1"
 msgstr "Fehler: %1"
 
-#: core/partmodel.cpp:619 core/partmodel.cpp:621
+#: core/partmodel.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Sie können diese Nachricht nicht entschlüsseln."
 
-#: core/partmodel.cpp:627
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -145,13 +151,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Diese Nachricht ist für den folgenden Empfänger verschlüsselt:"
 msgstr[1] "Diese Nachricht ist für die folgenden Empfänger verschlüsselt:"
 
-#: core/partmodel.cpp:641
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr ""
 
-#: core/partmodel.cpp:643
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

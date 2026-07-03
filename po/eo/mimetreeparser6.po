@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -128,13 +128,19 @@ msgstr "Kripta kromprogramo \"%1\" ne povis deĉifri la datumojn."
 msgid "Error: %1"
 msgstr "Eraro: %1"
 
-#: core/partmodel.cpp:619 core/partmodel.cpp:621
+#: core/partmodel.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Vi ne povas malĉifri ĉi mesaĝon."
 
-#: core/partmodel.cpp:627
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -142,13 +148,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "La mesaĝo estas ĉifrita por la sekva ricevanto:"
 msgstr[1] "La mesaĝo estas ĉifrita por la sekvaj ricevantoj:"
 
-#: core/partmodel.cpp:641
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr ""
 
-#: core/partmodel.cpp:643
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
 "PO-Revision-Date: 2026-06-30 20:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -130,13 +130,19 @@ msgstr "Додатку шифрування «%1» не вдалося розш�
 msgid "Error: %1"
 msgstr "Помилка: %1"
 
-#: core/partmodel.cpp:619 core/partmodel.cpp:621
+#: core/partmodel.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Ви не можете розшифрувати це повідомлення."
 
-#: core/partmodel.cpp:627
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -146,13 +152,13 @@ msgstr[1] "Повідомлення зашифровано для таких о�
 msgstr[2] "Повідомлення зашифровано для таких отримувачів:"
 msgstr[3] "Повідомлення зашифровано для такого отримувача:"
 
-#: core/partmodel.cpp:641
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "Розшифровування було скасовано."
 
-#: core/partmodel.cpp:643
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

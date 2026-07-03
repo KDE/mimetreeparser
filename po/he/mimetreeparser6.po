@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
 "PO-Revision-Date: 2026-06-30 09:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -130,13 +130,19 @@ msgstr "תוסף ההצפנה „%1” לא יכול לפענח את הנתונ�
 msgid "Error: %1"
 msgstr "שגיאה: %1"
 
-#: core/partmodel.cpp:619 core/partmodel.cpp:621
+#: core/partmodel.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "אי אפשר לפענח את ההודעה הזאת."
 
-#: core/partmodel.cpp:627
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -146,13 +152,13 @@ msgstr[1] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[2] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[3] "ההודעה מוצפנת לנמענים הבאים:"
 
-#: core/partmodel.cpp:641
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "הפיענוח בוטל."
 
-#: core/partmodel.cpp:643
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

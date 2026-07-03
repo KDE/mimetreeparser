@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
-"PO-Revision-Date: 2026-06-29 16:02+0300\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"PO-Revision-Date: 2026-07-03 01:34+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -105,9 +105,7 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
-#| msgid "unnamed_%1.%2"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "be_pavadinimo_%1.%2"
@@ -133,13 +131,19 @@ msgstr "Šifravimo įskiepiui „%1“ nepavyko iššifruoti duomenų."
 msgid "Error: %1"
 msgstr "Klaida: %1"
 
-#: core/partmodel.cpp:619 core/partmodel.cpp:621
+#: core/partmodel.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Jūs negalite iššifruoti šio laiško."
 
-#: core/partmodel.cpp:627
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -149,13 +153,13 @@ msgstr[1] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[2] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[3] "Laiškas yra šifruotas šiems gavėjams:"
 
-#: core/partmodel.cpp:641
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "Iššifravimo buvo atsisakyta."
 
-#: core/partmodel.cpp:643
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

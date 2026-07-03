@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
-"PO-Revision-Date: 2026-06-27 14:28+0200\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"PO-Revision-Date: 2026-07-01 12:38+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -96,12 +96,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "template for unnamed file. %1 is an index, %2 is an extension"
-#| msgid "unnamed_%1.%2"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "non nommé_%1.%2"
+msgstr "non nommé_ %1.%2"
 
 #: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
 #, kde-format
@@ -126,13 +124,19 @@ msgstr ""
 msgid "Error: %1"
 msgstr "Erreur : %1"
 
-#: core/partmodel.cpp:619 core/partmodel.cpp:621
+#: core/partmodel.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Il vous est impossible de chiffrer ce message."
 
-#: core/partmodel.cpp:627
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -140,13 +144,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Le message est chiffré pour les destinataires suivants :"
 msgstr[1] "Le message est chiffré avec les destinataires suivants :"
 
-#: core/partmodel.cpp:641
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "Le déchiffrement a été annulé."
 
-#: core/partmodel.cpp:643
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."

@@ -1,5 +1,5 @@
 # Translation of mimetreeparser6.po to Catalan (Valencian)
-# Copyright (C) 2023 This_file_is_part_of_KDE
+# Copyright (C) 2023-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-03 00:46+0000\n"
 "PO-Revision-Date: 2026-06-30 09:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -127,13 +127,19 @@ msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
-#: core/partmodel.cpp:619 core/partmodel.cpp:621
+#: core/partmodel.cpp:409
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "No es pot desencriptar este missatge."
 
-#: core/partmodel.cpp:627
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -141,13 +147,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "El missatge està encriptat per al destinatari següent:"
 msgstr[1] "El missatge està encriptat per als destinataris següents:"
 
-#: core/partmodel.cpp:641
+#: core/partmodel.cpp:649
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "S'ha cancel·lat la desencriptació."
 
-#: core/partmodel.cpp:643
+#: core/partmodel.cpp:651
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
