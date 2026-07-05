@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-03 01:34+0300\n"
+"PO-Revision-Date: 2026-07-04 23:13+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -135,7 +135,7 @@ msgstr "Klaida: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "Parašas sugadintas"
 
 #: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
