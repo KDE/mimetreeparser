@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-03-02 05:29+0900\n"
+"PO-Revision-Date: 2026-07-06 05:31+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -97,12 +97,10 @@ msgid ", "
 msgstr "、"
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "未命名"
+msgstr "未命名_%1.%2"
 
 #: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
 #, kde-format
@@ -129,7 +127,7 @@ msgstr "錯誤：%1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "簽章已損毀"
 
 #: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
@@ -148,7 +146,7 @@ msgstr[0] "這個信件為以下收件者加密："
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "解密已取消。"
 
 #: core/partmodel.cpp:651
 #, kde-format
@@ -398,19 +396,15 @@ msgid "Encapsulated email"
 msgstr "封裝郵件"
 
 #: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "主旨："
 
 #: widgets/messageviewer.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "（沒有主旨）"
+msgstr "沒有主旨"
 
 #: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
 #, kde-format
@@ -418,9 +412,7 @@ msgid "From:"
 msgstr "從："
 
 #: widgets/messageviewer.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "未知"
@@ -441,12 +433,10 @@ msgid "&From:"
 msgstr "從(&F)："
 
 #: widgets/messageviewer.cpp:387
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
-msgstr "未知"
+msgstr "<i>未知</i>"
 
 #: widgets/messageviewer.cpp:390
 #, kde-format
@@ -528,18 +518,16 @@ msgid "(No Subject)"
 msgstr "（沒有主旨）"
 
 #: widgets/messageviewerbase_p.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "下一封信件"
+msgstr "（沒有信件）"
 
 #: widgets/messageviewerbase_p.cpp:177
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "沒有信件可顯示。"
 
 #: widgets/messageviewerbase_p.cpp:179
 #, kde-kuit-format
@@ -547,37 +535,31 @@ msgctxt "@info"
 msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
-msgstr ""
+msgstr "無法讀取檔案 <filename>%1</filename>，或是檔案不包含任何信件。"
 
 #: widgets/messageviewerbase_p.cpp:246
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "檔案 %1 無法被建立。"
 
 #: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "儲存信件時發生錯誤"
 
 #: widgets/messageviewerbase_p.cpp:252
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "檔案 %1 無法被建立。"
+msgstr "檔案 %1 無法被寫入。"
 
 #: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "下一封信件"
+msgstr "儲存信件"
 
 #: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
 #, kde-format
@@ -589,7 +571,7 @@ msgstr "電子郵件檔 (*.eml *.mbox *.mime)"
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "信件似乎未被加密。將儲存原始信件。"
 
 #: widgets/messageviewerbase_p.cpp:290
 #, kde-format
@@ -597,21 +579,19 @@ msgctxt "@info"
 msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
-msgstr ""
+msgstr "信件某些部分無法解密。要儲存部分解密的信件嗎？"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "解密失敗"
 
 #: widgets/messageviewerbase_p.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "儲存已解密的檔案"
+msgstr "儲存已解密的信件"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -635,7 +615,7 @@ msgstr "檔案(&F)"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "檢視(&V)"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
