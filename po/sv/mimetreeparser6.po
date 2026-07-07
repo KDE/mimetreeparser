@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2023-2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2025-07-28 18:32+0200\n"
+"PO-Revision-Date: 2026-07-06 17:24+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -99,12 +99,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "namnlös"
+msgstr "namnlös_%1.%2"
 
 #: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
 #, kde-format
@@ -131,7 +129,7 @@ msgstr "Fel: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "Signaturen är felaktig"
 
 #: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
@@ -151,7 +149,7 @@ msgstr[1] "Brevet är krypterat för följande mottagare:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "Avkodning avbröts."
 
 #: core/partmodel.cpp:651
 #, kde-format
@@ -178,52 +176,50 @@ msgstr " - "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
-#, fuzzy, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
+#, kde-format
 msgctxt "@action"
 msgid "Open Menu"
-msgstr "Öppna"
+msgstr "Visa meny"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:93
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr ""
+msgstr "Avgång från %1"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:110
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
-msgstr ""
+msgstr "Ankomst till %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:65
 #, kde-format
 msgid "Check-in time: %1"
-msgstr ""
+msgstr "Incheckningstid: %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:69
 #, kde-format
 msgid "Check-out time: %1"
-msgstr ""
+msgstr "Utcheckningstid: %1"
 
 #: quick/qml/itinerary/TrainReservationComponent.qml:157
 #: quick/qml/itinerary/TrainReservationComponent.qml:224
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
+msgstr "Pl. %1"
 
 #: quick/qml/itinerary/TripMenu.qml:18
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr ""
+msgstr "Skicka till KDE-resplan"
 
 #: quick/qml/itinerary/TripMenu.qml:33
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
-msgstr ""
+msgstr "Skicka till %1"
 
 #: quick/qml/MailViewer.qml:40
 #, kde-format
@@ -405,19 +401,15 @@ msgid "Encapsulated email"
 msgstr "Inbäddat brev"
 
 #: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Rubrik:"
 
 #: widgets/messageviewer.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(Ingen rubrik)"
+msgstr "Ingen rubrik"
 
 #: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
 #, kde-format
@@ -425,9 +417,7 @@ msgid "From:"
 msgstr "Från:"
 
 #: widgets/messageviewer.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Okänd"
@@ -448,12 +438,10 @@ msgid "&From:"
 msgstr "&Från:"
 
 #: widgets/messageviewer.cpp:387
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
-msgstr "Okänd"
+msgstr "<i>Okänd</i>"
 
 #: widgets/messageviewer.cpp:390
 #, kde-format
@@ -535,18 +523,16 @@ msgid "(No Subject)"
 msgstr "(Ingen rubrik)"
 
 #: widgets/messageviewerbase_p.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Nästa brev"
+msgstr "(Inget brev)"
 
 #: widgets/messageviewerbase_p.cpp:177
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Inget brev att visa."
 
 #: widgets/messageviewerbase_p.cpp:179
 #, kde-kuit-format
@@ -555,36 +541,32 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Kan inte läsa filen <filename>%1</filename>, eller så innehåller filen inte "
+"några brev."
 
 #: widgets/messageviewerbase_p.cpp:246
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Filen %1 kunde inte skapas."
 
 #: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Fel när brev skulle sparas"
 
 #: widgets/messageviewerbase_p.cpp:252
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Filen %1 kunde inte skapas."
+msgstr "Filen %1 kunde inte skrivas."
 
 #: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Nästa brev"
+msgstr "Spara brev"
 
 #: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
 #, kde-format
@@ -596,7 +578,7 @@ msgstr "E-postfiler (*.eml *.mbox *.mime)"
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "Brevet verkar inte vara krypterat. Sparar originalbrevet."
 
 #: widgets/messageviewerbase_p.cpp:290
 #, kde-format
@@ -604,21 +586,19 @@ msgctxt "@info"
 msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
-msgstr ""
+msgstr "Några delar av brevet kunde inte avkodas. Spara delvis avkodat brev?"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "Avkodning misslyckades"
 
 #: widgets/messageviewerbase_p.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Spara avkrypterad fil"
+msgstr "Spara avkodat brev"
 
 #: widgets/messageviewerbase_p.cpp:314
 #, kde-format
@@ -642,7 +622,7 @@ msgstr "&Arkiv"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Visa"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
