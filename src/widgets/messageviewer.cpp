@@ -272,17 +272,21 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             widget->setTitle(i18n("Invitation"));
 
             auto incidenceLayout = new QFormLayout(widget);
-            incidenceLayout->addRow(i18n("&Summary:"), new QLabel(incidence->summary()));
-            incidenceLayout->addRow(i18n("&Organizer:"), new QLabel(incidence->organizer().fullName()));
-            if (incidence->location().length() > 0) {
-                incidenceLayout->addRow(i18n("&Location:"), new QLabel(incidence->location()));
-            }
-            incidenceLayout->addRow(i18n("&Start date:"), new QLabel(incidence->dtStart().toLocalTime().toString()));
-            if (const auto event = incidence.dynamicCast<KCalendarCore::Event>()) {
-                incidenceLayout->addRow(i18n("&End date:"), new QLabel(event->dtEnd().toLocalTime().toString()));
-            }
-            if (incidence->description().length() > 0) {
-                incidenceLayout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
+            if (incidence) {
+                incidenceLayout->addRow(i18n("&Summary:"), new QLabel(incidence->summary()));
+                incidenceLayout->addRow(i18n("&Organizer:"), new QLabel(incidence->organizer().fullName()));
+                if (incidence->location().length() > 0) {
+                    incidenceLayout->addRow(i18n("&Location:"), new QLabel(incidence->location()));
+                }
+                incidenceLayout->addRow(i18n("&Start date:"), new QLabel(incidence->dtStart().toLocalTime().toString()));
+                if (const auto event = incidence.dynamicCast<KCalendarCore::Event>()) {
+                    incidenceLayout->addRow(i18n("&End date:"), new QLabel(event->dtEnd().toLocalTime().toString()));
+                }
+                if (incidence->description().length() > 0) {
+                    incidenceLayout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
+                }
+            } else {
+                incidenceLayout->addRow(new QLabel(i18nc("@status", "Invitation is broken")));
             }
 
             container->innerLayout()->addWidget(widget);
