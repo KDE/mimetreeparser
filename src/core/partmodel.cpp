@@ -190,7 +190,7 @@ public:
         if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
             auto node = attachmentPart->node();
             if (node && mMimeTypeCache[attachmentPart] == "text/calendar"_ba) {
-                return messagePart->text();
+                return node->decodedBody();
             }
         }
 
