@@ -236,8 +236,8 @@ QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(QShared
         [start](const QSharedPointer<MessagePart> &part) {
             if (const auto attachment = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(part.data())) {
                 return attachment->mimeType() == "text/calendar"_ba;
-            } else if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
-                return true;
+            } else if (auto alternative = part->parentAlternativePart()) {
+                return part == alternative->preferredContent();
             } else if (dynamic_cast<MimeTreeParser::HeadersPart *>(part.data())) {
                 return false;
             } else if (dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(part.data())) {

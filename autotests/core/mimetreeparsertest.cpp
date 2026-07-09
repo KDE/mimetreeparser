@@ -655,7 +655,9 @@ private Q_SLOTS:
         QVERIFY(part->availableModes().contains(MimeTreeParser::AlternativeMessagePart::MultipartIcal));
 
         auto attachments = otp.collectAttachmentParts();
-        QCOMPARE(attachments.size(), 0);
+        // This attachment lives inside a mulipart/alternative, we may or may not want to show it as an attachment.
+        // For now, the safer option is to keep it in the list of attachments
+        QCOMPARE(attachments.size(), 1);
     }
 
     void testGmailInvitation()

@@ -461,6 +461,8 @@ public:
      */
     [[nodiscard]] QList<HtmlMode> availableModes();
 
+    QSharedPointer<MessagePart> preferredContent(const QList<HtmlMode> &preferredTypes = {MultipartIcal, MultipartPlain}) const;
+
 private:
     QMap<HtmlMode, QSharedPointer<MessagePart>> mChildParts;
 

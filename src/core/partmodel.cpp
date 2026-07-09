@@ -148,12 +148,6 @@ public:
 
     QVariant extractContent(MimeTreeParser::MessagePart *messagePart)
     {
-        if (auto alternativePart = dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(messagePart)) {
-            if (alternativePart->availableModes().contains(MimeTreeParser::AlternativeMessagePart::MultipartIcal)) {
-                return alternativePart->icalContent();
-            }
-        }
-
         auto preprocessPlaintext = [&](const QString &text) {
             // Reduce consecutive new lines to never exceed 2
             auto cleaned = text;
@@ -177,11 +171,11 @@ public:
         };
 
         if (messagePart->isHtml()) {
-            if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(messagePart)) {
+            if (auto alternative = messagePart->parentAlternativePart()) {
                 containsHtmlAndPlain = true;
                 Q_EMIT q->containsHtmlChanged();
                 if (!showHtml) {
-                    return preprocessPlaintext(messagePart->plaintextContent());
+                    return preprocessPlaintext(alternative->plaintextContent());
                 }
             }
             return addCss(mParser->resolveCidLinks(messagePart->htmlContent()));
@@ -483,20 +477,8 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             if (dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(messagePart)) {
                 return QVariant::fromValue(Types::Encapsulated);
             }
-            if (auto alternativePart = dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(messagePart)) {
-                if (alternativePart->availableModes().contains(MimeTreeParser::AlternativeMessagePart::MultipartIcal)) {
-                    return QVariant::fromValue(Types::Ical);
-                }
-            }
-            if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
-                auto node = attachmentPart->node();
-                if (!node) {
-                    qWarning() << "no content for attachment";
-                    return {};
-                }
-                if (d->mMimeTypeCache[attachmentPart] == "text/calendar"_ba) {
-                    return QVariant::fromValue(Types::Ical);
-                }
+            if (d->mMimeTypeCache[messagePart] == "text/calendar"_ba) {
+                return QVariant::fromValue(Types::Ical);
             }
             if (!d->showHtml && d->containsHtmlAndPlain) {
                 return QVariant::fromValue(Types::Plain);

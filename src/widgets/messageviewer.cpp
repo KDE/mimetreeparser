@@ -286,7 +286,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                     incidenceLayout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
                 }
             } else {
-                incidenceLayout->addRow(new QLabel(i18nc("@status", "Invitation is broken")));
+                incidenceLayout->addRow(new QLabel(u"<i>"_s + i18nc("@status", "Invitation is broken") + u"</i>"_s));
             }
 
             container->innerLayout()->addWidget(widget);

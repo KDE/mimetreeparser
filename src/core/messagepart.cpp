@@ -473,7 +473,9 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
     : MessagePart(otp, QString(), node)
 {
     if (auto dataIcal = findTypeInDirectChildren(mNode, "text/calendar")) {
-        mChildParts[MultipartIcal] = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataIcal, true));
+        auto sub = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataIcal, true));
+        mChildParts[MultipartIcal] = sub;
+        appendSubPart(sub);
     }
 
     if (auto dataText = findTypeInDirectChildren(mNode, "text/plain")) {
@@ -484,7 +486,9 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
     }
 
     if (auto dataHtml = findTypeInDirectChildren(mNode, "text/html")) {
-        mChildParts[MultipartHtml] = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataHtml, true));
+        auto sub = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataHtml, true));
+        mChildParts[MultipartHtml] = sub;
+        appendSubPart(sub);
     } else {
         // If we didn't find the HTML part as the first child of the multipart/alternative, it might
         // be that this is a HTML message with images, and text/plain and multipart/related are the
@@ -510,13 +514,25 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
                     appendSubPart(QSharedPointer<MimeMessagePart>(new MimeMessagePart(otp, p, true)));
                 }
             }
+            auto sub = QSharedPointer<MessagePart>(new MessagePart(mOtp, htmlContent, nullptr));
             mChildParts[MultipartHtml] = QSharedPointer<MessagePart>(new MessagePart(mOtp, htmlContent, nullptr));
+            appendSubPart(sub);
         }
     }
 }
 
 AlternativeMessagePart::~AlternativeMessagePart()
 {
+}
+
+QSharedPointer<MessagePart> AlternativeMessagePart::preferredContent(const QList<HtmlMode> &preferredTypes) const
+{
+    for (const auto type : preferredTypes) {
+        if (mChildParts.contains(type)) {
+            return mChildParts[type];
+        }
+    }
+    return subParts().value(0);
 }
 
 QList<AlternativeMessagePart::HtmlMode> AlternativeMessagePart::availableModes()
