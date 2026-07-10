@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-07-10 00:46+0000\n"
 "PO-Revision-Date: 2026-07-03 18:43+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -105,23 +105,23 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "adsız_%1.%2"
 
-#: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
+#: core/messagepart.cpp:594 core/messagepart.cpp:610 core/messagepart.cpp:711
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Yanlış kripto eklentisi."
 
-#: core/messagepart.cpp:904
+#: core/messagepart.cpp:858
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Uygun kripto eklentisi bulunamadı."
 
-#: core/messagepart.cpp:906
+#: core/messagepart.cpp:860
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripto eklentisi “%1”, verinin şifresini çözemedi."
 
-#: core/messagepart.cpp:907
+#: core/messagepart.cpp:861
 #, kde-format
 msgid "Error: %1"
 msgstr "Hata: %1"
@@ -132,13 +132,13 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "İmza bozuk"
 
-#: core/partmodel.cpp:627 core/partmodel.cpp:629
+#: core/partmodel.cpp:625
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Bu iletinin şifresini çözemezsiniz."
 
-#: core/partmodel.cpp:635
+#: core/partmodel.cpp:630
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -146,13 +146,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "İleti, şu alıcı için şifrelendi:"
 msgstr[1] "İleti, şu alıcılar için şifrelendi:"
 
-#: core/partmodel.cpp:649
+#: core/partmodel.cpp:644
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "Şifreleme iptal edildi."
 
-#: core/partmodel.cpp:651
+#: core/partmodel.cpp:646
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -366,105 +366,112 @@ msgstr "Eki &Farklı Kaydet…"
 msgid "Invitation"
 msgstr "Davet"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp:276
 #, kde-format
 msgid "&Summary:"
 msgstr "&Özet:"
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizatör:"
 
-#: widgets/messageviewer.cpp:278
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Location:"
 msgstr "&Konum:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "&Start date:"
 msgstr "&Başlangıç tarihi:"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:283
 #, kde-format
 msgid "&End date:"
 msgstr "B&itiş tarihi:"
 
-#: widgets/messageviewer.cpp:285
+#: widgets/messageviewer.cpp:286
 #, kde-format
 msgid "&Details:"
 msgstr "&Ayrıntılar:"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:289
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@status"
+msgid "Invitation is broken"
+msgstr "Davet"
+
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsüllenmiş E-posta"
 
-#: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
+#: widgets/messageviewer.cpp:311 widgets/messageviewer.cpp:313
 #, kde-format
 msgid "Subject:"
 msgstr "Konu:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Konu yok"
 
-#: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:320
 #, kde-format
 msgid "From:"
 msgstr "Kimden:"
 
-#: widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp:318
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: widgets/messageviewer.cpp:318
+#: widgets/messageviewer.cpp:322
 #, kde-format
 msgid "Date:"
 msgstr "Tarih:"
 
-#: widgets/messageviewer.cpp:382
+#: widgets/messageviewer.cpp:386
 #, kde-format
 msgid "&Subject:"
 msgstr "K&onu:"
 
-#: widgets/messageviewer.cpp:385 widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp:389 widgets/messageviewer.cpp:391
 #, kde-format
 msgid "&From:"
 msgstr "&Kimden:"
 
-#: widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp:391
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Bilinmeyen</i>"
 
-#: widgets/messageviewer.cpp:390
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&Sender:"
 msgstr "&Gönderen:"
 
-#: widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:397
 #, kde-format
 msgid "&To:"
 msgstr "Kim&e:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&CC:"
 msgstr "&Kopya:"
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&BCC:"
 msgstr "&Gizli kopya:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&Date:"
 msgstr "&Tarih:"

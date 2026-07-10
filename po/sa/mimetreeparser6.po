@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-07-10 00:46+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -108,23 +108,23 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "अनामिका"
 
-#: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
+#: core/messagepart.cpp:594 core/messagepart.cpp:610 core/messagepart.cpp:711
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "गलत क्रिप्टो प्लग-इन।"
 
-#: core/messagepart.cpp:904
+#: core/messagepart.cpp:858
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "कोऽपि समुचितः क्रिप्टो प्लग-इन् न प्राप्तः ।"
 
-#: core/messagepart.cpp:906
+#: core/messagepart.cpp:860
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "क्रिप्टो प्लग-इन् \"%1\" दत्तांशं विगुप्तं कर्तुं न शक्तवान् ।"
 
-#: core/messagepart.cpp:907
+#: core/messagepart.cpp:861
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटिः %1"
@@ -135,13 +135,13 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp:627 core/partmodel.cpp:629
+#: core/partmodel.cpp:625
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "भवन्तः एतत् सन्देशं विगुप्तीकरणं कर्तुं न शक्नुवन्ति ।"
 
-#: core/partmodel.cpp:635
+#: core/partmodel.cpp:630
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -149,13 +149,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "सन्देशः निम्नलिखितग्राहकस्य कृते एन्क्रिप्टेड् भवति ।"
 msgstr[1] "सन्देशः निम्नलिखितग्राहिणां कृते एन्क्रिप्टेड् भवति ।"
 
-#: core/partmodel.cpp:649
+#: core/partmodel.cpp:644
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr ""
 
-#: core/partmodel.cpp:651
+#: core/partmodel.cpp:646
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
@@ -369,49 +369,56 @@ msgstr "&संलग्नकं यथा..."
 msgid "Invitation"
 msgstr "आमंत्रण"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp:276
 #, kde-format
 msgid "&Summary:"
 msgstr "&संक्षेपः:"
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Organizer:"
 msgstr "&आयोजक :"
 
-#: widgets/messageviewer.cpp:278
+#: widgets/messageviewer.cpp:279
 #, kde-format
 msgid "&Location:"
 msgstr "&स्थानीय:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp:281
 #, kde-format
 msgid "&Start date:"
 msgstr "&प्रारम्भतिथिः :"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:283
 #, kde-format
 msgid "&End date:"
 msgstr "&समाप्ततिथिः :"
 
-#: widgets/messageviewer.cpp:285
+#: widgets/messageviewer.cpp:286
 #, kde-format
 msgid "&Details:"
 msgstr "&वर्णन:"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:289
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@status"
+msgid "Invitation is broken"
+msgstr "आमंत्रण"
+
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "Encapsulated email"
 msgstr "समाहितः ईमेलः"
 
-#: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
+#: widgets/messageviewer.cpp:311 widgets/messageviewer.cpp:313
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
 msgid "Subject:"
 msgstr "विषयः:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp:311
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
@@ -419,12 +426,12 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "विषयः:"
 
-#: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:320
 #, kde-format
 msgid "From:"
 msgstr "इत्यस्मात्‌:"
 
-#: widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp:318
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -432,22 +439,22 @@ msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: widgets/messageviewer.cpp:318
+#: widgets/messageviewer.cpp:322
 #, kde-format
 msgid "Date:"
 msgstr "दिनाङ्कः:"
 
-#: widgets/messageviewer.cpp:382
+#: widgets/messageviewer.cpp:386
 #, kde-format
 msgid "&Subject:"
 msgstr "&विषयः:"
 
-#: widgets/messageviewer.cpp:385 widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp:389 widgets/messageviewer.cpp:391
 #, kde-format
 msgid "&From:"
 msgstr "&इत्यस्मात्‌:"
 
-#: widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp:391
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -455,27 +462,27 @@ msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "अज्ञात"
 
-#: widgets/messageviewer.cpp:390
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&Sender:"
 msgstr "&प्रेषकः :"
 
-#: widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:397
 #, kde-format
 msgid "&To:"
 msgstr "&इत्यस्मै:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&CC:"
 msgstr "&CC: 1 ."
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&BCC:"
 msgstr "&बीसीसी:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&Date:"
 msgstr "&दिनाङ्कः:"
