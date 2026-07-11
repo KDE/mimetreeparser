@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 00:46+0000\n"
-"PO-Revision-Date: 2026-07-03 09:00-0300\n"
+"PO-Revision-Date: 2026-07-10 07:10-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -401,11 +401,10 @@ msgid "&Details:"
 msgstr "&Detalhes:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@status"
 msgid "Invitation is broken"
-msgstr "Convite"
+msgstr "O convite está quebrado"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format

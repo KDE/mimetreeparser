@@ -391,11 +391,10 @@ msgid "&Details:"
 msgstr "详细信息(&D)："
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@status"
 msgid "Invitation is broken"
-msgstr "邀请"
+msgstr ""
 
 #: widgets/messageviewer.cpp:302
 #, kde-format

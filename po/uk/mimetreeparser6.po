@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 00:46+0000\n"
-"PO-Revision-Date: 2026-07-03 08:31+0300\n"
+"PO-Revision-Date: 2026-07-10 10:25+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -406,11 +406,10 @@ msgid "&Details:"
 msgstr "&Подробиці:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@status"
 msgid "Invitation is broken"
-msgstr "Запрошення"
+msgstr "Запрошення пошкоджено"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-10 00:46+0000\n"
-"PO-Revision-Date: 2026-07-07 08:58+0300\n"
+"PO-Revision-Date: 2026-07-10 10:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -401,11 +401,10 @@ msgid "&Details:"
 msgstr "&פרטים:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@status"
 msgid "Invitation is broken"
-msgstr "הזמנה"
+msgstr "ההזמנה פגומה"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
