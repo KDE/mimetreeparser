@@ -288,7 +288,7 @@ void MessageViewerBasePrivate::saveDecrypted(QWidget *parent)
         }
         if (KMessageBox::warningContinueCancel(parent,
                                                i18nc("@info", "Some parts of the message could not be decrypted. Save partially decrypted message?"),
-                                               i18nc("@info", "Decryption failed"),
+                                               i18nc("@title:window", "Decryption failed"),
                                                KStandardGuiItem::save(),
                                                KStandardGuiItem::cancel())
             != KMessageBox::Continue) {

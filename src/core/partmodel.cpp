@@ -641,9 +641,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                 return messagePart->errorString();
 
             case MimeTreeParser::MessagePart::UserCancelled:
-                return i18ndc("mimetreeparser", "@info:status", "Decryption was cancelled.");
+                return i18ndc("mimetreeparser", "@info:status", "Decryption was canceled");
             case MimeTreeParser::MessagePart::PassphraseError:
-                return i18ndc("mimetreeparser", "@info:status", "Wrong passphrase.");
+                return i18ndc("mimetreeparser", "@info:status", "Wrong passphrase");
             case MimeTreeParser::MessagePart::UnknownError:
                 break;
             default:
