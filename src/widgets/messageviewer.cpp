@@ -286,7 +286,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                     incidenceLayout->addRow(i18n("&Details:"), new QLabel(incidence->description()));
                 }
             } else {
-                incidenceLayout->addRow(new QLabel(i18nc("@status", "Invitation is broken")));
+                incidenceLayout->addRow(new QLabel(i18nc("@info:status", "Invitation is broken")));
             }
 
             container->innerLayout()->addWidget(widget);
@@ -315,7 +315,8 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             const auto from = parts->data(parts->index(i, 0, parent), PartModel::SenderRole).toString();
             const auto date = parts->data(parts->index(i, 0, parent), PartModel::DateRole).toDateTime();
             if (from.isEmpty()) {
-                headerLayout->addRow(i18n("From:"), new QLabel(u"<i>"_s + i18nc("@status missing from:, an unknown author", "Unknown") + u"</i>"_s));
+                headerLayout->addRow(i18n("From:"),
+                                     new QLabel(u"<i>"_s + i18nc("@info:status missing 'From:', i.e. an unknown author", "Unknown") + u"</i>"_s));
             } else {
                 headerLayout->addRow(i18n("From:"), new HeaderLabel(from));
             }
@@ -388,7 +389,7 @@ void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
         if (!d->parser->from().isEmpty()) {
             d->formLayout->addRow(i18n("&From:"), new HeaderLabel(d->parser->from()));
         } else {
-            d->formLayout->addRow(i18n("&From:"), new QLabel(i18nc("@status missing from:, an unknown author", "<i>Unknown</i>")));
+            d->formLayout->addRow(i18n("&From:"), new QLabel(u"<i>"_s + i18nc("@info:status missing 'From:', i.e. an unknown author", "Unknown") + u"</i>"_s));
         }
         if (!d->parser->sender().isEmpty() && d->parser->from() != d->parser->sender()) {
             d->formLayout->addRow(i18n("&Sender:"), new HeaderLabel(d->parser->sender()));
