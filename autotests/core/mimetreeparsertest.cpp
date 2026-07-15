@@ -86,25 +86,6 @@ private Q_SLOTS:
         QVERIFY(otp.plainTextContent().isEmpty());
     }
 
-    void testSMimeEncrypted()
-    {
-        MimeTreeParser::Core::ObjectTreeParser otp;
-        otp.parseObjectTree(readMailFromFile("smime-encrypted.mbox"_L1));
-        otp.print();
-        otp.decryptAndVerify();
-        otp.print();
-        auto partList = otp.collectContentParts();
-        QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
-        QVERIFY(bool(part));
-        QCOMPARE(part->text(), u"The quick brown fox jumped over the lazy dog."_s);
-        QCOMPARE(part->charset(), u"us-ascii"_s.toLocal8Bit());
-        QCOMPARE(part->encryptions().size(), 1);
-        QCOMPARE(part->signatures().size(), 0);
-        auto contentAttachmentList = otp.collectAttachmentParts();
-        QCOMPARE(contentAttachmentList.size(), 0);
-    }
-
     void testOpenPGPEncryptedAttachment()
     {
         MimeTreeParser::Core::ObjectTreeParser otp;
@@ -867,7 +848,12 @@ private Q_SLOTS:
         QCOMPARE(partList.size(), 1);
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
-        QCOMPARE(part->text(), "The quick brown fox jumped over the lazy dog."_L1);
+        QCOMPARE(part->text(), u"The quick brown fox jumped over the lazy dog."_s);
+        QCOMPARE(part->charset(), u"us-ascii"_s.toLocal8Bit());
+        QCOMPARE(part->encryptions().size(), 1);
+        QCOMPARE(part->signatures().size(), 0);
+        auto contentAttachmentList = otp.collectAttachmentParts();
+        QCOMPARE(contentAttachmentList.size(), 0);
     }
 
     void testSmimeSignedApple()
