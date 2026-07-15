@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-04-21 15:38+0200\n"
+"PO-Revision-Date: 2026-07-14 09:38+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
 "Language: de\n"
@@ -103,12 +103,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "unbenannt"
+msgstr "unbenannt_%1.%2"
 
 #: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
 #, kde-format
@@ -135,7 +133,7 @@ msgstr "Fehler: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "Signatur defekt"
 
 #: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
@@ -155,7 +153,7 @@ msgstr[1] "Diese Nachricht ist für die folgenden Empfänger verschlüsselt:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "Entschlüsselung wurde abgebrochen"
 
 #: core/partmodel.cpp:651
 #, kde-format
@@ -411,16 +409,12 @@ msgid "Encapsulated email"
 msgstr "Eingebettete E-Mail"
 
 #: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Betreff:"
 
 #: widgets/messageviewer.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "(Kein Betreff)"
@@ -431,9 +425,7 @@ msgid "From:"
 msgstr "Von:"
 
 #: widgets/messageviewer.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Unbekannt"
@@ -605,12 +597,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Einige Teile der Nachricht konnten nicht entschlüsselt werden. Soll die "
+"teilweise entschlüsselte Nachricht gespeichert werden?"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "Entschlüsselung fehlgeschlagen"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format
