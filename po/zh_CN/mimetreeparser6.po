@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -145,13 +145,15 @@ msgstr[0] "该邮件已为以下收件人加密："
 #: core/partmodel.cpp:644
 #, kde-format
 msgctxt "@info:status"
-msgid "Decryption was cancelled."
+msgid "Decryption was canceled"
 msgstr ""
 
 #: core/partmodel.cpp:646
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
 msgctxt "@info:status"
-msgid "Wrong passphrase."
+msgid "Wrong passphrase"
 msgstr "密码错误。"
 
 #: core/urlhandler.cpp:51
@@ -391,10 +393,11 @@ msgid "&Details:"
 msgstr "详细信息(&D)："
 
 #: widgets/messageviewer.cpp:289
-#, kde-format
-msgctxt "@status"
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr ""
+msgstr "邀请"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
@@ -412,59 +415,55 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr ""
 
-#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:320
+#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:321
 #, kde-format
 msgid "From:"
 msgstr "发件人："
 
-#: widgets/messageviewer.cpp:318
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
+#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
-#: widgets/messageviewer.cpp:322
+#: widgets/messageviewer.cpp:323
 #, kde-format
 msgid "Date:"
 msgstr "日期："
 
-#: widgets/messageviewer.cpp:386
+#: widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&Subject:"
 msgstr "主题(&S)："
 
-#: widgets/messageviewer.cpp:389 widgets/messageviewer.cpp:391
+#: widgets/messageviewer.cpp:390 widgets/messageviewer.cpp:392
 #, kde-format
 msgid "&From:"
 msgstr "发件人(&F)："
 
-#: widgets/messageviewer.cpp:391
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr ""
-
-#: widgets/messageviewer.cpp:394
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Sender:"
 msgstr "&发件人:"
 
-#: widgets/messageviewer.cpp:397
+#: widgets/messageviewer.cpp:398
 #, kde-format
 msgid "&To:"
 msgstr "收件人(&T)："
 
-#: widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:401
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:404
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:407
 #, kde-format
 msgid "&Date:"
 msgstr "&日期:"
@@ -589,7 +588,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr ""
 

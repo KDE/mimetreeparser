@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2026-07-10 19:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -147,15 +147,19 @@ msgstr[0] "İleti, şu alıcı için şifrelendi:"
 msgstr[1] "İleti, şu alıcılar için şifrelendi:"
 
 #: core/partmodel.cpp:644
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Decryption was cancelled."
 msgctxt "@info:status"
-msgid "Decryption was cancelled."
+msgid "Decryption was canceled"
 msgstr "Şifreleme iptal edildi."
 
 #: core/partmodel.cpp:646
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
 msgctxt "@info:status"
-msgid "Wrong passphrase."
+msgid "Wrong passphrase"
 msgstr "Yanlış anahtar parolası."
 
 #: core/urlhandler.cpp:51
@@ -397,8 +401,10 @@ msgid "&Details:"
 msgstr "&Ayrıntılar:"
 
 #: widgets/messageviewer.cpp:289
-#, kde-format
-msgctxt "@status"
+#, fuzzy, kde-format
+#| msgctxt "@status"
+#| msgid "Invitation is broken"
+msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Davet bozuk"
 
@@ -418,59 +424,55 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Konu yok"
 
-#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:320
+#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:321
 #, kde-format
 msgid "From:"
 msgstr "Kimden:"
 
-#: widgets/messageviewer.cpp:318
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
+#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: widgets/messageviewer.cpp:322
+#: widgets/messageviewer.cpp:323
 #, kde-format
 msgid "Date:"
 msgstr "Tarih:"
 
-#: widgets/messageviewer.cpp:386
+#: widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&Subject:"
 msgstr "K&onu:"
 
-#: widgets/messageviewer.cpp:389 widgets/messageviewer.cpp:391
+#: widgets/messageviewer.cpp:390 widgets/messageviewer.cpp:392
 #, kde-format
 msgid "&From:"
 msgstr "&Kimden:"
 
-#: widgets/messageviewer.cpp:391
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Bilinmeyen</i>"
-
-#: widgets/messageviewer.cpp:394
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Sender:"
 msgstr "&Gönderen:"
 
-#: widgets/messageviewer.cpp:397
+#: widgets/messageviewer.cpp:398
 #, kde-format
 msgid "&To:"
 msgstr "Kim&e:"
 
-#: widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:401
 #, kde-format
 msgid "&CC:"
 msgstr "&Kopya:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:404
 #, kde-format
 msgid "&BCC:"
 msgstr "&Gizli kopya:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:407
 #, kde-format
 msgid "&Date:"
 msgstr "&Tarih:"
@@ -598,8 +600,10 @@ msgstr ""
 "kısımları kaydedilsin mi?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Decryption failed"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Şifre Çözümü Başarısız"
 
@@ -644,6 +648,14 @@ msgstr "&Dolaşım"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "İ&leti"
+
+#~ msgctxt "@status missing from:, an unknown author"
+#~ msgid "Unknown"
+#~ msgstr "Bilinmeyen"
+
+#~ msgctxt "@status missing from:, an unknown author"
+#~ msgid "<i>Unknown</i>"
+#~ msgstr "<i>Bilinmeyen</i>"
 
 #~ msgctxt "Fallback when file has no name"
 #~ msgid "unnamed"

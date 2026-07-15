@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2026-07-10 12:45+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -146,15 +146,19 @@ msgstr[0] "Het bericht is versleuteld voor de volgende ontvanger:"
 msgstr[1] "Het bericht is versleuteld voor de volgende ontvangers:"
 
 #: core/partmodel.cpp:644
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Decryption was cancelled."
 msgctxt "@info:status"
-msgid "Decryption was cancelled."
+msgid "Decryption was canceled"
 msgstr "Ontcijfering was geannuleerd."
 
 #: core/partmodel.cpp:646
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
 msgctxt "@info:status"
-msgid "Wrong passphrase."
+msgid "Wrong passphrase"
 msgstr "Verkeerde wachtwoordzin."
 
 #: core/urlhandler.cpp:51
@@ -398,8 +402,10 @@ msgid "&Details:"
 msgstr "&Details:"
 
 #: widgets/messageviewer.cpp:289
-#, kde-format
-msgctxt "@status"
+#, fuzzy, kde-format
+#| msgctxt "@status"
+#| msgid "Invitation is broken"
+msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Uitnodiging werkt niet"
 
@@ -419,59 +425,55 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Geen onderwerp"
 
-#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:320
+#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:321
 #, kde-format
 msgid "From:"
 msgstr "Van:"
 
-#: widgets/messageviewer.cpp:318
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
+#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: widgets/messageviewer.cpp:322
+#: widgets/messageviewer.cpp:323
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:386
+#: widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&Subject:"
 msgstr "&Onderwerp:"
 
-#: widgets/messageviewer.cpp:389 widgets/messageviewer.cpp:391
+#: widgets/messageviewer.cpp:390 widgets/messageviewer.cpp:392
 #, kde-format
 msgid "&From:"
 msgstr "&Van:"
 
-#: widgets/messageviewer.cpp:391
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Onbekend</i>"
-
-#: widgets/messageviewer.cpp:394
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Sender:"
 msgstr "Af&zender:"
 
-#: widgets/messageviewer.cpp:397
+#: widgets/messageviewer.cpp:398
 #, kde-format
 msgid "&To:"
 msgstr "&Aan:"
 
-#: widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:401
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:404
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:407
 #, kde-format
 msgid "&Date:"
 msgstr "&Datum:"
@@ -601,8 +603,10 @@ msgstr ""
 "ontcijferd bericht opslaan?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Decryption failed"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Ontcijferen is mislukt"
 
@@ -647,6 +651,14 @@ msgstr "&Navigatie"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "Beri&cht"
+
+#~ msgctxt "@status missing from:, an unknown author"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
+#~ msgctxt "@status missing from:, an unknown author"
+#~ msgid "<i>Unknown</i>"
+#~ msgstr "<i>Onbekend</i>"
 
 #~ msgctxt "Fallback when file has no name"
 #~ msgid "unnamed"

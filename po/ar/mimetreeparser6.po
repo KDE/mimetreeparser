@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2026-07-04 21:34+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -159,15 +159,19 @@ msgstr[4] "الرسالة معماة للمستلمين التاليين:"
 msgstr[5] "الرسالة معماة للمستلمين التاليين:"
 
 #: core/partmodel.cpp:644
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Decryption was cancelled."
 msgctxt "@info:status"
-msgid "Decryption was cancelled."
+msgid "Decryption was canceled"
 msgstr "التعمية أُلغيت"
 
 #: core/partmodel.cpp:646
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
 msgctxt "@info:status"
-msgid "Wrong passphrase."
+msgid "Wrong passphrase"
 msgstr "عبارة مرور خاطئة"
 
 #: core/urlhandler.cpp:51
@@ -409,7 +413,7 @@ msgstr "ال&تفاصيل:"
 #: widgets/messageviewer.cpp:289
 #, fuzzy, kde-format
 #| msgid "Invitation"
-msgctxt "@status"
+msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "الدعوة"
 
@@ -429,59 +433,55 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "دون موضوع"
 
-#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:320
+#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:321
 #, kde-format
 msgid "From:"
 msgstr "من:"
 
-#: widgets/messageviewer.cpp:318
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
+#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
+#, fuzzy, kde-format
+#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
+#| msgid "Unknown"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: widgets/messageviewer.cpp:322
+#: widgets/messageviewer.cpp:323
 #, kde-format
 msgid "Date:"
 msgstr "التاريخ:"
 
-#: widgets/messageviewer.cpp:386
+#: widgets/messageviewer.cpp:387
 #, kde-format
 msgid "&Subject:"
 msgstr "المو&ضوع:"
 
-#: widgets/messageviewer.cpp:389 widgets/messageviewer.cpp:391
+#: widgets/messageviewer.cpp:390 widgets/messageviewer.cpp:392
 #, kde-format
 msgid "&From:"
 msgstr "&من:"
 
-#: widgets/messageviewer.cpp:391
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>مجهول</i>"
-
-#: widgets/messageviewer.cpp:394
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Sender:"
 msgstr "المر&سل:"
 
-#: widgets/messageviewer.cpp:397
+#: widgets/messageviewer.cpp:398
 #, kde-format
 msgid "&To:"
 msgstr "إل&ى:"
 
-#: widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:401
 #, kde-format
 msgid "&CC:"
 msgstr "&ن‌ك:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:404
 #, kde-format
 msgid "&BCC:"
 msgstr "ن‌&ك‌ع:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:407
 #, kde-format
 msgid "&Date:"
 msgstr "ال&تاريخ:"
@@ -607,8 +607,10 @@ msgstr ""
 "تعذر فك تعمية بعض أجزاء الرسالة. هل تريد حفظ الرسالة التي فُك تعميتها جزئيًا؟"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Decryption failed"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "فشلت عملية فك التعمية"
 
@@ -653,6 +655,14 @@ msgstr "&تنقّل"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "ر&سالة"
+
+#~ msgctxt "@status missing from:, an unknown author"
+#~ msgid "Unknown"
+#~ msgstr "مجهول"
+
+#~ msgctxt "@status missing from:, an unknown author"
+#~ msgid "<i>Unknown</i>"
+#~ msgstr "<i>مجهول</i>"
 
 #~ msgctxt "Fallback when file has no name"
 #~ msgid "unnamed"
