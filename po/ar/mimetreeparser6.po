@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-04 21:34+0400\n"
+"PO-Revision-Date: 2026-07-15 19:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -159,17 +159,13 @@ msgstr[4] "الرسالة معماة للمستلمين التاليين:"
 msgstr[5] "الرسالة معماة للمستلمين التاليين:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr "التعمية أُلغيت"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "عبارة مرور خاطئة"
@@ -411,11 +407,10 @@ msgid "&Details:"
 msgstr "ال&تفاصيل:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr "الدعوة"
+msgstr "الدعوة غير صالحة"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
@@ -439,9 +434,7 @@ msgid "From:"
 msgstr "من:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "مجهول"
@@ -607,9 +600,7 @@ msgstr ""
 "تعذر فك تعمية بعض أجزاء الرسالة. هل تريد حفظ الرسالة التي فُك تعميتها جزئيًا؟"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "فشلت عملية فك التعمية"

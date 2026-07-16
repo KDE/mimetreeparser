@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-10 09:06+0200\n"
+"PO-Revision-Date: 2026-07-15 10:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -148,20 +148,16 @@ msgstr[0] "El missatge està encriptat per al destinatari següent:"
 msgstr[1] "El missatge està encriptat per als destinataris següents:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "S'ha cancel·lat el desencriptatge."
+msgstr "S'ha cancel·lat el desencriptatge"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Frase de pas incorrecta."
+msgstr "Frase de pas incorrecta"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -406,9 +402,7 @@ msgid "&Details:"
 msgstr "&Detalls:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@status"
-#| msgid "Invitation is broken"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "La invitació està trencada"
@@ -435,9 +429,7 @@ msgid "From:"
 msgstr "De:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Desconegut"
@@ -606,9 +598,7 @@ msgstr ""
 "parcialment desencriptat?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Ha fallat el desencriptatge"

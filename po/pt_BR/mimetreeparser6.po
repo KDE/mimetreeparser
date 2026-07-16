@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-10 07:10-0300\n"
+"PO-Revision-Date: 2026-07-15 07:35-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -147,20 +147,16 @@ msgstr[0] "A mensagem está criptografada para o seguinte destinatário:"
 msgstr[1] "A mensagem está criptografada para os seguintes destinatários:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "A descriptografia foi cancelada."
+msgstr "A descriptografia foi cancelada"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Frase-senha errada."
+msgstr "Frase-senha errada"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -405,9 +401,7 @@ msgid "&Details:"
 msgstr "&Detalhes:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@status"
-#| msgid "Invitation is broken"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "O convite está quebrado"
@@ -434,9 +428,7 @@ msgid "From:"
 msgstr "De:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Desconhecido"
@@ -605,9 +597,7 @@ msgstr ""
 "mensagem parcialmente descriptografada?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Descriptografia falhou"

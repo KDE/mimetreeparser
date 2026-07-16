@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-11 00:58+0100\n"
+"PO-Revision-Date: 2026-07-16 00:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -148,20 +148,16 @@ msgstr[0] "El mensaje está cifrado para el siguiente destinatario:"
 msgstr[1] "El mensaje está cifrado para los siguientes destinatarios:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "Se ha cancelado el descifrado."
+msgstr "Se ha cancelado el descifrado"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Contraseña larga errónea."
+msgstr "Contraseña larga errónea"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -405,9 +401,7 @@ msgid "&Details:"
 msgstr "&Detalles:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@status"
-#| msgid "Invitation is broken"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "La invitación está dañada"
@@ -434,12 +428,10 @@ msgid "From:"
 msgstr "De:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
-msgstr "Desconocida"
+msgstr "Desconocido"
 
 #: widgets/messageviewer.cpp:323
 #, kde-format
@@ -604,9 +596,7 @@ msgstr ""
 "parcialmente descifrado?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "El descifrado ha fallado"
@@ -652,11 +642,3 @@ msgstr "&Navegación"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mensaje"
-
-#~ msgctxt "@status missing from:, an unknown author"
-#~ msgid "Unknown"
-#~ msgstr "Desconocido"
-
-#~ msgctxt "@status missing from:, an unknown author"
-#~ msgid "<i>Unknown</i>"
-#~ msgstr "<i>Desconocido</i>"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-10 07:59+0200\n"
+"PO-Revision-Date: 2026-07-15 07:41+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -146,20 +146,16 @@ msgstr[0] "Brevet är krypterat för följande mottagare:"
 msgstr[1] "Brevet är krypterat för följande mottagare:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr "Avkodning avbröts."
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Felaktig lösenordsfras."
+msgstr "Felaktig lösenordsfras"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -400,9 +396,7 @@ msgid "&Details:"
 msgstr "&Detaljinformation:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@status"
-#| msgid "Invitation is broken"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Inbjudan är skadad"
@@ -429,9 +423,7 @@ msgid "From:"
 msgstr "Från:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Okänd"
@@ -597,12 +589,10 @@ msgid ""
 msgstr "Några delar av brevet kunde inte avkodas. Spara delvis avkodat brev?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
-msgstr "Avkodning misslyckades: ."
+msgstr "Avkodning misslyckades"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

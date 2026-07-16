@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-10 12:45+0200\n"
+"PO-Revision-Date: 2026-07-15 12:17+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -146,20 +146,16 @@ msgstr[0] "Het bericht is versleuteld voor de volgende ontvanger:"
 msgstr[1] "Het bericht is versleuteld voor de volgende ontvangers:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "Ontcijfering was geannuleerd."
+msgstr "Ontcijfering was geannuleerd"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Verkeerde wachtwoordzin."
+msgstr "Verkeerde wachtwoordzin"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -402,9 +398,7 @@ msgid "&Details:"
 msgstr "&Details:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@status"
-#| msgid "Invitation is broken"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Uitnodiging werkt niet"
@@ -431,9 +425,7 @@ msgid "From:"
 msgstr "Van:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Onbekend"
@@ -603,9 +595,7 @@ msgstr ""
 "ontcijferd bericht opslaan?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Ontcijferen is mislukt"
