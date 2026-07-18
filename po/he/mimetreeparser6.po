@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-10 10:27+0300\n"
+"PO-Revision-Date: 2026-07-17 12:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -153,20 +153,16 @@ msgstr[2] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[3] "ההודעה מוצפנת לנמענים הבאים:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "הפיענוח בוטל."
+msgstr "הפיענוח בוטל"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "מילת צופן שגויה."
+msgstr "מילת צופן שגויה"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -405,9 +401,7 @@ msgid "&Details:"
 msgstr "&פרטים:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@status"
-#| msgid "Invitation is broken"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "ההזמנה פגומה"
@@ -434,9 +428,7 @@ msgid "From:"
 msgstr "מאת:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -601,9 +593,7 @@ msgid ""
 msgstr "הפיענוח של חלקים מסוימים בהודעה לא הצליח. לשמור הודעה מפוענחת חלקית?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "הפיענוח נכשל"

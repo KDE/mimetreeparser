@@ -149,12 +149,10 @@ msgid "Decryption was canceled"
 msgstr ""
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "密码错误。"
+msgstr ""
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -393,11 +391,10 @@ msgid "&Details:"
 msgstr "详细信息(&D)："
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr "邀请"
+msgstr ""
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
@@ -421,12 +418,10 @@ msgid "From:"
 msgstr "发件人："
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: widgets/messageviewer.cpp:323
 #, kde-format

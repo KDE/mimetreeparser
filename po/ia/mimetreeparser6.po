@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-01 16:14+0200\n"
+"PO-Revision-Date: 2026-07-17 15:58+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -130,7 +130,7 @@ msgstr "Error: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "Signatura es rupte"
 
 #: core/partmodel.cpp:625
 #, kde-format
@@ -147,17 +147,13 @@ msgstr[0] "Le message es cryptate per le sequente recipiente:"
 msgstr[1] "Le message es cryptate per le sequente recipientes:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "Decryptation. esseva cancellate"
+msgstr "Decryptation esseva cancellate"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "Phrase de contrasigno errate"
@@ -403,11 +399,10 @@ msgid "&Details:"
 msgstr "&Detalios:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr "Invitation"
+msgstr "Invitation es rupte"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
@@ -431,9 +426,7 @@ msgid "From:"
 msgstr "Ex:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Incognite"
@@ -602,9 +595,7 @@ msgstr ""
 "partialmentedecryptate?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Decryptation falleva"
