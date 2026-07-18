@@ -415,7 +415,7 @@ msgstr "发件人："
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: widgets/messageviewer.cpp:318
 #, kde-format
