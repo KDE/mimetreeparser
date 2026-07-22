@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-04 23:13+0300\n"
+"PO-Revision-Date: 2026-07-21 21:25+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -154,20 +154,16 @@ msgstr[2] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[3] "Laiškas yra šifruotas šiems gavėjams:"
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "Iššifravimo buvo atsisakyta."
+msgstr "Iššifravimo buvo atsisakyta"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Neteisinga slaptafrazė."
+msgstr "Neteisinga slaptafrazė"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -410,11 +406,10 @@ msgid "&Details:"
 msgstr "&Išsamiau:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr "Pakvietimas"
+msgstr "Pakvietimas sugadintas"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
@@ -438,12 +433,10 @@ msgid "From:"
 msgstr "Nuo:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
-msgstr "Nežinoma"
+msgstr "Nežinomas"
 
 #: widgets/messageviewer.cpp:323
 #, kde-format
@@ -608,12 +601,10 @@ msgstr ""
 "laišką?"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
-msgstr "Iššifravimas patyrė nesėkmę"
+msgstr "Nepavyko iššifruoti"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-06 05:31+0900\n"
+"PO-Revision-Date: 2026-07-22 01:14+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
@@ -143,20 +143,16 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "這個信件為以下收件者加密："
 
 #: core/partmodel.cpp:644
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "解密已取消。"
+msgstr "解密已取消"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "錯誤密碼。"
+msgstr "密碼錯誤"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -395,11 +391,10 @@ msgid "&Details:"
 msgstr "詳細資料(&D)："
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr "邀請"
+msgstr "邀請已損毀"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
@@ -423,9 +418,7 @@ msgid "From:"
 msgstr "從："
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "未知"
@@ -589,9 +582,7 @@ msgid ""
 msgstr "信件某些部分無法解密。要儲存部分解密的信件嗎？"
 
 #: widgets/messageviewerbase_p.cpp:291
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "解密失敗"
