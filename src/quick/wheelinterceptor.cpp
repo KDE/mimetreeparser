@@ -101,10 +101,16 @@ bool WheelInterceptor::eventFilter(QObject *obj, QEvent *event)
         return false;
     }
 
+    const auto pixelDelta = wheelEvent->pixelDelta();
+    const auto angleDelta = wheelEvent->angleDelta();
     const auto scrollLines = QGuiApplication::styleHints()->wheelScrollLines();
     const auto factor = scrollLines * 20.0 / 120.0;
-    const auto deltaY = -wheelEvent->angleDelta().y() * factor;
-    const auto deltaX = -wheelEvent->angleDelta().x() * factor;
+    const auto deltaY = pixelDelta.y() != 0 ? -pixelDelta.y() : -angleDelta.y() * factor;
+    const auto deltaX = pixelDelta.x() != 0 ? -pixelDelta.x() : -angleDelta.x() * factor;
+
+    if (deltaX == 0.0 && deltaY == 0.0) {
+        return false;
+    }
 
     if (m_target) {
         applyScroll(m_target, deltaY);
