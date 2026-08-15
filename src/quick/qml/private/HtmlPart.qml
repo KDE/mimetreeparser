@@ -116,6 +116,4 @@ Item {
         position: flickable.contentX / Math.max(1, root.contentWidth - root.width)
         onPositionChanged: flickable.contentX = position * (root.contentWidth - root.width)
     }
-
-    Component.onCompleted: wheelInterceptor.hScrollBar = hScrollBar
 }
