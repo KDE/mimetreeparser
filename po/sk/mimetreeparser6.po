@@ -99,12 +99,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "bez mena"
+msgstr "bez_mena_%1.%2"
 
 #: core/messagepart.cpp:594 core/messagepart.cpp:610 core/messagepart.cpp:711
 #, kde-format
@@ -131,7 +129,7 @@ msgstr "Chyba: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "Podpis je poškodený"
 
 #: core/partmodel.cpp:625
 #, kde-format
@@ -152,15 +150,13 @@ msgstr[2] "Správa je šifrovaná pre nasledujúce kľúče:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr ""
+msgstr "Dešifrovanie bolo zrušené"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Nesprávne heslo."
+msgstr "Nesprávne heslo"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -399,11 +395,10 @@ msgid "&Details:"
 msgstr "Podrobnosti:"
 
 #: widgets/messageviewer.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr "Pozvánka"
+msgstr "Pozvánka je poškodená"
 
 #: widgets/messageviewer.cpp:302
 #, kde-format
@@ -411,19 +406,15 @@ msgid "Encapsulated email"
 msgstr "Encapsulated email"
 
 #: widgets/messageviewer.cpp:311 widgets/messageviewer.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Predmet:"
 
 #: widgets/messageviewer.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "Predmet:"
+msgstr "Bez predmetu"
 
 #: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:321
 #, kde-format
@@ -431,9 +422,7 @@ msgid "From:"
 msgstr "Od:"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "neznámy kľúč"
@@ -597,12 +586,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Niektoré časti správy sa nepodarilo dešifrovať. Uložiť čiastočne dešifrovanú "
+"správu?"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
-msgstr ""
+msgstr "Dešifrovanie zlyhalo"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format
