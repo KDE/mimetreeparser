@@ -33,6 +33,7 @@ Item {
         clip: true
         boundsBehavior: Flickable.StopAtBounds
         contentWidth: root.contentWidth
+        contentHeight: root.contentHeight
 
         WebEngineView {
             id: htmlView
