@@ -99,12 +99,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "bez mena"
+msgstr "bez_mena_%1.%2"
 
 #: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
 #, kde-format
@@ -131,7 +129,7 @@ msgstr "Chyba: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "Podpis je poškodený"
 
 #: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
@@ -152,7 +150,7 @@ msgstr[2] "Správa je šifrovaná pre nasledujúce kľúče:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "Dešifrovanie bolo zrušené."
 
 #: core/partmodel.cpp:651
 #, kde-format
@@ -402,19 +400,15 @@ msgid "Encapsulated email"
 msgstr "Encapsulated email"
 
 #: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Predmet:"
 
 #: widgets/messageviewer.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "Predmet:"
+msgstr "Bez predmetu"
 
 #: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
 #, kde-format
@@ -422,9 +416,7 @@ msgid "From:"
 msgstr "Od:"
 
 #: widgets/messageviewer.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "neznámy kľúč"
@@ -594,12 +586,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Niektoré časti správy sa nepodarilo dešifrovať. Uložiť čiastočne dešifrovanú "
+"správu?"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "Dešifrovanie zlyhalo"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format
