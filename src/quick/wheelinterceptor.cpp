@@ -119,7 +119,7 @@ bool WheelInterceptor::eventFilter(QObject *obj, QEvent *event)
         const auto js = QStringLiteral("window.scrollBy(%1, 0)").arg(deltaX);
         QMetaObject::invokeMethod(m_source, "runJavaScript", Q_ARG(QString, js));
     }
-    if (m_scrollTarget) {
+    if (m_scrollTarget && m_scrollTarget != m_target) {
         applyScroll(m_scrollTarget, deltaY);
     }
     return true;
