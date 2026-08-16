@@ -94,8 +94,6 @@ set_target_properties(
             MimeTreeParserCore
 )
 
-target_link_options(KPim6MimeTreeParserCore PRIVATE "LINKER:-Bsymbolic")
-
 ecm_generate_pri_file(BASE_NAME MimeTreeParserCore
     LIB_NAME KPim6MimeTreeParserCore
     DEPS "MimeTreeParserCore"

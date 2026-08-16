@@ -29,7 +29,7 @@
 #include <gpgme.h>
 using namespace Qt::Literals::StringLiterals;
 
-using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 
 //------MessagePart-----------------------
 MessagePart::MessagePart(ObjectTreeParser *otp, const QString &text, KMime::Content *node)
@@ -333,7 +333,7 @@ void MessagePart::bindLifetime(KMime::Content *node)
     mNodesToDelete << node;
 }
 
-KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *header) const
+KMime::Headers::Base *MimeTreeParser::Core::MessagePart::header(const char *header) const
 {
     if (node() && node()->hasHeader(header)) {
         return node()->headerByType(header);
@@ -392,7 +392,7 @@ void TextMessagePart::parseContent()
                 continue;
             }
 
-            QSharedPointer<MimeTreeParser::MessagePart> mp;
+            QSharedPointer<MimeTreeParser::Core::MessagePart> mp;
             auto content = std::make_unique<KMime::Content>();
             content->setBody(block.text());
             content->parse();

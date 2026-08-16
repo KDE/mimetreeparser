@@ -131,26 +131,26 @@ struct WindowFile {
 class AttachmentModelPrivate
 {
 public:
-    AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::ObjectTreeParser> &parser);
+    AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> &parser);
 
     AttachmentModel *const q;
     QMimeDatabase mimeDb;
-    std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> mAttachments;
+    std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> mParser;
+    QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> mAttachments;
 
 #ifdef Q_OS_WIN
     std::vector<WindowFile> mOpenFiles;
 #endif
 };
 
-AttachmentModelPrivate::AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::ObjectTreeParser> &parser)
+AttachmentModelPrivate::AttachmentModelPrivate(AttachmentModel *q_ptr, const std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> &parser)
     : q(q_ptr)
     , mParser(parser)
 {
     mAttachments = mParser->collectAttachmentParts();
 }
 
-AttachmentModel::AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser)
+AttachmentModel::AttachmentModel(std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> parser)
     : QAbstractTableModel()
     , d(std::unique_ptr<AttachmentModelPrivate>(new AttachmentModelPrivate(this, parser)))
 {
@@ -234,7 +234,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
             return mimetype.name();
         case Qt::DisplayRole:
         case NameRole:
-            return part->filename(MimeTreeParser::MessagePart::FallbackToNameOrPlaceholder);
+            return part->filename(MimeTreeParser::Core::MessagePart::FallbackToNameOrPlaceholder);
         case IconRole:
             return mimetype.iconName();
         case Qt::DecorationRole:
@@ -282,7 +282,7 @@ QString AttachmentModel::saveAttachmentToPath(const int row, const QString &path
     return saveAttachmentToPath(part, path);
 }
 
-QString AttachmentModel::saveAttachmentToPath(const QSharedPointer<MimeTreeParser::MessagePart> &part, const QString &path)
+QString AttachmentModel::saveAttachmentToPath(const QSharedPointer<MimeTreeParser::Core::MessagePart> &part, const QString &path)
 {
     Q_ASSERT(part);
     auto node = part->node();
@@ -317,9 +317,9 @@ bool AttachmentModel::openAttachment(const int row)
     return openAttachment(part);
 }
 
-bool AttachmentModel::openAttachment(const QSharedPointer<MimeTreeParser::MessagePart> &message)
+bool AttachmentModel::openAttachment(const QSharedPointer<MimeTreeParser::Core::MessagePart> &message)
 {
-    QString fileName = message->filename(MimeTreeParser::MessagePart::FallbackToNameOrPlaceholder);
+    QString fileName = message->filename(MimeTreeParser::Core::MessagePart::FallbackToNameOrPlaceholder);
     QTemporaryDir tempDir(QDir::tempPath() + QLatin1Char('/') + qGuiApp->applicationName() + u".XXXXXX"_s);
     // TODO: We need some cleanup here. Otherwise the files will stay forever on Windows.
     tempDir.setAutoRemove(false);
@@ -374,7 +374,7 @@ bool AttachmentModel::importPublicKey(const int row)
     return importPublicKey(part);
 }
 
-bool AttachmentModel::importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &part)
+bool AttachmentModel::importPublicKey(const QSharedPointer<MimeTreeParser::Core::MessagePart> &part)
 {
     Q_ASSERT(part);
     const QByteArray certData = part->node()->decodedBody();

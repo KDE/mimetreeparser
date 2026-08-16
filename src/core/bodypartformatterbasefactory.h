@@ -8,7 +8,7 @@
 #include <map>
 #include <memory>
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 
 namespace Interface
@@ -24,7 +24,7 @@ struct ltstr {
 };
 
 typedef std::multimap<const char *, std::shared_ptr<Interface::BodyPartFormatter>, ltstr> SubtypeRegistry;
-typedef std::map<const char *, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
+typedef std::map<const char *, MimeTreeParser::Core::SubtypeRegistry, MimeTreeParser::Core::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate;
 

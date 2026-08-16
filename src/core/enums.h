@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 
 /**

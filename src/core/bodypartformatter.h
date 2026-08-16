@@ -11,7 +11,7 @@ namespace KMime
 class Content;
 }
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 class ObjectTreeParser;
 

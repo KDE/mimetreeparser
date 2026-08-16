@@ -9,7 +9,7 @@
 #include <gpgme++/context.h>
 #include <gpgme++/verificationresult.h>
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 
 class PartMetaData

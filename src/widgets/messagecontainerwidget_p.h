@@ -31,7 +31,7 @@ public:
     QLayout *innerLayout() const;
 
 Q_SIGNALS:
-    void attachmentContextMenu(const QSharedPointer<MimeTreeParser::MessagePart> part, const QPoint &pos);
+    void attachmentContextMenu(const QSharedPointer<MimeTreeParser::Core::MessagePart> part, const QPoint &pos);
 
 protected:
     /*!

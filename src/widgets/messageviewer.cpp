@@ -33,6 +33,7 @@
 #include <qnamespace.h>
 
 using namespace MimeTreeParser::Widgets;
+using namespace MimeTreeParser::Core;
 using namespace Qt::Literals::StringLiterals;
 
 class MessageViewer::Private
@@ -57,18 +58,18 @@ public:
     UrlHandler *urlHandler = nullptr;
     KMessageWidget *const messageWidget = nullptr;
 
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> partsForActions;
+    QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> partsForActions;
     bool fixedFont = false;
 
-    void openSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts);
-    void saveSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts);
-    void showContextMenu(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &parts);
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> partsSelectedInView() const;
-    void importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &part);
+    void openSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &selectedParts);
+    void saveSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &selectedParts);
+    void showContextMenu(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &parts);
+    QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> partsSelectedInView() const;
+    void importPublicKey(const QSharedPointer<MimeTreeParser::Core::MessagePart> &part);
     void recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent);
 };
 
-void MessageViewer::Private::openSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts)
+void MessageViewer::Private::openSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &selectedParts)
 {
     Q_ASSERT(parser);
     Q_ASSERT(selectedParts.count() >= 1);
@@ -77,7 +78,7 @@ void MessageViewer::Private::openSelectedAttachments(const QList<QSharedPointer<
     }
 }
 
-void MessageViewer::Private::saveSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts)
+void MessageViewer::Private::saveSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &selectedParts)
 {
     Q_ASSERT(parser);
     Q_ASSERT(selectedParts.count() >= 1);
@@ -91,13 +92,13 @@ void MessageViewer::Private::saveSelectedAttachments(const QList<QSharedPointer<
     }
 }
 
-void MessageViewer::Private::importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &part)
+void MessageViewer::Private::importPublicKey(const QSharedPointer<MimeTreeParser::Core::MessagePart> &part)
 {
     Q_ASSERT(parser);
     parser->attachments()->importPublicKey(part);
 }
 
-void MessageViewer::Private::showContextMenu(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &selectedParts)
+void MessageViewer::Private::showContextMenu(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &selectedParts)
 {
     const int numberOfParts(selectedParts.count());
     QMenu menu;
@@ -127,13 +128,13 @@ void MessageViewer::Private::showContextMenu(const QList<QSharedPointer<MimeTree
     menu.exec(QCursor::pos());
 }
 
-QList<QSharedPointer<MimeTreeParser::MessagePart>> MessageViewer::Private::partsSelectedInView() const
+QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> MessageViewer::Private::partsSelectedInView() const
 {
     const QModelIndexList selectedRows = attachmentView->selectionModel()->selectedRows();
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> selectedMessageParts;
+    QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> selectedMessageParts;
     selectedMessageParts.reserve(selectedRows.count());
     for (const QModelIndex &index : selectedRows) {
-        auto part = attachmentView->model()->data(index, AttachmentModel::AttachmentPartRole).value<QSharedPointer<MimeTreeParser::MessagePart>>();
+        auto part = attachmentView->model()->data(index, AttachmentModel::AttachmentPartRole).value<QSharedPointer<MimeTreeParser::Core::MessagePart>>();
         selectedMessageParts.append(part);
     }
     return selectedMessageParts;
@@ -231,7 +232,7 @@ std::shared_ptr<KMime::Message> MessageViewer::message() const
     return d->parser ? d->parser->message() : std::shared_ptr<KMime::Message>{};
 }
 
-std::shared_ptr<MimeTreeParser::ObjectTreeParser> MessageViewer::parser() const
+std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> MessageViewer::parser() const
 {
     return d->parser ? d->parser->parser() : nullptr;
 }
@@ -256,7 +257,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             container->innerLayout()->addWidget(label);
             lay->addWidget(container);
 
-            connect(container, &MessageWidgetContainer::attachmentContextMenu, q, [this](const QSharedPointer<MimeTreeParser::MessagePart> part) {
+            connect(container, &MessageWidgetContainer::attachmentContextMenu, q, [this](const QSharedPointer<MimeTreeParser::Core::MessagePart> part) {
                 showContextMenu({part});
             });
 

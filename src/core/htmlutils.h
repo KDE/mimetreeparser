@@ -5,7 +5,7 @@
 
 #include <QString>
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 [[nodiscard]] QString linkify(const QString &in);
 }

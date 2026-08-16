@@ -14,14 +14,18 @@
 
 class QPainter;
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 class ObjectTreeParser;
+}
+
+namespace MimeTreeParser
+{
 
 namespace Widgets
 {
 /*!
- * \class MimeTreeParser::MessageViewer
+ * \class MimeTreeParser::Widgets::MessageViewer
  * \inmodule MimeTreeParserWidgets
  * \inheaderfile MimeTreeParserWidgets/MessageViewer
  *
@@ -61,7 +65,7 @@ public:
      *
      * \return A shared pointer to the ObjectTreeParser
      */
-    [[nodiscard]] std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser() const;
+    [[nodiscard]] std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> parser() const;
     /*!
      * \brief Returns whether a fixed width font is used
      * \return True if fixed font is enabled

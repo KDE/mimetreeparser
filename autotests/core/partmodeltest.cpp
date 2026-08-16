@@ -94,7 +94,7 @@ private Q_SLOTS:
         }
 
         auto encapsulatedIndex = partModel->index(1, 0);
-        auto encapsulatedPart = partModel->part<MimeTreeParser::EncapsulatedRfc822MessagePart>(encapsulatedIndex);
+        auto encapsulatedPart = partModel->part<MimeTreeParser::Core::EncapsulatedRfc822MessagePart>(encapsulatedIndex);
         QVERIFY(encapsulatedPart);
         QCOMPARE(encapsulatedPart->subject(), QStringLiteral("OpenPGP signed and encrypted"));
     }

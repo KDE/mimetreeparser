@@ -112,7 +112,7 @@ static bool linkify_okEmail(const QString &addy)
  * takes a richtext string and heuristically adds links for uris of common protocols
  * @return a richtext string with link markup added
  */
-QString MimeTreeParser::linkify(const QString &in)
+QString MimeTreeParser::Core::linkify(const QString &in)
 {
     QString out = in;
     int x1, x2;

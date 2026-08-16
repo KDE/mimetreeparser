@@ -36,6 +36,7 @@
 #include <mimetreeparser_widgets_debug.h>
 
 using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 using namespace Qt::Literals::StringLiterals;
 
 MessageViewerBasePrivate::MessageViewerBasePrivate(QWidget *qq)

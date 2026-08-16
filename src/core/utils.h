@@ -17,7 +17,7 @@
 
 #include "mimetreeparser_core_export.h"
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 [[nodiscard]] KMime::Content *findTypeInDirectChildren(KMime::Content *content, const QByteArray &mimeType);
 
