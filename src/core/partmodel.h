@@ -20,13 +20,13 @@ namespace QGpgME
 class Protocol;
 }
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 class ObjectTreeParser;
 }
 class PartModelPrivate;
 /*!
- * \class MimeTreeParser::PartModel
+ * \class PartModel
  * \inmodule MimeTreeParserCore
  * \inheaderfile MimeTreeParserCore/PartModel
  */
@@ -42,7 +42,7 @@ public:
      * \brief Constructs a PartModel
      * \param parser The object tree parser
      */
-    PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser, QObject *parent);
+    PartModel(std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> parser, QObject *parent);
     /*!
      * \brief Destroys the PartModel
      */
@@ -99,7 +99,7 @@ public:
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    template<typename T = MimeTreeParser::MessagePart>
+    template<typename T = MimeTreeParser::Core::MessagePart>
     [[nodiscard]] QSharedPointer<T> part(const QModelIndex &index) const
     {
         return messagePart(index).dynamicCast<T>();
@@ -141,13 +141,13 @@ public:
      * \param messagePart The message part to check
      * \return The signature security level
      */
-    static SecurityLevel signatureSecurityLevel(MimeTreeParser::MessagePart *messagePart);
+    static SecurityLevel signatureSecurityLevel(MimeTreeParser::Core::MessagePart *messagePart);
     /*!
      * \brief Returns the signature details for a message part
      * \param messagePart The message part to check
      * \return A string with signature details
      */
-    static QString signatureDetails(MimeTreeParser::MessagePart *messagePart);
+    static QString signatureDetails(MimeTreeParser::Core::MessagePart *messagePart);
 
 Q_SIGNALS:
     /*!
@@ -165,11 +165,11 @@ Q_SIGNALS:
 
 private:
     std::unique_ptr<PartModelPrivate> d;
-    QSharedPointer<MimeTreeParser::MessagePart> messagePart(const QModelIndex &index) const;
+    QSharedPointer<MimeTreeParser::Core::MessagePart> messagePart(const QModelIndex &index) const;
 };
 
 /*!
- * \class MimeTreeParser::SignatureInfo
+ * \class SignatureInfo
  * \inmodule MimeTreeParserCore
  * \inheaderfile MimeTreeParserCore/PartModel
  * \brief Contains information about a message signature

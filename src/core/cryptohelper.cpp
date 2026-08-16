@@ -18,7 +18,7 @@
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/verificationresult.h>
 
-using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 
 PGPBlockType Block::determineType() const
 {
@@ -48,7 +48,7 @@ PGPBlockType Block::determineType() const
     }
 }
 
-QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
+QList<Block> MimeTreeParser::Core::prepareMessageForDecryption(const QByteArray &msg)
 {
     PGPBlockType pgpBlock = NoPgpBlock;
     QList<Block> blocks;
@@ -148,7 +148,7 @@ Block::Block(const QByteArray &m, PGPBlockType t)
 {
 }
 
-QByteArray MimeTreeParser::Block::text() const
+QByteArray MimeTreeParser::Core::Block::text() const
 {
     return msg;
 }
@@ -184,7 +184,7 @@ void copyHeader(const KMime::Headers::Base *header, KMime::Content *msg)
 // representation. Those, we want to keep, the others we can strip.
 /////////////////////////////////////////////////////////////////////
 
-static QSet<KMime::Content *> representedNodes(MimeTreeParser::MessagePart *part)
+static QSet<KMime::Content *> representedNodes(MimeTreeParser::Core::MessagePart *part)
 {
     QSet<KMime::Content *> ret;
     ret.insert(part->node());
@@ -216,9 +216,10 @@ static void copyMissingHeaders(const KMime::Content *from, KMime::Content *to)
     }
 }
 
-static void decryptNodes(MimeTreeParser::MessagePart *part, const QSet<KMime::Content *> &nonRemovableNodes, bool &wasEncrypted, MessagePart::Error &error)
+static void
+decryptNodes(MimeTreeParser::Core::MessagePart *part, const QSet<KMime::Content *> &nonRemovableNodes, bool &wasEncrypted, MessagePart::Error &error)
 {
-    if (auto enc = qobject_cast<MimeTreeParser::EncryptedMessagePart *>(part)) {
+    if (auto enc = qobject_cast<MimeTreeParser::Core::EncryptedMessagePart *>(part)) {
         wasEncrypted = true;
         if (enc->error()) {
             error = enc->error();
@@ -255,7 +256,7 @@ static void decryptNodes(MimeTreeParser::MessagePart *part, const QSet<KMime::Co
                 decryptedNode->parse(); // Do this _after_ the node has a parent, and thereby depth()
             }
         }
-    } else if (auto text = qobject_cast<MimeTreeParser::TextMessagePart *>(part)) {
+    } else if (auto text = qobject_cast<MimeTreeParser::Core::TextMessagePart *>(part)) {
         if (text->encryptionState()) {
             wasEncrypted = true;
         }
@@ -284,7 +285,7 @@ std::shared_ptr<KMime::Message> CryptoUtils::decryptMessage(const std::shared_pt
 {
     auto decryptedCopy = std::shared_ptr<KMime::Message>(static_cast<KMime::Message *>(message->clone().release()));
 
-    MimeTreeParser::ObjectTreeParser otp;
+    MimeTreeParser::Core::ObjectTreeParser otp;
     otp.parseObjectTree(decryptedCopy.get());
     otp.decryptAndVerify();
 

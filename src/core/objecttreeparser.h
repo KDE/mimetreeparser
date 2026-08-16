@@ -19,11 +19,11 @@ namespace KMime
 class Content;
 }
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 
 /*!
-    \class MimeTreeParser::ObjectTreeParser
+    \class MimeTreeParser::Core::ObjectTreeParser
     \inmodule MimeTreeParserCore
     \inheaderfile MimeTreeParserCore/ObjectTreeParser
 

@@ -15,12 +15,12 @@
 #include <KMime/Content>
 #include <QGpgME/Protocol>
 
-using namespace MimeTreeParser;
-using namespace MimeTreeParser::Interface;
+using namespace MimeTreeParser::Core;
+using namespace MimeTreeParser::Core::Interface;
 using namespace Qt::Literals::StringLiterals;
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
-class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class AnyTypeBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
     {
@@ -39,7 +39,7 @@ class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartForma
     }
 };
 
-class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class MessageRfc822BodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -48,7 +48,7 @@ public:
     }
 };
 
-class HeadersBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class HeadersBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -57,7 +57,7 @@ public:
     }
 };
 
-class MultiPartRelatedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class MultiPartRelatedBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QList<QSharedPointer<MessagePart>> processList(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -103,7 +103,7 @@ contentsAsEncryptedMessagePart(ObjectTreeParser *objectTreeParser, KMime::Conten
     return {};
 }
 
-class MultiPartMixedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class MultiPartMixedBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -153,7 +153,7 @@ public:
     }
 };
 
-class ApplicationPGPEncryptedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class ApplicationPGPEncryptedBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -178,7 +178,7 @@ public:
     }
 };
 
-class ApplicationPkcs7MimeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class ApplicationPkcs7MimeBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -265,7 +265,7 @@ public:
     }
 };
 
-class MultiPartAlternativeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class MultiPartAlternativeBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -282,7 +282,7 @@ public:
     }
 };
 
-class MultiPartEncryptedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class MultiPartEncryptedBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -320,7 +320,7 @@ public:
     }
 };
 
-class MultiPartSignedBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class MultiPartSignedBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     static const QGpgME::Protocol *detectProtocol(const QString &protocolContentType_, const QString &signatureContentType)
@@ -370,7 +370,7 @@ public:
     }
 };
 
-class TextHtmlBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class TextHtmlBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override
@@ -379,7 +379,7 @@ public:
     }
 };
 
-class TextPlainBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
+class TextPlainBodyPartFormatter : public MimeTreeParser::Core::Interface::BodyPartFormatter
 {
 public:
     QSharedPointer<MessagePart> process(ObjectTreeParser *objectTreeParser, KMime::Content *node) const override

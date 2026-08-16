@@ -21,10 +21,10 @@
 
 #include <gpgme++/verificationresult.h>
 using namespace Qt::Literals::StringLiterals;
-static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::MessagePart *messagePart)
+static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::Core::MessagePart *messagePart)
 {
     const auto signatureState = messagePart->signatureState();
-    const bool messageIsSigned = signatureState == MimeTreeParser::KMMsgFullySigned;
+    const bool messageIsSigned = signatureState == MimeTreeParser::Core::KMMsgFullySigned;
 
     if (!messageIsSigned) {
         return std::nullopt;
@@ -117,7 +117,7 @@ static QString addCss(const QString &s)
 class PartModelPrivate
 {
 public:
-    PartModelPrivate(PartModel *q_ptr, const std::shared_ptr<MimeTreeParser::ObjectTreeParser> &parser)
+    PartModelPrivate(PartModel *q_ptr, const std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> &parser)
         : q(q_ptr)
         , mParser(parser)
     {
@@ -126,7 +126,7 @@ public:
 
     ~PartModelPrivate() = default;
 
-    void checkPart(const QSharedPointer<MimeTreeParser::MessagePart> part)
+    void checkPart(const QSharedPointer<MimeTreeParser::Core::MessagePart> part)
     {
         mMimeTypeCache[part.data()] = part->mimeType();
         // Extract the content of the part and
@@ -134,22 +134,22 @@ public:
     }
 
     // Recursively find encapsulated messages
-    void findEncapsulated(const QSharedPointer<MimeTreeParser::EncapsulatedRfc822MessagePart> &e)
+    void findEncapsulated(const QSharedPointer<MimeTreeParser::Core::EncapsulatedRfc822MessagePart> &e)
     {
         mEncapsulatedParts[e.data()] = mParser->collectContentParts(e);
         for (const auto &subPart : std::as_const(mEncapsulatedParts[e.data()])) {
             checkPart(subPart);
             mParents[subPart.data()] = e.data();
-            if (auto encapsulatedSub = subPart.dynamicCast<MimeTreeParser::EncapsulatedRfc822MessagePart>()) {
+            if (auto encapsulatedSub = subPart.dynamicCast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart>()) {
                 findEncapsulated(encapsulatedSub);
             }
         }
     }
 
-    QVariant extractContent(MimeTreeParser::MessagePart *messagePart)
+    QVariant extractContent(MimeTreeParser::Core::MessagePart *messagePart)
     {
-        if (auto alternativePart = dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(messagePart)) {
-            if (alternativePart->availableModes().contains(MimeTreeParser::AlternativeMessagePart::MultipartIcal)) {
+        if (auto alternativePart = dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(messagePart)) {
+            if (alternativePart->availableModes().contains(MimeTreeParser::Core::AlternativeMessagePart::MultipartIcal)) {
                 return alternativePart->icalContent();
             }
         }
@@ -171,13 +171,13 @@ public:
                 const auto result = PartModel::trim(html);
                 isTrimmed = result.second;
                 Q_EMIT q->trimMailChanged();
-                return MimeTreeParser::linkify(result.first);
+                return MimeTreeParser::Core::linkify(result.first);
             }
-            return MimeTreeParser::linkify(html);
+            return MimeTreeParser::Core::linkify(html);
         };
 
         if (messagePart->isHtml()) {
-            if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(messagePart)) {
+            if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(messagePart)) {
                 containsHtmlAndPlain = true;
                 Q_EMIT q->containsHtmlChanged();
                 if (!showHtml) {
@@ -187,7 +187,7 @@ public:
             return addCss(mParser->resolveCidLinks(messagePart->htmlContent()));
         }
 
-        if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
+        if (auto attachmentPart = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(messagePart)) {
             auto node = attachmentPart->node();
             if (node && mMimeTypeCache[attachmentPart] == "text/calendar"_ba) {
                 return node->decodedBody();
@@ -197,7 +197,7 @@ public:
         return preprocessPlaintext(messagePart->text());
     }
 
-    QVariant contentForPart(MimeTreeParser::MessagePart *messagePart) const
+    QVariant contentForPart(MimeTreeParser::Core::MessagePart *messagePart) const
     {
         return mContents.value(messagePart);
     }
@@ -211,7 +211,7 @@ public:
         isTrimmed = false;
 
         const auto parts = mParser->collectContentParts();
-        QList<QSharedPointer<MimeTreeParser::MessagePart>> filteredParts;
+        QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> filteredParts;
 
         for (const auto &part : parts) {
             if (part->node()) {
@@ -229,7 +229,7 @@ public:
 
         for (const auto &part : std::as_const(filteredParts)) {
             checkPart(part);
-            if (auto encapsulatedPart = part.dynamicCast<MimeTreeParser::EncapsulatedRfc822MessagePart>()) {
+            if (auto encapsulatedPart = part.dynamicCast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart>()) {
                 findEncapsulated(encapsulatedPart);
             }
         }
@@ -244,19 +244,19 @@ public:
     }
 
     PartModel *const q;
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> mParts;
-    QHash<MimeTreeParser::MessagePart *, QByteArray> mMimeTypeCache;
-    QHash<MimeTreeParser::MessagePart *, QList<QSharedPointer<MimeTreeParser::MessagePart>>> mEncapsulatedParts;
-    QHash<MimeTreeParser::MessagePart *, MimeTreeParser::MessagePart *> mParents;
-    QMap<MimeTreeParser::MessagePart *, QVariant> mContents;
-    std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
+    QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> mParts;
+    QHash<MimeTreeParser::Core::MessagePart *, QByteArray> mMimeTypeCache;
+    QHash<MimeTreeParser::Core::MessagePart *, QList<QSharedPointer<MimeTreeParser::Core::MessagePart>>> mEncapsulatedParts;
+    QHash<MimeTreeParser::Core::MessagePart *, MimeTreeParser::Core::MessagePart *> mParents;
+    QMap<MimeTreeParser::Core::MessagePart *, QVariant> mContents;
+    std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> mParser;
     bool showHtml{false};
     bool containsHtmlAndPlain{false};
     bool trimMail{false};
     bool isTrimmed{false};
 };
 
-PartModel::PartModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser, QObject *parent)
+PartModel::PartModel(std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> parser, QObject *parent)
     : QAbstractItemModel(parent)
     , d(std::unique_ptr<PartModelPrivate>(new PartModelPrivate(this, parser)))
 {
@@ -333,8 +333,8 @@ QModelIndex PartModel::index(int row, int column, const QModelIndex &parent) con
         return QModelIndex();
     }
     if (parent.isValid()) {
-        const auto part = static_cast<MimeTreeParser::MessagePart *>(parent.internalPointer());
-        auto encapsulatedPart = dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(part);
+        const auto part = static_cast<MimeTreeParser::Core::MessagePart *>(parent.internalPointer());
+        auto encapsulatedPart = dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(part);
 
         if (encapsulatedPart) {
             const auto parts = d->mEncapsulatedParts[encapsulatedPart];
@@ -350,7 +350,7 @@ QModelIndex PartModel::index(int row, int column, const QModelIndex &parent) con
     return QModelIndex();
 }
 
-SignatureInfo encryptionInfo(MimeTreeParser::MessagePart *messagePart)
+SignatureInfo encryptionInfo(MimeTreeParser::Core::MessagePart *messagePart)
 {
     SignatureInfo signatureInfo;
     const auto encryptions = messagePart->encryptions();
@@ -377,7 +377,7 @@ const T *findHeader(const KMime::Content *content)
     return findHeader<T>(content->parent());
 }
 
-PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::MessagePart *messagePart)
+PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::Core::MessagePart *messagePart)
 {
     auto signature = signatureFromMessagePart(messagePart);
     if (!signature) {
@@ -399,7 +399,7 @@ PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::Messa
     return SecurityLevel::NotSoGood;
 }
 
-QString PartModel::signatureDetails(MimeTreeParser::MessagePart *messagePart)
+QString PartModel::signatureDetails(MimeTreeParser::Core::MessagePart *messagePart)
 {
     auto signature = signatureFromMessagePart(messagePart);
     if (!signature) {
@@ -423,15 +423,15 @@ QString PartModel::signatureDetails(MimeTreeParser::MessagePart *messagePart)
     return Kleo::Formatting::prettySignature(*signature, {});
 }
 
-static bool isEncapsulatingPart(MimeTreeParser::MessagePart *part)
+static bool isEncapsulatingPart(MimeTreeParser::Core::MessagePart *part)
 {
-    return qobject_cast<MimeTreeParser::SignedMessagePart *>(part) || qobject_cast<MimeTreeParser::EncryptedMessagePart *>(part)
-        || qobject_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(part);
+    return qobject_cast<MimeTreeParser::Core::SignedMessagePart *>(part) || qobject_cast<MimeTreeParser::Core::EncryptedMessagePart *>(part)
+        || qobject_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(part);
 }
 
-static QList<QSharedPointer<MimeTreeParser::MessagePart>> getAttachmentChildParts(MimeTreeParser::MessagePart *parentPart)
+static QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> getAttachmentChildParts(MimeTreeParser::Core::MessagePart *parentPart)
 {
-    QList<QSharedPointer<MimeTreeParser::MessagePart>> ret;
+    QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> ret;
     for (auto sub : parentPart->subParts()) {
         if (sub->isAttachment()) {
             ret.append(sub);
@@ -442,7 +442,7 @@ static QList<QSharedPointer<MimeTreeParser::MessagePart>> getAttachmentChildPart
     return ret;
 }
 
-static MimeTreeParser::MessagePart *encapsulatingPart(MimeTreeParser::MessagePart *part)
+static MimeTreeParser::Core::MessagePart *encapsulatingPart(MimeTreeParser::Core::MessagePart *part)
 {
     auto parent = part;
     while (parent->parentPart() && !isEncapsulatingPart(parent)) {
@@ -458,20 +458,20 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
     }
 
     if (index.internalPointer()) {
-        const auto messagePart = static_cast<MimeTreeParser::MessagePart *>(index.internalPointer());
+        const auto messagePart = static_cast<MimeTreeParser::Core::MessagePart *>(index.internalPointer());
         // qWarning() << "Found message part " << messagePart->metaObject()->className() << messagePart->partMetaData()->status << messagePart->error();
         Q_ASSERT(messagePart);
         switch (role) {
         case Qt::DisplayRole:
             return u"Content%1"_s;
         case SenderRole: {
-            if (auto e = dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(messagePart)) {
+            if (auto e = dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(messagePart)) {
                 return e->from();
             }
             return {};
         }
         case DateRole: {
-            if (auto e = dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(messagePart)) {
+            if (auto e = dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(messagePart)) {
                 return e->date();
             }
             return {};
@@ -480,15 +480,15 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             if (messagePart->error()) {
                 return QVariant::fromValue(Types::Error);
             }
-            if (dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(messagePart)) {
+            if (dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(messagePart)) {
                 return QVariant::fromValue(Types::Encapsulated);
             }
-            if (auto alternativePart = dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(messagePart)) {
-                if (alternativePart->availableModes().contains(MimeTreeParser::AlternativeMessagePart::MultipartIcal)) {
+            if (auto alternativePart = dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(messagePart)) {
+                if (alternativePart->availableModes().contains(MimeTreeParser::Core::AlternativeMessagePart::MultipartIcal)) {
                     return QVariant::fromValue(Types::Ical);
                 }
             }
-            if (auto attachmentPart = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(messagePart)) {
+            if (auto attachmentPart = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(messagePart)) {
                 auto node = attachmentPart->node();
                 if (!node) {
                     qWarning() << "no content for attachment";
@@ -546,7 +546,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             auto parentPart = encapsulatingPart(messagePart);
             // only show attachments after the last content part in a given parent
             if (index.row() < rowCount(parent(index)) - 1) {
-                auto nextPart = static_cast<MimeTreeParser::MessagePart *>(this->index(index.row() + 1, 0, parent(index)).internalPointer());
+                auto nextPart = static_cast<MimeTreeParser::Core::MessagePart *>(this->index(index.row() + 1, 0, parent(index)).internalPointer());
                 if (nextPart && encapsulatingPart(nextPart) == parentPart) {
                     return QVariant();
                 }
@@ -578,7 +578,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         case EncryptionSecurityLevelRole: {
             // Color displayed for the encryption info box
             const auto encryption = messagePart->encryptionState();
-            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgFullyEncrypted;
+            const bool messageIsEncrypted = encryption == MimeTreeParser::Core::KMMsgFullyEncrypted;
 
             if (messagePart->error()) {
                 return SecurityLevel::Bad;
@@ -588,7 +588,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
         }
         case EncryptionIconNameRole: {
             const auto encryption = messagePart->encryptionState();
-            const bool messageIsEncrypted = encryption == MimeTreeParser::KMMsgFullyEncrypted;
+            const bool messageIsEncrypted = encryption == MimeTreeParser::Core::KMMsgFullyEncrypted;
 
             if (messagePart->error()) {
                 return u"data-error"_s;
@@ -619,8 +619,8 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return messagePart->error();
         case ErrorString: {
             switch (messagePart->error()) {
-            case MimeTreeParser::MessagePart::NoKeyError: {
-                if (auto encryptedMessagePart = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(messagePart)) {
+            case MimeTreeParser::Core::MessagePart::NoKeyError: {
+                if (auto encryptedMessagePart = dynamic_cast<MimeTreeParser::Core::EncryptedMessagePart *>(messagePart)) {
                     if (encryptedMessagePart->isNoSecKey()) {
                         QString errorMessage = i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
                         if (!encryptedMessagePart->decryptRecipients().empty()) {
@@ -631,7 +631,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                                           "The message is encrypted for the following recipients:",
                                           encryptedMessagePart->decryptRecipients().size());
                             errorMessage +=
-                                MimeTreeParser::decryptRecipientsToHtml(encryptedMessagePart->decryptRecipients(), encryptedMessagePart->cryptoProto());
+                                MimeTreeParser::Core::decryptRecipientsToHtml(encryptedMessagePart->decryptRecipients(), encryptedMessagePart->cryptoProto());
                         }
                         return errorMessage;
                     }
@@ -640,11 +640,11 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
 
                 return messagePart->errorString();
 
-            case MimeTreeParser::MessagePart::UserCancelled:
+            case MimeTreeParser::Core::MessagePart::UserCancelled:
                 return i18ndc("mimetreeparser", "@info:status", "Decryption was canceled");
-            case MimeTreeParser::MessagePart::PassphraseError:
+            case MimeTreeParser::Core::MessagePart::PassphraseError:
                 return i18ndc("mimetreeparser", "@info:status", "Wrong passphrase");
-            case MimeTreeParser::MessagePart::UnknownError:
+            case MimeTreeParser::Core::MessagePart::UnknownError:
                 break;
             default:
                 break;
@@ -659,7 +659,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
 QModelIndex PartModel::parent(const QModelIndex &index) const
 {
     if (index.isValid()) {
-        if (auto indexPart = static_cast<MimeTreeParser::MessagePart *>(index.internalPointer())) {
+        if (auto indexPart = static_cast<MimeTreeParser::Core::MessagePart *>(index.internalPointer())) {
             for (const auto &part : std::as_const(d->mParts)) {
                 if (part.data() == indexPart) {
                     return QModelIndex();
@@ -685,8 +685,8 @@ QModelIndex PartModel::parent(const QModelIndex &index) const
 int PartModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
-        const auto part = static_cast<MimeTreeParser::MessagePart *>(parent.internalPointer());
-        auto encapsulatedPart = dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(part);
+        const auto part = static_cast<MimeTreeParser::Core::MessagePart *>(parent.internalPointer());
+        auto encapsulatedPart = dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(part);
 
         if (encapsulatedPart) {
             const auto parts = d->mEncapsulatedParts[encapsulatedPart];
@@ -702,10 +702,10 @@ int PartModel::columnCount(const QModelIndex &) const
     return 1;
 }
 
-QSharedPointer<MimeTreeParser::MessagePart> PartModel::messagePart(const QModelIndex &index) const
+QSharedPointer<MimeTreeParser::Core::MessagePart> PartModel::messagePart(const QModelIndex &index) const
 {
     if (index.isValid()) {
-        auto nakedPointer = static_cast<MimeTreeParser::MessagePart *>(index.internalPointer());
+        auto nakedPointer = static_cast<MimeTreeParser::Core::MessagePart *>(index.internalPointer());
         for (const auto &sharedPointer : std::as_const(d->mParts)) {
             if (sharedPointer.data() == nakedPointer) {
                 return sharedPointer;

@@ -27,7 +27,7 @@ namespace QGpgME
 class Protocol;
 }
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 
 class ObjectTreeParser;
@@ -37,7 +37,7 @@ class AlternativeMessagePart;
 class SignedMessagePart;
 class EncryptedMessagePart;
 /*!
- * \class MimeTreeParser::MessagePart
+ * \class MimeTreeParser::Core::MessagePart
  * \inmodule MimeTreeParserCore
  * \inheaderfile MimeTreeParserCore/MessagePart
  */
@@ -280,7 +280,7 @@ public:
      * \param node The MIME content node
      * \param onlyOneMimePart If true, only parse one MIME part
      */
-    MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart = false);
+    MimeMessagePart(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart = false);
     /*!
      * \brief Destroys the MimeMessagePart
      */
@@ -316,7 +316,7 @@ public:
      * \param otp The object tree parser
      * \param node The MIME content node
      */
-    MessagePartList(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
+    MessagePartList(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node);
     /*!
      * \brief Destroys the MessagePartList
      */
@@ -345,7 +345,7 @@ public:
      * \param otp The object tree parser
      * \param node The MIME content node
      */
-    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
+    TextMessagePart(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node);
     /*!
      * \brief Destroys the TextMessagePart
      */
@@ -364,7 +364,7 @@ public:
      * \param otp The object tree parser
      * \param node The MIME content node
      */
-    AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
+    AttachmentMessagePart(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node);
     /*!
      * \brief Destroys the AttachmentMessagePart
      */
@@ -388,7 +388,7 @@ public:
      * \param otp The object tree parser
      * \param node The MIME content node
      */
-    HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
+    HtmlMessagePart(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node);
 
     /*!
      * \brief Destroys the HtmlMessagePart
@@ -421,7 +421,7 @@ public:
      * \param otp The object tree parser
      * \param node The MIME content node
      */
-    AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node);
+    AlternativeMessagePart(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node);
     /*!
      * \brief Destroys the AlternativeMessagePart
      */
@@ -478,7 +478,7 @@ public:
      * \param node The MIME content node
      * \param cryptoProto The cryptography protocol handler
      */
-    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, QGpgME::Protocol *cryptoProto);
+    CertMessagePart(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node, QGpgME::Protocol *cryptoProto);
     /*!
      * \brief Destroys the CertMessagePart
      */
@@ -505,7 +505,7 @@ public:
      * \param node The MIME content node
      * \param message The RFC 822 message
      */
-    EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const std::shared_ptr<KMime::Message> &message);
+    EncapsulatedRfc822MessagePart(MimeTreeParser::Core::ObjectTreeParser *otp, KMime::Content *node, const std::shared_ptr<KMime::Message> &message);
     /*!
      * \brief Destroys the EncapsulatedRfc822MessagePart
      */

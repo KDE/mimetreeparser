@@ -22,7 +22,7 @@
 #include <QTextStream>
 #include <QUrl>
 
-using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 using namespace Qt::Literals::StringLiterals;
 /*
  * Collect message parts bottom up.
@@ -64,10 +64,10 @@ QString ObjectTreeParser::plainTextContent()
                 if (part->isAttachment()) {
                     return false;
                 }
-                if (dynamic_cast<MimeTreeParser::TextMessagePart *>(part.data())) {
+                if (dynamic_cast<MimeTreeParser::Core::TextMessagePart *>(part.data())) {
                     return true;
                 }
-                if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
+                if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
                     return true;
                 }
                 return false;
@@ -89,16 +89,16 @@ QString ObjectTreeParser::htmlContent()
                 return true;
             },
             [](const QSharedPointer<MessagePart> &part) {
-                if (dynamic_cast<MimeTreeParser::HtmlMessagePart *>(part.data())) {
+                if (dynamic_cast<MimeTreeParser::Core::HtmlMessagePart *>(part.data())) {
                     return true;
                 }
-                if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
+                if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
                     return true;
                 }
                 return false;
             });
         for (const auto &part : std::as_const(contentParts)) {
-            if (auto p = dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
+            if (auto p = dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
                 content += p->htmlContent();
             } else {
                 content += part->text();
@@ -118,7 +118,7 @@ bool ObjectTreeParser::hasEncryptedParts() const
             return true;
         },
         [&result](const QSharedPointer<MessagePart> &part) {
-            if (dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(part.data())) {
+            if (dynamic_cast<MimeTreeParser::Core::EncryptedMessagePart *>(part.data())) {
                 result = true;
             }
             return false;
@@ -137,7 +137,7 @@ bool ObjectTreeParser::hasSignedParts() const
             return true;
         },
         [&result](const QSharedPointer<MessagePart> &part) {
-            if (dynamic_cast<MimeTreeParser::SignedMessagePart *>(part.data())) {
+            if (dynamic_cast<MimeTreeParser::Core::SignedMessagePart *>(part.data())) {
                 result = true;
             }
             return false;
@@ -228,19 +228,19 @@ QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(QShared
             if (start.data() == part.data()) {
                 return true;
             }
-            if (auto encapsulatedPart = part.dynamicCast<MimeTreeParser::EncapsulatedRfc822MessagePart>()) {
+            if (auto encapsulatedPart = part.dynamicCast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart>()) {
                 return false;
             }
             return true;
         },
         [start](const QSharedPointer<MessagePart> &part) {
-            if (const auto attachment = dynamic_cast<MimeTreeParser::AttachmentMessagePart *>(part.data())) {
+            if (const auto attachment = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(part.data())) {
                 return attachment->mimeType() == "text/calendar"_ba;
-            } else if (dynamic_cast<MimeTreeParser::AlternativeMessagePart *>(part.data())) {
+            } else if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
                 return true;
-            } else if (dynamic_cast<MimeTreeParser::HeadersPart *>(part.data())) {
+            } else if (dynamic_cast<MimeTreeParser::Core::HeadersPart *>(part.data())) {
                 return false;
-            } else if (dynamic_cast<MimeTreeParser::EncapsulatedRfc822MessagePart *>(part.data())) {
+            } else if (dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(part.data())) {
                 if (start.data() == part.data()) {
                     return false;
                 }
@@ -276,7 +276,7 @@ void ObjectTreeParser::decryptAndVerify()
             return true;
         },
         [](const QSharedPointer<MessagePart> &part) {
-            if (const auto enc = dynamic_cast<MimeTreeParser::EncryptedMessagePart *>(part.data())) {
+            if (const auto enc = dynamic_cast<MimeTreeParser::Core::EncryptedMessagePart *>(part.data())) {
                 enc->startDecryption();
             }
             return false;
@@ -288,7 +288,7 @@ void ObjectTreeParser::decryptAndVerify()
             return true;
         },
         [](const QSharedPointer<MessagePart> &part) {
-            if (const auto enc = dynamic_cast<MimeTreeParser::SignedMessagePart *>(part.data())) {
+            if (const auto enc = dynamic_cast<MimeTreeParser::Core::SignedMessagePart *>(part.data())) {
                 enc->startVerification();
             }
             return false;
@@ -373,7 +373,7 @@ QSharedPointer<MessagePart> ObjectTreeParser::parsedPart() const
  */
 QList<QSharedPointer<MessagePart>> ObjectTreeParser::processType(KMime::Content *node, const QByteArray &mediaType, const QByteArray &subType)
 {
-    static MimeTreeParser::BodyPartFormatterBaseFactory factory;
+    static MimeTreeParser::Core::BodyPartFormatterBaseFactory factory;
     const auto sub = factory.subtypeRegistry(mediaType.constData());
     const auto range = sub.equal_range(subType.constData());
     for (auto it = range.first; it != range.second; ++it) {

@@ -11,9 +11,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <Libkleo/DnAttributes>
 #include <Libkleo/Formatting>
 
-using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 
-KMime::Content *MimeTreeParser::findTypeInDirectChildren(KMime::Content *content, const QByteArray &mimeType)
+KMime::Content *MimeTreeParser::Core::findTypeInDirectChildren(KMime::Content *content, const QByteArray &mimeType)
 {
     const auto contents = content->contents();
     for (const auto child : contents) {
@@ -24,8 +24,8 @@ KMime::Content *MimeTreeParser::findTypeInDirectChildren(KMime::Content *content
     return nullptr;
 }
 
-QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &recipients,
-                                                const QGpgME::Protocol *cryptoProto)
+QString MimeTreeParser::Core::decryptRecipientsToHtml(const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &recipients,
+                                                      const QGpgME::Protocol *cryptoProto)
 {
     QString text = u"<ul>"_s;
     for (const auto &recipientIt : recipients) {
@@ -53,7 +53,7 @@ QString MimeTreeParser::decryptRecipientsToHtml(const std::vector<std::pair<GpgM
     return text;
 }
 
-QString MimeTreeParser::dnToDisplayName(const QGpgME::DN &dn)
+QString MimeTreeParser::Core::dnToDisplayName(const QGpgME::DN &dn)
 {
     QString displayName = dn[u"CN"_s];
     if (displayName.isEmpty()) {

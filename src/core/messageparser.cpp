@@ -57,7 +57,7 @@ QString mailboxesToHtml(const QList<KMime::Types::Mailbox> &mailboxes)
 class MessagePartPrivate
 {
 public:
-    std::shared_ptr<MimeTreeParser::ObjectTreeParser> mParser;
+    std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> mParser;
     std::shared_ptr<KMime::Message> mMessage;
     KMime::Content *protectedHeaderNode = nullptr;
     std::unique_ptr<KMime::Content> ownedContent;
@@ -91,7 +91,7 @@ void MessageParser::setMessage(const std::shared_ptr<KMime::Message> message)
 
     QElapsedTimer time;
     time.start();
-    auto parser = std::make_shared<MimeTreeParser::ObjectTreeParser>();
+    auto parser = std::make_shared<MimeTreeParser::Core::ObjectTreeParser>();
     parser->parseObjectTree(message.get());
     qCDebug(MIMETREEPARSER_CORE_LOG) << "Message parsing took: " << time.elapsed();
     parser->decryptAndVerify();
@@ -124,7 +124,7 @@ void MessageParser::setMessage(const std::shared_ptr<KMime::Message> message)
     Q_EMIT htmlChanged();
 }
 
-std::shared_ptr<MimeTreeParser::ObjectTreeParser> MessageParser::parser() const
+std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> MessageParser::parser() const
 {
     return d->mParser;
 }

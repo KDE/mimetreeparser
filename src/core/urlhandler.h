@@ -9,7 +9,7 @@
 #include <QObject>
 #include <QWindow>
 /*!
- * \class MimeTreeParser::UrlHandler
+ * \class UrlHandler
  * \inmodule MimeTreeParserCore
  * \inheaderfile MimeTreeParserCore/UrlHandler
  */

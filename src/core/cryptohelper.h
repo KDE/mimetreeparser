@@ -14,7 +14,7 @@
 #include <QList>
 #include <gpgme++/global.h>
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 enum PGPBlockType {
     UnknownBlock = -1, // BEGIN PGP ???
@@ -27,7 +27,7 @@ enum PGPBlockType {
     PrivateKeyBlock = 6, // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
 };
 /*!
- * \class MimeTreeParser::Block
+ * \class MimeTreeParser::Core::Block
  * \inmodule MimeTreeParserCore
  * \inheaderfile MimeTreeParserCore/CryptoHelper
  */
@@ -82,6 +82,6 @@ namespace CryptoUtils
 decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, MessagePart::Error &error);
 }
 
-} // namespace MimeTreeParser
+} // namespace MimeTreeParser::Core
 
-Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(MimeTreeParser::Core::Block, Q_RELOCATABLE_TYPE);

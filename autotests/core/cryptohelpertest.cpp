@@ -10,6 +10,7 @@
 #include <QTest>
 
 using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 using namespace Qt::Literals::StringLiterals;
 
 static QByteArray readMailFromFile(const QString &mailFile)
@@ -204,7 +205,7 @@ void CryptoHelperTest::testDecryptInlineMessage()
                         "asdasd asd asd asdf sadf sdaf sadf \xF6\xE4\xFC\nNot signed.\n"));
 }
 
-static bool hasEncryptedContents(QSharedPointer<MimeTreeParser::MessagePart> part)
+static bool hasEncryptedContents(QSharedPointer<MimeTreeParser::Core::MessagePart> part)
 {
     const auto subparts = part->subParts();
     for (const auto &subpart : subparts) {
@@ -212,7 +213,7 @@ static bool hasEncryptedContents(QSharedPointer<MimeTreeParser::MessagePart> par
             return true;
         }
     }
-    return part.dynamicCast<MimeTreeParser::EncryptedMessagePart>().get();
+    return part.dynamicCast<MimeTreeParser::Core::EncryptedMessagePart>().get();
 }
 
 void CryptoHelperTest::testSaveDecrypted_data()
@@ -236,7 +237,7 @@ void CryptoHelperTest::testSaveDecrypted()
     QFETCH(bool, hasInlinePGPBlocks);
     const auto originalMessage = MimeTreeParser::Core::FileOpener::openFile(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile).value(0);
 
-    MimeTreeParser::ObjectTreeParser originalOtp;
+    MimeTreeParser::Core::ObjectTreeParser originalOtp;
     originalOtp.parseObjectTree(originalMessage.get());
     originalOtp.decryptAndVerify();
     const auto originalContents = originalOtp.collectContentParts();
@@ -245,7 +246,7 @@ void CryptoHelperTest::testSaveDecrypted()
     MessagePart::Error error = MessagePart::NoError;
     const auto decryptedMessage = CryptoUtils::decryptMessage(originalMessage, wasEncrypted, error);
 
-    MimeTreeParser::ObjectTreeParser decryptedOtp;
+    MimeTreeParser::Core::ObjectTreeParser decryptedOtp;
     decryptedOtp.parseObjectTree(decryptedMessage.get());
     decryptedOtp.decryptAndVerify(); // we still need to verify signatures
     QVERIFY(!hasEncryptedContents(decryptedOtp.parsedPart()));

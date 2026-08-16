@@ -8,7 +8,7 @@
 #include <memory>
 #include <optional>
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 class BodyPartFormatterBaseFactory;
 

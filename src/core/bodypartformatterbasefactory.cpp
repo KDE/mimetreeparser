@@ -8,7 +8,7 @@
 
 #include <assert.h>
 
-using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 
 BodyPartFormatterBaseFactoryPrivate::BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory)
     : q(factory)

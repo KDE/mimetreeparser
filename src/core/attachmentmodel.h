@@ -11,13 +11,13 @@
 
 #include <memory>
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 class ObjectTreeParser;
 }
 class AttachmentModelPrivate;
 /*!
- * \class MimeTreeParser::AttachmentModel
+ * \class AttachmentModel
  * \inmodule MimeTreeParserCore
  * \inheaderfile MimeTreeParserCore/AttachmentModel
  */
@@ -29,7 +29,7 @@ public:
      * \brief AttachmentModel
      * \param parser
      */
-    explicit AttachmentModel(std::shared_ptr<MimeTreeParser::ObjectTreeParser> parser);
+    explicit AttachmentModel(std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> parser);
     /*!
      */
     ~AttachmentModel() override;
@@ -96,12 +96,12 @@ public:
      * \brief Opens the attachment from the message part
      * \param message The message part containing the attachment
      */
-    bool openAttachment(const QSharedPointer<MimeTreeParser::MessagePart> &message);
+    bool openAttachment(const QSharedPointer<MimeTreeParser::Core::MessagePart> &message);
     /*!
      * \brief Imports the public key from the message part
      * \param message The message part containing the public key
      */
-    bool importPublicKey(const QSharedPointer<MimeTreeParser::MessagePart> &message);
+    bool importPublicKey(const QSharedPointer<MimeTreeParser::Core::MessagePart> &message);
 
     /*!
      * \brief Saves the attachment at the given row to the specified path
@@ -114,7 +114,7 @@ public:
      * \param part The message part containing the attachment
      * \param path The destination path
      */
-    QString saveAttachmentToPath(const QSharedPointer<MimeTreeParser::MessagePart> &part, const QString &path);
+    QString saveAttachmentToPath(const QSharedPointer<MimeTreeParser::Core::MessagePart> &part, const QString &path);
 
 Q_SIGNALS:
     /*!

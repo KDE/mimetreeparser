@@ -56,7 +56,7 @@ KMessageWidget::MessageType getType(PartModel::SecurityLevel securityLevel)
 class AttachmentBox : public QFrame
 {
 public:
-    AttachmentBox(const QList<QSharedPointer<MimeTreeParser::MessagePart>> &attachments, MessageWidgetContainer *parent)
+    AttachmentBox(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &attachments, MessageWidgetContainer *parent)
         : QFrame(parent)
         , maxWidgetWidth(50)
         , oldWidth(width())
@@ -81,7 +81,7 @@ public:
             option.initFrom(this);
             pic->setPixmap(icon.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize, &option, this)));
             innerLayout->addWidget(pic);
-            innerLayout->addWidget(new KSqueezedTextLabel(attachment->filename(MimeTreeParser::MessagePart::FallbackToNameOrPlaceholder)));
+            innerLayout->addWidget(new KSqueezedTextLabel(attachment->filename(MimeTreeParser::Core::MessagePart::FallbackToNameOrPlaceholder)));
             innerLayout->setStretch(1, 1);
 
             widget->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -228,7 +228,7 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
             if (url.path() == QLatin1StringView("showDetails")) {
                 QString newText = text + QLatin1Char(' ') + i18n("The message is encrypted for the following recipients:");
 
-                newText += MimeTreeParser::decryptRecipientsToHtml(m_encryptionInfo.decryptRecipients, m_encryptionInfo.cryptoProto);
+                newText += MimeTreeParser::Core::decryptRecipientsToHtml(m_encryptionInfo.decryptRecipients, m_encryptionInfo.cryptoProto);
 
                 encryptionMessage->setText(newText);
                 return;
@@ -262,7 +262,7 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
     m_innerLayout->setContentsMargins({});
     vLayout->addLayout(m_innerLayout);
 
-    const auto attachments = idx.data(PartModel::OwnedAttachmentsRole).value<QList<QSharedPointer<MimeTreeParser::MessagePart>>>();
+    const auto attachments = idx.data(PartModel::OwnedAttachmentsRole).value<QList<QSharedPointer<MimeTreeParser::Core::MessagePart>>>();
     if (!attachments.isEmpty()) {
         vLayout->addWidget(new AttachmentBox(attachments, this));
     }

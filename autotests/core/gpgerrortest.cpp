@@ -42,7 +42,7 @@ private Q_SLOTS:
     {
         setEnv("GNUPGHOME", GNUPGHOME);
 
-        MimeTreeParser::ObjectTreeParser otp;
+        MimeTreeParser::Core::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile(QStringLiteral("openpgp-inline-charset-encrypted.mbox")));
         otp.print();
         otp.decryptAndVerify();
@@ -55,7 +55,7 @@ private Q_SLOTS:
         QVERIFY(part->text().startsWith(QStringLiteral("asdasd")));
         QCOMPARE(part->encryptions().size(), 1);
         auto enc = part->encryptions()[0];
-        QCOMPARE(enc->error(), MimeTreeParser::MessagePart::NoError);
+        QCOMPARE(enc->error(), MimeTreeParser::Core::MessagePart::NoError);
         // QCOMPARE((int) enc->recipients().size(), 2);
     }
 
@@ -75,20 +75,20 @@ private Q_SLOTS:
         setEnv("PATH", "/nonexististing");
         setGpgMEfname("/nonexisting/gpg", "");
 
-        MimeTreeParser::ObjectTreeParser otp;
+        MimeTreeParser::Core::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile(mailFileName));
         otp.print();
         otp.decryptAndVerify();
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
+        auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
 
         QCOMPARE(part->encryptions().size(), 1);
         QVERIFY(part->text().isEmpty());
         auto enc = part->encryptions()[0];
-        QCOMPARE(enc->error(), MimeTreeParser::MessagePart::NoKeyError);
+        QCOMPARE(enc->error(), MimeTreeParser::Core::MessagePart::NoKeyError);
     }
 
     void testGpgIncorrectGPGHOME_data()
@@ -105,14 +105,14 @@ private Q_SLOTS:
         QFETCH(QString, mailFileName);
         setEnv("GNUPGHOME", QByteArray(GNUPGHOME) + QByteArray("noexist"));
 
-        MimeTreeParser::ObjectTreeParser otp;
+        MimeTreeParser::Core::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile(mailFileName));
         otp.print();
         otp.decryptAndVerify();
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0].dynamicCast<MimeTreeParser::MessagePart>();
+        auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
 
         QCOMPARE(part->encryptions().size(), 1);

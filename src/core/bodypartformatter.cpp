@@ -3,9 +3,9 @@
 
 #include "bodypartformatter.h"
 
-using namespace MimeTreeParser::Interface;
+using namespace MimeTreeParser::Core::Interface;
 
-namespace MimeTreeParser
+namespace MimeTreeParser::Core
 {
 namespace Interface
 {

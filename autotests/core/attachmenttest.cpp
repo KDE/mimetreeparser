@@ -8,6 +8,7 @@
 #include <QTest>
 
 using namespace MimeTreeParser;
+using namespace MimeTreeParser::Core;
 
 class AttachmentTest : public QObject
 {

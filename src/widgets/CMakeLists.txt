@@ -82,8 +82,6 @@ set_target_properties(
             MimeTreeParserWidgets
 )
 
-target_link_options(KPim6MimeTreeParserWidgets PRIVATE "LINKER:-Bsymbolic")
-
 ecm_generate_pri_file(BASE_NAME MimeTreeParserWidgets
     LIB_NAME KPim6MimeTreeParserWidgets
     DEPS "MimeTreeParserWidgets"

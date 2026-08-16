@@ -19,7 +19,7 @@ namespace Widgets
 {
 
 /*!
- * \class MimeTreeParser::MessageViewerDialog
+ * \class MimeTreeParser::Widgets::MessageViewerDialog
  * \inmodule MimeTreeParserWidgets
  * \inheaderfile MimeTreeParserWidgets/MessageViewerDialog
  *
