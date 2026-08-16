@@ -216,7 +216,7 @@ QString MimeTreeParser::Core::linkify(const QString &in)
             href = href.toHtmlEscaped();
             href = linkify_htmlsafe(href);
             // printf("link: [%s], href=[%s]\n", link.latin1(), href.latin1());
-            linked = u"<a href=\"%1\">"_s.arg(href) + QUrl{link}.toDisplayString(QUrl::RemoveQuery) + u"</a>"_s + pre.mid(cutoff).toHtmlEscaped();
+            linked = u"<a href=\"%1\">"_s.arg(href) + QUrl{link}.toDisplayString() + u"</a>"_s + pre.mid(cutoff).toHtmlEscaped();
             out.replace(x1, len, linked);
             n = x1 + linked.length() - 1;
         } else if (isAtStyle) {
