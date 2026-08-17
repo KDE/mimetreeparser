@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-15 00:46+0000\n"
+"POT-Creation-Date: 2026-08-17 00:47+0000\n"
 "PO-Revision-Date: 2026-03-29 21:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -347,83 +347,83 @@ msgstr "Mezu hau zifratuta dago."
 msgid "The message is encrypted for the following recipients:"
 msgstr "Mezua ondoko gakoetarako zifratuta dago:"
 
-#: widgets/messageviewer.cpp:87
+#: widgets/messageviewer.cpp:88
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Gorde eranskina honela"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Inportatu gako publikoa"
 
-#: widgets/messageviewer.cpp:115
+#: widgets/messageviewer.cpp:116
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Ireki"
 
-#: widgets/messageviewer.cpp:121
+#: widgets/messageviewer.cpp:122
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "&Gorde eranskina honela…"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "Invitation"
 msgstr "Gonbidapena"
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Summary:"
 msgstr "&Laburpena:"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:278
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Antolatzailea:"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "&Location:"
 msgstr "&Kokalekua:"
 
-#: widgets/messageviewer.cpp:281
+#: widgets/messageviewer.cpp:282
 #, kde-format
 msgid "&Start date:"
 msgstr "&Hasiera-data:"
 
-#: widgets/messageviewer.cpp:283
+#: widgets/messageviewer.cpp:284
 #, kde-format
 msgid "&End date:"
 msgstr "&Amaiera-data:"
 
-#: widgets/messageviewer.cpp:286
+#: widgets/messageviewer.cpp:287
 #, kde-format
 msgid "&Details:"
 msgstr "&Xehetasunak:"
 
-#: widgets/messageviewer.cpp:289
+#: widgets/messageviewer.cpp:290
 #, fuzzy, kde-format
 #| msgid "Invitation"
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Gonbidapena"
 
-#: widgets/messageviewer.cpp:302
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsulatutako e-posta"
 
-#: widgets/messageviewer.cpp:311 widgets/messageviewer.cpp:313
+#: widgets/messageviewer.cpp:312 widgets/messageviewer.cpp:314
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
 msgid "Subject:"
 msgstr "Gaia:"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "window title if email subject is empty"
 #| msgid "(No Subject)"
@@ -431,12 +431,12 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "(Gairik ez)"
 
-#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:322
 #, kde-format
 msgid "From:"
 msgstr "Nork:"
 
-#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
+#: widgets/messageviewer.cpp:320 widgets/messageviewer.cpp:393
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -444,101 +444,101 @@ msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: widgets/messageviewer.cpp:323
+#: widgets/messageviewer.cpp:324
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp:388
 #, kde-format
 msgid "&Subject:"
 msgstr "&Gaia:"
 
-#: widgets/messageviewer.cpp:390 widgets/messageviewer.cpp:392
+#: widgets/messageviewer.cpp:391 widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&From:"
 msgstr "&Nork:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&Sender:"
 msgstr "&Bidaltzailea:"
 
-#: widgets/messageviewer.cpp:398
+#: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&To:"
 msgstr "Nor&i:"
 
-#: widgets/messageviewer.cpp:401
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:404
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:407
+#: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
 
-#: widgets/messageviewerbase_p.cpp:64
+#: widgets/messageviewerbase_p.cpp:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Gorde"
 
-#: widgets/messageviewerbase_p.cpp:70
+#: widgets/messageviewerbase_p.cpp:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Gorde deszifratuta"
 
-#: widgets/messageviewerbase_p.cpp:76
+#: widgets/messageviewerbase_p.cpp:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Inprimatzeko aurrebista"
 
-#: widgets/messageviewerbase_p.cpp:82
+#: widgets/messageviewerbase_p.cpp:83
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "In&primatu"
 
-#: widgets/messageviewerbase_p.cpp:88
+#: widgets/messageviewerbase_p.cpp:89
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Aurreko mezua"
 
-#: widgets/messageviewerbase_p.cpp:94
+#: widgets/messageviewerbase_p.cpp:95
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Hurrengo mezua"
 
-#: widgets/messageviewerbase_p.cpp:100
+#: widgets/messageviewerbase_p.cpp:101
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Ikusi sorburua"
 
-#: widgets/messageviewerbase_p.cpp:106
+#: widgets/messageviewerbase_p.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Erabili zabalera finkoko letra-tipoa"
 
-#: widgets/messageviewerbase_p.cpp:154
+#: widgets/messageviewerbase_p.cpp:155
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(Gairik ez)"
 
-#: widgets/messageviewerbase_p.cpp:162
+#: widgets/messageviewerbase_p.cpp:163
 #, fuzzy, kde-format
 #| msgctxt "@action:button Next email"
 #| msgid "Next Message"
@@ -546,13 +546,13 @@ msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
 msgstr "Hurrengo mezua"
 
-#: widgets/messageviewerbase_p.cpp:177
+#: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr "Ez dago erakusteko mezurik."
 
-#: widgets/messageviewerbase_p.cpp:179
+#: widgets/messageviewerbase_p.cpp:180
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -562,14 +562,14 @@ msgstr ""
 "Ezin du <filename>%1</filename> fitxategia irakurri, edo fitxategiak ez du "
 "mezurik."
 
-#: widgets/messageviewerbase_p.cpp:246
+#: widgets/messageviewerbase_p.cpp:247
 #, fuzzy, kde-format
 #| msgid "File %1 could not be created."
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Ezin izan du %1 fitxategi sortu."
 
-#: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Error saving message"
@@ -577,14 +577,14 @@ msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Errorea mezua gordetzean"
 
-#: widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp:253
 #, fuzzy, kde-format
 #| msgid "File %1 could not be created."
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "Ezin izan du %1 fitxategi sortu."
 
-#: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp:267 widgets/messageviewerbase_p.cpp:301
 #, fuzzy, kde-format
 #| msgctxt "@action:button Next email"
 #| msgid "Next Message"
@@ -592,19 +592,19 @@ msgctxt "@title:window"
 msgid "Save Message"
 msgstr "Hurrengo mezua"
 
-#: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
+#: widgets/messageviewerbase_p.cpp:269 widgets/messageviewerbase_p.cpp:303
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "E-posta fitxategiak (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerbase_p.cpp:284
+#: widgets/messageviewerbase_p.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:290
+#: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -612,13 +612,13 @@ msgid ""
 "message?"
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:291
+#: widgets/messageviewerbase_p.cpp:292
 #, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp:301
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Save Decrypted File"
@@ -626,13 +626,13 @@ msgctxt "@title:window"
 msgid "Save Decrypted Message"
 msgstr "Gorde deszifratutako fitxategia"
 
-#: widgets/messageviewerbase_p.cpp:314
+#: widgets/messageviewerbase_p.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Inprimatu"
 
-#: widgets/messageviewerbase_p.cpp:331
+#: widgets/messageviewerbase_p.cpp:332
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"

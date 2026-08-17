@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-15 00:46+0000\n"
+"POT-Creation-Date: 2026-08-17 00:47+0000\n"
 "PO-Revision-Date: 2026-07-15 10:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -344,203 +344,203 @@ msgstr "Aquest missatge està encriptat."
 msgid "The message is encrypted for the following recipients:"
 msgstr "El missatge està encriptat per als destinataris següents:"
 
-#: widgets/messageviewer.cpp:87
+#: widgets/messageviewer.cpp:88
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Desa l'adjunt com a"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp:108
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Importa la clau pública"
 
-#: widgets/messageviewer.cpp:115
+#: widgets/messageviewer.cpp:116
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Obre"
 
-#: widgets/messageviewer.cpp:121
+#: widgets/messageviewer.cpp:122
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "De&sa l'adjunt com a…"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp:273
 #, kde-format
 msgid "Invitation"
 msgstr "Invitació"
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp:277
 #, kde-format
 msgid "&Summary:"
 msgstr "&Resum:"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:278
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organitzador:"
 
-#: widgets/messageviewer.cpp:279
+#: widgets/messageviewer.cpp:280
 #, kde-format
 msgid "&Location:"
 msgstr "&Emplaçament:"
 
-#: widgets/messageviewer.cpp:281
+#: widgets/messageviewer.cpp:282
 #, kde-format
 msgid "&Start date:"
 msgstr "Data d'&inici:"
 
-#: widgets/messageviewer.cpp:283
+#: widgets/messageviewer.cpp:284
 #, kde-format
 msgid "&End date:"
 msgstr "Data &final:"
 
-#: widgets/messageviewer.cpp:286
+#: widgets/messageviewer.cpp:287
 #, kde-format
 msgid "&Details:"
 msgstr "&Detalls:"
 
-#: widgets/messageviewer.cpp:289
+#: widgets/messageviewer.cpp:290
 #, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "La invitació està trencada"
 
-#: widgets/messageviewer.cpp:302
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Correu electrònic encapsulat"
 
-#: widgets/messageviewer.cpp:311 widgets/messageviewer.cpp:313
+#: widgets/messageviewer.cpp:312 widgets/messageviewer.cpp:314
 #, kde-format
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:312
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Sense assumpte"
 
-#: widgets/messageviewer.cpp:318 widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:322
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:392
+#: widgets/messageviewer.cpp:320 widgets/messageviewer.cpp:393
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: widgets/messageviewer.cpp:323
+#: widgets/messageviewer.cpp:324
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp:388
 #, kde-format
 msgid "&Subject:"
 msgstr "A&ssumpte:"
 
-#: widgets/messageviewer.cpp:390 widgets/messageviewer.cpp:392
+#: widgets/messageviewer.cpp:391 widgets/messageviewer.cpp:393
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remitent:"
 
-#: widgets/messageviewer.cpp:398
+#: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
 
-#: widgets/messageviewer.cpp:401
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:404
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:407
+#: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
 
-#: widgets/messageviewerbase_p.cpp:64
+#: widgets/messageviewerbase_p.cpp:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "De&sa"
 
-#: widgets/messageviewerbase_p.cpp:70
+#: widgets/messageviewerbase_p.cpp:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Desa desencriptat"
 
-#: widgets/messageviewerbase_p.cpp:76
+#: widgets/messageviewerbase_p.cpp:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Vista prèvia d'impressió"
 
-#: widgets/messageviewerbase_p.cpp:82
+#: widgets/messageviewerbase_p.cpp:83
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "Im&primeix"
 
-#: widgets/messageviewerbase_p.cpp:88
+#: widgets/messageviewerbase_p.cpp:89
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Missatge anterior"
 
-#: widgets/messageviewerbase_p.cpp:94
+#: widgets/messageviewerbase_p.cpp:95
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Missatge següent"
 
-#: widgets/messageviewerbase_p.cpp:100
+#: widgets/messageviewerbase_p.cpp:101
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Mostra el codi font"
 
-#: widgets/messageviewerbase_p.cpp:106
+#: widgets/messageviewerbase_p.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Usa una lletra d'amplada fixa"
 
-#: widgets/messageviewerbase_p.cpp:154
+#: widgets/messageviewerbase_p.cpp:155
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(Sense assumpte)"
 
-#: widgets/messageviewerbase_p.cpp:162
+#: widgets/messageviewerbase_p.cpp:163
 #, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
 msgstr "(Cap missatge)"
 
-#: widgets/messageviewerbase_p.cpp:177
+#: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr "No hi ha cap missatge a mostrar."
 
-#: widgets/messageviewerbase_p.cpp:179
+#: widgets/messageviewerbase_p.cpp:180
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -550,44 +550,44 @@ msgstr ""
 "No s'ha pogut llegir el fitxer <filename>%1</filename>, o el fitxer no conté "
 "cap missatge."
 
-#: widgets/messageviewerbase_p.cpp:246
+#: widgets/messageviewerbase_p.cpp:247
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
-#: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Error en desar el missatge"
 
-#: widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp:253
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "No s'ha pogut escriure al fitxer %1."
 
-#: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp:267 widgets/messageviewerbase_p.cpp:301
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
 msgstr "Desa el missatge"
 
-#: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
+#: widgets/messageviewerbase_p.cpp:269 widgets/messageviewerbase_p.cpp:303
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "Fitxers de correu electrònic (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerbase_p.cpp:284
+#: widgets/messageviewerbase_p.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
 "El missatge no sembla quer estigui encriptat. Es desa el missatge original."
 
-#: widgets/messageviewerbase_p.cpp:290
+#: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -597,25 +597,25 @@ msgstr ""
 "No s'ha pogut desencriptar alguns parts del missatge. Deso el missatge "
 "parcialment desencriptat?"
 
-#: widgets/messageviewerbase_p.cpp:291
+#: widgets/messageviewerbase_p.cpp:292
 #, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Ha fallat el desencriptatge"
 
-#: widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp:301
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
 msgstr "Desament de missatge desencriptat"
 
-#: widgets/messageviewerbase_p.cpp:314
+#: widgets/messageviewerbase_p.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Impressió"
 
-#: widgets/messageviewerbase_p.cpp:331
+#: widgets/messageviewerbase_p.cpp:332
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
