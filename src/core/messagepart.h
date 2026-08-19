@@ -106,6 +106,11 @@ public:
      */
     [[nodiscard]] MessagePart *parentPart() const;
     [[nodiscard]] AlternativeMessagePart *parentAlternativePart() const;
+    /*!
+     * \brief Check whether part is a child of parent
+     * \return True, if this part is an (indirect) child of parent
+     */
+    [[nodiscard]] bool isChildOf(const MessagePart *parent) const;
 
     /*!
      * \brief Returns the plaintext content of this part
@@ -180,7 +185,7 @@ public:
      * \brief Returns the metadata of this part
      * \return A pointer to the part metadata
      */
-    [[nodiscard]] PartMetaData *partMetaData();
+    [[nodiscard]] const PartMetaData *partMetaData() const;
 
     /*!
      * \brief Appends a sub-part to this part
@@ -205,26 +210,54 @@ public:
     KMime::Content *node() const;
 
     /*!
-     * \brief Returns the signature state of this part
-     * \return The signature state
+     * \brief Returns true if this part itself is signed
+     *
+     * Returns true only for the part representing the signature layer itself.
+     * To check whether this part is covered by a signature, use signature(),
+     * instead.
+     *
+     * \return true if this part represents a signature layer, false otherwise
      */
-    KMMsgSignatureState signatureState() const;
+    bool isSignature() const;
     /*!
-     * \brief Returns the encryption state of this part
-     * \return The encryption state
+     * \brief Returns true if this part itself is encrypted
+     *
+     * Returns true only for the part representing the encryption layer itself.
+     * To check whether this part is covered by encryption, use encrpytion(),
+     * instead.
+     *
+     * \return true if this part represents an encryption layer, false otherwise
      */
-    KMMsgEncryptionState encryptionState() const;
+    bool isEncryption() const;
+    /*!
+     * \brief Returns true if this part itself is an encapsulated message
+     *
+     * Returns true only for the part representing the message/rfc822 node itself.
+     * To find whether this part is *inside* an encapuslate message, use findPart().
+     *
+     * \return true if this part is an encapsulated message, false otherwise
+     */
+    bool isEncapsulatedMessage() const;
 
     /*!
-     * \brief Returns all signature parts of this message
-     * \return A list of SignedMessagePart pointers
+     * \brief Find ancestor with specified properties
+     * \return The next ancestor matching select. May be nullptr. If the part itself
+     *         matches the select parameter, it is returned.
      */
-    [[nodiscard]] QList<SignedMessagePart *> signatures() const;
+    [[nodiscard]] const MessagePart *findPart(const std::function<bool(const MessagePart *)> &select, RecurseMode recurse = RecurseMode::FullRecursion) const;
+
     /*!
-     * \brief Returns all encrypted parts of this message
-     * \return A list of EncryptedMessagePart pointers
+     * \brief Find parent signature part
+     * \return Returns the innermost signature part covering this part (or nullptr), the
+     *         part itself if it is a signature part.
      */
-    [[nodiscard]] QList<EncryptedMessagePart *> encryptions() const;
+    [[nodiscard]] const SignedMessagePart *signaturePart(RecurseMode checkParents = RecurseMode::WithinEncapsulatedMessage) const;
+    /*!
+     * \brief Find parent encryption part
+     * \return Returns the innermost encryption part covering this part (or nullptr), the
+     *         part itself if it is an encryption part.
+     */
+    [[nodiscard]] const EncryptedMessagePart *encryptionPart(RecurseMode checkParents = RecurseMode::WithinEncapsulatedMessage) const;
 
     /*!
      * Retrieve the header @header in this part or any parent parent.
@@ -540,7 +573,6 @@ class MIMETREEPARSER_CORE_EXPORT EncryptedMessagePart : public MessagePart
 {
     Q_OBJECT
     Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
-    Q_PROPERTY(bool isEncrypted READ isEncrypted)
     Q_PROPERTY(bool isNoSecKey READ isNoSecKey)
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:

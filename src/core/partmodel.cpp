@@ -23,19 +23,10 @@
 using namespace Qt::Literals::StringLiterals;
 static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::Core::MessagePart *messagePart)
 {
-    const auto signatureState = messagePart->signatureState();
-    const bool messageIsSigned = signatureState == MimeTreeParser::Core::KMMsgFullySigned;
-
-    if (!messageIsSigned) {
+    const auto signaturePart = messagePart->signaturePart();
+    if (!signaturePart) {
         return std::nullopt;
     }
-
-    const auto signatureParts = messagePart->signatures();
-    Q_ASSERT(!signatureParts.isEmpty());
-    if (signatureParts.empty()) {
-        return std::nullopt;
-    }
-    const auto signaturePart = signatureParts.front(); // TODO add support for multiple signature
 
     const auto signatures = signaturePart->partMetaData()->verificationResult.signatures();
     if (signatures.empty()) {
@@ -353,11 +344,8 @@ QModelIndex PartModel::index(int row, int column, const QModelIndex &parent) con
 SignatureInfo encryptionInfo(MimeTreeParser::Core::MessagePart *messagePart)
 {
     SignatureInfo signatureInfo;
-    const auto encryptions = messagePart->encryptions();
-    if (encryptions.size() > 1) {
-        qWarning() << "Can't deal with more than one encryption";
-    }
-    for (const auto &encryptionPart : encryptions) {
+    const auto encryptionPart = messagePart->encryptionPart();
+    if (encryptionPart) {
         signatureInfo.keyId = encryptionPart->partMetaData()->keyId;
         signatureInfo.cryptoProto = encryptionPart->cryptoProto();
         signatureInfo.decryptRecipients = encryptionPart->decryptRecipients();
@@ -577,24 +565,18 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return signatureSecurityLevel(messagePart);
         case EncryptionSecurityLevelRole: {
             // Color displayed for the encryption info box
-            const auto encryption = messagePart->encryptionState();
-            const bool messageIsEncrypted = encryption == MimeTreeParser::Core::KMMsgFullyEncrypted;
-
             if (messagePart->error()) {
                 return SecurityLevel::Bad;
             }
 
-            return messageIsEncrypted ? SecurityLevel::Good : SecurityLevel::Unknow;
+            return messagePart->encryptionPart() ? SecurityLevel::Good : SecurityLevel::Unknow;
         }
         case EncryptionIconNameRole: {
-            const auto encryption = messagePart->encryptionState();
-            const bool messageIsEncrypted = encryption == MimeTreeParser::Core::KMMsgFullyEncrypted;
-
             if (messagePart->error()) {
                 return u"data-error"_s;
             }
 
-            return messageIsEncrypted ? u"mail-encrypted"_s : QString();
+            return messagePart->encryptionPart() ? u"mail-encrypted"_s : QString();
         }
         case SignatureIconNameRole: {
             auto signature = signatureFromMessagePart(messagePart);
