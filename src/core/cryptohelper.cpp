@@ -257,12 +257,10 @@ decryptNodes(MimeTreeParser::Core::MessagePart *part, const QSet<KMime::Content 
             }
         }
     } else if (auto text = qobject_cast<MimeTreeParser::Core::TextMessagePart *>(part)) {
-        if (text->encryptionState()) {
-            wasEncrypted = true;
-        }
         if (!text->subParts().isEmpty()) {
             // this is a text/plain part with one or more inline PGP blocks
             // throw away the contents, and assemble from the subparts
+            wasEncrypted = true;
             auto node = text->node();
             auto ct = node->contentType();
             QStringEncoder codec(ct->charset().constData());

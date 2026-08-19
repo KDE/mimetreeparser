@@ -40,8 +40,6 @@ public:
         IconRole,
         NameRole,
         SizeRole,
-        IsEncryptedRole,
-        IsSignedRole,
         AttachmentPartRole,
     };
 
