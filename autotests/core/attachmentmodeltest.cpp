@@ -45,8 +45,6 @@ private Q_SLOTS:
         QCOMPARE(attachmentModel->data(attachmentModel->index(0, 0), AttachmentModel::TypeRole).toString(), QStringLiteral("image/jpeg"));
         QCOMPARE(attachmentModel->data(attachmentModel->index(0, 0), AttachmentModel::NameRole).toString(), QStringLiteral("aqnaozisxya.jpeg"));
         QCOMPARE(attachmentModel->data(attachmentModel->index(0, 0), AttachmentModel::SizeRole).toString(), QStringLiteral("100.22 KB"));
-        QCOMPARE(attachmentModel->data(attachmentModel->index(0, 0), AttachmentModel::IsEncryptedRole).toBool(), false);
-        QCOMPARE(attachmentModel->data(attachmentModel->index(0, 0), AttachmentModel::IsSignedRole).toBool(), false);
         QCOMPARE(attachmentModel->data(attachmentModel->index(0, AttachmentModel::IsEncryptedColumn), Qt::CheckStateRole).value<Qt::CheckState>(),
                  Qt::Unchecked);
         QCOMPARE(attachmentModel->data(attachmentModel->index(0, AttachmentModel::IsSignedColumn), Qt::CheckStateRole).value<Qt::CheckState>(), Qt::Unchecked);

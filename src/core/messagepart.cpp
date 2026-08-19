@@ -24,6 +24,8 @@
 #include <QMimeDatabase>
 #include <QStringDecoder>
 
+#include <gpgme++/engineinfo.h>
+#include <gpgme++/global.h>
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
@@ -145,7 +147,7 @@ QString MessagePart::errorString() const
     return mMetaData.errorText;
 }
 
-PartMetaData *MessagePart::partMetaData()
+const PartMetaData *MessagePart::partMetaData() const
 {
     return &mMetaData;
 }
@@ -191,6 +193,15 @@ bool MessagePart::isHtml() const
 MessagePart *MessagePart::parentPart() const
 {
     return mParentPart;
+}
+
+bool MessagePart::isChildOf(const MessagePart *parent) const
+{
+    auto p = this->parentPart();
+    while (p && p != parent) {
+        p = p->parentPart();
+    }
+    return p == parent;
 }
 
 AlternativeMessagePart *MessagePart::parentAlternativePart() const
@@ -280,52 +291,48 @@ bool MessagePart::hasSubParts() const
     return !mBlocks.isEmpty();
 }
 
-QList<SignedMessagePart *> MessagePart::signatures() const
+const MessagePart *MessagePart::findParent(const std::function<bool(const MessagePart *)> &select, RecurseMode recurse) const
 {
-    QList<SignedMessagePart *> list;
-    if (auto sig = dynamic_cast<SignedMessagePart *>(const_cast<MessagePart *>(this))) {
-        list << sig;
+    if (select(this)) {
+        return this;
     }
-    auto parent = parentPart();
-    while (parent) {
-        if (auto sig = dynamic_cast<SignedMessagePart *>(parent)) {
-            list << sig;
+    if (recurse == RecurseMode::NoRecurse) {
+        return nullptr;
+    }
+    if (auto parent = parentPart()) {
+        if (recurse == RecurseMode::FullRecursion || !dynamic_cast<const EncapsulatedRfc822MessagePart *>(parent)) {
+            return parent->findParent(select, recurse);
         }
-        parent = parent->parentPart();
     }
-    return list;
+    return nullptr;
 }
 
-QList<EncryptedMessagePart *> MessagePart::encryptions() const
+bool MessagePart::isEncryption() const
 {
-    QList<EncryptedMessagePart *> list;
-    if (auto sig = dynamic_cast<EncryptedMessagePart *>(const_cast<MessagePart *>(this))) {
-        list << sig;
-    }
-    auto parent = parentPart();
-    while (parent) {
-        if (auto sig = dynamic_cast<EncryptedMessagePart *>(parent)) {
-            list << sig;
-        }
-        parent = parent->parentPart();
-    }
-    return list;
+    return qobject_cast<const EncryptedMessagePart *>(this);
 }
 
-KMMsgEncryptionState MessagePart::encryptionState() const
+bool MessagePart::isSignature() const
 {
-    if (!encryptions().isEmpty()) {
-        return KMMsgFullyEncrypted;
-    }
-    return KMMsgNotEncrypted;
+    return qobject_cast<const SignedMessagePart *>(this);
 }
 
-KMMsgSignatureState MessagePart::signatureState() const
+const SignedMessagePart *MessagePart::signature(RecurseMode recurse) const
 {
-    if (!signatures().isEmpty()) {
-        return KMMsgFullySigned;
-    }
-    return KMMsgNotSigned;
+    return dynamic_cast<const SignedMessagePart *>(findParent(
+        [](const MessagePart *part) {
+            return part->isSignature();
+        },
+        recurse));
+}
+
+const EncryptedMessagePart *MessagePart::encryption(RecurseMode recurse) const
+{
+    return static_cast<const EncryptedMessagePart *>(findParent(
+        [](const MessagePart *part) {
+            return part->isEncryption();
+        },
+        recurse));
 }
 
 void MessagePart::bindLifetime(KMime::Content *node)
@@ -805,26 +812,26 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
     if (!bDecryptionOk && partMetaData()->isSigned()) {
         // Only a signed part
-        partMetaData()->isEncrypted = false;
+        mMetaData.isEncrypted = false;
         bDecryptionOk = true;
         mDecryptedData = plainText;
     } else {
         mPassphraseError = decryptResult.error().code() == GPG_ERR_BAD_PASSPHRASE;
-        mMetaData.isEncrypted = bDecryptionOk || decryptResult.error().code() != GPG_ERR_NO_DATA;
+        mMetaData.isEncrypted = bDecryptionOk || decryptResult.error().code() != GPG_ERR_NO_DATA || decryptResult.error().hasSystemError();
 
         if (decryptResult.error().isCanceled()) {
             setDecryptMessage(false);
         }
 
-        partMetaData()->errorText = Kleo::Formatting::errorAsString(decryptResult.error());
+        mMetaData.errorText = Kleo::Formatting::errorAsString(decryptResult.error());
         if (Kleo::DeVSCompliance::isCompliant()) {
-            partMetaData()->isCompliant = decryptResult.isDeVs();
-            partMetaData()->compliance = Kleo::DeVSCompliance::name(decryptResult.isDeVs());
+            mMetaData.isCompliant = decryptResult.isDeVs();
+            mMetaData.compliance = Kleo::DeVSCompliance::name(decryptResult.isDeVs());
         } else {
-            partMetaData()->isCompliant = true;
+            mMetaData.isCompliant = true;
         }
         if (partMetaData()->isEncrypted && decryptResult.numRecipients() > 0) {
-            partMetaData()->keyId = decryptResult.recipient(0).keyID();
+            mMetaData.keyId = decryptResult.recipient(0).keyID();
         }
 
         if (bDecryptionOk) {
@@ -855,9 +862,9 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
         }
 
         if (!mCryptoProto) {
-            partMetaData()->errorText = i18n("No appropriate crypto plug-in was found.");
+            mMetaData.errorText = i18n("No appropriate crypto plug-in was found.");
         } else if (!passphraseError()) {
-            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1StringView("<br />")
+            mMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1StringView("<br />")
                 + i18n("Error: %1", partMetaData()->errorText);
         }
     }

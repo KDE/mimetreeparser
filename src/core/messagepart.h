@@ -106,6 +106,11 @@ public:
      */
     [[nodiscard]] MessagePart *parentPart() const;
     [[nodiscard]] AlternativeMessagePart *parentAlternativePart() const;
+    /*!
+     * \brief Check whether part is a child of parent
+     * \return True, if this part is an (indirect) child of parent
+     */
+    [[nodiscard]] bool isChildOf(const MessagePart *parent) const;
 
     /*!
      * \brief Returns the plaintext content of this part
@@ -180,7 +185,7 @@ public:
      * \brief Returns the metadata of this part
      * \return A pointer to the part metadata
      */
-    [[nodiscard]] PartMetaData *partMetaData();
+    [[nodiscard]] const PartMetaData *partMetaData() const;
 
     /*!
      * \brief Appends a sub-part to this part
@@ -205,26 +210,42 @@ public:
     KMime::Content *node() const;
 
     /*!
-     * \brief Returns the signature state of this part
+     * \brief Returns true if this part itself is signed
+     *
+     * Returns true only for the part representing the signature layer itself.
+     * To check whether this part is covered by a signature, use signature(),
+     * instead.
+     *
      * \return The signature state
      */
-    KMMsgSignatureState signatureState() const;
+    bool isSignature() const;
     /*!
-     * \brief Returns the encryption state of this part
+     * \brief Returns true if this part itself is encryted
+     *
+     * Returns true only for the part representing the encryption layer itself.
+     * To check whether this part is covered by encryption, use encrpytion(),
+     * instead.
+     *
      * \return The encryption state
      */
-    KMMsgEncryptionState encryptionState() const;
+    bool isEncryption() const;
 
     /*!
-     * \brief Returns all signature parts of this message
-     * \return A list of SignedMessagePart pointers
+     * \brief Find parent with specified properties
+     * \return The youngest ancestor matching select. May be nullptr
      */
-    [[nodiscard]] QList<SignedMessagePart *> signatures() const;
+    [[nodiscard]] const MessagePart *findParent(const std::function<bool(const MessagePart *)> &select, RecurseMode recurse = RecurseMode::FullRecursion) const;
+
+    /*!
+     * \brief Find parent signature part
+     * \return Returns the innermost signature part covering this part (or nullptr)
+     */
+    [[nodiscard]] const SignedMessagePart *signature(RecurseMode checkParents = RecurseMode::WithinEncapsulatedMessage) const;
     /*!
      * \brief Returns all encrypted parts of this message
      * \return A list of EncryptedMessagePart pointers
      */
-    [[nodiscard]] QList<EncryptedMessagePart *> encryptions() const;
+    [[nodiscard]] const EncryptedMessagePart *encryption(RecurseMode checkParents = RecurseMode::WithinEncapsulatedMessage) const;
 
     /*!
      * Retrieve the header @header in this part or any parent parent.
@@ -540,7 +561,6 @@ class MIMETREEPARSER_CORE_EXPORT EncryptedMessagePart : public MessagePart
 {
     Q_OBJECT
     Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
-    Q_PROPERTY(bool isEncrypted READ isEncrypted)
     Q_PROPERTY(bool isNoSecKey READ isNoSecKey)
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:

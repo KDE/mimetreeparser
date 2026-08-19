@@ -6,28 +6,9 @@
 namespace MimeTreeParser::Core
 {
 
-/**
- * The display update mode: Force updates the display immediately, Delayed updates
- * after some time (150ms by default)
- */
-enum UpdateMode {
-    Force = 0,
-    Delayed,
+enum class RecurseMode {
+    NoRecurse,
+    WithinEncapsulatedMessage,
+    FullRecursion
 };
-
-/** Flags for the encryption state. */
-typedef enum {
-    KMMsgEncryptionStateUnknown,
-    KMMsgNotEncrypted,
-    KMMsgFullyEncrypted,
-    KMMsgEncryptionProblematic,
-} KMMsgEncryptionState;
-
-/** Flags for the signature state. */
-typedef enum {
-    KMMsgSignatureStateUnknown,
-    KMMsgNotSigned,
-    KMMsgFullySigned,
-    KMMsgSignatureProblematic,
-} KMMsgSignatureState;
 }

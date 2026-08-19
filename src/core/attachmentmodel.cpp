@@ -190,8 +190,6 @@ QHash<int, QByteArray> AttachmentModel::roleNames() const
         {NameRole, "name"_ba},
         {SizeRole, "size"_ba},
         {IconRole, "iconName"_ba},
-        {IsEncryptedRole, "encrypted"_ba},
-        {IsSignedRole, "signed"_ba},
     };
 }
 
@@ -241,10 +239,6 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
             return QIcon::fromTheme(mimetype.iconName());
         case SizeRole:
             return sizeHuman(content.size());
-        case IsEncryptedRole:
-            return part->encryptions().size() > 0;
-        case IsSignedRole:
-            return part->signatures().size() > 0;
         case AttachmentPartRole:
             return QVariant::fromValue(part);
         default:
@@ -260,14 +254,14 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     case IsEncryptedColumn:
         switch (role) {
         case Qt::CheckStateRole:
-            return part->encryptions().size() > 0 ? Qt::Checked : Qt::Unchecked;
+            return (bool)part->encryption(MimeTreeParser::Core::RecurseMode::FullRecursion) ? Qt::Checked : Qt::Unchecked;
         default:
             return {};
         }
     case IsSignedColumn:
         switch (role) {
         case Qt::CheckStateRole:
-            return part->signatures().size() > 0 ? Qt::Checked : Qt::Unchecked;
+            return (bool)part->signature(MimeTreeParser::Core::RecurseMode::FullRecursion) ? Qt::Checked : Qt::Unchecked;
         default:
             return {};
         }

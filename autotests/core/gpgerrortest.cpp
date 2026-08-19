@@ -53,8 +53,8 @@ private Q_SLOTS:
         QVERIFY(bool(part));
 
         QVERIFY(part->text().startsWith(QStringLiteral("asdasd")));
-        QCOMPARE(part->encryptions().size(), 1);
-        auto enc = part->encryptions()[0];
+        auto enc = part->encryption();
+        QVERIFY(enc);
         QCOMPARE(enc->error(), MimeTreeParser::Core::MessagePart::NoError);
         // QCOMPARE((int) enc->recipients().size(), 2);
     }
@@ -85,9 +85,9 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
 
-        QCOMPARE(part->encryptions().size(), 1);
         QVERIFY(part->text().isEmpty());
-        auto enc = part->encryptions()[0];
+        auto enc = part->encryption();
+        QVERIFY(enc);
         QCOMPARE(enc->error(), MimeTreeParser::Core::MessagePart::NoKeyError);
     }
 
@@ -115,10 +115,10 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
 
-        QCOMPARE(part->encryptions().size(), 1);
-        QCOMPARE(part->signatures().size(), 0);
+        QVERIFY(!part->signature());
         QVERIFY(part->text().isEmpty());
-        auto enc = part->encryptions()[0];
+        auto enc = part->encryption();
+        QVERIFY(enc);
         QVERIFY(enc->isNoSecKey());
         // QCOMPARE((int) enc->recipients().size(), 2);
     }
