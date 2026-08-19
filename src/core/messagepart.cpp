@@ -407,8 +407,7 @@ void TextMessagePart::parseContent()
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 mp.reset(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())), content.get()));
             } else if (block.type() == PgpMessageBlock) {
-                auto enc = new EncryptedMessagePart(mOtp, QString(), cryptProto, content.get(), content.get(), false);
-                enc->setIsEncrypted(true);
+                auto enc = new EncryptedMessagePart(mOtp, cryptProto, content.get(), content.get(), false);
                 mp.reset(enc);
             } else if (block.type() == ClearsignedBlock) {
                 mp.reset(new SignedMessagePart(mOtp, cryptProto, nullptr, content.get(), false));
@@ -615,7 +614,6 @@ void SignedMessagePart::startVerification()
     }
 
     mMetaData.status = i18ndc("mimetreeparser", "@info:status", "Wrong Crypto Plug-In.");
-    mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
 
     auto codec = QStringDecoder(mOtp->codecNameFor(mSignedData).constData());
@@ -700,12 +698,14 @@ QString SignedMessagePart::htmlContent() const
 
 //-----CryptMessageBlock---------------------
 EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
-                                           const QString &text,
                                            const QGpgME::Protocol *cryptoProto,
                                            KMime::Content *node,
                                            KMime::Content *encryptedNode,
                                            bool parseAfterDecryption)
-    : MessagePart(otp, text, node)
+    // TODO: If decryption has not yet been attempted, we should show a placeholder text, and
+    //       an option to trigger decryption. We probably want to signal that state in mError
+    // NOTE: The non-decrypted text is available via encryptedNode->decodedText().
+    : MessagePart(otp, QString(), node)
     , mParseAfterDecryption(parseAfterDecryption)
     , mPassphraseError(false)
     , mNoSecKey(false)
@@ -713,19 +713,9 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
     , mCryptoProto(cryptoProto)
     , mEncryptedNode(encryptedNode)
 {
-    mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
+    mMetaData.isEncrypted = true;
     mMetaData.status = i18ndc("mimetreeparser", "@info:status", "Wrong Crypto Plug-In.");
-}
-
-void EncryptedMessagePart::setIsEncrypted(bool encrypted)
-{
-    mMetaData.isEncrypted = encrypted;
-}
-
-bool EncryptedMessagePart::isEncrypted() const
-{
-    return mMetaData.isEncrypted;
 }
 
 const QGpgME::Protocol *EncryptedMessagePart::cryptoProto() const
@@ -741,6 +731,11 @@ void EncryptedMessagePart::setDecryptMessage(bool decrypt)
 bool EncryptedMessagePart::decryptMessage() const
 {
     return mDecryptMessage;
+}
+
+bool EncryptedMessagePart::isEncrypted() const
+{
+    return mMetaData.isEncrypted;
 }
 
 bool EncryptedMessagePart::isDecryptable() const
@@ -873,7 +868,6 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
 void EncryptedMessagePart::startDecryption(KMime::Content *data)
 {
-    mMetaData.isEncrypted = true;
     mMetaData.isDecryptable = decrypt(*data);
 
     if (mParseAfterDecryption && !mMetaData.isSigned() && !mError) {
@@ -897,24 +891,6 @@ std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> Encrypted
     return mDecryptRecipients;
 }
 
-QString EncryptedMessagePart::plaintextContent() const
-{
-    if (!mNode) {
-        return MessagePart::text();
-    } else {
-        return QString();
-    }
-}
-
-QString EncryptedMessagePart::htmlContent() const
-{
-    if (!mNode) {
-        return MessagePart::text();
-    } else {
-        return QString();
-    }
-}
-
 QString EncryptedMessagePart::text() const
 {
     if (hasSubParts()) {
@@ -931,7 +907,6 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
     : MessagePart(otp, QString(), node)
     , mMessage(message)
 {
-    mMetaData.isEncrypted = false;
     mMetaData.isEncapsulatedRfc822Message = true;
 
     if (!mMessage) {
