@@ -579,17 +579,15 @@ public:
     /*!
      * \brief Constructs an EncryptedMessagePart
      * \param otp The object tree parser
-     * \param text The encrypted text
      * \param protocol The cryptography protocol handler
      * \param node The MIME content node
      * \param encryptedNode The encrypted content node
      * \param parseAfterDecryption Whether to parse the content after decryption
      */
     EncryptedMessagePart(ObjectTreeParser *otp,
-                         const QString &text,
                          const QGpgME::Protocol *protocol,
                          KMime::Content *node,
-                         KMime::Content *encryptedNode = nullptr,
+                         KMime::Content *encryptedNode,
                          bool parseAfterDecryption = true);
 
     /*!
@@ -615,21 +613,20 @@ public:
     [[nodiscard]] bool decryptMessage() const;
 
     /*!
-     * \brief Sets whether the message is encrypted
-     * \param encrypted True if the message is encrypted
-     */
-    void setIsEncrypted(bool encrypted);
-    /*!
-     * \brief Returns whether the message is encrypted
-     * \return True if the message is encrypted
-     */
-    [[nodiscard]] bool isEncrypted() const;
-
-    /*!
      * \brief Returns whether the encrypted message can be decrypted
      * \return True if decryption is possible
      */
     [[nodiscard]] bool isDecryptable() const;
+
+    /*!
+     * \brief Returns whether this is encrypted
+     *
+     * In some cases an EncryptedMessagePart may not actually be encrpyted.
+     * This state is not known until decryption has been attempted, however.
+     *
+     * \return True if encrypted
+     */
+    [[nodiscard]] bool isEncrypted() const;
 
     /*!
      * \brief Returns whether there is no secret key to decrypt
@@ -653,17 +650,6 @@ public:
     void startDecryption();
 
     QByteArray mDecryptedData;
-
-    /*!
-     * \brief Returns the decrypted plaintext content
-     * \return The plaintext content
-     */
-    [[nodiscard]] QString plaintextContent() const override;
-    /*!
-     * \brief Returns the decrypted HTML content
-     * \return The HTML content
-     */
-    [[nodiscard]] QString htmlContent() const override;
 
     /*!
      * \brief Returns the cryptography protocol handler

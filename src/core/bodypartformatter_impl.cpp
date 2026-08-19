@@ -86,18 +86,12 @@ static QSharedPointer<EncryptedMessagePart>
 contentsAsEncryptedMessagePart(ObjectTreeParser *objectTreeParser, KMime::Content *parent, const QList<KMime::Content *> &contents)
 {
     if (contents.count() == 1 && contents[0]->contentType()->mimeType() == "application/pkcs7-mime"_ba) {
-        auto data = contents[0];
-        auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::smime(), parent, data));
-        mp->setIsEncrypted(true);
-        return mp;
+        return QSharedPointer<EncryptedMessagePart>::create(objectTreeParser, QGpgME::smime(), parent, contents[0]);
     }
 
     if (contents.count() == 2 && contents[0]->contentType()->mimeType() == "application/pgp-encrypted"_ba
         && contents[1]->contentType()->mimeType() == "application/octet-stream"_ba) {
-        KMime::Content *data = contents[1];
-        auto mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), parent, data));
-        mp->setIsEncrypted(true);
-        return mp;
+        return QSharedPointer<EncryptedMessagePart>::create(objectTreeParser, QGpgME::openpgp(), parent, contents[1]);
     }
 
     return {};
@@ -172,9 +166,7 @@ public:
             return QSharedPointer<MessagePart>(); // new MimeMessagePart(objectTreeParser, node));
         }
 
-        QSharedPointer<EncryptedMessagePart> mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), QGpgME::openpgp(), node, data));
-        mp->setIsEncrypted(true);
-        return mp;
+        return QSharedPointer<EncryptedMessagePart>::create(objectTreeParser, QGpgME::openpgp(), node, data);
     }
 };
 
@@ -217,9 +209,7 @@ public:
                 qCDebug(MIMETREEPARSER_CORE_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
             }
 
-            auto _mp = QSharedPointer<EncryptedMessagePart>(new EncryptedMessagePart(objectTreeParser, node->decodedText(), QGpgME::smime(), node));
-            mp = _mp;
-            _mp->setIsEncrypted(true);
+            mp = QSharedPointer<EncryptedMessagePart>::create(objectTreeParser, QGpgME::smime(), node, node);
             // PartMetaData *messagePart(_mp->partMetaData());
             // if (!part.source()->decryptMessage()) {
             // isEncrypted = true;
@@ -314,9 +304,7 @@ public:
             return QSharedPointer<MessagePart>(new MimeMessagePart(objectTreeParser, node->contents().at(0)));
         }
 
-        QSharedPointer<EncryptedMessagePart> mp(new EncryptedMessagePart(objectTreeParser, data->decodedText(), protocol, node, data));
-        mp->setIsEncrypted(true);
-        return mp;
+        return QSharedPointer<EncryptedMessagePart>::create(objectTreeParser, protocol, node, data);
     }
 };
 
