@@ -324,9 +324,9 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts,
 
             auto header = new QWidget(groupBox);
             auto headerLayout = new QFormLayout(header);
-            const auto part = parts->part<const EncapsulatedRfc822MessagePart>(idx);
-            Q_ASSERT(part);
-            if (const auto subject = part->subject(); subject.isEmpty()) {
+            const auto encapsulated = part.dynamicCast<const EncapsulatedRfc822MessagePart>();
+            Q_ASSERT(encapsulated);
+            if (const auto subject = encapsulated->subject(); subject.isEmpty()) {
                 headerLayout->addRow(i18n("Subject:"), new QLabel(u"<i>"_s + i18nc("Email has no subject", "No subject") + u"</i>"_s));
             } else {
                 headerLayout->addRow(i18n("Subject:"), new HeaderLabel(subject));
