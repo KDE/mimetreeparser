@@ -66,7 +66,7 @@ public:
     void showContextMenu(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &parts);
     QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> partsSelectedInView() const;
     void importPublicKey(const QSharedPointer<MimeTreeParser::Core::MessagePart> &part);
-    void recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent);
+    void recursiveBuildViewer(PartModel *parts, QVBoxLayout *layout, const QModelIndex &parent, QList<MessageWidgetContainer *> &containerStack);
 };
 
 void MessageViewer::Private::openSelectedAttachments(const QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> &selectedParts)
@@ -237,16 +237,40 @@ std::shared_ptr<MimeTreeParser::Core::ObjectTreeParser> MessageViewer::parser() 
     return d->parser ? d->parser->parser() : nullptr;
 }
 
-void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout *lay, const QModelIndex &parent)
+// TODO: remove params lay and parts
+void MessageViewer::Private::recursiveBuildViewer(PartModel *parts,
+                                                  QVBoxLayout *lay,
+                                                  const QModelIndex &parent,
+                                                  QList<MessageWidgetContainer *> &containerStack)
 {
     for (int i = 0, count = parts->rowCount(parent); i < count; i++) {
         const auto idx = parts->index(i, 0, parent);
         const auto type = idx.data(PartModel::TypeRole).value<PartModel::Types>();
         const auto content = idx.data(PartModel::ContentRole).toString();
+        const auto part = parts->part(idx);
+
+        // Quite unfortunately, the tree structure in PartModel is not the same as the tree structure we want
+        // to build visually. So first, sort out, where we want to insert.
+        bool reuse_container = false;
+        while (!containerStack.isEmpty()) {
+            if (part->encryption() == containerStack.last()->containerPart()->encryption()
+                && part->signature() == containerStack.last()->containerPart()->signature()) {
+                reuse_container = true;
+                break;
+            }
+            if (part->isChildOf(containerStack.last()->containerPart())) {
+                break;
+            }
+            containerStack.takeLast();
+        }
+        if (!reuse_container) {
+            containerStack.append(new MessageWidgetContainer(idx, urlHandler));
+            lay->addWidget(containerStack.last());
+        }
+        auto container = containerStack.last();
 
         switch (type) {
         case PartModel::Types::Plain: {
-            auto container = new MessageWidgetContainer(idx, urlHandler);
             auto label = new QLabel(content);
             label->setTextInteractionFlags(Qt::TextBrowserInteraction);
             label->setOpenExternalLinks(true);
@@ -255,7 +279,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                 label->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
             }
             container->innerLayout()->addWidget(label);
-            lay->addWidget(container);
 
             connect(container, &MessageWidgetContainer::attachmentContextMenu, q, [this](const QSharedPointer<MimeTreeParser::Core::MessagePart> part) {
                 showContextMenu({part});
@@ -264,8 +287,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             break;
         }
         case PartModel::Types::Ical: {
-            auto container = new MessageWidgetContainer(idx, urlHandler);
-
             KCalendarCore::ICalFormat format;
             auto incidence = format.fromString(content);
 
@@ -292,12 +313,9 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             container->innerLayout()->addWidget(widget);
 
-            lay->addWidget(container);
             break;
         }
         case PartModel::Types::Encapsulated: {
-            auto container = new MessageWidgetContainer(idx, urlHandler);
-
             auto groupBox = new QGroupBox(container);
             groupBox->setSizePolicy(QSizePolicy::MinimumExpanding, q->sizePolicy().verticalPolicy());
             groupBox->setTitle(i18n("Encapsulated email"));
@@ -313,8 +331,8 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
             } else {
                 headerLayout->addRow(i18n("Subject:"), new HeaderLabel(subject));
             }
-            const auto from = parts->data(parts->index(i, 0, parent), PartModel::SenderRole).toString();
-            const auto date = parts->data(parts->index(i, 0, parent), PartModel::DateRole).toDateTime();
+            const auto from = idx.data(PartModel::SenderRole).toString();
+            const auto date = idx.data(PartModel::DateRole).toDateTime();
             if (from.isEmpty()) {
                 headerLayout->addRow(i18n("From:"),
                                      new QLabel(u"<i>"_s + i18nc("@info:status missing 'From:', i.e. an unknown author", "Unknown") + u"</i>"_s));
@@ -325,11 +343,10 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
 
             encapsulatedLayout->addWidget(header);
 
-            recursiveBuildViewer(parts, encapsulatedLayout, parts->index(i, 0, parent));
+            recursiveBuildViewer(parts, encapsulatedLayout, idx, containerStack);
 
             container->innerLayout()->addWidget(groupBox);
 
-            lay->addWidget(container);
             break;
         }
 
@@ -345,11 +362,11 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts, QVBoxLayout 
                 }
             });
             errorWidget->setWordWrap(true);
-            lay->addWidget(errorWidget);
+            container->innerLayout()->addWidget(errorWidget);
             break;
         }
         default:
-            qCWarning(MIMETREEPARSER_WIDGET_LOG) << parts->data(parts->index(i, 0, parent), PartModel::ContentRole) << type;
+            qCWarning(MIMETREEPARSER_WIDGET_LOG) << idx.data(PartModel::ContentRole) << type;
         }
     }
 }
@@ -417,7 +434,8 @@ void MessageViewer::setMessage(const std::shared_ptr<KMime::Message> &message)
 
     if (d->parser) {
         const auto parts = d->parser->parts();
-        d->recursiveBuildViewer(parts, d->layout, {});
+        QList<MessageWidgetContainer *> containerStack;
+        d->recursiveBuildViewer(parts, d->layout, {}, containerStack);
     }
     d->layout->addStretch();
 

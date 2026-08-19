@@ -528,19 +528,11 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return messagePart->error();
         case ContentRole:
             return d->contentForPart(messagePart);
-        case OwnedAttachmentsRole: {
+        case AssociatedAttachmentsRole: {
             // we want the parent in terms of encryption/signature, here, which is not (neccessarily) the same as
             // messagePart->parentPart()
-            auto parentPart = encapsulatingPart(messagePart);
-            // only show attachments after the last content part in a given parent
-            if (index.row() < rowCount(parent(index)) - 1) {
-                auto nextPart = static_cast<MimeTreeParser::Core::MessagePart *>(this->index(index.row() + 1, 0, parent(index)).internalPointer());
-                if (nextPart && encapsulatingPart(nextPart) == parentPart) {
-                    return QVariant();
-                }
-            }
-
-            return QVariant::fromValue(getAttachmentChildParts(parentPart));
+            const auto attachmentParent = encapsulatingPart(messagePart);
+            return QVariant::fromValue(getAttachmentChildParts(attachmentParent));
         }
         case SidebarSecurityLevelRole: {
             const auto signature = index.data(SignatureSecurityLevelRole).value<SecurityLevel>();

@@ -130,6 +130,7 @@ private:
 
 MessageWidgetContainer::MessageWidgetContainer(const QModelIndex &idx, UrlHandler *urlHandler, QWidget *parent)
     : QFrame(parent)
+    , m_containerPart(static_cast<const PartModel *>(idx.model())->part(idx).get())
     // signature
     , m_signatureInfo(idx.data(PartModel::SignatureDetailsRole).toString())
     , m_signatureSecurityLevel(idx.data(PartModel::SignatureSecurityLevelRole).value<PartModel::SecurityLevel>())
@@ -262,7 +263,7 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
     m_innerLayout->setContentsMargins({});
     vLayout->addLayout(m_innerLayout);
 
-    const auto attachments = idx.data(PartModel::OwnedAttachmentsRole).value<QList<QSharedPointer<MimeTreeParser::Core::MessagePart>>>();
+    const auto attachments = idx.data(PartModel::AssociatedAttachmentsRole).value<QList<QSharedPointer<MimeTreeParser::Core::MessagePart>>>();
     if (!attachments.isEmpty()) {
         vLayout->addWidget(new AttachmentBox(attachments, this));
     }

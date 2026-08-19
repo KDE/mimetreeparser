@@ -29,6 +29,10 @@ public:
      */
     ~MessageWidgetContainer() override;
     QLayout *innerLayout() const;
+    const MimeTreeParser::Core::MessagePart *containerPart() const
+    {
+        return m_containerPart;
+    }
 
 Q_SIGNALS:
     void attachmentContextMenu(const QSharedPointer<MimeTreeParser::Core::MessagePart> part, const QPoint &pos);
@@ -42,6 +46,7 @@ protected:
 
 private:
     void createLayout(const QModelIndex &idx);
+    const MimeTreeParser::Core::MessagePart *m_containerPart;
 
     QString const m_signatureInfo;
     PartModel::SecurityLevel m_signatureSecurityLevel;
