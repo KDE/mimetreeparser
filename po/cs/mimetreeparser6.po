@@ -1,27 +1,28 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 # SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-17 00:47+0000\n"
-"PO-Revision-Date: 2026-03-17 10:17+0100\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-08-21 23:40+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "4Název"
+msgstr "Název"
 
 #: core/attachmentmodel.cpp:205
 #, kde-format
@@ -56,7 +57,7 @@ msgstr "příloha"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
-msgstr ""
+msgstr "Nepodařilo se uložit přílohu k otevření."
 
 #: core/attachmentmodel.cpp:354 core/attachmentmodel.cpp:364
 #, kde-format
@@ -101,12 +102,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "nepojmenováno"
+msgstr "nepojmenováno_%1.%2"
 
 #: core/messagepart.cpp:594 core/messagepart.cpp:610 core/messagepart.cpp:711
 #, kde-format
@@ -133,7 +132,7 @@ msgstr "Chyba: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "Podpis je neplatný"
 
 #: core/partmodel.cpp:625
 #, kde-format
@@ -154,15 +153,13 @@ msgstr[2] "Zpráva je šifrována pro následující příjemce:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr ""
+msgstr "Dešifrování bylo zrušeno"
 
 #: core/partmodel.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Špatné heslo."
+msgstr "Špatné heslo"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -193,7 +190,7 @@ msgstr "Otevřít nabídku"
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr "Odlet z %1: "
+msgstr "Odlet z %1"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:110
 #, kde-format
@@ -263,7 +260,7 @@ msgstr "Komu:"
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "Kopie: "
+msgstr "Kopie:"
 
 #: quick/qml/MailViewer.qml:162
 #, kde-format
@@ -309,7 +306,7 @@ msgstr "Tato zpráva obsahuje pozvánku"
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
-msgstr ""
+msgstr "odesláno %1 na %2"
 
 #: quick/qml/private/MailPartModel.qml:97
 #: widgets/messagecontainerwidget.cpp:213
@@ -328,6 +325,8 @@ msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr ""
+"Tato zpráva je zašifrována v souladu se standardem VS-NfD, ale nemáte "
+"odpovídající tajný klíč."
 
 #: widgets/messagecontainerwidget.cpp:218
 #, kde-format
@@ -402,11 +401,10 @@ msgid "&Details:"
 msgstr "Po&drobnosti:"
 
 #: widgets/messageviewer.cpp:290
-#, fuzzy, kde-format
-#| msgid "Invitation"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
-msgstr "Pozvánka"
+msgstr "Pozvánka je poškozená"
 
 #: widgets/messageviewer.cpp:303
 #, kde-format
@@ -419,12 +417,10 @@ msgid "Subject:"
 msgstr "Předmět:"
 
 #: widgets/messageviewer.cpp:312
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(Žádný předmět)"
+msgstr "Žádný předmět"
 
 #: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:322
 #, kde-format
@@ -432,9 +428,7 @@ msgid "From:"
 msgstr "Od:"
 
 #: widgets/messageviewer.cpp:320 widgets/messageviewer.cpp:393
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Neznámý"
@@ -467,7 +461,7 @@ msgstr "&Komu:"
 #: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&CC:"
-msgstr "Kop&ie: "
+msgstr "Kop&ie:"
 
 #: widgets/messageviewer.cpp:405
 #, kde-format
@@ -534,18 +528,16 @@ msgid "(No Subject)"
 msgstr "(Žádný předmět)"
 
 #: widgets/messageviewerbase_p.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Následující zpráva"
+msgstr "(Žádná zpráva)"
 
 #: widgets/messageviewerbase_p.cpp:178
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Nejsou žádné zprávy k zobrazení."
 
 #: widgets/messageviewerbase_p.cpp:180
 #, kde-kuit-format
@@ -554,48 +546,44 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Nelze načíst soubor <filename>%1</filename> nebo soubor neobsahuje žádné "
+"zprávy."
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Soubor %1 nelze vytvořit."
 
 #: widgets/messageviewerbase_p.cpp:247 widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Chyba při ukládání zprávy"
 
 #: widgets/messageviewerbase_p.cpp:253
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Soubor %1 nelze vytvořit."
+msgstr "Soubor %1 se nepodařilo zapsat."
 
 #: widgets/messageviewerbase_p.cpp:267 widgets/messageviewerbase_p.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Následující zpráva"
+msgstr "Uložit zprávu"
 
 #: widgets/messageviewerbase_p.cpp:269 widgets/messageviewerbase_p.cpp:303
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
-msgstr "Soubory pošty (*.eml *.mbox *.mime)"
+msgstr "Soubory e-mailů (*.eml, *.mbox, *.mime)"
 
 #: widgets/messageviewerbase_p.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "Zdá se, že zpráva není zašifrovaná. Ukládá se původní zpráva."
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
@@ -604,20 +592,20 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Některé části zprávy se nepodařilo dešifrovat. Chcete uložit částečně "
+"dešifrovanou zprávu?"
 
 #: widgets/messageviewerbase_p.cpp:292
 #, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
-msgstr ""
+msgstr "Dešifrování se nezdařilo"
 
 #: widgets/messageviewerbase_p.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Uložit dešifrovaný soubor"
+msgstr "Uložit dešifrovanou zprávu"
 
 #: widgets/messageviewerbase_p.cpp:315
 #, kde-format
@@ -641,7 +629,7 @@ msgstr "&Soubor"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "Po&hled"
 
 #: widgets/messageviewerdialog.cpp:54
 #, kde-format
