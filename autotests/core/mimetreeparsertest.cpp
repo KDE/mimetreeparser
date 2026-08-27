@@ -36,7 +36,7 @@ private Q_SLOTS:
         QCOMPARE(partList.size(), 1);
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QCOMPARE(part->text(), expectedText);
-        QCOMPARE(part->charset(), u"utf-8"_s.toLocal8Bit());
+        QCOMPARE(part->charset(), "utf-8"_ba);
 
         QCOMPARE(part->encryptions().size(), 0);
         QCOMPARE(part->signatures().size(), 0);
@@ -58,7 +58,7 @@ private Q_SLOTS:
         QCOMPARE(part->plaintextContent(),
                  u"If you can see this text it means that your email client couldn't display our newsletter properly.\nPlease visit this link to "
                  "view the newsletter on our website: http://www.gog.com/newsletter/\n"_s);
-        QCOMPARE(part->charset(), u"us-ascii"_s.toLocal8Bit());
+        QCOMPARE(part->charset(), "us-ascii"_ba);
         QCOMPARE(part->htmlContent(), u"<html><body><p><span>HTML</span> text</p></body></html>\n\n"_s);
         QCOMPARE(otp.collectAttachmentParts().size(), 0);
         QCOMPARE(part->encryptions().size(), 0);
@@ -76,7 +76,7 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::HtmlMessagePart>();
         QVERIFY(bool(part));
         QCOMPARE(part->htmlContent(), expectedText);
-        QCOMPARE(part->charset(), u"windows-1252"_s.toLocal8Bit());
+        QCOMPARE(part->charset(), "windows-1252"_ba);
         QCOMPARE(part->encryptions().size(), 0);
         QCOMPARE(part->signatures().size(), 0);
         auto contentAttachmentList = otp.collectAttachmentParts();
@@ -117,7 +117,7 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
         QCOMPARE(part->text(), u"test text"_s);
-        QCOMPARE(part->charset(), u"us-ascii"_s.toLocal8Bit());
+        QCOMPARE(part->charset(), "us-ascii"_ba);
         QCOMPARE(part->encryptions().size(), 1);
         QCOMPARE(part->signatures().size(), 1);
         QCOMPARE(part->encryptionState(), MimeTreeParser::Core::KMMsgFullyEncrypted);
@@ -149,7 +149,7 @@ private Q_SLOTS:
         QCOMPARE(partList.size(), 1);
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
-        QCOMPARE(part->charset(), u"ISO-8859-15"_s.toLocal8Bit());
+        QCOMPARE(part->charset(), "ISO-8859-15"_ba);
         QCOMPARE(part->text(), QString::fromUtf8("asdasd asd asd asdf sadf sdaf sadf öäü"));
 
         QCOMPARE(part->encryptions().size(), 1);
@@ -804,7 +804,7 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
         QCOMPARE(part->text(), "sdfsdf\n"_L1);
-        QCOMPARE(part->charset(), u"utf-8"_s.toLocal8Bit());
+        QCOMPARE(part->charset(), "utf-8"_ba);
         QCOMPARE(part->encryptions().size(), 1);
         QCOMPARE(part->signatures().size(), 1);
         QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::Good);
@@ -835,7 +835,7 @@ private Q_SLOTS:
         part = partList[1].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
         QCOMPARE(part->text(), QString());
-        QCOMPARE(part->charset(), u"UTF-8"_s.toLocal8Bit());
+        QCOMPARE(part->charset(), "UTF-8"_ba);
         QCOMPARE(part->signatures().size(), 1);
         QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::Good);
         auto contentAttachmentList = otp.collectAttachmentParts();
@@ -895,7 +895,7 @@ private Q_SLOTS:
         QCOMPARE(partList.size(), 1);
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
-        QCOMPARE(part->charset().toLower(), u"iso-8859-1"_s.toLocal8Bit());
+        QCOMPARE(part->charset().toLower(), "iso-8859-1"_ba);
     }
 
     void testSmimeEncryptedOctetStream()
