@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-17 00:47+0000\n"
+"POT-Creation-Date: 2026-09-04 00:46+0000\n"
 "PO-Revision-Date: 2026-07-21 21:25+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,60 +19,60 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:201
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Dydis"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Šifruotas"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Pasirašytas"
 
-#: core/attachmentmodel.cpp:305
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Nepavyko įrašyti priedo."
 
-#: core/attachmentmodel.cpp:328
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgid "attachment"
 msgstr "priedas"
 
-#: core/attachmentmodel.cpp:335
+#: core/attachmentmodel.cpp:329
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Nepavyko rašyti priedo, kad būtų atvertas."
 
-#: core/attachmentmodel.cpp:354 core/attachmentmodel.cpp:364
+#: core/attachmentmodel.cpp:348 core/attachmentmodel.cpp:358
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Nepavyko atverti priedo."
 
-#: core/attachmentmodel.cpp:385
+#: core/attachmentmodel.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Šiame priede nerasta jokių liudijimų"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -82,7 +82,7 @@ msgstr[1] "importuoti %1 liudijimai"
 msgstr[2] "importuota %1 liudijimų"
 msgstr[3] "importuotas %1 liudijimas"
 
-#: core/attachmentmodel.cpp:393
+#: core/attachmentmodel.cpp:387
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -104,13 +104,13 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:97
+#: core/messagepart.cpp:99
 #, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "be_pavadinimo_%1.%2"
 
-#: core/messagepart.cpp:594 core/messagepart.cpp:610 core/messagepart.cpp:711
+#: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
@@ -131,19 +131,19 @@ msgstr "Šifravimo įskiepiui „%1“ nepavyko iššifruoti duomenų."
 msgid "Error: %1"
 msgstr "Klaida: %1"
 
-#: core/partmodel.cpp:409
+#: core/partmodel.cpp:397
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Parašas sugadintas"
 
-#: core/partmodel.cpp:625
+#: core/partmodel.cpp:599
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Jūs negalite iššifruoti šio laiško."
 
-#: core/partmodel.cpp:630
+#: core/partmodel.cpp:604
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -153,13 +153,13 @@ msgstr[1] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[2] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[3] "Laiškas yra šifruotas šiems gavėjams:"
 
-#: core/partmodel.cpp:644
+#: core/partmodel.cpp:618
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr "Iššifravimo buvo atsisakyta"
 
-#: core/partmodel.cpp:646
+#: core/partmodel.cpp:620
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
@@ -314,7 +314,7 @@ msgid "sent by %1 on %2"
 msgstr "%1 išsiuntė %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:213
+#: widgets/messagecontainerwidget.cpp:214
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Šis laiškas yra šifruotas, bet jūs neturite atitinkamo slaptojo rakto."
@@ -324,7 +324,7 @@ msgstr "Šis laiškas yra šifruotas, bet jūs neturite atitinkamo slaptojo rakt
 msgid "This message is encrypted for: %1"
 msgstr "Šis laiškas šifruotas: %1"
 
-#: widgets/messagecontainerwidget.cpp:211
+#: widgets/messagecontainerwidget.cpp:212
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -333,17 +333,17 @@ msgstr ""
 "Šis laiškas šifruotas ir suderinamas su VS-NfD, bet jūs neturite atitinkamo "
 "slaptojo rakto."
 
-#: widgets/messagecontainerwidget.cpp:218
+#: widgets/messagecontainerwidget.cpp:219
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Šis laiškas šifruotas ir suderinamas su VS-NfD."
 
-#: widgets/messagecontainerwidget.cpp:220
+#: widgets/messagecontainerwidget.cpp:221
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Šis laiškas yra šifruotas."
 
-#: widgets/messagecontainerwidget.cpp:229
+#: widgets/messagecontainerwidget.cpp:230
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Laiškas yra šifruotas šiems gavėjams:"
@@ -370,110 +370,110 @@ msgstr "Atverti"
 msgid "&Save Attachment As…"
 msgstr "Į&rašyti priedą kaip…"
 
-#: widgets/messageviewer.cpp:273
+#: widgets/messageviewer.cpp:294
 #, kde-format
 msgid "Invitation"
 msgstr "Pakvietimas"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "&Summary:"
 msgstr "&Santrauka:"
 
-#: widgets/messageviewer.cpp:278
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organizatorius:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "&Location:"
 msgstr "&Vieta:"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "&Start date:"
 msgstr "&Pradžios data:"
 
-#: widgets/messageviewer.cpp:284
+#: widgets/messageviewer.cpp:305
 #, kde-format
 msgid "&End date:"
 msgstr "Pa&baigos data:"
 
-#: widgets/messageviewer.cpp:287
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "&Details:"
 msgstr "&Išsamiau:"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:311
 #, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Pakvietimas sugadintas"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Uždaras laiškas"
 
-#: widgets/messageviewer.cpp:312 widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp:330 widgets/messageviewer.cpp:332
 #, kde-format
 msgid "Subject:"
 msgstr "Tema:"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:330
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Be temos"
 
-#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:322
+#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:340
 #, kde-format
 msgid "From:"
 msgstr "Nuo:"
 
-#: widgets/messageviewer.cpp:320 widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Nežinomas"
 
-#: widgets/messageviewer.cpp:324
+#: widgets/messageviewer.cpp:342
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:388
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&Subject:"
 msgstr "&Tema:"
 
-#: widgets/messageviewer.cpp:391 widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
 #, kde-format
 msgid "&From:"
 msgstr "&Nuo:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp:413
 #, kde-format
 msgid "&Sender:"
 msgstr "&Siuntėjas:"
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp:416
 #, kde-format
 msgid "&To:"
 msgstr "&Kam:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp:419
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:422
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:408
+#: widgets/messageviewer.cpp:425
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"

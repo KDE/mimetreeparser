@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-17 00:47+0000\n"
+"POT-Creation-Date: 2026-09-04 00:46+0000\n"
 "PO-Revision-Date: 2026-06-16 22:23+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,60 +17,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 26.04.2\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:201
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Név"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:203
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Méret"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:205
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Titkosított"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp:207
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Aláírt"
 
-#: core/attachmentmodel.cpp:305
+#: core/attachmentmodel.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Nem sikerült menteni a mellékletet."
 
-#: core/attachmentmodel.cpp:328
+#: core/attachmentmodel.cpp:322
 #, kde-format
 msgid "attachment"
 msgstr "melléklet"
 
-#: core/attachmentmodel.cpp:335
+#: core/attachmentmodel.cpp:329
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Nem sikerült írni a mellékletet megnyitáshoz."
 
-#: core/attachmentmodel.cpp:354 core/attachmentmodel.cpp:364
+#: core/attachmentmodel.cpp:348 core/attachmentmodel.cpp:358
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Nem sikerült megnyitni a mellékletet."
 
-#: core/attachmentmodel.cpp:385
+#: core/attachmentmodel.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Nem találhatók tanúsítványok ebben a mellékletben"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -78,7 +78,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "egy tanúsítvány importálva"
 msgstr[1] "%1 tanúsítvány importálva"
 
-#: core/attachmentmodel.cpp:393
+#: core/attachmentmodel.cpp:387
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -98,7 +98,7 @@ msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:97
+#: core/messagepart.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "Fallback when file has no name"
 #| msgid "unnamed"
@@ -106,7 +106,7 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "névtelen"
 
-#: core/messagepart.cpp:594 core/messagepart.cpp:610 core/messagepart.cpp:711
+#: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
@@ -127,19 +127,19 @@ msgstr "A(z) „%1” titkosítási bővítmény nem tudta visszafejteni az adat
 msgid "Error: %1"
 msgstr "Hiba: %1"
 
-#: core/partmodel.cpp:409
+#: core/partmodel.cpp:397
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp:625
+#: core/partmodel.cpp:599
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Ezt az üzenetet nem lehet visszafejteni."
 
-#: core/partmodel.cpp:630
+#: core/partmodel.cpp:604
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -147,13 +147,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Az üzenetet a következő címzettnek titkosították:"
 msgstr[1] "Az üzenetet a következő címzetteknek titkosították:"
 
-#: core/partmodel.cpp:644
+#: core/partmodel.cpp:618
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr ""
 
-#: core/partmodel.cpp:646
+#: core/partmodel.cpp:620
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Wrong passphrase."
@@ -310,7 +310,7 @@ msgid "sent by %1 on %2"
 msgstr "%1 küldte ekkor: %2"
 
 #: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:213
+#: widgets/messagecontainerwidget.cpp:214
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
@@ -320,7 +320,7 @@ msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
 msgid "This message is encrypted for: %1"
 msgstr "Az üzenetet %1 számára titkosították."
 
-#: widgets/messagecontainerwidget.cpp:211
+#: widgets/messagecontainerwidget.cpp:212
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -329,17 +329,17 @@ msgstr ""
 "Az üzenetet a VS-NfD-nek megfelelően titkosították, de nincs hozzá titkos "
 "kulcsa."
 
-#: widgets/messagecontainerwidget.cpp:218
+#: widgets/messagecontainerwidget.cpp:219
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Az üzenetet a VS-NfD-nek megfelelően titkosították."
 
-#: widgets/messagecontainerwidget.cpp:220
+#: widgets/messagecontainerwidget.cpp:221
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Az üzenetet titkosították."
 
-#: widgets/messagecontainerwidget.cpp:229
+#: widgets/messagecontainerwidget.cpp:230
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Az üzenetet a következő címzetteknek titkosították:"
@@ -366,61 +366,61 @@ msgstr "Megnyitás"
 msgid "&Save Attachment As…"
 msgstr "&Melléklet mentése másként…"
 
-#: widgets/messageviewer.cpp:273
+#: widgets/messageviewer.cpp:294
 #, kde-format
 msgid "Invitation"
 msgstr "Meghívó"
 
-#: widgets/messageviewer.cpp:277
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "&Summary:"
 msgstr "Ö&sszegzés:"
 
-#: widgets/messageviewer.cpp:278
+#: widgets/messageviewer.cpp:299
 #, kde-format
 msgid "&Organizer:"
 msgstr "S&zervező:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp:301
 #, kde-format
 msgid "&Location:"
 msgstr "&Hely:"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp:303
 #, kde-format
 msgid "&Start date:"
 msgstr "&Kezdődátum:"
 
-#: widgets/messageviewer.cpp:284
+#: widgets/messageviewer.cpp:305
 #, kde-format
 msgid "&End date:"
 msgstr "Zá&ró dátum:"
 
-#: widgets/messageviewer.cpp:287
+#: widgets/messageviewer.cpp:308
 #, kde-format
 msgid "&Details:"
 msgstr "Rész&letek:"
 
-#: widgets/messageviewer.cpp:290
+#: widgets/messageviewer.cpp:311
 #, fuzzy, kde-format
 #| msgid "Invitation"
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Meghívó"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:321
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Beágyazott e-mail"
 
-#: widgets/messageviewer.cpp:312 widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp:330 widgets/messageviewer.cpp:332
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: widgets/messageviewer.cpp:312
+#: widgets/messageviewer.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "window title if email subject is empty"
 #| msgid "(No Subject)"
@@ -428,12 +428,12 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "(nincs tárgy)"
 
-#: widgets/messageviewer.cpp:319 widgets/messageviewer.cpp:322
+#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:340
 #, kde-format
 msgid "From:"
 msgstr "Feladó:"
 
-#: widgets/messageviewer.cpp:320 widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -441,42 +441,42 @@ msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: widgets/messageviewer.cpp:324
+#: widgets/messageviewer.cpp:342
 #, kde-format
 msgid "Date:"
 msgstr "Dátum:"
 
-#: widgets/messageviewer.cpp:388
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&Subject:"
 msgstr "Tá&rgy:"
 
-#: widgets/messageviewer.cpp:391 widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
 #, kde-format
 msgid "&From:"
 msgstr "F&eladó:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp:413
 #, kde-format
 msgid "&Sender:"
 msgstr "&Küldő:"
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp:416
 #, kde-format
 msgid "&To:"
 msgstr "&Címzett:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp:419
 #, kde-format
 msgid "&CC:"
 msgstr "Más&olat:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:422
 #, kde-format
 msgid "&BCC:"
 msgstr "&Titkos másolat:"
 
-#: widgets/messageviewer.cpp:408
+#: widgets/messageviewer.cpp:425
 #, kde-format
 msgid "&Date:"
 msgstr "&Dátum:"
