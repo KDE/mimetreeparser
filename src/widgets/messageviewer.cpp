@@ -105,7 +105,7 @@ void MessageViewer::Private::showContextMenu(const QList<QSharedPointer<MimeTree
     if (numberOfParts == 1) {
         const QString mimetype = QString::fromLatin1(selectedParts.first()->mimeType());
         if (mimetype == QLatin1StringView("application/pgp-keys")) {
-            auto importPublicKeyAction = new QAction(QIcon::fromTheme(u"document-import-key-symbolic"_s), i18nc("@action:inmenu", "Import public key"), q);
+            auto importPublicKeyAction = new QAction(QIcon::fromTheme(u"document-import-key-symbolic"_s), i18nc("@action:inmenu", "Import public key"), &menu);
             connect(importPublicKeyAction, &QAction::triggered, q, [this, selectedParts]() {
                 importPublicKey(selectedParts.first());
             });
@@ -113,13 +113,13 @@ void MessageViewer::Private::showContextMenu(const QList<QSharedPointer<MimeTree
         }
     }
 
-    auto openAttachmentAction = new QAction(QIcon::fromTheme(u"document-open-symbolic"_s), i18nc("to open", "Open"), q);
+    auto openAttachmentAction = new QAction(QIcon::fromTheme(u"document-open-symbolic"_s), i18nc("to open", "Open"), &menu);
     connect(openAttachmentAction, &QAction::triggered, q, [this, selectedParts]() {
         openSelectedAttachments(selectedParts);
     });
     menu.addAction(openAttachmentAction);
 
-    auto saveAttachmentAction = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18n("&Save Attachment As…"), q);
+    auto saveAttachmentAction = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18n("&Save Attachment As…"), &menu);
     connect(saveAttachmentAction, &QAction::triggered, q, [this, selectedParts]() {
         saveSelectedAttachments(selectedParts);
     });
