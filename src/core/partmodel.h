@@ -9,6 +9,8 @@
 #include <QAbstractItemModel>
 #include <QModelIndex>
 
+#include <Libkleo/Verification>
+
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
 #include <gpgme++/verificationresult.h>
@@ -145,9 +147,10 @@ public:
     /*!
      * \brief Returns the signature details for a message part
      * \param messagePart The message part to check
-     * \return A string with signature details
+     * \return An assement of the signature (use e.g. Kleo::prettyMessageSignature() to
+     *         convert to a text description.
      */
-    static QString signatureDetails(MimeTreeParser::Core::MessagePart *messagePart);
+    static Kleo::SignatureData signatureData(const MimeTreeParser::Core::MessagePart *messagePart);
 
 Q_SIGNALS:
     /*!

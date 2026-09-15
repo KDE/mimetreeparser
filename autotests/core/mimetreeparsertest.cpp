@@ -4,6 +4,8 @@
 #include "partmodel.h"
 #include <MimeTreeParserCore/ObjectTreeParser>
 
+#include <Libkleo/Formatting>
+
 #include <QTest>
 #include <QTimeZone>
 
@@ -377,12 +379,10 @@ private Q_SLOTS:
         QVERIFY(!part->encryptionPart());
         QVERIFY(part->signaturePart());
         QCOMPARE(part->text().trimmed(), u"ohno öäü"_s);
-        const auto details = PartModel::signatureDetails(part.get());
-        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
-        QCOMPARE(detailsWithoutTimestamp,
-                 "Signature created on TIMESTAMP with certificate: <a "
-                 "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
-                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."_L1);
+        const auto signatureData = PartModel::signatureData(part.get());
+        QCOMPARE(signatureData.status, Kleo::SignatureStatus::ValidAndFullyTrusted);
+        QVERIFY(Kleo::Formatting::prettyMessageSignature(signatureData).contains("key:1BA323932B3FAA826132C79E8D9860C58F246DE6"_L1));
+        QVERIFY(Kleo::Formatting::prettyMessageSignature(signatureData).contains("test@kolab.org"_L1));
     }
 
     void testInlineSignedBroken()
@@ -398,8 +398,9 @@ private Q_SLOTS:
         QVERIFY(!part->encryptionPart());
         QVERIFY(part->signaturePart());
         QCOMPARE(part->text().trimmed(), u"ohno break it öäü"_s);
-        const auto details = PartModel::signatureDetails(part.get());
-        QVERIFY(details.contains(u"Bad signature"_s));
+        const auto details = Kleo::Formatting::prettyMessageSignature(PartModel::signatureData(part.get()));
+        QVERIFY(details.startsWith(u"The message cannot be trusted."_s));
+        QVERIFY(details.contains(u"Message and signature do not match."_s));
         QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::SecurityLevel::Bad);
     }
 
@@ -462,12 +463,10 @@ private Q_SLOTS:
         QVERIFY(part->signaturePart());
         QVERIFY(otp.plainTextContent().contains("encrypted message text"_L1));
 
-        const auto details = PartModel::signatureDetails(part.get());
-        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
-        QCOMPARE(detailsWithoutTimestamp,
-                 "Signature created on TIMESTAMP with certificate: <a "
-                 "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
-                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."_L1);
+        const auto signatureData = PartModel::signatureData(part.get());
+        QCOMPARE(signatureData.status, Kleo::SignatureStatus::ValidAndFullyTrusted);
+        QVERIFY(Kleo::Formatting::prettyMessageSignature(signatureData).contains("key:1BA323932B3FAA826132C79E8D9860C58F246DE6"_L1));
+        QVERIFY(Kleo::Formatting::prettyMessageSignature(signatureData).contains("test@kolab.org"_L1));
     }
 
     void testOpenpgpMultipartEmbedded()
@@ -496,13 +495,11 @@ private Q_SLOTS:
         QVERIFY(part->signaturePart());
         QCOMPARE(otp.plainTextContent(), "test\n\n-- \nThis is a HTML signature.\n"_L1);
 
-        const auto details = PartModel::signatureDetails(part.get());
-        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* using"_s}, u"on TIMESTAMP using"_s);
-        QCOMPARE(detailsWithoutTimestamp,
-                 "Signature created on TIMESTAMP using an unknown certificate "
-                 "with fingerprint <br/><a href='certificate:CBD116485DB9560CA3CD91E02E3B7787B1B75920'>CBD1 1648 5DB9 560C A3CD  91E0 2E3B 7787 "
-                 "B1B7 5920</a><br/>You can search "
-                 "the certificate on a keyserver or import it from a file."_L1);
+        const auto signatureData = PartModel::signatureData(part.get());
+        QCOMPARE(signatureData.status, Kleo::SignatureStatus::KeyMissing);
+        // FIXME: libkleo renders the key link with certificate:FPR, instead of key:FPR
+        //        but that is to be fixed, there.
+        QVERIFY(Kleo::Formatting::prettyMessageSignature(signatureData).contains(":CBD116485DB9560CA3CD91E02E3B7787B1B75920"_L1));
     }
 
     void testOpenpgpMaybeMangled()

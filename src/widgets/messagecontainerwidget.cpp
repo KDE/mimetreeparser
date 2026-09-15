@@ -132,7 +132,7 @@ MessageWidgetContainer::MessageWidgetContainer(const QModelIndex &idx, UrlHandle
     : QFrame(parent)
     , m_containerPart(static_cast<const PartModel *>(idx.model())->part(idx).get())
     // signature
-    , m_signatureInfo(idx.data(PartModel::SignatureDetailsRole).toString())
+    , m_signatureInfo(idx.data(PartModel::SignatureDetailsRole).toMap())
     , m_signatureSecurityLevel(idx.data(PartModel::SignatureSecurityLevelRole).value<PartModel::SecurityLevel>())
     , m_displaySignatureInfo(m_signatureSecurityLevel != PartModel::Unknow)
     , m_signatureIconName(idx.data(PartModel::SignatureIconNameRole).toString())
@@ -247,7 +247,8 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
         auto signatureMessage = new KMessageWidget(this);
         signatureMessage->setObjectName(u"SignatureMessage"_s);
         signatureMessage->setCloseButtonVisible(false);
-        signatureMessage->setText(m_signatureInfo);
+        signatureMessage->setText(m_signatureInfo.value(u"summary"_s).toString());
+        // TODO: explanations, guidance
         connect(signatureMessage, &KMessageWidget::linkActivated, this, [this](const QString &link) {
             m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
         });

@@ -49,7 +49,7 @@ private:
     void createLayout(const QModelIndex &idx);
     QPointer<const MimeTreeParser::Core::MessagePart> m_containerPart;
 
-    QString const m_signatureInfo;
+    QVariantMap const m_signatureInfo;
     PartModel::SecurityLevel m_signatureSecurityLevel;
     bool m_displaySignatureInfo;
     QString const m_signatureIconName;

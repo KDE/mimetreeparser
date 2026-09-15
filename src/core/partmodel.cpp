@@ -21,7 +21,7 @@
 
 #include <gpgme++/verificationresult.h>
 using namespace Qt::Literals::StringLiterals;
-static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::Core::MessagePart *messagePart)
+static std::optional<GpgME::Signature> signatureFromMessagePart(const MimeTreeParser::Core::MessagePart *messagePart)
 {
     const auto signaturePart = messagePart->signaturePart();
     if (!signaturePart) {
@@ -387,28 +387,25 @@ PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::Core:
     return SecurityLevel::NotSoGood;
 }
 
-QString PartModel::signatureDetails(MimeTreeParser::Core::MessagePart *messagePart)
+Kleo::SignatureData PartModel::signatureData(const MimeTreeParser::Core::MessagePart *messagePart)
 {
     auto signature = signatureFromMessagePart(messagePart);
     if (!signature) {
-        return QString{};
-    }
-    if (signature->isNull()) {
-        return i18ndc("mimetreeparser", "@info:status", "Signature is broken");
+        return {};
     }
 
     // guess sender from mime node or parent node
-    auto from = findHeader<KMime::Headers::From>(messagePart->node());
+    const auto from = findHeader<KMime::Headers::From>(messagePart->node());
     if (from) {
         const auto mailboxes = from->mailboxes();
         if (!mailboxes.isEmpty()) {
             auto mailBox = mailboxes.front();
             if (mailBox.hasAddress()) {
-                return Kleo::Formatting::prettySignature(*signature, QString::fromUtf8(mailboxes.front().address()));
+                return Kleo::assessSignature(*signature, QString::fromUtf8(mailboxes.front().address()));
             }
         }
     }
-    return Kleo::Formatting::prettySignature(*signature, {});
+    return Kleo::assessSignature(*signature, {});
 }
 
 static bool isEncapsulatingPart(MimeTreeParser::Core::MessagePart *part)
@@ -585,8 +582,19 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
                 return u"data-warning"_s;
             }
         }
-        case SignatureDetailsRole:
-            return signatureDetails(messagePart);
+        case SignatureDetailsRole: {
+            const auto signature = messagePart->signaturePart();
+            if (!signature) {
+                return {};
+            }
+            const auto assessed = signatureData(signature);
+            QVariantMap ret;
+            ret[u"summary"_s] = Kleo::Formatting::prettyMessageSignature(assessed);
+            ret[u"explanations"_s] = Kleo::Formatting::explanationsForMessageSignature(assessed.status);
+            ret[u"guidance"_s] =
+                Kleo::Formatting::guidanceForMessageSignature(assessed.status, signature->cryptoProto() == QGpgME::openpgp() ? GpgME::OpenPGP : GpgME::CMS);
+            return ret;
+        }
         case EncryptionDetails:
             return QVariant::fromValue(encryptionInfo(messagePart));
         case ErrorType:

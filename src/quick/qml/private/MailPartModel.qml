@@ -32,7 +32,7 @@ DelegateModel {
 
         required property int signatureSecurityLevel
         required property string signatureIconName
-        required property string signatureDetails
+        required property var signatureDetails
 
         required property int errorType
         required property string errorString
@@ -103,7 +103,8 @@ DelegateModel {
                 iconName: partDelegate.signatureIconName
                 visible: partDelegate.isSigned
                 type: getType(partDelegate.signatureSecurityLevel)
-                text: partDelegate.signatureDetails
+                text: partDelegate.signatureDetails.summary
+                // FIXME signatureDetails also has explanation and guidance texts. Use those.
 
                 onLinkActivated: (link) => root.urlHandler.handleClick(link, QQC2.ApplicationWindow.window)
 
