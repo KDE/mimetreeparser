@@ -247,11 +247,28 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
         auto signatureMessage = new KMessageWidget(this);
         signatureMessage->setObjectName(u"SignatureMessage"_s);
         signatureMessage->setCloseButtonVisible(false);
-        signatureMessage->setText(m_signatureInfo.value(u"summary"_s).toString());
-        // TODO: explanations, guidance
-        connect(signatureMessage, &KMessageWidget::linkActivated, this, [this](const QString &link) {
+
+        QString text = m_signatureInfo.value(u"summary"_s).toString();
+        QString expandedText = text;
+        auto explanations = m_signatureInfo.value(u"explanations"_s).toStringList();
+        if (const QString guidance = m_signatureInfo.value(u"guidance"_s).toString(); //
+            !guidance.isEmpty()) {
+            explanations.push_back(i18nc("@info What can be done: Some guidance", "What can be done: %1", guidance));
+        }
+        if (!explanations.isEmpty()) {
+            expandedText = text + "<p>"_L1 + explanations.join("</p><p>"_L1 + "</p>"_L1);
+            text += u" <a style=\"align:right\" href=\"messageviewer:showDetails\"><em>"_s + i18n("Show epxlanation...") + u"</em></a>"_s;
+        }
+        signatureMessage->setText(text);
+        connect(signatureMessage, &KMessageWidget::linkActivated, this, [this, expandedText, signatureMessage](const QString &link) {
+            QUrl url(link);
+            if (url.path() == "showDetails"_L1) {
+                signatureMessage->setText(expandedText);
+                return;
+            }
             m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
         });
+
         signatureMessage->setMessageType(getType(m_signatureSecurityLevel));
         signatureMessage->setWordWrap(true);
         signatureMessage->setIcon(QIcon::fromTheme(m_signatureIconName));
