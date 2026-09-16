@@ -222,7 +222,7 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
             }
         }
 
-        encryptionMessage->setText(text + QLatin1Char(' ') + u"<a href=\"messageviewer:showDetails\">Details</a>"_s);
+        encryptionMessage->setText(text + u" <a href=\"messageviewer:showDetails\">"_s + i18nc("Expand/show details", "Details") + u"</a>"_s);
 
         connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
             QUrl url(link);
