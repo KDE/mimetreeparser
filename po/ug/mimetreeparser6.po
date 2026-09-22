@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-04 00:46+0000\n"
-"PO-Revision-Date: 2026-06-01 16:22-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -98,12 +98,10 @@ msgid ", "
 msgstr "، "
 
 #: core/messagepart.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "ئاتسىز"
+msgstr ""
 
 #: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
 #, kde-format
@@ -172,7 +170,7 @@ msgstr ""
 #, kde-format
 msgctxt "Separator"
 msgid " - "
-msgstr " - "
+msgstr ""
 
 #: quick/qml/itinerary/FlightReservationComponent.qml:77
 #: quick/qml/itinerary/TrainReservationComponent.qml:91
@@ -405,19 +403,15 @@ msgid "Encapsulated email"
 msgstr ""
 
 #: widgets/messageviewer.cpp:330 widgets/messageviewer.cpp:332
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "تېما:"
 
 #: widgets/messageviewer.cpp:330
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "تېما:"
+msgstr ""
 
 #: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:340
 #, kde-format
@@ -425,9 +419,7 @@ msgid "From:"
 msgstr "كىمدىن:"
 
 #: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "يوچۇن"
@@ -638,7 +630,6 @@ msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr ""
 
-#, fuzzy
 #~| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #~| msgid "Unknown"
 #~ msgctxt "@status missing from:, an unknown author"
