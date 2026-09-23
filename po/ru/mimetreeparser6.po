@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-04 00:46+0000\n"
-"PO-Revision-Date: 2026-07-14 17:14+0300\n"
-"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
+"PO-Revision-Date: 2026-09-22 21:55+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -154,20 +154,16 @@ msgstr[2] "Это письмо зашифровано для следующих 
 msgstr[3] "Это письмо зашифровано для следующего получателя:"
 
 #: core/partmodel.cpp:618
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Decryption was cancelled."
+#, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
-msgstr "Расшифровка отменена."
+msgstr "Расшифровка отменена"
 
 #: core/partmodel.cpp:620
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Wrong passphrase."
+#, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"
-msgstr "Неверный пароль."
+msgstr "Неверный пароль"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -411,9 +407,7 @@ msgid "&Details:"
 msgstr "&Сведения:"
 
 #: widgets/messageviewer.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "@status"
-#| msgid "Invitation is broken"
+#, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Некорректное приглашение"
@@ -440,9 +434,7 @@ msgid "From:"
 msgstr "От:"
 
 #: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -610,9 +602,7 @@ msgstr ""
 "расшифрованное сообщение?"
 
 #: widgets/messageviewerbase_p.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Decryption failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Ошибка расшифровки"
