@@ -356,17 +356,37 @@ QModelIndex PartModel::index(int row, int column, const QModelIndex &parent) con
     return QModelIndex();
 }
 
-SignatureInfo encryptionInfo(MimeTreeParser::Core::MessagePart *messagePart)
+QStringList encryptionInfo(MimeTreeParser::Core::MessagePart *messagePart)
 {
-    SignatureInfo signatureInfo;
+    QString summary;
+    QString details;
+
     const auto encryptionPart = messagePart->encryptionPart();
-    if (encryptionPart) {
-        signatureInfo.keyId = encryptionPart->partMetaData()->keyId;
-        signatureInfo.cryptoProto = encryptionPart->cryptoProto();
-        signatureInfo.decryptRecipients = encryptionPart->decryptRecipients();
+    if (!encryptionPart) {
+        return {};
     }
-    return signatureInfo;
-};
+
+    // Color displayed for the encryption info box
+    if (messagePart->error()) {
+        if (Kleo::DeVSCompliance::isCompliant() && messagePart->partMetaData()->isCompliant) {
+            summary = i18n("This message is VS-NfD compliant encrypted but you do not have a matching secret key.");
+        } else {
+            summary = i18n("This message is encrypted but you don't have a matching secret key.");
+        }
+    } else {
+        if (Kleo::DeVSCompliance::isCompliant() && messagePart->partMetaData()->isCompliant) {
+            summary = i18n("This message is VS-NfD compliant encrypted.");
+        } else {
+            summary = i18n("This message is encrypted.");
+        }
+    }
+
+    details = i18n("The message is encrypted for the following recipients:")
+        + MimeTreeParser::Core::decryptRecipientsToHtml(encryptionPart->decryptRecipients(), encryptionPart->cryptoProto());
+
+    return {summary, details};
+}
+
 template<typename T>
 const T *findHeader(const KMime::Content *content)
 {
