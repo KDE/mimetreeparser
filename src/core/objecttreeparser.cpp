@@ -29,22 +29,20 @@ using namespace Qt::Literals::StringLiterals;
  * Filter to avoid evaluating a subtree.
  * Select parts to include it in the result set. Selecting a part in a branch will keep any parent parts from being selected.
  */
-static QList<QSharedPointer<MessagePart>> collect(QSharedPointer<MessagePart> start,
-                                                  const std::function<bool(const QSharedPointer<MessagePart> &)> &evaluateSubtree,
-                                                  const std::function<bool(const QSharedPointer<MessagePart> &)> &select)
+static QList<QSharedPointer<MessagePart>>
+collect(QSharedPointer<MessagePart> start,
+        const std::function<QList<QSharedPointer<MessagePart>>(const QSharedPointer<MessagePart> &)> &evaluateSubParts,
+        const std::function<bool(const QSharedPointer<MessagePart> &)> &select)
 {
-    auto ptr = start.dynamicCast<MessagePart>();
-    Q_ASSERT(ptr);
     QList<QSharedPointer<MessagePart>> list;
-    if (evaluateSubtree(ptr)) {
-        for (const auto &p : ptr->subParts()) {
-            list << ::collect(p, evaluateSubtree, select);
-        }
+    const auto subParts = evaluateSubParts(start);
+    for (const auto &p : subParts) {
+        list << ::collect(p, evaluateSubParts, select);
     }
 
     // Don't consider this part if we already selected a subpart
     if (list.isEmpty()) {
-        if (select(ptr)) {
+        if (select(start)) {
             list << start;
         }
     }
@@ -57,8 +55,8 @@ QString ObjectTreeParser::plainTextContent()
     if (mParsedPart) {
         auto plainParts = ::collect(
             mParsedPart,
-            [](const QSharedPointer<MessagePart> &) {
-                return true;
+            [](const QSharedPointer<MessagePart> &part) {
+                return part->subParts();
             },
             [](const QSharedPointer<MessagePart> &part) {
                 if (part->isAttachment()) {
@@ -85,8 +83,8 @@ QString ObjectTreeParser::htmlContent()
     if (mParsedPart) {
         QList<QSharedPointer<MessagePart>> contentParts = ::collect(
             mParsedPart,
-            [](const QSharedPointer<MessagePart> &) {
-                return true;
+            [](const QSharedPointer<MessagePart> &part) {
+                return part->subParts();
             },
             [](const QSharedPointer<MessagePart> &part) {
                 if (dynamic_cast<MimeTreeParser::Core::HtmlMessagePart *>(part.data())) {
@@ -114,8 +112,8 @@ bool ObjectTreeParser::hasEncryptedParts() const
 
     ::collect(
         mParsedPart,
-        [](const QSharedPointer<MessagePart> &) {
-            return true;
+        [](const QSharedPointer<MessagePart> &part) {
+            return part->subParts();
         },
         [&result](const QSharedPointer<MessagePart> &part) {
             if (dynamic_cast<MimeTreeParser::Core::EncryptedMessagePart *>(part.data())) {
@@ -133,8 +131,8 @@ bool ObjectTreeParser::hasSignedParts() const
 
     ::collect(
         mParsedPart,
-        [](const QSharedPointer<MessagePart> &) {
-            return true;
+        [](const QSharedPointer<MessagePart> &part) {
+            return part->subParts();
         },
         [&result](const QSharedPointer<MessagePart> &part) {
             if (dynamic_cast<MimeTreeParser::Core::SignedMessagePart *>(part.data())) {
@@ -214,24 +212,28 @@ KMime::Content *ObjectTreeParser::find(const std::function<bool(KMime::Content *
     return ::find(mTopLevelContent, select);
 }
 
-QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts()
+QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(const QList<QByteArray> &preferredTypes)
 {
-    return collectContentParts(mParsedPart);
+    return collectContentParts(mParsedPart, preferredTypes);
 }
 
-QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(QSharedPointer<MessagePart> start)
+QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(QSharedPointer<MessagePart> start, const QList<QByteArray> &preferredTypes)
 {
     return ::collect(
         start,
-        [start](const QSharedPointer<MessagePart> &part) {
-            // Ignore the top-level
-            if (start.data() == part.data()) {
-                return true;
-            }
+        [start, &preferredTypes](const QSharedPointer<MessagePart> &part) -> QList<QSharedPointer<MessagePart>> {
+            // Do not recurse into encapsulation
             if (auto encapsulatedPart = part.dynamicCast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart>()) {
-                return false;
+                if (start.data() != part.data()) {
+                    return {};
+                }
             }
-            return true;
+            if (auto alternative = part.dynamicCast<AlternativeMessagePart>()) {
+                if (auto child = alternative->preferredPart(preferredTypes)) {
+                    return {child};
+                }
+            }
+            return part->subParts();
         },
         [start](const QSharedPointer<MessagePart> &part) {
             if (const auto attachment = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(part.data())) {
@@ -254,8 +256,8 @@ QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectAttachmentParts()
 {
     QList<QSharedPointer<MessagePart>> attachmentParts = ::collect(
         mParsedPart,
-        [](const QSharedPointer<MessagePart> &) {
-            return true;
+        [](const QSharedPointer<MessagePart> &part) {
+            return part->subParts();
         },
         [](const QSharedPointer<MessagePart> &part) {
             return part->isAttachment();
@@ -272,8 +274,8 @@ void ObjectTreeParser::decryptAndVerify()
     // We first decrypt
     ::collect(
         mParsedPart,
-        [](const QSharedPointer<MessagePart> &) {
-            return true;
+        [](const QSharedPointer<MessagePart> &part) {
+            return part->subParts();
         },
         [](const QSharedPointer<MessagePart> &part) {
             if (const auto enc = dynamic_cast<MimeTreeParser::Core::EncryptedMessagePart *>(part.data())) {
@@ -284,8 +286,8 @@ void ObjectTreeParser::decryptAndVerify()
     // And then verify the available signatures
     ::collect(
         mParsedPart,
-        [](const QSharedPointer<MessagePart> &) {
-            return true;
+        [](const QSharedPointer<MessagePart> &part) {
+            return part->subParts();
         },
         [](const QSharedPointer<MessagePart> &part) {
             if (const auto enc = dynamic_cast<MimeTreeParser::Core::SignedMessagePart *>(part.data())) {

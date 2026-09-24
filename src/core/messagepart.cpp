@@ -528,6 +528,28 @@ QList<AlternativeMessagePart::HtmlMode> AlternativeMessagePart::availableModes()
     return mChildParts.keys();
 }
 
+QSharedPointer<MessagePart> AlternativeMessagePart::preferredPart(const QList<QByteArray> &preferredTypes) const
+{
+    if (preferredTypes.isEmpty() || mChildParts.isEmpty()) {
+        return {};
+    }
+    static const QMap<QByteArray, HtmlMode> modes{
+        {"text/plain"_ba, MultipartPlain},
+        {"text/html"_ba, MultipartHtml},
+        {"text/calendar"_ba, MultipartIcal},
+    };
+    for (const auto &type : preferredTypes) {
+        const auto mode = modes.constFind(type);
+        if (mode == modes.cend()) {
+            continue;
+        }
+        if (auto child = mChildParts.value(mode.value())) {
+            return child;
+        }
+    }
+    return mChildParts.first();
+}
+
 QString AlternativeMessagePart::text() const
 {
     if (mChildParts.contains(MultipartPlain)) {

@@ -494,6 +494,8 @@ public:
      */
     [[nodiscard]] QList<HtmlMode> availableModes();
 
+    [[nodiscard]] QSharedPointer<MessagePart> preferredPart(const QList<QByteArray> &preferredTypes) const;
+
 private:
     QMap<HtmlMode, QSharedPointer<MessagePart>> mChildParts;
 
