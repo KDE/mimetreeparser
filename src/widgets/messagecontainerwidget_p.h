@@ -8,7 +8,6 @@
 #include <QFrame>
 #include <QPointer>
 
-class SignatureInfo;
 class QPaintEvent;
 class UrlHandler;
 
@@ -54,7 +53,7 @@ private:
     bool m_displaySignatureInfo;
     QString const m_signatureIconName;
 
-    SignatureInfo const m_encryptionInfo;
+    QStringList const m_encryptionInfo;
     PartModel::SecurityLevel m_encryptionSecurityLevel;
     bool m_displayEncryptionInfo;
     QString const m_encryptionIconName;

@@ -137,7 +137,7 @@ MessageWidgetContainer::MessageWidgetContainer(const QModelIndex &idx, UrlHandle
     , m_displaySignatureInfo(m_signatureSecurityLevel != PartModel::Unknow)
     , m_signatureIconName(idx.data(PartModel::SignatureIconNameRole).toString())
     // encryption
-    , m_encryptionInfo(idx.data(PartModel::EncryptionDetails).value<SignatureInfo>())
+    , m_encryptionInfo(idx.data(PartModel::EncryptionDetails).toStringList())
     , m_encryptionSecurityLevel(idx.data(PartModel::EncryptionSecurityLevelRole).value<PartModel::SecurityLevel>())
     , m_displayEncryptionInfo(m_encryptionSecurityLevel != PartModel::Unknow)
     , m_encryptionIconName(idx.data(PartModel::EncryptionIconNameRole).toString())
@@ -205,40 +205,24 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
         encryptionMessage->setCloseButtonVisible(false);
         encryptionMessage->setMessageType(getType(m_encryptionSecurityLevel));
 
-        QString text;
-        if (m_encryptionSecurityLevel == PartModel::Bad) {
-            encryptionMessage->setIcon(QIcon::fromTheme(u"data-error"_s));
-            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
-                text = i18n("This message is VS-NfD compliant encrypted but you don't have a matching secret key.", QString::fromUtf8(m_encryptionInfo.keyId));
-            } else {
-                text = i18n("This message is encrypted but you don't have a matching secret key.");
-            }
-        } else {
-            encryptionMessage->setIcon(QIcon::fromTheme(u"mail-encrypted"_s));
-            if (Kleo::DeVSCompliance::isCompliant() && m_encryptionInfo.isCompliant) {
-                text = i18n("This message is VS-NfD compliant encrypted.");
-            } else {
-                text = i18n("This message is encrypted.");
-            }
+        QString text = m_encryptionInfo.value(0);
+        encryptionMessage->setIcon(m_encryptionSecurityLevel == PartModel::Bad ? QIcon::fromTheme(u"data-error"_s) : QIcon::fromTheme(u"mail-encrypted"_s));
+        if (m_encryptionInfo.count() > 1) {
+            text += QLatin1Char(' ') + u"<a href=\"messageviewer:showDetails\">Details</a>"_s;
+
+            connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage](const QString &link) {
+                QUrl url(link);
+                if (url.path() == QLatin1StringView("showDetails")) {
+                    encryptionMessage->setText(m_encryptionInfo.join(u' '));
+                    return;
+                }
+
+                if (url.path() == QLatin1StringView("showCertificate")) {
+                    m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
+                }
+            });
         }
-
-        encryptionMessage->setText(text + QLatin1Char(' ') + u"<a href=\"messageviewer:showDetails\">Details</a>"_s);
-
-        connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage, text](const QString &link) {
-            QUrl url(link);
-            if (url.path() == QLatin1StringView("showDetails")) {
-                QString newText = text + QLatin1Char(' ') + i18n("The message is encrypted for the following recipients:");
-
-                newText += MimeTreeParser::Core::decryptRecipientsToHtml(m_encryptionInfo.decryptRecipients, m_encryptionInfo.cryptoProto);
-
-                encryptionMessage->setText(newText);
-                return;
-            }
-
-            if (url.path() == QLatin1StringView("showCertificate")) {
-                m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
-            }
-        });
+        encryptionMessage->setText(text);
 
         vLayout->addWidget(encryptionMessage);
     }

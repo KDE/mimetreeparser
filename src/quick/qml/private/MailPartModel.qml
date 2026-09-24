@@ -94,7 +94,8 @@ DelegateModel {
                 iconName: partDelegate.encryptionIconName
                 type: getType(partDelegate.encryptionSecurityLevel)
                 visible: partDelegate.isEncrypted
-                text: !partDelegate.encryptionDetails.keyId ? i18n("This message is encrypted but you don't have a matching secret key.") : i18n("This message is encrypted for: %1", partDelegate.encryptionDetails.keyId);
+                text: partDelegate.encryptionDetails.join(' ');
+                onLinkActivated: (link) => root.urlHandler.handleClick(link, QQC2.ApplicationWindow.window)
 
                 Layout.fillWidth: true
             }
