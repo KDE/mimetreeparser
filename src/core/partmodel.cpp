@@ -120,14 +120,27 @@ public:
     void checkPart(const QSharedPointer<MimeTreeParser::Core::MessagePart> part)
     {
         mMimeTypeCache[part.data()] = part->mimeType();
+        auto alternative = qobject_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data());
+        if (!alternative) {
+            alternative = part->parentAlternativePart();
+        }
+        if (alternative && alternative->isHtml()) {
+            containsHtmlAndPlain = true;
+        }
         // Extract the content of the part and
         mContents.insert(part.data(), extractContent(part.data()));
+    }
+
+    [[nodiscard]] QList<QByteArray> preferredTypes() const
+    {
+        return showHtml ? QList<QByteArray>{"text/calendar"_ba, "text/html"_ba, "text/plain"_ba}
+                        : QList<QByteArray>{"text/calendar"_ba, "text/plain"_ba, "text/html"_ba};
     }
 
     // Recursively find encapsulated messages
     void findEncapsulated(const QSharedPointer<MimeTreeParser::Core::EncapsulatedRfc822MessagePart> &e)
     {
-        mEncapsulatedParts[e.data()] = mParser->collectContentParts(e);
+        mEncapsulatedParts[e.data()] = mParser->collectContentParts(e, preferredTypes());
         for (const auto &subPart : std::as_const(mEncapsulatedParts[e.data()])) {
             checkPart(subPart);
             mParents[subPart.data()] = e.data();
@@ -169,8 +182,6 @@ public:
 
         if (messagePart->isHtml()) {
             if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(messagePart)) {
-                containsHtmlAndPlain = true;
-                Q_EMIT q->containsHtmlChanged();
                 if (!showHtml) {
                     return preprocessPlaintext(messagePart->plaintextContent());
                 }
@@ -195,13 +206,14 @@ public:
 
     void collectContents()
     {
+        const bool previouslyContainedHtml = containsHtmlAndPlain;
         mEncapsulatedParts.clear();
         mParents.clear();
         mContents.clear();
         containsHtmlAndPlain = false;
         isTrimmed = false;
 
-        const auto parts = mParser->collectContentParts();
+        const auto parts = mParser->collectContentParts(preferredTypes());
         QList<QSharedPointer<MimeTreeParser::Core::MessagePart>> filteredParts;
 
         for (const auto &part : parts) {
@@ -231,6 +243,9 @@ public:
             } else {
                 mParts.append(part);
             }
+        }
+        if (containsHtmlAndPlain != previouslyContainedHtml) {
+            Q_EMIT q->containsHtmlChanged();
         }
     }
 

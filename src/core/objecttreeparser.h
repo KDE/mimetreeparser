@@ -108,13 +108,13 @@ public:
      * \brief Collects all content parts from the parsed message
      * \return A list of all message parts
      */
-    [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts();
+    [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts(const QList<QByteArray> &preferredTypes = {});
     /*!
      * \brief Collects all content parts starting from a given message part
      * \param start The starting message part
      * \return A list of message parts
      */
-    [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts(QSharedPointer<MessagePart> start);
+    [[nodiscard]] QList<QSharedPointer<MessagePart>> collectContentParts(QSharedPointer<MessagePart> start, const QList<QByteArray> &preferredTypes = {});
     /*!
      * \brief Collects all attachment parts from the parsed message
      * \return A list of attachment message parts
