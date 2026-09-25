@@ -56,13 +56,21 @@ private Q_SLOTS:
     {
         MessageParser messageParser;
         messageParser.setMessage(readMailFromFile(QLatin1StringView("html.mbox")));
-
         QFont font{};
         font.setFamily(QStringLiteral("Noto Sans"));
         qGuiApp->setFont(font);
 
         auto partModel = messageParser.parts();
         QAbstractItemModelTester tester(partModel, &messageParser);
+        partModel->setShowHtml(false);
+        QCOMPARE(partModel->rowCount(), 1);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::TypeRole).value<PartModel::Types>(), PartModel::Types::Plain);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::IsEmbeddedRole).toBool(), false);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::IsErrorRole).toBool(), false);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::ContentRole).toString(),
+                 QStringLiteral("<p>&lt;html&gt;&lt;body&gt;&lt;p&gt;&lt;span&gt;HTML&lt;/span&gt; text&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</p>"));
+
+        partModel->setShowHtml(true);
         QCOMPARE(partModel->rowCount(), 1);
         QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::TypeRole).value<PartModel::Types>(), PartModel::Types::Plain);
         QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::IsEmbeddedRole).toBool(), false);

@@ -467,12 +467,6 @@ public:
     [[nodiscard]] QString text() const override;
 
     /*!
-     * \brief Returns whether the selected alternative is HTML
-     * \return True if the selected alternative is HTML
-     */
-    [[nodiscard]] bool isHtml() const override;
-
-    /*!
      * \brief Returns the plaintext alternative content
      * \return The plaintext representation
      */

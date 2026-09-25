@@ -527,13 +527,13 @@ private Q_SLOTS:
         MimeTreeParser::Core::ObjectTreeParser otp;
         otp.parseObjectTree(readMailFromFile("applehtmlwithattachments.mbox"_L1));
         otp.decryptAndVerify();
+        otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0]->parentAlternativePart();
+        auto part = partList[0];
         QVERIFY(part);
         QVERIFY(!part->encryptionPart());
         QVERIFY(!part->signaturePart());
-        QVERIFY(part->isHtml());
         QCOMPARE(otp.plainTextContent(), QString::fromUtf8("Hi,\n\nThis is an HTML message with attachments.\n\nCheers,\nChristian"));
         QCOMPARE(otp.htmlContent(),
                  QString::fromUtf8(
@@ -557,11 +557,10 @@ private Q_SLOTS:
         otp.print();
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
-        auto part = partList[0]->parentAlternativePart();
+        auto part = partList[0];
         QVERIFY(part);
         QVERIFY(!part->encryptionPart());
         QVERIFY(!part->signaturePart());
-        QVERIFY(part->isHtml());
         QCOMPARE(otp.plainTextContent(), "Hello\n\n\n\nRegards\n\nFsdfsdf"_L1);
         QCOMPARE(otp.htmlContent(),
                  "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=us-ascii\"></head><body style=\"word-wrap: break-word; "
@@ -606,8 +605,8 @@ private Q_SLOTS:
         QVERIFY(part);
         QVERIFY(!part->encryptionPart());
         QVERIFY(!part->signaturePart());
-        QVERIFY(part->isHtml());
         QVERIFY(part->availableModes().contains(MimeTreeParser::Core::AlternativeMessagePart::MultipartIcal));
+        QVERIFY(part->availableModes().contains(MimeTreeParser::Core::AlternativeMessagePart::MultipartHtml));
 
         auto attachments = otp.collectAttachmentParts();
         QCOMPARE(attachments.size(), 1);

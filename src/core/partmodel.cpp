@@ -119,12 +119,9 @@ public:
 
     void checkPart(const QSharedPointer<MimeTreeParser::Core::MessagePart> part)
     {
-        mMimeTypeCache[part.data()] = part->mimeType();
-        auto alternative = qobject_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data());
-        if (!alternative) {
-            alternative = part->parentAlternativePart();
-        }
-        if (alternative && alternative->isHtml()) {
+        auto mimetype = part->mimeType();
+        mMimeTypeCache[part.data()] = mimetype;
+        if (mimetype == "text/html"_ba) {
             containsHtmlAndPlain = true;
         }
         // Extract the content of the part and
@@ -152,12 +149,6 @@ public:
 
     QVariant extractContent(MimeTreeParser::Core::MessagePart *messagePart)
     {
-        if (auto alternativePart = dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(messagePart)) {
-            if (alternativePart->availableModes().contains(MimeTreeParser::Core::AlternativeMessagePart::MultipartIcal)) {
-                return alternativePart->icalContent();
-            }
-        }
-
         auto preprocessPlaintext = [&](const QString &text) {
             // Reduce consecutive new lines to never exceed 2
             auto cleaned = text;
@@ -180,13 +171,8 @@ public:
             return MimeTreeParser::Core::linkify(html);
         };
 
-        if (messagePart->isHtml()) {
-            if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(messagePart)) {
-                if (!showHtml) {
-                    return preprocessPlaintext(messagePart->plaintextContent());
-                }
-            }
-            return addCss(mParser->resolveCidLinks(messagePart->htmlContent()));
+        if (showHtml && messagePart->isHtml()) {
+            return addCss(mParser->resolveCidLinks(messagePart->text()));
         }
 
         if (auto attachmentPart = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(messagePart)) {
@@ -208,6 +194,7 @@ public:
     {
         const bool previouslyContainedHtml = containsHtmlAndPlain;
         mEncapsulatedParts.clear();
+        mParts.clear();
         mParents.clear();
         mContents.clear();
         containsHtmlAndPlain = false;
@@ -486,10 +473,8 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             if (dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(messagePart)) {
                 return QVariant::fromValue(Types::Encapsulated);
             }
-            if (auto alternativePart = dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(messagePart)) {
-                if (alternativePart->availableModes().contains(MimeTreeParser::Core::AlternativeMessagePart::MultipartIcal)) {
-                    return QVariant::fromValue(Types::Ical);
-                }
+            if (messagePart->mimeType() == "text/calendar"_ba) {
+                return QVariant::fromValue(Types::Ical);
             }
             if (auto attachmentPart = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(messagePart)) {
                 auto node = attachmentPart->node();
