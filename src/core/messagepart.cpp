@@ -187,6 +187,9 @@ void MessagePart::setText(const QString &text)
 
 bool MessagePart::isHtml() const
 {
+    if (auto ct = contentType(mNode)) {
+        return ct->isHTMLText();
+    }
     return false;
 }
 
@@ -488,7 +491,9 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
     }
 
     if (auto dataHtml = findTypeInDirectChildren(mNode, "text/html")) {
-        mChildParts[MultipartHtml] = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataHtml, true));
+        auto sub = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, dataHtml, true));
+        mChildParts[MultipartHtml] = sub;
+        appendSubPart(sub);
     } else {
         // If we didn't find the HTML part as the first child of the multipart/alternative, it might
         // be that this is a HTML message with images, and text/plain and multipart/related are the
@@ -505,16 +510,11 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
             return findTypeInDirectChildren(mNode, "multipart/mixed");
         }();
         if (data) {
-            QString htmlContent;
-            const auto parts = data->contents();
-            for (auto p : parts) {
-                if ((!p->contentType()->isEmpty()) && (p->contentType()->mimeType() == "text/html")) {
-                    htmlContent += MimeMessagePart(mOtp, p, true).text();
-                } else if (KMime::isAttachment(p)) {
-                    appendSubPart(QSharedPointer<MimeMessagePart>(new MimeMessagePart(otp, p, true)));
-                }
+            auto sub = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, data, true));
+            if (findTypeInDirectChildren(data, "text/html")) {
+                mChildParts[MultipartHtml] = sub;
             }
-            mChildParts[MultipartHtml] = QSharedPointer<MessagePart>(new MessagePart(mOtp, htmlContent, nullptr));
+            appendSubPart(sub);
         }
     }
 }
@@ -530,7 +530,7 @@ QList<AlternativeMessagePart::HtmlMode> AlternativeMessagePart::availableModes()
 
 QSharedPointer<MessagePart> AlternativeMessagePart::preferredPart(const QList<QByteArray> &preferredTypes) const
 {
-    if (preferredTypes.isEmpty() || mChildParts.isEmpty()) {
+    if (mChildParts.isEmpty()) {
         return {};
     }
     static const QMap<QByteArray, HtmlMode> modes{
@@ -556,11 +556,6 @@ QString AlternativeMessagePart::text() const
         return mChildParts[MultipartPlain]->text();
     }
     return QString();
-}
-
-bool AlternativeMessagePart::isHtml() const
-{
-    return mChildParts.contains(MultipartHtml);
 }
 
 QString AlternativeMessagePart::plaintextContent() const

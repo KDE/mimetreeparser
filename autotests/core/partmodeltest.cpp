@@ -11,6 +11,8 @@
 #include "objecttreeparser.h"
 #include "partmodel.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 static std::shared_ptr<KMime::Message> readMailFromFile(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
@@ -56,13 +58,21 @@ private Q_SLOTS:
     {
         MessageParser messageParser;
         messageParser.setMessage(readMailFromFile(QLatin1StringView("html.mbox")));
-
         QFont font{};
         font.setFamily(QStringLiteral("Noto Sans"));
         qGuiApp->setFont(font);
 
         auto partModel = messageParser.parts();
         QAbstractItemModelTester tester(partModel, &messageParser);
+        partModel->setShowHtml(false);
+        QCOMPARE(partModel->rowCount(), 1);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::TypeRole).value<PartModel::Types>(), PartModel::Types::Plain);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::IsEmbeddedRole).toBool(), false);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::IsErrorRole).toBool(), false);
+        QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::ContentRole).toString(),
+                 "<p>"_L1 + QStringLiteral("<html><body><p><span>HTML</span> text</p></body></html>").toHtmlEscaped() + "</p>"_L1);
+
+        partModel->setShowHtml(true);
         QCOMPARE(partModel->rowCount(), 1);
         QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::TypeRole).value<PartModel::Types>(), PartModel::Types::Plain);
         QCOMPARE(partModel->data(partModel->index(0, 0), PartModel::IsEmbeddedRole).toBool(), false);

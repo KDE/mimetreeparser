@@ -65,9 +65,6 @@ QString ObjectTreeParser::plainTextContent()
                 if (dynamic_cast<MimeTreeParser::Core::TextMessagePart *>(part.data())) {
                     return true;
                 }
-                if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
-                    return true;
-                }
                 return false;
             });
         for (const auto &part : std::as_const(plainParts)) {
@@ -81,24 +78,9 @@ QString ObjectTreeParser::htmlContent()
 {
     QString content;
     if (mParsedPart) {
-        QList<QSharedPointer<MessagePart>> contentParts = ::collect(
-            mParsedPart,
-            [](const QSharedPointer<MessagePart> &part) {
-                return part->subParts();
-            },
-            [](const QSharedPointer<MessagePart> &part) {
-                if (dynamic_cast<MimeTreeParser::Core::HtmlMessagePart *>(part.data())) {
-                    return true;
-                }
-                if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
-                    return true;
-                }
-                return false;
-            });
+        QList<QSharedPointer<MessagePart>> contentParts = collectContentParts({"text/html"});
         for (const auto &part : std::as_const(contentParts)) {
-            if (auto p = dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
-                content += p->htmlContent();
-            } else {
+            if (part->isHtml()) {
                 content += part->text();
             }
         }
@@ -161,7 +143,8 @@ static void print(QTextStream &stream, KMime::Content *node, const QString prefi
 
 static void print(QTextStream &stream, const MessagePart &messagePart, const QByteArray pre = {})
 {
-    stream << pre << "# " << messagePart.metaObject()->className() << " isAttachment: " << messagePart.isAttachment() << "\n";
+    stream << pre << "# " << messagePart.metaObject()->className() << " mimeType: " << messagePart.mimeType() << " isAttachment: " << messagePart.isAttachment()
+           << "\n";
     const auto subParts = messagePart.subParts();
     for (const auto &subPart : subParts) {
         print(stream, *subPart, pre + " ");
@@ -238,8 +221,6 @@ QList<QSharedPointer<MessagePart>> ObjectTreeParser::collectContentParts(QShared
         [start](const QSharedPointer<MessagePart> &part) {
             if (const auto attachment = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(part.data())) {
                 return attachment->mimeType() == "text/calendar"_ba;
-            } else if (dynamic_cast<MimeTreeParser::Core::AlternativeMessagePart *>(part.data())) {
-                return true;
             } else if (dynamic_cast<MimeTreeParser::Core::HeadersPart *>(part.data())) {
                 return false;
             } else if (dynamic_cast<MimeTreeParser::Core::EncapsulatedRfc822MessagePart *>(part.data())) {
