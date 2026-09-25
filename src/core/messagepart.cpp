@@ -838,7 +838,6 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
             setDecryptMessage(false);
         }
 
-        mMetaData.errorText = Kleo::Formatting::errorAsString(decryptResult.error());
         if (Kleo::DeVSCompliance::isCompliant()) {
             mMetaData.isCompliant = decryptResult.isDeVs();
             mMetaData.compliance = Kleo::DeVSCompliance::name(decryptResult.isDeVs());
@@ -878,9 +877,20 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
 
         if (!mCryptoProto) {
             mMetaData.errorText = i18n("No appropriate crypto plug-in was found.");
-        } else if (!passphraseError()) {
+        } else if (mError == UserCancelled) {
+            mMetaData.errorText = i18ndc("mimetreeparser", "@info:status", "Decryption was canceled");
+        } else if (mPassphraseError) {
+            mMetaData.errorText = i18ndc("mimetreeparser", "@info:status", "Wrong passphrase");
+        } else if (mNoSecKey) {
+            if (Kleo::DeVSCompliance::isCompliant() && partMetaData()->isCompliant) {
+                mMetaData.errorText = i18n("This message is VS-NfD compliant encrypted but you do not have a matching secret key.");
+            } else {
+                mMetaData.errorText = i18n("This message is encrypted but you don't have a matching secret key.");
+            }
+        } else {
+            // TODO: cannot currently be reached, see mPassphraseError = true, above
             mMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1StringView("<br />")
-                + i18n("Error: %1", partMetaData()->errorText);
+                + i18n("Error: %1", Kleo::Formatting::errorAsString(decryptResult.error()));
         }
     }
     return bDecryptionOk;

@@ -10,6 +10,7 @@
 
 class QPaintEvent;
 class UrlHandler;
+class KMessageWidget;
 
 /// \internal
 class MessageWidgetContainer : public QFrame
@@ -34,6 +35,8 @@ public:
         return m_containerPart;
     }
 
+    static KMessageWidget *makeInfoBox(QWidget *parent, const GenericInfo &info, const UrlHandler *urlHandler);
+
 Q_SIGNALS:
     void attachmentContextMenu(const QSharedPointer<MimeTreeParser::Core::MessagePart> part, const QPoint &pos);
 
@@ -48,15 +51,11 @@ private:
     void createLayout(const QModelIndex &idx);
     QPointer<const MimeTreeParser::Core::MessagePart> m_containerPart;
 
-    QString const m_signatureInfo;
-    PartModel::SecurityLevel m_signatureSecurityLevel;
+    GenericInfo const m_signatureInfo;
     bool m_displaySignatureInfo;
-    QString const m_signatureIconName;
 
-    QStringList const m_encryptionInfo;
-    PartModel::SecurityLevel m_encryptionSecurityLevel;
+    GenericInfo const m_encryptionInfo;
     bool m_displayEncryptionInfo;
-    QString const m_encryptionIconName;
 
     PartModel::SecurityLevel m_sidebarSecurityLevel;
 

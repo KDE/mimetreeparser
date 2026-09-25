@@ -19,7 +19,7 @@ UrlHandler::UrlHandler(QObject *parent)
 {
 }
 
-bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
+bool UrlHandler::handleClick(const QUrl &url, QWindow *window) const
 {
     QString keyId;
     if (url.scheme() == "key"_L1 || url.scheme() == "certificate"_L1) {
@@ -55,7 +55,7 @@ bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
     return true;
 }
 
-bool UrlHandler::foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId)
+bool UrlHandler::foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId) const
 {
     static QString showCertMan(u"showCertificate#"_s);
     displayName.clear();

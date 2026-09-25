@@ -132,15 +132,11 @@ MessageWidgetContainer::MessageWidgetContainer(const QModelIndex &idx, UrlHandle
     : QFrame(parent)
     , m_containerPart(static_cast<const PartModel *>(idx.model())->part(idx).get())
     // signature
-    , m_signatureInfo(idx.data(PartModel::SignatureDetailsRole).toString())
-    , m_signatureSecurityLevel(idx.data(PartModel::SignatureSecurityLevelRole).value<PartModel::SecurityLevel>())
-    , m_displaySignatureInfo(m_signatureSecurityLevel != PartModel::Unknow)
-    , m_signatureIconName(idx.data(PartModel::SignatureIconNameRole).toString())
+    , m_signatureInfo(idx.data(PartModel::SignatureInfoRole).value<GenericInfo>())
+    , m_displaySignatureInfo(m_signatureInfo.securityLevel != PartModel::Unknow)
     // encryption
-    , m_encryptionInfo(idx.data(PartModel::EncryptionDetails).toStringList())
-    , m_encryptionSecurityLevel(idx.data(PartModel::EncryptionSecurityLevelRole).value<PartModel::SecurityLevel>())
-    , m_displayEncryptionInfo(m_encryptionSecurityLevel != PartModel::Unknow)
-    , m_encryptionIconName(idx.data(PartModel::EncryptionIconNameRole).toString())
+    , m_encryptionInfo(idx.data(PartModel::EncryptionInfoRole).value<GenericInfo>())
+    , m_displayEncryptionInfo(m_encryptionInfo.securityLevel != PartModel::Unknow)
     // sidebar
     , m_sidebarSecurityLevel(idx.data(PartModel::SidebarSecurityLevelRole).value<PartModel::SecurityLevel>())
     , m_urlHandler(urlHandler)
@@ -185,6 +181,32 @@ QLayout *MessageWidgetContainer::innerLayout() const
     return m_innerLayout;
 }
 
+KMessageWidget *MessageWidgetContainer::makeInfoBox(QWidget *parent, const GenericInfo &info, const UrlHandler *urlHandler)
+{
+    auto box = new KMessageWidget(parent);
+    box->setCloseButtonVisible(false);
+    box->setMessageType(getType(info.securityLevel));
+    box->setWordWrap(true);
+
+    QString text = info.summary;
+    box->setIcon(QIcon::fromTheme(info.iconName));
+    if (!info.details.isEmpty()) {
+        text += QLatin1Char(' ') + u"<a href=\"messageviewer:showDetails\">Details</a>"_s;
+    }
+    box->setText(text);
+
+    connect(box, &KMessageWidget::linkActivated, parent, [parent, box, info, urlHandler](const QString &link) {
+        QUrl url(link);
+        if (url.path() == QLatin1StringView("showDetails")) {
+            box->setText(info.summary + u' ' + info.details.join(u' '));
+            return;
+        }
+        urlHandler->handleClick(QUrl(link), parent->window()->windowHandle());
+    });
+
+    return box;
+}
+
 void MessageWidgetContainer::createLayout(const QModelIndex &idx)
 {
     auto vLayout = new QVBoxLayout(this);
@@ -200,45 +222,14 @@ void MessageWidgetContainer::createLayout(const QModelIndex &idx)
     }
 
     if (m_displayEncryptionInfo) {
-        auto encryptionMessage = new KMessageWidget(this);
+        auto encryptionMessage = makeInfoBox(this, m_encryptionInfo, m_urlHandler);
         encryptionMessage->setObjectName(QLatin1StringView("EncryptionMessage"));
-        encryptionMessage->setCloseButtonVisible(false);
-        encryptionMessage->setMessageType(getType(m_encryptionSecurityLevel));
-
-        QString text = m_encryptionInfo.value(0);
-        encryptionMessage->setIcon(m_encryptionSecurityLevel == PartModel::Bad ? QIcon::fromTheme(u"data-error"_s) : QIcon::fromTheme(u"mail-encrypted"_s));
-        if (m_encryptionInfo.count() > 1) {
-            text += QLatin1Char(' ') + u"<a href=\"messageviewer:showDetails\">Details</a>"_s;
-
-            connect(encryptionMessage, &KMessageWidget::linkActivated, this, [this, encryptionMessage](const QString &link) {
-                QUrl url(link);
-                if (url.path() == QLatin1StringView("showDetails")) {
-                    encryptionMessage->setText(m_encryptionInfo.join(u' '));
-                    return;
-                }
-
-                if (url.path() == QLatin1StringView("showCertificate")) {
-                    m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
-                }
-            });
-        }
-        encryptionMessage->setText(text);
-
         vLayout->addWidget(encryptionMessage);
     }
 
     if (m_displaySignatureInfo) {
-        auto signatureMessage = new KMessageWidget(this);
+        auto signatureMessage = makeInfoBox(this, m_signatureInfo, m_urlHandler);
         signatureMessage->setObjectName(u"SignatureMessage"_s);
-        signatureMessage->setCloseButtonVisible(false);
-        signatureMessage->setText(m_signatureInfo);
-        connect(signatureMessage, &KMessageWidget::linkActivated, this, [this](const QString &link) {
-            m_urlHandler->handleClick(QUrl(link), window()->windowHandle());
-        });
-        signatureMessage->setMessageType(getType(m_signatureSecurityLevel));
-        signatureMessage->setWordWrap(true);
-        signatureMessage->setIcon(QIcon::fromTheme(m_signatureIconName));
-
         vLayout->addWidget(signatureMessage);
     }
 

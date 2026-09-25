@@ -67,14 +67,9 @@ public:
         IsEmbeddedRole,
         IsErrorRole,
         SidebarSecurityLevelRole,
-        EncryptionSecurityLevelRole,
-        EncryptionIconNameRole,
-        SignatureSecurityLevelRole,
-        SignatureDetailsRole,
-        SignatureIconNameRole,
-        EncryptionDetails,
-        ErrorType,
-        ErrorString,
+        EncryptionInfoRole,
+        SignatureInfoRole,
+        ErrorInfoRole,
         SenderRole,
         DateRole,
         AssociatedAttachmentsRole, // Attachments that "belong" to this content part; QList<QSharedPointer<MessagePart>>
@@ -166,4 +161,18 @@ Q_SIGNALS:
 private:
     std::unique_ptr<PartModelPrivate> d;
     QSharedPointer<MimeTreeParser::Core::MessagePart> messagePart(const QModelIndex &index) const;
+};
+
+class MIMETREEPARSER_CORE_EXPORT GenericInfo
+{
+    Q_GADGET
+    Q_PROPERTY(QString summary MEMBER summary CONSTANT)
+    Q_PROPERTY(QStringList details MEMBER details CONSTANT)
+    Q_PROPERTY(QString iconName MEMBER iconName CONSTANT)
+    Q_PROPERTY(PartModel::SecurityLevel securityLevel MEMBER securityLevel CONSTANT)
+public:
+    QString summary;
+    QStringList details;
+    QString iconName;
+    PartModel::SecurityLevel securityLevel = PartModel::SecurityLevel::Unknow;
 };

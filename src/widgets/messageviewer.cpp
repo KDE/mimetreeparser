@@ -351,17 +351,7 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts,
         }
 
         case PartModel::Types::Error: {
-            const auto errorString = idx.data(PartModel::ErrorString).toString();
-            auto errorWidget = new KMessageWidget(errorString);
-            errorWidget->setCloseButtonVisible(false);
-            errorWidget->setMessageType(KMessageWidget::MessageType::Error);
-            QObject::connect(errorWidget, &KMessageWidget::linkActivated, errorWidget, [this, errorWidget](const QString &link) {
-                QUrl url(link);
-                if (url.path() == QLatin1StringView("showCertificate")) {
-                    urlHandler->handleClick(QUrl(link), errorWidget->window()->windowHandle());
-                }
-            });
-            errorWidget->setWordWrap(true);
+            auto errorWidget = MessageWidgetContainer::makeInfoBox(container, idx.data(PartModel::ErrorInfoRole).value<GenericInfo>(), urlHandler);
             container->innerLayout()->addWidget(errorWidget);
             break;
         }

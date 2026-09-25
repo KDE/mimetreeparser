@@ -30,15 +30,15 @@ public:
      * \param window The window context for handling the URL
      * \return True if the URL was handled successfully, false otherwise
      */
-    Q_INVOKABLE bool handleClick(const QUrl &url, QWindow *window);
+    Q_INVOKABLE bool handleClick(const QUrl &url, QWindow *window) const;
 
 Q_SIGNALS:
     /*!
      * \brief Emitted when an error occurs while handling a URL
      * \param errorMessage The description of the error
      */
-    void errorOccurred(const QString &errorMessage);
+    void errorOccurred(const QString &errorMessage) const;
 
 private:
-    [[nodiscard]] bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId);
+    [[nodiscard]] bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId) const;
 };

@@ -319,16 +319,11 @@ QHash<int, QByteArray> PartModel::roleNames() const
         {ContentRole, "content"_ba},
         {IsEmbeddedRole, "isEmbedded"_ba},
         {SidebarSecurityLevelRole, "sidebarSecurityLevel"_ba},
-        {SignatureSecurityLevelRole, "signatureSecurityLevel"_ba},
-        {EncryptionSecurityLevelRole, "encryptionSecurityLevel"_ba},
-        {ErrorType, "errorType"_ba},
-        {ErrorString, "errorString"_ba},
+        {SignatureInfoRole, "signatureInfo"_ba},
+        {EncryptionInfoRole, "encryptionInfo"_ba},
+        {ErrorInfoRole, "errorInfo"_ba},
         {IsErrorRole, "error"_ba},
         {SenderRole, "sender"_ba},
-        {SignatureDetailsRole, "signatureDetails"_ba},
-        {SignatureIconNameRole, "signatureIconName"_ba},
-        {EncryptionDetails, "encryptionDetails"_ba},
-        {EncryptionIconNameRole, "encryptionIconName"_ba},
         {DateRole, "date"_ba},
     };
 }
@@ -354,37 +349,6 @@ QModelIndex PartModel::index(int row, int column, const QModelIndex &parent) con
         return createIndex(row, column, d->mParts.at(row).data());
     }
     return QModelIndex();
-}
-
-QStringList encryptionInfo(MimeTreeParser::Core::MessagePart *messagePart)
-{
-    QString summary;
-    QString details;
-
-    const auto encryptionPart = messagePart->encryptionPart();
-    if (!encryptionPart) {
-        return {};
-    }
-
-    // Color displayed for the encryption info box
-    if (messagePart->error()) {
-        if (Kleo::DeVSCompliance::isCompliant() && messagePart->partMetaData()->isCompliant) {
-            summary = i18n("This message is VS-NfD compliant encrypted but you do not have a matching secret key.");
-        } else {
-            summary = i18n("This message is encrypted but you don't have a matching secret key.");
-        }
-    } else {
-        if (Kleo::DeVSCompliance::isCompliant() && messagePart->partMetaData()->isCompliant) {
-            summary = i18n("This message is VS-NfD compliant encrypted.");
-        } else {
-            summary = i18n("This message is encrypted.");
-        }
-    }
-
-    details = i18n("The message is encrypted for the following recipients:")
-        + MimeTreeParser::Core::decryptRecipientsToHtml(encryptionPart->decryptRecipients(), encryptionPart->cryptoProto());
-
-    return {summary, details};
 }
 
 template<typename T>
@@ -570,8 +534,9 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return QVariant::fromValue(getAttachmentChildParts(attachmentParent));
         }
         case SidebarSecurityLevelRole: {
-            const auto signature = index.data(SignatureSecurityLevelRole).value<SecurityLevel>();
-            const auto encryption = index.data(EncryptionSecurityLevelRole).value<SecurityLevel>();
+            const auto signature = signatureSecurityLevel(messagePart);
+            auto encryptionPart = messagePart->encryptionPart();
+            const auto encryption = encryptionPart ? (encryptionPart->error() ? SecurityLevel::Bad : SecurityLevel::Good) : SecurityLevel::Unknow;
 
             if (signature == SecurityLevel::Bad || encryption == SecurityLevel::Bad) {
                 return SecurityLevel::Bad;
@@ -587,78 +552,62 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
 
             return SecurityLevel::Unknow;
         }
-        case SignatureSecurityLevelRole:
-            // Color displayed for the signature info box
-            return signatureSecurityLevel(messagePart);
-        case EncryptionSecurityLevelRole: {
-            // Color displayed for the encryption info box
-            if (messagePart->error()) {
-                return SecurityLevel::Bad;
-            }
-
-            return messagePart->encryptionPart() ? SecurityLevel::Good : SecurityLevel::Unknow;
-        }
-        case EncryptionIconNameRole: {
-            if (messagePart->error()) {
-                return u"data-error"_s;
-            }
-
-            return messagePart->encryptionPart() ? u"mail-encrypted"_s : QString();
-        }
-        case SignatureIconNameRole: {
+        case SignatureInfoRole: {
+            GenericInfo info;
             auto signature = signatureFromMessagePart(messagePart);
             if (!signature) {
-                return QString{};
+                return QVariant::fromValue(info);
             }
+            info.securityLevel = signatureSecurityLevel(messagePart);
 
             const auto summary = signature->summary();
             if (summary & GpgME::Signature::Valid) {
-                return u"mail-signed"_s;
+                info.iconName = u"mail-signed"_s;
             } else if (signature->isNull() || summary & GpgME::Signature::Red) {
-                return u"data-error"_s;
+                info.iconName = u"data-error"_s;
             } else {
-                return u"data-warning"_s;
+                info.iconName = u"data-warning"_s;
             }
+
+            info.summary = signatureDetails(messagePart);
+            return QVariant::fromValue(info);
         }
-        case SignatureDetailsRole:
-            return signatureDetails(messagePart);
-        case EncryptionDetails:
-            return QVariant::fromValue(encryptionInfo(messagePart));
-        case ErrorType:
-            return messagePart->error();
-        case ErrorString: {
-            switch (messagePart->error()) {
-            case MimeTreeParser::Core::MessagePart::NoKeyError: {
-                if (auto encryptedMessagePart = dynamic_cast<MimeTreeParser::Core::EncryptedMessagePart *>(messagePart)) {
-                    if (encryptedMessagePart->isNoSecKey()) {
-                        QString errorMessage = i18ndc("mimetreeparser", "@info:status", "You cannot decrypt this message.");
-                        if (!encryptedMessagePart->decryptRecipients().empty()) {
-                            errorMessage += QLatin1Char(' ')
-                                + i18ndcp("mimetreeparser",
-                                          "@info:status",
-                                          "The message is encrypted for the following recipient:",
-                                          "The message is encrypted for the following recipients:",
-                                          encryptedMessagePart->decryptRecipients().size());
-                            errorMessage +=
-                                MimeTreeParser::Core::decryptRecipientsToHtml(encryptedMessagePart->decryptRecipients(), encryptedMessagePart->cryptoProto());
-                        }
-                        return errorMessage;
-                    }
+        case EncryptionInfoRole: {
+            GenericInfo info;
+            const auto encryptionPart = messagePart->encryptionPart();
+            if (!encryptionPart) {
+                return QVariant::fromValue(info);
+            }
+
+            if (messagePart->error()) {
+                info.securityLevel = SecurityLevel::Bad;
+                info.iconName = u"data-error"_s;
+                info.summary = messagePart->errorString();
+            } else {
+                info.securityLevel = SecurityLevel::Good;
+                info.iconName = u"mail-encrypted"_s;
+                if (Kleo::DeVSCompliance::isCompliant() && encryptionPart->partMetaData()->isCompliant) {
+                    info.summary = i18n("This message is VS-NfD compliant encrypted.");
+                } else {
+                    info.summary = i18n("This message is encrypted.");
                 }
             }
 
-                return messagePart->errorString();
-
-            case MimeTreeParser::Core::MessagePart::UserCancelled:
-                return i18ndc("mimetreeparser", "@info:status", "Decryption was canceled");
-            case MimeTreeParser::Core::MessagePart::PassphraseError:
-                return i18ndc("mimetreeparser", "@info:status", "Wrong passphrase");
-            case MimeTreeParser::Core::MessagePart::UnknownError:
-                break;
-            default:
-                break;
+            if (!encryptionPart->decryptRecipients().empty()) {
+                info.details << i18ndcp("mimetreeparser",
+                                        "@info:status",
+                                        "The message is encrypted for the following recipient:",
+                                        "The message is encrypted for the following recipients:",
+                                        encryptionPart->decryptRecipients().size())
+                        + MimeTreeParser::Core::decryptRecipientsToHtml(encryptionPart->decryptRecipients(), encryptionPart->cryptoProto());
             }
-            return messagePart->errorString();
+            return QVariant::fromValue(info);
+        }
+        case ErrorInfoRole: {
+            GenericInfo info;
+            info.securityLevel = SecurityLevel::Bad;
+            info.iconName = u"data-error"_s;
+            info.summary = messagePart->errorString();
         }
         }
     }
