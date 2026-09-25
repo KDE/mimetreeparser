@@ -55,7 +55,7 @@ bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
     return true;
 }
 
-bool UrlHandler::foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId)
+bool UrlHandler::foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId) const
 {
     static QString showCertMan(u"showCertificate#"_s);
     displayName.clear();

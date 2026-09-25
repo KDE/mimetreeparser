@@ -26,19 +26,12 @@ DelegateModel {
         required property bool isEmbedded
         required property int sidebarSecurityLevel
 
-        required property int encryptionSecurityLevel
-        required property string encryptionIconName
-        required property var encryptionDetails
+        required property var encryptionInfo
+        required property var signatureInfo
+        required property var errorInfo
 
-        required property int signatureSecurityLevel
-        required property string signatureIconName
-        required property string signatureDetails
-
-        required property int errorType
-        required property string errorString
-
-        readonly property bool isEncrypted: encryptionSecurityLevel !== PartModel.Unknow
-        readonly property bool isSigned: signatureSecurityLevel !== PartModel.Unknow
+        readonly property bool isEncrypted: encryptionInfo.securityLevel !== PartModel.Unknow
+        readonly property bool isSigned: signatureInfo.securityLevel !== PartModel.Unknow
 
         width: ListView.view.width
         spacing: Kirigami.Units.smallSpacing
@@ -91,21 +84,22 @@ DelegateModel {
             Layout.rightMargin: Kirigami.Units.gridUnit
 
             Banner {
-                iconName: partDelegate.encryptionIconName
-                type: getType(partDelegate.encryptionSecurityLevel)
+                property var info: partDelegate.encryptionInfo
                 visible: partDelegate.isEncrypted
-                text: partDelegate.encryptionDetails.join(' ');
+                iconName: info.iconName
+                type: getType(info.securityLevel)
+                text: info.summary + (info.details.length ? (' ' + info.details.join(' ')) : '');
                 onLinkActivated: (link) => root.urlHandler.handleClick(link, QQC2.ApplicationWindow.window)
 
                 Layout.fillWidth: true
             }
 
             Banner {
-                iconName: partDelegate.signatureIconName
+                property var info: partDelegate.signatureInfo
                 visible: partDelegate.isSigned
-                type: getType(partDelegate.signatureSecurityLevel)
-                text: partDelegate.signatureDetails
-
+                iconName: info.iconName
+                type: getType(info.securityLevel)
+                text: info.summary + (info.details.length ? (' ' + info.details.join(' ')) : '');
                 onLinkActivated: (link) => root.urlHandler.handleClick(link, QQC2.ApplicationWindow.window)
 
                 Layout.fillWidth: true
@@ -132,8 +126,7 @@ DelegateModel {
                             break;
                         case PartModel.Error:
                             partLoader.setSource("ErrorPart.qml", {
-                                errorType: partDelegate.errorType,
-                                errorString: partDelegate.errorString,
+                                errorString: partDelegate.errorInfo.summary + partDelegate.errorInfo.details.length ? (' ' + partDelegate.errorInfo.details.join(' ')) : '',
                             })
                             break;
                         case PartModel.Encapsulated:
