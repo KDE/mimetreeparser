@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
 "PO-Revision-Date: 2026-08-21 23:40+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -107,40 +107,40 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "nepojmenováno_%1.%2"
 
-#: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
+#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Chybný modul šifrování."
 
-#: core/messagepart.cpp:858
+#: core/messagepart.cpp:880
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nebyl nalezen vhodný zásuvný modul šifrování."
 
-#: core/messagepart.cpp:860
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat data."
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:883
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
 
-#: core/partmodel.cpp:397
+#: core/partmodel.cpp:412
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Podpis je neplatný"
 
-#: core/partmodel.cpp:599
+#: core/partmodel.cpp:614
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Tuto zprávu nemůžete dešifrovat."
 
-#: core/partmodel.cpp:604
+#: core/partmodel.cpp:619
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -149,13 +149,13 @@ msgstr[0] "Zpráva je šifrována pro následujícího příjemce:"
 msgstr[1] "Zpráva je šifrována pro následující příjemce:"
 msgstr[2] "Zpráva je šifrována pro následující příjemce:"
 
-#: core/partmodel.cpp:618
+#: core/partmodel.cpp:633
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr "Dešifrování bylo zrušeno"
 
-#: core/partmodel.cpp:620
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"

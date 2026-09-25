@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
 "PO-Revision-Date: 2026-07-21 21:25+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -110,40 +110,40 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "be_pavadinimo_%1.%2"
 
-#: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
+#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Neteisingas šifravimo įskiepis."
 
-#: core/messagepart.cpp:858
+#: core/messagepart.cpp:880
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nerastas tinkamas šifravimo įskiepis."
 
-#: core/messagepart.cpp:860
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifravimo įskiepiui „%1“ nepavyko iššifruoti duomenų."
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:883
 #, kde-format
 msgid "Error: %1"
 msgstr "Klaida: %1"
 
-#: core/partmodel.cpp:397
+#: core/partmodel.cpp:412
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Parašas sugadintas"
 
-#: core/partmodel.cpp:599
+#: core/partmodel.cpp:614
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Jūs negalite iššifruoti šio laiško."
 
-#: core/partmodel.cpp:604
+#: core/partmodel.cpp:619
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -153,13 +153,13 @@ msgstr[1] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[2] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[3] "Laiškas yra šifruotas šiems gavėjams:"
 
-#: core/partmodel.cpp:618
+#: core/partmodel.cpp:633
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr "Iššifravimo buvo atsisakyta"
 
-#: core/partmodel.cpp:620
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"

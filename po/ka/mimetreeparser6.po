@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
 "PO-Revision-Date: 2026-07-15 06:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -105,40 +105,40 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "უსახელო_%1.%2"
 
-#: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
+#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "კრიპტოს არასწორი დამატება."
 
-#: core/messagepart.cpp:858
+#: core/messagepart.cpp:880
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "კრიპტოს შესაბამისი დამატება ვერ ვიპოვე."
 
-#: core/messagepart.cpp:860
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "კრიპტოს დამატებას \"%1\" მონაცემების გაშიფვრა არ შეუძლია."
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:883
 #, kde-format
 msgid "Error: %1"
 msgstr "შეცდომა: %1"
 
-#: core/partmodel.cpp:397
+#: core/partmodel.cpp:412
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "ხელმოწერა გაფუჭებულია"
 
-#: core/partmodel.cpp:599
+#: core/partmodel.cpp:614
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "თქვენ ამ შეტყობინების გაშიფვრა არ შეგიძლიათ."
 
-#: core/partmodel.cpp:604
+#: core/partmodel.cpp:619
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -146,13 +146,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "შეტყობინება დაშიფრულია შემდეგი მიმღებისთვის:"
 msgstr[1] "შეტყობინება დაშიფრულია შემდეგი მიმღებებისთვის::"
 
-#: core/partmodel.cpp:618
+#: core/partmodel.cpp:633
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr "გაშიფვრა გაუქმდა"
 
-#: core/partmodel.cpp:620
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"

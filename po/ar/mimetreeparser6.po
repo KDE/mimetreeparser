@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
 "PO-Revision-Date: 2026-07-15 19:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -113,40 +113,40 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "غير_مسمًّى_%1.%2"
 
-#: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
+#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "ملحقة التّعمية خاطئة."
 
-#: core/messagepart.cpp:858
+#: core/messagepart.cpp:880
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "لم يُعثر على ملحقة تعمية مناسبة."
 
-#: core/messagepart.cpp:860
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "تعذّر على ملحقة التّعمية ”%1“ فكّ تعمية الرّسائل."
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:883
 #, kde-format
 msgid "Error: %1"
 msgstr "الخطأ: %1"
 
-#: core/partmodel.cpp:397
+#: core/partmodel.cpp:412
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "التوقيع معطل"
 
-#: core/partmodel.cpp:599
+#: core/partmodel.cpp:614
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "فشلت في فكّ تعمية هذه الرّسالة."
 
-#: core/partmodel.cpp:604
+#: core/partmodel.cpp:619
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -158,13 +158,13 @@ msgstr[3] "الرسالة معماة للمستلمين التاليين:"
 msgstr[4] "الرسالة معماة للمستلمين التاليين:"
 msgstr[5] "الرسالة معماة للمستلمين التاليين:"
 
-#: core/partmodel.cpp:618
+#: core/partmodel.cpp:633
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr "التعمية أُلغيت"
 
-#: core/partmodel.cpp:620
+#: core/partmodel.cpp:635
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase"

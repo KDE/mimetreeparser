@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -107,40 +107,40 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "sennoma"
 
-#: core/messagepart.cpp:598 core/messagepart.cpp:614 core/messagepart.cpp:716
+#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Malĝusta Kripta Kromaĵo."
 
-#: core/messagepart.cpp:858
+#: core/messagepart.cpp:880
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Neniu taŭga kripta kromprogramo estis trovita."
 
-#: core/messagepart.cpp:860
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripta kromprogramo \"%1\" ne povis deĉifri la datumojn."
 
-#: core/messagepart.cpp:861
+#: core/messagepart.cpp:883
 #, kde-format
 msgid "Error: %1"
 msgstr "Eraro: %1"
 
-#: core/partmodel.cpp:397
+#: core/partmodel.cpp:412
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp:599
+#: core/partmodel.cpp:614
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Vi ne povas malĉifri ĉi mesaĝon."
 
-#: core/partmodel.cpp:604
+#: core/partmodel.cpp:619
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -148,13 +148,13 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "La mesaĝo estas ĉifrita por la sekva ricevanto:"
 msgstr[1] "La mesaĝo estas ĉifrita por la sekvaj ricevantoj:"
 
-#: core/partmodel.cpp:618
+#: core/partmodel.cpp:633
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr ""
 
-#: core/partmodel.cpp:620
+#: core/partmodel.cpp:635
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Wrong passphrase."
