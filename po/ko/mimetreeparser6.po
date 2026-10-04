@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-05-26 21:57+0200\n"
+"PO-Revision-Date: 2026-10-03 22:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -97,12 +97,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "이름 없음"
+msgstr "이름_없음_%1.%2"
 
 #: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
 #, kde-format
@@ -129,7 +127,7 @@ msgstr "오류: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
-msgstr ""
+msgstr "서명이 깨짐"
 
 #: core/partmodel.cpp:627 core/partmodel.cpp:629
 #, kde-format
@@ -148,7 +146,7 @@ msgstr[0] "이 메시지는 다음 수신자로 암호화되어 있습니다:"
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
-msgstr ""
+msgstr "복호화가 취소되었습니다."
 
 #: core/partmodel.cpp:651
 #, kde-format
@@ -400,16 +398,12 @@ msgid "Encapsulated email"
 msgstr "캡슐화된 이메일"
 
 #: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "제목:"
 
 #: widgets/messageviewer.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "(제목 없음)"
@@ -420,9 +414,7 @@ msgid "From:"
 msgstr "보낸 사람:"
 
 #: widgets/messageviewer.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "알 수 없음"
@@ -592,12 +584,14 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"메시지의 일부 부분을 복호화할 수 없습니다. 부분적으로 복호화된 메시지를 저장"
+"하시겠습니까?"
 
 #: widgets/messageviewerbase_p.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
-msgstr ""
+msgstr "복호화 실패"
 
 #: widgets/messageviewerbase_p.cpp:300
 #, kde-format
