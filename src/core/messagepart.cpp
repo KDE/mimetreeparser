@@ -503,12 +503,10 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         // with html content.
         //
         // In any case, this is not a complete implementation of MIME, but an approximation for the kind of mails we actually see in the wild.
-        auto data = [&] {
-            if (auto d = findTypeInDirectChildren(mNode, "multipart/related")) {
-                return d;
-            }
-            return findTypeInDirectChildren(mNode, "multipart/mixed");
-        }();
+        auto data = findTypeInDirectChildren(mNode, "multipart/related");
+        if (!data) {
+            data = findTypeInDirectChildren(mNode, "multipart/mixed");
+        }
         if (data) {
             auto sub = QSharedPointer<MimeMessagePart>(new MimeMessagePart(mOtp, data, true));
             if (findTypeInDirectChildren(data, "text/html")) {
