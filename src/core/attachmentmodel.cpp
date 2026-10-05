@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "attachmentmodel.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "mimetreeparser_core_debug.h"
 
@@ -31,6 +30,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <vector>
 #include <windows.h>
 #endif
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace
 {

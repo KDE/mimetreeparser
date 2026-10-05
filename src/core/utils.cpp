@@ -4,13 +4,13 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "utils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
 #include <Libkleo/DnAttributes>
 #include <Libkleo/Formatting>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser::Core;
 
 KMime::Content *MimeTreeParser::Core::findTypeInDirectChildren(KMime::Content *content, const QByteArray &mimeType)

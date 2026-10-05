@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "messageparser.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "attachmentmodel.h"
 #include "mimetreeparser_core_debug.h"
@@ -11,6 +10,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 
 #include <QElapsedTimer>
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
