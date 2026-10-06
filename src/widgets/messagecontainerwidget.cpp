@@ -198,7 +198,7 @@ KMessageWidget *MessageWidgetContainer::makeInfoBox(QWidget *parent, const Gener
     connect(box, &KMessageWidget::linkActivated, parent, [parent, box, info, urlHandler](const QString &link) {
         QUrl url(link);
         if (url.path() == QLatin1StringView("showDetails")) {
-            box->setText(info.summary + u' ' + info.details.join(u' '));
+            box->setText("<p>"_L1 + info.summary + "</p><p>"_L1 + info.details.join("</p><p>"_L1) + "</p>"_L1);
             return;
         }
         urlHandler->handleClick(QUrl(link), parent->window()->windowHandle());

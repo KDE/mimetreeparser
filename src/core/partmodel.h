@@ -25,6 +25,7 @@ namespace MimeTreeParser::Core
 class ObjectTreeParser;
 }
 class PartModelPrivate;
+class GenericInfo;
 /*!
  * \class PartModel
  * \inmodule MimeTreeParserCore
@@ -132,17 +133,11 @@ public:
     [[nodiscard]] bool isTrimmed() const;
 
     /*!
-     * \brief Returns the security level of a signature
-     * \param messagePart The message part to check
-     * \return The signature security level
-     */
-    static SecurityLevel signatureSecurityLevel(MimeTreeParser::Core::MessagePart *messagePart);
-    /*!
      * \brief Returns the signature details for a message part
      * \param messagePart The message part to check
      * \return A string with signature details
      */
-    static QString signatureDetails(MimeTreeParser::Core::MessagePart *messagePart);
+    static GenericInfo signatureDetails(MimeTreeParser::Core::MessagePart *messagePart);
 
 Q_SIGNALS:
     /*!
