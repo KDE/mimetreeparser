@@ -12,6 +12,7 @@
 #include <Libkleo/Compliance>
 #include <Libkleo/Formatting>
 #include <Libkleo/KeyCache>
+#include <Libkleo/Verification>
 
 #include <QDebug>
 #include <QGpgME/Protocol>
@@ -21,22 +22,6 @@
 
 #include <gpgme++/verificationresult.h>
 using namespace Qt::Literals::StringLiterals;
-static std::optional<GpgME::Signature> signatureFromMessagePart(MimeTreeParser::Core::MessagePart *messagePart)
-{
-    const auto signaturePart = messagePart->signaturePart();
-    if (!signaturePart) {
-        return std::nullopt;
-    }
-
-    const auto signatures = signaturePart->partMetaData()->verificationResult.signatures();
-    if (signatures.empty()) {
-        // This happens if a PGP inline signature block cannot be parsed by the backend
-        // (e.g. broken chars). Return a null signature to differentiate from unsigned.
-        return GpgME::Signature();
-    }
-    const auto signature = signatures.front(); // TODO add support for multiple signature
-    return signature;
-}
 
 // We return a pair containing the trimmed string, as well as a boolean indicating whether the string was trimmed or not
 std::pair<QString, bool> PartModel::trim(const QString &text)
@@ -351,50 +336,59 @@ const T *findHeader(const KMime::Content *content)
     return findHeader<T>(content->parent());
 }
 
-PartModel::SecurityLevel PartModel::signatureSecurityLevel(MimeTreeParser::Core::MessagePart *messagePart)
+GenericInfo PartModel::signatureDetails(MimeTreeParser::Core::MessagePart *messagePart)
 {
-    auto signature = signatureFromMessagePart(messagePart);
-    if (!signature) {
-        return SecurityLevel::Unknow;
-    }
-    if (signature->isNull()) {
-        return SecurityLevel::Bad;
+    GenericInfo info;
+    const auto signaturePart = messagePart->signaturePart();
+    if (!signaturePart) {
+        return info;
     }
 
-    const auto summary = signature->summary();
-
-    if (summary & GpgME::Signature::Summary::Red) {
-        return SecurityLevel::Bad;
+    const auto signatures = signaturePart->partMetaData()->verificationResult.signatures();
+    if (signatures.empty()) {
+        // This happens if a PGP inline signature block cannot be parsed by the backend
+        // (e.g. broken chars).
+        info.summary = i18ndc("mimetreeparser", "@info:status", "Signature is broken");
+        info.securityLevel = SecurityLevel::Bad;
+        info.iconName = u"data-error"_s;
+        return info;
     }
-    if (summary & GpgME::Signature::Summary::Valid) {
-        return SecurityLevel::Good;
-    }
-
-    return SecurityLevel::NotSoGood;
-}
-
-QString PartModel::signatureDetails(MimeTreeParser::Core::MessagePart *messagePart)
-{
-    auto signature = signatureFromMessagePart(messagePart);
-    if (!signature) {
-        return QString{};
-    }
-    if (signature->isNull()) {
-        return i18ndc("mimetreeparser", "@info:status", "Signature is broken");
-    }
+    const auto signature = signatures.front(); // TODO add support for multiple signature
 
     // guess sender from mime node or parent node
+    QString sender;
     auto from = findHeader<KMime::Headers::From>(messagePart->node());
     if (from) {
         const auto mailboxes = from->mailboxes();
         if (!mailboxes.isEmpty()) {
             auto mailBox = mailboxes.front();
             if (mailBox.hasAddress()) {
-                return Kleo::Formatting::prettySignature(*signature, QString::fromUtf8(mailboxes.front().address()));
+                sender = QString::fromUtf8(mailboxes.front().address());
             }
         }
     }
-    return Kleo::Formatting::prettySignature(*signature, {});
+    const auto assessed = Kleo::assessSignature(signature, sender);
+    const auto summary = signature.summary();
+    if (summary & GpgME::Signature::Valid) {
+        info.iconName = u"mail-signed"_s;
+        info.securityLevel = SecurityLevel::Good;
+    } else if (signature.isNull() || summary & GpgME::Signature::Red) {
+        info.iconName = u"data-error"_s;
+        info.securityLevel = SecurityLevel::Bad;
+    } else {
+        info.iconName = u"data-warning"_s;
+        info.securityLevel = SecurityLevel::NotSoGood;
+    }
+
+    info.summary = Kleo::Formatting::prettyMessageSignature(assessed);
+    info.details = Kleo::Formatting::explanationsForMessageSignature(assessed.status);
+    const auto guidance =
+        Kleo::Formatting::guidanceForMessageSignature(assessed.status,
+                                                      messagePart->signaturePart()->cryptoProto() == QGpgME::openpgp() ? GpgME::OpenPGP : GpgME::CMS);
+    if (!guidance.isEmpty()) {
+        info.details.append(i18nc("@info What can be done: Some guidance", "What can be done: %1", guidance));
+    }
+    return info;
 }
 
 static bool isEncapsulatingPart(MimeTreeParser::Core::MessagePart *part)
@@ -519,7 +513,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return QVariant::fromValue(getAttachmentChildParts(attachmentParent));
         }
         case SidebarSecurityLevelRole: {
-            const auto signature = signatureSecurityLevel(messagePart);
+            const auto signature = signatureDetails(messagePart).securityLevel;
             auto encryptionPart = messagePart->encryptionPart();
             const auto encryption = encryptionPart ? (encryptionPart->error() ? SecurityLevel::Bad : SecurityLevel::Good) : SecurityLevel::Unknow;
 
@@ -538,24 +532,7 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             return SecurityLevel::Unknow;
         }
         case SignatureInfoRole: {
-            GenericInfo info;
-            auto signature = signatureFromMessagePart(messagePart);
-            if (!signature) {
-                return QVariant::fromValue(info);
-            }
-            info.securityLevel = signatureSecurityLevel(messagePart);
-
-            const auto summary = signature->summary();
-            if (summary & GpgME::Signature::Valid) {
-                info.iconName = u"mail-signed"_s;
-            } else if (signature->isNull() || summary & GpgME::Signature::Red) {
-                info.iconName = u"data-error"_s;
-            } else {
-                info.iconName = u"data-warning"_s;
-            }
-
-            info.summary = signatureDetails(messagePart);
-            return QVariant::fromValue(info);
+            return QVariant::fromValue(signatureDetails(messagePart));
         }
         case EncryptionInfoRole: {
             GenericInfo info;

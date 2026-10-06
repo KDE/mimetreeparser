@@ -88,7 +88,7 @@ DelegateModel {
                 visible: partDelegate.isEncrypted
                 iconName: info.iconName
                 type: getType(info.securityLevel)
-                text: info.summary + (info.details.length ? (' ' + info.details.join(' ')) : '');
+                text: info.summary + (info.details.length ? ('<br/>' + info.details.join('<br/>')) : '');
                 onLinkActivated: (link) => root.urlHandler.handleClick(link, QQC2.ApplicationWindow.window)
 
                 Layout.fillWidth: true
@@ -99,7 +99,8 @@ DelegateModel {
                 visible: partDelegate.isSigned
                 iconName: info.iconName
                 type: getType(info.securityLevel)
-                text: info.summary + (info.details.length ? (' ' + info.details.join(' ')) : '');
+                // TODO: show info.details (explanations/guidance) on request
+                text: info.summary;
                 onLinkActivated: (link) => root.urlHandler.handleClick(link, QQC2.ApplicationWindow.window)
 
                 Layout.fillWidth: true
