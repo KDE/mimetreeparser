@@ -4,6 +4,8 @@
 #include "partmodel.h"
 #include <MimeTreeParserCore/ObjectTreeParser>
 
+#include <Libkleo/Formatting>
+
 #include <QTest>
 #include <QTimeZone>
 
@@ -377,12 +379,10 @@ private Q_SLOTS:
         QVERIFY(!part->encryptionPart());
         QVERIFY(part->signaturePart());
         QCOMPARE(part->text().trimmed(), u"ohno öäü"_s);
-        const auto details = PartModel::signatureDetails(part.get());
-        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
-        QCOMPARE(detailsWithoutTimestamp,
-                 "Signature created on TIMESTAMP with certificate: <a "
-                 "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
-                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."_L1);
+        const auto signatureDetails = PartModel::signatureDetails(part.get());
+        QVERIFY(signatureDetails.summary.contains("key:1BA323932B3FAA826132C79E8D9860C58F246DE6"_L1));
+        QVERIFY(signatureDetails.summary.contains("test@kolab.org"_L1));
+        QCOMPARE(signatureDetails.securityLevel, PartModel::SecurityLevel::Good);
     }
 
     void testInlineSignedBroken()
@@ -398,9 +398,10 @@ private Q_SLOTS:
         QVERIFY(!part->encryptionPart());
         QVERIFY(part->signaturePart());
         QCOMPARE(part->text().trimmed(), u"ohno break it öäü"_s);
-        const auto details = PartModel::signatureDetails(part.get());
-        QVERIFY(details.contains(u"Bad signature"_s));
-        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::SecurityLevel::Bad);
+        const auto signatureDetails = PartModel::signatureDetails(part.get());
+        QVERIFY(signatureDetails.summary.startsWith(u"The message cannot be trusted."_s));
+        QVERIFY(signatureDetails.summary.contains(u"Message and signature do not match."_s));
+        QCOMPARE(signatureDetails.securityLevel, PartModel::SecurityLevel::Bad);
     }
 
     void testInlineSignedBroken2()
@@ -415,7 +416,8 @@ private Q_SLOTS:
         auto part = partList[0];
         QVERIFY(!part->encryptionPart());
         QVERIFY(part->signaturePart());
-        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::SecurityLevel::Bad);
+        const auto signatureDetails = PartModel::signatureDetails(part.get());
+        QCOMPARE(signatureDetails.securityLevel, PartModel::SecurityLevel::Bad);
     }
 
     void testSignedSenderMismatch()
@@ -429,7 +431,7 @@ private Q_SLOTS:
         auto partList = otp.collectContentParts();
         QCOMPARE(partList.size(), 1);
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
-        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::NotSoGood);
+        QCOMPARE(PartModel::signatureDetails(part.get()).securityLevel, PartModel::NotSoGood);
     }
 
     void testEncapsulatedMessageWithoutFrom()
@@ -447,7 +449,7 @@ private Q_SLOTS:
         auto encapsulated = part->subParts().at(0)->subParts().at(0);
         QVERIFY(bool(encapsulated));
         QVERIFY(encapsulated->signaturePart());
-        QCOMPARE(PartModel::signatureSecurityLevel(encapsulated.get()), PartModel::Good);
+        QCOMPARE(PartModel::signatureDetails(encapsulated.get()).securityLevel, PartModel::Good);
     }
 
     void testEncryptedAndSigned()
@@ -462,12 +464,10 @@ private Q_SLOTS:
         QVERIFY(part->signaturePart());
         QVERIFY(otp.plainTextContent().contains("encrypted message text"_L1));
 
-        const auto details = PartModel::signatureDetails(part.get());
-        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* with"_s}, u"on TIMESTAMP with"_s);
-        QCOMPARE(detailsWithoutTimestamp,
-                 "Signature created on TIMESTAMP with certificate: <a "
-                 "href=\"key:1BA323932B3FAA826132C79E8D9860C58F246DE6\">unittest key (no password) &lt;test@kolab.org&gt; "
-                 "(8D98 60C5 8F24 6DE6)</a><br/>The signature is valid and the certificate's validity is ultimately trusted."_L1);
+        const auto signatureDetails = PartModel::signatureDetails(part.get());
+        QCOMPARE(signatureDetails.securityLevel, PartModel::Good);
+        QVERIFY(signatureDetails.summary.contains("key:1BA323932B3FAA826132C79E8D9860C58F246DE6"_L1));
+        QVERIFY(signatureDetails.summary.contains("test@kolab.org"_L1));
     }
 
     void testOpenpgpMultipartEmbedded()
@@ -496,13 +496,11 @@ private Q_SLOTS:
         QVERIFY(part->signaturePart());
         QCOMPARE(otp.plainTextContent(), "test\n\n-- \nThis is a HTML signature.\n"_L1);
 
-        const auto details = PartModel::signatureDetails(part.get());
-        const QString detailsWithoutTimestamp = QString{details}.replace(QRegularExpression{u"on .* using"_s}, u"on TIMESTAMP using"_s);
-        QCOMPARE(detailsWithoutTimestamp,
-                 "Signature created on TIMESTAMP using an unknown certificate "
-                 "with fingerprint <br/><a href='certificate:CBD116485DB9560CA3CD91E02E3B7787B1B75920'>CBD1 1648 5DB9 560C A3CD  91E0 2E3B 7787 "
-                 "B1B7 5920</a><br/>You can search "
-                 "the certificate on a keyserver or import it from a file."_L1);
+        const auto signatureDetails = PartModel::signatureDetails(part.get());
+        QCOMPARE(signatureDetails.securityLevel, PartModel::NotSoGood); // key missing
+        // FIXME: libkleo renders the key link with certificate:FPR, instead of key:FPR
+        //        but that is to be fixed, there.
+        QVERIFY(signatureDetails.summary.contains(":CBD116485DB9560CA3CD91E02E3B7787B1B75920"_L1));
     }
 
     void testOpenpgpMaybeMangled()
@@ -740,7 +738,7 @@ private Q_SLOTS:
         QCOMPARE(part->charset(), "utf-8"_ba);
         QVERIFY(part->encryptionPart());
         QVERIFY(part->signaturePart());
-        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::Good);
+        QCOMPARE(PartModel::signatureDetails(part.get()).securityLevel, PartModel::Good);
         auto contentAttachmentList = otp.collectAttachmentParts();
         QCOMPARE(contentAttachmentList.size(), 1);
         // QCOMPARE(contentAttachmentList[0]->content().size(), 1);
@@ -760,7 +758,7 @@ private Q_SLOTS:
         auto part = partList[0].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
         QCOMPARE(part->text(), "bla bla bla"_L1);
-        QCOMPARE(PartModel::signatureSecurityLevel(part.get()), PartModel::Good);
+        QCOMPARE(PartModel::signatureDetails(part.get()).securityLevel, PartModel::Good);
 
         part = partList[1].dynamicCast<MimeTreeParser::Core::MessagePart>();
         QVERIFY(bool(part));
