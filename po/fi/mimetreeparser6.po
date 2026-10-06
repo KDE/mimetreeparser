@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-25 00:47+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2026-09-16 19:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,60 +17,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: core/attachmentmodel.cpp:201
+#: core/attachmentmodel.cpp:202
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nimi"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Koko"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Salattu"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Allekirjoitettu"
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Liitettä ei voitu tallentaa."
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:323
 #, kde-format
 msgid "attachment"
 msgstr "liite"
 
-#: core/attachmentmodel.cpp:329
+#: core/attachmentmodel.cpp:330
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Liitettä ei voitu kirjoittaa avattavaksi."
 
-#: core/attachmentmodel.cpp:348 core/attachmentmodel.cpp:358
+#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Liitettä ei voitu avata."
 
-#: core/attachmentmodel.cpp:379
+#: core/attachmentmodel.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Liitteestä ei löytynyt varmenteita"
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:383
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -78,7 +78,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "tuotiin yksi varmenne"
 msgstr[1] "tuotiin %1 varmennetta"
 
-#: core/attachmentmodel.cpp:387
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -86,13 +86,13 @@ msgid_plural "%1 certificates were already imported"
 msgstr[0] "yksi varmenne oli jo tuotu"
 msgstr[1] "%1 varmennetta oli jo tuotu"
 
-#: core/messageparser.cpp:48
+#: core/messageparser.cpp:49
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/messageparser.cpp:53
+#: core/messageparser.cpp:54
 #, kde-format
 msgctxt "list separator"
 msgid ", "

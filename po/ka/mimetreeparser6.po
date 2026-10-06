@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-25 00:47+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2026-07-15 06:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,60 +18,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: core/attachmentmodel.cpp:201
+#: core/attachmentmodel.cpp:202
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "სახელი"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "ზომა"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "დაშიფრული"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "ხელმოწერილი"
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა."
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:323
 #, kde-format
 msgid "attachment"
 msgstr "მიმაგრებული ფაილი"
 
-#: core/attachmentmodel.cpp:329
+#: core/attachmentmodel.cpp:330
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "მიმაგრებული ფაილის გასახსნელად ჩაწერა ჩავარდა ."
 
-#: core/attachmentmodel.cpp:348 core/attachmentmodel.cpp:358
+#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "მიმაგრებული ფაილის გახსნა შეუძლებელია."
 
-#: core/attachmentmodel.cpp:379
+#: core/attachmentmodel.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "ამ მიმაგრებულ ფაილში სერტიფიკატები ვერ ვიპოვე"
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:383
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -79,7 +79,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "შემოტანილია 1 სერტიფიკატი"
 msgstr[1] "შემოტანილია %1 სერტიფიკატი"
 
-#: core/attachmentmodel.cpp:387
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -87,13 +87,13 @@ msgid_plural "%1 certificates were already imported"
 msgstr[0] "1 სერტიფიკატი უკვე შემოტანილი იყო"
 msgstr[1] "%1 სერტიფიკატი უკვე შემოტანილი იყო"
 
-#: core/messageparser.cpp:48
+#: core/messageparser.cpp:49
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "უცნობი"
 
-#: core/messageparser.cpp:53
+#: core/messageparser.cpp:54
 #, kde-format
 msgctxt "list separator"
 msgid ", "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-25 00:47+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2026-10-03 22:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,80 +17,80 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.12.3\n"
 
-#: core/attachmentmodel.cpp:201
+#: core/attachmentmodel.cpp:202
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "이름"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "크기"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "암호화됨"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "서명됨"
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "첨부 파일을 저장할 수 없습니다."
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:323
 #, kde-format
 msgid "attachment"
 msgstr "첨부 파일"
 
-#: core/attachmentmodel.cpp:329
+#: core/attachmentmodel.cpp:330
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "첨부 파일에 기록하기 위해 열 수 없습니다."
 
-#: core/attachmentmodel.cpp:348 core/attachmentmodel.cpp:358
+#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "첨부 파일을 열 수 없습니다."
 
-#: core/attachmentmodel.cpp:379
+#: core/attachmentmodel.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "이 첨부 파일에서 인증서를 찾을 수 없음"
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:383
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
 msgstr[0] "인증서 %1개를 가져옴"
 
-#: core/attachmentmodel.cpp:387
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
 msgid_plural "%1 certificates were already imported"
 msgstr[0] "인증서 %1개는 이미 가져왔음"
 
-#: core/messageparser.cpp:48
+#: core/messageparser.cpp:49
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/messageparser.cpp:53
+#: core/messageparser.cpp:54
 #, kde-format
 msgctxt "list separator"
 msgid ", "

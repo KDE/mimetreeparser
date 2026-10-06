@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-25 00:47+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2026-07-20 08:32+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
@@ -21,60 +21,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/attachmentmodel.cpp:201
+#: core/attachmentmodel.cpp:202
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Name"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Größe"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Verschlüsselt"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signiert"
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Der Anhang konnte nicht gespeichert werden."
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:323
 #, kde-format
 msgid "attachment"
 msgstr "Anhang"
 
-#: core/attachmentmodel.cpp:329
+#: core/attachmentmodel.cpp:330
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Der Anhang konnte nicht gespeichert werden, um ihn zu öffnen."
 
-#: core/attachmentmodel.cpp:348 core/attachmentmodel.cpp:358
+#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Der Anhang konnte nicht geöffnet werden."
 
-#: core/attachmentmodel.cpp:379
+#: core/attachmentmodel.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "In diesem Anhang wurden keine Zertifikate gefunden"
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:383
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -82,7 +82,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "Ein Zertifikat wurde importiert"
 msgstr[1] "%1 Zertifikate wurden importiert"
 
-#: core/attachmentmodel.cpp:387
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -90,13 +90,13 @@ msgid_plural "%1 certificates were already imported"
 msgstr[0] "Ein Zertifikat war bereits importiert"
 msgstr[1] "%1 Zertifikate waren bereits importiert"
 
-#: core/messageparser.cpp:48
+#: core/messageparser.cpp:49
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: core/messageparser.cpp:53
+#: core/messageparser.cpp:54
 #, kde-format
 msgctxt "list separator"
 msgid ", "

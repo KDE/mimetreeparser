@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-25 00:47+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2026-09-22 21:55+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -19,60 +19,60 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: core/attachmentmodel.cpp:201
+#: core/attachmentmodel.cpp:202
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Имя"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Размер"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Зашифровано"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Подписано"
 
-#: core/attachmentmodel.cpp:299
+#: core/attachmentmodel.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Не удалось сохранить вложение."
 
-#: core/attachmentmodel.cpp:322
+#: core/attachmentmodel.cpp:323
 #, kde-format
 msgid "attachment"
 msgstr "вложение"
 
-#: core/attachmentmodel.cpp:329
+#: core/attachmentmodel.cpp:330
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Не удалось сохранить вложение для открытия."
 
-#: core/attachmentmodel.cpp:348 core/attachmentmodel.cpp:358
+#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Не удалось открыть вложение."
 
-#: core/attachmentmodel.cpp:379
+#: core/attachmentmodel.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "В этом вложении не найдены сертификаты"
 
-#: core/attachmentmodel.cpp:382
+#: core/attachmentmodel.cpp:383
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -82,7 +82,7 @@ msgstr[1] "импортированы %1 сертификата"
 msgstr[2] "импортировано %1 сертификатов"
 msgstr[3] "импортирован один сертификат"
 
-#: core/attachmentmodel.cpp:387
+#: core/attachmentmodel.cpp:388
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -92,13 +92,13 @@ msgstr[1] "%1 сертификата уже были импортированы"
 msgstr[2] "%1 сертификатов уже было импортировано"
 msgstr[3] "один сертификат уже был импортирован"
 
-#: core/messageparser.cpp:48
+#: core/messageparser.cpp:49
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/messageparser.cpp:53
+#: core/messageparser.cpp:54
 #, kde-format
 msgctxt "list separator"
 msgid ", "
