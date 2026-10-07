@@ -138,7 +138,7 @@ MessageWidgetContainer::MessageWidgetContainer(const QModelIndex &idx, UrlHandle
     , m_encryptionInfo(idx.data(PartModel::EncryptionInfoRole).value<GenericInfo>())
     , m_displayEncryptionInfo(m_encryptionInfo.securityLevel != PartModel::Unknow)
     // sidebar
-    , m_sidebarSecurityLevel(idx.data(PartModel::SidebarSecurityLevelRole).value<PartModel::SecurityLevel>())
+    , m_sidebarSecurityLevel(qMax(m_signatureInfo.securityLevel, m_encryptionInfo.securityLevel))
     , m_urlHandler(urlHandler)
     , m_innerLayout(nullptr)
 {

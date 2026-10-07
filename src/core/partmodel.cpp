@@ -290,7 +290,6 @@ QHash<int, QByteArray> PartModel::roleNames() const
         {TypeRole, "type"_ba},
         {ContentRole, "content"_ba},
         {IsEmbeddedRole, "isEmbedded"_ba},
-        {SidebarSecurityLevelRole, "sidebarSecurityLevel"_ba},
         {SignatureInfoRole, "signatureInfo"_ba},
         {EncryptionInfoRole, "encryptionInfo"_ba},
         {ErrorInfoRole, "errorInfo"_ba},
@@ -511,25 +510,6 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             // messagePart->parentPart()
             const auto attachmentParent = encapsulatingPart(messagePart);
             return QVariant::fromValue(getAttachmentChildParts(attachmentParent));
-        }
-        case SidebarSecurityLevelRole: {
-            const auto signature = signatureDetails(messagePart).securityLevel;
-            auto encryptionPart = messagePart->encryptionPart();
-            const auto encryption = encryptionPart ? (encryptionPart->error() ? SecurityLevel::Bad : SecurityLevel::Good) : SecurityLevel::Unknow;
-
-            if (signature == SecurityLevel::Bad || encryption == SecurityLevel::Bad) {
-                return SecurityLevel::Bad;
-            }
-
-            if (signature == SecurityLevel::NotSoGood || encryption == SecurityLevel::NotSoGood) {
-                return SecurityLevel::NotSoGood;
-            }
-
-            if (signature == SecurityLevel::Good || encryption == SecurityLevel::Good) {
-                return SecurityLevel::Good;
-            }
-
-            return SecurityLevel::Unknow;
         }
         case SignatureInfoRole: {
             return QVariant::fromValue(signatureDetails(messagePart));

@@ -67,7 +67,6 @@ public:
         ContentRole,
         IsEmbeddedRole,
         IsErrorRole,
-        SidebarSecurityLevelRole,
         EncryptionInfoRole,
         SignatureInfoRole,
         ErrorInfoRole,
@@ -80,6 +79,8 @@ public:
     /// - Encryption info box
     /// - Signature info box
     /// - Sidebar (worse of the two above)
+    /// The enum is ordered such that two security levels can be "combined" using max(),
+    /// which will yield the worse level, or the more detailed level, if one is unknown.
     enum SecurityLevel {
         Unknow, ///< Do not display element (not encrypted or not signed)
         Good, ///< Green
