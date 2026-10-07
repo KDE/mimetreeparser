@@ -24,7 +24,6 @@ DelegateModel {
         required property int type
         required property string content
         required property bool isEmbedded
-        required property int sidebarSecurityLevel
 
         required property var encryptionInfo
         required property var signatureInfo
@@ -32,6 +31,7 @@ DelegateModel {
 
         readonly property bool isEncrypted: encryptionInfo.securityLevel !== PartModel.Unknow
         readonly property bool isSigned: signatureInfo.securityLevel !== PartModel.Unknow
+        readonly property int sidebarSecurityLevel: Math.max(encryptionInfo.securityLevel, signatureInfo.securityLevel)
 
         width: ListView.view.width
         spacing: Kirigami.Units.smallSpacing
