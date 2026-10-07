@@ -35,7 +35,7 @@ public:
         return m_containerPart;
     }
 
-    static KMessageWidget *makeInfoBox(QWidget *parent, const GenericInfo &info, UrlHandler *urlHandler);
+    static QWidget *makeInfoBox(QWidget *parent, const GenericInfo &info, UrlHandler *urlHandler);
 
 Q_SIGNALS:
     void attachmentContextMenu(const QSharedPointer<MimeTreeParser::Core::MessagePart> part, const QPoint &pos);
