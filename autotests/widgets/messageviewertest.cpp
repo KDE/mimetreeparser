@@ -3,9 +3,11 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "../../src/widgets/messagecontainerwidget_p.h"
-#include <KMessageWidget>
 #include <MimeTreeParserCore/FileOpener>
+#include <MimeTreeParserCore/PartModel>
 #include <MimeTreeParserWidgets/MessageViewer>
+#include <QLabel>
+#include <QPushButton>
 #include <QTest>
 #include <QVBoxLayout>
 
@@ -33,17 +35,24 @@ private Q_SLOTS:
         auto container = qobject_cast<QWidget *>(layout->itemAt(0)->widget());
         QVERIFY(container);
 
-        auto encryptionMessage = container->findChild<KMessageWidget *>(QStringLiteral("EncryptionMessage"));
-        QCOMPARE(encryptionMessage->messageType(), KMessageWidget::Positive);
-        QCOMPARE(encryptionMessage->text(), QStringLiteral("This message is encrypted. <a href=\"messageviewer:showDetails\">Details</a>"));
+        auto encryptionMessage = container->findChild<QWidget *>(QStringLiteral("EncryptionMessage"));
+        auto summaryLabel = encryptionMessage->findChild<QLabel *>(QStringLiteral("SummaryLabel"));
+        QVERIFY(summaryLabel);
+        auto detailsLabel = encryptionMessage->findChild<QLabel *>(QStringLiteral("DetailsLabel"));
+        QVERIFY(detailsLabel);
+        auto detailsButton = encryptionMessage->findChild<QPushButton *>(QStringLiteral("DetailsButton"));
+        QVERIFY(detailsButton);
+        QCOMPARE(encryptionMessage->accessibleName(), QStringLiteral("Crypto summary"));
+        QCOMPARE(summaryLabel->text(), QStringLiteral("This message is encrypted."));
+        QCOMPARE(detailsLabel->text(),
+                 QStringLiteral("<p>The message is encrypted for the following recipient:<ul><li>unittest cert - KDAB (<a "
+                                "href=\"messageviewer:showCertificate#gpgsm ### SMIME ### 4CC658E3212B49DC\">4CC6 58E3 212B 49DC</a>)</li></ul></p>"));
+        QCOMPARE(detailsLabel->isVisibleTo(&viewer), false);
+        QCOMPARE(detailsButton->isVisibleTo(&viewer), true);
+        Q_EMIT detailsButton->clicked();
+        QCOMPARE(detailsLabel->isVisibleTo(&viewer), true);
 
-        Q_EMIT encryptionMessage->linkActivated(QStringLiteral("messageviewer:showDetails"));
-
-        QCOMPARE(encryptionMessage->text(),
-                 QStringLiteral("This message is encrypted. The message is encrypted for the following recipient:<ul><li>unittest cert - KDAB (<a "
-                                "href=\"messageviewer:showCertificate#gpgsm ### SMIME ### 4CC658E3212B49DC\">4CC6 58E3 212B 49DC</a>)</li></ul>"));
-
-        auto signatureMessage = container->findChild<KMessageWidget *>(QStringLiteral("SignatureMessage"));
+        auto signatureMessage = container->findChild<QWidget *>(QStringLiteral("SignatureMessage"));
         QVERIFY(!signatureMessage);
     }
 
