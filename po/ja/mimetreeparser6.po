@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -101,59 +101,82 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "名前なし"
 
-#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
+#: core/messagepart.cpp:613 core/messagepart.cpp:629 core/messagepart.cpp:731
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "間違った暗号プラグイン。"
 
-#: core/messagepart.cpp:880
+#: core/messagepart.cpp:872
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "適切な暗号プラグインが見つかりませんでした。"
 
-#: core/messagepart.cpp:882
-#, kde-format
-msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "暗号プラグイン\"%1\"はメッセージを復号できませんでした。"
-
-#: core/messagepart.cpp:883
-#, kde-format
-msgid "Error: %1"
-msgstr "エラー: %1"
-
-#: core/partmodel.cpp:412
-#, kde-format
-msgctxt "@info:status"
-msgid "Signature is broken"
-msgstr ""
-
-#: core/partmodel.cpp:614
-#, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "あなたはこのメッセージを復号できません。"
-
-#: core/partmodel.cpp:619
-#, kde-format
-msgctxt "@info:status"
-msgid "The message is encrypted for the following recipient:"
-msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "このメッセージは以下の受け取り手のために暗号化されています:"
-
-#: core/partmodel.cpp:633
+#: core/messagepart.cpp:874
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr ""
 
-#: core/partmodel.cpp:635
+#: core/messagepart.cpp:876
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Wrong passphrase."
 msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "間違ったパスフレーズ。"
+
+#: core/messagepart.cpp:879
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#| "secret key."
+msgid ""
+"This message is VS-NfD compliant encrypted but you do not have a matching "
+"secret key."
+msgstr ""
+"このメッセージは VS-NfD 準拠で暗号化されていますが、あなたは対応する秘密鍵を"
+"持っていません。"
+
+#: core/messagepart.cpp:881
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr ""
+"このメッセージは暗号化されていますが、あなたは対応する秘密鍵を持っていませ"
+"ん。"
+
+#: core/messagepart.cpp:885
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "暗号プラグイン\"%1\"はメッセージを復号できませんでした。"
+
+#: core/messagepart.cpp:886
+#, kde-format
+msgid "Error: %1"
+msgstr "エラー: %1"
+
+#: core/partmodel.cpp:383
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:575
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "このメッセージは VS-NfD 準拠で暗号化されています。"
+
+#: core/partmodel.cpp:577
+#, kde-format
+msgid "This message is encrypted."
+msgstr "このメッセージは暗号化されています。"
+
+#: core/partmodel.cpp:584
+#, kde-format
+msgctxt "@info:status"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] "このメッセージは以下の受け取り手のために暗号化されています:"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -288,7 +311,7 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "閉じる"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml:26
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "エラーが発生しました: %1"
@@ -303,43 +326,6 @@ msgstr "このメールにはインビテーションがあります"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 により %2 に送信"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr ""
-"このメッセージは暗号化されていますが、あなたは対応する秘密鍵を持っていませ"
-"ん。"
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "このメッセージはこちらのために暗号化: %1"
-
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"このメッセージは VS-NfD 準拠で暗号化されていますが、あなたは対応する秘密鍵を"
-"持っていません。"
-
-#: widgets/messagecontainerwidget.cpp:219
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "このメッセージは VS-NfD 準拠で暗号化されています。"
-
-#: widgets/messagecontainerwidget.cpp:221
-#, kde-format
-msgid "This message is encrypted."
-msgstr "このメッセージは暗号化されています。"
-
-#: widgets/messagecontainerwidget.cpp:230
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "このメッセージは以下の受け取り手のために暗号化されています:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -430,7 +416,7 @@ msgstr "Subject:"
 msgid "From:"
 msgstr "From:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -443,37 +429,37 @@ msgstr "不明"
 msgid "Date:"
 msgstr "Date:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Subject:"
 msgstr "&Subject:"
 
-#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&From:"
 msgstr "&From:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Sender:"
 msgstr "&Sender:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&To:"
 msgstr "&To:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:422
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Date:"
 msgstr "日付(&D):"
@@ -655,6 +641,16 @@ msgstr "ナビゲーション(&N)"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "メッセージ(&M)"
+
+#~ msgctxt "@info:status"
+#~ msgid "You cannot decrypt this message."
+#~ msgstr "あなたはこのメッセージを復号できません。"
+
+#~ msgid "This message is encrypted for: %1"
+#~ msgstr "このメッセージはこちらのために暗号化: %1"
+
+#~ msgid "The message is encrypted for the following recipients:"
+#~ msgstr "このメッセージは以下の受け取り手のために暗号化されています:"
 
 #, fuzzy
 #~| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"

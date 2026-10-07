@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2026-07-15 07:35-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -105,58 +105,81 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "semnome_%1.%2"
 
-#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
+#: core/messagepart.cpp:613 core/messagepart.cpp:629 core/messagepart.cpp:731
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Plugin de criptografia incorreto."
 
-#: core/messagepart.cpp:880
+#: core/messagepart.cpp:872
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nenhum plugin de criptografia apropriado foi encontrado."
 
-#: core/messagepart.cpp:882
+#: core/messagepart.cpp:874
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "A descriptografia foi cancelada"
+
+#: core/messagepart.cpp:876
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Frase-senha errada"
+
+#: core/messagepart.cpp:879
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#| "secret key."
+msgid ""
+"This message is VS-NfD compliant encrypted but you do not have a matching "
+"secret key."
+msgstr ""
+"Esta mensagem está criptografada em conformidade com o VS-NfD, mas você não "
+"possui a chave secreta correspondente."
+
+#: core/messagepart.cpp:881
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr ""
+"Esta mensagem está criptografada, mas você não tem a chave secreta "
+"correspondente."
+
+#: core/messagepart.cpp:885
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "O plugin de criptografia \"%1\" não pode descriptografar os dados."
 
-#: core/messagepart.cpp:883
+#: core/messagepart.cpp:886
 #, kde-format
 msgid "Error: %1"
 msgstr "Erro: %1"
 
-#: core/partmodel.cpp:412
+#: core/partmodel.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "A assinatura está quebrada"
 
-#: core/partmodel.cpp:614
+#: core/partmodel.cpp:575
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Você não pode descriptografar esta mensagem."
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Esta mensagem está criptografada em conformidade com VS-NfD."
 
-#: core/partmodel.cpp:619
+#: core/partmodel.cpp:577
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Esta mensagem está criptografada."
+
+#: core/partmodel.cpp:584
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "A mensagem está criptografada para o seguinte destinatário:"
 msgstr[1] "A mensagem está criptografada para os seguintes destinatários:"
-
-#: core/partmodel.cpp:633
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was canceled"
-msgstr "A descriptografia foi cancelada"
-
-#: core/partmodel.cpp:635
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase"
-msgstr "Frase-senha errada"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -290,7 +313,7 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Fechar"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml:26
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Ocorreu um erro: %1"
@@ -305,43 +328,6 @@ msgstr "Esse e-mail contém um convite"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "enviado por %1 em %2"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr ""
-"Esta mensagem está criptografada, mas você não tem a chave secreta "
-"correspondente."
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Esta mensagem está criptografada para: %1"
-
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Esta mensagem está criptografada em conformidade com o VS-NfD, mas você não "
-"possui a chave secreta correspondente."
-
-#: widgets/messagecontainerwidget.cpp:219
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Esta mensagem está criptografada em conformidade com VS-NfD."
-
-#: widgets/messagecontainerwidget.cpp:221
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Esta mensagem está criptografada."
-
-#: widgets/messagecontainerwidget.cpp:230
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "A mensagem está criptografada para os seguintes destinatários:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -427,7 +413,7 @@ msgstr "Sem assunto"
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
@@ -438,37 +424,37 @@ msgstr "Desconhecido"
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Subject:"
 msgstr "&Assunto:"
 
-#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remetente:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&To:"
 msgstr "&Para:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
 msgstr "&Cc:"
 
-#: widgets/messageviewer.cpp:422
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
 msgstr "&Cco:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
@@ -643,6 +629,16 @@ msgstr "&Navegação"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mensagem"
+
+#~ msgctxt "@info:status"
+#~ msgid "You cannot decrypt this message."
+#~ msgstr "Você não pode descriptografar esta mensagem."
+
+#~ msgid "This message is encrypted for: %1"
+#~ msgstr "Esta mensagem está criptografada para: %1"
+
+#~ msgid "The message is encrypted for the following recipients:"
+#~ msgstr "A mensagem está criptografada para os seguintes destinatários:"
 
 #~ msgctxt "@status missing from:, an unknown author"
 #~ msgid "Unknown"

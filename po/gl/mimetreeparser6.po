@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2025-05-16 11:26+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -106,60 +106,81 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "sen nome"
 
-#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
+#: core/messagepart.cpp:613 core/messagepart.cpp:629 core/messagepart.cpp:731
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "O complemento criptográfico é incorrecto."
 
-#: core/messagepart.cpp:880
+#: core/messagepart.cpp:872
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Non se atopou ningún complemento criptográfico axeitado."
 
-#: core/messagepart.cpp:882
-#, kde-format
-msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "O complemento criptográfico «%1» non puido descifrar os datos."
-
-#: core/messagepart.cpp:883
-#, kde-format
-msgid "Error: %1"
-msgstr "Erro: %1"
-
-#: core/partmodel.cpp:412
-#, kde-format
-msgctxt "@info:status"
-msgid "Signature is broken"
-msgstr ""
-
-#: core/partmodel.cpp:614
-#, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Non pode descifrar esta mensaxe."
-
-#: core/partmodel.cpp:619
-#, kde-format
-msgctxt "@info:status"
-msgid "The message is encrypted for the following recipient:"
-msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "A mensaxe está cifrada para a seguinte persoa destinataria:"
-msgstr[1] "A mensaxe está cifrada para as seguintes persoas destinatarias:"
-
-#: core/partmodel.cpp:633
+#: core/messagepart.cpp:874
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr ""
 
-#: core/partmodel.cpp:635
+#: core/messagepart.cpp:876
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Wrong passphrase."
 msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "A frase de paso é incorrecta."
+
+#: core/messagepart.cpp:879
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#| "secret key."
+msgid ""
+"This message is VS-NfD compliant encrypted but you do not have a matching "
+"secret key."
+msgstr ""
+"A mensaxe está cifrada en cumprimento de VS-NfD pero non ten a chave secreta "
+"correspondente."
+
+#: core/messagepart.cpp:881
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr "A mensaxe está cifrada pero non ten a chave secreta correspondente."
+
+#: core/messagepart.cpp:885
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "O complemento criptográfico «%1» non puido descifrar os datos."
+
+#: core/messagepart.cpp:886
+#, kde-format
+msgid "Error: %1"
+msgstr "Erro: %1"
+
+#: core/partmodel.cpp:383
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:575
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "A mensaxe está cifrada en cumprimento de VS-NfD."
+
+#: core/partmodel.cpp:577
+#, kde-format
+msgid "This message is encrypted."
+msgstr "A mensaxe está cifrada."
+
+#: core/partmodel.cpp:584
+#, kde-format
+msgctxt "@info:status"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] "A mensaxe está cifrada para a seguinte persoa destinataria:"
+msgstr[1] "A mensaxe está cifrada para as seguintes persoas destinatarias:"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -294,7 +315,7 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Pechar"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml:26
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Produciuse un erro: %1"
@@ -309,41 +330,6 @@ msgstr "Esta mensaxe contén unha invitación."
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "enviada por %1 o %2"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "A mensaxe está cifrada pero non ten a chave secreta correspondente."
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "A mensaxe está cifrada para: %1."
-
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"A mensaxe está cifrada en cumprimento de VS-NfD pero non ten a chave secreta "
-"correspondente."
-
-#: widgets/messagecontainerwidget.cpp:219
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "A mensaxe está cifrada en cumprimento de VS-NfD."
-
-#: widgets/messagecontainerwidget.cpp:221
-#, kde-format
-msgid "This message is encrypted."
-msgstr "A mensaxe está cifrada."
-
-#: widgets/messagecontainerwidget.cpp:230
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "A mensaxe está cifrada para as seguintes persoas destinatarias:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -434,7 +420,7 @@ msgstr "Asunto:"
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -447,37 +433,37 @@ msgstr "Descoñecido"
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Subject:"
 msgstr "A&sunto:"
 
-#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remitente:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&To:"
 msgstr "&Para:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
 msgstr "&Copia:"
 
-#: widgets/messageviewer.cpp:422
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
 msgstr "Copia &agochada:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
@@ -659,6 +645,16 @@ msgstr "&Navegación"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mensaxe"
+
+#~ msgctxt "@info:status"
+#~ msgid "You cannot decrypt this message."
+#~ msgstr "Non pode descifrar esta mensaxe."
+
+#~ msgid "This message is encrypted for: %1"
+#~ msgstr "A mensaxe está cifrada para: %1."
+
+#~ msgid "The message is encrypted for the following recipients:"
+#~ msgstr "A mensaxe está cifrada para as seguintes persoas destinatarias:"
 
 #, fuzzy
 #~| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"

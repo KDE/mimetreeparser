@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2026-07-15 10:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -106,58 +106,81 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "sense_nom_%1.%2"
 
-#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
+#: core/messagepart.cpp:613 core/messagepart.cpp:629 core/messagepart.cpp:731
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Connector criptogràfic erroni."
 
-#: core/messagepart.cpp:880
+#: core/messagepart.cpp:872
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "No s'ha trobat cap connector criptogràfic apropiat."
 
-#: core/messagepart.cpp:882
+#: core/messagepart.cpp:874
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "S'ha cancel·lat el desencriptatge"
+
+#: core/messagepart.cpp:876
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Frase de pas incorrecta"
+
+#: core/messagepart.cpp:879
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#| "secret key."
+msgid ""
+"This message is VS-NfD compliant encrypted but you do not have a matching "
+"secret key."
+msgstr ""
+"Aquest missatge està encriptat conforme amb VS-NfD, però no teniu cap clau "
+"secreta que coincideixi."
+
+#: core/messagepart.cpp:881
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr ""
+"Aquest missatge està encriptat, però no teniu cap clau secreta que "
+"coincideixi."
+
+#: core/messagepart.cpp:885
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 
-#: core/messagepart.cpp:883
+#: core/messagepart.cpp:886
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/partmodel.cpp:412
+#: core/partmodel.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "La signatura està trencada"
 
-#: core/partmodel.cpp:614
+#: core/partmodel.cpp:575
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "No es pot desencriptar aquest missatge."
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Aquest missatge està encriptat conforme amb VS-NfD."
 
-#: core/partmodel.cpp:619
+#: core/partmodel.cpp:577
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Aquest missatge està encriptat."
+
+#: core/partmodel.cpp:584
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "El missatge està encriptat per al destinatari següent:"
 msgstr[1] "El missatge està encriptat per als destinataris següents:"
-
-#: core/partmodel.cpp:633
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was canceled"
-msgstr "S'ha cancel·lat el desencriptatge"
-
-#: core/partmodel.cpp:635
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase"
-msgstr "Frase de pas incorrecta"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -291,7 +314,7 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Tanca"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml:26
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "S'ha produït un error: %1"
@@ -306,43 +329,6 @@ msgstr "Aquest correu conté una invitació"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "enviat per %1 a %2"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr ""
-"Aquest missatge està encriptat, però no teniu cap clau secreta que "
-"coincideixi."
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Aquest missatge està encriptat amb: %1"
-
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Aquest missatge està encriptat conforme amb VS-NfD, però no teniu cap clau "
-"secreta que coincideixi."
-
-#: widgets/messagecontainerwidget.cpp:219
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Aquest missatge està encriptat conforme amb VS-NfD."
-
-#: widgets/messagecontainerwidget.cpp:221
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Aquest missatge està encriptat."
-
-#: widgets/messagecontainerwidget.cpp:230
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "El missatge està encriptat per als destinataris següents:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -428,7 +414,7 @@ msgstr "Sense assumpte"
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
@@ -439,37 +425,37 @@ msgstr "Desconegut"
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Subject:"
 msgstr "A&ssumpte:"
 
-#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Sender:"
 msgstr "&Remitent:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:422
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
@@ -644,6 +630,16 @@ msgstr "&Navegació"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Missatge"
+
+#~ msgctxt "@info:status"
+#~ msgid "You cannot decrypt this message."
+#~ msgstr "No es pot desencriptar aquest missatge."
+
+#~ msgid "This message is encrypted for: %1"
+#~ msgstr "Aquest missatge està encriptat amb: %1"
+
+#~ msgid "The message is encrypted for the following recipients:"
+#~ msgstr "El missatge està encriptat per als destinataris següents:"
 
 #~ msgctxt "@status missing from:, an unknown author"
 #~ msgid "Unknown"

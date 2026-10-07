@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2026-06-16 22:23+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -106,60 +106,81 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "névtelen"
 
-#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
+#: core/messagepart.cpp:613 core/messagepart.cpp:629 core/messagepart.cpp:731
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Hibás titkosítási bővítmény."
 
-#: core/messagepart.cpp:880
+#: core/messagepart.cpp:872
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nem található megfelelő titkosítási bővítmény."
 
-#: core/messagepart.cpp:882
-#, kde-format
-msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "A(z) „%1” titkosítási bővítmény nem tudta visszafejteni az adatokat."
-
-#: core/messagepart.cpp:883
-#, kde-format
-msgid "Error: %1"
-msgstr "Hiba: %1"
-
-#: core/partmodel.cpp:412
-#, kde-format
-msgctxt "@info:status"
-msgid "Signature is broken"
-msgstr ""
-
-#: core/partmodel.cpp:614
-#, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Ezt az üzenetet nem lehet visszafejteni."
-
-#: core/partmodel.cpp:619
-#, kde-format
-msgctxt "@info:status"
-msgid "The message is encrypted for the following recipient:"
-msgid_plural "The message is encrypted for the following recipients:"
-msgstr[0] "Az üzenetet a következő címzettnek titkosították:"
-msgstr[1] "Az üzenetet a következő címzetteknek titkosították:"
-
-#: core/partmodel.cpp:633
+#: core/messagepart.cpp:874
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was canceled"
 msgstr ""
 
-#: core/partmodel.cpp:635
+#: core/messagepart.cpp:876
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Wrong passphrase."
 msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "Hibás jelszó."
+
+#: core/messagepart.cpp:879
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#| "secret key."
+msgid ""
+"This message is VS-NfD compliant encrypted but you do not have a matching "
+"secret key."
+msgstr ""
+"Az üzenetet a VS-NfD-nek megfelelően titkosították, de nincs hozzá titkos "
+"kulcsa."
+
+#: core/messagepart.cpp:881
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
+
+#: core/messagepart.cpp:885
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "A(z) „%1” titkosítási bővítmény nem tudta visszafejteni az adatokat."
+
+#: core/messagepart.cpp:886
+#, kde-format
+msgid "Error: %1"
+msgstr "Hiba: %1"
+
+#: core/partmodel.cpp:383
+#, kde-format
+msgctxt "@info:status"
+msgid "Signature is broken"
+msgstr ""
+
+#: core/partmodel.cpp:575
+#, kde-format
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Az üzenetet a VS-NfD-nek megfelelően titkosították."
+
+#: core/partmodel.cpp:577
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Az üzenetet titkosították."
+
+#: core/partmodel.cpp:584
+#, kde-format
+msgctxt "@info:status"
+msgid "The message is encrypted for the following recipient:"
+msgid_plural "The message is encrypted for the following recipients:"
+msgstr[0] "Az üzenetet a következő címzettnek titkosították:"
+msgstr[1] "Az üzenetet a következő címzetteknek titkosították:"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -293,7 +314,7 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Bezárás"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml:26
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Hiba történt: %1"
@@ -308,41 +329,6 @@ msgstr "A levél meghívót tartalmaz"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 küldte ekkor: %2"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Az üzenetet titkosították, de nincs hozzá a titkos kulcsa."
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Az üzenetet %1 számára titkosították."
-
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Az üzenetet a VS-NfD-nek megfelelően titkosították, de nincs hozzá titkos "
-"kulcsa."
-
-#: widgets/messagecontainerwidget.cpp:219
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Az üzenetet a VS-NfD-nek megfelelően titkosították."
-
-#: widgets/messagecontainerwidget.cpp:221
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Az üzenetet titkosították."
-
-#: widgets/messagecontainerwidget.cpp:230
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Az üzenetet a következő címzetteknek titkosították:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -433,7 +419,7 @@ msgstr "(nincs tárgy)"
 msgid "From:"
 msgstr "Feladó:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -446,37 +432,37 @@ msgstr "Ismeretlen"
 msgid "Date:"
 msgstr "Dátum:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Subject:"
 msgstr "Tá&rgy:"
 
-#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&From:"
 msgstr "F&eladó:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Sender:"
 msgstr "&Küldő:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&To:"
 msgstr "&Címzett:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
 msgstr "Más&olat:"
 
-#: widgets/messageviewer.cpp:422
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
 msgstr "&Titkos másolat:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Date:"
 msgstr "&Dátum:"
@@ -656,6 +642,16 @@ msgstr "&Navigáció"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "Üze&net"
+
+#~ msgctxt "@info:status"
+#~ msgid "You cannot decrypt this message."
+#~ msgstr "Ezt az üzenetet nem lehet visszafejteni."
+
+#~ msgid "This message is encrypted for: %1"
+#~ msgstr "Az üzenetet %1 számára titkosították."
+
+#~ msgid "The message is encrypted for the following recipients:"
+#~ msgstr "Az üzenetet a következő címzetteknek titkosították:"
 
 #, fuzzy
 #~| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"

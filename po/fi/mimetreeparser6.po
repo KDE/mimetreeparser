@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2026-09-16 19:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -104,58 +104,79 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "nimetön_%1.%2"
 
-#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
+#: core/messagepart.cpp:613 core/messagepart.cpp:629 core/messagepart.cpp:731
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Väärä salauslaajennus."
 
-#: core/messagepart.cpp:880
+#: core/messagepart.cpp:872
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Sopivaa salausliitännäistä ei löytynyt."
 
-#: core/messagepart.cpp:882
+#: core/messagepart.cpp:874
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "Salauksen purkaminen peruttiin"
+
+#: core/messagepart.cpp:876
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Väärä salasana"
+
+#: core/messagepart.cpp:879
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#| "secret key."
+msgid ""
+"This message is VS-NfD compliant encrypted but you do not have a matching "
+"secret key."
+msgstr ""
+"Viesti on VS-NfD-yhteensopivasti salattu, mutta sitä vastaava salainen avain "
+"puuttuu."
+
+#: core/messagepart.cpp:881
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr "Viesti on salattu, mutta sitä vastaava salainen avain puuttuu."
+
+#: core/messagepart.cpp:885
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Salausliitännäinen ”%1” ei voinut purkaa tiedon salausta."
 
-#: core/messagepart.cpp:883
+#: core/messagepart.cpp:886
 #, kde-format
 msgid "Error: %1"
 msgstr "Virhe: %1"
 
-#: core/partmodel.cpp:412
+#: core/partmodel.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Allekirjoitus on vioittunut"
 
-#: core/partmodel.cpp:614
+#: core/partmodel.cpp:575
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Tämän viestin salausta ei voida purkaa."
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "Viesti on VS-NfD-yhteensopivasti salattu."
 
-#: core/partmodel.cpp:619
+#: core/partmodel.cpp:577
+#, kde-format
+msgid "This message is encrypted."
+msgstr "Viesti on salattu."
+
+#: core/partmodel.cpp:584
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Viesti on salattu seuraavalle vastaanottajalle:"
 msgstr[1] "Viesti on salattu seuraaville vastaanottajille:"
-
-#: core/partmodel.cpp:633
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was canceled"
-msgstr "Salauksen purkaminen peruttiin"
-
-#: core/partmodel.cpp:635
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase"
-msgstr "Väärä salasana"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -287,7 +308,7 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Sulje"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml:26
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Sattui virhe: %1"
@@ -302,41 +323,6 @@ msgstr "Tämä viesti sisältää kutsun"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "lähettänyt %1 %2"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Viesti on salattu, mutta sitä vastaava salainen avain puuttuu."
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Viesti on salattu: %1"
-
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Viesti on VS-NfD-yhteensopivasti salattu, mutta sitä vastaava salainen avain "
-"puuttuu."
-
-#: widgets/messagecontainerwidget.cpp:219
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Viesti on VS-NfD-yhteensopivasti salattu."
-
-#: widgets/messagecontainerwidget.cpp:221
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Viesti on salattu."
-
-#: widgets/messagecontainerwidget.cpp:230
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Viesti on salattu seuraaville vastaanottajille:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -422,7 +408,7 @@ msgstr "Ei aihetta"
 msgid "From:"
 msgstr "Lähettäjä:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
@@ -433,37 +419,37 @@ msgstr "Tuntematon"
 msgid "Date:"
 msgstr "Päiväys:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Subject:"
 msgstr "Ai&he:"
 
-#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&From:"
 msgstr "&Lähettäjä:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Sender:"
 msgstr "&Lähettäjä:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&To:"
 msgstr "&Vastaanottaja:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
 msgstr "&Kopio:"
 
-#: widgets/messageviewer.cpp:422
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
 msgstr "&Piilokopio:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Date:"
 msgstr "&Päiväys:"
@@ -637,6 +623,16 @@ msgstr "Navi&gointi"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Viesti"
+
+#~ msgctxt "@info:status"
+#~ msgid "You cannot decrypt this message."
+#~ msgstr "Tämän viestin salausta ei voida purkaa."
+
+#~ msgid "This message is encrypted for: %1"
+#~ msgstr "Viesti on salattu: %1"
+
+#~ msgid "The message is encrypted for the following recipients:"
+#~ msgstr "Viesti on salattu seuraaville vastaanottajille:"
 
 #, fuzzy
 #~| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"

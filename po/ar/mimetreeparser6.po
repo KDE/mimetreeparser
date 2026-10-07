@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2026-07-15 19:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -113,40 +113,71 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "غير_مسمًّى_%1.%2"
 
-#: core/messagepart.cpp:620 core/messagepart.cpp:636 core/messagepart.cpp:738
+#: core/messagepart.cpp:613 core/messagepart.cpp:629 core/messagepart.cpp:731
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "ملحقة التّعمية خاطئة."
 
-#: core/messagepart.cpp:880
+#: core/messagepart.cpp:872
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "لم يُعثر على ملحقة تعمية مناسبة."
 
-#: core/messagepart.cpp:882
+#: core/messagepart.cpp:874
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "التعمية أُلغيت"
+
+#: core/messagepart.cpp:876
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "عبارة مرور خاطئة"
+
+#: core/messagepart.cpp:879
+#, fuzzy, kde-format
+#| msgid ""
+#| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#| "secret key."
+msgid ""
+"This message is VS-NfD compliant encrypted but you do not have a matching "
+"secret key."
+msgstr "هذه الرسالة معماة وفقًا لمعيار VS-NfD ولكن ليس لديك مفتاح سري مطابق."
+
+#: core/messagepart.cpp:881
+#, kde-format
+msgid "This message is encrypted but you don't have a matching secret key."
+msgstr "هذه الرسالة معماة، لكن ليس لديك مفتاح سري مطابق."
+
+#: core/messagepart.cpp:885
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "تعذّر على ملحقة التّعمية ”%1“ فكّ تعمية الرّسائل."
 
-#: core/messagepart.cpp:883
+#: core/messagepart.cpp:886
 #, kde-format
 msgid "Error: %1"
 msgstr "الخطأ: %1"
 
-#: core/partmodel.cpp:412
+#: core/partmodel.cpp:383
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "التوقيع معطل"
 
-#: core/partmodel.cpp:614
+#: core/partmodel.cpp:575
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "فشلت في فكّ تعمية هذه الرّسالة."
+msgid "This message is VS-NfD compliant encrypted."
+msgstr "هذه الرسالة معماة وفقًا لمعيار VS-NfD."
 
-#: core/partmodel.cpp:619
+#: core/partmodel.cpp:577
+#, kde-format
+msgid "This message is encrypted."
+msgstr "هذه الرّسالة معمّاة."
+
+#: core/partmodel.cpp:584
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -157,18 +188,6 @@ msgstr[2] "الرسالة معماة للمستلمين التاليين:"
 msgstr[3] "الرسالة معماة للمستلمين التاليين:"
 msgstr[4] "الرسالة معماة للمستلمين التاليين:"
 msgstr[5] "الرسالة معماة للمستلمين التاليين:"
-
-#: core/partmodel.cpp:633
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was canceled"
-msgstr "التعمية أُلغيت"
-
-#: core/partmodel.cpp:635
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase"
-msgstr "عبارة مرور خاطئة"
 
 #: core/urlhandler.cpp:51
 #, kde-format
@@ -300,7 +319,7 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "أغلق"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml:26
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "حدث خطأ: %1"
@@ -315,39 +334,6 @@ msgstr "هذا البريد يحوي دعوة"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "أرسلها %1 في %2"
-
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:214
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "هذه الرسالة معماة، لكن ليس لديك مفتاح سري مطابق."
-
-#: quick/qml/private/MailPartModel.qml:97
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "هذه الرّسالة معمّاة لـ: %1"
-
-#: widgets/messagecontainerwidget.cpp:212
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr "هذه الرسالة معماة وفقًا لمعيار VS-NfD ولكن ليس لديك مفتاح سري مطابق."
-
-#: widgets/messagecontainerwidget.cpp:219
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "هذه الرسالة معماة وفقًا لمعيار VS-NfD."
-
-#: widgets/messagecontainerwidget.cpp:221
-#, kde-format
-msgid "This message is encrypted."
-msgstr "هذه الرّسالة معمّاة."
-
-#: widgets/messagecontainerwidget.cpp:230
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "الرسالة معماة للمستلمين التاليين:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -433,7 +419,7 @@ msgstr "دون موضوع"
 msgid "From:"
 msgstr "من:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
@@ -444,37 +430,37 @@ msgstr "مجهول"
 msgid "Date:"
 msgstr "التاريخ:"
 
-#: widgets/messageviewer.cpp:405
+#: widgets/messageviewer.cpp:395
 #, kde-format
 msgid "&Subject:"
 msgstr "المو&ضوع:"
 
-#: widgets/messageviewer.cpp:408 widgets/messageviewer.cpp:410
+#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
 #, kde-format
 msgid "&From:"
 msgstr "&من:"
 
-#: widgets/messageviewer.cpp:413
+#: widgets/messageviewer.cpp:403
 #, kde-format
 msgid "&Sender:"
 msgstr "المر&سل:"
 
-#: widgets/messageviewer.cpp:416
+#: widgets/messageviewer.cpp:406
 #, kde-format
 msgid "&To:"
 msgstr "إل&ى:"
 
-#: widgets/messageviewer.cpp:419
+#: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
 msgstr "&ن‌ك:"
 
-#: widgets/messageviewer.cpp:422
+#: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
 msgstr "ن‌&ك‌ع:"
 
-#: widgets/messageviewer.cpp:425
+#: widgets/messageviewer.cpp:415
 #, kde-format
 msgid "&Date:"
 msgstr "ال&تاريخ:"
@@ -646,6 +632,16 @@ msgstr "&تنقّل"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "ر&سالة"
+
+#~ msgctxt "@info:status"
+#~ msgid "You cannot decrypt this message."
+#~ msgstr "فشلت في فكّ تعمية هذه الرّسالة."
+
+#~ msgid "This message is encrypted for: %1"
+#~ msgstr "هذه الرّسالة معمّاة لـ: %1"
+
+#~ msgid "The message is encrypted for the following recipients:"
+#~ msgstr "الرسالة معماة للمستلمين التاليين:"
 
 #~ msgctxt "@status missing from:, an unknown author"
 #~ msgid "Unknown"
