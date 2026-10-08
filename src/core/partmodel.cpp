@@ -571,10 +571,16 @@ QVariant PartModel::data(const QModelIndex &index, int role) const
             } else {
                 info.securityLevel = SecurityLevel::Good;
                 info.iconName = u"mail-encrypted"_s;
-                if (Kleo::DeVSCompliance::isCompliant() && encryptionPart->partMetaData()->isCompliant) {
-                    info.summary = i18n("This message is VS-NfD compliant encrypted.");
+                if (Kleo::DeVSCompliance::isCompliant()) {
+                    if (encryptionPart->partMetaData()->isCompliant) {
+                        info.summary = i18nc("@info", "This message is encrypted (%1).", Kleo::DeVSCompliance::name(true));
+                    } else {
+                        info.summary = i18nc("@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')",
+                                             "This message is encrypted, but the encryption is not %1.",
+                                             Kleo::DeVSCompliance::name(true));
+                    }
                 } else {
-                    info.summary = i18n("This message is encrypted.");
+                    info.summary = i18nc("@info", "This message is encrypted.");
                 }
             }
 
