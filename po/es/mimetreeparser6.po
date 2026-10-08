@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:50+0000\n"
-"PO-Revision-Date: 2026-07-16 00:06+0100\n"
+"PO-Revision-Date: 2026-10-07 17:16+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -130,10 +130,7 @@ msgid "Wrong passphrase"
 msgstr "Contraseña larga errónea"
 
 #: core/messagepart.cpp:879
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#| "secret key."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you do not have a matching "
 "secret key."
@@ -628,13 +625,3 @@ msgstr "&Navegación"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mensaje"
-
-#~ msgctxt "@info:status"
-#~ msgid "You cannot decrypt this message."
-#~ msgstr "No puede descifrar este mensaje."
-
-#~ msgid "This message is encrypted for: %1"
-#~ msgstr "Este mensaje está cifrado para: %1"
-
-#~ msgid "The message is encrypted for the following recipients:"
-#~ msgstr "El mensaje está cifrado para los siguientes destinatarios:"

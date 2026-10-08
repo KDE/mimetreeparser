@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:50+0000\n"
-"PO-Revision-Date: 2026-07-15 06:05+0200\n"
+"PO-Revision-Date: 2026-10-07 03:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -129,16 +129,13 @@ msgid "Wrong passphrase"
 msgstr "არასწორი საიდუმლო ფრაზა"
 
 #: core/messagepart.cpp:879
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#| "secret key."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you do not have a matching "
 "secret key."
 msgstr ""
-"ეს შეტყობინება დაშიფრულია VS-NfD-სთან თავსებადად, მაგრამ მისი სადუმლო "
-"გასაღები არ გვაქვს."
+"ეს შეტყობინება დაშიფრულია VS-NfD-სთან თავსებადად, მაგრამ თქვენ შესაბამისი "
+"საიდუმლო გასაღები არ გაქვთ."
 
 #: core/messagepart.cpp:881
 #, kde-format

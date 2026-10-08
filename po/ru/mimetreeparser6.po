@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:50+0000\n"
-"PO-Revision-Date: 2026-09-22 21:55+0200\n"
+"PO-Revision-Date: 2026-10-07 08:03+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -134,10 +134,7 @@ msgid "Wrong passphrase"
 msgstr "Неверный пароль"
 
 #: core/messagepart.cpp:879
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#| "secret key."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you do not have a matching "
 "secret key."
