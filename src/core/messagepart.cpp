@@ -875,11 +875,7 @@ bool EncryptedMessagePart::decrypt(KMime::Content &data)
         } else if (mPassphraseError) {
             mMetaData.errorText = i18ndc("mimetreeparser", "@info:status", "Wrong passphrase");
         } else if (mNoSecKey) {
-            if (Kleo::DeVSCompliance::isCompliant() && partMetaData()->isCompliant) {
-                mMetaData.errorText = i18n("This message is VS-NfD compliant encrypted but you do not have a matching secret key.");
-            } else {
-                mMetaData.errorText = i18n("This message is encrypted but you don't have a matching secret key.");
-            }
+            mMetaData.errorText = i18n("This message cannot be decrypted because you do not have a matching secret key.");
         } else {
             // TODO: cannot currently be reached, see mPassphraseError = true, above
             mMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1StringView("<br />")
