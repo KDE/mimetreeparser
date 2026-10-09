@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "mimetreeparser_core_export.h"
+
 namespace MimeTreeParser::Core
 {
 

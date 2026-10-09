@@ -19,3 +19,4 @@ Options:
  run-qmllint: true
  cmake-options: '-DWARNINGS_AS_ERRORS=ON'
  enable-lsan: True
+ run-installed-library-check-on: ['@all']

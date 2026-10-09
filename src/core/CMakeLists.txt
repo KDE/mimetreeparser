@@ -63,7 +63,12 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KPim6MimeTreeParserCore BASE_NAME mimetreeparser_core)
+ecm_generate_export_header(KPim6MimeTreeParserCore
+    BASE_NAME mimetreeparser_core
+    VERSION ${MIMETREEPARSER_CORE_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
 
 target_include_directories(
     KPim6MimeTreeParserCore
@@ -158,4 +163,35 @@ install(
     FILE KPim6MimeTreeParserCoreTargets.cmake
     NAMESPACE KPim6::
 )
+
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_core_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore
+    COMPONENT Devel
+)
 ecm_generate_qdoc(KPim6MimeTreeParserCore mimetreeparser-core.qdocconf)
+
+ecm_add_installed_library_check(KPim6MimeTreeParserCore
+    PACKAGE_NAME "KPim6MimeTreeParserCore"
+    PACKAGE_VERSION ${MIMETREEPARSER_CORE_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6MimeTreeParserCore
+    HEADERS
+    ${MimeTreeParserCore_HEADERS}
+    PREFIX mimetreeparsercore
+)
+
+ecm_installed_library_check_include_strings(KPim6MimeTreeParserCore
+    HEADERS
+    ${MimeTreeParserCore_CamelCase_HEADERS}
+    PREFIX MimeTreeParserCore
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KPim6MimeTreeParserCore
+    PREFIX MIMETREEPARSER_CORE
+    VERSION ${MIMETREEPARSER_CORE_VERSION}
+    SILENT
+)

@@ -47,7 +47,12 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KPim6MimeTreeParserWidgets BASE_NAME mimetreeparser_widgets)
+ecm_generate_export_header(KPim6MimeTreeParserWidgets
+    BASE_NAME mimetreeparser_widgets
+    VERSION ${MIMETREEPARSER_WIDGETS_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
 
 target_include_directories(
     KPim6MimeTreeParserWidgets
@@ -146,3 +151,27 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6MimeTreeParserWidgets mimetreeparser-widgets.qdocconf)
+
+ecm_add_installed_library_check(KPim6MimeTreeParserWidgets
+    PACKAGE_NAME "KPim6MimeTreeParserWidgets"
+    PACKAGE_VERSION ${MIMETREEPARSER_WIDGETS_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6MimeTreeParserWidgets
+    HEADERS
+    ${MimeTreeParserWidgets_HEADERS}
+    PREFIX mimetreeparserwidgets
+)
+
+ecm_installed_library_check_include_strings(KPim6MimeTreeParserWidgets
+    HEADERS
+    ${MimeTreeParserWidgets_CamelCase_HEADERS}
+    PREFIX MimeTreeParserWidgets
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KPim6MimeTreeParserWidgets
+    PREFIX MIMETREEPARSER_WIDGETS
+    VERSION ${MIMETREEPARSER_WIDGETS_VERSION}
+    SILENT
+)

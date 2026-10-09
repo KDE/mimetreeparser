@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "mimetreeparser_core_export.h"
+
 #include <memory>
 #include <type_traits>
 #include <utility>

@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "mimetreeparser_core_export.h"
+
 #include <QDateTime>
 #include <QStringList>
 #include <gpgme++/context.h>
