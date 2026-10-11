@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:50+0000\n"
-"PO-Revision-Date: 2026-07-16 14:43+0200\n"
+"PO-Revision-Date: 2026-10-08 13:24+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -125,16 +125,13 @@ msgid "Wrong passphrase"
 msgstr "Phrase de passe erronée."
 
 #: core/messagepart.cpp:879
-#, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#| "secret key."
+#, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you do not have a matching "
 "secret key."
 msgstr ""
-"Ce message a été chiffré conformément au mode « VS-NFD » mais vous ne "
-"possédez pas la secrète correspondante."
+"Ce message a été chiffré conformément au mode « VS-NFD ». Cependant, vous ne "
+"possédez pas la clé secrète correspondante."
 
 #: core/messagepart.cpp:881
 #, kde-format
