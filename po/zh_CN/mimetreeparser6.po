@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:50+0000\n"
+"POT-Creation-Date: 2026-10-13 00:47+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -150,23 +150,29 @@ msgstr "加密插件“%1”无法解密数据。"
 msgid "Error: %1"
 msgstr "错误：%1"
 
-#: core/partmodel.cpp:383
+#: core/partmodel.cpp:350
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp:575
+#: core/partmodel.cpp:388
+#, kde-format
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp:532
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "此消息是符合 VS-NfD 标准的加密消息。"
 
-#: core/partmodel.cpp:577
+#: core/partmodel.cpp:534
 #, kde-format
 msgid "This message is encrypted."
 msgstr "此消息已加密。"
 
-#: core/partmodel.cpp:584
+#: core/partmodel.cpp:541
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -318,6 +324,38 @@ msgstr "此邮件包含一个邀请"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "由 %1 发送于 %2"
+
+#: widgets/messagecontainerwidget.cpp:166
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:169
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:172
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:185
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "详细信息(&D)："
+
+#: widgets/messagecontainerwidget.cpp:188
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "详细信息(&D)："
 
 #: widgets/messageviewer.cpp:88
 #, kde-format

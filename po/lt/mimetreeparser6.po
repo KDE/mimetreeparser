@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:50+0000\n"
+"POT-Creation-Date: 2026-10-13 00:47+0000\n"
 "PO-Revision-Date: 2026-10-09 19:00+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -157,23 +157,29 @@ msgstr "Šifravimo įskiepiui „%1“ nepavyko iššifruoti duomenų."
 msgid "Error: %1"
 msgstr "Klaida: %1"
 
-#: core/partmodel.cpp:383
+#: core/partmodel.cpp:350
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Parašas sugadintas"
 
-#: core/partmodel.cpp:575
+#: core/partmodel.cpp:388
+#, kde-format
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp:532
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Šis laiškas šifruotas ir suderinamas su VS-NfD."
 
-#: core/partmodel.cpp:577
+#: core/partmodel.cpp:534
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Šis laiškas yra šifruotas."
 
-#: core/partmodel.cpp:584
+#: core/partmodel.cpp:541
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -330,6 +336,38 @@ msgstr "Šiame laiške yra pakvietimas"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 išsiuntė %2"
+
+#: widgets/messagecontainerwidget.cpp:166
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:169
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:172
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:185
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "&Išsamiau:"
+
+#: widgets/messagecontainerwidget.cpp:188
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "&Išsamiau:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:50+0000\n"
+"POT-Creation-Date: 2026-10-13 00:47+0000\n"
 "PO-Revision-Date: 2026-03-29 21:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -161,23 +161,29 @@ msgstr "\"%1\" kriptografia-pluginak ezin du daturik deszifratu."
 msgid "Error: %1"
 msgstr "Errorea: %1"
 
-#: core/partmodel.cpp:383
+#: core/partmodel.cpp:350
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp:575
+#: core/partmodel.cpp:388
+#, kde-format
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp:532
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Mezu hau «VS-NfD»rekiko manakor zifratuta dago."
 
-#: core/partmodel.cpp:577
+#: core/partmodel.cpp:534
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Mezu hau zifratuta dago."
 
-#: core/partmodel.cpp:584
+#: core/partmodel.cpp:541
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -332,6 +338,38 @@ msgstr "Posta honek gonbidapen bat du"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1(e)k %2(e)an bidalia"
+
+#: widgets/messagecontainerwidget.cpp:166
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:169
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:172
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:185
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "&Xehetasunak:"
+
+#: widgets/messagecontainerwidget.cpp:188
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "&Xehetasunak:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format

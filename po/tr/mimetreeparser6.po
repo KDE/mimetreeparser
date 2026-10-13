@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:50+0000\n"
-"PO-Revision-Date: 2026-10-07 18:31+0300\n"
+"POT-Creation-Date: 2026-10-13 00:47+0000\n"
+"PO-Revision-Date: 2026-10-12 10:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -152,23 +152,29 @@ msgstr "Kripto eklentisi “%1”, verinin şifresini çözemedi."
 msgid "Error: %1"
 msgstr "Hata: %1"
 
-#: core/partmodel.cpp:383
+#: core/partmodel.cpp:350
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "İmza bozuk"
 
-#: core/partmodel.cpp:575
+#: core/partmodel.cpp:388
+#, kde-format
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp:532
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Bu ileti, VS-NfD uyumlu olarak şifrelendi."
 
-#: core/partmodel.cpp:577
+#: core/partmodel.cpp:534
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Bu ileti şifreli."
 
-#: core/partmodel.cpp:584
+#: core/partmodel.cpp:541
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -232,7 +238,7 @@ msgstr "P %1"
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr "Gönder: KDE Yol Kılavuzu"
+msgstr "Gönder: KDE Itinerary"
 
 #: quick/qml/itinerary/TripMenu.qml:33
 #, kde-format
@@ -321,6 +327,38 @@ msgstr "Bu ileti, bir davet içeriyor"
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 tarafından %2 tarihinde gönderildi"
+
+#: widgets/messagecontainerwidget.cpp:166
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:169
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:172
+#, kde-format
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
+
+#: widgets/messagecontainerwidget.cpp:185
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "&Ayrıntılar:"
+
+#: widgets/messagecontainerwidget.cpp:188
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "&Ayrıntılar:"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
