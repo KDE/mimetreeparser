@@ -43,6 +43,11 @@ bool UrlHandler::handleClick(const QUrl &url, QWindow *window)
     if (exec.isEmpty()) {
         exec = QStandardPaths::findExecutable(u"kleopatra.exe"_s);
     }
+#elif defined(Q_OS_MACOS)
+    QString exec = QStandardPaths::findExecutable(u"kleopatra"_s, {QCoreApplication::applicationDirPath()});
+    if (exec.isEmpty()) {
+        exec = QStandardPaths::findExecutable(u"kleopatra"_s);
+    }
 #else
     const QString exec = QStandardPaths::findExecutable(u"kleopatra"_s);
 #endif
