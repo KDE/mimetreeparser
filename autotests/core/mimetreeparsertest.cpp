@@ -6,6 +6,7 @@
 
 #include <Libkleo/Formatting>
 
+#include <QElapsedTimer>
 #include <QTest>
 #include <QTimeZone>
 
@@ -24,8 +25,31 @@ static QByteArray readMailFromFile(const QString &mailFile)
 class MimeTreeParserTest : public QObject
 {
     Q_OBJECT
+public:
+    MimeTreeParserTest()
+        : QObject()
+    {
+        timer.start();
+    }
+
+private:
+    QElapsedTimer timer;
+    void timeStamp()
+    {
+        qWarning() << timer.elapsed();
+    }
 
 private Q_SLOTS:
+    void init()
+    {
+        qWarning() << "init" << timer.elapsed();
+    }
+
+    void cleanup()
+    {
+        qWarning() << "cleanup" << timer.elapsed();
+    }
+
     void testTextMail()
     {
         const auto expectedText =
