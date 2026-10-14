@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
-"PO-Revision-Date: 2026-10-07 07:55-0300\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"PO-Revision-Date: 2026-10-13 08:37-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -164,7 +164,7 @@ msgstr "A assinatura está quebrada"
 #, kde-format
 msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
-msgstr ""
+msgstr "O que pode ser feito: %1"
 
 #: core/partmodel.cpp:532
 #, kde-format
@@ -184,7 +184,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "A mensagem está criptografada para o seguinte destinatário:"
 msgstr[1] "A mensagem está criptografada para os seguintes destinatários:"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
@@ -336,33 +336,31 @@ msgstr "enviado por %1 em %2"
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto errors"
-msgstr ""
+msgstr "Erros de criptografia"
 
 #: widgets/messagecontainerwidget.cpp:169
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary and warnings"
-msgstr ""
+msgstr "Resumo e avisos sobre criptografia"
 
 #: widgets/messagecontainerwidget.cpp:172
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary"
-msgstr ""
+msgstr "Resumo da criptografia"
 
 #: widgets/messagecontainerwidget.cpp:185
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "&Detalhes:"
+msgstr "Mostrar detalhes"
 
 #: widgets/messagecontainerwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "&Detalhes:"
+msgstr "Ocultar detalhes"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format

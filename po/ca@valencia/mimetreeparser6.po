@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
-"PO-Revision-Date: 2026-10-07 09:12+0200\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"PO-Revision-Date: 2026-10-13 10:45+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -164,7 +164,7 @@ msgstr "La signatura està trencada"
 #, kde-format
 msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
-msgstr ""
+msgstr "Què es pot fer: %1"
 
 #: core/partmodel.cpp:532
 #, kde-format
@@ -184,7 +184,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "El missatge està encriptat per al destinatari següent:"
 msgstr[1] "El missatge està encriptat per als destinataris següents:"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
@@ -335,33 +335,31 @@ msgstr "enviat per %1 a %2"
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto errors"
-msgstr ""
+msgstr "Errors de criptografia"
 
 #: widgets/messagecontainerwidget.cpp:169
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary and warnings"
-msgstr ""
+msgstr "Resum de criptografia i avisos"
 
 #: widgets/messagecontainerwidget.cpp:172
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary"
-msgstr ""
+msgstr "Resum de criptografia"
 
 #: widgets/messagecontainerwidget.cpp:185
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "&Detalls:"
+msgstr "Mostra els detalls"
 
 #: widgets/messagecontainerwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "&Detalls:"
+msgstr "Oculta els detalls"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format

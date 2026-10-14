@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
-"PO-Revision-Date: 2026-10-07 07:28+0200\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"PO-Revision-Date: 2026-10-13 07:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -166,7 +166,7 @@ msgstr "Podpis je polomljen"
 #, kde-format
 msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
-msgstr ""
+msgstr "Kaj je mogoče storiti: %1"
 
 #: core/partmodel.cpp:532
 #, kde-format
@@ -188,7 +188,7 @@ msgstr[1] "Sporočilo je šifrirano za naslednjega prejemnika:"
 msgstr[2] "Sporočilo je šifrirano za naslednje prejemnike:"
 msgstr[3] "Sporočilo je šifrirano za naslednje prejemnike:"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
@@ -339,33 +339,31 @@ msgstr "poslal %1 dne %2"
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto errors"
-msgstr ""
+msgstr "Napake pri kriptografiji"
 
 #: widgets/messagecontainerwidget.cpp:169
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary and warnings"
-msgstr ""
+msgstr "Kriptografija povzetek in opozorila"
 
 #: widgets/messagecontainerwidget.cpp:172
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary"
-msgstr ""
+msgstr "Povzetek kriptografije"
 
 #: widgets/messagecontainerwidget.cpp:185
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "Po&drobnosti:"
+msgstr "Prikaži podrobnosti"
 
 #: widgets/messagecontainerwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "Po&drobnosti:"
+msgstr "Skrij podrobnosti"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format

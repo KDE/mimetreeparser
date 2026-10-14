@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
 "PO-Revision-Date: 2026-10-09 19:00+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -189,7 +189,7 @@ msgstr[1] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[2] "Laiškas yra šifruotas šiems gavėjams:"
 msgstr[3] "Laiškas yra šifruotas šiems gavėjams:"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""

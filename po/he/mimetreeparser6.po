@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
 "PO-Revision-Date: 2026-07-17 12:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -189,7 +189,7 @@ msgstr[1] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[2] "ההודעה מוצפנת לנמענים הבאים:"
 msgstr[3] "ההודעה מוצפנת לנמענים הבאים:"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "לא ניתן להפעיל את מנהל האישורים. נא לבדוק שההתקנה שלך תקינה."

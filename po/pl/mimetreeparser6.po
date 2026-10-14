@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
 "PO-Revision-Date: 2025-12-06 15:53+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -194,7 +194,7 @@ msgstr[0] "Wiadomość jest zaszyfrowana dla następującego odbiorcy:"
 msgstr[1] "Wiadomość jest zaszyfrowana dla następujących odbiorców:"
 msgstr[2] "Wiadomość jest zaszyfrowana dla następujących odbiorców:"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""

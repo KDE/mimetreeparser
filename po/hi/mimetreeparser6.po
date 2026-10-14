@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -186,7 +186,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "संदेश निम्नलिखित प्राप्तकर्ताओं के लिए एन्क्रिप्ट किया गया है:"
 msgstr[1] "संदेश निम्नलिखित प्राप्तकर्ताओं के लिए एन्क्रिप्ट किया गया है:"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "प्रमाणपत्र प्रबंधक प्रारंभ नहीं किया जा सका। कृपया अपनी स्थापना जांचें।"

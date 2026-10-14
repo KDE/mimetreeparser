@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:47+0000\n"
-"PO-Revision-Date: 2026-10-07 03:38+0200\n"
+"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"PO-Revision-Date: 2026-10-13 04:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -162,7 +162,7 @@ msgstr "ხელმოწერა გაფუჭებულია"
 #, kde-format
 msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
-msgstr ""
+msgstr "რა შეიძლება გაკეთდეს: %1"
 
 #: core/partmodel.cpp:532
 #, kde-format
@@ -182,7 +182,7 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "შეტყობინება დაშიფრულია შემდეგი მიმღებისთვის:"
 msgstr[1] "შეტყობინება დაშიფრულია შემდეგი მიმღებებისთვის::"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp:56
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "სერტიფიკატების მმართველის გაშვების შეცდომა. გადაამოწმეთ ფაილები."
@@ -332,33 +332,31 @@ msgstr "გაგზავნილია %1-ის მიერ. თარი�
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto errors"
-msgstr ""
+msgstr "კრიპტოს შეცდომები"
 
 #: widgets/messagecontainerwidget.cpp:169
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary and warnings"
-msgstr ""
+msgstr "კრიპტოს შეჯამება და გაფრთხილებები"
 
 #: widgets/messagecontainerwidget.cpp:172
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary"
-msgstr ""
+msgstr "კრიპტოს შეჯამება"
 
 #: widgets/messagecontainerwidget.cpp:185
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "&დეტალები:"
+msgstr "დეტალების ჩვენება"
 
 #: widgets/messagecontainerwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "&დეტალები:"
+msgstr "დეტალების დამალვა"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
