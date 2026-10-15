@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"POT-Creation-Date: 2026-10-15 00:47+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -131,27 +131,20 @@ msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "ग़लत पासफ़्रेज़."
 
-#: core/messagepart.cpp:879
+#: core/messagepart.cpp:878
 #, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#| "secret key."
+#| msgid "This message is encrypted but you don't have a matching secret key."
 msgid ""
-"This message is VS-NfD compliant encrypted but you do not have a matching "
-"secret key."
-msgstr "यह संदेश VS-NfD अनुरूप एन्क्रिप्टेड है, लेकिन आपके पास इससे मेल खाती गुप्त कुंजी नहीं है।"
-
-#: core/messagepart.cpp:881
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
 msgstr "यह संदेश एन्क्रिप्टेड है लेकिन आपके पास इससे मेल खाती गुप्त कुंजी नहीं है."
 
-#: core/messagepart.cpp:885
+#: core/messagepart.cpp:881
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "क्रिप्टो प्लग-इन \"%1\" डेटा को डिक्रिप्ट नहीं कर सका."
 
-#: core/messagepart.cpp:886
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटि: %1"
@@ -168,17 +161,29 @@ msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
 msgstr ""
 
-#: core/partmodel.cpp:532
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "यह संदेश VS-NfD अनुरूप एन्क्रिप्टेड है।"
+#: core/partmodel.cpp:533
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "यह संदेश एन्क्रिप्टेड है."
 
-#: core/partmodel.cpp:534
-#, kde-format
+#: core/partmodel.cpp:536
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "यह संदेश एन्क्रिप्टेड है लेकिन आपके पास इससे मेल खाती गुप्त कुंजी नहीं है."
+
+#: core/partmodel.cpp:540
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "यह संदेश एन्क्रिप्टेड है."
 
-#: core/partmodel.cpp:541
+#: core/partmodel.cpp:547
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -682,6 +687,19 @@ msgstr "&मार्गदर्शन"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "अगला संदेश"
+
+#, fuzzy
+#~| msgid ""
+#~| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#~| "secret key."
+#~ msgid ""
+#~ "This message is VS-NfD compliant encrypted but you do not have a matching "
+#~ "secret key."
+#~ msgstr ""
+#~ "यह संदेश VS-NfD अनुरूप एन्क्रिप्टेड है, लेकिन आपके पास इससे मेल खाती गुप्त कुंजी नहीं है।"
+
+#~ msgid "This message is VS-NfD compliant encrypted."
+#~ msgstr "यह संदेश VS-NfD अनुरूप एन्क्रिप्टेड है।"
 
 #~ msgctxt "@info:status"
 #~ msgid "You cannot decrypt this message."

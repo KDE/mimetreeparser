@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"POT-Creation-Date: 2026-10-15 00:47+0000\n"
 "PO-Revision-Date: 2026-07-17 12:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -132,27 +132,20 @@ msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "מילת צופן שגויה"
 
-#: core/messagepart.cpp:879
+#: core/messagepart.cpp:878
 #, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#| "secret key."
+#| msgid "This message is encrypted but you don't have a matching secret key."
 msgid ""
-"This message is VS-NfD compliant encrypted but you do not have a matching "
-"secret key."
-msgstr "ההודעה הזאת מוצפנת בתאימות מול VS-NfD אך אין לנו מפתח סודי תואם."
-
-#: core/messagepart.cpp:881
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
 msgstr "ההודעה מוצפנת אבל אין לך מפתח סודי תואם."
 
-#: core/messagepart.cpp:885
+#: core/messagepart.cpp:881
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "תוסף ההצפנה „%1” לא יכול לפענח את הנתונים."
 
-#: core/messagepart.cpp:886
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Error: %1"
 msgstr "שגיאה: %1"
@@ -169,17 +162,29 @@ msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
 msgstr ""
 
-#: core/partmodel.cpp:532
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "ההודעה הזאת מוצפנת בתאימות מול VS-NfD."
+#: core/partmodel.cpp:533
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "ההודעה מצפנת."
 
-#: core/partmodel.cpp:534
-#, kde-format
+#: core/partmodel.cpp:536
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the certificate: %1"
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "ההודעה הזאת מוצפנת לאישור: %1"
+
+#: core/partmodel.cpp:540
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "ההודעה מצפנת."
 
-#: core/partmodel.cpp:541
+#: core/partmodel.cpp:547
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -664,6 +669,18 @@ msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "הו&דעה"
 
+#, fuzzy
+#~| msgid ""
+#~| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#~| "secret key."
+#~ msgid ""
+#~ "This message is VS-NfD compliant encrypted but you do not have a matching "
+#~ "secret key."
+#~ msgstr "ההודעה הזאת מוצפנת בתאימות מול VS-NfD אך אין לנו מפתח סודי תואם."
+
+#~ msgid "This message is VS-NfD compliant encrypted."
+#~ msgstr "ההודעה הזאת מוצפנת בתאימות מול VS-NfD."
+
 #~ msgctxt "@info:status"
 #~ msgid "You cannot decrypt this message."
 #~ msgstr "אי אפשר לפענח את ההודעה הזאת."
@@ -835,9 +852,6 @@ msgstr "הו&דעה"
 #~ msgctxt "@label"
 #~ msgid "You are trusting this certificate."
 #~ msgstr "האישור הזה אמין מבחינתך."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "ההודעה הזאת מוצפנת לאישור: %1"
 
 #~ msgctxt "@title:window"
 #~ msgid "Print Document"

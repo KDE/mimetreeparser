@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"POT-Creation-Date: 2026-10-15 00:47+0000\n"
 "PO-Revision-Date: 2026-10-03 22:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -125,29 +125,20 @@ msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "암구호가 잘못됨"
 
-#: core/messagepart.cpp:879
+#: core/messagepart.cpp:878
 #, fuzzy, kde-format
-#| msgid ""
-#| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#| "secret key."
+#| msgid "This message is encrypted but you don't have a matching secret key."
 msgid ""
-"This message is VS-NfD compliant encrypted but you do not have a matching "
-"secret key."
-msgstr ""
-"이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 일치하는 비밀 키가 없습"
-"니다."
-
-#: core/messagepart.cpp:881
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
 msgstr "메시지가 암호화되어 있지만 일치하는 비밀 키가 없습니다."
 
-#: core/messagepart.cpp:885
+#: core/messagepart.cpp:881
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
 
-#: core/messagepart.cpp:886
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Error: %1"
 msgstr "오류: %1"
@@ -164,17 +155,29 @@ msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
 msgstr ""
 
-#: core/partmodel.cpp:532
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었습니다."
+#: core/partmodel.cpp:533
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "이 메시지는 암호화되어 있습니다."
 
-#: core/partmodel.cpp:534
-#, kde-format
+#: core/partmodel.cpp:536
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the certificate: %1"
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "이 메시지는 다음 인증서로 암호화되어 있습니다: %1"
+
+#: core/partmodel.cpp:540
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "이 메시지는 암호화되어 있습니다."
 
-#: core/partmodel.cpp:541
+#: core/partmodel.cpp:547
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -659,6 +662,20 @@ msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "메시지(&M)"
 
+#, fuzzy
+#~| msgid ""
+#~| "This message is VS-NfD compliant encrypted but you don't have a matching "
+#~| "secret key."
+#~ msgid ""
+#~ "This message is VS-NfD compliant encrypted but you do not have a matching "
+#~ "secret key."
+#~ msgstr ""
+#~ "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었지만 일치하는 비밀 키가 "
+#~ "없습니다."
+
+#~ msgid "This message is VS-NfD compliant encrypted."
+#~ msgstr "이 메시지는 VS-NfD를 준수하는 방법으로 암호화되었습니다."
+
 #~ msgctxt "@info:status"
 #~ msgid "You cannot decrypt this message."
 #~ msgstr "이 메시지를 복호화할 수 없습니다."
@@ -840,9 +857,6 @@ msgstr "메시지(&M)"
 #~ msgctxt "@label"
 #~ msgid "You are trusting this certificate."
 #~ msgstr "이 인증서를 신뢰하고 있습니다."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "이 메시지는 다음 인증서로 암호화되어 있습니다: %1"
 
 #~ msgid "The message is encrypted for the following certificates:"
 #~ msgstr "이 메시지는 다음 인증서로 암호화되어 있습니다:"

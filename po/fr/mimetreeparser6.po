@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-14 00:48+0000\n"
+"POT-Creation-Date: 2026-10-15 00:47+0000\n"
 "PO-Revision-Date: 2026-10-08 13:24+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -124,30 +124,24 @@ msgctxt "@info:status"
 msgid "Wrong passphrase"
 msgstr "Phrase de passe erronée."
 
-#: core/messagepart.cpp:879
-#, kde-format
+#: core/messagepart.cpp:878
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
 msgid ""
-"This message is VS-NfD compliant encrypted but you do not have a matching "
-"secret key."
-msgstr ""
-"Ce message a été chiffré conformément au mode « VS-NFD ». Cependant, vous ne "
-"possédez pas la clé secrète correspondante."
-
-#: core/messagepart.cpp:881
-#, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
 msgstr ""
 "Ce message est chiffré mais vous ne possédez pas la clé secrète "
 "correspondante."
 
-#: core/messagepart.cpp:885
+#: core/messagepart.cpp:881
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr ""
 "Il est impossible au module additionnel de chiffrement « %1 » de déchiffrer "
 "les données."
 
-#: core/messagepart.cpp:886
+#: core/messagepart.cpp:882
 #, kde-format
 msgid "Error: %1"
 msgstr "Erreur : %1"
@@ -164,17 +158,29 @@ msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
 msgstr ""
 
-#: core/partmodel.cpp:532
-#, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Ce message est chiffré selon le mode « VS-NFD »."
+#: core/partmodel.cpp:533
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Ce message est chiffré."
 
-#: core/partmodel.cpp:534
-#, kde-format
+#: core/partmodel.cpp:536
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the certificate: %1"
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Ce message est chiffré avec le certificat : %1"
+
+#: core/partmodel.cpp:540
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "Ce message est chiffré."
 
-#: core/partmodel.cpp:541
+#: core/partmodel.cpp:547
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -663,6 +669,16 @@ msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Message"
 
+#~ msgid ""
+#~ "This message is VS-NfD compliant encrypted but you do not have a matching "
+#~ "secret key."
+#~ msgstr ""
+#~ "Ce message a été chiffré conformément au mode « VS-NFD ». Cependant, vous "
+#~ "ne possédez pas la clé secrète correspondante."
+
+#~ msgid "This message is VS-NfD compliant encrypted."
+#~ msgstr "Ce message est chiffré selon le mode « VS-NFD »."
+
 #~ msgctxt "@info:status"
 #~ msgid "You cannot decrypt this message."
 #~ msgstr "Il vous est impossible de chiffrer ce message."
@@ -858,9 +874,6 @@ msgstr "&Message"
 #~ msgctxt "@label"
 #~ msgid "You are trusting this certificate."
 #~ msgstr "Vous faites confiance à ce certificat."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Ce message est chiffré avec le certificat : %1"
 
 #~ msgid "The message is encrypted for the following certificates:"
 #~ msgstr "Le message est chiffré avec les certificats suivants :"
