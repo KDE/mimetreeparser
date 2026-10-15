@@ -83,10 +83,10 @@ const QRegularExpression &windowsDeviceSubDirPattern()
 
 #define SLASHES "/\\"
 
-static const char notAllowedCharsSubDir[] = ",^@={}[]~!?:&*\"|#%<>$\"'();`'";
-static const char notAllowedCharsNoSubDir[] = ",^@={}[]~!?:&*\"|#%<>$\"'();`'" SLASHES;
+const char notAllowedCharsSubDir[] = ",^@={}[]~!?:&*\"|#%<>$\"'();`'";
+const char notAllowedCharsNoSubDir[] = ",^@={}[]~!?:&*\"|#%<>$\"'();`'" SLASHES;
 
-static const char *notAllowedSubStrings[] = {".."};
+const char *notAllowedSubStrings[] = {".."};
 
 bool validateFileName(const QString &name, bool allowDirectories)
 {
