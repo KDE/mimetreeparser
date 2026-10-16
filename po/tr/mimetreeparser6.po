@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:47+0000\n"
-"PO-Revision-Date: 2026-10-13 19:13+0300\n"
+"PO-Revision-Date: 2026-10-15 21:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -129,12 +129,12 @@ msgid "Wrong passphrase"
 msgstr "Yanlış anahtar parolası"
 
 #: core/messagepart.cpp:878
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
-msgstr "İleti şifreli; ancak sizde eşleşen bir gizli anahtar yok."
+msgstr ""
+"İletinin şifresi çözülemiyor; çünkü sizde eşleşen bir gizli anahtar yok."
 
 #: core/messagepart.cpp:881
 #, kde-format
@@ -159,23 +159,20 @@ msgid "What can be done: %1"
 msgstr "Ne yapılabilir: %1"
 
 #: core/partmodel.cpp:533
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "Bu ileti şifreli."
+msgstr "Bu ileti şifreli (%1)."
 
 #: core/partmodel.cpp:536
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the certificate: %1"
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "Bu ileti, şu sertifikayla şifrelendi: %1"
+msgstr "Bu ileti şifreli; ancak şifreleme %1 değil."
 
 #: core/partmodel.cpp:540
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "Bu ileti şifreli."

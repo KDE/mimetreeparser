@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:47+0000\n"
-"PO-Revision-Date: 2026-10-13 10:45+0200\n"
+"PO-Revision-Date: 2026-10-15 09:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -130,14 +130,13 @@ msgid "Wrong passphrase"
 msgstr "Frase de pas incorrecta"
 
 #: core/messagepart.cpp:878
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
 msgstr ""
-"Aquest missatge està encriptat, però no teniu cap clau secreta que "
-"coincideixi."
+"Aquest missatge no s'ha pogut desencriptar perquè no teniu cap clau secreta "
+"que coincideixi."
 
 #: core/messagepart.cpp:881
 #, kde-format
@@ -162,25 +161,20 @@ msgid "What can be done: %1"
 msgstr "Què es pot fer: %1"
 
 #: core/partmodel.cpp:533
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "Aquest missatge està encriptat."
+msgstr "Aquest missatge està encriptat (%1)."
 
 #: core/partmodel.cpp:536
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr ""
-"Aquest missatge està encriptat, però no teniu cap clau secreta que "
-"coincideixi."
+msgstr "Aquest missatge està encriptat, però l'encriptatge no és %1."
 
 #: core/partmodel.cpp:540
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "Aquest missatge està encriptat."

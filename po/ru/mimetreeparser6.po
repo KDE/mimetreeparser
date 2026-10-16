@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:47+0000\n"
-"PO-Revision-Date: 2026-10-13 23:10+0200\n"
+"PO-Revision-Date: 2026-10-15 12:00+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -134,12 +134,12 @@ msgid "Wrong passphrase"
 msgstr "Неверный пароль"
 
 #: core/messagepart.cpp:878
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
-msgstr "Это письмо зашифровано, но у вас нет соответствующего закрытого ключа."
+msgstr ""
+"Это письмо невозможно расшифровать: нет соответствующего закрытого ключа."
 
 #: core/messagepart.cpp:881
 #, kde-format
@@ -164,23 +164,20 @@ msgid "What can be done: %1"
 msgstr "Что можно сделать: %1"
 
 #: core/partmodel.cpp:533
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "Это письмо зашифровано."
+msgstr "Это письмо зашифровано (%1)."
 
 #: core/partmodel.cpp:536
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "Это письмо зашифровано, но у вас нет соответствующего закрытого ключа."
+msgstr "Это письмо зашифровано, но шифрование не соответствует требованию: %1."
 
 #: core/partmodel.cpp:540
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "Это письмо зашифровано."
