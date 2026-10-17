@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-04 23:13+0300\n"
+"PO-Revision-Date: 2026-10-16 15:00+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -466,12 +466,12 @@ msgstr "&Kam:"
 #: widgets/messageviewer.cpp:396
 #, kde-format
 msgid "&CC:"
-msgstr "&CC:"
+msgstr "Kopija (&CC):"
 
 #: widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&BCC:"
-msgstr "&BCC:"
+msgstr "Nematoma kopija (&BCC):"
 
 #: widgets/messageviewer.cpp:402
 #, kde-format
