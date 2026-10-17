@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:47+0000\n"
-"PO-Revision-Date: 2026-10-14 10:54+0300\n"
+"PO-Revision-Date: 2026-10-16 15:01+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -134,12 +134,13 @@ msgid "Wrong passphrase"
 msgstr "Neteisinga slaptafrazė"
 
 #: core/messagepart.cpp:878
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
-msgstr "Šis laiškas yra šifruotas, bet jūs neturite atitinkamo slaptojo rakto."
+msgstr ""
+"Šis laiškas negali būti iššifruotas, nes jūs neturite atitinkamo slaptojo "
+"rakto."
 
 #: core/messagepart.cpp:881
 #, kde-format
@@ -164,23 +165,20 @@ msgid "What can be done: %1"
 msgstr "Kas gali būti atlikta: %1"
 
 #: core/partmodel.cpp:533
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "Šis laiškas yra šifruotas."
+msgstr "Šis laiškas yra šifruotas (%1)."
 
 #: core/partmodel.cpp:536
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "Šis laiškas yra šifruotas, bet jūs neturite atitinkamo slaptojo rakto."
+msgstr "Šis laiškas yra šifruotas, bet šifravimas nėra %1."
 
 #: core/partmodel.cpp:540
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "Šis laiškas yra šifruotas."
@@ -491,12 +489,12 @@ msgstr "&Kam:"
 #: widgets/messageviewer.cpp:409
 #, kde-format
 msgid "&CC:"
-msgstr "&CC:"
+msgstr "Kopija (&CC):"
 
 #: widgets/messageviewer.cpp:412
 #, kde-format
 msgid "&BCC:"
-msgstr "&BCC:"
+msgstr "Nematoma kopija (&BCC):"
 
 #: widgets/messageviewer.cpp:415
 #, kde-format

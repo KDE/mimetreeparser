@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:47+0000\n"
-"PO-Revision-Date: 2026-07-17 12:14+0300\n"
+"PO-Revision-Date: 2026-10-16 15:08+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/attachmentmodel.cpp:202
 #, kde-format
@@ -133,12 +133,11 @@ msgid "Wrong passphrase"
 msgstr "מילת צופן שגויה"
 
 #: core/messagepart.cpp:878
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
-msgstr "ההודעה מוצפנת אבל אין לך מפתח סודי תואם."
+msgstr "אי אפשר לפענח את ההודעה הזאת כי אין לך מפתח סוג תואם."
 
 #: core/messagepart.cpp:881
 #, kde-format
@@ -160,29 +159,26 @@ msgstr "החתימה פגומה"
 #, kde-format
 msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
-msgstr ""
+msgstr "מה אפשר לעשות: %1"
 
 #: core/partmodel.cpp:533
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "ההודעה מצפנת."
+msgstr "ההודעה הזאת מוצפנת (%1)."
 
 #: core/partmodel.cpp:536
-#, fuzzy, kde-format
-#| msgid "This message is encrypted to the certificate: %1"
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "ההודעה הזאת מוצפנת לאישור: %1"
+msgstr "ההודעה הזאת מוצפנת, אבל ההצפנה אינה %1."
 
 #: core/partmodel.cpp:540
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
-msgstr "ההודעה מצפנת."
+msgstr "ההודעה הזאת מוצפנת."
 
 #: core/partmodel.cpp:547
 #, kde-format
@@ -344,33 +340,31 @@ msgstr "נשלח על ידי %1 ב־%2"
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto errors"
-msgstr ""
+msgstr "שגיאות קריפטוגרפיה"
 
 #: widgets/messagecontainerwidget.cpp:169
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary and warnings"
-msgstr ""
+msgstr "תקציר ואזהרות קריפטוגרפיה"
 
 #: widgets/messagecontainerwidget.cpp:172
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary"
-msgstr ""
+msgstr "תקציר קריפטוגרפי"
 
 #: widgets/messagecontainerwidget.cpp:185
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "&פרטים:"
+msgstr "הצגת פרטים"
 
 #: widgets/messagecontainerwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "&פרטים:"
+msgstr "הסתרת פרטים"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
