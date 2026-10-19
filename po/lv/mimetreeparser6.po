@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
 "PO-Revision-Date: 2025-08-21 13:13+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -122,6 +122,28 @@ msgstr "Nav atrasts piemērots šifrēšanas spraudnis."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr ""
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Nepareiza parole."
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr "Šī vēstule ir šifrēta, bet tai nav atbilstošas slepenās atslēgas."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifrēšanas spraudnim „%1“ neizdevās atšifrēt datus."
 
@@ -136,11 +158,33 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Nevarat atšifrēt šo vēstuli."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Šī vēstule ir šifrēta."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Šī vēstule ir šifrēta, bet tai nav atbilstošas slepenās atslēgas."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Šī vēstule ir šifrēta."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -150,18 +194,6 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Vēstule ir šifrēta šim saņēmējam:"
 msgstr[1] "Vēstule ir šifrēta šiem saņēmējiem:"
 msgstr[2] "Vēstule ir šifrēta šiem saņēmējiem:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr ""
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Nepareiza parole."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -311,40 +343,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%2 nosūtīja %1"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Šī vēstule ir šifrēta, bet tai nav atbilstošas slepenās atslēgas."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Šī vēstule ir šifrēta pusēm: %1"
-
-#: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
+msgctxt "accessible name"
+msgid "Crypto errors"
 msgstr ""
-"Šī vēstule ir šifrēta ar „VS-NfD“ saderīgā veidā, bet jums nav atbilstošas "
-"slepenās atslēgas."
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Šī vēstule ir šifrēta saderīgi ar „VS-NfD“."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "Šī vēstule ir šifrēta."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Šī vēstule ir šifrēta saņēmējiem:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "&Informācija:"
+
+#: widgets/messagecontainerwidget.cpp
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "&Informācija:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -404,6 +433,13 @@ msgid "&Details:"
 msgstr "&Informācija:"
 
 #: widgets/messageviewer.cpp
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Uzaicinājums"
+
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Iekapsulēta vēstule"
@@ -428,11 +464,11 @@ msgstr "(Bez temata)"
 msgid "From:"
 msgstr "No:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Nezināms"
 
@@ -450,14 +486,6 @@ msgstr "&Temats:"
 #, kde-format
 msgid "&From:"
 msgstr "&No:"
-
-#: widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "Nezināms"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -612,7 +640,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr ""
 
@@ -659,41 +687,3 @@ msgstr "&Navigācija"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Vēstule"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "nenosaukts"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Šifrētas S/MIME datnes (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML datne (*.eml);;MBOX datne (*.mbox);;MIME datne (*.mime)"
-
-#, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "You cannot decrypt this message."
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Nevarat atšifrēt šo vēstuli."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Šifrēšanas spraudnis „%1“ nespēj atšifrēt vēstules."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Saglabāt datni"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Datni „%1“ nevar izveidot."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML datne (*.eml);;MBOX datne (*.mbox);;MIME datne (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Neizdodas nolasīt datni"

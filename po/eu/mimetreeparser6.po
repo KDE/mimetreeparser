@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
 "PO-Revision-Date: 2026-03-29 21:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -122,6 +122,28 @@ msgstr "Ez da kriptografia-plugin egokirik aurkitu."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr ""
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Pasaesaldi okerra."
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr "Mezu hau zifratuta dago baina ez duzu dagokion gako sekretua."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "\"%1\" kriptografia-pluginak ezin du daturik deszifratu."
 
@@ -136,11 +158,33 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Ezin duzu mezu hau deszifratu."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Mezu hau zifratuta dago."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the certificate: %1"
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Mezu hau ondoko ziurtagirirako zifratuta dago: %1"
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Mezu hau zifratuta dago."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -149,18 +193,6 @@ msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Mezua ondoko gakorako zifratuta dago:"
 msgstr[1] "Mezua ondoko gakoetarako zifratuta dago:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr ""
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Pasaesaldi okerra."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -310,40 +342,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1(e)k %2(e)an bidalia"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Mezu hau zifratuta dago baina ez duzu dagokion gako sekretua."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Mezu hau honetarako zifratuta dago: %1"
-
-#: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
+msgctxt "accessible name"
+msgid "Crypto errors"
 msgstr ""
-"Mezu hau «VS-NfD»rekiko manakor zifratuta dago baina ez duzu dagokion gako "
-"sekretua."
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Mezu hau «VS-NfD»rekiko manakor zifratuta dago."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "Mezu hau zifratuta dago."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Mezua ondoko gakoetarako zifratuta dago:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "&Xehetasunak:"
+
+#: widgets/messagecontainerwidget.cpp
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "&Xehetasunak:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -403,6 +432,13 @@ msgid "&Details:"
 msgstr "&Xehetasunak:"
 
 #: widgets/messageviewer.cpp
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Gonbidapena"
+
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsulatutako e-posta"
@@ -427,11 +463,11 @@ msgstr "(Gairik ez)"
 msgid "From:"
 msgstr "Nork:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
@@ -449,14 +485,6 @@ msgstr "&Gaia:"
 #, kde-format
 msgid "&From:"
 msgstr "&Nork:"
-
-#: widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "Ezezaguna"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -613,7 +641,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr ""
 
@@ -660,203 +688,3 @@ msgstr "&Nabigatzea"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mezua"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "izengabea"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Zifratutako S/MIME fitxategiak (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr ""
-#~ "EML fitxategia (*.eml);;MBOX fitxategia (*.mbox);;MIME fitxategia (*.mime)"
-
-#, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "No secret key found to decrypt the message."
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Ez da aurkitu mezua deszifratzeko gako sekreturik."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "\"%1\" kriptografia-pluginak ezin ditu mezuak deszifratu."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Gorde fitxategia"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Ezin izan da %1 fitxategi sortu."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr ""
-#~ "EML fitxategia (*.eml);;MBOX fitxategia (*.mbox);;MIME fitxategia (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Ezin izan du fitxategia irakurri"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Mezua hau %1 ziurtagiria erabiliz sinatu da."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Ziurtagiriaren xehetasuna ez daude erabilgarri."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Mezua hau %1(e)k sinatu du %2 ziurtagiria erabiliz."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "Ziurtagiria indargabetuta dago."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "Ziurtagiria iraungita dago."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "Ziurtagiria ziurtatuta dago."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "Sinadura baliogabea da."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Mezu hau «VS-NfD»rekiko manakor sinatu da ondoko gakoa erabiliz <a href="
-#~ "\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr "Mezua hau <a href=\"%1\">%2</a> ziurtagiria erabiliz sinatu da."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Mezu hau %1(e)k «VS-NfD»rekiko manakor sinatuta dago."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Mezua hau %1(e)k sinatu du ."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "<a href=\"%1\">Ziurtagiria</a> indargabetuta dago."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "<a href=\"%1\">Ziurtagiria</a> iraungita dago."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "Sinadura baliozkoa da, baina <a href=\"%1\">ziurtagiria</a>ren "
-#~ "baliozkotasuna ezezaguna da."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "Sinadura baliozkoa da eta <a href=\"%1\">ziurtagiria</a>k bazterreko "
-#~ "konfiantza du."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "Sinadura baliozkoa da eta <a href=\"%1\">ziurtagiri</a>k konfiantza osoa "
-#~ "du."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "Sinadura baliozkoa da, eta <a href=\"%1\">ziurtagiri</a>k erabateko "
-#~ "konfiantza du."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr ""
-#~ "Sinadura baliozkoa da, baina <a href=\"%1\">ziurtagiria</a>k ez du "
-#~ "konfiantzarik."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "«KMail»en errorea"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Mezu hori ezin da zure gako-sortako S/MIME ziurtagiriekin deszifratu."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Mezu hori ezin da zure gako-sortako OpenPGP ziurtagiriekin deszifratu."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "Mezua ondoko ziurtagirirako zifratuta dago:"
-#~ msgstr[1] "Mezua ondoko ziurtagirietarako zifratuta dago:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Mezua hau %2(e)k sinatu du %1 ziurtagiria erabiliz."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Gako honetan konfiantza duzu."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Mezu hau ondoko ziurtagirirako zifratuta dago: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "Mezua ondoko ziurtagirirako zifratuta dago:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Inprimatu dokumentua"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "&Gorde eranskina honela..."
-
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "E-posta fitxategiak (*.eml *.mbox *.mime)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Inportatu gakoa"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Ez dago gako erabilgarririk."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Aldi baterako fitxategia sortzea huts egin du."

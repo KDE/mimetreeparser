@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-14 09:38+0200\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"PO-Revision-Date: 2026-07-20 08:32+0200\n"
 "Last-Translator: Eva Bolten <eva.bolten@gnupg.com>\n"
 "Language-Team: kde-i18n-de@kde.org\n"
 "Language: de\n"
@@ -121,6 +121,28 @@ msgstr "Es wurde kein passendes Kryptografie-Modul gefunden."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "Entschlüsselung abgebrochen"
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Falsches Passwort"
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr ""
+"Diese Nachricht ist verschlüsselt, aber Ihnen fehlt ein passender geheimer "
+"Schlüssel."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kryptografie-Modul \"%1\" konnte die Daten nicht entschlüsseln."
 
@@ -135,11 +157,33 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Signatur defekt"
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Sie können diese Nachricht nicht entschlüsseln."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Diese Nachricht ist verschlüsselt."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the certificate: %1"
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Diese Nachricht ist für das Zertifikat %1 verschlüsselt."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Diese Nachricht ist verschlüsselt."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -148,18 +192,6 @@ msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Diese Nachricht ist für den folgenden Empfänger verschlüsselt:"
 msgstr[1] "Diese Nachricht ist für die folgenden Empfänger verschlüsselt:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr "Entschlüsselung wurde abgebrochen"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Falsches Passwort."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -309,42 +341,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "Gesendet von %1 am %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt "accessible name"
+msgid "Crypto errors"
 msgstr ""
-"Diese Nachricht ist verschlüsselt, aber Ihnen fehlt ein passender geheimer "
-"Schlüssel."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Diese Nachricht ist für %1 verschlüsselt."
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
 msgstr ""
-"Diese Nachricht ist VS-NfD konform verschlüsselt, aber Ihnen fehlt ein "
-"passender geheimer Schlüssel."
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Diese Nachricht ist VS-NfD konform verschlüsselt."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Diese Nachricht ist verschlüsselt."
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "Details:"
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Diese Nachricht ist für die folgenden Empfänger verschlüsselt:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "Details:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -405,6 +432,12 @@ msgstr "Details:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Einladung defekt"
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "Eingebettete E-Mail"
 
@@ -424,9 +457,9 @@ msgstr "(Kein Betreff)"
 msgid "From:"
 msgstr "Von:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Unbekannt"
 
@@ -444,12 +477,6 @@ msgstr "Betreff:"
 #, kde-format
 msgid "&From:"
 msgstr "Von:"
-
-#: widgets/messageviewer.cpp
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Unbekannt</i>"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -602,7 +629,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Entschlüsselung fehlgeschlagen"
 
@@ -647,240 +674,3 @@ msgstr "Navigation"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Nachricht"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "unbenannt"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Verschlüsselte S/MIME Dateien (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML Datei (*.eml);;MBOX Datei (*.mbox);;MIME Datei (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Fehler beim Entschlüsseln der Nachricht: %1"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
-#~ msgstr ""
-#~ "Die Entschlüsselung der Nachricht ist fehlgeschlagen. Es wird die "
-#~ "ursprüngliche (verschlüsselte?) Nachricht gespeichert."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Kryptografie-Modul \"%1\" kann keine Nachrichten entschlüsseln."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Datei speichern"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Datei %1 konnte nicht erstellt werden."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML Datei (*.eml);;MBOX Datei (*.mbox);;MIME Datei (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Datei nicht lesbar"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Diese Nachricht wurde mit dem Zertifikat %1 signiert."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Es sind keine Details für das Zertifikat verfügbar."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Diese Nachricht wurde von %1 mit dem Zertifikat %2 signiert."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "Das Zertifikat wurde widerrufen."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "Das Zertifikat ist abgelaufen."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "Das Zertifikat ist beglaubigt."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "Die Signatur ist ungültig."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Diese Nachricht wurde mit dem Zertifikat <a href=\"%1\">%2</a> VS-NfD "
-#~ "konform signiert."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Diese Nachricht wurde mit dem Zertifikat <a href=\"%1\">%2</a> signiert."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Diese Nachricht wurde von %1 VS-NfD konform signiert."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Diese Nachricht wurde von %1 signiert."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "Das <a href=\"%1\">Zertifikat</a> wurde widerrufen."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "Das <a href=\"%1\">Zertifikat</a> ist abgelaufen."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "Die Signatur ist gültig, aber das <a href=\"%1\">Zertifikat</a> ist nicht "
-#~ "beglaubigt."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "Die Signatur ist gültig, aber das <a href=\"%1\">Zertifikat</a> ist nicht "
-#~ "ausreichend beglaubigt."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "Die Signatur ist gültig und das <a href=\"%1\">Zertifikats</a> ist "
-#~ "beglaubigt."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "Die Signatur ist gültig und das <a href=\"%1\">Zertifikats</a> ist "
-#~ "beglaubigt."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr ""
-#~ "Die Signatur ist gültig, aber das <a href=\"%1\">Zertifikat</a> ist nicht "
-#~ "beglaubigt."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "KMail Fehler"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Diese Nachricht kann mit keinem S/MIME-Zertifikat in Ihrem Schlüsselbund "
-#~ "entschlüsselt werden."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Diese Nachricht kann mit keinem OpenPGP-Schlüssel in Ihrem Schlüsselbund "
-#~ "entschlüsselt werden."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "Diese Nachricht ist für den folgenden Schlüssel verschlüsselt:"
-#~ msgstr[1] "Diese Nachricht ist für die folgenden Schlüssel verschlüsselt:"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the key %1 by %2."
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Diese Nachricht wurde mit dem Schlüssel %1 von %2 signiert."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "You are trusting this key."
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Sie vertrauen diesem Schlüssel."
-
-#, fuzzy
-#~| msgid "This message is encrypted to the key: %1"
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Diese Nachricht ist für den Schlüssel %1 verschlüsselt."
-
-#, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "The message is encrypted for the following certificate:"
-#~| msgid_plural "The message is encrypted for the following certificates:"
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "Diese Nachricht ist für den folgenden Schlüssel verschlüsselt:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Datei drucken"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "Anhang &speichern unter..."
-
-#, fuzzy
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "E-Mail Dateien (*.mbox)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Schlüssel importieren"
-
-#~ msgid "Unknown key"
-#~ msgstr "Unbekannter Schlüssel"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Kein Schlüssel verfügbar."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Temporäre Datei konnte nicht erstellt werden."
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Anhang auf Datenträger gespeichert: %1"
-
-#~ msgid "fwd"
-#~ msgstr "fwd"
-
-#~ msgid "re"
-#~ msgstr "re"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr ""
-#~ "Die Daten können nicht entschlüsselt werden: Kein Schlüssel für Empfänger "
-#~ "gefunden."

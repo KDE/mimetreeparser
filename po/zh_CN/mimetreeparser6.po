@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-stable/messages/mimetreeparser/mimetreeparser6.pot\n"
-"X-Crowdin-File-ID: 51844\n"
+"X-Crowdin-File: /kf6-trunk/messages/mimetreeparser/mimetreeparser6.pot\n"
+"X-Crowdin-File-ID: 49072\n"
 
 #: core/attachmentmodel.cpp
 #, kde-format
@@ -115,6 +115,26 @@ msgstr "没有找到合适的加密算法插件。"
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr ""
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr ""
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr "此消息已加密，但您没有匹配的密钥。"
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "加密插件“%1”无法解密数据。"
 
@@ -129,11 +149,33 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "您无法解密该消息。"
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "此消息已加密。"
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "此消息已加密，但您没有匹配的密钥。"
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "此消息已加密。"
 
 #: core/partmodel.cpp
 #, kde-format
@@ -141,18 +183,6 @@ msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "该邮件已为以下收件人加密："
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr ""
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "密码错误。"
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -300,38 +330,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "由 %1 发送于 %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "此消息已加密，但您没有匹配的密钥。"
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "此消息已加密：%1"
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr "此消息是符合 VS-NfD 标准的加密消息，但您没有匹配的密钥。"
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "此消息是符合 VS-NfD 标准的加密消息。"
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "This message is encrypted."
-msgstr "此消息已加密。"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "详细信息(&D)："
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "该邮件已为以下收件人加密:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "详细信息(&D)："
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -392,6 +421,12 @@ msgstr "详细信息(&D)："
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr ""
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "封装的信件"
 
@@ -411,11 +446,11 @@ msgstr ""
 msgid "From:"
 msgstr "发件人："
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -431,12 +466,6 @@ msgstr "主题(&S)："
 #, kde-format
 msgid "&From:"
 msgstr "发件人(&F)："
-
-#: widgets/messageviewer.cpp
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr ""
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -583,7 +612,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr ""
 

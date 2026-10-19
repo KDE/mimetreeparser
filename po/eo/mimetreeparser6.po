@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -120,6 +120,29 @@ msgstr "Neniu taŭga kripta kromprogramo estis trovita."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr ""
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Erara pasfrazo."
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr ""
+"Ĉi tiu mesaĝo estas ĉifrita sed vi ne havas la kongruan sekretan ŝlosilon."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripta kromprogramo \"%1\" ne povis deĉifri la datumojn."
 
@@ -134,11 +157,34 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Vi ne povas malĉifri ĉi mesaĝon."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Ĉi tiu mesaĝo estas ĉifrita."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr ""
+"Ĉi tiu mesaĝo estas ĉifrita sed vi ne havas la kongruan sekretan ŝlosilon."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Ĉi tiu mesaĝo estas ĉifrita."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -147,18 +193,6 @@ msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "La mesaĝo estas ĉifrita por la sekva ricevanto:"
 msgstr[1] "La mesaĝo estas ĉifrita por la sekvaj ricevantoj:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr ""
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Erara pasfrazo."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -308,41 +342,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "sendita de %1 sur %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt "accessible name"
+msgid "Crypto errors"
 msgstr ""
-"Ĉi tiu mesaĝo estas ĉifrita sed vi ne havas la kongruan sekretan ŝlosilon."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Ĉi tiu mesaĝo estas ĉifrita por: %1"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
 msgstr ""
-"Ĉi tiu mesaĝo estas ĉifrita laŭ VS-NfD, sed vi ne havas kongruan atestilon "
-"por ĝi."
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Ĉi tiu mesaĝo estas ĉifrita konforme al VS-NfD."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "This message is encrypted."
-msgstr "Ĉi tiu mesaĝo estas ĉifrita."
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "&Detaloj:"
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "La mesaĝo estas ĉifrita por la sekvaj ricevantoj:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "&Detaloj:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -402,6 +432,13 @@ msgid "&Details:"
 msgstr "&Detaloj:"
 
 #: widgets/messageviewer.cpp
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Invito"
+
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Enkapsuligita retpoŝto"
@@ -426,11 +463,11 @@ msgstr "Temo:"
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Nekonata"
 
@@ -448,14 +485,6 @@ msgstr "&Temo:"
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
-
-#: widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "Nekonata"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -612,7 +641,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr ""
 
@@ -659,44 +688,3 @@ msgstr "&Navigado"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Mesaĝo"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "sennoma"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Ĉifritaj S/MIME-dosieroj (*.p7m)"
-
-#, fuzzy
-#~| msgctxt "File dialog accepted files"
-#~| msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML-dosiero (*.eml);lMBOX-dosiero (*.mbox);;MIME-dosiero (*.mime)"
-
-#, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "You cannot decrypt this message."
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Vi ne povas malĉifri ĉi mesaĝon."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Kripta kromprogramo \"%1\" ne povas deĉifri mesaĝojn."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Konservi Dosieron"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Dosiero %1 ne povis esti kreita."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML-dosiero (*.eml);lMBOX-dosiero (*.mbox);;MIME-dosiero (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Neebla legi dosieron"

@@ -1,22 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2023, 2024, 2025, 2026.
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Yuri Chornoivan <yurchor@ukr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-03 08:31+0300\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"PO-Revision-Date: 2026-10-15 18:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/attachmentmodel.cpp
 #, kde-format
@@ -122,6 +122,27 @@ msgstr "Не знайдено відповідного додатка шифру
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "Розшифровування було скасовано"
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Неправильний пароль"
+
+#: core/messagepart.cpp
+#, kde-format
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr ""
+"Це повідомлення не може бути розшифровано, оскільки у вас немає відповідного "
+"закритого ключа."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Додатку шифрування «%1» не вдалося розшифрувати дані."
 
@@ -136,11 +157,30 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Підпис є некоректним"
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Ви не можете розшифрувати це повідомлення."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr "Що можна зробити: %1"
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Це повідомлення зашифровано (%1)."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Це повідомлення зашифровано, але методом шифрування не є %1."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Це повідомлення зашифровано."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -151,18 +191,6 @@ msgstr[0] "Повідомлення зашифровано для таких о�
 msgstr[1] "Повідомлення зашифровано для таких отримувачів:"
 msgstr[2] "Повідомлення зашифровано для таких отримувачів:"
 msgstr[3] "Повідомлення зашифровано для такого отримувача:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr "Розшифровування було скасовано."
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Неправильний пароль."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -312,41 +340,35 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "надіслано %1, %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr ""
-"Це повідомлення зашифровано, але у нас немає відповідного закритого ключа."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Це повідомлення зашифровано для %1"
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr "Криптографічні помилки"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Це повідомлення зашифровано відповідно до VS-NfD, але у вас немає "
-"відповідного закритого ключа."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr "Криптографічне резюме і попередження"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Це повідомлення зашифровано відповідно до VS-NfD."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr "Криптографічне резюме"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "Це повідомлення зашифровано."
+msgctxt "@button"
+msgid "Show Details"
+msgstr "Показати подробиці"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Повідомлення зашифровано для таких отримувачів:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "Приховати подробиці"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -407,6 +429,12 @@ msgstr "&Подробиці:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Запрошення пошкоджено"
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "Вбудовано повідомлення"
 
@@ -426,9 +454,9 @@ msgstr "Немає теми"
 msgid "From:"
 msgstr "Від:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Невідомий"
 
@@ -446,12 +474,6 @@ msgstr "&Тема:"
 #, kde-format
 msgid "&From:"
 msgstr "&Від:"
-
-#: widgets/messageviewer.cpp
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Невідомо</i>"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -603,7 +625,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Не вдалося розшифрувати"
 
@@ -648,221 +670,3 @@ msgstr "&Навігація"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Повідомлення"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "без назви"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "шифровані файли S/MIME (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "файл EML (*.eml);;файл MBOX (*.mbox);;файл MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Не вдалося розшифрувати повідомлення: %1"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
-#~ msgstr ""
-#~ "Не вдалося розшифрувати повідомлення. Зберігаємо початкове "
-#~ "(незашифроване?) повідомлення."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Додатку шифрування «%1» не вдалося розшифрувати повідомлення."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Збереження файла"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Не вдалося створити файл %1."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "файл EML (*.eml);;файл MBOX (*.mbox);;файл MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Не вдалося прочитати дані з файла"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Це повідомлення підписано за допомогою сертифіката %1."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Подробиці щодо сертифіката недоступні."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Це повідомлення підписано за %1 допомогою сертифіката %2."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "Сертифікат відкликано."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "Термін дії сертифіката минув."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "Сертифікат засвідчено."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "Підпис є некоректним."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Це повідомлення підписано відповідно до VS-NfD за допомогою сертифіката "
-#~ "<a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Це повідомлення підписано за допомогою сертифіката <a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Це повідомлення підписано відповідно до VS-NfD %1."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Це повідомлення підписано %1."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "<a href=\"%1\">Сертифікат</a> відкликано."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "Строк дії <a href=\"%1\">сертифіката</a> вичерпано."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "Підпис є чинним, але надійність <a href=\"%1\">сертифіката</a> є "
-#~ "невідомою."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "Підпис коректний, надійність <a href=\"%1\">сертифіката</a> є обмеженою."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr "Підпис коректний, надійність <a href=\"%1\">сертифіката</a> повна."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "Підпис коректний, надійність <a href=\"%1\">сертифіката</a> необмежена."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr "Підпис коректний, але <a href=\"%1\">сертифікат</a> не є надійним."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "Помилка KMail"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Це повідомлення не можна розшифрувати з використанням будь-якого з "
-#~ "сертифікатів S/MIME у вашому сховищі ключів."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Це повідомлення не можна розшифрувати з використанням будь-якого з "
-#~ "сертифікатів OpenPGP у вашому сховищі ключів."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "Повідомлення зашифровано для таких сертифікатів:"
-#~ msgstr[1] "Повідомлення зашифровано для таких сертифікатів:"
-#~ msgstr[2] "Повідомлення зашифровано для таких сертифікатів:"
-#~ msgstr[3] "Повідомлення зашифровано для такого сертифіката:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Це повідомлення підписано за допомогою сертифіката %1 %2."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Ви довіряєте цьому сертифікату."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Це повідомлення зашифровано таким сертифікатом: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "Повідомлення зашифровано для такого сертифіката:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Друк документа"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "&Зберегти долучення як…"
-
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "файли пошти (*.eml *.mbox *.mime)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Імпортувати ключ"
-
-#~ msgid "Unknown key"
-#~ msgstr "Невідомий ключ"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Немає доступних ключів."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Не вдалося створити тимчасовий файл."
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Збереження долучення на диску: %1"
-
-#~ msgid "fwd"
-#~ msgstr "fwd"
-
-#~ msgid "re"
-#~ msgstr "re"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr "Не вдалося розшифрувати дані. Не знайдено ключа для отримувачів."

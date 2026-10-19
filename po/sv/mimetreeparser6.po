@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-06 17:24+0200\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"PO-Revision-Date: 2026-07-15 07:41+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: core/attachmentmodel.cpp
 #, kde-format
@@ -117,6 +117,26 @@ msgstr "Inget lämpligt kryptoinsticksprogram hittades."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "Avkodning avbröts."
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Felaktig lösenordsfras"
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr "Brevet är krypterat men du har inte en motsvarande hemlig nyckel."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
 
@@ -131,11 +151,33 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Signaturen är felaktig"
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Du kan inte avkoda brevet."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Brevet är krypterat."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the certificate: %1"
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Brevet är krypterat med certifikatet: %1"
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Brevet är krypterat."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -144,18 +186,6 @@ msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Brevet är krypterat för följande mottagare:"
 msgstr[1] "Brevet är krypterat för följande mottagare:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr "Avkodning avbröts."
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Felaktig lösenordsfras."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -179,7 +209,7 @@ msgstr " - "
 #, kde-format
 msgctxt "@action"
 msgid "Open Menu"
-msgstr "Visa meny"
+msgstr "Öppna meny"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml
 #, kde-format
@@ -303,40 +333,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "skickat av %1 %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Brevet är krypterat men du har inte en motsvarande hemlig nyckel."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Brevet är krypterat för: %1"
-
-#: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
+msgctxt "accessible name"
+msgid "Crypto errors"
 msgstr ""
-"Brevet är krypterat VS-NfD kompatibelt men du har inte en motsvarande hemlig "
-"nyckel."
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Brevet är krypterat VS-NfD kompatibelt."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "Brevet är krypterat."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Brevet är krypterat för följande mottagare:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "&Detaljinformation:"
+
+#: widgets/messagecontainerwidget.cpp
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "&Detaljinformation:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -397,6 +424,12 @@ msgstr "&Detaljinformation:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Inbjudan är skadad"
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "Inbäddat brev"
 
@@ -416,9 +449,9 @@ msgstr "Ingen rubrik"
 msgid "From:"
 msgstr "Från:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Okänd"
 
@@ -436,12 +469,6 @@ msgstr "&Rubrik:"
 #, kde-format
 msgid "&From:"
 msgstr "&Från:"
-
-#: widgets/messageviewer.cpp
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Okänd</i>"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -526,7 +553,7 @@ msgstr "(Ingen rubrik)"
 #, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "(Inget brev)"
+msgstr "(inget brev)"
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-kuit-format
@@ -590,7 +617,7 @@ msgstr "Några delar av brevet kunde inte avkodas. Spara delvis avkodat brev?"
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Avkodning misslyckades"
 
@@ -598,7 +625,7 @@ msgstr "Avkodning misslyckades"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
-msgstr "Spara avkodat brev"
+msgstr "Spara avkrypterat brev"
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
@@ -635,214 +662,3 @@ msgstr "&Navigering"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Brev"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "namnlös"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Krypterade S/MIME-filer (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML-fil (*.eml);;MBOX-fil (*.mbox);;MIME-fil (*.mime)"
-
-#, fuzzy
-#~| msgid "The message is encrypted for the following keys:"
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Brevet är krypterat för följande nycklar:"
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Kryptoinsticksprogrammet \"%1\" kan inte dekryptera några brev."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Spara fil"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Filen %1 kunde inte skapas."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML-fil (*.eml);;MBOX-fil (*.mbox);;MIME-fil (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Kan inte läsa filen"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Brevet har signerats med certifikat %1."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Certifikatinformationen är inte tillgänglig."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Brevet har signerats av %1 med certifikat %2."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "Certifikatet har återkallats."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "Certifikatet har gått ut."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "Certifikatet är certifierat."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "Signaturen är ogiltig."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Brevet har signerats VS-NfD kompatibelt med användning av certifikatet <a "
-#~ "href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Brevet har signerats med användning av certifikat <a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Brevet har signerats VS-NfD kompatibelt av %1."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Brevet har signerats av %1."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "<a href=\"%1\">Certifikatet</a> har återkallats."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "<a href=\"%1\">Certifikatet</a> har gått ut."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "Signaturen är giltig, men <a href=\"%1\">certifikatets</a> giltighet är "
-#~ "okänd."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "Signaturen är giltig och <a href=\"%1\">certifikatet</a> är möjligen "
-#~ "pålitligt."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "Signaturen är giltig och <a href=\"%1\">certifikatet</a> är pålitligt."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "Signaturen är giltig och <a href=\"%1\">certifikatet</a> är fullständigt "
-#~ "pålitlig."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr ""
-#~ "Signaturen är giltig, men <a href=\"%1\">certifikatet</a> är inte "
-#~ "certifierat."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "Kmail-fel"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Brevet kan inte avkodas med något S/MIME-certifikat i din nyckelring."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Brevet kan inte avkodas med något OpenPGP-certifikat i din nyckelring."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "Brevet är krypterat för följande certifikat:"
-#~ msgstr[1] "Brevet är krypterat för följande certifikat:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Brevet har signerats med användning av certifikat %1 av %2."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Du litar på det här certifikatet."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Brevet är krypterat med certifikatet: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "Brevet är krypterat för följande certifikat:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Skriv ut dokument"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "&Spara bilaga som..."
-
-#, fuzzy
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "E-postfiler (*mbox)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Importera nyckel"
-
-#~ msgid "Unknown key"
-#~ msgstr "Okänd nyckel"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Ingen nyckel tillgänglig."
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Sparade bilaga på disk: %1"
-
-#~ msgid "fwd"
-#~ msgstr "fwd"
-
-#~ msgid "re"
-#~ msgstr "sv"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr "Kunde inte dekryptera data. Ingen nyckel hittades för mottagarna."

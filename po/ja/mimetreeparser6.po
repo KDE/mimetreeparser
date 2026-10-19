@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
 "PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -113,6 +113,32 @@ msgid "No appropriate crypto plug-in was found."
 msgstr "適切な暗号プラグインが見つかりませんでした。"
 
 #: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save Decrypted File"
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "復号したファイルを保存する"
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Wrong passphrase."
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "間違ったパスフレーズ。"
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr ""
+"このメッセージは暗号化されていますが、あなたは対応する秘密鍵を持っていませ"
+"ん。"
+
+#: core/messagepart.cpp
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "暗号プラグイン\"%1\"はメッセージを復号できませんでした。"
@@ -128,11 +154,35 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "あなたはこのメッセージを復号できません。"
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr ""
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "このメッセージは暗号化されています。"
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr ""
+"このメッセージは暗号化されていますが、あなたは対応する秘密鍵を持っていませ"
+"ん。"
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "このメッセージは暗号化されています。"
 
 #: core/partmodel.cpp
 #, kde-format
@@ -140,18 +190,6 @@ msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "このメッセージは以下の受け取り手のために暗号化されています:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr ""
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "間違ったパスフレーズ。"
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -302,42 +340,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 により %2 に送信"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
+msgctxt "accessible name"
+msgid "Crypto errors"
 msgstr ""
-"このメッセージは暗号化されていますが、あなたは対応する秘密鍵を持っていませ"
-"ん。"
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "このメッセージはこちらのために暗号化: %1"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
 msgstr ""
-"このメッセージは VS-NfD 準拠で暗号化されていますが、あなたは対応する秘密鍵を"
-"持っていません。"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "このメッセージは VS-NfD 準拠で暗号化されています。"
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "This message is encrypted."
-msgstr "このメッセージは暗号化されています。"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "詳細(&D):"
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "このメッセージは以下の受け取り手のために暗号化されています:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "詳細(&D):"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -397,6 +430,13 @@ msgid "&Details:"
 msgstr "詳細(&D):"
 
 #: widgets/messageviewer.cpp
+#, fuzzy, kde-format
+#| msgid "Invitation"
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "インビテーション"
+
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Encapsulated email"
 msgstr "カプセル化メール"
@@ -421,11 +461,11 @@ msgstr "Subject:"
 msgid "From:"
 msgstr "From:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "不明"
 
@@ -443,14 +483,6 @@ msgstr "&Subject:"
 #, kde-format
 msgid "&From:"
 msgstr "&From:"
-
-#: widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "不明"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -606,10 +638,12 @@ msgid ""
 msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save Decrypted File"
+msgctxt "@title:window"
 msgid "Decryption failed"
-msgstr ""
+msgstr "復号したファイルを保存する"
 
 #: widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
@@ -654,40 +688,3 @@ msgstr "ナビゲーション(&N)"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "メッセージ(&M)"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "名前なし"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "暗号化 S/MIME ファイル (*.p7m)"
-
-#, fuzzy
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox *.mime)"
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "メールファイル (*.eml *.mbox *.mime)"
-
-#, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "You cannot decrypt this message."
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "あなたはこのメッセージを復号できません。"
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "暗号プラグイン\"%1\"はメッセージを復号できません。"
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "ファイルを保存"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "ファイル%1が作成できませんでした。"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "ファイルの読み込みができません"

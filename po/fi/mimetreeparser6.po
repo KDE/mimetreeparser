@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mimetreeparser package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2025-07-14 11:55+0300\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"PO-Revision-Date: 2026-09-16 19:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/attachmentmodel.cpp
 #, kde-format
@@ -99,12 +99,10 @@ msgid ", "
 msgstr ", "
 
 #: core/messagepart.cpp
-#, fuzzy, kde-format
-#| msgctxt "Fallback when file has no name"
-#| msgid "unnamed"
+#, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
-msgstr "nimetön"
+msgstr "nimetön_%1.%2"
 
 #: core/messagepart.cpp core/messagepart.cpp core/messagepart.cpp
 #, kde-format
@@ -116,6 +114,26 @@ msgstr "Väärä salauslaajennus."
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Sopivaa salausliitännäistä ei löytynyt."
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "Salauksen purkaminen peruttiin"
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Väärä salasana"
+
+#: core/messagepart.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted but you don't have a matching secret key."
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr "Viesti on salattu, mutta sitä vastaava salainen avain puuttuu."
 
 #: core/messagepart.cpp
 #, kde-format
@@ -131,13 +149,35 @@ msgstr "Virhe: %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
+msgstr "Allekirjoitus on vioittunut"
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
 msgstr ""
 
-#: core/partmodel.cpp core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Tämän viestin salausta ei voida purkaa."
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Viesti on salattu."
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted to the certificate: %1"
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Viesti on salattu varmenteella: %1"
+
+#: core/partmodel.cpp
+#, fuzzy, kde-format
+#| msgid "This message is encrypted."
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Viesti on salattu."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -146,18 +186,6 @@ msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Viesti on salattu seuraavalle vastaanottajalle:"
 msgstr[1] "Viesti on salattu seuraaville vastaanottajille:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr ""
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Väärä salasana."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -178,52 +206,50 @@ msgstr " – "
 
 #: quick/qml/itinerary/FlightReservationComponent.qml
 #: quick/qml/itinerary/TrainReservationComponent.qml
-#, fuzzy, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
+#, kde-format
 msgctxt "@action"
 msgid "Open Menu"
-msgstr "Avaa"
+msgstr "Avaa valikko"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
-msgstr ""
+msgstr "Lähtö: %1"
 
 #: quick/qml/itinerary/FlightReservationComponent.qml
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
-msgstr ""
+msgstr "Saapuminen: %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml
 #, kde-format
 msgid "Check-in time: %1"
-msgstr ""
+msgstr "Sisäänkirjautumisaika: %1"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml
 #, kde-format
 msgid "Check-out time: %1"
-msgstr ""
+msgstr "Uloskirjautumisaika: %1"
 
 #: quick/qml/itinerary/TrainReservationComponent.qml
 #: quick/qml/itinerary/TrainReservationComponent.qml
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
+msgstr "Lait. %1"
 
 #: quick/qml/itinerary/TripMenu.qml
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr ""
+msgstr "Lähetä KDE Itineraryyn"
 
 #: quick/qml/itinerary/TripMenu.qml
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
-msgstr ""
+msgstr "Lähetä ohjelmaan %1"
 
 #: quick/qml/MailViewer.qml
 #, kde-format
@@ -307,40 +333,37 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "lähettänyt %1 %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "Viesti on salattu, mutta sitä vastaava salainen avain puuttuu."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Viesti on salattu: %1"
-
-#: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
+msgctxt "accessible name"
+msgid "Crypto errors"
 msgstr ""
-"Viesti on VS-NfD-yhteensopivasti salattu, mutta sitä vastaava salainen avain "
-"puuttuu."
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Viesti on VS-NfD-yhteensopivasti salattu."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "Viesti on salattu."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp
-#, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Viesti on salattu seuraaville vastaanottajille:"
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Show Details"
+msgstr "Tie&dot:"
+
+#: widgets/messagecontainerwidget.cpp
+#, fuzzy, kde-format
+#| msgid "&Details:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "Tie&dot:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -401,34 +424,34 @@ msgstr "Tie&dot:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Kutsu on vioittunut"
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "Kapseloitu viesti"
 
 #: widgets/messageviewer.cpp widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Subject:"
+#, kde-format
 msgid "Subject:"
 msgstr "Aihe:"
 
 #: widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "window title if email subject is empty"
-#| msgid "(No Subject)"
+#, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
-msgstr "(Ei aihetta)"
+msgstr "Ei aihetta"
 
 #: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
 msgid "From:"
 msgstr "Lähettäjä:"
 
-#: widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
+#, kde-format
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Tuntematon"
 
@@ -446,14 +469,6 @@ msgstr "Ai&he:"
 #, kde-format
 msgid "&From:"
 msgstr "&Lähettäjä:"
-
-#: widgets/messageviewer.cpp
-#, fuzzy, kde-format
-#| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#| msgid "Unknown"
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "Tuntematon"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -535,18 +550,16 @@ msgid "(No Subject)"
 msgstr "(Ei aihetta)"
 
 #: widgets/messageviewerbase_p.cpp
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
-msgstr "Seuraava viesti"
+msgstr "(Ei viestiä)"
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
-msgstr ""
+msgstr "Ei näytettäviä viestejä."
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-kuit-format
@@ -555,36 +568,32 @@ msgid ""
 "Unable to read the file <filename>%1</filename>, or the file doesn't contain "
 "any messages."
 msgstr ""
+"Ei voida lukea tiedostoa <filename>%1</filename> tai tiedosto ei sisällä "
+"viestejä."
 
 #: widgets/messageviewerbase_p.cpp
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
 #: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Virhe tallennettaessa viestiä"
 
 #: widgets/messageviewerbase_p.cpp
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
-msgstr "Tiedostoa %1 ei voitu luoda."
+msgstr "Tiedostoa %1 ei voitu kirjoittaa."
 
 #: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
-#, fuzzy, kde-format
-#| msgctxt "@action:button Next email"
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
-msgstr "Seuraava viesti"
+msgstr "Tallenna viesti"
 
 #: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
 #, kde-format
@@ -596,7 +605,7 @@ msgstr "Sähköpostitiedostot (*.eml *.mbox *.mime)"
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
-msgstr ""
+msgstr "Viesti ei vaikuta salatulta. Tallennetaan alkuperäinen viesti."
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
@@ -605,17 +614,17 @@ msgid ""
 "Some parts of the message could not be decrypted. Save partially decrypted "
 "message?"
 msgstr ""
+"Joiden viestin osien salausta ei voitu purkaa. Tallennetaanko osin purettu "
+"viesti?"
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
-msgstr ""
+msgstr "Salauksen purkaminen epäonnistui"
 
 #: widgets/messageviewerbase_p.cpp
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Decrypted File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
 msgstr "Tallenna purettu viesti"
@@ -642,7 +651,7 @@ msgstr "&Tiedosto"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
-msgstr ""
+msgstr "&Näkymä"
 
 #: widgets/messageviewerdialog.cpp
 #, kde-format
@@ -655,268 +664,3 @@ msgstr "Navi&gointi"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Viesti"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "nimetön"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Salatut S/MIME-tiedostot (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr ""
-#~ "EML-tiedosto (*.eml);;MBOX-tiedosto (*.mbox);;MIME-tiedosto (*.mime)"
-
-#, fuzzy
-#~| msgid "The message is encrypted for the following keys:"
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Viesti on salattu seuraaville avaimille:"
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Salausliitännäinen ”%1” ei osaa purkaa viestien salausta."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Tallenna tiedosto"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Tiedostoa %1 ei voitu luoda."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr ""
-#~ "EML-tiedosto (*.eml);;MBOX-tiedosto (*.mbox);;MIME-tiedosto (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Tiedostoa ei voi lukea"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the certificate %1."
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Viesti on allekirjoitettu varmenteella %1."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The certificate details are not available."
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Varmenteen tiedot eivät ole saatavilla."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed using the certificate %1."
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Viesti on allekirjoitettu varmenteella %1."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The certificate was revoked."
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "Varmenne on peruttu."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The certificate has expired."
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "Varmenne on vanhentunut."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The certificate has expired."
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "Varmenne on vanhentunut."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The signature is invalid."
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "Allekirjoitus on virheellinen."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "This message has been signed VS-NfD compliant using the certificate <a "
-#~| "href=\"%1\">%2</a>."
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Viesti on allekirjoitettu VS-NfD-yhteensopivasti varmenteella <a href="
-#~ "\"%1\">%2</a>."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr "Viesti on allekirjoitettu varmenteella <a href=\"%1\">%2</a>."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Viesti on VS-NfD-yhteensopivasti allekirjoittanut %1."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "This message has been signed by %1."
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Viestin on allekirjoittanut %1."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "<a href=\"%1\">Varmenne</a> on peruttu."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "The <a href=\"%1\">certificate</a> was expired."
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "<a href=\"%1\">Varmenne</a> on vanhentunut."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid, but the <a href=\"%1\">certificate</a>'s "
-#~| "validity is unknown."
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "Allekirjoitus on kelvollinen mutta <a href=\"%1\">varmenteen</a> "
-#~ "kelvollisuutta ei tunneta."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~| "marginally trusted."
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "Allekirjoitus on kelvollinen, ja <a href=\"%1\">varmenteeseen</a> "
-#~ "luotetaan ehdollisesti."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~| "trusted."
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "Allekirjoitus on kelvollinen, ja <a href=\"%1\">varmenteeseen</a> "
-#~ "luotetaan täysin."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~| "ultimately trusted."
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "Allekirjoitus on kelvollinen, ja <a href=\"%1\">varmenteeseen</a> "
-#~ "luotetaan ehdottomasti."
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid ""
-#~| "The signature is valid, but the <a href=\"%1\">certificate</a> is "
-#~| "untrusted."
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr ""
-#~ "Allekirjoitus on kelvollinen, mutta <a href=\"%1\">varmenne</a> ei ole "
-#~ "luotettava."
-
-#, fuzzy
-#~| msgid "KMail Error"
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "KMail-virhe"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Viestin salausta ei voi purkaa avainrenkaasi millään S/MIME-varmenteella."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Viestin salausta ei voi purkaa avainrenkaasi millään OpenPGP-varmenteella."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "Viesti on salattu seuraavalle avaimelle:"
-#~ msgstr[1] "Viesti on salattu seuraaville avaimille:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Viesti on allekirjoitettu käyttäjän %2 varmenteella %1."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Luotat tähän varmenteeseen."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Viesti on salattu varmenteella: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "Viesti on salattu seuraaville varmenteille:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Tulosta tiedosto"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "Tallenna &liite nimellä…"
-
-#, fuzzy
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Sähköpostitiedostot (*.eml *.mbox)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Tuo avain"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Avainta ei ole saatavilla."

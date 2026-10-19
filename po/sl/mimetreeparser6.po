@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-03 07:14+0200\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"PO-Revision-Date: 2026-10-15 10:10+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.9\n"
 
 #: core/attachmentmodel.cpp
@@ -122,6 +122,25 @@ msgstr "Ni najdenega ustreznega kripto-vtičnika."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "Dešifriranje je bilo preklicano"
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Napačno geslo"
+
+#: core/messagepart.cpp
+#, kde-format
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr "Sporočila ni mogoče dešifrirati, ker nimate ustreznega tajnega ključa."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripto-vtičnik \"%1\" ni mogel dešifrirati podatkov."
 
@@ -136,11 +155,30 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Podpis je polomljen"
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Ne morete dešifrirati tega sporočila."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr "Kaj je mogoče storiti: %1"
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "To sporočilo je šifrirano (%1)."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "To sporočilo je šifrirano, vendar šifriranje ni %1."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "To sporočilo je šifrirano."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -151,18 +189,6 @@ msgstr[0] "Sporočilo je šifrirano za naslednje prejemnike:"
 msgstr[1] "Sporočilo je šifrirano za naslednjega prejemnika:"
 msgstr[2] "Sporočilo je šifrirano za naslednje prejemnike:"
 msgstr[3] "Sporočilo je šifrirano za naslednje prejemnike:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr "Dešifriranje je bilo preklicano."
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Napačno geslo."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -311,40 +337,35 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "poslal %1 dne %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "To sporočilo je šifrirano, a nimate ustreznega skrivnega ključa zanj."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "To sporočilo je šifrirano za: %1"
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr "Napake pri kriptografiji"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"To sporočilo je šifrirano v skladu z VS-NfD, vendar nimate ustreznega "
-"skrivnega ključa zanj."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr "Kriptografija povzetek in opozorila"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "To sporočilo je šifrirano v skladu z VS-NfD."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr "Povzetek kriptografije"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "To sporočilo je šifrirano."
+msgctxt "@button"
+msgid "Show Details"
+msgstr "Prikaži podrobnosti"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "Sporočilo je šifrirano za naslednje prejemnike:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "Skrij podrobnosti"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -405,6 +426,12 @@ msgstr "Po&drobnosti:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Povabilo je polomljeno"
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "Enkapsulirano e-poštno sporočilo"
 
@@ -424,11 +451,11 @@ msgstr "Ni zadeve"
 msgid "From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
-msgstr "Neznan"
+msgstr "Neznano"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -444,12 +471,6 @@ msgstr "Predmet:"
 #, kde-format
 msgid "&From:"
 msgstr "Od:"
-
-#: widgets/messageviewer.cpp
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Neznan</i>"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -601,7 +622,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Dešifriranje spodletelo"
 
@@ -646,222 +667,3 @@ msgstr "&Navigacija"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "Sporočilo"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "neimenovana"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Šifrirane datoteke S/MIME (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "Datoteka EML (*.eml);; MBOX (*.mbox);; MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Dešifriranje sporočila ni uspelo: %1"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
-#~ msgstr ""
-#~ "Dešifriranje sporočila ni uspelo. Shranjevanje izvirnega (šifriranega?) "
-#~ "sporočila."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Kripto-vtičnik \"%1\" ne more dešifrirati sporočil."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Shrani datoteko"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "Datoteke %1 ni bilo mogoče ustvariti."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "Datoteka EML (*.eml);; MBOX (*.mbox);; MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Ni mogoče prebrati datoteke"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "To sporočilo je bilo podpisano s potrdilom %1."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Podrobnosti potrdila niso na voljo."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "To sporočilo je podpisal %1s potrdilom %2."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "To potrdilo je bil preklicano."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "To potrdilo je poteklo."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "To potrdilo je potrjeno."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "Ta podpis je neveljaven."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "To sporočilo je bilo podpisano ustrezno z VS-NfD s potrdilom <a href="
-#~ "\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr "To sporočilo je bilo podpisano s potrdilom <a href=\"%1\">%2</a>."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "To sporočilo je bilo podpisano ustrezno z VS-NfD %1."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "To sporočilo je bilo podpisano s %1."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "<a href=\"%1\">Potrdilo</a> je bil preklicano."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "<a href=\"%1\">Potrdilo</a> je poteklo."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "Podpis je veljaven, a veljavnost <a href=\"%1\">potrdila</a> je neznana."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "Podpis je veljaven in <a href=\"%1\">potrdilo</a> je le malo zaupanja "
-#~ "vredno."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr ""
-#~ "Podpis je veljaven in <a href=\"%1\">potrdilo</a> je vsega zaupanja "
-#~ "vredno."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "Podpis je veljaven in <a href=\"%1\">potrdilo</a> je končno vredno "
-#~ "zaupanja."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr "Podpis je veljaven, a <a href=\"%1\">potrdilo</a> ni potrjeno."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "Napaka KMaila"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Tega sporočila ni mogoče dešifrirati z nobenim potrdilom S/MIME v vašem "
-#~ "obesku ključev."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Tega sporočila ni mogoče dešifrirati z nobenim potrdilom OpenPGP v vašem "
-#~ "obesku ključev."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "Sporočilo je šifrirano za naslednji ključ:"
-#~ msgstr[1] "Sporočilo je šifrirano za naslednja ključa:"
-#~ msgstr[2] "Sporočilo je šifrirano za naslednje ključe:"
-#~ msgstr[3] "Sporočilo je šifrirano za naslednje ključe:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "To sporočilo je s potrdilom %1 podpisal %2."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Temu potrdilu zaupate."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "To sporočilo je šifrirano na potrdilo: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "Sporočilo je šifrirano za naslednja potrdila:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Tiskaj dokument"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "&Shrani priloge kot..."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "Poštne datoteke (*.eml *.mbox *mime)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Uvozi ključ"
-
-#~ msgid "Unknown key"
-#~ msgstr "Neznan ključ"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Ključ ni na voljo."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Ni uspelo ustvariti začasne datoteke."
-
-#~ msgctxt "@info"
-#~ msgid "Saved the attachment to disk: %1"
-#~ msgstr "Priponka shranjena na disk: %1"
-
-#~ msgid "fwd"
-#~ msgstr "naprej"
-
-#~ msgid "re"
-#~ msgstr "odg"
-
-#~ msgctxt "@info"
-#~ msgid "Could not decrypt the data: no key found for recipients."
-#~ msgstr ""
-#~ "Podatkov ni bilo mogoče dešifrirati: ključ za prejemnike ni bil najden."

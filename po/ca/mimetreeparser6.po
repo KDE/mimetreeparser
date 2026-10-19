@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-03 11:44+0200\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"PO-Revision-Date: 2026-10-15 09:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -119,6 +119,27 @@ msgstr "No s'ha trobat cap connector criptogràfic apropiat."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "S'ha cancel·lat el desencriptatge"
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Frase de pas incorrecta"
+
+#: core/messagepart.cpp
+#, kde-format
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr ""
+"Aquest missatge no s'ha pogut desencriptar perquè no teniu cap clau secreta "
+"que coincideixi."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 
@@ -133,11 +154,30 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "La signatura està trencada"
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "No es pot desencriptar aquest missatge."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr "Què es pot fer: %1"
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Aquest missatge està encriptat (%1)."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Aquest missatge està encriptat, però l'encriptatge no és %1."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Aquest missatge està encriptat."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -146,18 +186,6 @@ msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "El missatge està encriptat per al destinatari següent:"
 msgstr[1] "El missatge està encriptat per als destinataris següents:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr "S'ha cancel·lat el desencriptatge."
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Frase de pas incorrecta."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -307,42 +335,35 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "enviat per %1 a %2"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr ""
-"Aquest missatge està encriptat, però no teniu cap clau secreta que "
-"coincideixi."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Aquest missatge està encriptat amb: %1"
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr "Errors de criptografia"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Aquest missatge està encriptat conforme amb VS-NfD, però no teniu cap clau "
-"secreta que coincideixi."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr "Resum de criptografia i avisos"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Aquest missatge està encriptat conforme amb VS-NfD."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr "Resum de criptografia"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "Aquest missatge està encriptat."
+msgctxt "@button"
+msgid "Show Details"
+msgstr "Mostra els detalls"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "El missatge està encriptat per als destinataris següents:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "Oculta els detalls"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -403,6 +424,12 @@ msgstr "&Detalls:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "La invitació està trencada"
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "Correu electrònic encapsulat"
 
@@ -422,9 +449,9 @@ msgstr "Sense assumpte"
 msgid "From:"
 msgstr "De:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Desconegut"
 
@@ -442,12 +469,6 @@ msgstr "A&ssumpte:"
 #, kde-format
 msgid "&From:"
 msgstr "&De:"
-
-#: widgets/messageviewer.cpp
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Desconegut</i>"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -599,7 +620,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Ha fallat el desencriptatge"
 
@@ -644,29 +665,3 @@ msgstr "&Navegació"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "&Missatge"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "sense nom"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Fitxers S/MIME encriptats (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "Fitxer EML (*.eml);;Fitxer MBOX (*.mbox);;Fitxer MIME (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "Ha fallat en desencriptar el missatge: %1"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
-#~ msgstr ""
-#~ "Ha fallat en desencriptar el missatge. Es desa el missatge original "
-#~ "(encriptat?)."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "El connector criptogràfic «%1» no pot desencriptar missatges."

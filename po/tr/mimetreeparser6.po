@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 00:46+0000\n"
-"PO-Revision-Date: 2026-07-03 18:43+0300\n"
+"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"PO-Revision-Date: 2026-10-15 21:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: core/attachmentmodel.cpp
 #, kde-format
@@ -118,6 +118,26 @@ msgstr "Uygun kripto eklentisi bulunamadı."
 
 #: core/messagepart.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Decryption was canceled"
+msgstr "Şifre çözümü iptal edildi"
+
+#: core/messagepart.cpp
+#, kde-format
+msgctxt "@info:status"
+msgid "Wrong passphrase"
+msgstr "Yanlış anahtar parolası"
+
+#: core/messagepart.cpp
+#, kde-format
+msgid ""
+"This message cannot be decrypted because you do not have a matching secret "
+"key."
+msgstr ""
+"İletinin şifresi çözülemiyor; çünkü sizde eşleşen bir gizli anahtar yok."
+
+#: core/messagepart.cpp
+#, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kripto eklentisi “%1”, verinin şifresini çözemedi."
 
@@ -132,11 +152,30 @@ msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "İmza bozuk"
 
-#: core/partmodel.cpp core/partmodel.cpp
+#: core/partmodel.cpp
 #, kde-format
-msgctxt "@info:status"
-msgid "You cannot decrypt this message."
-msgstr "Bu iletinin şifresini çözemezsiniz."
+msgctxt "@info What can be done: Some guidance"
+msgid "What can be done: %1"
+msgstr "Ne yapılabilir: %1"
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted (%1)."
+msgstr "Bu ileti şifreli (%1)."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt ""
+"@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
+msgid "This message is encrypted, but the encryption is not %1."
+msgstr "Bu ileti şifreli; ancak şifreleme %1 değil."
+
+#: core/partmodel.cpp
+#, kde-format
+msgctxt "@info"
+msgid "This message is encrypted."
+msgstr "Bu ileti şifreli."
 
 #: core/partmodel.cpp
 #, kde-format
@@ -145,18 +184,6 @@ msgid "The message is encrypted for the following recipient:"
 msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "İleti, şu alıcı için şifrelendi:"
 msgstr[1] "İleti, şu alıcılar için şifrelendi:"
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Decryption was cancelled."
-msgstr "Şifreleme iptal edildi."
-
-#: core/partmodel.cpp
-#, kde-format
-msgctxt "@info:status"
-msgid "Wrong passphrase."
-msgstr "Yanlış anahtar parolası."
 
 #: core/urlhandler.cpp
 #, kde-format
@@ -214,7 +241,7 @@ msgstr "P %1"
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
-msgstr "Gönder: KDE Yol Kılavuzu"
+msgstr "Gönder: KDE Itinerary"
 
 #: quick/qml/itinerary/TripMenu.qml
 #, kde-format
@@ -304,40 +331,35 @@ msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%1 tarafından %2 tarihinde gönderildi"
 
-#: quick/qml/private/MailPartModel.qml
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted but you don't have a matching secret key."
-msgstr "İleti şifreli; ancak sizde eşleşen bir gizli anahtar yok."
-
-#: quick/qml/private/MailPartModel.qml
-#, kde-format
-msgid "This message is encrypted for: %1"
-msgstr "Bu ileti şuna şifreli: %1"
+msgctxt "accessible name"
+msgid "Crypto errors"
+msgstr "Kripto hataları"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid ""
-"This message is VS-NfD compliant encrypted but you don't have a matching "
-"secret key."
-msgstr ""
-"Bu ileti, VS-NfD uyumlu olarak şifrelendi; ancak sizde eşleşen bir gizli "
-"anahtar yok."
+msgctxt "accessible name"
+msgid "Crypto summary and warnings"
+msgstr "Kripto özeti ve uyarıları"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is VS-NfD compliant encrypted."
-msgstr "Bu ileti, VS-NfD uyumlu olarak şifrelendi."
+msgctxt "accessible name"
+msgid "Crypto summary"
+msgstr "Kripto özeti"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "This message is encrypted."
-msgstr "Bu ileti şifreli."
+msgctxt "@button"
+msgid "Show Details"
+msgstr "Ayrıntıları Göster"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
-msgid "The message is encrypted for the following recipients:"
-msgstr "İleti, şu alıcılar için şifrelendi:"
+msgctxt "@button"
+msgid "Hide Details"
+msgstr "Ayrıntıları Gizle"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -398,6 +420,12 @@ msgstr "&Ayrıntılar:"
 
 #: widgets/messageviewer.cpp
 #, kde-format
+msgctxt "@info:status"
+msgid "Invitation is broken"
+msgstr "Davet bozuk"
+
+#: widgets/messageviewer.cpp
+#, kde-format
 msgid "Encapsulated email"
 msgstr "Kapsüllenmiş E-posta"
 
@@ -417,9 +445,9 @@ msgstr "Konu yok"
 msgid "From:"
 msgstr "Kimden:"
 
-#: widgets/messageviewer.cpp
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
-msgctxt "@status missing from:, an unknown author"
+msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
@@ -437,12 +465,6 @@ msgstr "K&onu:"
 #, kde-format
 msgid "&From:"
 msgstr "&Kimden:"
-
-#: widgets/messageviewer.cpp
-#, kde-format
-msgctxt "@status missing from:, an unknown author"
-msgid "<i>Unknown</i>"
-msgstr "<i>Bilinmeyen</i>"
 
 #: widgets/messageviewer.cpp
 #, kde-format
@@ -593,7 +615,7 @@ msgstr ""
 
 #: widgets/messageviewerbase_p.cpp
 #, kde-format
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Decryption failed"
 msgstr "Şifre Çözümü Başarısız"
 
@@ -638,201 +660,3 @@ msgstr "&Dolaşım"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr "İ&leti"
-
-#~ msgctxt "Fallback when file has no name"
-#~ msgid "unnamed"
-#~ msgstr "adsız"
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Encrypted S/MIME files (*.p7m)"
-#~ msgstr "Şifreli S/MIME dosyaları (*.p7m)"
-
-#~ msgctxt "Accepted files in a file dialog. You only need to translate 'file'"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML dosyası (*.eml);;MBOX dosyası (*.mbox);;MIME dosyası (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Failed to decrypt the message: %1"
-#~ msgstr "İletinin şifresi çözülemedi: %1"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Failed to decrypt the message. Saving the original (encrypted?) message."
-#~ msgstr ""
-#~ "İletinin şifresi çözülemedi. Özgün (şifrelenmiş?) ileti kaydediliyor."
-
-#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-#~ msgstr "Kripto eklentisi “%1”, iletilerin şifresini çözemez."
-
-#~ msgctxt "@title:window"
-#~ msgid "Save File"
-#~ msgstr "Dosyayı Kaydet"
-
-#~ msgctxt "Error message"
-#~ msgid "File %1 could not be created."
-#~ msgstr "%1 dosyası oluşturulamadı."
-
-#~ msgctxt "File dialog accepted files"
-#~ msgid "EML file (*.eml);;MBOX file (*.mbox);;MIME file (*.mime)"
-#~ msgstr "EML dosyası (*.eml);;MBOX dosyası (*.mbox);;MIME dosyası (*.mime)"
-
-#~ msgctxt "@info"
-#~ msgid "Unable to read file"
-#~ msgstr "Dosya okunamıyor"
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed with certificate %1."
-#~ msgstr "Bu ileti, %1 sertifikasıyla imzalandı."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate details are not available."
-#~ msgstr "Sertifika ayrıntıları kullanılabilir değil."
-
-#~ msgctxt "@info"
-#~ msgid "This message was signed by %1 with certificate %2."
-#~ msgstr "Bu ileti, %1 tarafından %2 sertifikasıyla imzalandı."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate was revoked."
-#~ msgstr "Sertifika yürürlükten kaldırıldı."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate has expired."
-#~ msgstr "Sertifikanın süresi doldu."
-
-#~ msgctxt "@info"
-#~ msgid "The certificate is certified."
-#~ msgstr "Sertifika sertifikalı."
-
-#~ msgctxt "@info"
-#~ msgid "The signature is invalid."
-#~ msgstr "İmza geçersiz."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed VS-NfD compliant using the certificate <a "
-#~ "href=\"%1\">%2</a>."
-#~ msgstr ""
-#~ "Bu ileti, <a href=\"%1\">%2</a> sertifikası kullanılarak VS-NfD uyumlu "
-#~ "olarak imzalandı."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This message has been signed using the certificate <a href=\"%1\">%2</a>."
-#~ msgstr "Bu ileti, <a href=\"%1\">%2</a> sertifikası kullanılarak imzalandı."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed VS-NfD compliant by %1."
-#~ msgstr "Bu ileti, %1 tarafından VS-NfD uyumlu olarak imzalandı."
-
-#~ msgctxt "@info"
-#~ msgid "This message has been signed by %1."
-#~ msgstr "Bu ileti, %1 tarafından imzalandı."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> was revoked."
-#~ msgstr "<a href=\"%1\">Sertifika</a> yürürlükten kaldırıldı."
-
-#~ msgctxt "@info"
-#~ msgid "The <a href=\"%1\">certificate</a> is expired."
-#~ msgstr "<a href=\"%1\">Sertifikanın</a> süresi doldu."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a>'s validity "
-#~ "is unknown."
-#~ msgstr ""
-#~ "İmza geçerli; ancak <a href=\"%1\">sertifikanın</a> geçerliliği "
-#~ "bilinmiyor."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "marginally trusted."
-#~ msgstr ""
-#~ "İmza geçerli; ancak <a href=\"%1\">sertifikaya</a> pek az güveniliyor."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is fully "
-#~ "trusted."
-#~ msgstr "İmza geçerli ve <a href=\"%1\">sertifikaya</a> güveniliyor."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid and the <a href=\"%1\">certificate</a> is "
-#~ "ultimately trusted."
-#~ msgstr ""
-#~ "İmza geçerli ve <a href=\"%1\">sertifikaya</a> en yüksek düzeyde "
-#~ "güveniliyor."
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The signature is valid, but the <a href=\"%1\">certificate</a> is not "
-#~ "certified."
-#~ msgstr "İmza geçerli; ancak <a href=\"%1\">sertifikaya</a> güvenilmiyor."
-
-#~ msgctxt "@title:window"
-#~ msgid "KMail Error"
-#~ msgstr "K Posta Hatası"
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any S/MIME certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Bu iletinin şifresi, anahtar zincirinizdeki hiçbir S/MIME sertifikasıyla "
-#~ "çözülemiyor."
-
-#~ msgctxt "@info:status"
-#~ msgid ""
-#~ "This message cannot be decrypted with any OpenPGP certificate in your "
-#~ "keyring."
-#~ msgstr ""
-#~ "Bu iletinin şifresi, anahtar zincirinizdeki hiçbir OpenPGP sertifikasıyla "
-#~ "çözülemiyor."
-
-#~ msgctxt "@info:status"
-#~ msgid "The message is encrypted for the following certificate:"
-#~ msgid_plural "The message is encrypted for the following certificates:"
-#~ msgstr[0] "İleti, şu sertifika için şifrelendi:"
-#~ msgstr[1] "İleti, şu sertifikalar için şifrelendi:"
-
-#~ msgctxt "@label"
-#~ msgid "This message has been signed using the certificate %1 by %2."
-#~ msgstr "Bu ileti, %2 tarafından %1 sertifikası kullanılarak imzalandı."
-
-#~ msgctxt "@label"
-#~ msgid "You are trusting this certificate."
-#~ msgstr "Bu sertifikaya güveniyorsunuz."
-
-#~ msgid "This message is encrypted to the certificate: %1"
-#~ msgstr "Bu ileti, şu sertifikayla şifrelendi: %1"
-
-#~ msgid "The message is encrypted for the following certificates:"
-#~ msgstr "İleti, şu sertifikalar için şifrelendi:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Print Document"
-#~ msgstr "Belgeyi Yazdır"
-
-#~ msgid "&Save Attachment As..."
-#~ msgstr "Eki Farklı &Kaydet..."
-
-#~| msgctxt "File dialog accepted files"
-#~| msgid "Email files (*.eml *.mbox)"
-#~ msgctxt "File dialog accepted files"
-#~ msgid "Email files (*.eml *.mbox *mime)"
-#~ msgstr "E-posta dosyaları (*.eml *.mbox *.mime)"
-
-#~ msgctxt "@action:button"
-#~ msgid "Import key"
-#~ msgstr "Anahtar İçe Aktar"
-
-#~ msgctxt "@info:status"
-#~ msgid "No key available."
-#~ msgstr "Kullanılabilir anahtar yok."
-
-#~ msgctxt "@info"
-#~ msgid "Failed to create temporary file."
-#~ msgstr "Geçici dosya oluşturulamadı."
