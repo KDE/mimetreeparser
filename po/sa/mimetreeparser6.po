@@ -19,60 +19,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "नामः"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "आकृति"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "एन्क्रिप्टेड्"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "हस्ताक्षरितम्"
 
-#: core/attachmentmodel.cpp:305
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "आसक्तिं रक्षितुं असफलम्।"
 
-#: core/attachmentmodel.cpp:328
+#: core/attachmentmodel.cpp
 #, kde-format
 msgid "attachment"
 msgstr "संलग्न"
 
-#: core/attachmentmodel.cpp:335
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "उद्घाटनार्थं संलग्नकं लिखितुं असफलम्।"
 
-#: core/attachmentmodel.cpp:354 core/attachmentmodel.cpp:364
+#: core/attachmentmodel.cpp core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "आसक्तिं उद्घाटयितुं असफलम्।"
 
-#: core/attachmentmodel.cpp:385
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "अस्मिन् संलग्नके प्रमाणपत्राणि न प्राप्तानि"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -80,7 +80,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "एकं प्रमाणपत्रं आयातितम्"
 msgstr[1] "%1 प्रमाणपत्राणि आयातानि"
 
-#: core/attachmentmodel.cpp:393
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -88,19 +88,19 @@ msgid_plural "%1 certificates were already imported"
 msgstr[0] "एकं प्रमाणपत्रं पूर्वमेव आयातितम् आसीत्"
 msgstr[1] "%1 प्रमाणपत्राणि पूर्वमेव आयातानि आसन्"
 
-#: core/messageparser.cpp:48
+#: core/messageparser.cpp
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/messageparser.cpp:53
+#: core/messageparser.cpp
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", ९. "
 
-#: core/messagepart.cpp:97
+#: core/messagepart.cpp
 #, fuzzy, kde-format
 #| msgctxt "Fallback when file has no name"
 #| msgid "unnamed"
@@ -108,40 +108,40 @@ msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "अनामिका"
 
-#: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
+#: core/messagepart.cpp core/messagepart.cpp core/messagepart.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "गलत क्रिप्टो प्लग-इन।"
 
-#: core/messagepart.cpp:904
+#: core/messagepart.cpp
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "कोऽपि समुचितः क्रिप्टो प्लग-इन् न प्राप्तः ।"
 
-#: core/messagepart.cpp:906
+#: core/messagepart.cpp
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "क्रिप्टो प्लग-इन् \"%1\" दत्तांशं विगुप्तं कर्तुं न शक्तवान् ।"
 
-#: core/messagepart.cpp:907
+#: core/messagepart.cpp
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटिः %1"
 
-#: core/partmodel.cpp:409
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr ""
 
-#: core/partmodel.cpp:627 core/partmodel.cpp:629
+#: core/partmodel.cpp core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "भवन्तः एतत् सन्देशं विगुप्तीकरणं कर्तुं न शक्नुवन्ति ।"
 
-#: core/partmodel.cpp:635
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -149,37 +149,37 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "सन्देशः निम्नलिखितग्राहकस्य कृते एन्क्रिप्टेड् भवति ।"
 msgstr[1] "सन्देशः निम्नलिखितग्राहिणां कृते एन्क्रिप्टेड् भवति ।"
 
-#: core/partmodel.cpp:649
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr ""
 
-#: core/partmodel.cpp:651
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "गलत् गुप्तवाक्यम्।"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "प्रमाणपत्रप्रबन्धकं आरभुं न शक्तवान्। कृपया स्वस्य संस्थापनं पश्यन्तु।"
 
-#: core/utils.cpp:49
+#: core/utils.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "अज्ञात कील"
 
-#: core/utils.cpp:63
+#: core/utils.cpp
 #, kde-format
 msgctxt "Separator"
 msgid " - "
 msgstr " - ९. "
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:77
-#: quick/qml/itinerary/TrainReservationComponent.qml:91
+#: quick/qml/itinerary/FlightReservationComponent.qml
+#: quick/qml/itinerary/TrainReservationComponent.qml
 #, fuzzy, kde-format
 #| msgctxt "to open"
 #| msgid "Open"
@@ -187,231 +187,231 @@ msgctxt "@action"
 msgid "Open Menu"
 msgstr "उद्घाटित"
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:93
+#: quick/qml/itinerary/FlightReservationComponent.qml
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
 msgstr ""
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:110
+#: quick/qml/itinerary/FlightReservationComponent.qml
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
 msgstr ""
 
-#: quick/qml/itinerary/HotelReservationComponent.qml:65
+#: quick/qml/itinerary/HotelReservationComponent.qml
 #, kde-format
 msgid "Check-in time: %1"
 msgstr ""
 
-#: quick/qml/itinerary/HotelReservationComponent.qml:69
+#: quick/qml/itinerary/HotelReservationComponent.qml
 #, kde-format
 msgid "Check-out time: %1"
 msgstr ""
 
-#: quick/qml/itinerary/TrainReservationComponent.qml:157
-#: quick/qml/itinerary/TrainReservationComponent.qml:224
+#: quick/qml/itinerary/TrainReservationComponent.qml
+#: quick/qml/itinerary/TrainReservationComponent.qml
 #, kde-format
 msgid "Pl. %1"
 msgstr ""
 
-#: quick/qml/itinerary/TripMenu.qml:18
+#: quick/qml/itinerary/TripMenu.qml
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
 msgstr ""
 
-#: quick/qml/itinerary/TripMenu.qml:33
+#: quick/qml/itinerary/TripMenu.qml
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
 msgstr ""
 
-#: quick/qml/MailViewer.qml:40
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "सन्देशदर्शकः"
 
-#: quick/qml/MailViewer.qml:77
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "विषयः:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "इत्यस्मात्‌:"
 
-#: quick/qml/MailViewer.qml:114
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "प्रेषकः :"
 
-#: quick/qml/MailViewer.qml:130
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "इत्यस्मै:"
 
-#: quick/qml/MailViewer.qml:146
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
 msgstr "सी. सी."
 
-#: quick/qml/MailViewer.qml:162
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
 msgstr "बीसीसी :"
 
-#: quick/qml/MailViewer.qml:212
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "आसक्तिं रक्षतु"
 
-#: quick/qml/MailViewer.qml:235
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
 msgstr "आसक्तिः यथा रक्षतु"
 
-#: quick/qml/private/AttachmentDelegate.qml:56
+#: quick/qml/private/AttachmentDelegate.qml
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
 msgstr "आयात प्रमाणपत्रम्"
 
-#: quick/qml/private/Banner.qml:188
+#: quick/qml/private/Banner.qml
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "पिधानं करोतु"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "एकः त्रुटिः अभवत्: %1"
 
-#: quick/qml/private/ICalPart.qml:27
+#: quick/qml/private/ICalPart.qml
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "अस्मिन् मेलपत्रे आमन्त्रणं भवति"
 
-#: quick/qml/private/MailPart.qml:42
+#: quick/qml/private/MailPart.qml
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "%2 इत्यत्र %1 द्वारा प्रेषितम्"
 
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:213
+#: quick/qml/private/MailPartModel.qml
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "एषः सन्देशः एन्क्रिप्टेड् अस्ति किन्तु भवतः समीपे मेलनं गुप्तकुंजी नास्ति ।"
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "एषः सन्देशः अस्य कृते गोपनीयः अस्ति: %1"
 
-#: widgets/messagecontainerwidget.cpp:211
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
 "secret key."
 msgstr "एषः सन्देशः VS-NfD अनुरूपः एन्क्रिप्टेड् अस्ति किन्तु भवतः समीपे मेलनं गुप्तकुंजी नास्ति ।"
 
-#: widgets/messagecontainerwidget.cpp:218
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "एषः सन्देशः VS-NfD अनुरूपः एन्क्रिप्टेड् अस्ति ।"
 
-#: widgets/messagecontainerwidget.cpp:220
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "This message is encrypted."
 msgstr "एषः सन्देशः एन्क्रिप्टेड् अस्ति ।"
 
-#: widgets/messagecontainerwidget.cpp:229
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "सन्देशः निम्नलिखितग्राहिणां कृते एन्क्रिप्टेड् भवति ।"
 
-#: widgets/messageviewer.cpp:87
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Save Attachment As"
 msgstr "आसक्तिः यथा रक्षतु"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "सार्वजनिक कुंजी आयात करें"
 
-#: widgets/messageviewer.cpp:115
+#: widgets/messageviewer.cpp
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "उद्घाटित"
 
-#: widgets/messageviewer.cpp:121
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "&संलग्नकं यथा..."
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Invitation"
 msgstr "आमंत्रण"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Summary:"
 msgstr "&संक्षेपः:"
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Organizer:"
 msgstr "&आयोजक :"
 
-#: widgets/messageviewer.cpp:278
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Location:"
 msgstr "&स्थानीय:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Start date:"
 msgstr "&प्रारम्भतिथिः :"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&End date:"
 msgstr "&समाप्ततिथिः :"
 
-#: widgets/messageviewer.cpp:285
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Details:"
 msgstr "&वर्णन:"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Encapsulated email"
 msgstr "समाहितः ईमेलः"
 
-#: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
 msgid "Subject:"
 msgstr "विषयः:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
@@ -419,12 +419,12 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "विषयः:"
 
-#: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
 msgid "From:"
 msgstr "इत्यस्मात्‌:"
 
-#: widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -432,22 +432,22 @@ msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: widgets/messageviewer.cpp:318
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Date:"
 msgstr "दिनाङ्कः:"
 
-#: widgets/messageviewer.cpp:382
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Subject:"
 msgstr "&विषयः:"
 
-#: widgets/messageviewer.cpp:385 widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
 msgid "&From:"
 msgstr "&इत्यस्मात्‌:"
 
-#: widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -455,80 +455,80 @@ msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "अज्ञात"
 
-#: widgets/messageviewer.cpp:390
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Sender:"
 msgstr "&प्रेषकः :"
 
-#: widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&To:"
 msgstr "&इत्यस्मै:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&CC:"
 msgstr "&CC: 1 ."
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&BCC:"
 msgstr "&बीसीसी:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Date:"
 msgstr "&दिनाङ्कः:"
 
-#: widgets/messageviewerbase_p.cpp:64
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&रक्ष्"
 
-#: widgets/messageviewerbase_p.cpp:70
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "विगुप्तं रक्षतु"
 
-#: widgets/messageviewerbase_p.cpp:76
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "मुद्रण पूर्वावलोकनम्"
 
-#: widgets/messageviewerbase_p.cpp:82
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&मुद्रण"
 
-#: widgets/messageviewerbase_p.cpp:88
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "पूर्वसन्देशः"
 
-#: widgets/messageviewerbase_p.cpp:94
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "अग्रिमः सन्देशः"
 
-#: widgets/messageviewerbase_p.cpp:100
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "स्रोतः पश्यन्तु"
 
-#: widgets/messageviewerbase_p.cpp:106
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "स्थिर-अक्षरस्य उपयोगं कुर्वन्तु"
 
-#: widgets/messageviewerbase_p.cpp:154
+#: widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
@@ -536,7 +536,7 @@ msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "विषयः:"
 
-#: widgets/messageviewerbase_p.cpp:162
+#: widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
 #| msgctxt "@action:button Next email"
 #| msgid "Next Message"
@@ -544,13 +544,13 @@ msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
 msgstr "अग्रिमः सन्देशः"
 
-#: widgets/messageviewerbase_p.cpp:177
+#: widgets/messageviewerbase_p.cpp
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:179
+#: widgets/messageviewerbase_p.cpp
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -558,14 +558,14 @@ msgid ""
 "any messages."
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:246
+#: widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
 #| msgid "File %1 could not be created."
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "%1 सञ्चिका निर्मातुं न शक्यते स्म ।"
 
-#: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Error saving message"
@@ -573,14 +573,14 @@ msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "सन्देशस्य रक्षणे त्रुटिः"
 
-#: widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
 #| msgid "File %1 could not be created."
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "%1 सञ्चिका निर्मातुं न शक्यते स्म ।"
 
-#: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
 #| msgctxt "@action:button Next email"
 #| msgid "Next Message"
@@ -588,19 +588,19 @@ msgctxt "@title:window"
 msgid "Save Message"
 msgstr "अग्रिमः सन्देशः"
 
-#: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
+#: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "ईमेल सञ्चिकाः (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerbase_p.cpp:284
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:290
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -608,13 +608,13 @@ msgid ""
 "message?"
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:291
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
 msgstr ""
 
-#: widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Save Decrypted File"
@@ -622,37 +622,37 @@ msgctxt "@title:window"
 msgid "Save Decrypted Message"
 msgstr "विगुप्तसञ्चिकां रक्षन्तु"
 
-#: widgets/messageviewerbase_p.cpp:314
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "मुद्रणम्"
 
-#: widgets/messageviewerbase_p.cpp:331
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "मुद्रण पूर्वावलोकनम्"
 
-#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:35
+#: widgets/messageviewerdialog.cpp widgets/messageviewerwindow.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&संचिका"
 
-#: widgets/messageviewerdialog.cpp:49
+#: widgets/messageviewerdialog.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
 msgstr ""
 
-#: widgets/messageviewerdialog.cpp:54
+#: widgets/messageviewerdialog.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&नेविगेशन"
 
-#: widgets/messageviewerwindow.cpp:42
+#: widgets/messageviewerwindow.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"

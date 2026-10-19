@@ -18,60 +18,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: core/attachmentmodel.cpp:203
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Nomine"
 
-#: core/attachmentmodel.cpp:205
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Dimension"
 
-#: core/attachmentmodel.cpp:207
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Cryptate"
 
-#: core/attachmentmodel.cpp:209
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Signate"
 
-#: core/attachmentmodel.cpp:305
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Falleva a salveguardar attachamento."
 
-#: core/attachmentmodel.cpp:328
+#: core/attachmentmodel.cpp
 #, kde-format
 msgid "attachment"
 msgstr "attachamento"
 
-#: core/attachmentmodel.cpp:335
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Falleva a aperir sttachamento per aperir."
 
-#: core/attachmentmodel.cpp:354 core/attachmentmodel.cpp:364
+#: core/attachmentmodel.cpp core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Falleva a aperir attachamento."
 
-#: core/attachmentmodel.cpp:385
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Nulle certificatos esseva trovate in iste attachamento"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -79,7 +79,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "un certificato importate"
 msgstr[1] "%1 certificatos importate:"
 
-#: core/attachmentmodel.cpp:393
+#: core/attachmentmodel.cpp
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -87,58 +87,58 @@ msgid_plural "%1 certificates were already imported"
 msgstr[0] "un certificato esseva jam importate"
 msgstr[1] "%1 certificatos esseva jam importate"
 
-#: core/messageparser.cpp:48
+#: core/messageparser.cpp
 #, kde-format
 msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 msgid "Unknown"
 msgstr "Incognite"
 
-#: core/messageparser.cpp:53
+#: core/messageparser.cpp
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: core/messagepart.cpp:97
+#: core/messagepart.cpp
 #, kde-format
 msgctxt "template for an unknown filename. %1 is an index, %2 is an extension"
 msgid "unnamed_%1.%2"
 msgstr "sin nomine %1.%2"
 
-#: core/messagepart.cpp:640 core/messagepart.cpp:656 core/messagepart.cpp:757
+#: core/messagepart.cpp core/messagepart.cpp core/messagepart.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong Crypto Plug-In."
 msgstr "Errate Plug-in de Crypto"
 
-#: core/messagepart.cpp:904
+#: core/messagepart.cpp
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Necun plug-in de Crypto appropriate esseva trovate."
 
-#: core/messagepart.cpp:906
+#: core/messagepart.cpp
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Plug-in de Crypto \"%1\" non poteva decryptar datos."
 
-#: core/messagepart.cpp:907
+#: core/messagepart.cpp
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/partmodel.cpp:409
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Signature is broken"
 msgstr "Signatura es rupte"
 
-#: core/partmodel.cpp:627 core/partmodel.cpp:629
+#: core/partmodel.cpp core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "You cannot decrypt this message."
 msgstr "Tu non pote decryptar iste message."
 
-#: core/partmodel.cpp:635
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "The message is encrypted for the following recipient:"
@@ -146,178 +146,178 @@ msgid_plural "The message is encrypted for the following recipients:"
 msgstr[0] "Le message es cryptate per le sequente recipiente:"
 msgstr[1] "Le message es cryptate per le sequente recipientes:"
 
-#: core/partmodel.cpp:649
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Decryption was cancelled."
 msgstr "Decryptation. esseva cancellate"
 
-#: core/partmodel.cpp:651
+#: core/partmodel.cpp
 #, kde-format
 msgctxt "@info:status"
 msgid "Wrong passphrase."
 msgstr "Phrase de contrasigno errate"
 
-#: core/urlhandler.cpp:51
+#: core/urlhandler.cpp
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Il non pote initiar gestion de certificato; pro favor tu verifica tu "
 "installation."
 
-#: core/utils.cpp:49
+#: core/utils.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Unknown Key"
 msgstr "Clave incognite"
 
-#: core/utils.cpp:63
+#: core/utils.cpp
 #, kde-format
 msgctxt "Separator"
 msgid " - "
 msgstr " - "
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:77
-#: quick/qml/itinerary/TrainReservationComponent.qml:91
+#: quick/qml/itinerary/FlightReservationComponent.qml
+#: quick/qml/itinerary/TrainReservationComponent.qml
 #, kde-format
 msgctxt "@action"
 msgid "Open Menu"
 msgstr "Aperi menu"
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:93
+#: quick/qml/itinerary/FlightReservationComponent.qml
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1"
 msgstr "Partita ex %1: "
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:110
+#: quick/qml/itinerary/FlightReservationComponent.qml
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1"
 msgstr "Arrivata a %1: "
 
-#: quick/qml/itinerary/HotelReservationComponent.qml:65
+#: quick/qml/itinerary/HotelReservationComponent.qml
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Tempore de Check-in: %1"
 
-#: quick/qml/itinerary/HotelReservationComponent.qml:69
+#: quick/qml/itinerary/HotelReservationComponent.qml
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Tempore de Check-Out: %1"
 
-#: quick/qml/itinerary/TrainReservationComponent.qml:157
-#: quick/qml/itinerary/TrainReservationComponent.qml:224
+#: quick/qml/itinerary/TrainReservationComponent.qml
+#: quick/qml/itinerary/TrainReservationComponent.qml
 #, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: quick/qml/itinerary/TripMenu.qml:18
+#: quick/qml/itinerary/TripMenu.qml
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
 msgstr "Invia a  KDE Itinerary"
 
-#: quick/qml/itinerary/TripMenu.qml:33
+#: quick/qml/itinerary/TripMenu.qml
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
 msgstr "Invia a %1"
 
-#: quick/qml/MailViewer.qml:40
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Visor de Message"
 
-#: quick/qml/MailViewer.qml:77
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Subjecto:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Ex:"
 
-#: quick/qml/MailViewer.qml:114
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Mittente: "
 
-#: quick/qml/MailViewer.qml:130
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "A:"
 
-#: quick/qml/MailViewer.qml:146
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
 msgstr "CC:"
 
-#: quick/qml/MailViewer.qml:162
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
 msgstr "BCC:"
 
-#: quick/qml/MailViewer.qml:212
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Salveguarda attachamento"
 
-#: quick/qml/MailViewer.qml:235
+#: quick/qml/MailViewer.qml
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
 msgstr "Salveguarda attachamento como"
 
-#: quick/qml/private/AttachmentDelegate.qml:56
+#: quick/qml/private/AttachmentDelegate.qml
 #, kde-format
 msgctxt "@action:button"
 msgid "Import certificate"
 msgstr "Importa certificato"
 
-#: quick/qml/private/Banner.qml:188
+#: quick/qml/private/Banner.qml
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Claude"
 
-#: quick/qml/private/ErrorPart.qml:27
+#: quick/qml/private/ErrorPart.qml
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Un error occurreva: %1"
 
-#: quick/qml/private/ICalPart.qml:27
+#: quick/qml/private/ICalPart.qml
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Iste message de e-posta contine un invitation"
 
-#: quick/qml/private/MailPart.qml:42
+#: quick/qml/private/MailPart.qml
 #, kde-format
 msgctxt "@info"
 msgid "sent by %1 on %2"
 msgstr "inviate per %1 sur %2"
 
-#: quick/qml/private/MailPartModel.qml:97
-#: widgets/messagecontainerwidget.cpp:213
+#: quick/qml/private/MailPartModel.qml
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "This message is encrypted but you don't have a matching secret key."
 msgstr "Iste message es cryptate ma tu non ha un clave secrete correspondente."
 
-#: quick/qml/private/MailPartModel.qml:97
+#: quick/qml/private/MailPartModel.qml
 #, kde-format
 msgid "This message is encrypted for: %1"
 msgstr "Iste message es cryptate per: %1"
 
-#: widgets/messagecontainerwidget.cpp:211
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid ""
 "This message is VS-NfD compliant encrypted but you don't have a matching "
@@ -326,218 +326,218 @@ msgstr ""
 "Iste message es compatibile con VS-NfD cryptate ma on non ha le clave "
 "secrete correspondente."
 
-#: widgets/messagecontainerwidget.cpp:218
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "This message is VS-NfD compliant encrypted."
 msgstr "Iste message es compatibile con VS-NfD cryptate."
 
-#: widgets/messagecontainerwidget.cpp:220
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "This message is encrypted."
 msgstr "Iste message es cryptate."
 
-#: widgets/messagecontainerwidget.cpp:229
+#: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgid "The message is encrypted for the following recipients:"
 msgstr "Le message es cryptate per le sequente recipientes:"
 
-#: widgets/messageviewer.cpp:87
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Salveguarda attachamento como"
 
-#: widgets/messageviewer.cpp:107
+#: widgets/messageviewer.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Import public key"
 msgstr "Importaclave public"
 
-#: widgets/messageviewer.cpp:115
+#: widgets/messageviewer.cpp
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Aperi"
 
-#: widgets/messageviewer.cpp:121
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Save Attachment As…"
 msgstr "&Salveguarda attachamento como…"
 
-#: widgets/messageviewer.cpp:272
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Invitation"
 msgstr "Invitation"
 
-#: widgets/messageviewer.cpp:275
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Summary:"
 msgstr "&Summario:"
 
-#: widgets/messageviewer.cpp:276
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organisator:"
 
-#: widgets/messageviewer.cpp:278
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Location:"
 msgstr "&Location:"
 
-#: widgets/messageviewer.cpp:280
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Start date:"
 msgstr "Data de &initio:"
 
-#: widgets/messageviewer.cpp:282
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&End date:"
 msgstr "&Data de fin:"
 
-#: widgets/messageviewer.cpp:285
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Details:"
 msgstr "&Detalios:"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Message de eposta includite"
 
-#: widgets/messageviewer.cpp:307 widgets/messageviewer.cpp:309
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
 msgid "Subject:"
 msgstr "Subjecto:"
 
-#: widgets/messageviewer.cpp:307
+#: widgets/messageviewer.cpp
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Necun Subjecto"
 
-#: widgets/messageviewer.cpp:314 widgets/messageviewer.cpp:316
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
 msgid "From:"
 msgstr "Ex:"
 
-#: widgets/messageviewer.cpp:314
+#: widgets/messageviewer.cpp
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "Unknown"
 msgstr "Incognite"
 
-#: widgets/messageviewer.cpp:318
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: widgets/messageviewer.cpp:382
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Subject:"
 msgstr "&Subjecto:"
 
-#: widgets/messageviewer.cpp:385 widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp widgets/messageviewer.cpp
 #, kde-format
 msgid "&From:"
 msgstr "&Ex:"
 
-#: widgets/messageviewer.cpp:387
+#: widgets/messageviewer.cpp
 #, kde-format
 msgctxt "@status missing from:, an unknown author"
 msgid "<i>Unknown</i>"
 msgstr "<i>Incognite</i>"
 
-#: widgets/messageviewer.cpp:390
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Sender:"
 msgstr "&Mittente: "
 
-#: widgets/messageviewer.cpp:393
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&To:"
 msgstr "&A:"
 
-#: widgets/messageviewer.cpp:396
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:399
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:402
+#: widgets/messageviewer.cpp
 #, kde-format
 msgid "&Date:"
 msgstr "&Data:"
 
-#: widgets/messageviewerbase_p.cpp:64
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Save"
 msgstr "&Salveguarda"
 
-#: widgets/messageviewerbase_p.cpp:70
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Decrypted"
 msgstr "Salveguarda decryptate"
 
-#: widgets/messageviewerbase_p.cpp:76
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print Preview"
 msgstr "Vista preliminar de imprimer"
 
-#: widgets/messageviewerbase_p.cpp:82
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Print"
 msgstr "&Imprime"
 
-#: widgets/messageviewerbase_p.cpp:88
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button Previous email"
 msgid "Previous Message"
 msgstr "Message Previe"
 
-#: widgets/messageviewerbase_p.cpp:94
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button Next email"
 msgid "Next Message"
 msgstr "Message Proxime"
 
-#: widgets/messageviewerbase_p.cpp:100
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button"
 msgid "View Source"
 msgstr "Vider Fonte"
 
-#: widgets/messageviewerbase_p.cpp:106
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Fixed Font"
 msgstr "Usa font fixate"
 
-#: widgets/messageviewerbase_p.cpp:154
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "window title if email subject is empty"
 msgid "(No Subject)"
 msgstr "(Necun Subjecto)"
 
-#: widgets/messageviewerbase_p.cpp:162
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window if there's no email to display"
 msgid "(No Message)"
 msgstr "(Nulle Message)"
 
-#: widgets/messageviewerbase_p.cpp:177
+#: widgets/messageviewerbase_p.cpp
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No messages to display."
 msgstr "Necun message a monstrar."
 
-#: widgets/messageviewerbase_p.cpp:179
+#: widgets/messageviewerbase_p.cpp
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -547,44 +547,44 @@ msgstr ""
 "Incapace a leger le file <filename>%1</filename>, o le file non contine "
 "alcun messages."
 
-#: widgets/messageviewerbase_p.cpp:246
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "File %1 non poteva esser create"
 
-#: widgets/messageviewerbase_p.cpp:246 widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving Message"
 msgstr "Error durante que on salveguardava message"
 
-#: widgets/messageviewerbase_p.cpp:252
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid "File %1 could not be written."
 msgstr "File %1 non poteva esser scribite."
 
-#: widgets/messageviewerbase_p.cpp:266 widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Message"
 msgstr "Salveguarda message"
 
-#: widgets/messageviewerbase_p.cpp:268 widgets/messageviewerbase_p.cpp:302
+#: widgets/messageviewerbase_p.cpp widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "File dialog accepted files"
 msgid "Email files (*.eml *.mbox *.mime)"
 msgstr "Files de EPosta (*.eml *.mbox *.mime)"
 
-#: widgets/messageviewerbase_p.cpp:284
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid "The message doesn't seem to be encrypted. Saving the original message."
 msgstr ""
 "Le message non sembla esser cryptate. Salvaguardante le message original."
 
-#: widgets/messageviewerbase_p.cpp:290
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -594,49 +594,49 @@ msgstr ""
 "Alcun parte delmessage non poteva esser decryptate. Tu salveguarda message "
 "partialmentedecryptate?"
 
-#: widgets/messageviewerbase_p.cpp:291
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@info"
 msgid "Decryption failed"
 msgstr "Decryptation falleva"
 
-#: widgets/messageviewerbase_p.cpp:300
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Decrypted Message"
 msgstr "Salveguarda message decryptate"
 
-#: widgets/messageviewerbase_p.cpp:314
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window"
 msgid "Print"
 msgstr "Imprime"
 
-#: widgets/messageviewerbase_p.cpp:331
+#: widgets/messageviewerbase_p.cpp
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Preview"
 msgstr "Vista preliminar de imprimer"
 
-#: widgets/messageviewerdialog.cpp:42 widgets/messageviewerwindow.cpp:35
+#: widgets/messageviewerdialog.cpp widgets/messageviewerwindow.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&File"
 msgstr "&File"
 
-#: widgets/messageviewerdialog.cpp:49
+#: widgets/messageviewerdialog.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&View"
 msgstr "&Vista"
 
-#: widgets/messageviewerdialog.cpp:54
+#: widgets/messageviewerdialog.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Navigation"
 msgstr "&Navigation"
 
-#: widgets/messageviewerwindow.cpp:42
+#: widgets/messageviewerwindow.cpp
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Message"
