@@ -264,8 +264,12 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts,
             containerStack.takeLast();
         }
         if (!reuse_container) {
-            containerStack.append(new MessageWidgetContainer(idx, urlHandler));
-            lay->addWidget(containerStack.last());
+            auto container = new MessageWidgetContainer(idx, urlHandler);
+            containerStack.append(container);
+            lay->addWidget(container);
+            connect(container, &MessageWidgetContainer::attachmentContextMenu, q, [this](const QSharedPointer<MimeTreeParser::Core::MessagePart> part) {
+                showContextMenu({part});
+            });
         }
         auto container = containerStack.last();
 
@@ -279,11 +283,6 @@ void MessageViewer::Private::recursiveBuildViewer(PartModel *parts,
                 label->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
             }
             container->innerLayout()->addWidget(label);
-
-            connect(container, &MessageWidgetContainer::attachmentContextMenu, q, [this](const QSharedPointer<MimeTreeParser::Core::MessagePart> part) {
-                showContextMenu({part});
-            });
-
             break;
         }
         case PartModel::Types::Ical: {
