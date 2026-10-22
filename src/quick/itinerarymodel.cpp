@@ -221,9 +221,11 @@ void ItineraryModel::loadData()
         endResetModel();
 
         Q_EMIT loaded();
+        process->deleteLater();
     });
-    connect(process, &QProcess::errorOccurred, this, [this]() {
+    connect(process, &QProcess::errorOccurred, this, [this, process]() {
         Q_EMIT loadErrorOccurred();
+        process->deleteLater();
     });
 }
 
