@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-15 00:47+0000\n"
+"POT-Creation-Date: 2026-10-23 00:50+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -128,12 +128,12 @@ msgid "Wrong passphrase"
 msgstr "Nesprávne heslo"
 
 #: core/messagepart.cpp:878
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
-msgstr "Táto správa je zašifrovaná, ale nemáme k nej kľúč."
+msgstr ""
+"Túto správu nie je možné dešifrovať, pretože nemáte zodpovedajúci tajný kľúč."
 
 #: core/messagepart.cpp:881
 #, kde-format
@@ -155,25 +155,23 @@ msgstr "Podpis je poškodený"
 #, kde-format
 msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
-msgstr ""
+msgstr "Čo sa dá urobiť: %1"
 
 #: core/partmodel.cpp:533
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "Táto správa je šifrovaná."
+msgstr "Táto správa je šifrovaná (%1)."
 
 #: core/partmodel.cpp:536
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "Táto správa je zašifrovaná kľúčom: %1"
+msgstr "Táto správa je šifrovaná, ale šifrovanie nie je %1."
 
 #: core/partmodel.cpp:540
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "Táto správa je šifrovaná."
@@ -337,33 +335,31 @@ msgstr "odoslané %1 na %2"
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto errors"
-msgstr ""
+msgstr "Chyby šifrovania"
 
 #: widgets/messagecontainerwidget.cpp:169
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary and warnings"
-msgstr ""
+msgstr "Súhrn šifrovania a varovania"
 
 #: widgets/messagecontainerwidget.cpp:172
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary"
-msgstr ""
+msgstr "Súhrn šifrovania"
 
 #: widgets/messagecontainerwidget.cpp:185
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "Podrobnosti:"
+msgstr "Zobraziť podrobnosti"
 
 #: widgets/messagecontainerwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "Podrobnosti:"
+msgstr "Skryť podrobnosti"
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -387,110 +383,110 @@ msgstr "Otvoriť"
 msgid "&Save Attachment As…"
 msgstr "Uložiť prílohu ako"
 
-#: widgets/messageviewer.cpp:294
+#: widgets/messageviewer.cpp:293
 #, kde-format
 msgid "Invitation"
 msgstr "Pozvánka"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:297
 #, kde-format
 msgid "&Summary:"
 msgstr "Súhrn:"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "&Organizer:"
 msgstr "Organizátor:"
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "&Location:"
 msgstr "U&miestnenie:"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "&Start date:"
 msgstr "Dátum z&ačiatku:"
 
-#: widgets/messageviewer.cpp:305
+#: widgets/messageviewer.cpp:304
 #, kde-format
 msgid "&End date:"
 msgstr "Dátum &konca:"
 
-#: widgets/messageviewer.cpp:308
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "&Details:"
 msgstr "Podrobnosti:"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:310
 #, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Pozvánka je poškodená"
 
-#: widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:320
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Encapsulated email"
 
-#: widgets/messageviewer.cpp:330 widgets/messageviewer.cpp:332
+#: widgets/messageviewer.cpp:329 widgets/messageviewer.cpp:331
 #, kde-format
 msgid "Subject:"
 msgstr "Predmet:"
 
-#: widgets/messageviewer.cpp:330
+#: widgets/messageviewer.cpp:329
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Bez predmetu"
 
-#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:340
+#: widgets/messageviewer.cpp:336 widgets/messageviewer.cpp:339
 #, kde-format
 msgid "From:"
 msgstr "Od:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:399
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "neznámy kľúč"
 
-#: widgets/messageviewer.cpp:342
+#: widgets/messageviewer.cpp:341
 #, kde-format
 msgid "Date:"
 msgstr "Dátum:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&Subject:"
 msgstr "Predmet:"
 
-#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:397 widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&From:"
 msgstr "&Odosielateľ:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&Sender:"
 msgstr "Odosielateľ:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&To:"
 msgstr "&Do:"
 
-#: widgets/messageviewer.cpp:409
+#: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&CC:"
 msgstr "Kópia:"
 
-#: widgets/messageviewer.cpp:412
+#: widgets/messageviewer.cpp:411
 #, kde-format
 msgid "&BCC:"
 msgstr "Skrytá kópia:"
 
-#: widgets/messageviewer.cpp:415
+#: widgets/messageviewer.cpp:414
 #, kde-format
 msgid "&Date:"
 msgstr "Dátum:"
@@ -666,9 +662,6 @@ msgid "&Message"
 msgstr "Nasledujúca správa"
 
 #, fuzzy
-#~| msgid ""
-#~| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#~| "secret key."
 #~ msgid ""
 #~ "This message is VS-NfD compliant encrypted but you do not have a matching "
 #~ "secret key."
@@ -688,8 +681,6 @@ msgstr "Nasledujúca správa"
 #~ msgstr "Správa je šifrovaná pre nasledujúce kľúče:"
 
 #, fuzzy
-#~| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
-#~| msgid "Unknown"
 #~ msgctxt "@status missing from:, an unknown author"
 #~ msgid "Unknown"
 #~ msgstr "neznámy kľúč"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-15 00:47+0000\n"
+"POT-Creation-Date: 2026-10-23 00:50+0000\n"
 "PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -392,61 +392,61 @@ msgstr "開く"
 msgid "&Save Attachment As…"
 msgstr "添付ファイルを名前を付けて保存(&S)…"
 
-#: widgets/messageviewer.cpp:294
+#: widgets/messageviewer.cpp:293
 #, kde-format
 msgid "Invitation"
 msgstr "インビテーション"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:297
 #, kde-format
 msgid "&Summary:"
 msgstr "サマリ(&S):"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "&Organizer:"
 msgstr "組織(&O):"
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "&Location:"
 msgstr "場所(&L):"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "&Start date:"
 msgstr "開始日(&S):"
 
-#: widgets/messageviewer.cpp:305
+#: widgets/messageviewer.cpp:304
 #, kde-format
 msgid "&End date:"
 msgstr "終了日(&E):"
 
-#: widgets/messageviewer.cpp:308
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "&Details:"
 msgstr "詳細(&D):"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:310
 #, fuzzy, kde-format
 #| msgid "Invitation"
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "インビテーション"
 
-#: widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:320
 #, kde-format
 msgid "Encapsulated email"
 msgstr "カプセル化メール"
 
-#: widgets/messageviewer.cpp:330 widgets/messageviewer.cpp:332
+#: widgets/messageviewer.cpp:329 widgets/messageviewer.cpp:331
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
 msgid "Subject:"
 msgstr "Subject:"
 
-#: widgets/messageviewer.cpp:330
+#: widgets/messageviewer.cpp:329
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Subject:"
@@ -454,12 +454,12 @@ msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Subject:"
 
-#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:340
+#: widgets/messageviewer.cpp:336 widgets/messageviewer.cpp:339
 #, kde-format
 msgid "From:"
 msgstr "From:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:399
 #, fuzzy, kde-format
 #| msgctxt "Displayed when a CC, FROM or TO field in an email is empty"
 #| msgid "Unknown"
@@ -467,42 +467,42 @@ msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "不明"
 
-#: widgets/messageviewer.cpp:342
+#: widgets/messageviewer.cpp:341
 #, kde-format
 msgid "Date:"
 msgstr "Date:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&Subject:"
 msgstr "&Subject:"
 
-#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:397 widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&From:"
 msgstr "&From:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&Sender:"
 msgstr "&Sender:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&To:"
 msgstr "&To:"
 
-#: widgets/messageviewer.cpp:409
+#: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&CC:"
 msgstr "&CC:"
 
-#: widgets/messageviewer.cpp:412
+#: widgets/messageviewer.cpp:411
 #, kde-format
 msgid "&BCC:"
 msgstr "&BCC:"
 
-#: widgets/messageviewer.cpp:415
+#: widgets/messageviewer.cpp:414
 #, kde-format
 msgid "&Date:"
 msgstr "日付(&D):"

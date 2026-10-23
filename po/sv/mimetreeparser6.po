@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-15 00:47+0000\n"
+"POT-Creation-Date: 2026-10-23 00:50+0000\n"
 "PO-Revision-Date: 2026-07-15 07:41+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -387,110 +387,110 @@ msgstr "Öppna"
 msgid "&Save Attachment As…"
 msgstr "&Spara bilaga som…"
 
-#: widgets/messageviewer.cpp:294
+#: widgets/messageviewer.cpp:293
 #, kde-format
 msgid "Invitation"
 msgstr "Inbjudan"
 
-#: widgets/messageviewer.cpp:298
+#: widgets/messageviewer.cpp:297
 #, kde-format
 msgid "&Summary:"
 msgstr "&Sammanfattning:"
 
-#: widgets/messageviewer.cpp:299
+#: widgets/messageviewer.cpp:298
 #, kde-format
 msgid "&Organizer:"
 msgstr "&Organisatör:"
 
-#: widgets/messageviewer.cpp:301
+#: widgets/messageviewer.cpp:300
 #, kde-format
 msgid "&Location:"
 msgstr "&Plats:"
 
-#: widgets/messageviewer.cpp:303
+#: widgets/messageviewer.cpp:302
 #, kde-format
 msgid "&Start date:"
 msgstr "&Startdatum:"
 
-#: widgets/messageviewer.cpp:305
+#: widgets/messageviewer.cpp:304
 #, kde-format
 msgid "&End date:"
 msgstr "Slut&datum:"
 
-#: widgets/messageviewer.cpp:308
+#: widgets/messageviewer.cpp:307
 #, kde-format
 msgid "&Details:"
 msgstr "&Detaljinformation:"
 
-#: widgets/messageviewer.cpp:311
+#: widgets/messageviewer.cpp:310
 #, kde-format
 msgctxt "@info:status"
 msgid "Invitation is broken"
 msgstr "Inbjudan är skadad"
 
-#: widgets/messageviewer.cpp:321
+#: widgets/messageviewer.cpp:320
 #, kde-format
 msgid "Encapsulated email"
 msgstr "Inbäddat brev"
 
-#: widgets/messageviewer.cpp:330 widgets/messageviewer.cpp:332
+#: widgets/messageviewer.cpp:329 widgets/messageviewer.cpp:331
 #, kde-format
 msgid "Subject:"
 msgstr "Rubrik:"
 
-#: widgets/messageviewer.cpp:330
+#: widgets/messageviewer.cpp:329
 #, kde-format
 msgctxt "Email has no subject"
 msgid "No subject"
 msgstr "Ingen rubrik"
 
-#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:340
+#: widgets/messageviewer.cpp:336 widgets/messageviewer.cpp:339
 #, kde-format
 msgid "From:"
 msgstr "Från:"
 
-#: widgets/messageviewer.cpp:338 widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:337 widgets/messageviewer.cpp:399
 #, kde-format
 msgctxt "@info:status missing 'From:', i.e. an unknown author"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: widgets/messageviewer.cpp:342
+#: widgets/messageviewer.cpp:341
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: widgets/messageviewer.cpp:395
+#: widgets/messageviewer.cpp:394
 #, kde-format
 msgid "&Subject:"
 msgstr "&Rubrik:"
 
-#: widgets/messageviewer.cpp:398 widgets/messageviewer.cpp:400
+#: widgets/messageviewer.cpp:397 widgets/messageviewer.cpp:399
 #, kde-format
 msgid "&From:"
 msgstr "&Från:"
 
-#: widgets/messageviewer.cpp:403
+#: widgets/messageviewer.cpp:402
 #, kde-format
 msgid "&Sender:"
 msgstr "Av&sändare:"
 
-#: widgets/messageviewer.cpp:406
+#: widgets/messageviewer.cpp:405
 #, kde-format
 msgid "&To:"
 msgstr "&Till:"
 
-#: widgets/messageviewer.cpp:409
+#: widgets/messageviewer.cpp:408
 #, kde-format
 msgid "&CC:"
 msgstr "&Kopia:"
 
-#: widgets/messageviewer.cpp:412
+#: widgets/messageviewer.cpp:411
 #, kde-format
 msgid "&BCC:"
 msgstr "&Dold kopia:"
 
-#: widgets/messageviewer.cpp:415
+#: widgets/messageviewer.cpp:414
 #, kde-format
 msgid "&Date:"
 msgstr "&Datum:"
