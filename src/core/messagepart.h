@@ -213,7 +213,7 @@ public:
      * \brief Returns true if this part itself is signed
      *
      * Returns true only for the part representing the signature layer itself.
-     * To check whether this part is covered by a signature, use signature(),
+     * To check whether this part is covered by a signature, use signaturePart(),
      * instead.
      *
      * \return true if this part represents a signature layer, false otherwise
