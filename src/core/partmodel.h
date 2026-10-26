@@ -138,7 +138,7 @@ public:
      * \param messagePart The message part to check
      * \return A string with signature details
      */
-    static GenericInfo signatureDetails(MimeTreeParser::Core::MessagePart *messagePart);
+    static GenericInfo signatureDetails(const MimeTreeParser::Core::MessagePart *messagePart);
 
 Q_SIGNALS:
     /*!
