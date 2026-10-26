@@ -335,7 +335,7 @@ const T *findHeader(const KMime::Content *content)
     return findHeader<T>(content->parent());
 }
 
-GenericInfo PartModel::signatureDetails(MimeTreeParser::Core::MessagePart *messagePart)
+GenericInfo PartModel::signatureDetails(const MimeTreeParser::Core::MessagePart *messagePart)
 {
     GenericInfo info;
     const auto signaturePart = messagePart->signaturePart();
