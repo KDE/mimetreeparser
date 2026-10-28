@@ -21,7 +21,7 @@ qhp.projects            = mimetreeparsercore
 qhp.mimetreeparsercore.file                = mimetreeparsercore.qhp
 qhp.mimetreeparsercore.namespace           = org.kde.mimetreeparsercore.$QT_VERSION_TAG
 qhp.mimetreeparsercore.virtualFolder       = mimetreeparsercore
-qhp.mimetreeparsercore.indexTitle          = mimetreeparsercore
+qhp.mimetreeparsercore.indexTitle          = MimeTreeParserCore
 qhp.mimetreeparsercore.indexRoot           =
 
 qhp.mimetreeparsercore.subprojects         = classes

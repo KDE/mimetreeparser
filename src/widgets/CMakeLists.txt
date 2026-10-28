@@ -150,7 +150,7 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserWidgets
     COMPONENT Devel
 )
-ecm_generate_qdoc(KPim6MimeTreeParserWidgets mimetreeparser-widgets.qdocconf)
+ecm_generate_qdoc(KPim6MimeTreeParserWidgets mimetreeparserwidgets.qdocconf)
 
 ecm_add_installed_library_check(KPim6MimeTreeParserWidgets
     PACKAGE_NAME "KPim6MimeTreeParserWidgets"

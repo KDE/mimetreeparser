@@ -170,7 +170,7 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParserCore
     COMPONENT Devel
 )
-ecm_generate_qdoc(KPim6MimeTreeParserCore mimetreeparser-core.qdocconf)
+ecm_generate_qdoc(KPim6MimeTreeParserCore mimetreeparsercore.qdocconf)
 
 ecm_add_installed_library_check(KPim6MimeTreeParserCore
     PACKAGE_NAME "KPim6MimeTreeParserCore"
