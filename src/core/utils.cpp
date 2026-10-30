@@ -49,7 +49,7 @@ QString MimeTreeParser::Core::decryptRecipientsToHtml(const std::vector<std::pai
             text += u"<li>%1 (<a href=\"%2\">%3</a>)</li>"_s.arg(i18nc("@info", "Unknown Key"), link, Kleo::Formatting::prettyID(recipient.keyID()));
         }
     }
-    text += u"</ul>"_s;
+    text += u"</ul>";
     return text;
 }
 
