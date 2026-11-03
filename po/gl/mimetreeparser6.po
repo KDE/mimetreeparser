@@ -588,8 +588,7 @@ msgid ""
 msgstr ""
 
 #: widgets/messageviewerbase_p.cpp:247
-#, fuzzy, kde-format
-#| msgid "File %1 could not be created."
+#, kde-format
 msgctxt "@info"
 msgid "File %1 could not be created."
 msgstr "Non foi posíbel crear o ficheiro %1."
