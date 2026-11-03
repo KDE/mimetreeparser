@@ -34,6 +34,7 @@ ListView {
 
     header: Itinerary.ItineraryComponent {
         width: parent.width
+        height: visible ? implicitHeight : 0
         itineraryModel.message: messageParser.message
         onVisibleChanged: if (visible) {
             root.positionViewAtBeginning();

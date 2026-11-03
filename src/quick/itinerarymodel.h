@@ -39,6 +39,11 @@ public:
         ArrivalPlatformRole,
         CoachRole,
         SeatRole,
+        LocationRole,
+        NightsRole,
+        MapUrlRole,
+        DepartureTerminalRole,
+        ArrivalTerminalRole,
     };
     Q_ENUM(Roles)
     explicit ItineraryModel(QObject *parent = nullptr);
@@ -62,9 +67,11 @@ Q_SIGNALS:
     void messageChanged();
 
 private:
+    friend class ItineraryModelTest;
     QJsonArray m_data;
     QTemporaryFile *m_temporary;
     QString m_path;
     std::shared_ptr<KMime::Message> m_message;
+    bool saveMessage();
     void loadData();
 };

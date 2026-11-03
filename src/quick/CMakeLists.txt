@@ -29,6 +29,9 @@ target_link_libraries(
         ${DBUS_LIB}
         KPim6::MimeTreeParserCore
         KF6::KIOGui
+        KF6::CoreAddons
+        KF6::I18nLocaleData
+        KF6::I18n
 )
 
 ecm_target_qml_sources(mimetreeparser_plugin
@@ -81,11 +84,12 @@ ecm_target_qml_sources(mimetreeparser_plugin PRIVATE
 ecm_target_qml_sources(mimetreeparser_plugin PRIVATE
     PATH itinerary
     SOURCES
-        qml/itinerary/FlightReservationComponent.qml
+        qml/itinerary/ReservationHeader.qml
+        qml/itinerary/JourneyReservationComponent.qml
+        qml/itinerary/EventReservationComponent.qml
         qml/itinerary/FoodReservationComponent.qml
         qml/itinerary/HotelReservationComponent.qml
         qml/itinerary/ItineraryReservationComponent.qml
-        qml/itinerary/TrainReservationComponent.qml
         qml/itinerary/JourneySectionStopDelegateLineSegment.qml
         qml/itinerary/ItineraryComponent.qml
         qml/itinerary/TransportIcon.qml

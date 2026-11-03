@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -13,34 +14,47 @@ import org.kde.kirigamiaddons.formcard as FormCard
 FormCard.FormCard {
     id: root
 
-    signal importTrip();
-
     required property int index
     required property int totalCount
+    required property TripMenu importMenu
 
     /**
      * @brief An item with the header content.
      */
-    property alias headerItem: headerDelegate.contentItem.children
+    property alias headerItem: headerContent.children
 
     /**
      * @brief An item with the main body content.
      */
     property alias contentItem: content.contentItem
 
-    Layout.fillHeight: true
-    Layout.topMargin: Kirigami.Units.largeSpacing
-    Layout.leftMargin: index === 0 ? Kirigami.Units.largeSpacing : 0
-    Layout.rightMargin: index === totalCount - 1 ? Kirigami.Units.largeSpacing : 0
-
-    implicitWidth: Math.max(headerDelegate.implicitWidth, content.implicitWidth)
-
-    Component.onCompleted: children[0].radius = Kirigami.Units.cornerRadius
+    Layout.alignment: Qt.AlignTop
+    Layout.fillWidth: true
+    Layout.topMargin: index === 0 ? Kirigami.Units.largeSpacing : 0
+    Layout.bottomMargin: index === totalCount - 1 ? Kirigami.Units.largeSpacing : 0
 
     FormCard.AbstractFormDelegate {
         id: headerDelegate
 
-        contentItem: RowLayout {}
+        contentItem: RowLayout {
+            spacing: Kirigami.Units.largeSpacing
+
+            RowLayout {
+                id: headerContent
+
+                Layout.fillWidth: true
+            }
+
+            QQC2.Button {
+                id: importButton
+
+                Layout.alignment: Qt.AlignTop
+                text: i18nc("@action:button", "Import…")
+                icon.name: "document-import"
+                down: importButton.pressed || (root.importMenu.opened && root.importMenu.triggerItem === importButton)
+                onClicked: root.importMenu.popupBelow(importButton)
+            }
+        }
         background: null
         bottomPadding: 0
     }

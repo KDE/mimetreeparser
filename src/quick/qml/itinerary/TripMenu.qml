@@ -14,6 +14,22 @@ Components.ConvergentContextMenu {
      */
     required property ItineraryModel itineraryModel
 
+    property Item triggerItem
+
+    onClosed: triggerItem = null
+
+    function popupBelow(button: Item): void {
+        triggerItem = button;
+        popup(button, Qt.point(0, button.height));
+    }
+
+    readonly property Binding desktopAlignment: Binding {
+        target: root._desktopMenuItem
+        property: "x"
+        value: root.triggerItem ? root.triggerItem.width - (root._desktopMenuItem?.width ?? 0) : 0
+        when: root.triggerItem !== null && root._desktopMenuItem !== null
+    }
+
     Kirigami.Action {
         text: i18nc("@action", "Send to KDE Itinerary")
         icon.name: 'org.kde.itinerary'
