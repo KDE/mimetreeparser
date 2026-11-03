@@ -29,8 +29,8 @@ DelegateModel {
         required property var signatureInfo
         required property var errorInfo
 
-        readonly property bool isEncrypted: encryptionInfo.securityLevel !== PartModel.Unknow
-        readonly property bool isSigned: signatureInfo.securityLevel !== PartModel.Unknow
+        readonly property bool isEncrypted: encryptionInfo.securityLevel !== PartModel.Unknown
+        readonly property bool isSigned: signatureInfo.securityLevel !== PartModel.Unknown
         readonly property int sidebarSecurityLevel: Math.max(encryptionInfo.securityLevel, signatureInfo.securityLevel)
 
         width: ListView.view.width
@@ -80,8 +80,8 @@ DelegateModel {
         ColumnLayout {
             spacing: Kirigami.Units.smallSpacing
 
-            Layout.leftMargin: Kirigami.Units.gridUnit - (sidebar.visible ? Kirigami.Units.largeSpacing : 0) - Kirigami.Units.largeSpacing
-            Layout.rightMargin: Kirigami.Units.gridUnit
+            Layout.leftMargin: partDelegate.type === PartModel.Ical ? 0 : Kirigami.Units.gridUnit - (sidebar.visible ? Kirigami.Units.largeSpacing : 0) - Kirigami.Units.largeSpacing
+            Layout.rightMargin: partDelegate.type === PartModel.Ical ? 0 : Kirigami.Units.gridUnit
 
             Banner {
                 property var info: partDelegate.encryptionInfo
