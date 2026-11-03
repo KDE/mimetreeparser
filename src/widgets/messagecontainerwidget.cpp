@@ -226,10 +226,10 @@ MessageWidgetContainer::MessageWidgetContainer(const QModelIndex &idx, UrlHandle
     , m_containerPart(static_cast<const PartModel *>(idx.model())->part(idx).get())
     // signature
     , m_signatureInfo(idx.data(PartModel::SignatureInfoRole).value<GenericInfo>())
-    , m_displaySignatureInfo(m_signatureInfo.securityLevel != PartModel::Unknow)
+    , m_displaySignatureInfo(m_signatureInfo.securityLevel != PartModel::Unknown)
     // encryption
     , m_encryptionInfo(idx.data(PartModel::EncryptionInfoRole).value<GenericInfo>())
-    , m_displayEncryptionInfo(m_encryptionInfo.securityLevel != PartModel::Unknow)
+    , m_displayEncryptionInfo(m_encryptionInfo.securityLevel != PartModel::Unknown)
     // sidebar
     , m_sidebarSecurityLevel(qMax(m_signatureInfo.securityLevel, m_encryptionInfo.securityLevel))
     , m_urlHandler(urlHandler)
@@ -244,7 +244,7 @@ void MessageWidgetContainer::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
 
-    if (m_sidebarSecurityLevel == PartModel::Unknow) {
+    if (m_sidebarSecurityLevel == PartModel::Unknown) {
         return;
     }
 
