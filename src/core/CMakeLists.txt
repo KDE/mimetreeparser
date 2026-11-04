@@ -5,7 +5,7 @@ ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSER_CORE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_core_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserCoreConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION ${PROJECT_SOVERSION}
 )
 
 # public dynamic library

@@ -6,7 +6,7 @@ ecm_setup_version(PROJECT
     VARIABLE_PREFIX MIMETREEPARSER_WIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_widgets_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserWidgetsConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION ${PROJECT_SOVERSION}
 )
 
 add_library(KPim6MimeTreeParserWidgets)
