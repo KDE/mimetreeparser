@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:50+0000\n"
+"POT-Creation-Date: 2026-11-04 01:04+0000\n"
 "PO-Revision-Date: 2025-03-15 10:38+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -211,50 +211,139 @@ msgctxt "Separator"
 msgid " - "
 msgstr " - "
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:77
-#: quick/qml/itinerary/TrainReservationComponent.qml:91
+#: quick/itinerarymodel.cpp:142
+#, kde-format
+msgctxt "@title:group"
+msgid "Train"
+msgstr ""
+
+#: quick/itinerarymodel.cpp:146
+#, kde-format
+msgctxt "@title:group"
+msgid "Bus"
+msgstr ""
+
+#: quick/itinerarymodel.cpp:150
+#, kde-format
+msgctxt "@title:group"
+msgid "Ferry"
+msgstr ""
+
+#: quick/qml/itinerary/EventReservationComponent.qml:22
+#, kde-format
+msgctxt "@label"
+msgid "Starts"
+msgstr ""
+
+#: quick/qml/itinerary/EventReservationComponent.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Ends"
+msgstr ""
+
+#: quick/qml/itinerary/EventReservationComponent.qml:83
+#: quick/qml/itinerary/HotelReservationComponent.qml:85
 #, fuzzy, kde-format
 #| msgctxt "to open"
 #| msgid "Open"
-msgctxt "@action"
-msgid "Open Menu"
+msgctxt "@action:button"
+msgid "Open Map"
 msgstr "Malfermi"
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:93
+#: quick/qml/itinerary/EventReservationComponent.qml:95
 #, kde-format
-msgctxt "flight departure, %1 is airport, %2 is time"
-msgid "Departure from %1"
+msgctxt "@label"
+msgid "Section %1"
 msgstr ""
 
-#: quick/qml/itinerary/FlightReservationComponent.qml:110
+#: quick/qml/itinerary/EventReservationComponent.qml:99
+#: quick/qml/itinerary/JourneyReservationComponent.qml:157
 #, kde-format
-msgctxt "flight arrival, %1 is airport, %2 is time"
-msgid "Arrival at %1"
+msgctxt "@label"
+msgid "Seat %1"
 msgstr ""
 
-#: quick/qml/itinerary/HotelReservationComponent.qml:65
+#: quick/qml/itinerary/FoodReservationComponent.qml:8
 #, kde-format
-msgid "Check-in time: %1"
+msgctxt "@label"
+msgid "Reservation"
 msgstr ""
 
-#: quick/qml/itinerary/HotelReservationComponent.qml:69
+#: quick/qml/itinerary/HotelReservationComponent.qml:26
+#: quick/qml/itinerary/HotelReservationComponent.qml:27
 #, kde-format
-msgid "Check-out time: %1"
+msgid "%1 night"
+msgid_plural "%1 nights"
+msgstr[0] ""
+msgstr[1] ""
+
+#: quick/qml/itinerary/HotelReservationComponent.qml:26
+#, kde-format
+msgctxt "location and duration of a stay"
+msgid "%1 · %2"
 msgstr ""
 
-#: quick/qml/itinerary/TrainReservationComponent.qml:157
-#: quick/qml/itinerary/TrainReservationComponent.qml:224
+#: quick/qml/itinerary/HotelReservationComponent.qml:44
 #, kde-format
-msgid "Pl. %1"
+msgctxt "@label"
+msgid "Check-in"
 msgstr ""
 
-#: quick/qml/itinerary/TripMenu.qml:18
+#: quick/qml/itinerary/HotelReservationComponent.qml:57
+#, kde-format
+msgctxt "@label"
+msgid "Check-out"
+msgstr ""
+
+#: quick/qml/itinerary/ItineraryReservationComponent.qml:52
+#, kde-format
+msgctxt "@action:button"
+msgid "Import…"
+msgstr ""
+
+#: quick/qml/itinerary/JourneyReservationComponent.qml:106
+#, kde-format
+msgctxt "@label"
+msgid "Platform %1"
+msgstr ""
+
+#: quick/qml/itinerary/JourneyReservationComponent.qml:107
+#, kde-format
+msgctxt "@label"
+msgid "Terminal %1"
+msgstr ""
+
+#: quick/qml/itinerary/JourneyReservationComponent.qml:119
+#, kde-format
+msgctxt "@label"
+msgid "Departure"
+msgstr ""
+
+#: quick/qml/itinerary/JourneyReservationComponent.qml:132
+#, kde-format
+msgctxt "@label"
+msgid "Arrival"
+msgstr ""
+
+#: quick/qml/itinerary/JourneyReservationComponent.qml:143
+#, kde-format
+msgctxt "@label"
+msgid "Boarding: %1"
+msgstr ""
+
+#: quick/qml/itinerary/JourneyReservationComponent.qml:153
+#, kde-format
+msgctxt "@label"
+msgid "Coach %1"
+msgstr ""
+
+#: quick/qml/itinerary/TripMenu.qml:34
 #, kde-format
 msgctxt "@action"
 msgid "Send to KDE Itinerary"
 msgstr ""
 
-#: quick/qml/itinerary/TripMenu.qml:33
+#: quick/qml/itinerary/TripMenu.qml:49
 #, kde-format
 msgctxt "@action"
 msgid "Send to %1"
