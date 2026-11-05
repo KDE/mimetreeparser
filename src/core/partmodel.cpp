@@ -160,11 +160,8 @@ public:
             return addCss(mParser->resolveCidLinks(messagePart->text()));
         }
 
-        if (auto attachmentPart = dynamic_cast<MimeTreeParser::Core::AttachmentMessagePart *>(messagePart)) {
-            auto node = attachmentPart->node();
-            if (node && mMimeTypeCache[attachmentPart] == "text/calendar"_ba) {
-                return node->decodedBody();
-            }
+        if (auto node = messagePart->node(); node && mMimeTypeCache[messagePart] == "text/calendar"_ba) {
+            return node->decodedBody();
         }
 
         return preprocessPlaintext(messagePart->text());
