@@ -12,6 +12,7 @@ ListView {
     id: root
 
     property alias message: messageParser.message
+    property bool showHtml: false
     readonly property string subject: messageParser.subject
     readonly property string from: messageParser.from
     readonly property string sender: messageParser.sender
@@ -46,6 +47,13 @@ ListView {
         model: messageParser.parts
         icalCustomComponent: root.icalCustomComponent
         urlHandler: urlHandler
+    }
+
+    Binding {
+        target: visualModel.model
+        property: "showHtml"
+        value: root.showHtml
+        when: visualModel.model !== null
     }
 
     MessageParser {

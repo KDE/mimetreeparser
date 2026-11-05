@@ -16,6 +16,9 @@ Kirigami.ScrollablePage {
 
     property alias message: mailPartView.message
 
+    /** Whether to prefer HTML over plain text when both are available. */
+    property alias showHtml: mailPartView.showHtml
+
     readonly property string subject: mailPartView.subject
     readonly property string from: mailPartView.from
     readonly property string sender: mailPartView.sender
