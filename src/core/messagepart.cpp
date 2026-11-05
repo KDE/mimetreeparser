@@ -404,6 +404,7 @@ void TextMessagePart::parseContent()
             auto content = std::make_unique<KMime::Content>();
             content->setBody(block.text());
             content->parse();
+            content->contentType()->setMimeType(mimeType());
             content->contentType()->setCharset(charset());
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 mp.reset(new MessagePart(mOtp, aCodec.decode(KMime::CRLFtoLF(block.text())), content.get()));
