@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"POT-Creation-Date: 2026-11-05 14:02+0100\n"
 "PO-Revision-Date: 2025-12-06 15:53+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -177,11 +177,13 @@ msgstr "Ta wiadomość jest zaszyfrowana."
 
 #: core/partmodel.cpp
 #, fuzzy, kde-format
-#| msgid "This message is encrypted to the certificate: %1"
+#| msgid "This message is encrypted but you don't have a matching secret key."
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "Ta wiadomość jest zaszyfrowana certyfikatem: %1"
+msgstr ""
+"Ta wiadomość jest zaszyfrowana, lecz nie masz pasującego do niej klucza "
+"poufnego."
 
 #: core/partmodel.cpp
 #, fuzzy, kde-format

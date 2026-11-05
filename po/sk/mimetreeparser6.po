@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-19 16:19+0200\n"
+"POT-Creation-Date: 2026-11-05 14:02+0100\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -128,12 +128,12 @@ msgid "Wrong passphrase"
 msgstr "Nesprávne heslo"
 
 #: core/messagepart.cpp
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
-msgstr "Táto správa je zašifrovaná, ale nemáme k nej kľúč."
+msgstr ""
+"Túto správu nie je možné dešifrovať, pretože nemáte zodpovedajúci tajný kľúč."
 
 #: core/messagepart.cpp
 #, kde-format
@@ -155,25 +155,23 @@ msgstr "Podpis je poškodený"
 #, kde-format
 msgctxt "@info What can be done: Some guidance"
 msgid "What can be done: %1"
-msgstr ""
+msgstr "Čo sa dá urobiť: %1"
 
 #: core/partmodel.cpp
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "Táto správa je šifrovaná."
+msgstr "Táto správa je šifrovaná (%1)."
 
 #: core/partmodel.cpp
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "Táto správa je zašifrovaná kľúčom: %1"
+msgstr "Táto správa je šifrovaná, ale šifrovanie nie je %1."
 
 #: core/partmodel.cpp
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
 msgstr "Táto správa je šifrovaná."
@@ -337,33 +335,31 @@ msgstr "odoslané %1 na %2"
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto errors"
-msgstr ""
+msgstr "Chyby šifrovania"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary and warnings"
-msgstr ""
+msgstr "Súhrn šifrovania a varovania"
 
 #: widgets/messagecontainerwidget.cpp
 #, kde-format
 msgctxt "accessible name"
 msgid "Crypto summary"
-msgstr ""
+msgstr "Súhrn šifrovania"
 
 #: widgets/messagecontainerwidget.cpp
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "Podrobnosti:"
+msgstr "Zobraziť podrobnosti"
 
 #: widgets/messagecontainerwidget.cpp
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "Podrobnosti:"
+msgstr "Skryť podrobnosti"
 
 #: widgets/messageviewer.cpp
 #, kde-format
