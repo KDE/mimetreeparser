@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:04+0000\n"
-"PO-Revision-Date: 2026-10-31 20:10+0400\n"
+"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"PO-Revision-Date: 2026-11-05 09:14+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -217,137 +217,129 @@ msgstr " - "
 #, kde-format
 msgctxt "@title:group"
 msgid "Train"
-msgstr ""
+msgstr "قطار"
 
 #: quick/itinerarymodel.cpp:146
 #, kde-format
 msgctxt "@title:group"
 msgid "Bus"
-msgstr ""
+msgstr "حافلة"
 
 #: quick/itinerarymodel.cpp:150
 #, kde-format
 msgctxt "@title:group"
 msgid "Ferry"
-msgstr ""
+msgstr "عبارة"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:22
 #, kde-format
 msgctxt "@label"
 msgid "Starts"
-msgstr ""
+msgstr "يبدأ في"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "Ends"
-msgstr ""
+msgstr "ينتهي"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:83
 #: quick/qml/itinerary/HotelReservationComponent.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open Menu"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Map"
-msgstr "افتح القائمة"
+msgstr "افتح الخريطة"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:95
 #, kde-format
 msgctxt "@label"
 msgid "Section %1"
-msgstr ""
+msgstr "القسم  %1"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:99
 #: quick/qml/itinerary/JourneyReservationComponent.qml:157
 #, kde-format
 msgctxt "@label"
 msgid "Seat %1"
-msgstr ""
+msgstr "المقعد %1"
 
 #: quick/qml/itinerary/FoodReservationComponent.qml:8
 #, kde-format
 msgctxt "@label"
 msgid "Reservation"
-msgstr ""
+msgstr "الحجز"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:26
 #: quick/qml/itinerary/HotelReservationComponent.qml:27
 #, kde-format
 msgid "%1 night"
 msgid_plural "%1 nights"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "%1 ليلة"
+msgstr[1] "ليلة واحدة"
+msgstr[2] "ليلتان"
+msgstr[3] "%1 ليالي"
+msgstr[4] "%1 ليلة"
+msgstr[5] "%1 ليلة"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:26
 #, kde-format
 msgctxt "location and duration of a stay"
 msgid "%1 · %2"
-msgstr ""
+msgstr "%1 · %2"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:44
-#, fuzzy, kde-format
-#| msgid "Check-in time: %1"
+#, kde-format
 msgctxt "@label"
 msgid "Check-in"
-msgstr "وقت تسجيل الوصول: %1"
+msgstr "تسجيل الوصول"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:57
-#, fuzzy, kde-format
-#| msgid "Check-out time: %1"
+#, kde-format
 msgctxt "@label"
 msgid "Check-out"
-msgstr "وقت تسجيل الخروج: %1"
+msgstr "الخروج"
 
 #: quick/qml/itinerary/ItineraryReservationComponent.qml:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Import…"
-msgstr ""
+msgstr "استورد…"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:106
 #, kde-format
 msgctxt "@label"
 msgid "Platform %1"
-msgstr ""
+msgstr "المنصّة %1"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:107
 #, kde-format
 msgctxt "@label"
 msgid "Terminal %1"
-msgstr ""
+msgstr "المحطة %1"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:119
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1"
+#, kde-format
 msgctxt "@label"
 msgid "Departure"
-msgstr "غادر من %1"
+msgstr "المغادرة"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:132
-#, fuzzy, kde-format
-#| msgctxt "flight arrival, %1 is airport, %2 is time"
-#| msgid "Arrival at %1"
+#, kde-format
 msgctxt "@label"
 msgid "Arrival"
-msgstr "وصل في %1"
+msgstr "الوصول"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:143
 #, kde-format
 msgctxt "@label"
 msgid "Boarding: %1"
-msgstr ""
+msgstr "الرّكوب: %1"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:153
 #, kde-format
 msgctxt "@label"
 msgid "Coach %1"
-msgstr ""
+msgstr "العربة: %1"
 
 #: quick/qml/itinerary/TripMenu.qml:34
 #, kde-format
@@ -361,55 +353,55 @@ msgctxt "@action"
 msgid "Send to %1"
 msgstr "أرسل إلى %1"
 
-#: quick/qml/MailViewer.qml:40
+#: quick/qml/MailViewer.qml:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "عارض الرّسائل"
 
-#: quick/qml/MailViewer.qml:77
+#: quick/qml/MailViewer.qml:80
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "الموضوع:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml:101
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "من:"
 
-#: quick/qml/MailViewer.qml:114
+#: quick/qml/MailViewer.qml:117
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "المرسل:"
 
-#: quick/qml/MailViewer.qml:130
+#: quick/qml/MailViewer.qml:133
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "إلى:"
 
-#: quick/qml/MailViewer.qml:146
+#: quick/qml/MailViewer.qml:149
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
 msgstr "ن‌ك:"
 
-#: quick/qml/MailViewer.qml:162
+#: quick/qml/MailViewer.qml:165
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
 msgstr "ن‌ك‌ع:"
 
-#: quick/qml/MailViewer.qml:212
+#: quick/qml/MailViewer.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "احفظ المرفق"
 
-#: quick/qml/MailViewer.qml:235
+#: quick/qml/MailViewer.qml:238
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"

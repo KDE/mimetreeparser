@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:04+0000\n"
+"POT-Creation-Date: 2026-11-06 00:53+0000\n"
 "PO-Revision-Date: 2026-10-15 09:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -349,55 +349,55 @@ msgctxt "@action"
 msgid "Send to %1"
 msgstr "Envia a %1"
 
-#: quick/qml/MailViewer.qml:40
+#: quick/qml/MailViewer.qml:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Visor de missatges"
 
-#: quick/qml/MailViewer.qml:77
+#: quick/qml/MailViewer.qml:80
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml:101
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "De:"
 
-#: quick/qml/MailViewer.qml:114
+#: quick/qml/MailViewer.qml:117
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Remitent:"
 
-#: quick/qml/MailViewer.qml:130
+#: quick/qml/MailViewer.qml:133
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "A:"
 
-#: quick/qml/MailViewer.qml:146
+#: quick/qml/MailViewer.qml:149
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
 msgstr "CC:"
 
-#: quick/qml/MailViewer.qml:162
+#: quick/qml/MailViewer.qml:165
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
 msgstr "BCC:"
 
-#: quick/qml/MailViewer.qml:212
+#: quick/qml/MailViewer.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Guarda l'adjunt"
 
-#: quick/qml/MailViewer.qml:235
+#: quick/qml/MailViewer.qml:238
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"

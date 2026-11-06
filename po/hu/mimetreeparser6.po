@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:04+0000\n"
+"POT-Creation-Date: 2026-11-06 00:53+0000\n"
 "PO-Revision-Date: 2026-06-16 22:23+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -354,55 +354,55 @@ msgctxt "@action"
 msgid "Send to %1"
 msgstr "Küldés ide: %1"
 
-#: quick/qml/MailViewer.qml:40
+#: quick/qml/MailViewer.qml:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Message viewer"
 msgstr "Üzenetmegjelenítő"
 
-#: quick/qml/MailViewer.qml:77
+#: quick/qml/MailViewer.qml:80
 #, kde-format
 msgctxt "@label"
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: quick/qml/MailViewer.qml:98
+#: quick/qml/MailViewer.qml:101
 #, kde-format
 msgctxt "@label"
 msgid "From:"
 msgstr "Feladó:"
 
-#: quick/qml/MailViewer.qml:114
+#: quick/qml/MailViewer.qml:117
 #, kde-format
 msgctxt "@label"
 msgid "Sender:"
 msgstr "Küldő:"
 
-#: quick/qml/MailViewer.qml:130
+#: quick/qml/MailViewer.qml:133
 #, kde-format
 msgctxt "@label"
 msgid "To:"
 msgstr "Címzett:"
 
-#: quick/qml/MailViewer.qml:146
+#: quick/qml/MailViewer.qml:149
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
 msgstr "Másolat:"
 
-#: quick/qml/MailViewer.qml:162
+#: quick/qml/MailViewer.qml:165
 #, kde-format
 msgctxt "@label"
 msgid "BCC:"
 msgstr "Titkos másolat:"
 
-#: quick/qml/MailViewer.qml:212
+#: quick/qml/MailViewer.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Save attachment"
 msgstr "Melléklet mentése"
 
-#: quick/qml/MailViewer.qml:235
+#: quick/qml/MailViewer.qml:238
 #, kde-format
 msgctxt "@window:title"
 msgid "Save Attachment As"
