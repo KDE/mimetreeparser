@@ -87,10 +87,8 @@ namespace detail
 
 namespace tags
 {
-struct Expected {
-};
-struct Unexpected {
-};
+struct Expected { };
+struct Unexpected { };
 } // namespace tags
 
 // Write functions here when storage related and when Type != void
