@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:53+0000\n"
-"PO-Revision-Date: 2026-10-15 14:04+0200\n"
+"PO-Revision-Date: 2026-11-04 14:15+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -208,135 +208,125 @@ msgstr " - "
 #, kde-format
 msgctxt "@title:group"
 msgid "Train"
-msgstr ""
+msgstr "Treno"
 
 #: quick/itinerarymodel.cpp:146
 #, kde-format
 msgctxt "@title:group"
 msgid "Bus"
-msgstr ""
+msgstr "Autobus"
 
 #: quick/itinerarymodel.cpp:150
 #, kde-format
 msgctxt "@title:group"
 msgid "Ferry"
-msgstr ""
+msgstr "Traghetto"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:22
 #, kde-format
 msgctxt "@label"
 msgid "Starts"
-msgstr ""
+msgstr "Inizia"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "Ends"
-msgstr ""
+msgstr "Finisce"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:83
 #: quick/qml/itinerary/HotelReservationComponent.qml:85
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open Menu"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Map"
-msgstr "Apri menu"
+msgstr "Apri la mappa"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:95
 #, kde-format
 msgctxt "@label"
 msgid "Section %1"
-msgstr ""
+msgstr "Sezione %1"
 
 #: quick/qml/itinerary/EventReservationComponent.qml:99
 #: quick/qml/itinerary/JourneyReservationComponent.qml:157
 #, kde-format
 msgctxt "@label"
 msgid "Seat %1"
-msgstr ""
+msgstr "Posto %1"
 
 #: quick/qml/itinerary/FoodReservationComponent.qml:8
 #, kde-format
 msgctxt "@label"
 msgid "Reservation"
-msgstr ""
+msgstr "Prenotazione"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:26
 #: quick/qml/itinerary/HotelReservationComponent.qml:27
 #, kde-format
 msgid "%1 night"
 msgid_plural "%1 nights"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 notte"
+msgstr[1] "%1 notti"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:26
 #, kde-format
 msgctxt "location and duration of a stay"
 msgid "%1 · %2"
-msgstr ""
+msgstr "%1 · %2"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:44
-#, fuzzy, kde-format
-#| msgid "Check-in time: %1"
+#, kde-format
 msgctxt "@label"
 msgid "Check-in"
-msgstr "Orario di check-in: %1"
+msgstr "Check-in"
 
 #: quick/qml/itinerary/HotelReservationComponent.qml:57
-#, fuzzy, kde-format
-#| msgid "Check-out time: %1"
+#, kde-format
 msgctxt "@label"
 msgid "Check-out"
-msgstr "Orario di check-out: %1"
+msgstr "Check-out"
 
 #: quick/qml/itinerary/ItineraryReservationComponent.qml:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Import key"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import…"
-msgstr "Importa chiave"
+msgstr "Importa…"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:106
 #, kde-format
 msgctxt "@label"
 msgid "Platform %1"
-msgstr ""
+msgstr "Binario %1"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:107
 #, kde-format
 msgctxt "@label"
 msgid "Terminal %1"
-msgstr ""
+msgstr "Terminale %1"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:119
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1"
+#, kde-format
 msgctxt "@label"
 msgid "Departure"
-msgstr "Partenza da %1"
+msgstr "Partenza"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:132
-#, fuzzy, kde-format
-#| msgctxt "flight arrival, %1 is airport, %2 is time"
-#| msgid "Arrival at %1"
+#, kde-format
 msgctxt "@label"
 msgid "Arrival"
-msgstr "Arrivo a %1"
+msgstr "Arrivo"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:143
 #, kde-format
 msgctxt "@label"
 msgid "Boarding: %1"
-msgstr ""
+msgstr "Imbarco: %1"
 
 #: quick/qml/itinerary/JourneyReservationComponent.qml:153
 #, kde-format
 msgctxt "@label"
 msgid "Coach %1"
-msgstr ""
+msgstr "Carrozza %1"
 
 #: quick/qml/itinerary/TripMenu.qml:34
 #, kde-format
