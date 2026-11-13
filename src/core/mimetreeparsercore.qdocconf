@@ -12,7 +12,8 @@ sourcedirs += .
 outputformats = HTML
 
 depends += \
-    qtcore
+    qtcore \
+    mimetreeparserwidgets
 
 navigation.landingpage = "MimeTreeParserCore"
 
