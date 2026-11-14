@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = MimeTreeParserWidgets
+moduleheader = mimetreeparserwidgets_qdocmoduleheader.h
 description = MimeTreeParser Widgets Library.
 
 
