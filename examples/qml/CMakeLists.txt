@@ -23,5 +23,5 @@ target_link_libraries(
         KPim6::MimeTreeParserCore
         KPim6::Mbox
         Gpgmepp
+        KF6::I18nQml
 )
-target_link_libraries(mimetreeparser-qml PUBLIC KF6::I18nQml)

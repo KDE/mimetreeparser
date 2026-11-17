@@ -33,7 +33,6 @@ function(add_mimetreeparser_crypto_unittest _name)
         ${_name}.cpp
         ../setupenv.cpp
     )
-    target_link_libraries(${_name} PRIVATE Gpgmepp)
     target_include_directories(
         ${_name}
         PRIVATE
@@ -45,6 +44,7 @@ function(add_mimetreeparser_crypto_unittest _name)
         PRIVATE
             Qt::Test
             KPim6::MimeTreeParserCore
+            Gpgmepp
     )
     add_gpg_crypto_test(${_name} core-${_name})
 endfunction()
