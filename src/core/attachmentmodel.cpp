@@ -41,11 +41,13 @@ QString sizeHuman(float size)
     QStringList list;
     list << u"KB"_s << u"MB"_s << QStringLiteral("GB") << QStringLiteral("TB");
 
-    QStringListIterator i(list);
+    auto it = list.cbegin();
+    const auto end = list.cend();
     QString unit = u"Bytes"_s;
 
-    while (size >= 1024.0 && i.hasNext()) {
-        unit = i.next();
+    while (size >= 1024.0 && it != end) {
+        unit = *it;
+        ++it;
         size /= 1024.0;
     }
 
