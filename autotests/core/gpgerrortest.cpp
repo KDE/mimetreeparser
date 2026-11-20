@@ -6,6 +6,7 @@
 #include <gpgme.h>
 
 #include <QProcess>
+#include <QSet>
 #include <QTest>
 
 static QByteArray readMailFromFile(const QString &mailFile)

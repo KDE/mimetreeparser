@@ -14,6 +14,7 @@
 #include <KMime/Message>
 
 #include <QMap>
+#include <QObject>
 #include <QSharedPointer>
 #include <QString>
 

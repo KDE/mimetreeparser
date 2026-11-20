@@ -14,6 +14,7 @@
 
 #include <Libkleo/Formatting>
 
+#include <QSet>
 #include <gpgme++/context.h>
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/verificationresult.h>

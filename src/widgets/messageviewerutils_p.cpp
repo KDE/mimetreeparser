@@ -4,6 +4,7 @@
 #include "messageviewerutils_p.h"
 
 #include <QRegularExpression>
+#include <QStringList>
 
 using namespace Qt::Literals::StringLiterals;
 
