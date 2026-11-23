@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-22 09:43+0000\n"
 "PO-Revision-Date: 2023-12-09 09:03+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,60 +15,60 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.08.3\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Názov"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Šifrovaný"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:210
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Podpísané"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Nepodarilo sa save attachment."
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "príloha"
 
-#: core/attachmentmodel.cpp:330
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Nepodarilo sa write attachment for opening."
 
-#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Nepodarilo sa open attachment."
 
-#: core/attachmentmodel.cpp:380
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "V tejto prílohe neboli nájdené žiadne kľúče"
 
-#: core/attachmentmodel.cpp:383
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -77,7 +77,7 @@ msgstr[0] "one certificate imported"
 msgstr[1] "%1 certificates imported"
 msgstr[2] "%1 certificates imported"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"

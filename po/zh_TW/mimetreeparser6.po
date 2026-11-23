@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-22 09:43+0000\n"
 "PO-Revision-Date: 2026-07-22 01:14+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -17,67 +17,67 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 26.11.70\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "名稱"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "大小"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "已加密"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:210
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "已簽署"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "儲存附件時失敗。"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "附件"
 
-#: core/attachmentmodel.cpp:330
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "無法開啟附件以供寫入。"
 
-#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "開啟附件失敗。"
 
-#: core/attachmentmodel.cpp:380
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "附件中未找到憑證。"
 
-#: core/attachmentmodel.cpp:383
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
 msgstr[0] "已匯入 %1 個憑證"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"

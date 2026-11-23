@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-22 09:43+0000\n"
 "PO-Revision-Date: 2025-01-14 11:52+0900\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -14,67 +14,67 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "名前"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "サイズ"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "暗号化"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:210
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "署名"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "添付ファイルの保存に失敗しました。"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "添付ファイル"
 
-#: core/attachmentmodel.cpp:330
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "添付ファイルの書き込みのために開くのに失敗しました。"
 
-#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "添付ファイルを開くのに失敗しました。"
 
-#: core/attachmentmodel.cpp:380
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "この添付ファイルには証明書が見つかりませんでした"
 
-#: core/attachmentmodel.cpp:383
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
 msgstr[0] "%1 件の証明書がインポートされました。"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"

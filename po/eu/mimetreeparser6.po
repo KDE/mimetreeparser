@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-22 09:43+0000\n"
 "PO-Revision-Date: 2026-03-29 21:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,60 +20,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.12.3\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Izena"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "Neurria"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "Zifratuta"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:210
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "Sinatuta"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "Eranskina gordetzea huts egin du."
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "eranskina"
 
-#: core/attachmentmodel.cpp:330
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "Eranskina irekitzeko idaztea huts egin du."
 
-#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "Eranskina irekitzea huts egin du."
 
-#: core/attachmentmodel.cpp:380
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "Eranskin honetan ez da ziurtagiririk aurkitu"
 
-#: core/attachmentmodel.cpp:383
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -81,7 +81,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "ziurtagiri bat inportatu da"
 msgstr[1] "%1 ziurtagiri inportatu dira"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"

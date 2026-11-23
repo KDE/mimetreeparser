@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-22 09:43+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -17,60 +17,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "नाम"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "आकार"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "कूट रूप दिया गया"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:210
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "पर हस्ताक्षर किए"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "अनुलग्नक सहेजने में विफल."
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "लगाव"
 
-#: core/attachmentmodel.cpp:330
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "खोलने के लिए अनुलग्नक लिखने में विफल."
 
-#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "अनुलग्नक खोलने में विफल."
 
-#: core/attachmentmodel.cpp:380
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "इस अनुलग्नक में कोई प्रमाणपत्र नहीं मिला"
 
-#: core/attachmentmodel.cpp:383
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
@@ -78,7 +78,7 @@ msgid_plural "%1 certificates imported"
 msgstr[0] "%1 प्रमाणपत्र आयातित"
 msgstr[1] "%1 प्रमाणपत्र आयातित"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"

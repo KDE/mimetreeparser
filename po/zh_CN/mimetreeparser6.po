@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-22 09:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,67 +17,67 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/mimetreeparser/mimetreeparser6.pot\n"
 "X-Crowdin-File-ID: 49072\n"
 
-#: core/attachmentmodel.cpp:202
+#: core/attachmentmodel.cpp:204
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "名称"
 
-#: core/attachmentmodel.cpp:204
+#: core/attachmentmodel.cpp:206
 #, kde-format
 msgctxt "@title:column"
 msgid "Size"
 msgstr "大小"
 
-#: core/attachmentmodel.cpp:206
+#: core/attachmentmodel.cpp:208
 #, kde-format
 msgctxt "@title:column"
 msgid "Encrypted"
 msgstr "已加密"
 
-#: core/attachmentmodel.cpp:208
+#: core/attachmentmodel.cpp:210
 #, kde-format
 msgctxt "@title:column"
 msgid "Signed"
 msgstr "已签名"
 
-#: core/attachmentmodel.cpp:300
+#: core/attachmentmodel.cpp:302
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save attachment."
 msgstr "无法保存附件。"
 
-#: core/attachmentmodel.cpp:323
+#: core/attachmentmodel.cpp:325
 #, kde-format
 msgid "attachment"
 msgstr "附件"
 
-#: core/attachmentmodel.cpp:330
+#: core/attachmentmodel.cpp:332
 #, kde-format
 msgctxt "@info"
 msgid "Failed to write attachment for opening."
 msgstr "无法写入打开的附件。"
 
-#: core/attachmentmodel.cpp:349 core/attachmentmodel.cpp:359
+#: core/attachmentmodel.cpp:351 core/attachmentmodel.cpp:361
 #, kde-format
 msgctxt "@info"
 msgid "Failed to open attachment."
 msgstr "无法打开附件。"
 
-#: core/attachmentmodel.cpp:380
+#: core/attachmentmodel.cpp:382
 #, kde-format
 msgctxt "@info"
 msgid "No certificates were found in this attachment"
 msgstr "此附件中未找到任何证书"
 
-#: core/attachmentmodel.cpp:383
+#: core/attachmentmodel.cpp:385
 #, kde-format
 msgctxt "@info"
 msgid "one certificate imported"
 msgid_plural "%1 certificates imported"
 msgstr[0] "%1 已导入证书"
 
-#: core/attachmentmodel.cpp:388
+#: core/attachmentmodel.cpp:390
 #, kde-format
 msgctxt "@info"
 msgid "one certificate was already imported"
@@ -126,12 +126,11 @@ msgid "Wrong passphrase"
 msgstr ""
 
 #: core/messagepart.cpp:878
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgid ""
 "This message cannot be decrypted because you do not have a matching secret "
 "key."
-msgstr "此消息已加密，但您没有匹配的密钥。"
+msgstr ""
 
 #: core/messagepart.cpp:881
 #, kde-format
@@ -156,26 +155,23 @@ msgid "What can be done: %1"
 msgstr ""
 
 #: core/partmodel.cpp:533
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted (%1)."
-msgstr "此消息已加密。"
+msgstr ""
 
 #: core/partmodel.cpp:536
-#, fuzzy, kde-format
-#| msgid "This message is encrypted but you don't have a matching secret key."
+#, kde-format
 msgctxt ""
 "@info %1 names the compliance in adjective form (e.g. 'VS-NfD compliant')"
 msgid "This message is encrypted, but the encryption is not %1."
-msgstr "此消息已加密，但您没有匹配的密钥。"
+msgstr ""
 
 #: core/partmodel.cpp:540
-#, fuzzy, kde-format
-#| msgid "This message is encrypted."
+#, kde-format
 msgctxt "@info"
 msgid "This message is encrypted."
-msgstr "此消息已加密。"
+msgstr ""
 
 #: core/partmodel.cpp:547
 #, kde-format
@@ -233,12 +229,10 @@ msgstr ""
 
 #: quick/qml/itinerary/EventReservationComponent.qml:83
 #: quick/qml/itinerary/HotelReservationComponent.qml:85
-#, fuzzy, kde-format
-#| msgctxt "to open"
-#| msgid "Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Map"
-msgstr "打开"
+msgstr ""
 
 #: quick/qml/itinerary/EventReservationComponent.qml:95
 #, kde-format
@@ -439,18 +433,16 @@ msgid "Crypto summary"
 msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:185
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Show Details"
-msgstr "详细信息(&D)："
+msgstr ""
 
 #: widgets/messagecontainerwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "&Details:"
+#, kde-format
 msgctxt "@button"
 msgid "Hide Details"
-msgstr "详细信息(&D)："
+msgstr ""
 
 #: widgets/messageviewer.cpp:88
 #, kde-format
@@ -747,25 +739,3 @@ msgstr "&导航"
 msgctxt "@action:inmenu"
 msgid "&Message"
 msgstr ""
-
-#, fuzzy
-#~| msgid ""
-#~| "This message is VS-NfD compliant encrypted but you don't have a matching "
-#~| "secret key."
-#~ msgid ""
-#~ "This message is VS-NfD compliant encrypted but you do not have a matching "
-#~ "secret key."
-#~ msgstr "此消息是符合 VS-NfD 标准的加密消息，但您没有匹配的密钥。"
-
-#~ msgid "This message is VS-NfD compliant encrypted."
-#~ msgstr "此消息是符合 VS-NfD 标准的加密消息。"
-
-#~ msgctxt "@info:status"
-#~ msgid "You cannot decrypt this message."
-#~ msgstr "您无法解密该消息。"
-
-#~ msgid "This message is encrypted for: %1"
-#~ msgstr "此消息已加密：%1"
-
-#~ msgid "The message is encrypted for the following recipients:"
-#~ msgstr "该邮件已为以下收件人加密:"
