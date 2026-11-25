@@ -7,3 +7,9 @@
 
     \brief MimeTreeParser Core Library.
 */
+
+/*!
+    \namespace MimeTreeParser
+    \inmodule MimeTreeParserCore
+    \brief The MimeTreeParser namespace contains the classes of the MimeTreeParserCore module.
+*/

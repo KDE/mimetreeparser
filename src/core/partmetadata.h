@@ -14,9 +14,16 @@
 namespace MimeTreeParser::Core
 {
 
+/*!
+ * \class MimeTreeParser::Core::PartMetaData
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/PartMetaData
+ */
 class PartMetaData
 {
 public:
+    /*!
+     */
     PartMetaData()
         : isEncrypted(false)
         , isDecryptable(false)
@@ -28,30 +35,70 @@ public:
     {
     }
 
+    /*!
+     */
     inline bool isSigned() const
     {
         return verificationResult.signatures().size() > 0;
     }
 
+    /*!
+     */
     GpgME::VerificationResult verificationResult;
 
+    /*!
+     */
     QString signClass;
+    /*!
+     */
     QString signer;
+    /*!
+     */
     QStringList signerMailAddresses;
+    /*!
+     */
     QByteArray keyId;
+    /*!
+     */
     QString status; // to be used for unknown plug-ins
+    /*!
+     */
     int status_code = 0; // = GPGME_SIG_STAT_NONE; to be used for i18n of OpenPGP and S/MIME CryptPlugs
+    /*!
+     */
     QString errorText;
+    /*!
+     */
     QString decryptionError;
+    /*!
+     */
     QString auditLog;
+    /*!
+     */
     QString compliance; // textual representation of compliance status; empty if compliance isn't enforced
+    /*!
+     */
     GpgME::Error auditLogError;
+    /*!
+     */
     bool isEncrypted : 1;
+    /*!
+     */
     bool isDecryptable : 1;
+    /*!
+     */
     bool inProgress : 1;
+    /*!
+     */
     bool technicalProblem : 1;
+    /*!
+     */
     bool isEncapsulatedRfc822Message : 1;
+    /*!
+     */
     bool isCompliant : 1; // corresponds to the isDeVS flag of signature or decryption result
+    /*!
+     */
     bool keyRevoked : 1;
 };
 

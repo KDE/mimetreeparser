@@ -49,9 +49,13 @@ public:
      */
     ~PartModel() override;
 
+    /*!
+     */
     static std::pair<QString, bool> trim(const QString &text);
 
 public:
+    /*!
+     */
     enum class Types : quint8 {
         Error,
         Encapsulated,
@@ -62,6 +66,8 @@ public:
     };
     Q_ENUM(Types)
 
+    /*!
+     */
     enum Roles {
         TypeRole = Qt::UserRole + 1,
         ContentRole,
@@ -81,6 +87,8 @@ public:
     /// - Sidebar (worse of the two above)
     /// The enum is ordered such that two security levels can be "combined" using max(),
     /// which will yield the worse level, or the more detailed level, if one is unknown.
+    /*!
+     */
     enum SecurityLevel {
         Unknown, ///< Do not display element (not encrypted or not signed)
         Good, ///< Green
@@ -89,11 +97,23 @@ public:
     };
     Q_ENUM(SecurityLevel)
 
+    /*!
+     */
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
+    /*!
+     */
     [[nodiscard]] QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
+    /*!
+     */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    /*!
+     */
     [[nodiscard]] QModelIndex parent(const QModelIndex &index) const override;
+    /*!
+     */
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    /*!
+     */
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
     template<typename T = MimeTreeParser::Core::MessagePart>
@@ -159,6 +179,11 @@ private:
     QSharedPointer<MimeTreeParser::Core::MessagePart> messagePart(const QModelIndex &index) const;
 };
 
+/*!
+ * \class GenericInfo
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/PartModel
+ */
 class MIMETREEPARSER_CORE_EXPORT GenericInfo
 {
     Q_GADGET
@@ -167,8 +192,16 @@ class MIMETREEPARSER_CORE_EXPORT GenericInfo
     Q_PROPERTY(QString iconName MEMBER iconName CONSTANT)
     Q_PROPERTY(PartModel::SecurityLevel securityLevel MEMBER securityLevel CONSTANT)
 public:
+    /*!
+     */
     QString summary;
+    /*!
+     */
     QStringList details;
+    /*!
+     */
     QString iconName;
+    /*!
+     */
     PartModel::SecurityLevel securityLevel = PartModel::SecurityLevel::Unknown;
 };

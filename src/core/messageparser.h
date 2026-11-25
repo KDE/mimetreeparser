@@ -15,6 +15,11 @@
 class MessagePartPrivate;
 class AttachmentModel;
 
+/*!
+ * \class MessageParser
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessageParser
+ */
 class MIMETREEPARSER_CORE_EXPORT MessageParser : public QObject
 {
     Q_OBJECT

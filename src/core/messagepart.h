@@ -51,6 +51,8 @@ class MIMETREEPARSER_CORE_EXPORT MessagePart : public QObject
     Q_PROPERTY(QString plaintextContent READ plaintextContent CONSTANT)
     Q_PROPERTY(QString htmlContent READ htmlContent CONSTANT)
 public:
+    /*!
+     */
     enum Disposition {
         Inline,
         Attachment,
@@ -106,6 +108,8 @@ public:
      * \return A pointer to the parent part, or nullptr if this is the root
      */
     [[nodiscard]] MessagePart *parentPart() const;
+    /*!
+     */
     [[nodiscard]] AlternativeMessagePart *parentAlternativePart() const;
     /*!
      * \brief Check whether part is a child of parent
@@ -141,6 +145,8 @@ public:
      */
     [[nodiscard]] QByteArray charset() const;
 
+    /*!
+     */
     enum FilenameFallback {
         NoFallback,
         FallbackToNameOrPlaceholder,
@@ -163,6 +169,8 @@ public:
      */
     [[nodiscard]] bool isText() const;
 
+    /*!
+     */
     enum Error {
         NoError = 0,
         PassphraseError,
@@ -291,12 +299,26 @@ protected:
      */
     [[nodiscard]] QString renderInternalText() const;
 
+    /*!
+     */
     QString mText;
+    /*!
+     */
     ObjectTreeParser *mOtp;
+    /*!
+     */
     PartMetaData mMetaData;
+    /*!
+     */
     MessagePart *mParentPart;
+    /*!
+     */
     KMime::Content *mNode;
+    /*!
+     */
     QList<KMime::Content *> mNodesToDelete;
+    /*!
+     */
     Error mError;
 
 private:
@@ -304,6 +326,11 @@ private:
     bool mRoot;
 };
 
+/*!
+ * \class MimeTreeParser::Core::MimeMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT MimeMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -341,6 +368,11 @@ private:
     friend class AlternativeMessagePart;
 };
 
+/*!
+ * \class MimeTreeParser::Core::MessagePartList
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT MessagePartList : public MessagePart
 {
     Q_OBJECT
@@ -367,9 +399,16 @@ public:
      * \return The combined plaintext representation
      */
     [[nodiscard]] QString plaintextContent() const override;
+    /*!
+     */
     [[nodiscard]] QString htmlContent() const override;
 };
 
+/*!
+ * \class MimeTreeParser::Core::TextMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT TextMessagePart : public MessagePartList
 {
     Q_OBJECT
@@ -389,6 +428,11 @@ private:
     MIMETREEPARSER_CORE_NO_EXPORT void parseContent();
 };
 
+/*!
+ * \class MimeTreeParser::Core::AttachmentMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT AttachmentMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -413,6 +457,11 @@ public:
     }
 };
 
+/*!
+ * \class MimeTreeParser::Core::HtmlMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT HtmlMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -438,10 +487,17 @@ public:
     }
 };
 
+/*!
+ * \class MimeTreeParser::Core::AlternativeMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT AlternativeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum HtmlMode {
         Normal, ///< A normal plaintext message, non-multipart
         Html, ///< A HTML message, non-multipart
@@ -489,6 +545,8 @@ public:
      */
     [[nodiscard]] QList<HtmlMode> availableModes();
 
+    /*!
+     */
     [[nodiscard]] QSharedPointer<MessagePart> preferredPart(const QList<QByteArray> &preferredTypes) const;
 
 private:
@@ -498,6 +556,11 @@ private:
     friend class MultiPartAlternativeBodyPartFormatter;
 };
 
+/*!
+ * \class MimeTreeParser::Core::CertMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT CertMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -525,6 +588,11 @@ private:
     GpgME::ImportResult mInportResult;
 };
 
+/*!
+ * \class MimeTreeParser::Core::EncapsulatedRfc822MessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
 {
     Q_OBJECT
@@ -566,6 +634,11 @@ private:
     const std::shared_ptr<KMime::Message> mMessage;
 };
 
+/*!
+ * \class MimeTreeParser::Core::EncryptedMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT EncryptedMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -646,6 +719,8 @@ public:
      */
     void startDecryption();
 
+    /*!
+     */
     QByteArray mDecryptedData;
 
     /*!
@@ -665,15 +740,34 @@ private:
     bool mParseAfterDecryption{true};
 
 protected:
+    /*!
+     */
     bool mPassphraseError;
+    /*!
+     */
     bool mNoSecKey;
+    /*!
+     */
     bool mDecryptMessage;
+    /*!
+     */
     const QGpgME::Protocol *mCryptoProto;
+    /*!
+     */
     QByteArray mVerifiedText;
+    /*!
+     */
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
+    /*!
+     */
     KMime::Content *mEncryptedNode;
 };
 
+/*!
+ * \class MimeTreeParser::Core::SignedMessagePart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT SignedMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -725,13 +819,24 @@ private:
     bool mParseAfterDecryption{true};
 
 protected:
+    /*!
+     */
     const QGpgME::Protocol *mCryptoProto;
+    /*!
+     */
     KMime::Content *mSignedData;
+    /*!
+     */
     std::vector<GpgME::Signature> mSignatures;
 
     friend EncryptedMessagePart;
 };
 
+/*!
+ * \class MimeTreeParser::Core::HeadersPart
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/MessagePart
+ */
 class MIMETREEPARSER_CORE_EXPORT HeadersPart : public MessagePart
 {
     Q_OBJECT

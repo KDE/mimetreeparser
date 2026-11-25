@@ -12,9 +12,16 @@ namespace MimeTreeParser
 {
 namespace Core
 {
+/*!
+ * \namespace MimeTreeParser::Core::FileOpener
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/FileOpener
+ */
 namespace FileOpener
 {
 /// Open messages from file
+/*!
+ */
 [[nodiscard]] MIMETREEPARSER_CORE_EXPORT QList<std::shared_ptr<KMime::Message>> openFile(const QString &fileName);
 }
 }

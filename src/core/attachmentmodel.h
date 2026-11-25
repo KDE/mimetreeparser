@@ -35,6 +35,8 @@ public:
     ~AttachmentModel() override;
 
 public:
+    /*!
+     */
     enum Roles {
         TypeRole = Qt::UserRole + 1,
         IconRole,
@@ -43,6 +45,8 @@ public:
         AttachmentPartRole,
     };
 
+    /*!
+     */
     enum Columns {
         NameColumn = 0,
         SizeColumn,

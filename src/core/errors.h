@@ -13,6 +13,11 @@
 // https://isocpp.org/files/papers/n4015.pdf
 
 // A class used to differentiate errors and values when they are of the same type.
+/*!
+ * \class Unexpected
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/Errors
+ */
 template<typename Error>
 class Unexpected
 {
@@ -21,10 +26,14 @@ class Unexpected
 public:
     Unexpected() = delete;
 
+    /*!
+     */
     constexpr explicit Unexpected(const Error &error)
         : mValue(error)
     {
     }
+    /*!
+     */
     constexpr explicit Unexpected(Error &&error)
         : mValue(std::move(error))
     {
@@ -42,19 +51,27 @@ public:
     {
     }
 
+    /*!
+     */
     constexpr const Error &value() const &
     {
         return mValue;
     }
+    /*!
+     */
     Error &value() &
     {
         return mValue;
     }
 
+    /*!
+     */
     constexpr const Error &&value() const &&
     {
         return std::move(mValue);
     }
+    /*!
+     */
     Error &&value() &&
     {
         return std::move(mValue);
@@ -87,7 +104,17 @@ namespace detail
 
 namespace tags
 {
+/*!
+ * \class detail::tags::Expected
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/Errors
+ */
 struct Expected { };
+/*!
+ * \class detail::tags::Unexpected
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/Errors
+ */
 struct Unexpected { };
 } // namespace tags
 
@@ -304,6 +331,11 @@ struct ExpectedBase<Error, void> : Storage<Error, void> {
 } // namespace detail
 
 // Write functions here when dev API related, whether Type is void or not
+/*!
+ * \class Expected
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/Errors
+ */
 template<typename Error, typename Type = void>
 class Expected : public detail::ExpectedBase<Error, Type>
 {
@@ -312,15 +344,21 @@ class Expected : public detail::ExpectedBase<Error, Type>
 public:
     using detail::ExpectedBase<Error, Type>::ExpectedBase;
 
+    /*!
+     */
     constexpr const Error &error() const &
     {
         return this->mError.value();
     }
 
+    /*!
+     */
     constexpr bool isValue() const
     {
         return this->mIsValue;
     }
+    /*!
+     */
     constexpr explicit operator bool() const
     {
         return this->mIsValue;

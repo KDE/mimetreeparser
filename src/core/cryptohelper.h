@@ -14,6 +14,11 @@
 #include <QList>
 #include <gpgme++/global.h>
 
+/*!
+ * \namespace MimeTreeParser::Core
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/CryptoHelper
+ */
 namespace MimeTreeParser::Core
 {
 enum PGPBlockType {
@@ -67,7 +72,11 @@ public:
      */
     [[nodiscard]] PGPBlockType determineType() const;
 
+    /*!
+     */
     QByteArray msg;
+    /*!
+     */
     PGPBlockType mType = UnknownBlock;
 };
 
@@ -76,8 +85,15 @@ public:
 */
 [[nodiscard]] MIMETREEPARSER_CORE_EXPORT QList<Block> prepareMessageForDecryption(const QByteArray &msg);
 
+/*!
+ * \namespace MimeTreeParser::Core::CryptoUtils
+ * \inmodule MimeTreeParserCore
+ * \inheaderfile MimeTreeParserCore/CryptoHelper
+ */
 namespace CryptoUtils
 {
+/*!
+ */
 [[nodiscard]] MIMETREEPARSER_CORE_EXPORT std::shared_ptr<KMime::Message>
 decryptMessage(const std::shared_ptr<KMime::Message> &decrypt, bool &wasEncrypted, MessagePart::Error &error);
 }

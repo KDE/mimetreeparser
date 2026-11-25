@@ -15,6 +15,11 @@ class QToolBar;
 
 namespace MimeTreeParser
 {
+/*!
+ * \namespace MimeTreeParser::Widgets
+ * \inmodule MimeTreeParserWidgets
+ * \inheaderfile MimeTreeParserWidgets/MessageViewerDialog
+ */
 namespace Widgets
 {
 
