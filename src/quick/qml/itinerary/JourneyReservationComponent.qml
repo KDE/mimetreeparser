@@ -103,8 +103,23 @@ ItineraryReservationComponent {
             QQC2.Label {
                 Layout.fillWidth: true
                 visible: stop.platform.length > 0 || stop.terminal.length > 0
-                text: stop.platform.length > 0 ? i18nc("@label", "Platform %1", stop.platform)
-                    : i18nc("@label", "Terminal %1", stop.terminal.replace(/^Terminal\s+/i, ""))
+                text: {
+                    if (stop.platform.length === 0) {
+                        return i18nc("@label", "Terminal %1", stop.terminal.replace(/^Terminal\s+/i, ""));
+                    }
+                    switch (root.type) {
+                    case "BoatReservation":
+                        return i18nc("@label boat platform", "Platform %1", stop.platform);
+                    case "BusReservation":
+                        return i18nc("@label bus platform", "Platform %1", stop.platform);
+                    case "FlightReservation":
+                        return i18nc("@label airport platform", "Platform %1", stop.platform);
+                    case "TrainReservation":
+                        return i18nc("@label train platform", "Platform %1", stop.platform);
+                    default:
+                        return i18nc("@label generic platform", "Platform %1", stop.platform);
+                    }
+                }
                 textFormat: Text.PlainText
                 wrapMode: Text.WordWrap
             }
@@ -140,7 +155,7 @@ ItineraryReservationComponent {
         QQC2.Label {
             Layout.fillWidth: true
             visible: root.type === "FlightReservation" && root.startTime.length > 0
-            text: i18nc("@label", "Boarding: %1", root.startTime)
+            text: i18nc("@label flight boarding time", "Boarding: %1", root.startTime)
             wrapMode: Text.WordWrap
         }
         Flow {
